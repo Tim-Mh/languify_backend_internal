@@ -53,7 +53,7 @@ class PushPolicy
 
             $now = Carbon::now($user->timezone ?: config('app.timezone'));
 
-            if ($this->isQuietHour($now)) {
+            if (! $category->bypassesQuietHours() && $this->isQuietHour($now)) {
                 return false;
             }
 

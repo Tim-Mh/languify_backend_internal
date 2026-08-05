@@ -43,11 +43,23 @@ enum NotificationCategory: string
      *
      * Only billing. It is the one category where silence actively costs the
      * learner money, and suppressing "your card was declined" because they had
-     * already had three league updates that day would be indefensible. Quiet
-     * hours still apply — the same events are emailed too, so nothing is lost
-     * by waiting until morning.
+     * already had three league updates that day would be indefensible.
      */
     public function bypassesDailyCap(): bool
+    {
+        return $this === self::Billing;
+    }
+
+    /**
+     * Whether quiet hours do not apply either.
+     *
+     * Also only billing, and for the same reason plus one more: most billing
+     * pushes confirm something the learner did seconds ago in the app —
+     * subscribing, a renewal charge — so the phone is in their hand and
+     * "quiet" is moot. The one that isn't (payment failed) is exactly the one
+     * that shouldn't wait until morning.
+     */
+    public function bypassesQuietHours(): bool
     {
         return $this === self::Billing;
     }
