@@ -2,7 +2,9 @@
 
 namespace App\Notifications;
 
+use App\Enums\NotificationCategory;
 use App\Models\User;
+use App\Notifications\Messages\ExpoMessage;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
@@ -16,7 +18,18 @@ class FamilyInviteAcceptedNotification extends Notification
 
     public function via(object $notifiable): array
     {
-        return ['mail'];
+        return ['mail', 'expo'];
+    }
+
+    public function toExpo(object $notifiable): ExpoMessage
+    {
+        $memberName = $this->member->full_name ?: $this->member->email;
+
+        return ExpoMessage::make(
+            NotificationCategory::Family,
+            "{$memberName} joined your Family plan",
+            'They now have full access on your plan.',
+        )->deepLink('/family');
     }
 
     public function toMail(object $notifiable): MailMessage

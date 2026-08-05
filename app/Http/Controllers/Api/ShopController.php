@@ -229,6 +229,9 @@ class ShopController extends Controller
             $state->gems -= $tier->price_gems;
             $state->hearts = min($maxHearts, $state->hearts + $tier->hearts);
             $state->hearts_updated_at = now();
+            // They solved the empty-hearts problem with gems — the "hearts
+            // are full again" nudge would be stale noise.
+            $state->hearts_depleted_at = null;
             $state->save();
 
             return response()->json([

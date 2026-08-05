@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-#[Fillable(['user_id', 'token', 'platform', 'last_registered_at'])]
+#[Fillable(['user_id', 'token', 'provider', 'platform', 'last_registered_at'])]
 class DeviceToken extends Model
 {
     protected function casts(): array

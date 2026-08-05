@@ -10,11 +10,15 @@ use Illuminate\Support\Carbon;
 use OpenApi\Attributes as OA;
 
 /**
- * Registration of the mobile app's Expo push tokens.
+ * Registration of the mobile app's push tokens.
  *
- * The app calls store() on every launch of a signed-in session (Expo can
- * reissue a token after an app update or a device restore, and the client has
- * no reliable way to notice), and revoke() on sign-out.
+ * The app calls store() on every launch of a signed-in session (the push
+ * service can reissue a token after an app update or a device restore, and
+ * the client has no reliable way to notice), and revoke() on sign-out.
+ *
+ * Two token dialects coexist here while the Expo build ages out: the Expo
+ * builds register wrapped ExponentPushToken[…] strings, and the bare React
+ * Native build registers raw FCM registration tokens with provider 'fcm'.
  */
 class DeviceTokenController extends Controller
 {
@@ -23,7 +27,14 @@ class DeviceTokenController extends Controller
      * fail at send time, and a table of junk tokens costs a failed HTTP call per
      * notification forever.
      */
-    private const TOKEN_PATTERN = '/^Expo(nent)?PushToken\[[^\]]+\]$/';
+    private const EXPO_TOKEN_PATTERN = '/^Expo(nent)?PushToken\[[^\]]+\]$/';
+
+    /**
+     * FCM registration tokens have no documented grammar, so this is the
+     * loosest check that still keeps junk out: the characters FCM actually
+     * uses, and a length no hand-typed string reaches by accident.
+     */
+    private const FCM_TOKEN_PATTERN = '/^[A-Za-z0-9_:\-.]{40,}$/';
 
     #[OA\Post(
         path: '/api/device-tokens',
@@ -37,6 +48,8 @@ class DeviceTokenController extends Controller
             required: ['token'],
             properties: [
                 new OA\Property(property: 'token', type: 'string', example: 'ExponentPushToken[xxxxxxxxxxxxxxxxxxxxxx]'),
+                new OA\Property(property: 'provider', type: 'string', enum: ['expo', 'fcm'], example: 'fcm',
+                    description: 'Which push service issued the token. Defaults to expo, which is what the Expo builds send (nothing at all).'),
                 new OA\Property(property: 'platform', type: 'string', enum: ['ios', 'android'], example: 'android'),
             ],
         )),
@@ -47,8 +60,17 @@ class DeviceTokenController extends Controller
     )]
     public function store(Request $request): JsonResponse
     {
+        // Defaulted before validation so the token rule can depend on it: the
+        // Expo builds predate the field and send nothing, which has to keep
+        // meaning what it always meant.
+        $provider = $request->input('provider', 'expo');
+
         $data = $request->validate([
-            'token' => ['required', 'string', 'max:255', 'regex:'.self::TOKEN_PATTERN],
+            'token' => [
+                'required', 'string', 'max:255',
+                'regex:'.($provider === 'fcm' ? self::FCM_TOKEN_PATTERN : self::EXPO_TOKEN_PATTERN),
+            ],
+            'provider' => ['nullable', 'string', 'in:expo,fcm'],
             'platform' => ['nullable', 'string', 'in:ios,android'],
         ]);
 
@@ -61,6 +83,7 @@ class DeviceTokenController extends Controller
             ['token' => $data['token']],
             [
                 'user_id' => $request->user()->id,
+                'provider' => $provider,
                 'platform' => $data['platform'] ?? null,
                 'last_registered_at' => Carbon::now(),
             ],

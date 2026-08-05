@@ -22,8 +22,12 @@ return new class extends Migration
 {
     public function up(): void
     {
+        // 'mobile_lesson_complete' is listed here even though it arrived in a
+        // later migration, because on every driver except MySQL the later
+        // ALTER…MODIFY is skipped and this list becomes the column's CHECK
+        // constraint — same pattern as the chapters chapter_key enum.
         Schema::table('ad_images', function (Blueprint $table) {
-            $table->enum('placement', ['home_primary', 'home_secondary', 'lesson_complete'])
+            $table->enum('placement', ['home_primary', 'home_secondary', 'lesson_complete', 'mobile_lesson_complete'])
                 ->default('home_primary')
                 ->after('product_name')
                 ->index();

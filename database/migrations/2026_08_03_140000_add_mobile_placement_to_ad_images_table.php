@@ -42,6 +42,13 @@ return new class extends Migration
 
     private function setEnum(array $values): void
     {
+        // Raw MySQL syntax — on every other driver the add_placement migration
+        // now lists 'mobile_lesson_complete' directly, so this is a no-op
+        // there, and matches what already ran on the real DB.
+        if (DB::connection()->getDriverName() !== 'mysql') {
+            return;
+        }
+
         $list = collect($values)->map(fn (string $value) => "'".$value."'")->implode(',');
 
         DB::statement(

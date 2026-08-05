@@ -21,12 +21,21 @@ return new class extends Migration
 
     public function up(): void
     {
-        $offset = strlen(self::PREFIX) + 1;
+        // The numeric scan happens in PHP rather than SQL (REGEXP, SUBSTRING
+        // and CAST AS UNSIGNED are MySQL dialect) so this also runs on the
+        // sqlite database the test suite migrates. LIKE narrows the fetch;
+        // the regex confirms the tail is purely numeric.
+        $highest = DB::table('users')
+            ->where('full_name', 'LIKE', self::PREFIX.'%')
+            ->pluck('full_name')
+            ->map(function (string $name) {
+                return preg_match('/^'.self::PREFIX.'(\d+)$/', $name, $matches)
+                    ? (int) $matches[1]
+                    : 0;
+            })
+            ->max();
 
-        $next = 1 + (int) DB::table('users')
-            ->where('full_name', 'REGEXP', '^'.self::PREFIX.'[0-9]+$')
-            ->selectRaw("MAX(CAST(SUBSTRING(full_name, {$offset}) AS UNSIGNED)) as highest")
-            ->value('highest');
+        $next = 1 + (int) $highest;
 
         $nameless = DB::table('users')
             ->where(function ($query) {

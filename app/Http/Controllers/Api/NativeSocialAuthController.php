@@ -222,9 +222,22 @@ class NativeSocialAuthController extends Controller
      * `userFromToken` runs the provider's own `checkToken`, which validates the
      * signature against Apple's published keys and the standard claims, so the
      * audience is checked there against `services.apple.client_id`.
+     *
+     * Apple mints the audience as whichever client asked for the token: the
+     * web Services ID from the browser flow, the app's BUNDLE ID from the
+     * native iOS sheet. Both belong to us, so when the token's (unverified)
+     * aud matches the configured native client id, that id is swapped in
+     * before the driver resolves — the signature check afterwards is what
+     * makes trusting the claim safe: a forged aud fails verification anyway.
      */
     private function verifyAppleToken(string $identityToken): array
     {
+        $native = config('services.apple.native_client_id');
+
+        if ($native && $this->unverifiedAudience($identityToken) === $native) {
+            config(['services.apple.client_id' => $native]);
+        }
+
         $appleUser = Socialite::driver('apple')->userFromToken($identityToken);
 
         return [
@@ -232,5 +245,20 @@ class NativeSocialAuthController extends Controller
             'email' => $appleUser->getEmail(),
             'name' => $appleUser->getName(),
         ];
+    }
+
+    /** The token's aud claim, read without verifying — see verifyAppleToken. */
+    private function unverifiedAudience(string $jwt): ?string
+    {
+        $segments = explode('.', $jwt);
+
+        if (count($segments) !== 3) {
+            return null;
+        }
+
+        $claims = json_decode(base64_decode(strtr($segments[1], '-_', '+/')) ?: '', true);
+        $aud = $claims['aud'] ?? null;
+
+        return is_array($aud) ? ($aud[0] ?? null) : $aud;
     }
 }

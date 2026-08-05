@@ -23,13 +23,20 @@ return new class extends Migration
             $table->foreignId('native_language_id')->nullable()->after('lesson_id')
                 ->constrained('languages')->nullOnDelete();
         });
+        // A correlated subquery rather than MySQL's UPDATE…JOIN, because this
+        // also has to run on the sqlite database the test suite migrates.
         DB::statement(<<<'SQL'
-            UPDATE user_lesson_completions ulc
-            JOIN lessons l ON l.id = ulc.lesson_id
-            JOIN units u ON u.id = l.unit_id
-            JOIN chapters c ON c.id = u.chapter_id
-            JOIN user_courses uc ON uc.user_id = ulc.user_id AND uc.language_id = c.language_id
-            SET ulc.native_language_id = uc.native_language_id
+            UPDATE user_lesson_completions
+            SET native_language_id = (
+                SELECT uc.native_language_id
+                FROM lessons l
+                JOIN units u ON u.id = l.unit_id
+                JOIN chapters c ON c.id = u.chapter_id
+                JOIN user_courses uc ON uc.language_id = c.language_id
+                    AND uc.user_id = user_lesson_completions.user_id
+                WHERE l.id = user_lesson_completions.lesson_id
+                LIMIT 1
+            )
         SQL);
         Schema::table('user_lesson_completions', function (Blueprint $table) {
             $table->unique(['user_id', 'lesson_id', 'native_language_id'], 'ulc_user_lesson_native_unique');
@@ -43,11 +50,16 @@ return new class extends Migration
                 ->constrained('languages')->nullOnDelete();
         });
         DB::statement(<<<'SQL'
-            UPDATE user_unit_completions uuc
-            JOIN units u ON u.id = uuc.unit_id
-            JOIN chapters c ON c.id = u.chapter_id
-            JOIN user_courses uc ON uc.user_id = uuc.user_id AND uc.language_id = c.language_id
-            SET uuc.native_language_id = uc.native_language_id
+            UPDATE user_unit_completions
+            SET native_language_id = (
+                SELECT uc.native_language_id
+                FROM units u
+                JOIN chapters c ON c.id = u.chapter_id
+                JOIN user_courses uc ON uc.language_id = c.language_id
+                    AND uc.user_id = user_unit_completions.user_id
+                WHERE u.id = user_unit_completions.unit_id
+                LIMIT 1
+            )
         SQL);
         Schema::table('user_unit_completions', function (Blueprint $table) {
             $table->unique(['user_id', 'unit_id', 'native_language_id'], 'uuc_user_unit_native_unique');

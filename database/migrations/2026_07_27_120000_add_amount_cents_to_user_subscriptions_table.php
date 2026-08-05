@@ -26,12 +26,16 @@ return new class extends Migration
 
         // Backfill existing rows from their plan's current price so historical
         // revenue isn't lost when the dashboard switches to summing this column.
-        DB::statement('
-            UPDATE user_subscriptions us
-            JOIN subscription_plans sp ON sp.`key` = us.plan_key
-            SET us.amount_cents = sp.amount_cents
-            WHERE us.amount_cents IS NULL
-        ');
+        // A correlated subquery rather than MySQL's UPDATE…JOIN, because this
+        // also has to run on the sqlite database the test suite migrates.
+        DB::statement(<<<'SQL'
+            UPDATE user_subscriptions
+            SET amount_cents = (
+                SELECT sp.amount_cents FROM subscription_plans sp
+                WHERE sp.key = user_subscriptions.plan_key
+            )
+            WHERE amount_cents IS NULL
+        SQL);
     }
 
     public function down(): void

@@ -2,6 +2,8 @@
 
 namespace App\Notifications;
 
+use App\Enums\NotificationCategory;
+use App\Notifications\Messages\ExpoMessage;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
@@ -16,7 +18,16 @@ class SubscriptionExpiredNotification extends Notification
 
     public function via(object $notifiable): array
     {
-        return ['mail'];
+        return ['mail', 'expo'];
+    }
+
+    public function toExpo(object $notifiable): ExpoMessage
+    {
+        return ExpoMessage::make(
+            NotificationCategory::Billing,
+            "Your {$this->planTitle} plan has ended",
+            'Your progress is untouched. Renew whenever you like.',
+        )->deepLink('/shop');
     }
 
     public function toMail(object $notifiable): MailMessage

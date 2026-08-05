@@ -189,11 +189,15 @@ class User extends Authenticatable
      * phone and their tablet both. An empty array is the normal case for anyone
      * who only uses the web app.
      *
-     * @return array<int, string>
+     * Keyed by token with the provider as the value, because the channel sends
+     * Expo-wrapped tokens and raw FCM ones through different services and has
+     * to tell them apart.
+     *
+     * @return array<string, string>
      */
     public function routeNotificationForExpo(): array
     {
-        return $this->deviceTokens()->pluck('token')->all();
+        return $this->deviceTokens()->pluck('provider', 'token')->all();
     }
 
     /**

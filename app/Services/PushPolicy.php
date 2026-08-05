@@ -37,9 +37,9 @@ class PushPolicy
      * same moment, and two callers that each read "2 sent today" would both
      * pass and land four notifications on a cap of three.
      */
-    public function allows(User $user, NotificationCategory $category): bool
+    public function allows(User $user, NotificationCategory $category, bool $lowPriority = false): bool
     {
-        return DB::transaction(function () use ($user, $category) {
+        return DB::transaction(function () use ($user, $category, $lowPriority) {
             NotificationPreference::firstOrCreate(['user_id' => $user->id]);
 
             $preferences = NotificationPreference::where('user_id', $user->id)
@@ -60,6 +60,14 @@ class PushPolicy
             $this->resetCountersIfNewDay($preferences, $now);
 
             if (! $category->bypassesDailyCap() && $preferences->sent_count >= self::MAX_PER_DAY) {
+                return false;
+            }
+
+            // The last slot of the day is reserved for messages that matter.
+            // The cap is first-come-first-served, and without this a morning
+            // of nice-to-haves would silently swallow the evening's
+            // streak-at-risk push.
+            if ($lowPriority && $preferences->sent_count >= self::MAX_PER_DAY - 1) {
                 return false;
             }
 

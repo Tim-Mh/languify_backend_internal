@@ -35,13 +35,25 @@ return [
         ],
     ],
 
-    // Push notifications go out through Expo, which holds the FCM service
-    // account key and the APNs key (uploaded once with `eas credentials`) so
-    // neither has to sit on this server. The access token is only needed if
-    // "enhanced security for push notifications" is enabled for the Expo
-    // project; unset is the normal case and sends work without it.
+    // Push for the Expo builds goes out through Expo's relay, which holds the
+    // FCM service account key and the APNs key (uploaded once with
+    // `eas credentials`). The access token is only needed if "enhanced
+    // security for push notifications" is enabled for the Expo project; unset
+    // is the normal case and sends work without it.
     'expo' => [
         'access_token' => env('EXPO_ACCESS_TOKEN'),
+    ],
+
+    // Push for the bare React Native build goes straight through FCM's HTTP v1
+    // API. The credential is a Firebase service account key file (Firebase
+    // console → project settings → service accounts → generate new private
+    // key). It ships at the project root as firebase-credentials.json — the
+    // repo is private and only public/ is web-served — so a deploy needs no
+    // env change; FIREBASE_CREDENTIALS overrides the path where that isn't
+    // true. If the file is missing, FCM sends are skipped with a log line and
+    // Expo sends still work.
+    'fcm' => [
+        'credentials' => env('FIREBASE_CREDENTIALS') ?: base_path('firebase-credentials.json'),
     ],
 
     'stripe' => [
@@ -78,6 +90,12 @@ return [
         // Either the raw multi-line .p8 contents (quoted in .env) or an
         // absolute file path — SocialiteProviders\Apple\Provider accepts both.
         'private_key' => env('APPLE_PRIVATE_KEY'),
+
+        // The iOS app's native Sign in with Apple sheet mints its identity
+        // token against the app's BUNDLE ID, not the web Services ID above.
+        // NativeSocialAuthController accepts either audience; unset closes
+        // the native door without affecting the web flow.
+        'native_client_id' => env('APPLE_NATIVE_CLIENT_ID', 'us.languify.app'),
     ],
 
 ];

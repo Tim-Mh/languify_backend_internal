@@ -5,6 +5,7 @@ namespace App\Notifications\Channels;
 use App\Models\User;
 use App\Notifications\Messages\ExpoMessage;
 use App\Services\ExpoPushService;
+use App\Services\FcmPushService;
 use App\Services\PushPolicy;
 use Illuminate\Notifications\Notification;
 
@@ -27,10 +28,19 @@ use Illuminate\Notifications\Notification;
  *     }
  *
  * Nothing else about the notification changes, and the mail side is untouched.
+ *
+ * The name is historical: 'expo' now means "push", and the channel routes each
+ * device token to the service that understands it — Expo-wrapped tokens from
+ * the Expo builds through Expo's relay, raw FCM tokens from the bare React
+ * Native build straight through FCM. Notifications never know the difference.
  */
 class ExpoChannel
 {
-    public function __construct(private ExpoPushService $expo, private PushPolicy $policy) {}
+    public function __construct(
+        private ExpoPushService $expo,
+        private FcmPushService $fcm,
+        private PushPolicy $policy,
+    ) {}
 
     public function send(object $notifiable, Notification $notification): void
     {
@@ -67,10 +77,25 @@ class ExpoChannel
         // Only for real users: Notification::route(...) targets an address with
         // no account behind it, so there are no preferences to consult and
         // nothing to count against.
-        if ($notifiable instanceof User && ! $this->policy->allows($notifiable, $message->category())) {
+        if ($notifiable instanceof User && ! $this->policy->allows($notifiable, $message->category(), $message->isLowPriority())) {
             return;
         }
 
-        $this->expo->send($tokens, $message);
+        // routeNotificationForExpo returns token => provider. A plain list of
+        // tokens (an older override, or an on-demand route) still works: its
+        // numeric keys fall through to the Expo path, which is what every
+        // token was before providers existed.
+        $byProvider = ['expo' => [], 'fcm' => []];
+
+        foreach ($tokens as $key => $value) {
+            if (is_int($key)) {
+                $byProvider['expo'][] = $value;
+            } else {
+                $byProvider[$value === 'fcm' ? 'fcm' : 'expo'][] = $key;
+            }
+        }
+
+        $this->expo->send($byProvider['expo'], $message);
+        $this->fcm->send($byProvider['fcm'], $message);
     }
 }

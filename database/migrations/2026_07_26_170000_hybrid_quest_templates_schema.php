@@ -27,13 +27,14 @@ return new class extends Migration
         });
 
         // Backfill existing assignments from their quest's fixed values.
+        // Correlated subqueries rather than MySQL's UPDATE…JOIN, because this
+        // also has to run on the sqlite database the test suite migrates.
         DB::statement(<<<'SQL'
-            UPDATE user_daily_quests udq
-            JOIN quests q ON q.id = udq.quest_id
-            SET udq.target_count = q.target_count,
-                udq.gems_reward = q.gems_reward,
-                udq.xp_reward = q.xp_reward
-            WHERE udq.target_count IS NULL
+            UPDATE user_daily_quests
+            SET target_count = (SELECT q.target_count FROM quests q WHERE q.id = user_daily_quests.quest_id),
+                gems_reward = (SELECT q.gems_reward FROM quests q WHERE q.id = user_daily_quests.quest_id),
+                xp_reward = (SELECT q.xp_reward FROM quests q WHERE q.id = user_daily_quests.quest_id)
+            WHERE target_count IS NULL
         SQL);
     }
 

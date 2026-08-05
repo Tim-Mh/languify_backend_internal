@@ -25,6 +25,8 @@ class ExpoMessage
 {
     private array $data = [];
 
+    private bool $lowPriority = false;
+
     public function __construct(
         private NotificationCategory $category,
         private string $title,
@@ -54,6 +56,24 @@ class ExpoMessage
         $this->data = [...$this->data, ...$data];
 
         return $this;
+    }
+
+    /**
+     * Marks a nice-to-have. PushPolicy refuses to let a low-priority message
+     * take the day's LAST cap slot, so a morning of pleasantries can never
+     * crowd out an evening streak-at-risk or a payment failure. For messages
+     * whose absence nobody would ever notice.
+     */
+    public function lowPriority(): self
+    {
+        $this->lowPriority = true;
+
+        return $this;
+    }
+
+    public function isLowPriority(): bool
+    {
+        return $this->lowPriority;
     }
 
     public function category(): NotificationCategory

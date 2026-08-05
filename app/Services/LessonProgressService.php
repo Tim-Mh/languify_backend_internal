@@ -17,6 +17,8 @@ use App\Models\UserGameState;
 use App\Models\UserLessonCompletion;
 use App\Models\UserUnitCompletion;
 use App\Notifications\StreakBrokenNotification;
+use App\Notifications\StreakFreezeUsedNotification;
+use App\Notifications\StreakGoalReachedNotification;
 use App\Notifications\StreakMilestoneNotification;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
@@ -148,6 +150,10 @@ class LessonProgressService
                     'user_id' => $user->id,
                     'freeze_date' => $frozenDate->format('Y-m-d'),
                 ]);
+
+                // Guarded by $alreadyRecorded so the two hydrate() callers
+                // (a real request and the hourly sweep) cannot both send it.
+                $user->notify(new StreakFreezeUsedNotification($state->streak));
             }
 
             return;
@@ -303,6 +309,14 @@ class LessonProgressService
                 // already accrued, purely because of *when* the mistake
                 // happened to occur.
                 $state->hearts = max(0, $state->hearts - 1);
+
+                // Marks the moment the learner ran dry, for the "hearts are
+                // full again" nudge. Only on the transition to zero: a
+                // repeat mistake at zero must not keep pushing the marker
+                // (and the nudge) forward.
+                if ($state->hearts === 0 && $state->hearts_depleted_at === null) {
+                    $state->hearts_depleted_at = Carbon::now();
+                }
             }
 
             $state->save();
@@ -516,6 +530,17 @@ class LessonProgressService
             if ($streakIncreased && $streakMilestoneHit && (int) $streakMilestoneHit['days'] === $state->streak) {
                 $user->notify(new StreakMilestoneNotification($state->streak));
             }
+
+            // The goal the learner picked for themselves at setup, distinct
+            // from the fixed chest milestones above. Exact equality on the
+            // crossing lesson means it fires once per streak run.
+            if ($streakIncreased && $user->streak_goal_days && $state->streak === (int) $user->streak_goal_days) {
+                $user->notify(new StreakGoalReachedNotification($state->streak));
+            }
+
+            // They are demonstrably back playing — the hearts-full nudge has
+            // nothing left to say.
+            $state->hearts_depleted_at = null;
 
             $state->save();
 
