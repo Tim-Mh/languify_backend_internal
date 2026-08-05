@@ -18,14 +18,14 @@ use Illuminate\Support\Facades\DB;
  *
  * Every check is per learner and in THEIR timezone, matching how streaks,
  * daily quests and heart regeneration already work in this app.
+ *
+ * There are deliberately no quiet hours: pushes deliver at any hour, by
+ * request. The time-of-day shaping lives in the sweep instead — each
+ * scheduled notification fires at a chosen local hour — so what arrives at
+ * night is only what genuinely happens at night.
  */
 class PushPolicy
 {
-    /** Nothing lands between these local hours. */
-    private const QUIET_FROM_HOUR = 22;
-
-    private const QUIET_UNTIL_HOUR = 8;
-
     /** Across every category combined. */
     private const MAX_PER_DAY = 3;
 
@@ -52,10 +52,6 @@ class PushPolicy
             }
 
             $now = Carbon::now($user->timezone ?: config('app.timezone'));
-
-            if (! $category->bypassesQuietHours() && $this->isQuietHour($now)) {
-                return false;
-            }
 
             $this->resetCountersIfNewDay($preferences, $now);
 
@@ -87,15 +83,6 @@ class PushPolicy
 
             return true;
         });
-    }
-
-    /**
-     * Quiet hours wrap around midnight, so this is an OR rather than the usual
-     * between-two-bounds check.
-     */
-    private function isQuietHour(Carbon $localNow): bool
-    {
-        return $localNow->hour >= self::QUIET_FROM_HOUR || $localNow->hour < self::QUIET_UNTIL_HOUR;
     }
 
     /**

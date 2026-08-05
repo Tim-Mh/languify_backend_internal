@@ -50,20 +50,6 @@ enum NotificationCategory: string
         return $this === self::Billing;
     }
 
-    /**
-     * Whether quiet hours do not apply either.
-     *
-     * Also only billing, and for the same reason plus one more: most billing
-     * pushes confirm something the learner did seconds ago in the app —
-     * subscribing, a renewal charge — so the phone is in their hand and
-     * "quiet" is moot. The one that isn't (payment failed) is exactly the one
-     * that shouldn't wait until morning.
-     */
-    public function bypassesQuietHours(): bool
-    {
-        return $this === self::Billing;
-    }
-
     /** @return array<int, string> */
     public static function values(): array
     {

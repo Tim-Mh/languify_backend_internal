@@ -99,16 +99,16 @@ class PushCatalogueTest extends TestCase
         $this->assertSame(3, (int) NotificationPreference::where('user_id', $user->id)->value('sent_count'));
     }
 
-    public function test_billing_bypasses_quiet_hours_but_nothing_else_does(): void
+    public function test_there_are_no_quiet_hours_by_design(): void
     {
         $user = User::factory()->create(['timezone' => 'UTC']);
         $policy = app(PushPolicy::class);
 
-        // 23:30 — inside the 22:00–08:00 quiet window.
-        \Illuminate\Support\Carbon::setTestNow(\Illuminate\Support\Carbon::parse('2026-08-05 23:30:00', 'UTC'));
+        // 03:30 — the middle of the night still delivers, by request.
+        \Illuminate\Support\Carbon::setTestNow(\Illuminate\Support\Carbon::parse('2026-08-05 03:30:00', 'UTC'));
 
-        $this->assertFalse($policy->allows($user, NotificationCategory::Rewards));
-        $this->assertFalse($policy->allows($user, NotificationCategory::Reminders));
+        $this->assertTrue($policy->allows($user, NotificationCategory::Rewards));
+        $this->assertTrue($policy->allows($user, NotificationCategory::Reminders));
         $this->assertTrue($policy->allows($user, NotificationCategory::Billing));
     }
 
