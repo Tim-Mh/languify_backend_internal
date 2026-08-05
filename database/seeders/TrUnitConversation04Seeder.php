@@ -1,0 +1,272 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Enums\ChapterKey;
+use App\Models\Chapter;
+use App\Models\Language;
+use Database\Seeders\Support\TurkishLessonBuilder;
+use Illuminate\Database\Seeder;
+
+class TrUnitConversation04Seeder extends Seeder
+{
+    /** Pictures this unit can offer as wrong answers. */
+    private const PICTURES = [
+        'Arkadaş' => 'friend', 'Anne' => 'mother', 'Kardeş' => 'brother',
+        'Doktor' => 'doctor', 'Kız kardeş' => 'sister', 'Ev' => 'house',
+    ];
+
+    /**
+     * Turkish Conversation Unit 4 — talking about feelings.
+     *
+     * Mirrors the same curriculum the other courses teach in their fourth
+     * conversation unit, so a learner switching languages meets the same ideas
+     * in the same order.
+     *
+     * THE RULE THIS UNIT TEACHES: TURKISH HAS NO VERB "TO BE".
+     *
+     * "I am happy" is not two words plus an adjective. The person is a suffix
+     * on the adjective itself:
+     *
+     *     mutlu       happy
+     *     mutluyum    I am happy       (mutlu + -yum)
+     *     yorgunum    I am tired       (yorgun + -um)
+     *     memnunum    I am glad        (memnun + -um)
+     *
+     * And in the third person there is no copula at all: `Arkadaşım üzgün` is
+     * literally "my friend sad", which is a complete Turkish sentence. An
+     * English, German or Spanish speaker will want to insert a word for "is",
+     * so no such tile is ever offered.
+     *
+     * `Ben` is included as a separate tile in the first-person phrases because
+     * it is a real, optional word (Turkish drops it freely), and having it lets
+     * the learner see that the suffix, not the pronoun, is what carries "I".
+     *
+     * Possessives are suffixes too, and each inflected form is its own tile and
+     * its own dictionary entry, as the builder requires: `arkadaşım` (my
+     * friend), `annem` (my mother), `kardeşim` (my brother), `evde` (in the
+     * house), `arkadaşımla` (with my friend).
+     */
+    public function run(): void
+    {
+        $language = Language::where('code', 'tr')->firstOrFail();
+
+        $chapter = Chapter::where('language_id', $language->id)
+            ->where('chapter_key', ChapterKey::Conversation)
+            ->firstOrFail();
+
+        $builder = new TurkishLessonBuilder(self::PICTURES);
+
+        $builder->seedUnit($chapter->id, 4, 'Unit 4: Talking About Feelings', $this->lessonsData($builder));
+    }
+
+    private function lessonsData(TurkishLessonBuilder $builder): array
+    {
+        return [
+            $builder->lesson('Lesson 1: Happy & Sad', 1,
+                pictures: [['tr' => 'Arkadaş', 'img' => 'friend'], ['tr' => 'Anne', 'img' => 'mother']],
+                plain: [['tr' => 'Mutlu'], ['tr' => 'Üzgün']],
+                phrases: [
+                    'a' => [
+                        // -yum carries "I am". There is no separate word for it.
+                        'words' => ['ben', 'mutluyum'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'I am happy', 'correct' => ['I am', 'happy'], 'extra' => ['sad', 'friend']],
+                            'fr' => ['sentence' => 'Je suis heureux', 'correct' => ['je suis', 'heureux'], 'extra' => ['triste', 'ami']],
+                            'es' => ['sentence' => 'Estoy feliz', 'correct' => ['estoy', 'feliz'], 'extra' => ['triste', 'amigo']],
+                            'de' => ['sentence' => 'Ich bin glücklich', 'correct' => ['ich bin', 'glücklich'], 'extra' => ['traurig', 'Freund']],
+                            'ja' => ['sentence' => '私は幸せです', 'correct' => ['私', 'は', '幸せ', 'です'], 'extra' => ['悲しい', '友達']],
+                            'ko' => ['sentence' => '저는 행복합니다', 'correct' => ['저는', '행복합니다'], 'extra' => ['슬픈', '친구']],
+                        ],
+                    ],
+                    'b' => [
+                        // Third person takes no copula at all: "my friend sad".
+                        'words' => ['arkadaşım', 'üzgün'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'My friend is sad', 'correct' => ['my', 'friend', 'is', 'sad'], 'extra' => ['happy', 'mother']],
+                            'fr' => ['sentence' => 'Mon ami est triste', 'correct' => ['mon', 'ami', 'est', 'triste'], 'extra' => ['heureux', 'mère']],
+                            'es' => ['sentence' => 'Mi amigo está triste', 'correct' => ['mi', 'amigo', 'está', 'triste'], 'extra' => ['feliz', 'madre']],
+                            'de' => ['sentence' => 'Mein Freund ist traurig', 'correct' => ['mein', 'Freund', 'ist', 'traurig'], 'extra' => ['glücklich', 'Mutter']],
+                            'ja' => ['sentence' => '私の友達は悲しいです', 'correct' => ['私の', '友達', 'は', '悲しい', 'です'], 'extra' => ['幸せ', '母']],
+                            'ko' => ['sentence' => '제 친구는 슬픕니다', 'correct' => ['제', '친구는', '슬픕니다'], 'extra' => ['행복한', '어머니']],
+                        ],
+                    ],
+                    'c' => [
+                        'words' => ['annem', 'mutlu'], 'blank' => 0,
+                        'means' => [
+                            'en' => ['sentence' => 'My mother is happy', 'correct' => ['my', 'mother', 'is', 'happy'], 'extra' => ['sad']],
+                            'fr' => ['sentence' => 'Ma mère est heureuse', 'correct' => ['ma', 'mère', 'est', 'heureuse'], 'extra' => ['triste']],
+                            'es' => ['sentence' => 'Mi madre está feliz', 'correct' => ['mi', 'madre', 'está', 'feliz'], 'extra' => ['triste']],
+                            'de' => ['sentence' => 'Meine Mutter ist glücklich', 'correct' => ['meine', 'Mutter', 'ist', 'glücklich'], 'extra' => ['traurig']],
+                            'ja' => ['sentence' => '私の母は幸せです', 'correct' => ['私の', '母', 'は', '幸せ', 'です'], 'extra' => ['悲しい']],
+                            'ko' => ['sentence' => '제 어머니는 행복합니다', 'correct' => ['제', '어머니는', '행복합니다'], 'extra' => ['슬픈']],
+                        ],
+                    ],
+                ],
+            ),
+
+            $builder->lesson('Lesson 2: Tired & Sick', 2,
+                pictures: [['tr' => 'Kardeş', 'img' => 'brother'], ['tr' => 'Doktor', 'img' => 'doctor']],
+                plain: [['tr' => 'Yorgun'], ['tr' => 'Hasta']],
+                phrases: [
+                    'a' => [
+                        'words' => ['ben', 'yorgunum'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'I am tired', 'correct' => ['I am', 'tired'], 'extra' => ['sick', 'brother']],
+                            'fr' => ['sentence' => 'Je suis fatigué', 'correct' => ['je suis', 'fatigué'], 'extra' => ['malade', 'frère']],
+                            'es' => ['sentence' => 'Estoy cansado', 'correct' => ['estoy', 'cansado'], 'extra' => ['enfermo', 'hermano']],
+                            'de' => ['sentence' => 'Ich bin müde', 'correct' => ['ich bin', 'müde'], 'extra' => ['krank', 'Bruder']],
+                            'ja' => ['sentence' => '私は疲れています', 'correct' => ['私', 'は', '疲れて', 'います'], 'extra' => ['病気', '兄弟']],
+                            'ko' => ['sentence' => '저는 피곤합니다', 'correct' => ['저는', '피곤합니다'], 'extra' => ['아픈', '형제']],
+                        ],
+                    ],
+                    'b' => [
+                        'words' => ['kardeşim', 'hasta'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'My brother is sick', 'correct' => ['my', 'brother', 'is', 'sick'], 'extra' => ['tired', 'doctor']],
+                            'fr' => ['sentence' => 'Mon frère est malade', 'correct' => ['mon', 'frère', 'est', 'malade'], 'extra' => ['fatigué', 'médecin']],
+                            'es' => ['sentence' => 'Mi hermano está enfermo', 'correct' => ['mi', 'hermano', 'está', 'enfermo'], 'extra' => ['cansado', 'médico']],
+                            'de' => ['sentence' => 'Mein Bruder ist krank', 'correct' => ['mein', 'Bruder', 'ist', 'krank'], 'extra' => ['müde', 'Arzt']],
+                            'ja' => ['sentence' => '私の兄弟は病気です', 'correct' => ['私の', '兄弟', 'は', '病気', 'です'], 'extra' => ['疲れて', '医者']],
+                            'ko' => ['sentence' => '제 형제는 아픕니다', 'correct' => ['제', '형제는', '아픕니다'], 'extra' => ['피곤한', '의사']],
+                        ],
+                    ],
+                    'c' => [
+                        'words' => ['doktor', 've', 'kardeşim'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'The doctor and my brother', 'correct' => ['the', 'doctor', 'and', 'my', 'brother'], 'extra' => ['sick']],
+                            'fr' => ['sentence' => 'Le médecin et mon frère', 'correct' => ['le', 'médecin', 'et', 'mon', 'frère'], 'extra' => ['malade']],
+                            'es' => ['sentence' => 'El médico y mi hermano', 'correct' => ['el', 'médico', 'y', 'mi', 'hermano'], 'extra' => ['enfermo']],
+                            'de' => ['sentence' => 'Der Arzt und mein Bruder', 'correct' => ['der', 'Arzt', 'und', 'mein', 'Bruder'], 'extra' => ['krank']],
+                            'ja' => ['sentence' => '医者と私の兄弟', 'correct' => ['医者', 'と', '私の', '兄弟'], 'extra' => ['病気']],
+                            'ko' => ['sentence' => '의사와 제 형제', 'correct' => ['의사와', '제', '형제'], 'extra' => ['아픈']],
+                        ],
+                    ],
+                ],
+            ),
+
+            $builder->lesson('Lesson 3: Glad & Calm', 3,
+                pictures: [['tr' => 'Kız kardeş', 'img' => 'sister'], ['tr' => 'Arkadaş', 'img' => 'friend']],
+                plain: [['tr' => 'Memnun'], ['tr' => 'Sakin']],
+                phrases: [
+                    'a' => [
+                        'words' => ['ben', 'memnunum'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'I am glad', 'correct' => ['I am', 'glad'], 'extra' => ['calm', 'sister']],
+                            'fr' => ['sentence' => 'Je suis content', 'correct' => ['je suis', 'content'], 'extra' => ['calme', 'soeur']],
+                            'es' => ['sentence' => 'Estoy contento', 'correct' => ['estoy', 'contento'], 'extra' => ['tranquilo', 'hermana']],
+                            'de' => ['sentence' => 'Ich bin froh', 'correct' => ['ich bin', 'froh'], 'extra' => ['ruhig', 'Schwester']],
+                            'ja' => ['sentence' => '私は嬉しいです', 'correct' => ['私', 'は', '嬉しい', 'です'], 'extra' => ['落ち着いて', '姉妹']],
+                            'ko' => ['sentence' => '저는 기쁩니다', 'correct' => ['저는', '기쁩니다'], 'extra' => ['차분한', '자매']],
+                        ],
+                    ],
+                    'b' => [
+                        'words' => ['kız kardeşim', 'sakin'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'My sister is calm', 'correct' => ['my', 'sister', 'is', 'calm'], 'extra' => ['glad', 'friend']],
+                            'fr' => ['sentence' => 'Ma soeur est calme', 'correct' => ['ma', 'soeur', 'est', 'calme'], 'extra' => ['content', 'ami']],
+                            'es' => ['sentence' => 'Mi hermana está tranquila', 'correct' => ['mi', 'hermana', 'está', 'tranquila'], 'extra' => ['contento', 'amigo']],
+                            'de' => ['sentence' => 'Meine Schwester ist ruhig', 'correct' => ['meine', 'Schwester', 'ist', 'ruhig'], 'extra' => ['froh', 'Freund']],
+                            'ja' => ['sentence' => '私の姉妹は落ち着いています', 'correct' => ['私の', '姉妹', 'は', '落ち着いて', 'います'], 'extra' => ['嬉しい', '友達']],
+                            'ko' => ['sentence' => '제 자매는 차분합니다', 'correct' => ['제', '자매는', '차분합니다'], 'extra' => ['기쁜', '친구']],
+                        ],
+                    ],
+                    'c' => [
+                        'words' => ['arkadaşım', 'memnun'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'My friend is glad', 'correct' => ['my', 'friend', 'is', 'glad'], 'extra' => ['calm']],
+                            'fr' => ['sentence' => 'Mon ami est content', 'correct' => ['mon', 'ami', 'est', 'content'], 'extra' => ['calme']],
+                            'es' => ['sentence' => 'Mi amigo está contento', 'correct' => ['mi', 'amigo', 'está', 'contento'], 'extra' => ['tranquilo']],
+                            'de' => ['sentence' => 'Mein Freund ist froh', 'correct' => ['mein', 'Freund', 'ist', 'froh'], 'extra' => ['ruhig']],
+                            'ja' => ['sentence' => '私の友達は嬉しいです', 'correct' => ['私の', '友達', 'は', '嬉しい', 'です'], 'extra' => ['落ち着いて']],
+                            'ko' => ['sentence' => '제 친구는 기쁩니다', 'correct' => ['제', '친구는', '기쁩니다'], 'extra' => ['차분한']],
+                        ],
+                    ],
+                ],
+            ),
+
+            $builder->lesson('Lesson 4: A Little & Because', 4,
+                pictures: [['tr' => 'Anne', 'img' => 'mother'], ['tr' => 'Ev', 'img' => 'house']],
+                plain: [['tr' => 'Biraz'], ['tr' => 'Çünkü']],
+                phrases: [
+                    'a' => [
+                        'words' => ['ben', 'biraz', 'yorgunum'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'I am a little tired', 'correct' => ['I am', 'a little', 'tired'], 'extra' => ['because', 'mother']],
+                            'fr' => ['sentence' => 'Je suis un peu fatigué', 'correct' => ['je suis', 'un peu', 'fatigué'], 'extra' => ['parce que', 'mère']],
+                            'es' => ['sentence' => 'Estoy un poco cansado', 'correct' => ['estoy', 'un poco', 'cansado'], 'extra' => ['porque', 'madre']],
+                            'de' => ['sentence' => 'Ich bin ein bisschen müde', 'correct' => ['ich bin', 'ein bisschen', 'müde'], 'extra' => ['weil', 'Mutter']],
+                            'ja' => ['sentence' => '私は少し疲れています', 'correct' => ['私', 'は', '少し', '疲れて', 'います'], 'extra' => ['なぜなら', '母']],
+                            'ko' => ['sentence' => '저는 조금 피곤합니다', 'correct' => ['저는', '조금', '피곤합니다'], 'extra' => ['왜냐하면', '어머니']],
+                        ],
+                    ],
+                    'b' => [
+                        'words' => ['mutlu', 'çünkü', 'annem'], 'blank' => 0,
+                        'means' => [
+                            'en' => ['sentence' => 'Happy because my mother', 'correct' => ['happy', 'because', 'my', 'mother'], 'extra' => ['a little']],
+                            'fr' => ['sentence' => 'Heureux parce que ma mère', 'correct' => ['heureux', 'parce que', 'ma', 'mère'], 'extra' => ['un peu']],
+                            'es' => ['sentence' => 'Feliz porque mi madre', 'correct' => ['feliz', 'porque', 'mi', 'madre'], 'extra' => ['un poco']],
+                            'de' => ['sentence' => 'Glücklich weil meine Mutter', 'correct' => ['glücklich', 'weil', 'meine', 'Mutter'], 'extra' => ['ein bisschen']],
+                            'ja' => ['sentence' => '幸せなぜなら私の母', 'correct' => ['幸せ', 'なぜなら', '私の', '母'], 'extra' => ['少し']],
+                            'ko' => ['sentence' => '행복한 왜냐하면 제 어머니', 'correct' => ['행복한', '왜냐하면', '제', '어머니'], 'extra' => ['조금']],
+                        ],
+                    ],
+                    'c' => [
+                        // evde = ev + -de, the locative. One tile, one entry.
+                        'words' => ['evde', 'biraz', 'üzgün'], 'blank' => 0,
+                        'means' => [
+                            'en' => ['sentence' => 'A little sad in the house', 'correct' => ['a little', 'sad', 'in', 'the', 'house'], 'extra' => ['because']],
+                            'fr' => ['sentence' => 'Un peu triste à la maison', 'correct' => ['un peu', 'triste', 'à la', 'maison'], 'extra' => ['parce que']],
+                            'es' => ['sentence' => 'Un poco triste en la casa', 'correct' => ['un poco', 'triste', 'en', 'la', 'casa'], 'extra' => ['porque']],
+                            'de' => ['sentence' => 'Ein bisschen traurig im Haus', 'correct' => ['ein bisschen', 'traurig', 'im', 'Haus'], 'extra' => ['weil']],
+                            'ja' => ['sentence' => '家で少し悲しい', 'correct' => ['家', 'で', '少し', '悲しい'], 'extra' => ['なぜなら']],
+                            'ko' => ['sentence' => '집에서 조금 슬픈', 'correct' => ['집에서', '조금', '슬픈'], 'extra' => ['왜냐하면']],
+                        ],
+                    ],
+                ],
+            ),
+
+            $builder->lesson('Lesson 5: I Feel & Today', 5,
+                pictures: [['tr' => 'Arkadaş', 'img' => 'friend'], ['tr' => 'Kız kardeş', 'img' => 'sister']],
+                plain: [['tr' => 'Hissediyorum'], ['tr' => 'Bugün']],
+                phrases: [
+                    'a' => [
+                        // Turkish is verb-final, so hissediyorum closes the sentence.
+                        'words' => ['bugün', 'mutlu', 'hissediyorum'], 'blank' => 2,
+                        'means' => [
+                            'en' => ['sentence' => 'I feel happy today', 'correct' => ['I feel', 'happy', 'today'], 'extra' => ['sad', 'friend']],
+                            'fr' => ['sentence' => "Je me sens heureux aujourd'hui", 'correct' => ['je me sens', 'heureux', "aujourd'hui"], 'extra' => ['triste', 'ami']],
+                            'es' => ['sentence' => 'Hoy me siento feliz', 'correct' => ['hoy', 'me siento', 'feliz'], 'extra' => ['triste', 'amigo']],
+                            'de' => ['sentence' => 'Ich fühle mich heute glücklich', 'correct' => ['ich fühle mich', 'heute', 'glücklich'], 'extra' => ['traurig', 'Freund']],
+                            'ja' => ['sentence' => '今日は幸せに感じます', 'correct' => ['今日', 'は', '幸せ', 'に', '感じます'], 'extra' => ['悲しい', '友達']],
+                            'ko' => ['sentence' => '오늘 행복하게 느낍니다', 'correct' => ['오늘', '행복하게', '느낍니다'], 'extra' => ['슬픈', '친구']],
+                        ],
+                    ],
+                    'b' => [
+                        'words' => ['kız kardeşim', 'bugün', 'memnun'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'My sister is glad today', 'correct' => ['my', 'sister', 'is', 'glad', 'today'], 'extra' => ['I feel']],
+                            'fr' => ['sentence' => "Ma soeur est contente aujourd'hui", 'correct' => ['ma', 'soeur', 'est', 'contente', "aujourd'hui"], 'extra' => ['je me sens']],
+                            'es' => ['sentence' => 'Mi hermana está contenta hoy', 'correct' => ['mi', 'hermana', 'está', 'contenta', 'hoy'], 'extra' => ['me siento']],
+                            'de' => ['sentence' => 'Meine Schwester ist heute froh', 'correct' => ['meine', 'Schwester', 'ist', 'heute', 'froh'], 'extra' => ['ich fühle mich']],
+                            'ja' => ['sentence' => '私の姉妹は今日嬉しいです', 'correct' => ['私の', '姉妹', 'は', '今日', '嬉しい', 'です'], 'extra' => ['感じます']],
+                            'ko' => ['sentence' => '제 자매는 오늘 기쁩니다', 'correct' => ['제', '자매는', '오늘', '기쁩니다'], 'extra' => ['느낍니다']],
+                        ],
+                    ],
+                    'c' => [
+                        // arkadaşımla = arkadaş + -ım + -la, "with my friend".
+                        'words' => ['arkadaşımla', 'sakin', 'hissediyorum'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'I feel calm with my friend', 'correct' => ['I feel', 'calm', 'with', 'my', 'friend'], 'extra' => ['today']],
+                            'fr' => ['sentence' => 'Je me sens calme avec mon ami', 'correct' => ['je me sens', 'calme', 'avec', 'mon', 'ami'], 'extra' => ["aujourd'hui"]],
+                            'es' => ['sentence' => 'Me siento tranquilo con mi amigo', 'correct' => ['me siento', 'tranquilo', 'con', 'mi', 'amigo'], 'extra' => ['hoy']],
+                            'de' => ['sentence' => 'Ich fühle mich ruhig mit meinem Freund', 'correct' => ['ich fühle mich', 'ruhig', 'mit', 'meinem', 'Freund'], 'extra' => ['heute']],
+                            'ja' => ['sentence' => '私は友達と落ち着いて感じます', 'correct' => ['私', 'は', '友達', 'と', '落ち着いて', '感じます'], 'extra' => ['今日']],
+                            'ko' => ['sentence' => '저는 친구와 차분하게 느낍니다', 'correct' => ['저는', '친구와', '차분하게', '느낍니다'], 'extra' => ['오늘']],
+                        ],
+                    ],
+                ],
+            ),
+        ];
+    }
+}

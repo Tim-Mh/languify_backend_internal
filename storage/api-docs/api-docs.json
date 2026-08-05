@@ -1,0 +1,2618 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Languify API",
+        "description": "REST API for the Languify language-learning app: auth & onboarding, course content, lesson progress & gamification (XP, streak, badges, chests, daily quests), avatar, profile, multi-course enrollment, trivia, weekly leagues, Family plan sharing, admin-managed ads, and the gem/heart/subscription shop.",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "/",
+            "description": "API server (paths are relative to this host)"
+        }
+    ],
+    "paths": {
+        "/api/ads": {
+            "get": {
+                "tags": [
+                    "Ads"
+                ],
+                "summary": "Get the active admin-managed ad creative pool",
+                "description": "The frontend picks one at random for each ad placement (sidebar banner, lesson-complete interstitial). Empty until an admin uploads at least one image.",
+                "operationId": "b61a9d1c995d736e8c630d1341e4c9f9",
+                "responses": {
+                    "200": {
+                        "description": "Active ad images"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/auth/register": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Register a new account",
+                "description": "Creates the user (unverified) and emails a 6-digit OTP. No auth cookie is set until /auth/verify-otp succeeds.",
+                "operationId": "c7bb21a0d87049e161b8e4c9b0d909f2",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "fullName": {
+                                        "type": "string",
+                                        "example": "Mark Test",
+                                        "nullable": true
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "mark@example.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "secret123",
+                                        "minLength": 6
+                                    },
+                                    "timezone": {
+                                        "description": "IANA timezone, e.g. Asia/Karachi. Drives streak/daily-reset day boundaries.",
+                                        "type": "string",
+                                        "example": "Asia/Karachi",
+                                        "nullable": true
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Account created, OTP emailed"
+                    },
+                    "422": {
+                        "description": "Validation error (e.g. email already taken)"
+                    }
+                }
+            }
+        },
+        "/api/auth/verify-otp": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Verify the registration OTP",
+                "description": "On success, marks the account verified and sets the auth cookie, same as /auth/login.",
+                "operationId": "abcb5741589707b15c7ecac7a67c13aa",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "otp"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "mark@example.com"
+                                    },
+                                    "otp": {
+                                        "type": "string",
+                                        "example": "482913"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Email verified, logged in"
+                    },
+                    "422": {
+                        "description": "Invalid or expired code"
+                    }
+                }
+            }
+        },
+        "/api/auth/resend-otp": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Resend the registration OTP",
+                "operationId": "97c388571700f6d6d5ad133cd096195b",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "mark@example.com"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "A new code was emailed"
+                    },
+                    "422": {
+                        "description": "Unknown email or already verified"
+                    }
+                }
+            }
+        },
+        "/api/auth/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Log in with email and password",
+                "description": "Sets an httpOnly session cookie carrying a Sanctum token on success.",
+                "operationId": "dd51a484b7fa0f97c7680fdbde14cf5f",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "mark@example.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "secret123"
+                                    },
+                                    "timezone": {
+                                        "description": "IANA timezone, e.g. Asia/Karachi. Refreshed on every login in case the user has traveled.",
+                                        "type": "string",
+                                        "example": "Asia/Karachi",
+                                        "nullable": true
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Login successful"
+                    },
+                    "401": {
+                        "description": "Invalid email or password"
+                    }
+                }
+            }
+        },
+        "/api/auth/forgot-password": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Request a password reset OTP",
+                "description": "Always returns a generic success message, whether or not the email exists, to avoid leaking which emails are registered.",
+                "operationId": "f51c7074de53475eab87e336cc4e06a6",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "mark@example.com"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "If the email exists, a reset code was sent"
+                    }
+                }
+            }
+        },
+        "/api/auth/reset-password": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Reset the password using the emailed OTP",
+                "operationId": "96e44e1ebcd811418fd95ee4c56162f0",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "otp",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "mark@example.com"
+                                    },
+                                    "otp": {
+                                        "type": "string",
+                                        "example": "482913"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "newSecret123",
+                                        "minLength": 6
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Password reset"
+                    },
+                    "422": {
+                        "description": "Invalid or expired code"
+                    }
+                }
+            }
+        },
+        "/api/auth/logout": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Log out (revokes the current token and clears the cookie)",
+                "operationId": "df9bdc6c7a6d9f20b983526b2ec0f698",
+                "responses": {
+                    "200": {
+                        "description": "Logged out successfully"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/auth/me": {
+            "get": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Get the currently authenticated user",
+                "operationId": "b5de204f5e452ef51327c691aa99e77c",
+                "responses": {
+                    "200": {
+                        "description": "Current user"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/avatar": {
+            "get": {
+                "tags": [
+                    "Avatar"
+                ],
+                "summary": "Get the user's DiceBear avatar configuration",
+                "description": "Returns all-null fields if the user has never saved an avatar (the frontend applies its own defaults in that case).",
+                "operationId": "98ab046c1b11eee4699057147ef1acb7",
+                "responses": {
+                    "200": {
+                        "description": "Avatar configuration"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Avatar"
+                ],
+                "summary": "Save the user's DiceBear avatar configuration",
+                "description": "Each submitted value must be either the free default for that attribute or something the user has already unlocked with gems.",
+                "operationId": "0e55ed63c0cc90f65af6f4fac3bf0c86",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "skinColor": {
+                                        "type": "string",
+                                        "example": "f2d3b1",
+                                        "nullable": true
+                                    },
+                                    "hair": {
+                                        "type": "string",
+                                        "example": "short01",
+                                        "nullable": true
+                                    },
+                                    "hairColor": {
+                                        "type": "string",
+                                        "example": "2c1b18",
+                                        "nullable": true
+                                    },
+                                    "eyes": {
+                                        "type": "string",
+                                        "example": "variant01",
+                                        "nullable": true
+                                    },
+                                    "eyebrows": {
+                                        "type": "string",
+                                        "example": "variant02",
+                                        "nullable": true
+                                    },
+                                    "mouth": {
+                                        "type": "string",
+                                        "example": "variant03",
+                                        "nullable": true
+                                    },
+                                    "backgroundColor": {
+                                        "type": "string",
+                                        "example": "b6e3f4",
+                                        "nullable": true
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Avatar saved"
+                    },
+                    "422": {
+                        "description": "One or more values are not unlocked yet"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/avatar/options": {
+            "get": {
+                "tags": [
+                    "Avatar"
+                ],
+                "summary": "Get the full gem-purchasable avatar option catalog, grouped by attribute",
+                "description": "Every option is either the free default for its attribute or something the user must buy with gems before they can equip it.",
+                "operationId": "9b441c41d49fd957dde75a7bb1b196a8",
+                "responses": {
+                    "200": {
+                        "description": "Option catalog"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/avatar/unlock": {
+            "post": {
+                "tags": [
+                    "Avatar"
+                ],
+                "summary": "Spend gems to permanently unlock an avatar option",
+                "description": "Pure wallet transaction — no Stripe involved. Once unlocked, an option stays unlocked forever and can be freely re-equipped at any time via PUT /api/avatar.",
+                "operationId": "dbc3aa1fee394eba43c2683e68e79eb2",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "attributeType",
+                                    "value"
+                                ],
+                                "properties": {
+                                    "attributeType": {
+                                        "type": "string",
+                                        "example": "hair"
+                                    },
+                                    "value": {
+                                        "type": "string",
+                                        "example": "short01"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Option unlocked"
+                    },
+                    "422": {
+                        "description": "Unknown option, already unlocked, or not enough gems"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/chests/status": {
+            "get": {
+                "tags": [
+                    "Chests"
+                ],
+                "summary": "Get daily and streak chest availability",
+                "operationId": "48de056f18ecb5d6f63f41cfa8292794",
+                "responses": {
+                    "200": {
+                        "description": "Chest availability",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "daily": {
+                                            "properties": {
+                                                "available": {
+                                                    "type": "boolean"
+                                                },
+                                                "cooldownSeconds": {
+                                                    "type": "integer",
+                                                    "example": 0
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "streak": {
+                                            "properties": {
+                                                "unclaimedMilestone": {
+                                                    "type": "object",
+                                                    "nullable": true
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/chests/daily/claim": {
+            "post": {
+                "tags": [
+                    "Chests"
+                ],
+                "summary": "Claim the daily chest",
+                "description": "Unlocks 24 hours after the previous claim (no XP requirement). Grants a random 10-20 gems.",
+                "operationId": "b8fd23138bd5e69ccdc62a1382681f77",
+                "responses": {
+                    "200": {
+                        "description": "Reward granted"
+                    },
+                    "422": {
+                        "description": "Still on cooldown"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/chests/streak/claim": {
+            "post": {
+                "tags": [
+                    "Chests"
+                ],
+                "summary": "Claim the earliest unclaimed streak milestone chest",
+                "description": "Milestones: 3/7/30/100/365 days, each claimable once.",
+                "operationId": "d9c79881708045de6a2debacd8f9be3e",
+                "responses": {
+                    "200": {
+                        "description": "Reward granted"
+                    },
+                    "422": {
+                        "description": "No unclaimed milestone available"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/chests/unit-bonus/claim": {
+            "post": {
+                "tags": [
+                    "Chests"
+                ],
+                "summary": "Claim a unit's bonus chest",
+                "description": "Available once the unit's first lesson is completed. Grants random gems/XP/hearts.",
+                "operationId": "484c56cdbc2934da8d29bc994c5be05d",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "unitId"
+                                ],
+                                "properties": {
+                                    "unitId": {
+                                        "type": "integer",
+                                        "example": 44
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Reward granted"
+                    },
+                    "403": {
+                        "description": "Unit does not belong to the user's selected course"
+                    },
+                    "422": {
+                        "description": "Chest not available (already claimed or first lesson not done)"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/contact": {
+            "post": {
+                "tags": [
+                    "Pages"
+                ],
+                "summary": "Submit a contact form message",
+                "description": "Public — no authentication required. Stores the message for admin review.",
+                "operationId": "091364660aac946c17e7253400cb3f89",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "email",
+                                    "message"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Jane Doe"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "jane@example.com"
+                                    },
+                                    "message": {
+                                        "type": "string",
+                                        "example": "I have a question about billing."
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Message received"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "429": {
+                        "description": "Too many requests"
+                    }
+                }
+            }
+        },
+        "/api/languages": {
+            "get": {
+                "tags": [
+                    "Courses"
+                ],
+                "summary": "List all active languages available for native/learning selection",
+                "operationId": "de25b59e3be792dee34129f5a21d1fb6",
+                "responses": {
+                    "200": {
+                        "description": "Languages list"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/course/select": {
+            "post": {
+                "tags": [
+                    "Courses"
+                ],
+                "summary": "Select (or switch to) a native/learning language pair",
+                "description": "Also upserts a user_courses enrollment row for the learning language, marking it active and deactivating any other course.",
+                "operationId": "7905d52c4b6a27ab7d892b417511c01a",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nativeLanguageId",
+                                    "learningLanguageId"
+                                ],
+                                "properties": {
+                                    "nativeLanguageId": {
+                                        "type": "integer",
+                                        "example": 3
+                                    },
+                                    "learningLanguageId": {
+                                        "type": "integer",
+                                        "example": 7
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Course selected successfully"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/course/proficiency": {
+            "post": {
+                "tags": [
+                    "Courses"
+                ],
+                "summary": "Save the user's self-reported proficiency level",
+                "operationId": "08fa89c226b8214fea49e57412a5d057",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "proficiencyLevel"
+                                ],
+                                "properties": {
+                                    "proficiencyLevel": {
+                                        "type": "string",
+                                        "enum": [
+                                            "beginner",
+                                            "some_knowledge",
+                                            "conversational"
+                                        ]
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Proficiency level saved"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/course/streak-goal": {
+            "post": {
+                "tags": [
+                    "Courses"
+                ],
+                "summary": "Save the user's daily streak goal",
+                "operationId": "dddda9c958846d9a3a606fe5518eaee0",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "streakGoalDays"
+                                ],
+                                "properties": {
+                                    "streakGoalDays": {
+                                        "type": "integer",
+                                        "enum": [
+                                            10,
+                                            20,
+                                            30,
+                                            40,
+                                            50
+                                        ]
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Streak goal saved"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/course/chapters": {
+            "get": {
+                "tags": [
+                    "Courses"
+                ],
+                "summary": "List chapters for the user's currently selected learning language",
+                "operationId": "c0bc8c01928ede6dcb1ce34e218e1eaf",
+                "responses": {
+                    "200": {
+                        "description": "Chapters list"
+                    },
+                    "422": {
+                        "description": "No course selected yet"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/course/alphabet": {
+            "get": {
+                "tags": [
+                    "Courses"
+                ],
+                "summary": "List the alphabet/character set for the user's currently selected learning language",
+                "description": "Purely a reference screen (tap a character to hear it) — not gated by any chapter completion and does not affect chapter locking.",
+                "operationId": "140b5296d5576dcff447f584cdd4965f",
+                "responses": {
+                    "200": {
+                        "description": "Alphabet letters list"
+                    },
+                    "422": {
+                        "description": "No course selected yet"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/chapters/{chapter}/units": {
+            "get": {
+                "tags": [
+                    "Courses"
+                ],
+                "summary": "List units within a chapter",
+                "operationId": "3b42269bde74ab223eb280012db1d387",
+                "parameters": [
+                    {
+                        "name": "chapter",
+                        "in": "path",
+                        "description": "Chapter ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Units list"
+                    },
+                    "403": {
+                        "description": "Chapter does not belong to the user's selected course"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/units/{unit}/lessons": {
+            "get": {
+                "tags": [
+                    "Courses"
+                ],
+                "summary": "List lessons within a unit",
+                "operationId": "f1baa2e66c456610bffecdc6f591e49c",
+                "parameters": [
+                    {
+                        "name": "unit",
+                        "in": "path",
+                        "description": "Unit ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lessons list"
+                    },
+                    "403": {
+                        "description": "Unit does not belong to the user's selected course"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/lessons/{lesson}/exercises": {
+            "get": {
+                "tags": [
+                    "Courses"
+                ],
+                "summary": "List exercises within a lesson",
+                "description": "Each exercise's instruction text is localized into the user's native language.",
+                "operationId": "c7ec8daa3c1d9189e9213e4b1a2e67cf",
+                "parameters": [
+                    {
+                        "name": "lesson",
+                        "in": "path",
+                        "description": "Lesson ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Exercises list"
+                    },
+                    "403": {
+                        "description": "Lesson does not belong to the user's selected course"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/courses/mine": {
+            "get": {
+                "tags": [
+                    "Course Enrollment"
+                ],
+                "summary": "List every language the user has ever enrolled in",
+                "description": "Includes per-course chapter completion progress. One course is marked active at a time.",
+                "operationId": "c8a0f32b665195fc47ad41b6818b2acf",
+                "responses": {
+                    "200": {
+                        "description": "Enrolled courses"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/courses/switch": {
+            "post": {
+                "tags": [
+                    "Course Enrollment"
+                ],
+                "summary": "Switch the active course to a language the user is already enrolled in",
+                "description": "Also syncs users.learning_language_id and users.native_language_id (each course remembers its own native-language pairing) so every other endpoint, including the UI language, follows the newly active course.",
+                "operationId": "4a62cdc1b4823df40340721ddc9fdedf",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "languageId"
+                                ],
+                                "properties": {
+                                    "languageId": {
+                                        "type": "integer",
+                                        "example": 7
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Course switched successfully"
+                    },
+                    "422": {
+                        "description": "Not enrolled in that language"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/family": {
+            "get": {
+                "tags": [
+                    "Family"
+                ],
+                "summary": "Get the current user's family plan status",
+                "operationId": "6c7894fbee512c57dd89637a8b69aaaa",
+                "responses": {
+                    "200": {
+                        "description": "Family plan status (owner, member, or none)"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/family/invite": {
+            "post": {
+                "tags": [
+                    "Family"
+                ],
+                "summary": "Invite someone to join the family plan by email",
+                "operationId": "5cf62a1af386a3bccbbae12ef36beda8",
+                "responses": {
+                    "200": {
+                        "description": "Invite sent"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/family/invites/{invite}": {
+            "delete": {
+                "tags": [
+                    "Family"
+                ],
+                "summary": "Revoke a pending invite",
+                "operationId": "137149b991ac612e66ed1cc01d9d1db1",
+                "responses": {
+                    "200": {
+                        "description": "Invite revoked"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/family/members/{member}": {
+            "delete": {
+                "tags": [
+                    "Family"
+                ],
+                "summary": "Remove a member from the family plan",
+                "operationId": "ff091a0ef827d6f280d48d7a9d1be4ec",
+                "responses": {
+                    "200": {
+                        "description": "Member removed"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/family/leave": {
+            "post": {
+                "tags": [
+                    "Family"
+                ],
+                "summary": "Leave the family plan you're a member of",
+                "operationId": "4b06edb1d3c2b3e059e5a26c43585a80",
+                "responses": {
+                    "200": {
+                        "description": "Left the family plan"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/family/invite/{token}": {
+            "get": {
+                "tags": [
+                    "Family"
+                ],
+                "summary": "Look up an invite by token (public — shown before login on the accept page)",
+                "operationId": "3d0e2c329840fc1439ac27f56b7491b9",
+                "responses": {
+                    "200": {
+                        "description": "Invite details or invalid/expired status"
+                    }
+                }
+            }
+        },
+        "/api/family/invite/{token}/accept": {
+            "post": {
+                "tags": [
+                    "Family"
+                ],
+                "summary": "Accept a family plan invite",
+                "operationId": "150702fc7acb53f7c2bcefd4b103a198",
+                "responses": {
+                    "200": {
+                        "description": "Joined the family plan"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/game-state": {
+            "get": {
+                "tags": [
+                    "Game State"
+                ],
+                "summary": "Get the current user's hydrated game state",
+                "description": "Applies any pending daily-counter reset, streak-break detection, and passive heart regeneration before returning. Day boundaries use the user's own reported timezone.",
+                "operationId": "9e41db1412597023ccf443176b142725",
+                "responses": {
+                    "200": {
+                        "description": "Current game state",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "gameState": {
+                                            "properties": {
+                                                "totalXp": {
+                                                    "type": "integer",
+                                                    "example": 140
+                                                },
+                                                "todayXp": {
+                                                    "type": "integer",
+                                                    "example": 30
+                                                },
+                                                "streak": {
+                                                    "type": "integer",
+                                                    "example": 3
+                                                },
+                                                "longestStreak": {
+                                                    "type": "integer",
+                                                    "example": 5
+                                                },
+                                                "lessonsToday": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "maxLessonsInADay": {
+                                                    "type": "integer",
+                                                    "example": 4
+                                                },
+                                                "totalLessonsCompleted": {
+                                                    "type": "integer",
+                                                    "example": 12
+                                                },
+                                                "perfectLessons": {
+                                                    "type": "integer",
+                                                    "example": 5
+                                                },
+                                                "unitsCompletedCount": {
+                                                    "type": "integer",
+                                                    "example": 2
+                                                },
+                                                "gems": {
+                                                    "type": "integer",
+                                                    "example": 490
+                                                },
+                                                "hearts": {
+                                                    "type": "integer",
+                                                    "example": 4
+                                                },
+                                                "heartsRegenSecondsRemaining": {
+                                                    "type": "integer",
+                                                    "example": 420
+                                                },
+                                                "infiniteHeartsActive": {
+                                                    "type": "boolean",
+                                                    "example": false
+                                                },
+                                                "infiniteHeartsSecondsRemaining": {
+                                                    "type": "integer",
+                                                    "example": 0
+                                                },
+                                                "maxStreakFreezes": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "streakFreezesRemaining": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "earnedBadgeIds": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "example": [
+                                                        "xp-first",
+                                                        "lesson-first"
+                                                    ]
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/game-state/lose-heart": {
+            "post": {
+                "tags": [
+                    "Game State"
+                ],
+                "summary": "Lose one heart immediately",
+                "description": "Called the instant an exercise is answered incorrectly (not batched at lesson completion). Floored at 0.",
+                "operationId": "00d48a0ba69787c5dfb87a4a8e39f74a",
+                "responses": {
+                    "200": {
+                        "description": "Heart lost",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "hearts": {
+                                            "type": "integer",
+                                            "example": 3
+                                        },
+                                        "heartsRegenSecondsRemaining": {
+                                            "type": "integer",
+                                            "example": 900
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/game-state/activity": {
+            "get": {
+                "tags": [
+                    "Game State"
+                ],
+                "summary": "Get the days in a given month with at least one completed lesson",
+                "description": "Powers the Activity Calendar. Days are computed in the user's own timezone.",
+                "operationId": "919399cdf152ff72d84e7bb66ad31a92",
+                "parameters": [
+                    {
+                        "name": "year",
+                        "in": "query",
+                        "description": "e.g. 2026",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "month",
+                        "in": "query",
+                        "description": "1-12",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Active days",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "year": {
+                                            "type": "integer",
+                                            "example": 2026
+                                        },
+                                        "month": {
+                                            "type": "integer",
+                                            "example": 7
+                                        },
+                                        "activeDays": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "integer"
+                                            },
+                                            "example": [
+                                                1,
+                                                4,
+                                                5,
+                                                6,
+                                                7,
+                                                8
+                                            ]
+                                        },
+                                        "frozenDays": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "integer"
+                                            },
+                                            "example": [
+                                                3
+                                            ]
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "422": {
+                        "description": "Invalid year/month"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/league": {
+            "get": {
+                "tags": [
+                    "League"
+                ],
+                "summary": "Get the current user's league standing",
+                "description": "Global (not per-course) weekly leaderboard. Requires a course to be selected first, same gate as Trivia, even though leagues themselves aren't course-scoped.",
+                "operationId": "f6c82e7e27ee8264df4857c680e6d8db",
+                "responses": {
+                    "200": {
+                        "description": "League standing"
+                    },
+                    "422": {
+                        "description": "No course selected yet"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/lessons/{lesson}/complete": {
+            "post": {
+                "tags": [
+                    "Lesson Progress"
+                ],
+                "summary": "Record a lesson completion",
+                "description": "Awards XP (+ perfect bonus), advances the streak, detects unit completion (one-time +20 XP bonus), and checks all 14 badges — all in one DB transaction. Hearts are NOT deducted here — they are lost in real time per mistake via POST /api/game-state/lose-heart while the exercise is in progress; this endpoint just reports the current hearts value. Replaying an already-completed lesson awards 0 XP and no badges (anti-farming).",
+                "operationId": "bfb7d2048f8261518d50be9a233ea515",
+                "parameters": [
+                    {
+                        "name": "lesson",
+                        "in": "path",
+                        "description": "Lesson ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "mistakes"
+                                ],
+                                "properties": {
+                                    "mistakes": {
+                                        "type": "integer",
+                                        "example": 1,
+                                        "minimum": 0
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Completion result",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "xpAwarded": {
+                                            "type": "integer",
+                                            "example": 30
+                                        },
+                                        "unitXpAwarded": {
+                                            "type": "integer",
+                                            "example": 20
+                                        },
+                                        "newBadges": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "example": "lesson-first"
+                                                    },
+                                                    "title": {
+                                                        "type": "string",
+                                                        "example": "First Lesson"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "example": "Complete your very first lesson"
+                                                    },
+                                                    "tier": {
+                                                        "type": "string",
+                                                        "example": "BRONZE"
+                                                    },
+                                                    "reward": {
+                                                        "properties": {
+                                                            "gems": {
+                                                                "type": "integer",
+                                                                "example": 20
+                                                            },
+                                                            "xp": {
+                                                                "type": "integer",
+                                                                "example": 10
+                                                            },
+                                                            "hearts": {
+                                                                "type": "integer",
+                                                                "example": 1
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "streakMilestoneHit": {
+                                            "description": "The earliest unclaimed streak milestone, if any (claim via /api/chests/streak/claim)",
+                                            "properties": {
+                                                "days": {
+                                                    "type": "integer",
+                                                    "example": 3
+                                                },
+                                                "badgeId": {
+                                                    "type": "string",
+                                                    "example": "streak-3"
+                                                },
+                                                "gems": {
+                                                    "type": "integer",
+                                                    "example": 0
+                                                },
+                                                "reward": {
+                                                    "type": "string",
+                                                    "example": "Badge on profile"
+                                                }
+                                            },
+                                            "type": "object",
+                                            "nullable": true
+                                        },
+                                        "streak": {
+                                            "type": "integer",
+                                            "example": 1
+                                        },
+                                        "totalXp": {
+                                            "type": "integer",
+                                            "example": 75
+                                        },
+                                        "gems": {
+                                            "type": "integer",
+                                            "example": 440
+                                        },
+                                        "hearts": {
+                                            "type": "integer",
+                                            "example": 5
+                                        },
+                                        "alreadyCompletedBefore": {
+                                            "type": "boolean",
+                                            "example": false
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Lesson does not belong to the user's selected course"
+                    },
+                    "422": {
+                        "description": "No course selected, or validation error"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/pages/{slug}": {
+            "get": {
+                "tags": [
+                    "Pages"
+                ],
+                "summary": "Get a public content page (Terms, Privacy Policy, Contact Us)",
+                "description": "Public — no authentication required. Content is admin-editable HTML.",
+                "operationId": "277f0727c842cd7383cf425c757ccad8",
+                "parameters": [
+                    {
+                        "name": "slug",
+                        "in": "path",
+                        "description": "terms | privacy | contact",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Page content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "slug": {
+                                            "type": "string",
+                                            "example": "terms"
+                                        },
+                                        "title": {
+                                            "type": "string",
+                                            "example": "Terms and Conditions"
+                                        },
+                                        "content": {
+                                            "description": "HTML",
+                                            "type": "string"
+                                        },
+                                        "updatedAt": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "No page with this slug"
+                    }
+                }
+            }
+        },
+        "/api/profile": {
+            "patch": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Update the user's display name",
+                "operationId": "9b7235bb283355b576750777fbc0a703",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "fullName"
+                                ],
+                                "properties": {
+                                    "fullName": {
+                                        "type": "string",
+                                        "example": "Mark Test",
+                                        "maxLength": 255
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Profile updated"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/profile/timezone": {
+            "patch": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Sync the user's IANA timezone",
+                "description": "Called opportunistically by the frontend when the browser-detected timezone differs from what's stored, so streak/daily-reset day boundaries follow the user even if they travel mid-session.",
+                "operationId": "0c28483b94928b2a095f2bcab6467888",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "timezone"
+                                ],
+                                "properties": {
+                                    "timezone": {
+                                        "type": "string",
+                                        "example": "Asia/Karachi"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Timezone updated"
+                    },
+                    "422": {
+                        "description": "Invalid timezone"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/profile/completed-languages": {
+            "get": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "List languages the user has fully completed",
+                "description": "A language is marked complete when every chapter of that course is finished. Snapshots the lifetime XP at the moment of completion.",
+                "operationId": "885184a28f43b55480003b5beb91125d",
+                "responses": {
+                    "200": {
+                        "description": "Completed languages"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/quests/today": {
+            "get": {
+                "tags": [
+                    "Quests"
+                ],
+                "summary": "Get the current user's daily quests",
+                "description": "Assigns a random set of 3 active quests for today on first call (persists for the rest of the day), then returns each with live progress computed from the user's game state.",
+                "operationId": "542d97fd6ad04da33a413d416a1137ea",
+                "responses": {
+                    "200": {
+                        "description": "Today's quests",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "quests": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 12
+                                                    },
+                                                    "key": {
+                                                        "type": "string",
+                                                        "example": "quest-2-lessons"
+                                                    },
+                                                    "title": {
+                                                        "type": "string",
+                                                        "example": "Quick Study"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "example": "Complete 2 lessons today"
+                                                    },
+                                                    "targetCount": {
+                                                        "type": "integer",
+                                                        "example": 2
+                                                    },
+                                                    "progress": {
+                                                        "type": "integer",
+                                                        "example": 1
+                                                    },
+                                                    "gemsReward": {
+                                                        "type": "integer",
+                                                        "example": 20
+                                                    },
+                                                    "xpReward": {
+                                                        "type": "integer",
+                                                        "example": 0
+                                                    },
+                                                    "completed": {
+                                                        "type": "boolean",
+                                                        "example": false
+                                                    },
+                                                    "claimed": {
+                                                        "type": "boolean",
+                                                        "example": false
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/quests/{userDailyQuest}/claim": {
+            "post": {
+                "tags": [
+                    "Quests"
+                ],
+                "summary": "Claim the reward for a completed daily quest",
+                "operationId": "2f002191cc423dd230af85621d76c621",
+                "parameters": [
+                    {
+                        "name": "userDailyQuest",
+                        "in": "path",
+                        "description": "Today-quest assignment ID (from GET /api/quests/today)",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Reward claimed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "gems": {
+                                            "type": "integer",
+                                            "example": 20
+                                        },
+                                        "xp": {
+                                            "type": "integer",
+                                            "example": 0
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Quest assignment not found for this user"
+                    },
+                    "422": {
+                        "description": "Not completed yet, or already claimed"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/shop/catalog": {
+            "get": {
+                "tags": [
+                    "Shop"
+                ],
+                "summary": "Get the shop catalog",
+                "description": "Gem packs, gem-priced heart refill tiers, and Stripe subscription plans.",
+                "operationId": "eeee2da4fb9e5c6881ce1c6b972e2c76",
+                "responses": {
+                    "200": {
+                        "description": "Catalog"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/shop/gems/checkout": {
+            "post": {
+                "tags": [
+                    "Shop"
+                ],
+                "summary": "Start a Stripe Checkout Session to buy a gem pack",
+                "description": "Real money via Stripe test/sandbox mode. Gems are credited by the /api/stripe/webhook handler once payment completes — not by this endpoint.",
+                "operationId": "1a3ad72ef0dc28de90dd677d072d52f9",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "packKey",
+                                    "successUrl",
+                                    "cancelUrl"
+                                ],
+                                "properties": {
+                                    "packKey": {
+                                        "type": "string",
+                                        "example": "basic",
+                                        "enum": [
+                                            "basic",
+                                            "adventure",
+                                            "vault"
+                                        ]
+                                    },
+                                    "successUrl": {
+                                        "type": "string",
+                                        "format": "url"
+                                    },
+                                    "cancelUrl": {
+                                        "type": "string",
+                                        "format": "url"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Checkout URL to redirect the browser to",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "checkoutUrl": {
+                                            "type": "string",
+                                            "format": "url"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Unknown gem pack"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/shop/gems/verify": {
+            "get": {
+                "tags": [
+                    "Shop"
+                ],
+                "summary": "Verify and finalize a gem checkout on return from Stripe",
+                "description": "The Stripe webhook is the primary way gem purchases get credited, but it requires a publicly reachable URL — it can never reach a bare localhost dev server. This endpoint lets the frontend confirm payment directly with Stripe's API the moment the user lands back on the success page, so purchases complete immediately regardless of webhook delivery. Safe to call more than once — a already-completed purchase is a no-op, and payment is always independently re-confirmed with Stripe, never trusted from the client.",
+                "operationId": "789a07fdfa1450a154e12bee7c4b80f7",
+                "parameters": [
+                    {
+                        "name": "sessionId",
+                        "in": "query",
+                        "description": "Stripe Checkout Session ID",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Verification result",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "enum": [
+                                                "completed",
+                                                "already_completed",
+                                                "not_paid",
+                                                "not_found"
+                                            ]
+                                        },
+                                        "gems": {
+                                            "type": "integer",
+                                            "nullable": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "This checkout session does not belong to the current user"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/shop/hearts/refill": {
+            "post": {
+                "tags": [
+                    "Shop"
+                ],
+                "summary": "Spend gems to refill hearts",
+                "description": "Pure wallet transaction — no Stripe involved.",
+                "operationId": "f75c464ab0c0c0aad27acac4137ec870",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "tierKey"
+                                ],
+                                "properties": {
+                                    "tierKey": {
+                                        "type": "string",
+                                        "example": "one",
+                                        "enum": [
+                                            "one",
+                                            "three",
+                                            "full"
+                                        ]
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Hearts refilled"
+                    },
+                    "422": {
+                        "description": "Unknown tier, hearts already full, or not enough gems"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/shop/subscription/checkout": {
+            "post": {
+                "tags": [
+                    "Shop"
+                ],
+                "summary": "Start a Stripe Checkout Session to subscribe to a plan",
+                "description": "Real money via Stripe test/sandbox mode. The subscription is activated by the /api/stripe/webhook handler once checkout completes.",
+                "operationId": "894c86cce26a364005e48014d7d13aab",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "planKey",
+                                    "successUrl",
+                                    "cancelUrl"
+                                ],
+                                "properties": {
+                                    "planKey": {
+                                        "type": "string",
+                                        "example": "monthly",
+                                        "enum": [
+                                            "monthly",
+                                            "yearly",
+                                            "family"
+                                        ]
+                                    },
+                                    "successUrl": {
+                                        "type": "string",
+                                        "format": "url"
+                                    },
+                                    "cancelUrl": {
+                                        "type": "string",
+                                        "format": "url"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Checkout URL to redirect the browser to"
+                    },
+                    "422": {
+                        "description": "Unknown plan"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/subscription/verify": {
+            "get": {
+                "tags": [
+                    "Shop"
+                ],
+                "summary": "Verify a completed subscription checkout and activate it if paid",
+                "description": "Independently re-confirms the session with Stripe before activating — used as a synchronous fallback to the webhook on checkout return, since the webhook cannot reach localhost in local/dev.",
+                "operationId": "9a78d793d425e88ed09a37201c3da4b1",
+                "parameters": [
+                    {
+                        "name": "sessionId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Verification result"
+                    },
+                    "403": {
+                        "description": "Session belongs to a different user"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/auth/google/redirect": {
+            "get": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Start Google OAuth login",
+                "description": "Redirects the browser to Google's consent screen.",
+                "operationId": "ffe2d79d3ab652185b41f542a5ad99af",
+                "responses": {
+                    "302": {
+                        "description": "Redirect to Google"
+                    }
+                }
+            }
+        },
+        "/api/auth/google/callback": {
+            "get": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Google OAuth callback",
+                "description": "Finds or creates the user from the Google profile, sets the auth cookie, and redirects back into the SPA.",
+                "operationId": "3b931f8893f6c8f2fb185c3093213691",
+                "responses": {
+                    "302": {
+                        "description": "Redirect back to the frontend, logged in"
+                    }
+                }
+            }
+        },
+        "/api/auth/apple/redirect": {
+            "get": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Start Sign In with Apple",
+                "description": "Redirects the browser to Apple's consent screen.",
+                "operationId": "2a13f9c8534b76899e8942d3af2cf32d",
+                "responses": {
+                    "302": {
+                        "description": "Redirect to Apple"
+                    }
+                }
+            }
+        },
+        "/api/auth/apple/callback": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Sign In with Apple callback",
+                "description": "Apple posts back here (form_post response mode, not a GET redirect like Google). Finds or creates the user from the Apple profile, sets the auth cookie, and redirects back into the SPA.",
+                "operationId": "a53c782348d0c6f5c309716d3462add2",
+                "responses": {
+                    "302": {
+                        "description": "Redirect back to the frontend, logged in"
+                    }
+                }
+            }
+        },
+        "/api/stripe/webhook": {
+            "post": {
+                "tags": [
+                    "Stripe Webhook"
+                ],
+                "summary": "Stripe event receiver (called by Stripe, not the frontend)",
+                "description": "Verifies the Stripe-Signature header against STRIPE_WEBHOOK_SECRET. Handles checkout.session.completed (credits gems / activates subscriptions), customer.subscription.updated/deleted, and invoice.payment_failed.",
+                "operationId": "2ca16d2f99bc06cb8a0075bb4dbf33a6",
+                "requestBody": {
+                    "description": "Raw Stripe event payload",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Event processed"
+                    },
+                    "400": {
+                        "description": "Invalid or unverifiable signature"
+                    }
+                }
+            }
+        },
+        "/api/subscription/status": {
+            "get": {
+                "tags": [
+                    "Subscription"
+                ],
+                "summary": "Get the user's current subscription status",
+                "operationId": "c95edadafd64a0687b0f0a1c6a579707",
+                "responses": {
+                    "200": {
+                        "description": "Current subscription, or null if none active",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "subscription": {
+                                            "properties": {
+                                                "planKey": {
+                                                    "type": "string",
+                                                    "example": "monthly"
+                                                },
+                                                "status": {
+                                                    "type": "string",
+                                                    "example": "active"
+                                                },
+                                                "currentPeriodEnd": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "nullable": true
+                                                },
+                                                "isFamilyMember": {
+                                                    "type": "boolean"
+                                                },
+                                                "familyOwnerName": {
+                                                    "type": "string",
+                                                    "nullable": true
+                                                }
+                                            },
+                                            "type": "object",
+                                            "nullable": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/trivia/topics": {
+            "get": {
+                "tags": [
+                    "Trivia"
+                ],
+                "summary": "List trivia topics for the user's current learning language",
+                "description": "Always browsable once a course is selected — playing a topic (questions/check/submit) is what's actually locked until Chapter 2 is complete.",
+                "operationId": "2b3c0ce8d571465eb51c2dcdc7ef29da",
+                "responses": {
+                    "200": {
+                        "description": "Topics list"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/trivia/topics/{topicKey}/questions": {
+            "get": {
+                "tags": [
+                    "Trivia"
+                ],
+                "summary": "Get a topic's questions",
+                "description": "The correct answer index is intentionally never included in the response — use POST .../check for live feedback, grading happens authoritatively in POST .../submit.",
+                "operationId": "98294b4a69499aa2dcc6be0c46256029",
+                "parameters": [
+                    {
+                        "name": "topicKey",
+                        "in": "path",
+                        "description": "Topic key (e.g. \"science\")",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Questions (without answers)"
+                    },
+                    "403": {
+                        "description": "Trivia is locked until Chapter 2 is complete"
+                    },
+                    "404": {
+                        "description": "No such topic for this language"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/trivia/topics/{topicKey}/questions/{question}/check": {
+            "post": {
+                "tags": [
+                    "Trivia"
+                ],
+                "summary": "Check a single answer, for immediate right/wrong feedback during play",
+                "description": "One-shot per question (subsequent calls for the same question return 409) so a client cannot brute-force the answer key. Never trusted for reward computation — POST .../submit independently re-grades everything from the database.",
+                "operationId": "eea4fd6cc3e765f8983445a089da4cdc",
+                "parameters": [
+                    {
+                        "name": "topicKey",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "question",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "selectedIndex"
+                                ],
+                                "properties": {
+                                    "selectedIndex": {
+                                        "type": "integer",
+                                        "example": 1
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Whether the selected option was correct"
+                    },
+                    "403": {
+                        "description": "Trivia is locked until Chapter 2 is complete"
+                    },
+                    "404": {
+                        "description": "No such topic/question for this language"
+                    },
+                    "409": {
+                        "description": "This question has already been checked"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/trivia/topics/{topicKey}/submit": {
+            "post": {
+                "tags": [
+                    "Trivia"
+                ],
+                "summary": "Submit answers for grading",
+                "description": "Grades server-side from scratch (never trusts prior /check calls). Reward tiers: 100% correct grants 5 minutes of app-wide infinite hearts (every time, even on replays); 80-99% grants a gems/xp bonus (first completion only); below 80% gets only the base per-correct reward (first completion only). Replays are always graded/logged but currency rewards are zero after the first completion.",
+                "operationId": "88888a4e618fd4f08a7968d5db7a6775",
+                "parameters": [
+                    {
+                        "name": "topicKey",
+                        "in": "path",
+                        "description": "Topic key (e.g. \"science\")",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "answers"
+                                ],
+                                "properties": {
+                                    "answers": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "questionId": {
+                                                    "type": "integer",
+                                                    "example": 16
+                                                },
+                                                "selectedIndex": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Grading result",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "correctCount": {
+                                            "type": "integer",
+                                            "example": 10
+                                        },
+                                        "totalQuestions": {
+                                            "type": "integer",
+                                            "example": 12
+                                        },
+                                        "gemsAwarded": {
+                                            "type": "integer",
+                                            "example": 40
+                                        },
+                                        "xpAwarded": {
+                                            "type": "integer",
+                                            "example": 80
+                                        },
+                                        "alreadyCompletedBefore": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "infiniteHeartsGranted": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "infiniteHeartsSecondsRemaining": {
+                                            "type": "integer",
+                                            "example": 0
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Trivia is locked until Chapter 2 is complete"
+                    },
+                    "404": {
+                        "description": "No such topic for this language"
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "cookieAuth": {
+                "type": "apiKey",
+                "description": "Session cookie set on login/register. Carries a Sanctum token that the AuthenticateFromCookie middleware bridges into the Authorization header server-side.",
+                "name": "access_token",
+                "in": "cookie"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Auth",
+            "description": "Registration, login, OTP verification, password reset"
+        },
+        {
+            "name": "Courses",
+            "description": "Language/onboarding selection and course content (chapters/units/lessons/exercises)"
+        },
+        {
+            "name": "Course Enrollment",
+            "description": "Multi-course support: list and switch between enrolled languages"
+        },
+        {
+            "name": "Lesson Progress",
+            "description": "Recording lesson completions (XP, streak, badges, unit bonuses)"
+        },
+        {
+            "name": "Game State",
+            "description": "Hydrated XP/streak/gems/hearts/badges snapshot"
+        },
+        {
+            "name": "Chests",
+            "description": "Daily/streak/unit-bonus chest claims and streak freeze"
+        },
+        {
+            "name": "Avatar",
+            "description": "DiceBear avatar configuration"
+        },
+        {
+            "name": "Profile",
+            "description": "Display name and completed-languages history"
+        },
+        {
+            "name": "Trivia",
+            "description": "Trivia topics, questions, and scored submissions"
+        },
+        {
+            "name": "Shop",
+            "description": "Gem packs, heart refills, and subscription plans (Stripe Checkout)"
+        },
+        {
+            "name": "Subscription",
+            "description": "Current subscription status"
+        },
+        {
+            "name": "Stripe Webhook",
+            "description": "Stripe event receiver (not called by the frontend)"
+        },
+        {
+            "name": "Family",
+            "description": "Family plan sharing: invite/accept/remove/leave, up to 5 accounts on one owner's subscription"
+        },
+        {
+            "name": "League",
+            "description": "Weekly league cohort standings and promotion/demotion status"
+        },
+        {
+            "name": "Quests",
+            "description": "Adaptive daily quests: today's 3 assignments and reward claiming"
+        },
+        {
+            "name": "Ads",
+            "description": "Admin-managed ad creative pool for the sidebar banner and lesson-complete interstitial"
+        },
+        {
+            "name": "Pages",
+            "description": "Public content pages (Terms, Privacy) — no auth required"
+        }
+    ]
+}
