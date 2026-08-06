@@ -68,7 +68,7 @@ class ExpoChannel
             return;
         }
 
-        // Quiet hours, the daily cap, and the learner's own category toggles.
+        // The daily cap and the learner's own category toggles.
         // Checked here rather than at each call site so a notification cannot
         // opt out of them by forgetting to ask — and last, because the check
         // counts the send, and counting one that never went out would silently

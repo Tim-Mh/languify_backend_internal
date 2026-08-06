@@ -42,8 +42,7 @@ class SendDailyNotifications extends Command
 
     /**
      * A learner with a streak worth protecting gets the reminder later and
-     * closer to the deadline instead — 20:00 is the last daytime slot before
-     * quiet hours start at 22:00, and "your streak dies at midnight" lands
+     * closer to the deadline instead — "your streak dies at midnight" lands
      * harder at 20:00 than at 18:00. One or the other fires, never both:
      * both share last_lesson_reminder_date.
      */
@@ -162,8 +161,8 @@ class SendDailyNotifications extends Command
         $state = $progress->hydrate($user);
 
         // A signed-up account that never picked a language, nudged exactly
-        // once. Any hour of the day: PushPolicy's quiet hours already keep it
-        // out of the night, and the sooner it lands the likelier they finish.
+        // once, at whatever hour the threshold passes — the sooner it lands
+        // the likelier they finish.
         if (
             $state->setup_nudge_sent_at === null
             && $this->setupIncomplete($user)
