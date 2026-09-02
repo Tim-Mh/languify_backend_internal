@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 #[Fillable([
-    'user_id', 'pack_key', 'gems_credited', 'amount_cents', 'currency',
-    'stripe_checkout_session_id', 'status',
+    'user_id', 'pack_key', 'provider', 'gems_credited', 'amount_cents', 'currency',
+    'stripe_checkout_session_id', 'apple_transaction_id', 'status',
 ])]
 class GemPurchase extends Model
 {

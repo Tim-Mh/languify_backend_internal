@@ -55,6 +55,10 @@ class SubscriptionController extends Controller
             return response()->json([
                 'subscription' => [
                     'planKey' => $subscription->plan_key,
+                    // 'stripe' or 'apple'. An Apple-billed plan is managed in
+                    // the App Store, so the client swaps the Stripe controls
+                    // for a link there.
+                    'provider' => $subscription->provider ?? 'stripe',
                     'status' => $subscription->status,
                     'currentPeriodEnd' => $subscription->current_period_end,
                     'isFamilyMember' => false,

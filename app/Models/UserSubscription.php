@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 #[Fillable([
-    'user_id', 'plan_key', 'amount_cents', 'stripe_customer_id', 'stripe_subscription_id',
-    'status', 'current_period_end', 'cancel_at_period_end', 'canceled_at',
+    'user_id', 'plan_key', 'provider', 'amount_cents', 'stripe_customer_id', 'stripe_subscription_id',
+    'apple_original_transaction_id', 'status', 'current_period_end', 'cancel_at_period_end', 'canceled_at',
     'renewal_reminder_sent_for',
 ])]
 class UserSubscription extends Model

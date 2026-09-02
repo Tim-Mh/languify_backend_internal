@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AdController;
+use App\Http\Controllers\Api\AppleIapController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\AvatarController;
 use App\Http\Controllers\Api\BadgeController;
@@ -56,6 +57,11 @@ Route::prefix('auth')->group(function () {
 // Stripe calls this directly (no user session) — must stay outside the auth group,
 // and must receive the raw request body for signature verification.
 Route::post('/stripe/webhook', [StripeWebhookController::class, 'handle']);
+
+// App Store Server Notifications — Apple calls this directly (no user
+// session), so it stays outside the auth group like the Stripe one. The
+// payload authenticates itself: it is a JWS verified against Apple's roots.
+Route::post('/apple/webhook', [AppleIapController::class, 'webhook']);
 
 // Public content pages (Terms, Privacy, Contact) — visible to logged-out visitors too.
 Route::get('/pages/{slug}', [PageController::class, 'show']);
@@ -159,6 +165,10 @@ Route::middleware(['auth.cookie', 'auth:sanctum'])->group(function () {
     Route::get('/ads', [AdController::class, 'index']);
 
     Route::post('/badges/{badgeKey}/claim', [BadgeController::class, 'claim']);
+
+    // Apple In-App Purchase: the iOS app posts the signed transaction after
+    // a StoreKit purchase (or a restore) and the server credits it.
+    Route::post('/shop/apple/verify', [AppleIapController::class, 'verify'])->middleware('throttle:30,1');
 
     Route::post('/shop/gems/checkout', [ShopController::class, 'checkoutGems']);
     Route::get('/shop/gems/verify', [ShopController::class, 'verifyGemsCheckout']);

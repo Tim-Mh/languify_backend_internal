@@ -98,4 +98,17 @@ return [
         'native_client_id' => env('APPLE_NATIVE_CLIENT_ID', 'us.languify.app'),
     ],
 
+    /*
+     * Apple In-App Purchase (StoreKit 2). Purchases arrive as signed JWS
+     * transactions, verified locally against Apple's root certificates —
+     * no App Store Connect API key involved. The app Apple ID is the numeric
+     * id from App Store Connect's App Information page; Apple requires it for
+     * verifying production-signed payloads.
+     */
+    'apple_iap' => [
+        'bundle_id' => env('APPLE_IAP_BUNDLE_ID', 'us.languify.app'),
+        'app_apple_id' => (int) env('APPLE_IAP_APP_APPLE_ID', 6791709954),
+        'root_certificates_path' => base_path('resources/certs/apple'),
+    ],
+
 ];
