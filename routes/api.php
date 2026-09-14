@@ -20,6 +20,7 @@ use App\Http\Controllers\Api\PracticeController;
 use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\QuestController;
 use App\Http\Controllers\Api\ShopController;
+use App\Http\Controllers\Api\SpeechController;
 use App\Http\Controllers\Api\NativeSocialAuthController;
 use App\Http\Controllers\Api\SocialAuthController;
 use App\Http\Controllers\Api\StripeWebhookController;
@@ -62,6 +63,12 @@ Route::post('/stripe/webhook', [StripeWebhookController::class, 'handle']);
 // session), so it stays outside the auth group like the Stripe one. The
 // payload authenticates itself: it is a JWS verified against Apple's roots.
 Route::post('/apple/webhook', [AppleIapController::class, 'webhook']);
+
+// Pronunciation audio. Public because the phone's audio player and the web's
+// <audio> element both fetch it directly and neither carries the session
+// cookie cleanly across subdomains; what it returns is catalogue content spoken
+// aloud, never user data.
+Route::get('/speech', [SpeechController::class, 'show']);
 
 // Public content pages (Terms, Privacy, Contact) — visible to logged-out visitors too.
 Route::get('/pages/{slug}', [PageController::class, 'show']);
