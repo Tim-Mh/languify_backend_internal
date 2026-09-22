@@ -83,6 +83,9 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     'excellent',
                                 ],
                             ],
+                            'az' => ['sentence' => 'tort dadlı', 'correct' => ['tort', 'dadlı'], 'extra' => ['əla']],
+                            'ar' => ['sentence' => 'كعكة لذيذ', 'correct' => ['كعكة', 'لذيذ'], 'extra' => ['ممتاز']],
+                            'ru' => ['sentence' => 'торт вкусный', 'correct' => ['торт', 'вкусный'], 'extra' => ['отлично']],
                             'de' => [
                                 'sentence' => 'Der Kuchen ist köstlich',
                                 'correct' => [
@@ -129,6 +132,7 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     '훌륭한',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'pasta lezzetli', 'correct' => ['pasta', 'lezzetli'], 'extra' => ['mükemmel']],
                         ],
                     ],
                     'b' => [
@@ -152,6 +156,9 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     'delicious',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qəhvə əla', 'correct' => ['qəhvə', 'əla'], 'extra' => ['dadlı']],
+                            'ar' => ['sentence' => 'قهوة ممتاز', 'correct' => ['قهوة', 'ممتاز'], 'extra' => ['لذيذ']],
+                            'ru' => ['sentence' => 'кофе отлично', 'correct' => ['кофе', 'отлично'], 'extra' => ['вкусный']],
                             'de' => [
                                 'sentence' => 'Der Kaffee ist ausgezeichnet',
                                 'correct' => [
@@ -198,6 +205,7 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     '맛있는',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kahve mükemmel', 'correct' => ['kahve', 'mükemmel'], 'extra' => ['lezzetli']],
                         ],
                     ],
                     'c' => [
@@ -225,6 +233,9 @@ class EsUnitRestaurant05Seeder extends Seeder
                                 ],
                                 'extra' => [],
                             ],
+                            'az' => ['sentence' => 'bir əla tort və bir dadlı qəhvə', 'correct' => ['bir', 'əla', 'tort', 'və', 'bir', 'dadlı', 'qəhvə'], 'extra' => []],
+                            'ar' => ['sentence' => 'ممتاز كعكة و لذيذ قهوة', 'correct' => ['ممتاز', 'كعكة', 'و', 'لذيذ', 'قهوة'], 'extra' => []],
+                            'ru' => ['sentence' => 'отлично торт и вкусный кофе', 'correct' => ['отлично', 'торт', 'и', 'вкусный', 'кофе'], 'extra' => []],
                             'de' => [
                                 'sentence' => 'Ein ausgezeichneter Kuchen und ein köstlicher Kaffee',
                                 'correct' => [
@@ -280,6 +291,7 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     '입니다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'mükemmel bir pasta ve lezzetli bir kahve', 'correct' => ['mükemmel', 'bir', 'pasta', 've', 'lezzetli', 'bir', 'kahve'], 'extra' => []],
                         ],
                     ],
                 ],
@@ -327,6 +339,9 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     'spicy',
                                 ],
                             ],
+                            'az' => ['sentence' => 'düyü çox artıq duzlu', 'correct' => ['düyü', 'çox artıq', 'duzlu'], 'extra' => ['acılı']],
+                            'ar' => ['sentence' => 'أرز كثير جدا مالح', 'correct' => ['أرز', 'كثير جدا', 'مالح'], 'extra' => ['حار']],
+                            'ru' => ['sentence' => 'рис слишком много солёный', 'correct' => ['рис', 'слишком много', 'солёный'], 'extra' => ['острый']],
                             'de' => [
                                 'sentence' => 'Der Reis ist zu salzig',
                                 'correct' => [
@@ -375,6 +390,7 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     '매운',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'pirinç çok tuzlu', 'correct' => ['pirinç', 'çok', 'tuzlu'], 'extra' => ['acılı']],
                         ],
                     ],
                     'b' => [
@@ -399,6 +415,9 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     'rice',
                                 ],
                             ],
+                            'az' => ['sentence' => 'toyuq acılı', 'correct' => ['toyuq', 'acılı'], 'extra' => ['duzlu', 'düyü']],
+                            'ar' => ['sentence' => 'دجاج حار', 'correct' => ['دجاج', 'حار'], 'extra' => ['مالح', 'أرز']],
+                            'ru' => ['sentence' => 'курица острый', 'correct' => ['курица', 'острый'], 'extra' => ['солёный', 'рис']],
                             'de' => [
                                 'sentence' => 'Das Hähnchen ist scharf',
                                 'correct' => [
@@ -446,6 +465,7 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     '짠',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tavuk acılı', 'correct' => ['tavuk', 'acılı'], 'extra' => ['tuzlu', 'pirinç']],
                         ],
                     ],
                     'c' => [
@@ -475,6 +495,9 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     'too much',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir duzlu düyü və bir acılı toyuq', 'correct' => ['bir', 'duzlu', 'düyü', 'və', 'bir', 'acılı', 'toyuq'], 'extra' => ['çox artıq']],
+                            'ar' => ['sentence' => 'مالح أرز و حار دجاج', 'correct' => ['مالح', 'أرز', 'و', 'حار', 'دجاج'], 'extra' => ['كثير جدا']],
+                            'ru' => ['sentence' => 'солёный рис и острый курица', 'correct' => ['солёный', 'рис', 'и', 'острый', 'курица'], 'extra' => ['слишком много']],
                             'de' => [
                                 'sentence' => 'Ein salziger Reis und ein scharfes Hähnchen',
                                 'correct' => [
@@ -530,6 +553,7 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     '너무',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tuzlu bir pirinç ve acılı bir tavuk', 'correct' => ['tuzlu', 'bir', 'pirinç', 've', 'acılı', 'bir', 'tavuk'], 'extra' => ['çok fazla']],
                         ],
                     ],
                 ],
@@ -575,6 +599,9 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     'problem',
                                 ],
                             ],
+                            'az' => ['sentence' => 'balıq soyuq', 'correct' => ['balıq', 'soyuq'], 'extra' => ['problem']],
+                            'ar' => ['sentence' => 'سمك بارد', 'correct' => ['سمك', 'بارد'], 'extra' => ['مشكلة']],
+                            'ru' => ['sentence' => 'рыба холодный', 'correct' => ['рыба', 'холодный'], 'extra' => ['проблема']],
                             'de' => [
                                 'sentence' => 'Der Fisch ist kalt',
                                 'correct' => [
@@ -621,6 +648,7 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     '문제',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'balık soğuk', 'correct' => ['balık', 'soğuk'], 'extra' => ['sorun']],
                         ],
                     ],
                     'b' => [
@@ -647,6 +675,9 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     'plate',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir problem ilə balıq', 'correct' => ['bir', 'problem', 'ilə', 'balıq'], 'extra' => ['soyuq', 'boşqab']],
+                            'ar' => ['sentence' => 'مشكلة مع سمك', 'correct' => ['مشكلة', 'مع', 'سمك'], 'extra' => ['بارد', 'صحن']],
+                            'ru' => ['sentence' => 'проблема с рыба', 'correct' => ['проблема', 'с', 'рыба'], 'extra' => ['холодный', 'тарелка']],
                             'de' => [
                                 'sentence' => 'Ein Problem mit dem Fisch',
                                 'correct' => [
@@ -698,6 +729,7 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     '차가운',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'balıkla bir sorun', 'correct' => ['balıkla', 'bir', 'sorun'], 'extra' => ['soğuk', 'tabak']],
                         ],
                     ],
                     'c' => [
@@ -723,6 +755,9 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     'cold',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir boşqab və bir problem', 'correct' => ['bir', 'boşqab', 'və', 'bir', 'problem'], 'extra' => ['soyuq']],
+                            'ar' => ['sentence' => 'صحن و مشكلة', 'correct' => ['صحن', 'و', 'مشكلة'], 'extra' => ['بارد']],
+                            'ru' => ['sentence' => 'тарелка и проблема', 'correct' => ['тарелка', 'и', 'проблема'], 'extra' => ['холодный']],
                             'de' => [
                                 'sentence' => 'Ein Teller und ein Problem',
                                 'correct' => [
@@ -770,6 +805,7 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     '차가운',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir tabak ve bir sorun', 'correct' => ['bir', 'tabak', 've', 'bir', 'sorun'], 'extra' => ['soğuk']],
                         ],
                     ],
                 ],
@@ -815,6 +851,9 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     'dirty',
                                 ],
                             ],
+                            'az' => ['sentence' => 'stəkan təmiz', 'correct' => ['stəkan', 'təmiz'], 'extra' => ['çirkli']],
+                            'ar' => ['sentence' => 'كوب نظيف', 'correct' => ['كوب', 'نظيف'], 'extra' => ['متسخ']],
+                            'ru' => ['sentence' => 'стакан чистый', 'correct' => ['стакан', 'чистый'], 'extra' => ['грязный']],
                             'de' => [
                                 'sentence' => 'Das Glas ist sauber',
                                 'correct' => [
@@ -861,6 +900,7 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     '더러운',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bardak temiz', 'correct' => ['bardak', 'temiz'], 'extra' => ['kirli']],
                         ],
                     ],
                     'b' => [
@@ -883,6 +923,9 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     'glass',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir çirkli boşqab', 'correct' => ['bir', 'çirkli', 'boşqab'], 'extra' => ['təmiz', 'stəkan']],
+                            'ar' => ['sentence' => 'متسخ صحن', 'correct' => ['متسخ', 'صحن'], 'extra' => ['نظيف', 'كوب']],
+                            'ru' => ['sentence' => 'грязный тарелка', 'correct' => ['грязный', 'тарелка'], 'extra' => ['чистый', 'стакан']],
                             'de' => [
                                 'sentence' => 'Ein schmutziger Teller',
                                 'correct' => [
@@ -926,6 +969,7 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     '깨끗한',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kirli bir tabak', 'correct' => ['kirli', 'bir', 'tabak'], 'extra' => ['temiz', 'bardak']],
                         ],
                     ],
                     'c' => [
@@ -953,6 +997,9 @@ class EsUnitRestaurant05Seeder extends Seeder
                                 ],
                                 'extra' => [],
                             ],
+                            'az' => ['sentence' => 'bir təmiz stəkan və bir çirkli boşqab', 'correct' => ['bir', 'təmiz', 'stəkan', 'və', 'bir', 'çirkli', 'boşqab'], 'extra' => []],
+                            'ar' => ['sentence' => 'نظيف كوب و متسخ صحن', 'correct' => ['نظيف', 'كوب', 'و', 'متسخ', 'صحن'], 'extra' => []],
+                            'ru' => ['sentence' => 'чистый стакан и грязный тарелка', 'correct' => ['чистый', 'стакан', 'и', 'грязный', 'тарелка'], 'extra' => []],
                             'de' => [
                                 'sentence' => 'Ein sauberes Glas und ein schmutziger Teller',
                                 'correct' => [
@@ -1008,6 +1055,7 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     '입니다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'temiz bir bardak ve kirli bir tabak', 'correct' => ['temiz', 'bir', 'bardak', 've', 'kirli', 'bir', 'tabak'], 'extra' => []],
                         ],
                     ],
                 ],
@@ -1053,6 +1101,9 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     'taste',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qəhvə mükəmməl', 'correct' => ['qəhvə', 'mükəmməl'], 'extra' => ['dad']],
+                            'ar' => ['sentence' => 'قهوة مثالي', 'correct' => ['قهوة', 'مثالي'], 'extra' => ['مذاق']],
+                            'ru' => ['sentence' => 'кофе идеально', 'correct' => ['кофе', 'идеально'], 'extra' => ['вкус']],
                             'de' => [
                                 'sentence' => 'Der Kaffee ist perfekt',
                                 'correct' => [
@@ -1099,6 +1150,7 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     '맛',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kahve mükemmel', 'correct' => ['kahve', 'mükemmel'], 'extra' => ['tat']],
                         ],
                     ],
                     'b' => [
@@ -1123,6 +1175,9 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     'coffee',
                                 ],
                             ],
+                            'az' => ['sentence' => 'dad yaxşı', 'correct' => ['dad', 'yaxşı'], 'extra' => ['mükəmməl', 'qəhvə']],
+                            'ar' => ['sentence' => 'مذاق جيد', 'correct' => ['مذاق', 'جيد'], 'extra' => ['مثالي', 'قهوة']],
+                            'ru' => ['sentence' => 'вкус хороший', 'correct' => ['вкус', 'хороший'], 'extra' => ['идеально', 'кофе']],
                             'de' => [
                                 'sentence' => 'Der Geschmack ist gut',
                                 'correct' => [
@@ -1170,6 +1225,7 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     '완벽한',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tadı iyi', 'correct' => ['tadı', 'iyi'], 'extra' => ['mükemmel', 'kahve']],
                         ],
                     ],
                     'c' => [
@@ -1198,6 +1254,9 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     'coffee',
                                 ],
                             ],
+                            'az' => ['sentence' => 'dad tort mükəmməl', 'correct' => ['dad', 'tort', 'mükəmməl'], 'extra' => ['qəhvə']],
+                            'ar' => ['sentence' => 'مذاق كعكة مثالي', 'correct' => ['مذاق', 'كعكة', 'مثالي'], 'extra' => ['قهوة']],
+                            'ru' => ['sentence' => 'вкус торт идеально', 'correct' => ['вкус', 'торт', 'идеально'], 'extra' => ['кофе']],
                             'de' => [
                                 'sentence' => 'Der Geschmack des Kuchens ist perfekt',
                                 'correct' => [
@@ -1253,6 +1312,7 @@ class EsUnitRestaurant05Seeder extends Seeder
                                     '커피',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'pastanın tadı mükemmel', 'correct' => ['pastanın', 'tadı', 'mükemmel'], 'extra' => ['kahve']],
                         ],
                     ],
                 ],

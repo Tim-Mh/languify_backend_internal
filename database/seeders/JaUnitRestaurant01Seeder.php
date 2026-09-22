@@ -83,6 +83,9 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     'plate',
                                 ],
                             ],
+                            'az' => ['sentence' => 'menyu zəhmət olmasa', 'correct' => ['menyu', 'zəhmət olmasa'], 'extra' => ['boşqab']],
+                            'ar' => ['sentence' => 'قائمة الطعام من فضلك', 'correct' => ['قائمة الطعام', 'من فضلك'], 'extra' => ['صحن']],
+                            'ru' => ['sentence' => 'меню пожалуйста', 'correct' => ['меню', 'пожалуйста'], 'extra' => ['тарелка']],
                             'es' => [
                                 'sentence' => 'El menú, por favor',
                                 'correct' => [
@@ -129,6 +132,7 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     '접시',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'menü lütfen', 'correct' => ['menü', 'lütfen'], 'extra' => ['tabak']],
                         ],
                     ],
                     'b' => [
@@ -148,6 +152,9 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     'menu',
                                 ],
                             ],
+                            'az' => ['sentence' => 'istəyirəm sifariş vermək', 'correct' => ['istəyirəm', 'sifariş vermək'], 'extra' => ['menyu']],
+                            'ar' => ['sentence' => 'أريد الطلب', 'correct' => ['أريد', 'الطلب'], 'extra' => ['قائمة الطعام']],
+                            'ru' => ['sentence' => 'я хочу заказать', 'correct' => ['я', 'хочу', 'заказать'], 'extra' => ['меню']],
                             'es' => [
                                 'sentence' => 'Quisiera pedir',
                                 'correct' => [
@@ -190,6 +197,7 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     '메뉴',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sipariş istiyorum', 'correct' => ['sipariş', 'istiyorum'], 'extra' => ['menü']],
                         ],
                     ],
                     'c' => [
@@ -213,6 +221,9 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     'to order',
                                 ],
                             ],
+                            'az' => ['sentence' => 'menyu və bir boşqab', 'correct' => ['menyu', 'və', 'bir', 'boşqab'], 'extra' => ['sifariş vermək']],
+                            'ar' => ['sentence' => 'قائمة الطعام و صحن', 'correct' => ['قائمة الطعام', 'و', 'صحن'], 'extra' => ['الطلب']],
+                            'ru' => ['sentence' => 'меню и тарелка', 'correct' => ['меню', 'и', 'тарелка'], 'extra' => ['заказать']],
                             'es' => [
                                 'sentence' => 'El menú y un plato',
                                 'correct' => [
@@ -262,6 +273,7 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     '주문하다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'menü ve bir tabak', 'correct' => ['menü', 've', 'bir', 'tabak'], 'extra' => ['sipariş vermek']],
                         ],
                     ],
                 ],
@@ -306,6 +318,9 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     'salad',
                                 ],
                             ],
+                            'az' => ['sentence' => 'götürəcəyəm şorba', 'correct' => ['götürəcəyəm', 'şorba'], 'extra' => ['salat']],
+                            'ar' => ['sentence' => 'سآخذ حساء', 'correct' => ['سآخذ', 'حساء'], 'extra' => ['سلطة']],
+                            'ru' => ['sentence' => 'я возьму суп', 'correct' => ['я возьму', 'суп'], 'extra' => ['салат']],
                             'es' => [
                                 'sentence' => 'Tomo la sopa',
                                 'correct' => [
@@ -353,6 +368,7 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     '샐러드',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'çorbayı alayım', 'correct' => ['çorbayı', 'alayım'], 'extra' => ['salata']],
                         ],
                     ],
                     'b' => [
@@ -374,6 +390,9 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     'soup',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir salat zəhmət olmasa', 'correct' => ['bir', 'salat', 'zəhmət olmasa'], 'extra' => ['şorba']],
+                            'ar' => ['sentence' => 'سلطة من فضلك', 'correct' => ['سلطة', 'من فضلك'], 'extra' => ['حساء']],
+                            'ru' => ['sentence' => 'салат пожалуйста', 'correct' => ['салат', 'пожалуйста'], 'extra' => ['суп']],
                             'es' => [
                                 'sentence' => 'Una ensalada, por favor',
                                 'correct' => [
@@ -419,6 +438,7 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     '수프',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir salata lütfen', 'correct' => ['bir', 'salata', 'lütfen'], 'extra' => ['çorba']],
                         ],
                     ],
                     'c' => [
@@ -443,6 +463,9 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     'soup',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yemək gün', 'correct' => ['yemək', 'gün'], 'extra' => ['şorba']],
+                            'ar' => ['sentence' => 'طبق يوم', 'correct' => ['طبق', 'يوم'], 'extra' => ['حساء']],
+                            'ru' => ['sentence' => 'блюдо день', 'correct' => ['блюдо', 'день'], 'extra' => ['суп']],
                             'es' => [
                                 'sentence' => 'El plato del día',
                                 'correct' => [
@@ -492,6 +515,7 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     '수프',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'günün yemeği', 'correct' => ['günün', 'yemeği'], 'extra' => ['çorba']],
                         ],
                     ],
                 ],
@@ -537,6 +561,9 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     'fish',
                                 ],
                             ],
+                            'az' => ['sentence' => 'toyuq isti', 'correct' => ['toyuq', 'isti'], 'extra' => ['balıq']],
+                            'ar' => ['sentence' => 'دجاج ساخن', 'correct' => ['دجاج', 'ساخن'], 'extra' => ['سمك']],
+                            'ru' => ['sentence' => 'курица горячий', 'correct' => ['курица', 'горячий'], 'extra' => ['рыба']],
                             'es' => [
                                 'sentence' => 'El pollo está caliente',
                                 'correct' => [
@@ -586,6 +613,7 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     '생선',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tavuk sıcak', 'correct' => ['tavuk', 'sıcak'], 'extra' => ['balık']],
                         ],
                     ],
                     'b' => [
@@ -609,6 +637,9 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     'chicken',
                                 ],
                             ],
+                            'az' => ['sentence' => 'balıq üçün mənə', 'correct' => ['balıq', 'üçün', 'mənə'], 'extra' => ['toyuq']],
+                            'ar' => ['sentence' => 'سمك لأجل لي', 'correct' => ['سمك', 'لأجل', 'لي'], 'extra' => ['دجاج']],
+                            'ru' => ['sentence' => 'рыба для меня', 'correct' => ['рыба', 'для', 'меня'], 'extra' => ['курица']],
                             'es' => [
                                 'sentence' => 'El pescado para mí',
                                 'correct' => [
@@ -657,6 +688,7 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     '닭고기',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'benim için balık', 'correct' => ['benim', 'için', 'balık'], 'extra' => ['tavuk']],
                         ],
                     ],
                     'c' => [
@@ -680,6 +712,9 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     'hot',
                                 ],
                             ],
+                            'az' => ['sentence' => 'toyuq və ya balıq', 'correct' => ['toyuq', 'və ya', 'balıq'], 'extra' => ['isti']],
+                            'ar' => ['sentence' => 'دجاج أو سمك', 'correct' => ['دجاج', 'أو', 'سمك'], 'extra' => ['ساخن']],
+                            'ru' => ['sentence' => 'курица или рыба', 'correct' => ['курица', 'или', 'рыба'], 'extra' => ['горячий']],
                             'es' => [
                                 'sentence' => 'El pollo o el pescado',
                                 'correct' => [
@@ -730,6 +765,7 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     '뜨거운',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tavuk veya balık', 'correct' => ['tavuk', 'veya', 'balık'], 'extra' => ['sıcak']],
                         ],
                     ],
                 ],
@@ -775,6 +811,9 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     'waiter',
                                 ],
                             ],
+                            'az' => ['sentence' => 'ət və düyü', 'correct' => ['ət', 'və', 'düyü'], 'extra' => ['ofisiant']],
+                            'ar' => ['sentence' => 'لحم و أرز', 'correct' => ['لحم', 'و', 'أرز'], 'extra' => ['نادل']],
+                            'ru' => ['sentence' => 'мясо и рис', 'correct' => ['мясо', 'и', 'рис'], 'extra' => ['официант']],
                             'es' => [
                                 'sentence' => 'La carne y el arroz',
                                 'correct' => [
@@ -827,6 +866,7 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     '웨이터',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'et ve pirinç', 'correct' => ['et', 've', 'pirinç'], 'extra' => ['garson']],
                         ],
                     ],
                     'b' => [
@@ -851,6 +891,9 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     'meat',
                                 ],
                             ],
+                            'az' => ['sentence' => 'ofisiant burada', 'correct' => ['ofisiant', 'burada'], 'extra' => ['ət']],
+                            'ar' => ['sentence' => 'نادل هنا', 'correct' => ['نادل', 'هنا'], 'extra' => ['لحم']],
+                            'ru' => ['sentence' => 'официант здесь', 'correct' => ['официант', 'здесь'], 'extra' => ['мясо']],
                             'es' => [
                                 'sentence' => 'El camarero está aquí',
                                 'correct' => [
@@ -900,6 +943,7 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     '고기',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'garson burada', 'correct' => ['garson', 'burada'], 'extra' => ['et']],
                         ],
                     ],
                     'c' => [
@@ -923,6 +967,9 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     'waiter',
                                 ],
                             ],
+                            'az' => ['sentence' => 'masa pulsuz', 'correct' => ['masa', 'pulsuz'], 'extra' => ['ofisiant']],
+                            'ar' => ['sentence' => 'طاولة مجاني', 'correct' => ['طاولة', 'مجاني'], 'extra' => ['نادل']],
+                            'ru' => ['sentence' => 'стол бесплатно', 'correct' => ['стол', 'бесплатно'], 'extra' => ['официант']],
                             'es' => [
                                 'sentence' => 'La mesa está libre',
                                 'correct' => [
@@ -972,6 +1019,7 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     '웨이터',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'masa boş', 'correct' => ['masa', 'boş'], 'extra' => ['garson']],
                         ],
                     ],
                 ],
@@ -1019,6 +1067,9 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     'without',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir az çörək və bir az pendir', 'correct' => ['bir az', 'çörək', 'və', 'bir az', 'pendir'], 'extra' => ['olmadan']],
+                            'ar' => ['sentence' => 'بعض خبز و بعض جبن', 'correct' => ['بعض', 'خبز', 'و', 'بعض', 'جبن'], 'extra' => ['بدون']],
+                            'ru' => ['sentence' => 'немного хлеб и немного сыр', 'correct' => ['немного', 'хлеб', 'и', 'немного', 'сыр'], 'extra' => ['без']],
                             'es' => [
                                 'sentence' => 'Algo de pan y algo de queso',
                                 'correct' => [
@@ -1070,6 +1121,7 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     '없이',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'biraz ekmek ve biraz peynir', 'correct' => ['biraz', 'ekmek', 've', 'biraz', 'peynir'], 'extra' => ['sız']],
                         ],
                     ],
                     'b' => [
@@ -1093,6 +1145,9 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     'bread',
                                 ],
                             ],
+                            'az' => ['sentence' => 'şorba olmadan duz', 'correct' => ['şorba', 'olmadan', 'duz'], 'extra' => ['çörək']],
+                            'ar' => ['sentence' => 'حساء بدون ملح', 'correct' => ['حساء', 'بدون', 'ملح'], 'extra' => ['خبز']],
+                            'ru' => ['sentence' => 'суп без соль', 'correct' => ['суп', 'без', 'соль'], 'extra' => ['хлеб']],
                             'es' => [
                                 'sentence' => 'La sopa sin sal',
                                 'correct' => [
@@ -1142,6 +1197,7 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     '빵',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tuzsuz çorba', 'correct' => ['tuzsuz', 'çorba'], 'extra' => ['ekmek']],
                         ],
                     ],
                     'c' => [
@@ -1167,6 +1223,9 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     'soup',
                                 ],
                             ],
+                            'az' => ['sentence' => 'istəyirəm pendir olmadan çörək', 'correct' => ['istəyirəm', 'pendir', 'olmadan', 'çörək'], 'extra' => ['şorba']],
+                            'ar' => ['sentence' => 'أريد جبن بدون خبز', 'correct' => ['أريد', 'جبن', 'بدون', 'خبز'], 'extra' => ['حساء']],
+                            'ru' => ['sentence' => 'я хочу сыр без хлеб', 'correct' => ['я', 'хочу', 'сыр', 'без', 'хлеб'], 'extra' => ['суп']],
                             'es' => [
                                 'sentence' => 'Quisiera queso sin pan',
                                 'correct' => [
@@ -1215,6 +1274,7 @@ class JaUnitRestaurant01Seeder extends Seeder
                                     '수프',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ekmeksiz peynir istiyorum', 'correct' => ['ekmeksiz', 'peynir', 'istiyorum'], 'extra' => ['çorba']],
                         ],
                     ],
                 ],

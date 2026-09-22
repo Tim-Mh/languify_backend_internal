@@ -84,6 +84,9 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     'to order',
                                 ],
                             ],
+                            'az' => ['sentence' => 'menyu zəhmət olmasa', 'correct' => ['menyu', 'zəhmət olmasa'], 'extra' => ['boşqab', 'sifariş vermək']],
+                            'ar' => ['sentence' => 'قائمة الطعام من فضلك', 'correct' => ['قائمة الطعام', 'من فضلك'], 'extra' => ['صحن', 'الطلب']],
+                            'ru' => ['sentence' => 'меню пожалуйста', 'correct' => ['меню', 'пожалуйста'], 'extra' => ['тарелка', 'заказать']],
                             'es' => [
                                 'sentence' => 'El menú, por favor',
                                 'correct' => [
@@ -129,6 +132,7 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     '접시',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'menü lütfen', 'correct' => ['menü', 'lütfen'], 'extra' => ['tabak', 'sipariş vermek']],
                         ],
                     ],
                     'b' => [
@@ -150,6 +154,9 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     'plate',
                                 ],
                             ],
+                            'az' => ['sentence' => 'istəyirəm sifariş vermək', 'correct' => ['istəyirəm', 'sifariş vermək'], 'extra' => ['menyu', 'boşqab']],
+                            'ar' => ['sentence' => 'أريد الطلب', 'correct' => ['أريد', 'الطلب'], 'extra' => ['قائمة الطعام', 'صحن']],
+                            'ru' => ['sentence' => 'я хочу заказать', 'correct' => ['я', 'хочу', 'заказать'], 'extra' => ['меню', 'тарелка']],
                             'es' => [
                                 'sentence' => 'Quisiera pedir',
                                 'correct' => [
@@ -191,6 +198,7 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     '메뉴',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sipariş istiyorum', 'correct' => ['sipariş', 'istiyorum'], 'extra' => ['menü', 'tabak']],
                         ],
                     ],
                     'c' => [
@@ -216,6 +224,9 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     'to order',
                                 ],
                             ],
+                            'az' => ['sentence' => 'menyu və bir boşqab', 'correct' => ['menyu', 'və', 'bir', 'boşqab'], 'extra' => ['sifariş vermək']],
+                            'ar' => ['sentence' => 'قائمة الطعام و صحن', 'correct' => ['قائمة الطعام', 'و', 'صحن'], 'extra' => ['الطلب']],
+                            'ru' => ['sentence' => 'меню и тарелка', 'correct' => ['меню', 'и', 'тарелка'], 'extra' => ['заказать']],
                             'es' => [
                                 'sentence' => 'El menú y un plato',
                                 'correct' => [
@@ -263,6 +274,7 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     '주문하다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'menü ve bir tabak', 'correct' => ['menü', 've', 'bir', 'tabak'], 'extra' => ['sipariş vermek']],
                         ],
                     ],
                 ],
@@ -308,6 +320,9 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     'dish',
                                 ],
                             ],
+                            'az' => ['sentence' => 'götürəcəyəm şorba', 'correct' => ['götürəcəyəm', 'şorba'], 'extra' => ['salat', 'yemək']],
+                            'ar' => ['sentence' => 'سآخذ حساء', 'correct' => ['سآخذ', 'حساء'], 'extra' => ['سلطة', 'طبق']],
+                            'ru' => ['sentence' => 'я возьму суп', 'correct' => ['я возьму', 'суп'], 'extra' => ['салат', 'блюдо']],
                             'es' => [
                                 'sentence' => 'Tomo la sopa',
                                 'correct' => [
@@ -355,6 +370,7 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     '샐러드',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'çorbayı alayım', 'correct' => ['çorbayı', 'alayım'], 'extra' => ['salata', 'yemek']],
                         ],
                     ],
                     'b' => [
@@ -377,6 +393,9 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     'dish',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir salat zəhmət olmasa', 'correct' => ['bir', 'salat', 'zəhmət olmasa'], 'extra' => ['şorba', 'yemək']],
+                            'ar' => ['sentence' => 'سلطة من فضلك', 'correct' => ['سلطة', 'من فضلك'], 'extra' => ['حساء', 'طبق']],
+                            'ru' => ['sentence' => 'салат пожалуйста', 'correct' => ['салат', 'пожалуйста'], 'extra' => ['суп', 'блюдо']],
                             'es' => [
                                 'sentence' => 'Una ensalada, por favor',
                                 'correct' => [
@@ -421,6 +440,7 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     '수프',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir salata lütfen', 'correct' => ['bir', 'salata', 'lütfen'], 'extra' => ['çorba', 'yemek']],
                         ],
                     ],
                     'c' => [
@@ -445,6 +465,9 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     'soup',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yemək gün', 'correct' => ['yemək', 'gün'], 'extra' => ['şorba']],
+                            'ar' => ['sentence' => 'طبق يوم', 'correct' => ['طبق', 'يوم'], 'extra' => ['حساء']],
+                            'ru' => ['sentence' => 'блюдо день', 'correct' => ['блюдо', 'день'], 'extra' => ['суп']],
                             'es' => [
                                 'sentence' => 'El plato del día',
                                 'correct' => [
@@ -493,6 +516,7 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     '수프',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'günün yemeği', 'correct' => ['günün', 'yemeği'], 'extra' => ['çorba']],
                         ],
                     ],
                 ],
@@ -539,6 +563,9 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     'for',
                                 ],
                             ],
+                            'az' => ['sentence' => 'toyuq isti', 'correct' => ['toyuq', 'isti'], 'extra' => ['balıq', 'üçün']],
+                            'ar' => ['sentence' => 'دجاج ساخن', 'correct' => ['دجاج', 'ساخن'], 'extra' => ['سمك', 'لأجل']],
+                            'ru' => ['sentence' => 'курица горячий', 'correct' => ['курица', 'горячий'], 'extra' => ['рыба', 'для']],
                             'es' => [
                                 'sentence' => 'El pollo está caliente',
                                 'correct' => [
@@ -587,6 +614,7 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     '생선',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tavuk sıcak', 'correct' => ['tavuk', 'sıcak'], 'extra' => ['balık', 'için']],
                         ],
                     ],
                     'b' => [
@@ -611,6 +639,9 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     'hot',
                                 ],
                             ],
+                            'az' => ['sentence' => 'balıq üçün mənə', 'correct' => ['balıq', 'üçün', 'mənə'], 'extra' => ['toyuq', 'isti']],
+                            'ar' => ['sentence' => 'سمك لأجل لي', 'correct' => ['سمك', 'لأجل', 'لي'], 'extra' => ['دجاج', 'ساخن']],
+                            'ru' => ['sentence' => 'рыба для меня', 'correct' => ['рыба', 'для', 'меня'], 'extra' => ['курица', 'горячий']],
                             'es' => [
                                 'sentence' => 'El pescado para mí',
                                 'correct' => [
@@ -658,6 +689,7 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     '닭고기',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'benim için balık', 'correct' => ['benim', 'için', 'balık'], 'extra' => ['tavuk', 'sıcak']],
                         ],
                     ],
                     'c' => [
@@ -683,6 +715,9 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     'hot',
                                 ],
                             ],
+                            'az' => ['sentence' => 'toyuq və ya balıq', 'correct' => ['toyuq', 'və ya', 'balıq'], 'extra' => ['isti']],
+                            'ar' => ['sentence' => 'دجاج أو سمك', 'correct' => ['دجاج', 'أو', 'سمك'], 'extra' => ['ساخن']],
+                            'ru' => ['sentence' => 'курица или рыба', 'correct' => ['курица', 'или', 'рыба'], 'extra' => ['горячий']],
                             'es' => [
                                 'sentence' => 'El pollo o el pescado',
                                 'correct' => [
@@ -731,6 +766,7 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     '뜨거운',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tavuk veya balık', 'correct' => ['tavuk', 'veya', 'balık'], 'extra' => ['sıcak']],
                         ],
                     ],
                 ],
@@ -779,6 +815,9 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     'table',
                                 ],
                             ],
+                            'az' => ['sentence' => 'ət və düyü', 'correct' => ['ət', 'və', 'düyü'], 'extra' => ['ofisiant', 'masa']],
+                            'ar' => ['sentence' => 'لحم و أرز', 'correct' => ['لحم', 'و', 'أرز'], 'extra' => ['نادل', 'طاولة']],
+                            'ru' => ['sentence' => 'мясо и рис', 'correct' => ['мясо', 'и', 'рис'], 'extra' => ['официант', 'стол']],
                             'es' => [
                                 'sentence' => 'La carne y el arroz',
                                 'correct' => [
@@ -828,6 +867,7 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     '웨이터',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'et ve pirinç', 'correct' => ['et', 've', 'pirinç'], 'extra' => ['garson', 'masa']],
                         ],
                     ],
                     'b' => [
@@ -852,6 +892,9 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     'table',
                                 ],
                             ],
+                            'az' => ['sentence' => 'ofisiant burada', 'correct' => ['ofisiant', 'burada'], 'extra' => ['ət', 'masa']],
+                            'ar' => ['sentence' => 'نادل هنا', 'correct' => ['نادل', 'هنا'], 'extra' => ['لحم', 'طاولة']],
+                            'ru' => ['sentence' => 'официант здесь', 'correct' => ['официант', 'здесь'], 'extra' => ['мясо', 'стол']],
                             'es' => [
                                 'sentence' => 'El camarero está aquí',
                                 'correct' => [
@@ -901,6 +944,7 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     '고기',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'garson burada', 'correct' => ['garson', 'burada'], 'extra' => ['et', 'masa']],
                         ],
                     ],
                     'c' => [
@@ -925,6 +969,9 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     'rice',
                                 ],
                             ],
+                            'az' => ['sentence' => 'masa pulsuz', 'correct' => ['masa', 'pulsuz'], 'extra' => ['ofisiant', 'düyü']],
+                            'ar' => ['sentence' => 'طاولة مجاني', 'correct' => ['طاولة', 'مجاني'], 'extra' => ['نادل', 'أرز']],
+                            'ru' => ['sentence' => 'стол бесплатно', 'correct' => ['стол', 'бесплатно'], 'extra' => ['официант', 'рис']],
                             'es' => [
                                 'sentence' => 'La mesa está libre',
                                 'correct' => [
@@ -972,6 +1019,7 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     '웨이터',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'masa boş', 'correct' => ['masa', 'boş'], 'extra' => ['garson', 'pirinç']],
                         ],
                     ],
                 ],
@@ -1019,6 +1067,9 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     'without',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir az çörək və bir az pendir', 'correct' => ['bir az', 'çörək', 'və', 'bir az', 'pendir'], 'extra' => ['olmadan']],
+                            'ar' => ['sentence' => 'بعض خبز و بعض جبن', 'correct' => ['بعض', 'خبز', 'و', 'بعض', 'جبن'], 'extra' => ['بدون']],
+                            'ru' => ['sentence' => 'немного хлеб и немного сыр', 'correct' => ['немного', 'хлеб', 'и', 'немного', 'сыр'], 'extra' => ['без']],
                             'es' => [
                                 'sentence' => 'Algo de pan y algo de queso',
                                 'correct' => [
@@ -1070,6 +1121,7 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     '없이',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'biraz ekmek ve biraz peynir', 'correct' => ['biraz', 'ekmek', 've', 'biraz', 'peynir'], 'extra' => ['sız']],
                         ],
                     ],
                     'b' => [
@@ -1094,6 +1146,9 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     'cheese',
                                 ],
                             ],
+                            'az' => ['sentence' => 'şorba olmadan duz', 'correct' => ['şorba', 'olmadan', 'duz'], 'extra' => ['çörək', 'pendir']],
+                            'ar' => ['sentence' => 'حساء بدون ملح', 'correct' => ['حساء', 'بدون', 'ملح'], 'extra' => ['خبز', 'جبن']],
+                            'ru' => ['sentence' => 'суп без соль', 'correct' => ['суп', 'без', 'соль'], 'extra' => ['хлеб', 'сыр']],
                             'es' => [
                                 'sentence' => 'La sopa sin sal',
                                 'correct' => [
@@ -1142,6 +1197,7 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     '빵',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tuzsuz çorba', 'correct' => ['tuzsuz', 'çorba'], 'extra' => ['ekmek', 'peynir']],
                         ],
                     ],
                     'c' => [
@@ -1166,6 +1222,9 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     'soup',
                                 ],
                             ],
+                            'az' => ['sentence' => 'istəyirəm pendir olmadan çörək', 'correct' => ['istəyirəm', 'pendir', 'olmadan', 'çörək'], 'extra' => ['şorba']],
+                            'ar' => ['sentence' => 'أريد جبن بدون خبز', 'correct' => ['أريد', 'جبن', 'بدون', 'خبز'], 'extra' => ['حساء']],
+                            'ru' => ['sentence' => 'я хочу сыр без хлеб', 'correct' => ['я', 'хочу', 'сыр', 'без', 'хлеб'], 'extra' => ['суп']],
                             'es' => [
                                 'sentence' => 'Quisiera queso sin pan',
                                 'correct' => [
@@ -1216,6 +1275,7 @@ class DeUnitRestaurant01Seeder extends Seeder
                                     '수프',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ekmeksiz peynir istiyorum', 'correct' => ['ekmeksiz', 'peynir', 'istiyorum'], 'extra' => ['çorba']],
                         ],
                     ],
                 ],

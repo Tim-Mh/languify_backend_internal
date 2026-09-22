@@ -82,6 +82,9 @@ class EsUnitBeginner07Seeder extends Seeder
                                     'cat',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir böyük ev', 'correct' => ['bir', 'böyük', 'ev'], 'extra' => ['kiçik', 'pişik']],
+                            'ar' => ['sentence' => 'كبير بيت', 'correct' => ['كبير', 'بيت'], 'extra' => ['صغير', 'قط']],
+                            'ru' => ['sentence' => 'большой дом', 'correct' => ['большой', 'дом'], 'extra' => ['маленький', 'кот']],
                             'de' => [
                                 'sentence' => 'Ein großes Haus',
                                 'correct' => [
@@ -126,6 +129,7 @@ class EsUnitBeginner07Seeder extends Seeder
                                     '작은',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'büyük bir ev', 'correct' => ['büyük', 'bir', 'ev'], 'extra' => ['küçük', 'kedi']],
                         ],
                     ],
                     'b' => [
@@ -148,6 +152,9 @@ class EsUnitBeginner07Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir kiçik pişik', 'correct' => ['bir', 'kiçik', 'pişik'], 'extra' => ['böyük', 'ev']],
+                            'ar' => ['sentence' => 'صغير قط', 'correct' => ['صغير', 'قط'], 'extra' => ['كبير', 'بيت']],
+                            'ru' => ['sentence' => 'маленький кот', 'correct' => ['маленький', 'кот'], 'extra' => ['большой', 'дом']],
                             'de' => [
                                 'sentence' => 'Eine kleine Katze',
                                 'correct' => [
@@ -192,6 +199,7 @@ class EsUnitBeginner07Seeder extends Seeder
                                     '큰',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'küçük bir kedi', 'correct' => ['küçük', 'bir', 'kedi'], 'extra' => ['büyük', 'ev']],
                         ],
                     ],
                     'c' => [
@@ -221,6 +229,9 @@ class EsUnitBeginner07Seeder extends Seeder
                                     'hot',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir böyük ev və bir kiçik pişik', 'correct' => ['bir', 'böyük', 'ev', 'və', 'bir', 'kiçik', 'pişik'], 'extra' => ['isti']],
+                            'ar' => ['sentence' => 'كبير بيت و صغير قط', 'correct' => ['كبير', 'بيت', 'و', 'صغير', 'قط'], 'extra' => ['ساخن']],
+                            'ru' => ['sentence' => 'большой дом и маленький кот', 'correct' => ['большой', 'дом', 'и', 'маленький', 'кот'], 'extra' => ['горячий']],
                             'de' => [
                                 'sentence' => 'Ein großes Haus und eine kleine Katze',
                                 'correct' => [
@@ -276,6 +287,7 @@ class EsUnitBeginner07Seeder extends Seeder
                                     '뜨거운',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'büyük bir ev ve küçük bir kedi', 'correct' => ['büyük', 'bir', 'ev', 've', 'küçük', 'bir', 'kedi'], 'extra' => ['sıcak']],
                         ],
                     ],
                 ],
@@ -318,6 +330,9 @@ class EsUnitBeginner07Seeder extends Seeder
                                     'water',
                                 ],
                             ],
+                            'az' => ['sentence' => 'isti qəhvə', 'correct' => ['isti', 'qəhvə'], 'extra' => ['soyuq', 'su']],
+                            'ar' => ['sentence' => 'ساخن قهوة', 'correct' => ['ساخن', 'قهوة'], 'extra' => ['بارد', 'ماء']],
+                            'ru' => ['sentence' => 'горячий кофе', 'correct' => ['горячий', 'кофе'], 'extra' => ['холодный', 'вода']],
                             'de' => [
                                 'sentence' => 'Heißer Kaffee',
                                 'correct' => [
@@ -360,6 +375,7 @@ class EsUnitBeginner07Seeder extends Seeder
                                     '차가운',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sıcak kahve', 'correct' => ['sıcak', 'kahve'], 'extra' => ['soğuk', 'su']],
                         ],
                     ],
                     'b' => [
@@ -380,6 +396,9 @@ class EsUnitBeginner07Seeder extends Seeder
                                     'coffee',
                                 ],
                             ],
+                            'az' => ['sentence' => 'soyuq su', 'correct' => ['soyuq', 'su'], 'extra' => ['isti', 'qəhvə']],
+                            'ar' => ['sentence' => 'بارد ماء', 'correct' => ['بارد', 'ماء'], 'extra' => ['ساخن', 'قهوة']],
+                            'ru' => ['sentence' => 'холодный вода', 'correct' => ['холодный', 'вода'], 'extra' => ['горячий', 'кофе']],
                             'de' => [
                                 'sentence' => 'Kaltes Wasser',
                                 'correct' => [
@@ -422,6 +441,7 @@ class EsUnitBeginner07Seeder extends Seeder
                                     '뜨거운',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'soğuk su', 'correct' => ['soğuk', 'su'], 'extra' => ['sıcak', 'kahve']],
                         ],
                     ],
                     'c' => [
@@ -447,6 +467,9 @@ class EsUnitBeginner07Seeder extends Seeder
                                     'big',
                                 ],
                             ],
+                            'az' => ['sentence' => 'isti qəhvə və soyuq su', 'correct' => ['isti', 'qəhvə', 'və', 'soyuq', 'su'], 'extra' => ['böyük']],
+                            'ar' => ['sentence' => 'ساخن قهوة و بارد ماء', 'correct' => ['ساخن', 'قهوة', 'و', 'بارد', 'ماء'], 'extra' => ['كبير']],
+                            'ru' => ['sentence' => 'горячий кофе и холодный вода', 'correct' => ['горячий', 'кофе', 'и', 'холодный', 'вода'], 'extra' => ['большой']],
                             'de' => [
                                 'sentence' => 'Heißer Kaffee und kaltes Wasser',
                                 'correct' => [
@@ -498,6 +521,7 @@ class EsUnitBeginner07Seeder extends Seeder
                                     '큰',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sıcak kahve ve soğuk su', 'correct' => ['sıcak', 'kahve', 've', 'soğuk', 'su'], 'extra' => ['büyük']],
                         ],
                     ],
                 ],
@@ -542,6 +566,9 @@ class EsUnitBeginner07Seeder extends Seeder
                                     'park',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir gözəl ev', 'correct' => ['bir', 'gözəl', 'ev'], 'extra' => ['park']],
+                            'ar' => ['sentence' => 'جميل بيت', 'correct' => ['جميل', 'بيت'], 'extra' => ['حديقة']],
+                            'ru' => ['sentence' => 'красивый дом', 'correct' => ['красивый', 'дом'], 'extra' => ['парк']],
                             'de' => [
                                 'sentence' => 'Ein schönes Haus',
                                 'correct' => [
@@ -586,6 +613,7 @@ class EsUnitBeginner07Seeder extends Seeder
                                     '예쁜',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'güzel bir ev', 'correct' => ['güzel', 'bir', 'ev'], 'extra' => ['güzel', 'park']],
                         ],
                     ],
                     'b' => [
@@ -608,6 +636,9 @@ class EsUnitBeginner07Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir gözəl park', 'correct' => ['bir', 'gözəl', 'park'], 'extra' => ['ev']],
+                            'ar' => ['sentence' => 'جميل حديقة', 'correct' => ['جميل', 'حديقة'], 'extra' => ['بيت']],
+                            'ru' => ['sentence' => 'красивый парк', 'correct' => ['красивый', 'парк'], 'extra' => ['дом']],
                             'de' => [
                                 'sentence' => 'Ein hübscher Park',
                                 'correct' => [
@@ -652,6 +683,7 @@ class EsUnitBeginner07Seeder extends Seeder
                                     '아름다운',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'güzel bir park', 'correct' => ['güzel', 'bir', 'park'], 'extra' => ['güzel', 'ev']],
                         ],
                     ],
                     'c' => [
@@ -677,6 +709,9 @@ class EsUnitBeginner07Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir gözəl və gözəl park', 'correct' => ['bir', 'gözəl', 'və', 'gözəl', 'park'], 'extra' => ['ev']],
+                            'ar' => ['sentence' => 'جميل و جميل حديقة', 'correct' => ['جميل', 'و', 'جميل', 'حديقة'], 'extra' => ['بيت']],
+                            'ru' => ['sentence' => 'красивый и красивый парк', 'correct' => ['красивый', 'и', 'красивый', 'парк'], 'extra' => ['дом']],
                             'de' => [
                                 'sentence' => 'Ein schöner und hübscher Park',
                                 'correct' => [
@@ -725,6 +760,7 @@ class EsUnitBeginner07Seeder extends Seeder
                                     '집',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'güzel ve hoş bir park', 'correct' => ['güzel', 've', 'hoş', 'bir', 'park'], 'extra' => ['ev']],
                         ],
                     ],
                 ],
@@ -769,6 +805,9 @@ class EsUnitBeginner07Seeder extends Seeder
                                     'table',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir asan kitab', 'correct' => ['bir', 'asan', 'kitab'], 'extra' => ['çətin', 'masa']],
+                            'ar' => ['sentence' => 'سهل كتاب', 'correct' => ['سهل', 'كتاب'], 'extra' => ['صعب', 'طاولة']],
+                            'ru' => ['sentence' => 'легко книга', 'correct' => ['легко', 'книга'], 'extra' => ['трудно', 'стол']],
                             'de' => [
                                 'sentence' => 'Ein einfaches Buch',
                                 'correct' => [
@@ -813,6 +852,7 @@ class EsUnitBeginner07Seeder extends Seeder
                                     '어려운',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kolay bir kitap', 'correct' => ['kolay', 'bir', 'kitap'], 'extra' => ['zor', 'masa']],
                         ],
                     ],
                     'b' => [
@@ -835,6 +875,9 @@ class EsUnitBeginner07Seeder extends Seeder
                                     'book',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir çətin masa', 'correct' => ['bir', 'çətin', 'masa'], 'extra' => ['asan', 'kitab']],
+                            'ar' => ['sentence' => 'صعب طاولة', 'correct' => ['صعب', 'طاولة'], 'extra' => ['سهل', 'كتاب']],
+                            'ru' => ['sentence' => 'трудно стол', 'correct' => ['трудно', 'стол'], 'extra' => ['легко', 'книга']],
                             'de' => [
                                 'sentence' => 'Ein harter Tisch',
                                 'correct' => [
@@ -879,6 +922,7 @@ class EsUnitBeginner07Seeder extends Seeder
                                     '쉬운',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sert bir masa', 'correct' => ['sert', 'bir', 'masa'], 'extra' => ['kolay', 'kitap']],
                         ],
                     ],
                     'c' => [
@@ -900,6 +944,9 @@ class EsUnitBeginner07Seeder extends Seeder
                                     'book',
                                 ],
                             ],
+                            'az' => ['sentence' => 'asan və ya çətin', 'correct' => ['asan', 'və ya', 'çətin'], 'extra' => ['kitab']],
+                            'ar' => ['sentence' => 'سهل أو صعب', 'correct' => ['سهل', 'أو', 'صعب'], 'extra' => ['كتاب']],
+                            'ru' => ['sentence' => 'легко или трудно', 'correct' => ['легко', 'или', 'трудно'], 'extra' => ['книга']],
                             'de' => [
                                 'sentence' => 'Einfach oder schwer',
                                 'correct' => [
@@ -943,6 +990,7 @@ class EsUnitBeginner07Seeder extends Seeder
                                     '책',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kolay veya zor', 'correct' => ['kolay', 'veya', 'zor'], 'extra' => ['kitap']],
                         ],
                     ],
                 ],
@@ -987,6 +1035,9 @@ class EsUnitBeginner07Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir yaxşı kitab', 'correct' => ['bir', 'yaxşı', 'kitab'], 'extra' => ['yeni', 'ev']],
+                            'ar' => ['sentence' => 'جيد كتاب', 'correct' => ['جيد', 'كتاب'], 'extra' => ['جديد', 'بيت']],
+                            'ru' => ['sentence' => 'хороший книга', 'correct' => ['хороший', 'книга'], 'extra' => ['новый', 'дом']],
                             'de' => [
                                 'sentence' => 'Ein gutes Buch',
                                 'correct' => [
@@ -1031,6 +1082,7 @@ class EsUnitBeginner07Seeder extends Seeder
                                     '새로운',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'iyi bir kitap', 'correct' => ['iyi', 'bir', 'kitap'], 'extra' => ['yeni', 'ev']],
                         ],
                     ],
                     'b' => [
@@ -1053,6 +1105,9 @@ class EsUnitBeginner07Seeder extends Seeder
                                     'book',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir yeni ev', 'correct' => ['bir', 'yeni', 'ev'], 'extra' => ['yaxşı', 'kitab']],
+                            'ar' => ['sentence' => 'جديد بيت', 'correct' => ['جديد', 'بيت'], 'extra' => ['جيد', 'كتاب']],
+                            'ru' => ['sentence' => 'новый дом', 'correct' => ['новый', 'дом'], 'extra' => ['хороший', 'книга']],
                             'de' => [
                                 'sentence' => 'Ein neues Haus',
                                 'correct' => [
@@ -1097,6 +1152,7 @@ class EsUnitBeginner07Seeder extends Seeder
                                     '좋은',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yeni bir ev', 'correct' => ['yeni', 'bir', 'ev'], 'extra' => ['iyi', 'kitap']],
                         ],
                     ],
                     'c' => [
@@ -1122,6 +1178,9 @@ class EsUnitBeginner07Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir yaxşı və yeni kitab', 'correct' => ['bir', 'yaxşı', 'və', 'yeni', 'kitab'], 'extra' => ['ev']],
+                            'ar' => ['sentence' => 'جيد و جديد كتاب', 'correct' => ['جيد', 'و', 'جديد', 'كتاب'], 'extra' => ['بيت']],
+                            'ru' => ['sentence' => 'хороший и новый книга', 'correct' => ['хороший', 'и', 'новый', 'книга'], 'extra' => ['дом']],
                             'de' => [
                                 'sentence' => 'Ein gutes und neues Buch',
                                 'correct' => [
@@ -1170,6 +1229,7 @@ class EsUnitBeginner07Seeder extends Seeder
                                     '집',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'iyi ve yeni bir kitap', 'correct' => ['iyi', 've', 'yeni', 'bir', 'kitap'], 'extra' => ['ev']],
                         ],
                     ],
                 ],

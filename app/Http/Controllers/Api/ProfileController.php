@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Notifications\FamilyPlanCanceledNotification;
 use App\Services\StripeService;
+use App\Support\DeviceTimezone;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
@@ -110,11 +111,17 @@ class ProfileController extends Controller
     public function updateTimezone(Request $request): JsonResponse
     {
         $data = $request->validate([
-            'timezone' => ['required', 'string', 'timezone'],
+            'timezone' => ['required', 'string', 'max:64'],
         ]);
 
         $user = $request->user();
-        $user->forceFill(['timezone' => $data['timezone']])->save();
+
+        // The app posts this on its own at launch, so a device that cannot name
+        // its timezone must not produce an error the learner sees. An unusable
+        // value leaves the stored one alone and reports what is actually held.
+        if ($timezone = DeviceTimezone::normalise($data['timezone'])) {
+            $user->forceFill(['timezone' => $timezone])->save();
+        }
 
         return response()->json(['message' => 'Timezone updated', 'timezone' => $user->timezone]);
     }

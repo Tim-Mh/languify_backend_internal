@@ -8,6 +8,8 @@
         <a href="{{ route('admin.languages.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">+ Add Language</a>
     </div>
 
+    <x-per-page :paginator="$languages" noun="languages" />
+
     <div class="bg-white rounded-lg shadow overflow-hidden">
         <table class="w-full text-left">
             <thead class="bg-gray-50 text-sm text-gray-500">

@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Models\Language;
 use App\Models\User;
 use App\Models\UserGameState;
+use App\Services\LessonProgressService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\Concerns\CreatesCourseContent;
 use Tests\TestCase;
@@ -14,7 +15,7 @@ class LessonProgressTest extends TestCase
     use CreatesCourseContent;
     use RefreshDatabase;
 
-    public function test_completing_a_lesson_awards_xp_and_badges(): void
+    public function test_completing_a_lesson_awards_xp_and_grants_no_badges(): void
     {
         $user = User::factory()->create();
         [, $learning] = $this->enrollUserInCourse($user);
@@ -29,10 +30,11 @@ class LessonProgressTest extends TestCase
             'alreadyCompletedBefore' => false,
         ]);
 
-        $badgeIds = collect($response->json('newBadges'))->pluck('id');
-        $this->assertTrue($badgeIds->contains('xp-first'));
-        $this->assertTrue($badgeIds->contains('lesson-first'));
-        $this->assertTrue($badgeIds->contains('lesson-perfect'));
+        // Badges are CLAIMED from the profile now, not handed out here: see
+        // LessonProgressService, where the award step is kept as a documented
+        // no-op. An empty list is the correct answer, and asserting it keeps
+        // anyone from quietly re-introducing auto-granting.
+        $this->assertSame([], $response->json('newBadges'));
 
         $this->assertDatabaseHas('user_lesson_completions', [
             'user_id' => $user->id,
@@ -51,18 +53,16 @@ class LessonProgressTest extends TestCase
         $first->assertOk()->assertJson([
             'alreadyCompletedBefore' => false,
             'completionsCount' => 1,
-            'targetCompletions' => 5,
-            'mastered' => false,
         ]);
 
-        // Replaying still awards XP (Duolingo-style, to motivate the repeat
-        // sessions) and advances the session count toward mastery.
+        // Replaying advances the completion count but pays nothing: the XP for
+        // a lesson is earned once. It still counts as turning up, which is what
+        // keeps a streak alive for someone who has finished everything.
         $second = $this->actingAs($user)->postJson("/api/lessons/{$lesson->id}/complete", ['mistakes' => 3]);
         $second->assertOk()->assertJson([
-            'xpAwarded' => 20, // base lesson XP, no perfect bonus (had mistakes)
+            'xpAwarded' => 0,
             'alreadyCompletedBefore' => true,
             'completionsCount' => 2,
-            'mastered' => false,
         ]);
     }
 
@@ -95,9 +95,13 @@ class LessonProgressTest extends TestCase
         $this->actingAs($user)->postJson("/api/lessons/{$lessons[0]->id}/complete", ['mistakes' => 0]);
         $response = $this->actingAs($user)->postJson("/api/lessons/{$lessons[1]->id}/complete", ['mistakes' => 1]);
 
-        $response->assertOk()->assertJson(['unitXpAwarded' => 20]);
-        $badgeIds = collect($response->json('newBadges'))->pluck('id');
-        $this->assertTrue($badgeIds->contains('lesson-unit'));
+        // The unit bonus itself is still paid; only the badge that used to come
+        // with it has moved to manual claiming.
+        $response->assertOk()
+            ->assertJson(['unitXpAwarded' => 20])
+            ->assertJsonPath('newBadges', []);
+
+        $this->assertGreaterThan(0, $response->json('unitBonusGems'));
     }
 
     public function test_completing_a_lesson_no_longer_deducts_hearts_directly(): void
@@ -112,18 +116,32 @@ class LessonProgressTest extends TestCase
         $response = $this->actingAs($user)
             ->postJson("/api/lessons/{$lesson->id}/complete", ['mistakes' => 4]);
 
-        // Hearts are lost in real time via /api/game-state/lose-heart while
-        // the exercise is in progress, not batched here from $mistakes —
-        // starts at 5, untouched by completion itself, then +1 each from the
-        // xp-first and lesson-first BRONZE badge rewards => 7 (every factory
-        // user is a Monthly subscriber by default, capped at 100, not 5).
-        $response->assertOk()->assertJsonPath('hearts', 7);
+        // Hearts are lost in real time via /api/game-state/lose-heart while the
+        // exercise is in progress, never batched here from $mistakes. Four
+        // mistakes therefore cost nothing at completion.
+        //
+        // The expected number is the subscriber cap, not 5: every factory user
+        // is a Monthly subscriber, and the monthly allowance tops their balance
+        // up to 100 on read. It used to be 7 because two bronze badges granted
+        // a heart each, which manual claiming ended.
+        $response->assertOk()->assertJsonPath(
+            'hearts',
+            LessonProgressService::SUBSCRIBER_MAX_HEARTS
+        );
     }
 
     public function test_lose_heart_endpoint_deducts_one_heart_immediately_and_floors_at_zero(): void
     {
         $user = User::factory()->create();
-        UserGameState::create(['user_id' => $user->id, 'hearts' => 1]);
+        // Every factory user is a Monthly subscriber, and a subscriber who has
+        // not been granted this month's hundred hearts gets them on the next
+        // request. Marking the grant as already spent is what lets this test
+        // set the heart count it actually wants to exercise.
+        UserGameState::create([
+            'user_id' => $user->id,
+            'hearts' => 1,
+            'subscriber_hearts_granted_at' => now(),
+        ]);
 
         $response = $this->actingAs($user)->postJson('/api/game-state/lose-heart');
         $response->assertOk()->assertJsonPath('hearts', 0);

@@ -77,6 +77,9 @@ class EsUnitBeginner10Seeder extends Seeder
                                     'apple',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir kitab', 'correct' => ['bir', 'kitab'], 'extra' => ['alma']],
+                            'ar' => ['sentence' => 'كتاب', 'correct' => ['كتاب'], 'extra' => ['تفاحة']],
+                            'ru' => ['sentence' => 'книга', 'correct' => ['книга'], 'extra' => ['яблоко']],
                             'de' => [
                                 'sentence' => 'Ein Buch',
                                 'correct' => [
@@ -118,6 +121,7 @@ class EsUnitBeginner10Seeder extends Seeder
                                     '사과',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kitap', 'correct' => ['bir', 'kitap'], 'extra' => ['elma']],
                         ],
                     ],
                     'b' => [
@@ -137,6 +141,9 @@ class EsUnitBeginner10Seeder extends Seeder
                                     'book',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir alma', 'correct' => ['bir', 'alma'], 'extra' => ['kitab']],
+                            'ar' => ['sentence' => 'تفاحة', 'correct' => ['تفاحة'], 'extra' => ['كتاب']],
+                            'ru' => ['sentence' => 'яблоко', 'correct' => ['яблоко'], 'extra' => ['книга']],
                             'de' => [
                                 'sentence' => 'Ein Apfel',
                                 'correct' => [
@@ -177,6 +184,7 @@ class EsUnitBeginner10Seeder extends Seeder
                                     '책',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir elma', 'correct' => ['bir', 'elma'], 'extra' => ['kitap']],
                         ],
                     ],
                     'c' => [
@@ -202,6 +210,9 @@ class EsUnitBeginner10Seeder extends Seeder
                                     'cat',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir kitab və bir alma', 'correct' => ['bir', 'kitab', 'və', 'bir', 'alma'], 'extra' => ['pişik']],
+                            'ar' => ['sentence' => 'كتاب و تفاحة', 'correct' => ['كتاب', 'و', 'تفاحة'], 'extra' => ['قط']],
+                            'ru' => ['sentence' => 'книга и яблоко', 'correct' => ['книга', 'и', 'яблоко'], 'extra' => ['кот']],
                             'de' => [
                                 'sentence' => 'Ein Buch und ein Apfel',
                                 'correct' => [
@@ -249,6 +260,7 @@ class EsUnitBeginner10Seeder extends Seeder
                                     '고양이',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kitap ve bir elma', 'correct' => ['bir', 'kitap', 've', 'bir', 'elma'], 'extra' => ['kedi']],
                         ],
                     ],
                 ],
@@ -291,6 +303,9 @@ class EsUnitBeginner10Seeder extends Seeder
                                     'some',
                                 ],
                             ],
+                            'az' => ['sentence' => 'pişik', 'correct' => ['pişik'], 'extra' => ['it', 'bir az']],
+                            'ar' => ['sentence' => 'قط', 'correct' => ['قط'], 'extra' => ['كلب', 'بعض']],
+                            'ru' => ['sentence' => 'кот', 'correct' => ['кот'], 'extra' => ['собака', 'немного']],
                             'de' => [
                                 'sentence' => 'Die Katze',
                                 'correct' => [
@@ -333,6 +348,7 @@ class EsUnitBeginner10Seeder extends Seeder
                                     '개',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kedi', 'correct' => ['kedi'], 'extra' => ['köpek', 'biraz']],
                         ],
                     ],
                     'b' => [
@@ -354,6 +370,9 @@ class EsUnitBeginner10Seeder extends Seeder
                                     'cat',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir az su', 'correct' => ['bir az', 'su'], 'extra' => ['pişik']],
+                            'ar' => ['sentence' => 'بعض ماء', 'correct' => ['بعض', 'ماء'], 'extra' => ['قط']],
+                            'ru' => ['sentence' => 'немного вода', 'correct' => ['немного', 'вода'], 'extra' => ['кот']],
                             'de' => [
                                 'sentence' => 'Etwas Wasser',
                                 'correct' => [
@@ -396,6 +415,7 @@ class EsUnitBeginner10Seeder extends Seeder
                                     '그',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'biraz su', 'correct' => ['biraz', 'su'], 'extra' => ['o', 'kedi']],
                         ],
                     ],
                     'c' => [
@@ -421,6 +441,9 @@ class EsUnitBeginner10Seeder extends Seeder
                                     'some',
                                 ],
                             ],
+                            'az' => ['sentence' => 'it və pişik', 'correct' => ['it', 'və', 'pişik'], 'extra' => ['bir az']],
+                            'ar' => ['sentence' => 'كلب و قط', 'correct' => ['كلب', 'و', 'قط'], 'extra' => ['بعض']],
+                            'ru' => ['sentence' => 'собака и кот', 'correct' => ['собака', 'и', 'кот'], 'extra' => ['немного']],
                             'de' => [
                                 'sentence' => 'Der Hund und die Katze',
                                 'correct' => [
@@ -468,6 +491,7 @@ class EsUnitBeginner10Seeder extends Seeder
                                     '약간의',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'köpek ve kedi', 'correct' => ['köpek', 've', 'kedi'], 'extra' => ['biraz']],
                         ],
                     ],
                 ],
@@ -510,6 +534,9 @@ class EsUnitBeginner10Seeder extends Seeder
                                     'one',
                                 ],
                             ],
+                            'az' => ['sentence' => 'iki pişiklər', 'correct' => ['iki', 'pişiklər'], 'extra' => ['kitablar', 'bir']],
+                            'ar' => ['sentence' => 'اثنان قطط', 'correct' => ['اثنان', 'قطط'], 'extra' => ['كتب', 'واحد']],
+                            'ru' => ['sentence' => 'два коты', 'correct' => ['два', 'коты'], 'extra' => ['книги', 'один']],
                             'de' => [
                                 'sentence' => 'Zwei Katzen',
                                 'correct' => [
@@ -553,6 +580,7 @@ class EsUnitBeginner10Seeder extends Seeder
                                     '책들',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'iki kedi', 'correct' => ['iki', 'kedi'], 'extra' => ['kitaplar', 'bir']],
                         ],
                     ],
                     'b' => [
@@ -573,6 +601,9 @@ class EsUnitBeginner10Seeder extends Seeder
                                     'two',
                                 ],
                             ],
+                            'az' => ['sentence' => 'üç kitablar', 'correct' => ['üç', 'kitablar'], 'extra' => ['pişiklər', 'iki']],
+                            'ar' => ['sentence' => 'ثلاثة كتب', 'correct' => ['ثلاثة', 'كتب'], 'extra' => ['قطط', 'اثنان']],
+                            'ru' => ['sentence' => 'три книги', 'correct' => ['три', 'книги'], 'extra' => ['коты', 'два']],
                             'de' => [
                                 'sentence' => 'Drei Bücher',
                                 'correct' => [
@@ -616,6 +647,7 @@ class EsUnitBeginner10Seeder extends Seeder
                                     '고양이들',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'üç kitap', 'correct' => ['üç', 'kitap'], 'extra' => ['kediler', 'iki']],
                         ],
                     ],
                     'c' => [
@@ -641,6 +673,9 @@ class EsUnitBeginner10Seeder extends Seeder
                                     'cats',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir pişik və bir kitab', 'correct' => ['bir', 'pişik', 'və', 'bir', 'kitab'], 'extra' => ['pişiklər']],
+                            'ar' => ['sentence' => 'قط و كتاب', 'correct' => ['قط', 'و', 'كتاب'], 'extra' => ['قطط']],
+                            'ru' => ['sentence' => 'кот и книга', 'correct' => ['кот', 'и', 'книга'], 'extra' => ['коты']],
                             'de' => [
                                 'sentence' => 'Eine Katze und ein Buch',
                                 'correct' => [
@@ -688,6 +723,7 @@ class EsUnitBeginner10Seeder extends Seeder
                                     '고양이들',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kedi ve bir kitap', 'correct' => ['bir', 'kedi', 've', 'bir', 'kitap'], 'extra' => ['kediler']],
                         ],
                     ],
                 ],
@@ -730,6 +766,9 @@ class EsUnitBeginner10Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bu kitab', 'correct' => ['bu', 'kitab'], 'extra' => ['o', 'ev']],
+                            'ar' => ['sentence' => 'هذا كتاب', 'correct' => ['هذا', 'كتاب'], 'extra' => ['ذلك', 'بيت']],
+                            'ru' => ['sentence' => 'это книга', 'correct' => ['это', 'книга'], 'extra' => ['тот', 'дом']],
                             'de' => [
                                 'sentence' => 'Dieses Buch',
                                 'correct' => [
@@ -772,6 +811,7 @@ class EsUnitBeginner10Seeder extends Seeder
                                     '저',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bu kitap', 'correct' => ['bu', 'kitap'], 'extra' => ['o', 'ev']],
                         ],
                     ],
                     'b' => [
@@ -792,6 +832,9 @@ class EsUnitBeginner10Seeder extends Seeder
                                     'book',
                                 ],
                             ],
+                            'az' => ['sentence' => 'o ev', 'correct' => ['o', 'ev'], 'extra' => ['bu', 'kitab']],
+                            'ar' => ['sentence' => 'ذلك بيت', 'correct' => ['ذلك', 'بيت'], 'extra' => ['هذا', 'كتاب']],
+                            'ru' => ['sentence' => 'тот дом', 'correct' => ['тот', 'дом'], 'extra' => ['это', 'книга']],
                             'de' => [
                                 'sentence' => 'Jenes Haus',
                                 'correct' => [
@@ -834,6 +877,7 @@ class EsUnitBeginner10Seeder extends Seeder
                                     '이',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'o ev', 'correct' => ['o', 'ev'], 'extra' => ['bu', 'kitap']],
                         ],
                     ],
                     'c' => [
@@ -859,6 +903,9 @@ class EsUnitBeginner10Seeder extends Seeder
                                     'cat',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bu kitab və o ev', 'correct' => ['bu', 'kitab', 'və', 'o', 'ev'], 'extra' => ['pişik']],
+                            'ar' => ['sentence' => 'هذا كتاب و ذلك بيت', 'correct' => ['هذا', 'كتاب', 'و', 'ذلك', 'بيت'], 'extra' => ['قط']],
+                            'ru' => ['sentence' => 'это книга и тот дом', 'correct' => ['это', 'книга', 'и', 'тот', 'дом'], 'extra' => ['кот']],
                             'de' => [
                                 'sentence' => 'Dieses Buch und jenes Haus',
                                 'correct' => [
@@ -910,6 +957,7 @@ class EsUnitBeginner10Seeder extends Seeder
                                     '고양이',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bu kitap ve o ev', 'correct' => ['bu', 'kitap', 've', 'o', 'ev'], 'extra' => ['kedi']],
                         ],
                     ],
                 ],
@@ -952,6 +1000,9 @@ class EsUnitBeginner10Seeder extends Seeder
                                     'dogs',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bunlar pişiklər', 'correct' => ['bunlar', 'pişiklər'], 'extra' => ['onlar', 'itlər']],
+                            'ar' => ['sentence' => 'هذه قطط', 'correct' => ['هذه', 'قطط'], 'extra' => ['تلك', 'كلاب']],
+                            'ru' => ['sentence' => 'эти коты', 'correct' => ['эти', 'коты'], 'extra' => ['те', 'собаки']],
                             'de' => [
                                 'sentence' => 'Diese Katzen',
                                 'correct' => [
@@ -993,6 +1044,7 @@ class EsUnitBeginner10Seeder extends Seeder
                                     '저것들',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bu kediler', 'correct' => ['bu', 'kediler'], 'extra' => ['onlar', 'köpekler']],
                         ],
                     ],
                     'b' => [
@@ -1013,6 +1065,9 @@ class EsUnitBeginner10Seeder extends Seeder
                                     'cats',
                                 ],
                             ],
+                            'az' => ['sentence' => 'onlar itlər', 'correct' => ['onlar', 'itlər'], 'extra' => ['bunlar', 'pişiklər']],
+                            'ar' => ['sentence' => 'تلك كلاب', 'correct' => ['تلك', 'كلاب'], 'extra' => ['هذه', 'قطط']],
+                            'ru' => ['sentence' => 'те собаки', 'correct' => ['те', 'собаки'], 'extra' => ['эти', 'коты']],
                             'de' => [
                                 'sentence' => 'Jene Hunde',
                                 'correct' => [
@@ -1054,6 +1109,7 @@ class EsUnitBeginner10Seeder extends Seeder
                                     '이것들',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'o köpekler', 'correct' => ['o', 'köpekler'], 'extra' => ['bunlar', 'kediler']],
                         ],
                     ],
                     'c' => [
@@ -1079,6 +1135,9 @@ class EsUnitBeginner10Seeder extends Seeder
                                     'these',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir pişik və bir it', 'correct' => ['bir', 'pişik', 'və', 'bir', 'it'], 'extra' => ['bunlar']],
+                            'ar' => ['sentence' => 'قط و كلب', 'correct' => ['قط', 'و', 'كلب'], 'extra' => ['هذه']],
+                            'ru' => ['sentence' => 'кот и собака', 'correct' => ['кот', 'и', 'собака'], 'extra' => ['эти']],
                             'de' => [
                                 'sentence' => 'Eine Katze und ein Hund',
                                 'correct' => [
@@ -1126,6 +1185,7 @@ class EsUnitBeginner10Seeder extends Seeder
                                     '이것들',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kedi ve bir köpek', 'correct' => ['bir', 'kedi', 've', 'bir', 'köpek'], 'extra' => ['bunlar']],
                         ],
                     ],
                 ],

@@ -84,6 +84,9 @@ class DeUnitConversation09Seeder extends Seeder
                                     'coffee',
                                 ],
                             ],
+                            'az' => ['sentence' => 'düşünürəm kitab yaxşı', 'correct' => ['düşünürəm', 'kitab', 'yaxşı'], 'extra' => ['qəhvə']],
+                            'ar' => ['sentence' => 'أفكر كتاب جيد', 'correct' => ['أفكر', 'كتاب', 'جيد'], 'extra' => ['قهوة']],
+                            'ru' => ['sentence' => 'я думаю книга хороший', 'correct' => ['я', 'думаю', 'книга', 'хороший'], 'extra' => ['кофе']],
                             'es' => [
                                 'sentence' => 'Creo que el libro es bueno',
                                 'correct' => [
@@ -134,6 +137,7 @@ class DeUnitConversation09Seeder extends Seeder
                                     '커피',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bence kitap iyi', 'correct' => ['bence', 'kitap', 'iyi'], 'extra' => ['kahve']],
                         ],
                     ],
                     'b' => [
@@ -160,6 +164,9 @@ class DeUnitConversation09Seeder extends Seeder
                                     'book',
                                 ],
                             ],
+                            'az' => ['sentence' => 'düşünürəm qəhvə yaxşı', 'correct' => ['düşünürəm', 'qəhvə', 'yaxşı'], 'extra' => ['kitab']],
+                            'ar' => ['sentence' => 'أفكر قهوة جيد', 'correct' => ['أفكر', 'قهوة', 'جيد'], 'extra' => ['كتاب']],
+                            'ru' => ['sentence' => 'я думаю кофе хороший', 'correct' => ['я', 'думаю', 'кофе', 'хороший'], 'extra' => ['книга']],
                             'es' => [
                                 'sentence' => 'Creo que el café es bueno',
                                 'correct' => [
@@ -210,6 +217,7 @@ class DeUnitConversation09Seeder extends Seeder
                                     '책',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bence kahve iyi', 'correct' => ['bence', 'kahve', 'iyi'], 'extra' => ['kitap']],
                         ],
                     ],
                     'c' => [
@@ -235,6 +243,9 @@ class DeUnitConversation09Seeder extends Seeder
                                     'I think',
                                 ],
                             ],
+                            'az' => ['sentence' => 'kitab və qəhvə', 'correct' => ['kitab', 'və', 'qəhvə'], 'extra' => ['düşünürəm']],
+                            'ar' => ['sentence' => 'كتاب و قهوة', 'correct' => ['كتاب', 'و', 'قهوة'], 'extra' => ['أفكر']],
+                            'ru' => ['sentence' => 'книга и кофе', 'correct' => ['книга', 'и', 'кофе'], 'extra' => ['я', 'думаю']],
                             'es' => [
                                 'sentence' => 'El libro y el café',
                                 'correct' => [
@@ -282,6 +293,7 @@ class DeUnitConversation09Seeder extends Seeder
                                     '나는 생각한다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kitap ve kahve', 'correct' => ['kitap', 've', 'kahve'], 'extra' => ['düşünüyorum']],
                         ],
                     ],
                 ],
@@ -328,6 +340,9 @@ class DeUnitConversation09Seeder extends Seeder
                                     'tea',
                                 ],
                             ],
+                            'az' => ['sentence' => 'inanıram qəhvə daha yaxşı', 'correct' => ['inanıram', 'qəhvə', 'daha yaxşı'], 'extra' => ['çay']],
+                            'ar' => ['sentence' => 'أعتقد قهوة أحسن', 'correct' => ['أعتقد', 'قهوة', 'أحسن'], 'extra' => ['شاي']],
+                            'ru' => ['sentence' => 'я думаю кофе лучше', 'correct' => ['я думаю', 'кофе', 'лучше'], 'extra' => ['чай']],
                             'es' => [
                                 'sentence' => 'Creo que el café es mejor',
                                 'correct' => [
@@ -379,6 +394,7 @@ class DeUnitConversation09Seeder extends Seeder
                                     '차',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bence kahve daha iyi', 'correct' => ['bence', 'kahve', 'daha', 'iyi'], 'extra' => ['çay']],
                         ],
                     ],
                     'b' => [
@@ -401,6 +417,9 @@ class DeUnitConversation09Seeder extends Seeder
                                     'I believe',
                                 ],
                             ],
+                            'az' => ['sentence' => 'çay daha yaxşı', 'correct' => ['çay', 'daha yaxşı'], 'extra' => ['qəhvə', 'inanıram']],
+                            'ar' => ['sentence' => 'شاي أحسن', 'correct' => ['شاي', 'أحسن'], 'extra' => ['قهوة', 'أعتقد']],
+                            'ru' => ['sentence' => 'чай лучше', 'correct' => ['чай', 'лучше'], 'extra' => ['кофе', 'я думаю']],
                             'es' => [
                                 'sentence' => 'El té es mejor',
                                 'correct' => [
@@ -448,6 +467,7 @@ class DeUnitConversation09Seeder extends Seeder
                                     '커피',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'çay daha iyi', 'correct' => ['çay', 'daha', 'iyi'], 'extra' => ['kahve', 'bence']],
                         ],
                     ],
                     'c' => [
@@ -472,6 +492,9 @@ class DeUnitConversation09Seeder extends Seeder
                                     'better',
                                 ],
                             ],
+                            'az' => ['sentence' => 'inanıram çay yaxşı', 'correct' => ['inanıram', 'çay', 'yaxşı'], 'extra' => ['daha yaxşı']],
+                            'ar' => ['sentence' => 'أعتقد شاي جيد', 'correct' => ['أعتقد', 'شاي', 'جيد'], 'extra' => ['أحسن']],
+                            'ru' => ['sentence' => 'я думаю чай хороший', 'correct' => ['я думаю', 'чай', 'хороший'], 'extra' => ['лучше']],
                             'es' => [
                                 'sentence' => 'Creo que el té es bueno',
                                 'correct' => [
@@ -520,6 +543,7 @@ class DeUnitConversation09Seeder extends Seeder
                                     '더 좋은',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bence çay iyi', 'correct' => ['bence', 'çay', 'iyi'], 'extra' => ['daha iyi']],
                         ],
                     ],
                 ],
@@ -564,6 +588,9 @@ class DeUnitConversation09Seeder extends Seeder
                                     'book',
                                 ],
                             ],
+                            'az' => ['sentence' => 'o düzgün', 'correct' => ['o', 'düzgün'], 'extra' => ['səhv', 'kitab']],
+                            'ar' => ['sentence' => 'هو صحيح', 'correct' => ['هو', 'صحيح'], 'extra' => ['خطأ', 'كتاب']],
+                            'ru' => ['sentence' => 'оно правильно', 'correct' => ['оно', 'правильно'], 'extra' => ['неверно', 'книга']],
                             'es' => [
                                 'sentence' => 'Es verdadero',
                                 'correct' => [
@@ -610,6 +637,7 @@ class DeUnitConversation09Seeder extends Seeder
                                     '거짓',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bu doğru', 'correct' => ['bu', 'doğru'], 'extra' => ['yanlış', 'kitap']],
                         ],
                     ],
                     'b' => [
@@ -632,6 +660,9 @@ class DeUnitConversation09Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'o səhv', 'correct' => ['o', 'səhv'], 'extra' => ['düzgün', 'ev']],
+                            'ar' => ['sentence' => 'هو خطأ', 'correct' => ['هو', 'خطأ'], 'extra' => ['صحيح', 'بيت']],
+                            'ru' => ['sentence' => 'оно неверно', 'correct' => ['оно', 'неверно'], 'extra' => ['правильно', 'дом']],
                             'es' => [
                                 'sentence' => 'Es falso',
                                 'correct' => [
@@ -678,6 +709,7 @@ class DeUnitConversation09Seeder extends Seeder
                                     '사실',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bu yanlış', 'correct' => ['bu', 'yanlış'], 'extra' => ['doğru', 'ev']],
                         ],
                     ],
                     'c' => [
@@ -703,6 +735,9 @@ class DeUnitConversation09Seeder extends Seeder
                                     'true',
                                 ],
                             ],
+                            'az' => ['sentence' => 'kitab və ya ev', 'correct' => ['kitab', 'və ya', 'ev'], 'extra' => ['düzgün']],
+                            'ar' => ['sentence' => 'كتاب أو بيت', 'correct' => ['كتاب', 'أو', 'بيت'], 'extra' => ['صحيح']],
+                            'ru' => ['sentence' => 'книга или дом', 'correct' => ['книга', 'или', 'дом'], 'extra' => ['правильно']],
                             'es' => [
                                 'sentence' => 'El libro o la casa',
                                 'correct' => [
@@ -751,6 +786,7 @@ class DeUnitConversation09Seeder extends Seeder
                                     '사실',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kitap veya ev', 'correct' => ['kitap', 'veya', 'ev'], 'extra' => ['doğru']],
                         ],
                     ],
                 ],
@@ -794,6 +830,9 @@ class DeUnitConversation09Seeder extends Seeder
                                     'book',
                                 ],
                             ],
+                            'az' => ['sentence' => 'üstünlük verirəm qəhvə', 'correct' => ['üstünlük verirəm', 'qəhvə'], 'extra' => ['daha yaxşı', 'kitab']],
+                            'ar' => ['sentence' => 'أفضل قهوة', 'correct' => ['أفضل', 'قهوة'], 'extra' => ['أحسن', 'كتاب']],
+                            'ru' => ['sentence' => 'я предпочитаю кофе', 'correct' => ['я', 'предпочитаю', 'кофе'], 'extra' => ['лучше', 'книга']],
                             'es' => [
                                 'sentence' => 'Prefiero el café',
                                 'correct' => [
@@ -840,6 +879,7 @@ class DeUnitConversation09Seeder extends Seeder
                                     '더 좋은',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ben kahve tercih ederim', 'correct' => ['ben', 'kahve', 'tercih', 'ederim'], 'extra' => ['daha iyi', 'kitap']],
                         ],
                     ],
                     'b' => [
@@ -864,6 +904,9 @@ class DeUnitConversation09Seeder extends Seeder
                                     'coffee',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bu kitab daha yaxşı', 'correct' => ['bu', 'kitab', 'daha yaxşı'], 'extra' => ['üstünlük verirəm', 'qəhvə']],
+                            'ar' => ['sentence' => 'هذا كتاب أحسن', 'correct' => ['هذا', 'كتاب', 'أحسن'], 'extra' => ['أفضل', 'قهوة']],
+                            'ru' => ['sentence' => 'это книга лучше', 'correct' => ['это', 'книга', 'лучше'], 'extra' => ['я', 'предпочитаю', 'кофе']],
                             'es' => [
                                 'sentence' => 'Este libro es mejor',
                                 'correct' => [
@@ -915,6 +958,7 @@ class DeUnitConversation09Seeder extends Seeder
                                     '나는 선호한다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bu kitap daha iyi', 'correct' => ['bu', 'kitap', 'daha', 'iyi'], 'extra' => ['tercih ederim', 'kahve']],
                         ],
                     ],
                     'c' => [
@@ -937,6 +981,9 @@ class DeUnitConversation09Seeder extends Seeder
                                     'coffee',
                                 ],
                             ],
+                            'az' => ['sentence' => 'üstünlük verirəm bu kitab', 'correct' => ['üstünlük verirəm', 'bu', 'kitab'], 'extra' => ['qəhvə']],
+                            'ar' => ['sentence' => 'أفضل هذا كتاب', 'correct' => ['أفضل', 'هذا', 'كتاب'], 'extra' => ['قهوة']],
+                            'ru' => ['sentence' => 'я предпочитаю это книга', 'correct' => ['я', 'предпочитаю', 'это', 'книга'], 'extra' => ['кофе']],
                             'es' => [
                                 'sentence' => 'Prefiero este libro',
                                 'correct' => [
@@ -986,6 +1033,7 @@ class DeUnitConversation09Seeder extends Seeder
                                     '커피',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bu kitabı tercih ederim', 'correct' => ['bu', 'kitabı', 'tercih', 'ederim'], 'extra' => ['kahve']],
                         ],
                     ],
                 ],
@@ -1032,6 +1080,9 @@ class DeUnitConversation09Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'düşünürəm o düzgün', 'correct' => ['düşünürəm', 'o', 'düzgün'], 'extra' => ['dost']],
+                            'ar' => ['sentence' => 'أفكر هو صحيح', 'correct' => ['أفكر', 'هو', 'صحيح'], 'extra' => ['صديق']],
+                            'ru' => ['sentence' => 'я думаю оно правильно', 'correct' => ['я', 'думаю', 'оно', 'правильно'], 'extra' => ['друг']],
                             'es' => [
                                 'sentence' => 'Creo que es verdadero',
                                 'correct' => [
@@ -1081,6 +1132,7 @@ class DeUnitConversation09Seeder extends Seeder
                                     '친구',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bence bu doğru', 'correct' => ['bence', 'bu', 'doğru'], 'extra' => ['arkadaş']],
                         ],
                     ],
                     'b' => [
@@ -1106,6 +1158,9 @@ class DeUnitConversation09Seeder extends Seeder
                                     'true',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim dost və məktəb', 'correct' => ['mənim', 'dost', 'və', 'məktəb'], 'extra' => ['düzgün']],
+                            'ar' => ['sentence' => 'صديق و مدرسة', 'correct' => ['صديق', 'و', 'مدرسة'], 'extra' => ['صحيح']],
+                            'ru' => ['sentence' => 'мой друг и школа', 'correct' => ['мой', 'друг', 'и', 'школа'], 'extra' => ['правильно']],
                             'es' => [
                                 'sentence' => 'Mi amigo y la escuela',
                                 'correct' => [
@@ -1154,6 +1209,7 @@ class DeUnitConversation09Seeder extends Seeder
                                     '사실',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'arkadaşım ve okul', 'correct' => ['arkadaşım', 've', 'okul'], 'extra' => ['doğru']],
                         ],
                     ],
                     'c' => [
@@ -1180,6 +1236,9 @@ class DeUnitConversation09Seeder extends Seeder
                                     'true',
                                 ],
                             ],
+                            'az' => ['sentence' => 'düşünürəm məktəb yaxşı', 'correct' => ['düşünürəm', 'məktəb', 'yaxşı'], 'extra' => ['düzgün']],
+                            'ar' => ['sentence' => 'أفكر مدرسة جيد', 'correct' => ['أفكر', 'مدرسة', 'جيد'], 'extra' => ['صحيح']],
+                            'ru' => ['sentence' => 'я думаю школа хороший', 'correct' => ['я', 'думаю', 'школа', 'хороший'], 'extra' => ['правильно']],
                             'es' => [
                                 'sentence' => 'Creo que la escuela es buena',
                                 'correct' => [
@@ -1229,6 +1288,7 @@ class DeUnitConversation09Seeder extends Seeder
                                     '사실',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bence okul iyi', 'correct' => ['bence', 'okul', 'iyi'], 'extra' => ['doğru']],
                         ],
                     ],
                 ],

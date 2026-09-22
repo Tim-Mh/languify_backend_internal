@@ -110,15 +110,19 @@ class ShopTest extends TestCase
         ])->assertOk()->assertJson(['checkoutUrl' => 'https://checkout.stripe.com/fake-sub']);
     }
 
-    public function test_subscription_checkout_rejects_your_current_plan(): void
+    public function test_buying_the_plan_you_already_have_is_how_you_renew(): void
     {
+        // Factory users are on 'monthly' already. Checking out the same plan
+        // used to be refused; in the manual-renewal model it IS the renewal,
+        // and activateSubscriptionFromSession stacks the new period onto the
+        // time still left, so renewing early never forfeits days.
         $user = User::factory()->create();
 
         $this->actingAs($user)->postJson('/api/shop/subscription/checkout', [
             'planKey' => 'monthly',
             'successUrl' => 'http://localhost:5173/success',
             'cancelUrl' => 'http://localhost:5173/cancel',
-        ])->assertStatus(422);
+        ])->assertOk()->assertJsonStructure(['checkoutUrl']);
     }
 
     public function test_activating_a_subscription_tops_up_hearts_to_the_new_cap(): void

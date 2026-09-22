@@ -11,6 +11,7 @@ use App\Models\UserGameState;
 use App\Models\UserSubscription;
 use App\Services\LessonProgressService;
 use App\Services\StripeService;
+use App\Support\GemLedger;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -226,7 +227,7 @@ class ShopController extends Controller
                 return response()->json(['message' => 'Not enough gems.'], 422);
             }
 
-            $state->gems -= $tier->price_gems;
+            GemLedger::apply($state, -$tier->price_gems, 'shop.hearts_refill');
             $state->hearts = min($maxHearts, $state->hearts + $tier->hearts);
             $state->hearts_updated_at = now();
             // They solved the empty-hearts problem with gems — the "hearts

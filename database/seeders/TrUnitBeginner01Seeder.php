@@ -56,6 +56,9 @@ class TrUnitBeginner01Seeder extends Seeder
                         'words' => ['bir', 'kahve'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'A coffee', 'correct' => ['a', 'coffee'], 'extra' => ['tea', 'and']],
+                            'az' => ['sentence' => 'bir qəhvə', 'correct' => ['bir', 'qəhvə'], 'extra' => ['çay', 'və']],
+                            'ar' => ['sentence' => 'قهوة', 'correct' => ['قهوة'], 'extra' => ['شاي', 'و']],
+                            'ru' => ['sentence' => 'кофе', 'correct' => ['кофе'], 'extra' => ['чай', 'и']],
                             'fr' => ['sentence' => 'Un café', 'correct' => ['un', 'café'], 'extra' => ['thé', 'et']],
                             'es' => ['sentence' => 'Un café', 'correct' => ['un', 'café'], 'extra' => ['té', 'y']],
                             'de' => ['sentence' => 'Einen Kaffee', 'correct' => ['einen', 'Kaffee'], 'extra' => ['Tee', 'und']],
@@ -67,6 +70,9 @@ class TrUnitBeginner01Seeder extends Seeder
                         'words' => ['bir', 'çay'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'A tea', 'correct' => ['a', 'tea'], 'extra' => ['coffee', 'and']],
+                            'az' => ['sentence' => 'bir çay', 'correct' => ['bir', 'çay'], 'extra' => ['qəhvə', 'və']],
+                            'ar' => ['sentence' => 'شاي', 'correct' => ['شاي'], 'extra' => ['قهوة', 'و']],
+                            'ru' => ['sentence' => 'чай', 'correct' => ['чай'], 'extra' => ['кофе', 'и']],
                             'fr' => ['sentence' => 'Un thé', 'correct' => ['un', 'thé'], 'extra' => ['café', 'et']],
                             'es' => ['sentence' => 'Un té', 'correct' => ['un', 'té'], 'extra' => ['café', 'y']],
                             'de' => ['sentence' => 'Einen Tee', 'correct' => ['einen', 'Tee'], 'extra' => ['Kaffee', 'und']],
@@ -78,6 +84,9 @@ class TrUnitBeginner01Seeder extends Seeder
                         'words' => ['bir', 'kahve', 've', 'bir', 'çay'], 'blank' => 2,
                         'means' => [
                             'en' => ['sentence' => 'A coffee and a tea', 'correct' => ['a', 'coffee', 'and', 'a', 'tea'], 'extra' => ['milk']],
+                            'az' => ['sentence' => 'bir qəhvə və bir çay', 'correct' => ['bir', 'qəhvə', 'və', 'bir', 'çay'], 'extra' => ['süd']],
+                            'ar' => ['sentence' => 'قهوة و شاي', 'correct' => ['قهوة', 'و', 'شاي'], 'extra' => ['حليب']],
+                            'ru' => ['sentence' => 'кофе и чай', 'correct' => ['кофе', 'и', 'чай'], 'extra' => ['молоко']],
                             'fr' => ['sentence' => 'Un café et un thé', 'correct' => ['un', 'café', 'et', 'un', 'thé'], 'extra' => ['lait']],
                             'es' => ['sentence' => 'Un café y un té', 'correct' => ['un', 'café', 'y', 'un', 'té'], 'extra' => ['leche']],
                             'de' => ['sentence' => 'Einen Kaffee und einen Tee', 'correct' => ['einen', 'Kaffee', 'und', 'einen', 'Tee'], 'extra' => ['Milch']],
@@ -96,6 +105,9 @@ class TrUnitBeginner01Seeder extends Seeder
                         'words' => ['bir', 'su'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'A water', 'correct' => ['a', 'water'], 'extra' => ['milk', 'please']],
+                            'az' => ['sentence' => 'bir su', 'correct' => ['bir', 'su'], 'extra' => ['süd', 'zəhmət olmasa']],
+                            'ar' => ['sentence' => 'ماء', 'correct' => ['ماء'], 'extra' => ['حليب', 'من فضلك']],
+                            'ru' => ['sentence' => 'вода', 'correct' => ['вода'], 'extra' => ['молоко', 'пожалуйста']],
                             'fr' => ['sentence' => 'Une eau', 'correct' => ['une', 'eau'], 'extra' => ['lait', "s'il vous plaît"]],
                             'es' => ['sentence' => 'Un agua', 'correct' => ['un', 'agua'], 'extra' => ['leche', 'por favor']],
                             'de' => ['sentence' => 'Ein Wasser', 'correct' => ['ein', 'Wasser'], 'extra' => ['Milch', 'bitte']],
@@ -107,6 +119,9 @@ class TrUnitBeginner01Seeder extends Seeder
                         'words' => ['bir', 'süt', 'lütfen'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'A milk please', 'correct' => ['a', 'milk', 'please'], 'extra' => ['water']],
+                            'az' => ['sentence' => 'bir süd zəhmət olmasa', 'correct' => ['bir', 'süd', 'zəhmət olmasa'], 'extra' => ['su']],
+                            'ar' => ['sentence' => 'حليب من فضلك', 'correct' => ['حليب', 'من فضلك'], 'extra' => ['ماء']],
+                            'ru' => ['sentence' => 'молоко пожалуйста', 'correct' => ['молоко', 'пожалуйста'], 'extra' => ['вода']],
                             'fr' => ['sentence' => "Un lait s'il vous plaît", 'correct' => ['un', 'lait', "s'il vous plaît"], 'extra' => ['eau']],
                             'es' => ['sentence' => 'Una leche por favor', 'correct' => ['una', 'leche', 'por favor'], 'extra' => ['agua']],
                             'de' => ['sentence' => 'Eine Milch bitte', 'correct' => ['eine', 'Milch', 'bitte'], 'extra' => ['Wasser']],
@@ -118,6 +133,9 @@ class TrUnitBeginner01Seeder extends Seeder
                         'words' => ['merhaba', 'bir', 'su', 've', 'bir', 'süt'], 'blank' => 3,
                         'means' => [
                             'en' => ['sentence' => 'Hello a water and a milk', 'correct' => ['hello', 'a', 'water', 'and', 'a', 'milk'], 'extra' => ['please']],
+                            'az' => ['sentence' => 'salam bir su və bir süd', 'correct' => ['salam', 'bir', 'su', 'və', 'bir', 'süd'], 'extra' => ['zəhmət olmasa']],
+                            'ar' => ['sentence' => 'مرحبا ماء و حليب', 'correct' => ['مرحبا', 'ماء', 'و', 'حليب'], 'extra' => ['من فضلك']],
+                            'ru' => ['sentence' => 'привет вода и молоко', 'correct' => ['привет', 'вода', 'и', 'молоко'], 'extra' => ['пожалуйста']],
                             'fr' => ['sentence' => 'Bonjour une eau et un lait', 'correct' => ['bonjour', 'une', 'eau', 'et', 'un', 'lait'], 'extra' => ["s'il vous plaît"]],
                             'es' => ['sentence' => 'Hola un agua y una leche', 'correct' => ['hola', 'un', 'agua', 'y', 'una', 'leche'], 'extra' => ['por favor']],
                             'de' => ['sentence' => 'Hallo ein Wasser und eine Milch', 'correct' => ['hallo', 'ein', 'Wasser', 'und', 'eine', 'Milch'], 'extra' => ['bitte']],
@@ -136,6 +154,9 @@ class TrUnitBeginner01Seeder extends Seeder
                         'words' => ['bir', 'ekmek'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'A bread', 'correct' => ['a', 'bread'], 'extra' => ['cheese', 'and']],
+                            'az' => ['sentence' => 'bir çörək', 'correct' => ['bir', 'çörək'], 'extra' => ['pendir', 'və']],
+                            'ar' => ['sentence' => 'خبز', 'correct' => ['خبز'], 'extra' => ['جبن', 'و']],
+                            'ru' => ['sentence' => 'хлеб', 'correct' => ['хлеб'], 'extra' => ['сыр', 'и']],
                             'fr' => ['sentence' => 'Un pain', 'correct' => ['un', 'pain'], 'extra' => ['fromage', 'et']],
                             'es' => ['sentence' => 'Un pan', 'correct' => ['un', 'pan'], 'extra' => ['queso', 'y']],
                             'de' => ['sentence' => 'Ein Brot', 'correct' => ['ein', 'Brot'], 'extra' => ['Käse', 'und']],
@@ -147,6 +168,9 @@ class TrUnitBeginner01Seeder extends Seeder
                         'words' => ['ekmek', 've', 'peynir'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'Bread and cheese', 'correct' => ['bread', 'and', 'cheese'], 'extra' => ['thank you']],
+                            'az' => ['sentence' => 'çörək və pendir', 'correct' => ['çörək', 'və', 'pendir'], 'extra' => ['təşəkkür']],
+                            'ar' => ['sentence' => 'خبز و جبن', 'correct' => ['خبز', 'و', 'جبن'], 'extra' => ['شكرا']],
+                            'ru' => ['sentence' => 'хлеб и сыр', 'correct' => ['хлеб', 'и', 'сыр'], 'extra' => ['спасибо']],
                             'fr' => ['sentence' => 'Pain et fromage', 'correct' => ['pain', 'et', 'fromage'], 'extra' => ['merci']],
                             'es' => ['sentence' => 'Pan y queso', 'correct' => ['pan', 'y', 'queso'], 'extra' => ['gracias']],
                             'de' => ['sentence' => 'Brot und Käse', 'correct' => ['Brot', 'und', 'Käse'], 'extra' => ['danke']],
@@ -158,6 +182,9 @@ class TrUnitBeginner01Seeder extends Seeder
                         'words' => ['bir', 'ekmek', 've', 'bir', 'peynir', 'teşekkürler'], 'blank' => 4,
                         'means' => [
                             'en' => ['sentence' => 'A bread and a cheese thank you', 'correct' => ['a', 'bread', 'and', 'a', 'cheese', 'thank you'], 'extra' => ['coffee']],
+                            'az' => ['sentence' => 'bir çörək və bir pendir təşəkkür', 'correct' => ['bir', 'çörək', 'və', 'bir', 'pendir', 'təşəkkür'], 'extra' => ['qəhvə']],
+                            'ar' => ['sentence' => 'خبز و جبن شكرا', 'correct' => ['خبز', 'و', 'جبن', 'شكرا'], 'extra' => ['قهوة']],
+                            'ru' => ['sentence' => 'хлеб и сыр спасибо', 'correct' => ['хлеб', 'и', 'сыр', 'спасибо'], 'extra' => ['кофе']],
                             'fr' => ['sentence' => 'Un pain et un fromage merci', 'correct' => ['un', 'pain', 'et', 'un', 'fromage', 'merci'], 'extra' => ['café']],
                             'es' => ['sentence' => 'Un pan y un queso gracias', 'correct' => ['un', 'pan', 'y', 'un', 'queso', 'gracias'], 'extra' => ['café']],
                             'de' => ['sentence' => 'Ein Brot und ein Käse danke', 'correct' => ['ein', 'Brot', 'und', 'ein', 'Käse', 'danke'], 'extra' => ['Kaffee']],
@@ -176,6 +203,9 @@ class TrUnitBeginner01Seeder extends Seeder
                         'words' => ['bir', 'pasta'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'A cake', 'correct' => ['a', 'cake'], 'extra' => ['sugar', 'please']],
+                            'az' => ['sentence' => 'bir tort', 'correct' => ['bir', 'tort'], 'extra' => ['şəkər', 'zəhmət olmasa']],
+                            'ar' => ['sentence' => 'كعكة', 'correct' => ['كعكة'], 'extra' => ['سكر', 'من فضلك']],
+                            'ru' => ['sentence' => 'торт', 'correct' => ['торт'], 'extra' => ['сахар', 'пожалуйста']],
                             'fr' => ['sentence' => 'Un gâteau', 'correct' => ['un', 'gâteau'], 'extra' => ['sucre', "s'il vous plaît"]],
                             'es' => ['sentence' => 'Un pastel', 'correct' => ['un', 'pastel'], 'extra' => ['azúcar', 'por favor']],
                             'de' => ['sentence' => 'Einen Kuchen', 'correct' => ['einen', 'Kuchen'], 'extra' => ['Zucker', 'bitte']],
@@ -187,6 +217,9 @@ class TrUnitBeginner01Seeder extends Seeder
                         'words' => ['bir', 'şeker', 'lütfen'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'A sugar please', 'correct' => ['a', 'sugar', 'please'], 'extra' => ['cake']],
+                            'az' => ['sentence' => 'bir şəkər zəhmət olmasa', 'correct' => ['bir', 'şəkər', 'zəhmət olmasa'], 'extra' => ['tort']],
+                            'ar' => ['sentence' => 'سكر من فضلك', 'correct' => ['سكر', 'من فضلك'], 'extra' => ['كعكة']],
+                            'ru' => ['sentence' => 'сахар пожалуйста', 'correct' => ['сахар', 'пожалуйста'], 'extra' => ['торт']],
                             'fr' => ['sentence' => "Un sucre s'il vous plaît", 'correct' => ['un', 'sucre', "s'il vous plaît"], 'extra' => ['gâteau']],
                             'es' => ['sentence' => 'Un azúcar por favor', 'correct' => ['un', 'azúcar', 'por favor'], 'extra' => ['pastel']],
                             'de' => ['sentence' => 'Einen Zucker bitte', 'correct' => ['einen', 'Zucker', 'bitte'], 'extra' => ['Kuchen']],
@@ -198,6 +231,9 @@ class TrUnitBeginner01Seeder extends Seeder
                         'words' => ['bir', 'kahve', 've', 'bir', 'pasta', 'lütfen'], 'blank' => 4,
                         'means' => [
                             'en' => ['sentence' => 'A coffee and a cake please', 'correct' => ['a', 'coffee', 'and', 'a', 'cake', 'please'], 'extra' => ['sugar']],
+                            'az' => ['sentence' => 'bir qəhvə və bir tort zəhmət olmasa', 'correct' => ['bir', 'qəhvə', 'və', 'bir', 'tort', 'zəhmət olmasa'], 'extra' => ['şəkər']],
+                            'ar' => ['sentence' => 'قهوة و كعكة من فضلك', 'correct' => ['قهوة', 'و', 'كعكة', 'من فضلك'], 'extra' => ['سكر']],
+                            'ru' => ['sentence' => 'кофе и торт пожалуйста', 'correct' => ['кофе', 'и', 'торт', 'пожалуйста'], 'extra' => ['сахар']],
                             'fr' => ['sentence' => "Un café et un gâteau s'il vous plaît", 'correct' => ['un', 'café', 'et', 'un', 'gâteau', "s'il vous plaît"], 'extra' => ['sucre']],
                             'es' => ['sentence' => 'Un café y un pastel por favor', 'correct' => ['un', 'café', 'y', 'un', 'pastel', 'por favor'], 'extra' => ['azúcar']],
                             'de' => ['sentence' => 'Einen Kaffee und einen Kuchen bitte', 'correct' => ['einen', 'Kaffee', 'und', 'einen', 'Kuchen', 'bitte'], 'extra' => ['Zucker']],
@@ -216,6 +252,9 @@ class TrUnitBeginner01Seeder extends Seeder
                         'words' => ['bir', 'kahve', 'istiyorum'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'I would like a coffee', 'correct' => ['I would like', 'a', 'coffee'], 'extra' => ['cake']],
+                            'az' => ['sentence' => 'istəyirəm bir qəhvə', 'correct' => ['istəyirəm', 'bir', 'qəhvə'], 'extra' => ['tort']],
+                            'ar' => ['sentence' => 'أريد قهوة', 'correct' => ['أريد', 'قهوة'], 'extra' => ['كعكة']],
+                            'ru' => ['sentence' => 'я хочу кофе', 'correct' => ['я', 'хочу', 'кофе'], 'extra' => ['торт']],
                             'fr' => ['sentence' => 'Je voudrais un café', 'correct' => ['je voudrais', 'un', 'café'], 'extra' => ['gâteau']],
                             'es' => ['sentence' => 'Quisiera un café', 'correct' => ['quisiera', 'un', 'café'], 'extra' => ['pastel']],
                             'de' => ['sentence' => 'Ich möchte einen Kaffee', 'correct' => ['ich möchte', 'einen', 'Kaffee'], 'extra' => ['Kuchen']],
@@ -227,6 +266,9 @@ class TrUnitBeginner01Seeder extends Seeder
                         'words' => ['hesap', 'lütfen'], 'blank' => 0,
                         'means' => [
                             'en' => ['sentence' => 'The bill please', 'correct' => ['the bill', 'please'], 'extra' => ['coffee']],
+                            'az' => ['sentence' => 'hesab zəhmət olmasa', 'correct' => ['hesab', 'zəhmət olmasa'], 'extra' => ['qəhvə']],
+                            'ar' => ['sentence' => 'الحساب من فضلك', 'correct' => ['الحساب', 'من فضلك'], 'extra' => ['قهوة']],
+                            'ru' => ['sentence' => 'счёт пожалуйста', 'correct' => ['счёт', 'пожалуйста'], 'extra' => ['кофе']],
                             'fr' => ['sentence' => "L'addition s'il vous plaît", 'correct' => ["l'addition", "s'il vous plaît"], 'extra' => ['café']],
                             'es' => ['sentence' => 'La cuenta por favor', 'correct' => ['la cuenta', 'por favor'], 'extra' => ['café']],
                             'de' => ['sentence' => 'Die Rechnung bitte', 'correct' => ['die Rechnung', 'bitte'], 'extra' => ['Kaffee']],
@@ -238,6 +280,9 @@ class TrUnitBeginner01Seeder extends Seeder
                         'words' => ['bir', 'pasta', 'istiyorum', 've', 'hesap'], 'blank' => 3,
                         'means' => [
                             'en' => ['sentence' => 'I would like a cake and the bill', 'correct' => ['I would like', 'a', 'cake', 'and', 'the bill'], 'extra' => ['tea']],
+                            'az' => ['sentence' => 'istəyirəm bir tort və hesab', 'correct' => ['istəyirəm', 'bir', 'tort', 'və', 'hesab'], 'extra' => ['çay']],
+                            'ar' => ['sentence' => 'أريد كعكة و الحساب', 'correct' => ['أريد', 'كعكة', 'و', 'الحساب'], 'extra' => ['شاي']],
+                            'ru' => ['sentence' => 'я хочу торт и счёт', 'correct' => ['я', 'хочу', 'торт', 'и', 'счёт'], 'extra' => ['чай']],
                             'fr' => ['sentence' => "Je voudrais un gâteau et l'addition", 'correct' => ['je voudrais', 'un', 'gâteau', 'et', "l'addition"], 'extra' => ['thé']],
                             'es' => ['sentence' => 'Quisiera un pastel y la cuenta', 'correct' => ['quisiera', 'un', 'pastel', 'y', 'la cuenta'], 'extra' => ['té']],
                             'de' => ['sentence' => 'Ich möchte einen Kuchen und die Rechnung', 'correct' => ['ich möchte', 'einen', 'Kuchen', 'und', 'die Rechnung'], 'extra' => ['Tee']],

@@ -79,6 +79,9 @@ class JaUnitBeginner01Seeder extends Seeder
                                     'tea',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qəhvə zəhmət olmasa', 'correct' => ['bir', 'qəhvə', 'zəhmət olmasa'], 'extra' => ['çay']],
+                            'ar' => ['sentence' => 'قهوة من فضلك', 'correct' => ['قهوة', 'من فضلك'], 'extra' => ['شاي']],
+                            'ru' => ['sentence' => 'кофе пожалуйста', 'correct' => ['кофе', 'пожалуйста'], 'extra' => ['чай']],
                             'es' => [
                                 'sentence' => 'Un café, por favor',
                                 'correct' => [
@@ -125,6 +128,7 @@ class JaUnitBeginner01Seeder extends Seeder
                                     '차',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kahve lütfen', 'correct' => ['bir', 'kahve', 'lütfen'], 'extra' => ['çay']],
                         ],
                     ],
                     'b' => [
@@ -146,6 +150,9 @@ class JaUnitBeginner01Seeder extends Seeder
                                     'coffee',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir çay təşəkkür', 'correct' => ['bir', 'çay', 'təşəkkür'], 'extra' => ['qəhvə']],
+                            'ar' => ['sentence' => 'شاي شكرا', 'correct' => ['شاي', 'شكرا'], 'extra' => ['قهوة']],
+                            'ru' => ['sentence' => 'чай спасибо', 'correct' => ['чай', 'спасибо'], 'extra' => ['кофе']],
                             'es' => [
                                 'sentence' => 'Un té, gracias',
                                 'correct' => [
@@ -192,6 +199,7 @@ class JaUnitBeginner01Seeder extends Seeder
                                     '커피',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir çay teşekkürler', 'correct' => ['bir', 'çay', 'teşekkürler'], 'extra' => ['kahve']],
                         ],
                     ],
                     'c' => [
@@ -215,6 +223,9 @@ class JaUnitBeginner01Seeder extends Seeder
                                     'thank you',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qəhvə və bir çay', 'correct' => ['bir', 'qəhvə', 'və', 'bir', 'çay'], 'extra' => ['təşəkkür']],
+                            'ar' => ['sentence' => 'قهوة و شاي', 'correct' => ['قهوة', 'و', 'شاي'], 'extra' => ['شكرا']],
+                            'ru' => ['sentence' => 'кофе и чай', 'correct' => ['кофе', 'и', 'чай'], 'extra' => ['спасибо']],
                             'es' => [
                                 'sentence' => 'Un café y un té',
                                 'correct' => [
@@ -264,6 +275,7 @@ class JaUnitBeginner01Seeder extends Seeder
                                     '감사합니다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kahve ve bir çay', 'correct' => ['bir', 'kahve', 've', 'bir', 'çay'], 'extra' => ['teşekkürler']],
                         ],
                     ],
                 ],
@@ -309,6 +321,9 @@ class JaUnitBeginner01Seeder extends Seeder
                                     'bread',
                                 ],
                             ],
+                            'az' => ['sentence' => 'salam bir su zəhmət olmasa', 'correct' => ['salam', 'bir', 'su', 'zəhmət olmasa'], 'extra' => ['çörək']],
+                            'ar' => ['sentence' => 'مرحبا ماء من فضلك', 'correct' => ['مرحبا', 'ماء', 'من فضلك'], 'extra' => ['خبز']],
+                            'ru' => ['sentence' => 'привет вода пожалуйста', 'correct' => ['привет', 'вода', 'пожалуйста'], 'extra' => ['хлеб']],
                             'es' => [
                                 'sentence' => 'Hola, un agua por favor',
                                 'correct' => [
@@ -356,6 +371,7 @@ class JaUnitBeginner01Seeder extends Seeder
                                     '빵',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'merhaba bir su lütfen', 'correct' => ['merhaba', 'bir', 'su', 'lütfen'], 'extra' => ['ekmek']],
                         ],
                     ],
                     'b' => [
@@ -377,6 +393,9 @@ class JaUnitBeginner01Seeder extends Seeder
                                     'hello',
                                 ],
                             ],
+                            'az' => ['sentence' => 'çörək və su', 'correct' => ['çörək', 'və', 'su'], 'extra' => ['salam']],
+                            'ar' => ['sentence' => 'خبز و ماء', 'correct' => ['خبز', 'و', 'ماء'], 'extra' => ['مرحبا']],
+                            'ru' => ['sentence' => 'хлеб и вода', 'correct' => ['хлеб', 'и', 'вода'], 'extra' => ['привет']],
                             'es' => [
                                 'sentence' => 'Pan y agua',
                                 'correct' => [
@@ -423,6 +442,7 @@ class JaUnitBeginner01Seeder extends Seeder
                                     '안녕하세요',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ekmek ve su', 'correct' => ['ekmek', 've', 'su'], 'extra' => ['merhaba']],
                         ],
                     ],
                     'c' => [
@@ -447,6 +467,9 @@ class JaUnitBeginner01Seeder extends Seeder
                                     'water',
                                 ],
                             ],
+                            'az' => ['sentence' => 'salam çörək və bir qəhvə', 'correct' => ['salam', 'çörək', 'və', 'bir', 'qəhvə'], 'extra' => ['su']],
+                            'ar' => ['sentence' => 'مرحبا خبز و قهوة', 'correct' => ['مرحبا', 'خبز', 'و', 'قهوة'], 'extra' => ['ماء']],
+                            'ru' => ['sentence' => 'привет хлеб и кофе', 'correct' => ['привет', 'хлеб', 'и', 'кофе'], 'extra' => ['вода']],
                             'es' => [
                                 'sentence' => 'Hola, pan y un café',
                                 'correct' => [
@@ -497,6 +520,7 @@ class JaUnitBeginner01Seeder extends Seeder
                                     '물',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'merhaba ekmek ve bir kahve', 'correct' => ['merhaba', 'ekmek', 've', 'bir', 'kahve'], 'extra' => ['su']],
                         ],
                     ],
                 ],
@@ -542,6 +566,9 @@ class JaUnitBeginner01Seeder extends Seeder
                                     'sugar',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qəhvə ilə süd', 'correct' => ['bir', 'qəhvə', 'ilə', 'süd'], 'extra' => ['şəkər']],
+                            'ar' => ['sentence' => 'قهوة مع حليب', 'correct' => ['قهوة', 'مع', 'حليب'], 'extra' => ['سكر']],
+                            'ru' => ['sentence' => 'кофе с молоко', 'correct' => ['кофе', 'с', 'молоко'], 'extra' => ['сахар']],
                             'es' => [
                                 'sentence' => 'Un café con leche',
                                 'correct' => [
@@ -589,6 +616,7 @@ class JaUnitBeginner01Seeder extends Seeder
                                     '설탕',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sütlü bir kahve', 'correct' => ['sütlü', 'bir', 'kahve'], 'extra' => ['şeker']],
                         ],
                     ],
                     'b' => [
@@ -609,6 +637,9 @@ class JaUnitBeginner01Seeder extends Seeder
                                     'milk',
                                 ],
                             ],
+                            'az' => ['sentence' => 'istəyirəm şəkər', 'correct' => ['istəyirəm', 'şəkər'], 'extra' => ['süd']],
+                            'ar' => ['sentence' => 'أريد سكر', 'correct' => ['أريد', 'سكر'], 'extra' => ['حليب']],
+                            'ru' => ['sentence' => 'я хочу сахар', 'correct' => ['я', 'хочу', 'сахар'], 'extra' => ['молоко']],
                             'es' => [
                                 'sentence' => 'Quisiera azúcar',
                                 'correct' => [
@@ -652,6 +683,7 @@ class JaUnitBeginner01Seeder extends Seeder
                                     '우유',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'şeker istiyorum', 'correct' => ['şeker', 'istiyorum'], 'extra' => ['süt']],
                         ],
                     ],
                     'c' => [
@@ -678,6 +710,9 @@ class JaUnitBeginner01Seeder extends Seeder
                                     'sugar',
                                 ],
                             ],
+                            'az' => ['sentence' => 'istəyirəm bir çay ilə süd', 'correct' => ['istəyirəm', 'bir', 'çay', 'ilə', 'süd'], 'extra' => ['şəkər']],
+                            'ar' => ['sentence' => 'أريد شاي مع حليب', 'correct' => ['أريد', 'شاي', 'مع', 'حليب'], 'extra' => ['سكر']],
+                            'ru' => ['sentence' => 'я хочу чай с молоко', 'correct' => ['я', 'хочу', 'чай', 'с', 'молоко'], 'extra' => ['сахар']],
                             'es' => [
                                 'sentence' => 'Quisiera un té con leche',
                                 'correct' => [
@@ -729,6 +764,7 @@ class JaUnitBeginner01Seeder extends Seeder
                                     '설탕',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sütlü bir çay istiyorum', 'correct' => ['sütlü', 'bir', 'çay', 'istiyorum'], 'extra' => ['şeker']],
                         ],
                     ],
                 ],
@@ -774,6 +810,9 @@ class JaUnitBeginner01Seeder extends Seeder
                                     'no',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bəli bir qəhvə zəhmət olmasa', 'correct' => ['bəli', 'bir', 'qəhvə', 'zəhmət olmasa'], 'extra' => ['xeyr']],
+                            'ar' => ['sentence' => 'نعم قهوة من فضلك', 'correct' => ['نعم', 'قهوة', 'من فضلك'], 'extra' => ['لا']],
+                            'ru' => ['sentence' => 'да кофе пожалуйста', 'correct' => ['да', 'кофе', 'пожалуйста'], 'extra' => ['нет']],
                             'es' => [
                                 'sentence' => 'Sí, un café por favor',
                                 'correct' => [
@@ -821,6 +860,7 @@ class JaUnitBeginner01Seeder extends Seeder
                                     '아니요',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'evet bir kahve lütfen', 'correct' => ['evet', 'bir', 'kahve', 'lütfen'], 'extra' => ['hayır']],
                         ],
                     ],
                     'b' => [
@@ -841,6 +881,9 @@ class JaUnitBeginner01Seeder extends Seeder
                                     'yes',
                                 ],
                             ],
+                            'az' => ['sentence' => 'xeyr süd', 'correct' => ['xeyr', 'süd'], 'extra' => ['bəli']],
+                            'ar' => ['sentence' => 'لا حليب', 'correct' => ['لا', 'حليب'], 'extra' => ['نعم']],
+                            'ru' => ['sentence' => 'нет молоко', 'correct' => ['нет', 'молоко'], 'extra' => ['да']],
                             'es' => [
                                 'sentence' => 'Sin leche',
                                 'correct' => [
@@ -884,6 +927,7 @@ class JaUnitBeginner01Seeder extends Seeder
                                     '네',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'süt yok', 'correct' => ['süt', 'yok'], 'extra' => ['evet']],
                         ],
                     ],
                     'c' => [
@@ -909,6 +953,9 @@ class JaUnitBeginner01Seeder extends Seeder
                                     'no',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bəli bir qəhvə ilə süd', 'correct' => ['bəli', 'bir', 'qəhvə', 'ilə', 'süd'], 'extra' => ['xeyr']],
+                            'ar' => ['sentence' => 'نعم قهوة مع حليب', 'correct' => ['نعم', 'قهوة', 'مع', 'حليب'], 'extra' => ['لا']],
+                            'ru' => ['sentence' => 'да кофе с молоко', 'correct' => ['да', 'кофе', 'с', 'молоко'], 'extra' => ['нет']],
                             'es' => [
                                 'sentence' => 'Sí, un café con leche',
                                 'correct' => [
@@ -960,6 +1007,7 @@ class JaUnitBeginner01Seeder extends Seeder
                                     '아니요',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'evet sütlü bir kahve', 'correct' => ['evet', 'sütlü', 'bir', 'kahve'], 'extra' => ['hayır']],
                         ],
                     ],
                 ],
@@ -1003,6 +1051,9 @@ class JaUnitBeginner01Seeder extends Seeder
                                     'coffee',
                                 ],
                             ],
+                            'az' => ['sentence' => 'istəyirəm bir çay', 'correct' => ['istəyirəm', 'bir', 'çay'], 'extra' => ['qəhvə']],
+                            'ar' => ['sentence' => 'أريد شاي', 'correct' => ['أريد', 'شاي'], 'extra' => ['قهوة']],
+                            'ru' => ['sentence' => 'я хочу чай', 'correct' => ['я', 'хочу', 'чай'], 'extra' => ['кофе']],
                             'es' => [
                                 'sentence' => 'Quisiera un té',
                                 'correct' => [
@@ -1049,6 +1100,7 @@ class JaUnitBeginner01Seeder extends Seeder
                                     '커피',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir çay istiyorum', 'correct' => ['bir', 'çay', 'istiyorum'], 'extra' => ['kahve']],
                         ],
                     ],
                     'b' => [
@@ -1069,6 +1121,9 @@ class JaUnitBeginner01Seeder extends Seeder
                                     'sugar',
                                 ],
                             ],
+                            'az' => ['sentence' => 'hesab zəhmət olmasa', 'correct' => ['hesab', 'zəhmət olmasa'], 'extra' => ['şəkər']],
+                            'ar' => ['sentence' => 'الحساب من فضلك', 'correct' => ['الحساب', 'من فضلك'], 'extra' => ['سكر']],
+                            'ru' => ['sentence' => 'счёт пожалуйста', 'correct' => ['счёт', 'пожалуйста'], 'extra' => ['сахар']],
                             'es' => [
                                 'sentence' => 'La cuenta, por favor',
                                 'correct' => [
@@ -1112,6 +1167,7 @@ class JaUnitBeginner01Seeder extends Seeder
                                     '설탕',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'hesap lütfen', 'correct' => ['hesap', 'lütfen'], 'extra' => ['şeker']],
                         ],
                     ],
                     'c' => [
@@ -1138,6 +1194,9 @@ class JaUnitBeginner01Seeder extends Seeder
                                     'the bill',
                                 ],
                             ],
+                            'az' => ['sentence' => 'istəyirəm bir çay ilə şəkər', 'correct' => ['istəyirəm', 'bir', 'çay', 'ilə', 'şəkər'], 'extra' => ['hesab']],
+                            'ar' => ['sentence' => 'أريد شاي مع سكر', 'correct' => ['أريد', 'شاي', 'مع', 'سكر'], 'extra' => ['الحساب']],
+                            'ru' => ['sentence' => 'я хочу чай с сахар', 'correct' => ['я', 'хочу', 'чай', 'с', 'сахар'], 'extra' => ['счёт']],
                             'es' => [
                                 'sentence' => 'Quisiera un té con azúcar',
                                 'correct' => [
@@ -1189,6 +1248,7 @@ class JaUnitBeginner01Seeder extends Seeder
                                     '계산서',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'şekerli bir çay istiyorum', 'correct' => ['şekerli', 'bir', 'çay', 'istiyorum'], 'extra' => ['hesap']],
                         ],
                     ],
                 ],

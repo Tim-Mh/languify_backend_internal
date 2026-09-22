@@ -81,6 +81,9 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     'meat',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən vegetarian', 'correct' => ['mən', 'vegetarian'], 'extra' => ['yeyirəm', 'ət']],
+                            'ar' => ['sentence' => 'أنا نباتي', 'correct' => ['أنا', 'نباتي'], 'extra' => ['آكل', 'لحم']],
+                            'ru' => ['sentence' => 'я вегетарианец', 'correct' => ['я', 'вегетарианец'], 'extra' => ['ем', 'мясо']],
                             'es' => [
                                 'sentence' => 'Soy vegetariano',
                                 'correct' => [
@@ -125,6 +128,7 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     '먹다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ben vejetaryenim', 'correct' => ['ben', 'vejetaryenim'], 'extra' => ['ye', 'et']],
                         ],
                     ],
                     'b' => [
@@ -147,6 +151,9 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     'meat',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yeyirəm bir salat', 'correct' => ['yeyirəm', 'bir', 'salat'], 'extra' => ['vegetarian', 'ət']],
+                            'ar' => ['sentence' => 'آكل سلطة', 'correct' => ['آكل', 'سلطة'], 'extra' => ['نباتي', 'لحم']],
+                            'ru' => ['sentence' => 'ем салат', 'correct' => ['ем', 'салат'], 'extra' => ['вегетарианец', 'мясо']],
                             'es' => [
                                 'sentence' => 'Comer una ensalada',
                                 'correct' => [
@@ -191,6 +198,7 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     '채식주의자',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir salata ye', 'correct' => ['bir', 'salata', 'ye'], 'extra' => ['vejetaryen', 'et']],
                         ],
                     ],
                     'c' => [
@@ -213,6 +221,9 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     'salad',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yeyirəm olmadan ət', 'correct' => ['yeyirəm', 'olmadan', 'ət'], 'extra' => ['vegetarian', 'salat']],
+                            'ar' => ['sentence' => 'آكل بدون لحم', 'correct' => ['آكل', 'بدون', 'لحم'], 'extra' => ['نباتي', 'سلطة']],
+                            'ru' => ['sentence' => 'ем без мясо', 'correct' => ['ем', 'без', 'мясо'], 'extra' => ['вегетарианец', 'салат']],
                             'es' => [
                                 'sentence' => 'Comer sin carne',
                                 'correct' => [
@@ -259,6 +270,7 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     '샐러드',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'etsiz ye', 'correct' => ['etsiz', 'ye'], 'extra' => ['vejetaryen', 'salata']],
                         ],
                     ],
                 ],
@@ -306,6 +318,9 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     'cheese',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən allergiya süd', 'correct' => ['mən', 'allergiya', 'süd'], 'extra' => ['pendir']],
+                            'ar' => ['sentence' => 'أنا حساسية إلى حليب', 'correct' => ['أنا', 'حساسية', 'إلى', 'حليب'], 'extra' => ['جبن']],
+                            'ru' => ['sentence' => 'я аллергия в молоко', 'correct' => ['я', 'аллергия', 'в', 'молоко'], 'extra' => ['сыр']],
                             'es' => [
                                 'sentence' => 'Soy alérgico a la leche',
                                 'correct' => [
@@ -357,6 +372,7 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     '치즈',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'süte alerjim var', 'correct' => ['süte', 'alerjim', 'var'], 'extra' => ['alerji', 'peynir']],
                         ],
                     ],
                     'b' => [
@@ -381,6 +397,9 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     'milk',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir allergiya pendir', 'correct' => ['bir', 'allergiya', 'pendir'], 'extra' => ['süd']],
+                            'ar' => ['sentence' => 'حساسية إلى جبن', 'correct' => ['حساسية', 'إلى', 'جبن'], 'extra' => ['حليب']],
+                            'ru' => ['sentence' => 'аллергия в сыр', 'correct' => ['аллергия', 'в', 'сыр'], 'extra' => ['молоко']],
                             'es' => [
                                 'sentence' => 'Una alergia al queso',
                                 'correct' => [
@@ -427,6 +446,7 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     '우유',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'peynir alerjisi', 'correct' => ['peynir', 'alerjisi'], 'extra' => ['alerjik', 'süt']],
                         ],
                     ],
                     'c' => [
@@ -452,6 +472,9 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     'allergy',
                                 ],
                             ],
+                            'az' => ['sentence' => 'olmadan süd və olmadan pendir', 'correct' => ['olmadan', 'süd', 'və', 'olmadan', 'pendir'], 'extra' => ['allergiya']],
+                            'ar' => ['sentence' => 'بدون حليب و بدون جبن', 'correct' => ['بدون', 'حليب', 'و', 'بدون', 'جبن'], 'extra' => ['حساسية']],
+                            'ru' => ['sentence' => 'без молоко и без сыр', 'correct' => ['без', 'молоко', 'и', 'без', 'сыр'], 'extra' => ['аллергия']],
                             'es' => [
                                 'sentence' => 'Sin leche y sin queso',
                                 'correct' => [
@@ -505,6 +528,7 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     '알레르기',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sütsüz ve peynirsiz', 'correct' => ['sütsüz', 've', 'peynirsiz'], 'extra' => ['alerji']],
                         ],
                     ],
                 ],
@@ -550,6 +574,9 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     'nuts',
                                 ],
                             ],
+                            'az' => ['sentence' => 'çörək ilə qlüten', 'correct' => ['çörək', 'ilə', 'qlüten'], 'extra' => ['qoz']],
+                            'ar' => ['sentence' => 'خبز مع غلوتين', 'correct' => ['خبز', 'مع', 'غلوتين'], 'extra' => ['مكسرات']],
+                            'ru' => ['sentence' => 'хлеб с глютен', 'correct' => ['хлеб', 'с', 'глютен'], 'extra' => ['орехи']],
                             'es' => [
                                 'sentence' => 'El pan con gluten',
                                 'correct' => [
@@ -597,6 +624,7 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     '견과류',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'glutenli ekmek', 'correct' => ['glutenli', 'ekmek'], 'extra' => ['fındık']],
                         ],
                     ],
                     'b' => [
@@ -621,6 +649,9 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     'bread',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir allergiya qoz', 'correct' => ['bir', 'allergiya', 'qoz'], 'extra' => ['qlüten', 'çörək']],
+                            'ar' => ['sentence' => 'حساسية إلى مكسرات', 'correct' => ['حساسية', 'إلى', 'مكسرات'], 'extra' => ['غلوتين', 'خبز']],
+                            'ru' => ['sentence' => 'аллергия в орехи', 'correct' => ['аллергия', 'в', 'орехи'], 'extra' => ['глютен', 'хлеб']],
                             'es' => [
                                 'sentence' => 'Una alergia a las nueces',
                                 'correct' => [
@@ -667,6 +698,7 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     '글루텐',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'fındık alerjisi', 'correct' => ['fındık', 'alerjisi'], 'extra' => ['gluten', 'ekmek']],
                         ],
                     ],
                     'c' => [
@@ -692,6 +724,9 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     'gluten',
                                 ],
                             ],
+                            'az' => ['sentence' => 'çörək və pendir olmadan qoz', 'correct' => ['çörək', 'və', 'pendir', 'olmadan', 'qoz'], 'extra' => ['qlüten']],
+                            'ar' => ['sentence' => 'خبز و جبن بدون مكسرات', 'correct' => ['خبز', 'و', 'جبن', 'بدون', 'مكسرات'], 'extra' => ['غلوتين']],
+                            'ru' => ['sentence' => 'хлеб и сыр без орехи', 'correct' => ['хлеб', 'и', 'сыр', 'без', 'орехи'], 'extra' => ['глютен']],
                             'es' => [
                                 'sentence' => 'Pan y queso sin nueces',
                                 'correct' => [
@@ -744,6 +779,7 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     '글루텐',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'fındıksız ekmek ve peynir', 'correct' => ['fındıksız', 'ekmek', 've', 'peynir'], 'extra' => ['gluten']],
                         ],
                     ],
                 ],
@@ -789,6 +825,9 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     'ingredients',
                                 ],
                             ],
+                            'az' => ['sentence' => 'şorba tərkibində var duz', 'correct' => ['şorba', 'tərkibində var', 'duz'], 'extra' => ['tərkib']],
+                            'ar' => ['sentence' => 'حساء يحتوي ملح', 'correct' => ['حساء', 'يحتوي', 'ملح'], 'extra' => ['مكونات']],
+                            'ru' => ['sentence' => 'суп содержит соль', 'correct' => ['суп', 'содержит', 'соль'], 'extra' => ['ингредиенты']],
                             'es' => [
                                 'sentence' => 'La sopa contiene sal',
                                 'correct' => [
@@ -837,6 +876,7 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     '재료',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'çorbada tuz var', 'correct' => ['çorbada', 'tuz', 'var'], 'extra' => ['içindekiler']],
                         ],
                     ],
                     'b' => [
@@ -861,6 +901,9 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     'contains',
                                 ],
                             ],
+                            'az' => ['sentence' => 'tərkib düyü', 'correct' => ['tərkib', 'düyü'], 'extra' => ['tərkibində var']],
+                            'ar' => ['sentence' => 'مكونات أرز', 'correct' => ['مكونات', 'أرز'], 'extra' => ['يحتوي']],
+                            'ru' => ['sentence' => 'ингредиенты рис', 'correct' => ['ингредиенты', 'рис'], 'extra' => ['содержит']],
                             'es' => [
                                 'sentence' => 'Los ingredientes del arroz',
                                 'correct' => [
@@ -908,6 +951,7 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     '들어있다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'pirincin içindekiler', 'correct' => ['pirincin', 'içindekiler'], 'extra' => ['içerir']],
                         ],
                     ],
                     'c' => [
@@ -932,6 +976,9 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     'rice',
                                 ],
                             ],
+                            'az' => ['sentence' => 'tərkib şorba', 'correct' => ['tərkib', 'şorba'], 'extra' => ['düyü']],
+                            'ar' => ['sentence' => 'مكونات حساء', 'correct' => ['مكونات', 'حساء'], 'extra' => ['أرز']],
+                            'ru' => ['sentence' => 'ингредиенты суп', 'correct' => ['ингредиенты', 'суп'], 'extra' => ['рис']],
                             'es' => [
                                 'sentence' => 'Los ingredientes de la sopa',
                                 'correct' => [
@@ -979,6 +1026,7 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     '밥',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'çorbanın içindekiler', 'correct' => ['çorbanın', 'içindekiler'], 'extra' => ['pirinç']],
                         ],
                     ],
                 ],
@@ -1025,6 +1073,9 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     'diet',
                                 ],
                             ],
+                            'az' => ['sentence' => 'istəyirəm qaçınmaq pendir', 'correct' => ['istəyirəm', 'qaçınmaq', 'pendir'], 'extra' => ['pəhriz']],
+                            'ar' => ['sentence' => 'أريد التجنب جبن', 'correct' => ['أريد', 'التجنب', 'جبن'], 'extra' => ['حمية']],
+                            'ru' => ['sentence' => 'я хочу избегать сыр', 'correct' => ['я', 'хочу', 'избегать', 'сыр'], 'extra' => ['диета']],
                             'es' => [
                                 'sentence' => 'Quisiera evitar el queso',
                                 'correct' => [
@@ -1072,6 +1123,7 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     '식단',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'peynirden kaçınmak istiyorum', 'correct' => ['peynirden', 'kaçınmak', 'istiyorum'], 'extra' => ['beslenme']],
                         ],
                     ],
                     'b' => [
@@ -1096,6 +1148,9 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     'cheese',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir pəhriz olmadan ət', 'correct' => ['bir', 'pəhriz', 'olmadan', 'ət'], 'extra' => ['qaçınmaq', 'pendir']],
+                            'ar' => ['sentence' => 'حمية بدون لحم', 'correct' => ['حمية', 'بدون', 'لحم'], 'extra' => ['التجنب', 'جبن']],
+                            'ru' => ['sentence' => 'диета без мясо', 'correct' => ['диета', 'без', 'мясо'], 'extra' => ['избегать', 'сыр']],
                             'es' => [
                                 'sentence' => 'Una dieta sin carne',
                                 'correct' => [
@@ -1144,6 +1199,7 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     '피하다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'etsiz bir beslenme', 'correct' => ['etsiz', 'bir', 'beslenme'], 'extra' => ['kaçınmak', 'peynir']],
                         ],
                     ],
                     'c' => [
@@ -1171,6 +1227,9 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     'diet',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qaçınmaq ət və pendir', 'correct' => ['qaçınmaq', 'ət', 'və', 'pendir'], 'extra' => ['pəhriz']],
+                            'ar' => ['sentence' => 'التجنب لحم و جبن', 'correct' => ['التجنب', 'لحم', 'و', 'جبن'], 'extra' => ['حمية']],
+                            'ru' => ['sentence' => 'избегать мясо и сыр', 'correct' => ['избегать', 'мясо', 'и', 'сыр'], 'extra' => ['диета']],
                             'es' => [
                                 'sentence' => 'Evitar la carne y el queso',
                                 'correct' => [
@@ -1223,6 +1282,7 @@ class DeUnitRestaurant06Seeder extends Seeder
                                     '식단',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'etten ve peynirden kaçınmak', 'correct' => ['etten', 've', 'peynirden', 'kaçınmak'], 'extra' => ['beslenme']],
                         ],
                     ],
                 ],

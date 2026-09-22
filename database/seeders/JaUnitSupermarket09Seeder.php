@@ -84,6 +84,9 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     'to look for',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bağışlayın harada şöbə', 'correct' => ['bağışlayın', 'harada', 'şöbə'], 'extra' => ['axtarmaq']],
+                            'ar' => ['sentence' => 'عفوا أين قسم', 'correct' => ['عفوا', 'أين', 'قسم'], 'extra' => ['البحث']],
+                            'ru' => ['sentence' => 'извините где отдел', 'correct' => ['извините', 'где', 'отдел'], 'extra' => ['искать']],
                             'es' => [
                                 'sentence' => 'Disculpe, dónde está el pasillo',
                                 'correct' => [
@@ -134,6 +137,7 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     '찾다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'affedersiniz reyon nerede', 'correct' => ['affedersiniz', 'reyon', 'nerede'], 'extra' => ['aramak']],
                         ],
                     ],
                     'b' => [
@@ -155,6 +159,9 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     'excuse me',
                                 ],
                             ],
+                            'az' => ['sentence' => 'axtarmaq bir yerkökü', 'correct' => ['axtarmaq', 'bir', 'yerkökü'], 'extra' => ['bağışlayın']],
+                            'ar' => ['sentence' => 'البحث جزر', 'correct' => ['البحث', 'جزر'], 'extra' => ['عفوا']],
+                            'ru' => ['sentence' => 'искать морковь', 'correct' => ['искать', 'морковь'], 'extra' => ['извините']],
                             'es' => [
                                 'sentence' => 'Buscar una zanahoria',
                                 'correct' => [
@@ -200,6 +207,7 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     '실례합니다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir havuç aramak', 'correct' => ['bir', 'havuç', 'aramak'], 'extra' => ['affedersiniz']],
                         ],
                     ],
                     'c' => [
@@ -221,6 +229,9 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     'carrot',
                                 ],
                             ],
+                            'az' => ['sentence' => 'axtarmaq şöbə', 'correct' => ['axtarmaq', 'şöbə'], 'extra' => ['yerkökü']],
+                            'ar' => ['sentence' => 'البحث قسم', 'correct' => ['البحث', 'قسم'], 'extra' => ['جزر']],
+                            'ru' => ['sentence' => 'искать отдел', 'correct' => ['искать', 'отдел'], 'extra' => ['морковь']],
                             'es' => [
                                 'sentence' => 'Buscar el pasillo',
                                 'correct' => [
@@ -264,6 +275,7 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     '당근',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'reyonu aramak', 'correct' => ['reyonu', 'aramak'], 'extra' => ['havuç']],
                         ],
                     ],
                 ],
@@ -310,6 +322,9 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     'list',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bacarıram sən tap bir pomidor', 'correct' => ['bacarıram', 'sən', 'tap', 'bir', 'pomidor'], 'extra' => ['siyahı']],
+                            'ar' => ['sentence' => 'أستطيع أنت ابحث طماطم', 'correct' => ['أستطيع', 'أنت', 'ابحث', 'طماطم'], 'extra' => ['قائمة']],
+                            'ru' => ['sentence' => 'могу ты найди помидор', 'correct' => ['могу', 'ты', 'найди', 'помидор'], 'extra' => ['список']],
                             'es' => [
                                 'sentence' => 'Puede encontrar un tomate',
                                 'correct' => [
@@ -358,6 +373,7 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     '목록',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir domates bulabilir misiniz', 'correct' => ['bir', 'domates', 'bulabilir', 'misiniz'], 'extra' => ['liste']],
                         ],
                     ],
                     'b' => [
@@ -380,6 +396,9 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     'tomato',
                                 ],
                             ],
+                            'az' => ['sentence' => 'tap mənim siyahı', 'correct' => ['tap', 'mənim', 'siyahı'], 'extra' => ['pomidor']],
+                            'ar' => ['sentence' => 'ابحث قائمة', 'correct' => ['ابحث', 'قائمة'], 'extra' => ['طماطم']],
+                            'ru' => ['sentence' => 'найди мой список', 'correct' => ['найди', 'мой', 'список'], 'extra' => ['помидор']],
                             'es' => [
                                 'sentence' => 'Encontrar mi lista',
                                 'correct' => [
@@ -424,6 +443,7 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     '토마토',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'listemi bul', 'correct' => ['listemi', 'bul'], 'extra' => ['domates']],
                         ],
                     ],
                     'c' => [
@@ -449,6 +469,9 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     'tomato',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bacarıram sən tap mənim siyahı', 'correct' => ['bacarıram', 'sən', 'tap', 'mənim', 'siyahı'], 'extra' => ['pomidor']],
+                            'ar' => ['sentence' => 'أستطيع أنت ابحث قائمة', 'correct' => ['أستطيع', 'أنت', 'ابحث', 'قائمة'], 'extra' => ['طماطم']],
+                            'ru' => ['sentence' => 'могу ты найди мой список', 'correct' => ['могу', 'ты', 'найди', 'мой', 'список'], 'extra' => ['помидор']],
                             'es' => [
                                 'sentence' => 'Puede encontrar mi lista',
                                 'correct' => [
@@ -498,6 +521,7 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     '토마토',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'listemi bulabilir misiniz', 'correct' => ['listemi', 'bulabilir', 'misiniz'], 'extra' => ['domates']],
                         ],
                     ],
                 ],
@@ -543,6 +567,9 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     'far',
                                 ],
                             ],
+                            'az' => ['sentence' => 'kassa yaxın', 'correct' => ['kassa', 'yaxın'], 'extra' => ['uzaq']],
+                            'ar' => ['sentence' => 'صندوق الدفع قريب', 'correct' => ['صندوق الدفع', 'قريب'], 'extra' => ['بعيد']],
+                            'ru' => ['sentence' => 'касса близко', 'correct' => ['касса', 'близко'], 'extra' => ['далеко']],
                             'es' => [
                                 'sentence' => 'La caja está cerca',
                                 'correct' => [
@@ -592,6 +619,7 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     '멀리',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kasa yakın', 'correct' => ['kasa', 'yakın'], 'extra' => ['uzak']],
                         ],
                     ],
                     'b' => [
@@ -615,6 +643,9 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     'near',
                                 ],
                             ],
+                            'az' => ['sentence' => 'şöbə uzaq', 'correct' => ['şöbə', 'uzaq'], 'extra' => ['yaxın']],
+                            'ar' => ['sentence' => 'قسم بعيد', 'correct' => ['قسم', 'بعيد'], 'extra' => ['قريب']],
+                            'ru' => ['sentence' => 'отдел далеко', 'correct' => ['отдел', 'далеко'], 'extra' => ['близко']],
                             'es' => [
                                 'sentence' => 'El pasillo está lejos',
                                 'correct' => [
@@ -663,6 +694,7 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     '가까이',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'reyon uzak', 'correct' => ['reyon', 'uzak'], 'extra' => ['yakın']],
                         ],
                     ],
                     'c' => [
@@ -684,6 +716,9 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     'checkout',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yaxın və ya uzaq', 'correct' => ['yaxın', 'və ya', 'uzaq'], 'extra' => ['kassa']],
+                            'ar' => ['sentence' => 'قريب أو بعيد', 'correct' => ['قريب', 'أو', 'بعيد'], 'extra' => ['صندوق الدفع']],
+                            'ru' => ['sentence' => 'близко или далеко', 'correct' => ['близко', 'или', 'далеко'], 'extra' => ['касса']],
                             'es' => [
                                 'sentence' => 'Cerca o lejos',
                                 'correct' => [
@@ -727,6 +762,7 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     '계산대',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yakın veya uzak', 'correct' => ['yakın', 'veya', 'uzak'], 'extra' => ['kasa']],
                         ],
                     ],
                 ],
@@ -772,6 +808,9 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     'right',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir portağal üzərində sol', 'correct' => ['bir', 'portağal', 'üzərində', 'sol'], 'extra' => ['sağ']],
+                            'ar' => ['sentence' => 'برتقالة على يسار', 'correct' => ['برتقالة', 'على', 'يسار'], 'extra' => ['يمين']],
+                            'ru' => ['sentence' => 'апельсин на левый', 'correct' => ['апельсин', 'на', 'левый'], 'extra' => ['правый']],
                             'es' => [
                                 'sentence' => 'Una naranja a la izquierda',
                                 'correct' => [
@@ -824,6 +863,7 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     '오른쪽',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'solda bir portakal', 'correct' => ['solda', 'bir', 'portakal'], 'extra' => ['sağ']],
                         ],
                     ],
                     'b' => [
@@ -847,6 +887,9 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     'left',
                                 ],
                             ],
+                            'az' => ['sentence' => 'üzüm üzərində sağ', 'correct' => ['üzüm', 'üzərində', 'sağ'], 'extra' => ['sol']],
+                            'ar' => ['sentence' => 'عنب على يمين', 'correct' => ['عنب', 'على', 'يمين'], 'extra' => ['يسار']],
+                            'ru' => ['sentence' => 'виноград на правый', 'correct' => ['виноград', 'на', 'правый'], 'extra' => ['левый']],
                             'es' => [
                                 'sentence' => 'Las uvas a la derecha',
                                 'correct' => [
@@ -898,6 +941,7 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     '왼쪽',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sağda üzüm', 'correct' => ['sağda', 'üzüm'], 'extra' => ['sol']],
                         ],
                     ],
                     'c' => [
@@ -919,6 +963,9 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     'orange',
                                 ],
                             ],
+                            'az' => ['sentence' => 'sol və ya sağ', 'correct' => ['sol', 'və ya', 'sağ'], 'extra' => ['portağal']],
+                            'ar' => ['sentence' => 'يسار أو يمين', 'correct' => ['يسار', 'أو', 'يمين'], 'extra' => ['برتقالة']],
+                            'ru' => ['sentence' => 'левый или правый', 'correct' => ['левый', 'или', 'правый'], 'extra' => ['апельсин']],
                             'es' => [
                                 'sentence' => 'Izquierda o derecha',
                                 'correct' => [
@@ -963,6 +1010,7 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     '오렌지',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sol veya sağ', 'correct' => ['sol', 'veya', 'sağ'], 'extra' => ['portakal']],
                         ],
                     ],
                 ],
@@ -1007,6 +1055,9 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     'thank you',
                                 ],
                             ],
+                            'az' => ['sentence' => 'burada mənim pomidor', 'correct' => ['burada', 'mənim', 'pomidor'], 'extra' => ['təşəkkür']],
+                            'ar' => ['sentence' => 'هنا طماطم', 'correct' => ['هنا', 'طماطم'], 'extra' => ['شكرا']],
+                            'ru' => ['sentence' => 'здесь мой помидор', 'correct' => ['здесь', 'мой', 'помидор'], 'extra' => ['спасибо']],
                             'es' => [
                                 'sentence' => 'Aquí está mi tomate',
                                 'correct' => [
@@ -1053,6 +1104,7 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     '감사합니다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'işte domatesim', 'correct' => ['işte', 'domatesim'], 'extra' => ['teşekkürler']],
                         ],
                     ],
                     'b' => [
@@ -1072,6 +1124,9 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     'here is',
                                 ],
                             ],
+                            'az' => ['sentence' => 'təşəkkür burada', 'correct' => ['təşəkkür', 'burada'], 'extra' => []],
+                            'ar' => ['sentence' => 'شكرا هنا', 'correct' => ['شكرا', 'هنا'], 'extra' => []],
+                            'ru' => ['sentence' => 'спасибо здесь', 'correct' => ['спасибо', 'здесь'], 'extra' => []],
                             'es' => [
                                 'sentence' => 'Gracias, aquí',
                                 'correct' => [
@@ -1114,6 +1169,7 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     '여기',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'teşekkürler burada', 'correct' => ['teşekkürler', 'burada'], 'extra' => ['işte']],
                         ],
                     ],
                     'c' => [
@@ -1137,6 +1193,9 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     'tomato',
                                 ],
                             ],
+                            'az' => ['sentence' => 'burada səbət təşəkkür', 'correct' => ['burada', 'səbət', 'təşəkkür'], 'extra' => ['pomidor']],
+                            'ar' => ['sentence' => 'هنا سلة شكرا', 'correct' => ['هنا', 'سلة', 'شكرا'], 'extra' => ['طماطم']],
+                            'ru' => ['sentence' => 'здесь корзина спасибо', 'correct' => ['здесь', 'корзина', 'спасибо'], 'extra' => ['помидор']],
                             'es' => [
                                 'sentence' => 'Aquí está la cesta, gracias',
                                 'correct' => [
@@ -1184,6 +1243,7 @@ class JaUnitSupermarket09Seeder extends Seeder
                                     '토마토',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'işte sepet teşekkürler', 'correct' => ['işte', 'sepet', 'teşekkürler'], 'extra' => ['domates']],
                         ],
                     ],
                 ],

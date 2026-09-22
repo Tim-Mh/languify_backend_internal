@@ -26,7 +26,7 @@ use Illuminate\Database\Seeder;
  */
 class FinalTestSeeder extends Seeder
 {
-    private const LANGS = ['en', 'es', 'de', 'fr', 'ja', 'ko'];
+    private const LANGS = ['en', 'es', 'de', 'fr', 'ja', 'ko', 'tr', 'ru', 'ar', 'az'];
 
     public function run(): void
     {
@@ -88,5 +88,13 @@ class FinalTestSeeder extends Seeder
         'fr' => "Bonjour ! Je m'appelle Sara, et je suis très heureuse aujourd'hui. J'habite dans une petite maison avec ma famille. Chaque matin, ma mère et mon père boivent un café dans la cuisine, et mon frère et ma sœur mangent du pain avec du beurre. L'après-midi, je marche jusqu'à un petit café avec mon amie. Je commande un thé, et mon amie commande un café et un gâteau. Le café est calme, et la nourriture est délicieuse. Plus tard, je vais au supermarché pour acheter des fruits pour le dîner. J'ai besoin de pommes, de tomates et d'un kilo de riz. La caissière est gentille, et je paie avec ma carte. Le soir, ma famille dîne ensemble, et nous parlons de notre journée. Avant de dormir, je lis un livre. C'est une très bonne journée. Merci et au revoir !",
         'ja' => 'おはようございます！私の名前はサラで、今日はとても幸せです。私は家族と小さな家に住んでいます。毎朝、母と父は台所でコーヒーを飲んで、兄と姉はバターを塗ったパンを食べます。午後、私は友達と小さなカフェまで歩きます。私はお茶を注文して、友達はコーヒーとケーキを注文します。カフェは静かで、食べ物は美味しいです。後で、私は夕食のために果物を買いにスーパーへ行きます。りんごとトマトとご飯一キロが必要です。レジ係は親切で、私はカードで払います。夜に、家族は一緒に夕食を食べて、その日について話します。寝る前に、私は本を読みます。とてもいい日です。ありがとう、さようなら！',
         'ko' => '좋은 아침이에요! 제 이름은 사라이고, 오늘 저는 매우 행복합니다. 저는 가족과 함께 작은 집에 삽니다. 매일 아침, 어머니와 아버지는 부엌에서 커피를 마시고, 형제와 자매는 버터를 바른 빵을 먹습니다. 오후에 저는 친구와 함께 작은 카페까지 걸어갑니다. 저는 차를 주문하고, 친구는 커피와 케이크를 주문합니다. 카페는 조용하고 음식은 맛있습니다. 나중에 저는 저녁을 위해 과일을 사러 슈퍼마켓에 갑니다. 사과와 토마토와 밥 일 킬로가 필요합니다. 계산원은 친절하고 저는 카드로 계산합니다. 저녁에 가족은 함께 저녁을 먹고 우리의 하루에 대해 이야기합니다. 자기 전에 저는 책을 읽습니다. 아주 좋은 날입니다. 감사합니다, 안녕히 계세요!',
+        // Turkish. Deliberately built from what the course actually teaches:
+        // the -ıyor present, the -dı past, possessive suffixes, the locative
+        // and dative, `var`/`yok`, and the measure-word frame from Supermarket
+        // 5 and 6. Nothing here needs grammar a learner has not met.
+        'tr' => 'Günaydın! Benim adım Sara ve bugün çok mutluyum. Ailemle küçük bir evde yaşıyorum. Her sabah annem ve babam mutfakta kahve içiyor, erkek kardeşim ve kız kardeşim tereyağlı ekmek yiyor. Öğleden sonra arkadaşımla küçük bir kafeye yürüyorum. Ben bir çay istiyorum, arkadaşım bir kahve ve bir pasta istiyor. Kafe sessiz ve yemek çok lezzetli. Sonra akşam yemeği için meyve almaya markete gidiyorum. Elma, domates ve bir kilo pirinç istiyorum. Kasadaki kişi çok nazik ve ben kart ile ödüyorum. Akşam ailem birlikte yemek yiyor ve günümüz hakkında konuşuyoruz. Uyumadan önce bir kitap okuyorum. Çok güzel bir gün. Teşekkürler ve hoşça kal!',
+        'ru' => 'Доброе утро! Меня зовут Сара, и сегодня я очень счастлива. Я живу в маленьком доме с моей семьёй. Каждое утро моя мама и мой папа пьют кофе на кухне, а мой брат и моя сестра едят хлеб с маслом. Днём я иду в маленькое кафе с подругой. Я заказываю чай, а моя подруга заказывает кофе и торт. В кафе тихо, и еда очень вкусная. Потом я иду в супермаркет купить фрукты на ужин. Мне нужны яблоки, помидоры и килограмм риса. Кассир очень добрый, и я плачу картой. Вечером моя семья ужинает вместе, и мы говорим о нашем дне. Перед сном я читаю книгу. Это очень хороший день. Спасибо и до свидания!',
+        'ar' => 'صباح الخير! اسمي سارة، وأنا سعيدة جدا اليوم. أسكن في بيت صغير مع عائلتي. كل صباح تشرب أمي وأبي القهوة في المطبخ، ويأكل أخي وأختي الخبز بالزبدة. بعد الظهر أمشي إلى مقهى صغير مع صديقتي. أطلب شايا، وتطلب صديقتي قهوة وكعكة. المقهى هادئ والطعام لذيذ جدا. بعد ذلك أذهب إلى السوبرماركت لشراء الفاكهة للعشاء. أحتاج تفاحا وطماطم وكيلو أرز. أمين الصندوق لطيف وأدفع ببطاقتي. في المساء تتعشى عائلتي معا ونتحدث عن يومنا. قبل النوم أقرأ كتابا. إنه يوم جميل جدا. شكرا ومع السلامة!',
+        'az' => 'Sabahınız xeyir! Mənim adım Saradır və bu gün çox xoşbəxtəm. Ailəmlə kiçik bir evdə yaşayıram. Hər səhər anam və atam mətbəxdə qəhvə içir, qardaşım və bacım kərə yağlı çörək yeyir. Günortadan sonra dostumla kiçik bir kafeyə gedirəm. Mən çay sifariş edirəm, dostum isə qəhvə və tort sifariş edir. Kafe sakitdir və yemək çox dadlıdır. Sonra şam yeməyi üçün meyvə almağa supermarketə gedirəm. Mənə alma, pomidor və bir kilo düyü lazımdır. Kassir çox xoşdur və mən kartla ödəyirəm. Axşam ailəm birlikdə şam yeyir və günümüz haqqında danışırıq. Yatmazdan əvvəl bir kitab oxuyuram. Çox gözəl bir gündür. Təşəkkür edirəm və sağ olun!',
     ];
 }

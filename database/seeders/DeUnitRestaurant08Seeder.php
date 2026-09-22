@@ -79,6 +79,9 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     'ice cream',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir şokolad tort', 'correct' => ['bir', 'şokolad', 'tort'], 'extra' => ['dilim', 'dondurma']],
+                            'ar' => ['sentence' => 'شوكولاتة كعكة', 'correct' => ['شوكولاتة', 'كعكة'], 'extra' => ['شريحة', 'آيس كريم']],
+                            'ru' => ['sentence' => 'шоколад торт', 'correct' => ['шоколад', 'торт'], 'extra' => ['кусок', 'мороженое']],
                             'es' => [
                                 'sentence' => 'Un pastel de chocolate',
                                 'correct' => [
@@ -123,6 +126,7 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     '한 조각',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'çikolatalı bir pasta', 'correct' => ['çikolatalı', 'bir', 'pasta'], 'extra' => ['dilim', 'dondurma']],
                         ],
                     ],
                     'b' => [
@@ -146,6 +150,9 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     'ice cream',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir dilim tort', 'correct' => ['bir', 'dilim', 'tort'], 'extra' => ['şokolad', 'dondurma']],
+                            'ar' => ['sentence' => 'شريحة كعكة', 'correct' => ['شريحة', 'كعكة'], 'extra' => ['شوكولاتة', 'آيس كريم']],
+                            'ru' => ['sentence' => 'кусок торт', 'correct' => ['кусок', 'торт'], 'extra' => ['шоколад', 'мороженое']],
                             'es' => [
                                 'sentence' => 'Un trozo de pastel',
                                 'correct' => [
@@ -192,6 +199,7 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     '초콜릿',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir dilim pasta', 'correct' => ['bir', 'dilim', 'pasta'], 'extra' => ['çikolata', 'dondurma']],
                         ],
                     ],
                     'c' => [
@@ -213,6 +221,9 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     'cake',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir şokolad dondurma', 'correct' => ['bir', 'şokolad', 'dondurma'], 'extra' => ['dilim', 'tort']],
+                            'ar' => ['sentence' => 'شوكولاتة آيس كريم', 'correct' => ['شوكولاتة', 'آيس كريم'], 'extra' => ['شريحة', 'كعكة']],
+                            'ru' => ['sentence' => 'шоколад мороженое', 'correct' => ['шоколад', 'мороженое'], 'extra' => ['кусок', 'торт']],
                             'es' => [
                                 'sentence' => 'Un helado de chocolate',
                                 'correct' => [
@@ -256,6 +267,7 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     '한 조각',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'çikolatalı bir dondurma', 'correct' => ['çikolatalı', 'bir', 'dondurma'], 'extra' => ['dilim', 'pasta']],
                         ],
                     ],
                 ],
@@ -300,6 +312,9 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     'bread',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bölüşmək bir tort', 'correct' => ['bölüşmək', 'bir', 'tort'], 'extra' => ['qaymaq', 'çörək']],
+                            'ar' => ['sentence' => 'المشاركة كعكة', 'correct' => ['المشاركة', 'كعكة'], 'extra' => ['كريمة', 'خبز']],
+                            'ru' => ['sentence' => 'разделить торт', 'correct' => ['разделить', 'торт'], 'extra' => ['сливки', 'хлеб']],
                             'es' => [
                                 'sentence' => 'Compartir un pastel',
                                 'correct' => [
@@ -345,6 +360,7 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     '크림',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir pasta paylaşmak', 'correct' => ['bir', 'pasta', 'paylaşmak'], 'extra' => ['krema', 'ekmek']],
                         ],
                     ],
                     'b' => [
@@ -367,6 +383,9 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     'cake',
                                 ],
                             ],
+                            'az' => ['sentence' => 'çörək ilə qaymaq', 'correct' => ['çörək', 'ilə', 'qaymaq'], 'extra' => ['bölüşmək', 'tort']],
+                            'ar' => ['sentence' => 'خبز مع كريمة', 'correct' => ['خبز', 'مع', 'كريمة'], 'extra' => ['المشاركة', 'كعكة']],
+                            'ru' => ['sentence' => 'хлеб с сливки', 'correct' => ['хлеб', 'с', 'сливки'], 'extra' => ['разделить', 'торт']],
                             'es' => [
                                 'sentence' => 'Pan con nata',
                                 'correct' => [
@@ -413,6 +432,7 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     '나누다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kremalı ekmek', 'correct' => ['kremalı', 'ekmek'], 'extra' => ['paylaşmak', 'pasta']],
                         ],
                     ],
                     'c' => [
@@ -440,6 +460,9 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     'cream',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bölüşmək bir tort və bir az çörək', 'correct' => ['bölüşmək', 'bir', 'tort', 'və', 'bir az', 'çörək'], 'extra' => ['qaymaq']],
+                            'ar' => ['sentence' => 'المشاركة كعكة و بعض خبز', 'correct' => ['المشاركة', 'كعكة', 'و', 'بعض', 'خبز'], 'extra' => ['كريمة']],
+                            'ru' => ['sentence' => 'разделить торт и немного хлеб', 'correct' => ['разделить', 'торт', 'и', 'немного', 'хлеб'], 'extra' => ['сливки']],
                             'es' => [
                                 'sentence' => 'Compartir un pastel y algo de pan',
                                 'correct' => [
@@ -494,6 +517,7 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     '크림',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir pasta ve biraz ekmek paylaşmak', 'correct' => ['bir', 'pasta', 've', 'biraz', 'ekmek', 'paylaşmak'], 'extra' => ['krema']],
                         ],
                     ],
                 ],
@@ -537,6 +561,9 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     'apple',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir vanil dondurma', 'correct' => ['bir', 'vanil', 'dondurma'], 'extra' => ['çiyələk', 'alma']],
+                            'ar' => ['sentence' => 'فانيليا آيس كريم', 'correct' => ['فانيليا', 'آيس كريم'], 'extra' => ['فراولة', 'تفاحة']],
+                            'ru' => ['sentence' => 'ванильный мороженое', 'correct' => ['ванильный', 'мороженое'], 'extra' => ['клубничный', 'яблоко']],
                             'es' => [
                                 'sentence' => 'Un helado de vainilla',
                                 'correct' => [
@@ -581,6 +608,7 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     '딸기',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'vanilyalı bir dondurma', 'correct' => ['vanilyalı', 'bir', 'dondurma'], 'extra' => ['çilek', 'elma']],
                         ],
                     ],
                     'b' => [
@@ -606,6 +634,9 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     'vanilla',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir alma və ya bir çiyələk', 'correct' => ['bir', 'alma', 'və ya', 'bir', 'çiyələk'], 'extra' => ['vanil']],
+                            'ar' => ['sentence' => 'تفاحة أو فراولة', 'correct' => ['تفاحة', 'أو', 'فراولة'], 'extra' => ['فانيليا']],
+                            'ru' => ['sentence' => 'яблоко или клубничный', 'correct' => ['яблоко', 'или', 'клубничный'], 'extra' => ['ванильный']],
                             'es' => [
                                 'sentence' => 'Una manzana o una fresa',
                                 'correct' => [
@@ -654,6 +685,7 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     '바닐라',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir elma veya bir çilek', 'correct' => ['bir', 'elma', 'veya', 'bir', 'çilek'], 'extra' => ['vanilya']],
                         ],
                     ],
                     'c' => [
@@ -679,6 +711,9 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     'apple',
                                 ],
                             ],
+                            'az' => ['sentence' => 'vanil və çiyələk', 'correct' => ['vanil', 'və', 'çiyələk'], 'extra' => ['alma']],
+                            'ar' => ['sentence' => 'فانيليا و فراولة', 'correct' => ['فانيليا', 'و', 'فراولة'], 'extra' => ['تفاحة']],
+                            'ru' => ['sentence' => 'ванильный и клубничный', 'correct' => ['ванильный', 'и', 'клубничный'], 'extra' => ['яблоко']],
                             'es' => [
                                 'sentence' => 'La vainilla y la fresa',
                                 'correct' => [
@@ -726,6 +761,7 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     '사과',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'vanilya ve çilek', 'correct' => ['vanilya', 've', 'çilek'], 'extra' => ['elma']],
                         ],
                     ],
                 ],
@@ -769,6 +805,9 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     'cake',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir alma tart', 'correct' => ['bir', 'alma', 'tart'], 'extra' => ['meyvə', 'tort']],
+                            'ar' => ['sentence' => 'تفاحة فطيرة', 'correct' => ['تفاحة', 'فطيرة'], 'extra' => ['فاكهة', 'كعكة']],
+                            'ru' => ['sentence' => 'яблоко тарт', 'correct' => ['яблоко', 'тарт'], 'extra' => ['фрукт', 'торт']],
                             'es' => [
                                 'sentence' => 'Una tarta de manzana',
                                 'correct' => [
@@ -813,6 +852,7 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     '과일',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'elmalı bir turta', 'correct' => ['elmalı', 'bir', 'turta'], 'extra' => ['meyve', 'pasta']],
                         ],
                     ],
                     'b' => [
@@ -835,6 +875,9 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     'apple',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir təzə meyvə', 'correct' => ['bir', 'təzə', 'meyvə'], 'extra' => ['tart', 'alma']],
+                            'ar' => ['sentence' => 'طازج فاكهة', 'correct' => ['طازج', 'فاكهة'], 'extra' => ['فطيرة', 'تفاحة']],
+                            'ru' => ['sentence' => 'свежий фрукт', 'correct' => ['свежий', 'фрукт'], 'extra' => ['тарт', 'яблоко']],
                             'es' => [
                                 'sentence' => 'Una fruta fresca',
                                 'correct' => [
@@ -878,6 +921,7 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     '타르트',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'taze bir meyve', 'correct' => ['taze', 'bir', 'meyve'], 'extra' => ['turta', 'elma']],
                         ],
                     ],
                     'c' => [
@@ -903,6 +947,9 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     'fruit',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir tart və bir tort', 'correct' => ['bir', 'tart', 'və', 'bir', 'tort'], 'extra' => ['meyvə']],
+                            'ar' => ['sentence' => 'فطيرة و كعكة', 'correct' => ['فطيرة', 'و', 'كعكة'], 'extra' => ['فاكهة']],
+                            'ru' => ['sentence' => 'тарт и торт', 'correct' => ['тарт', 'и', 'торт'], 'extra' => ['фрукт']],
                             'es' => [
                                 'sentence' => 'Una tarta y un pastel',
                                 'correct' => [
@@ -950,6 +997,7 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     '과일',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir turta ve bir pasta', 'correct' => ['bir', 'turta', 've', 'bir', 'pasta'], 'extra' => ['meyve']],
                         ],
                     ],
                 ],
@@ -994,6 +1042,9 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     'ice cream',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir şirin tort', 'correct' => ['bir', 'şirin', 'tort'], 'extra' => ['çox artıq', 'dondurma']],
+                            'ar' => ['sentence' => 'حلو كعكة', 'correct' => ['حلو', 'كعكة'], 'extra' => ['كثير جدا', 'آيس كريم']],
+                            'ru' => ['sentence' => 'сладкий торт', 'correct' => ['сладкий', 'торт'], 'extra' => ['слишком много', 'мороженое']],
                             'es' => [
                                 'sentence' => 'Un pastel dulce',
                                 'correct' => [
@@ -1038,6 +1089,7 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     '너무',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tatlı bir pasta', 'correct' => ['tatlı', 'bir', 'pasta'], 'extra' => ['çok fazla', 'dondurma']],
                         ],
                     ],
                     'b' => [
@@ -1063,6 +1115,9 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     'cake',
                                 ],
                             ],
+                            'az' => ['sentence' => 'dondurma çox artıq şirin', 'correct' => ['dondurma', 'çox artıq', 'şirin'], 'extra' => ['tort']],
+                            'ar' => ['sentence' => 'آيس كريم كثير جدا حلو', 'correct' => ['آيس كريم', 'كثير جدا', 'حلو'], 'extra' => ['كعكة']],
+                            'ru' => ['sentence' => 'мороженое слишком много сладкий', 'correct' => ['мороженое', 'слишком много', 'сладкий'], 'extra' => ['торт']],
                             'es' => [
                                 'sentence' => 'El helado es demasiado dulce',
                                 'correct' => [
@@ -1111,6 +1166,7 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     '케이크',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'dondurma çok tatlı', 'correct' => ['dondurma', 'çok', 'tatlı'], 'extra' => ['pasta']],
                         ],
                     ],
                     'c' => [
@@ -1140,6 +1196,9 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     'too much',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir şirin tort və bir şirin dondurma', 'correct' => ['bir', 'şirin', 'tort', 'və', 'bir', 'şirin', 'dondurma'], 'extra' => ['çox artıq']],
+                            'ar' => ['sentence' => 'حلو كعكة و حلو آيس كريم', 'correct' => ['حلو', 'كعكة', 'و', 'حلو', 'آيس كريم'], 'extra' => ['كثير جدا']],
+                            'ru' => ['sentence' => 'сладкий торт и сладкий мороженое', 'correct' => ['сладкий', 'торт', 'и', 'сладкий', 'мороженое'], 'extra' => ['слишком много']],
                             'es' => [
                                 'sentence' => 'Un pastel dulce y un helado dulce',
                                 'correct' => [
@@ -1195,6 +1254,7 @@ class DeUnitRestaurant08Seeder extends Seeder
                                     '너무',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tatlı bir pasta ve tatlı bir dondurma', 'correct' => ['tatlı', 'bir', 'pasta', 've', 'tatlı', 'bir', 'dondurma'], 'extra' => ['çok fazla']],
                         ],
                     ],
                 ],

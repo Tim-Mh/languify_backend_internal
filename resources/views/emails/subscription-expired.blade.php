@@ -16,7 +16,7 @@
       Hi {{ $name }}, your {{ $planTitle }} plan reached the end of its period, so your account has switched back to the free plan. Everything you've learned is safe. Your streak, XP, and progress are all still here.
     </p>
     <p style="margin:12px 0 0; font-size:14px; line-height:1.6; color:#7850a8;">
-      Whenever you're ready, renew to bring back unlimited hearts, bonus gems, and your other perks. Renewing picks up right where you left off.
+      Whenever you're ready, renew to bring back {{ $heartsPerk }}, bonus gems, and your other perks. Renewing picks up right where you left off.
     </p>
   </td>
 </tr>

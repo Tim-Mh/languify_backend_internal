@@ -84,6 +84,9 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     'cake',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qiymət menyu', 'correct' => ['qiymət', 'menyu'], 'extra' => ['tort']],
+                            'ar' => ['sentence' => 'سعر قائمة الطعام', 'correct' => ['سعر', 'قائمة الطعام'], 'extra' => ['كعكة']],
+                            'ru' => ['sentence' => 'цена меню', 'correct' => ['цена', 'меню'], 'extra' => ['торт']],
                             'de' => [
                                 'sentence' => 'Der Preis des Menüs',
                                 'correct' => [
@@ -131,6 +134,7 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     '케이크',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'menünün fiyatı', 'correct' => ['menünün', 'fiyatı'], 'extra' => ['pasta']],
                         ],
                     ],
                     'b' => [
@@ -154,6 +158,9 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     'price',
                                 ],
                             ],
+                            'az' => ['sentence' => 'neçə üçün tort', 'correct' => ['neçə', 'üçün', 'tort'], 'extra' => ['qiymət']],
+                            'ar' => ['sentence' => 'كم لأجل كعكة', 'correct' => ['كم', 'لأجل', 'كعكة'], 'extra' => ['سعر']],
+                            'ru' => ['sentence' => 'сколько для торт', 'correct' => ['сколько', 'для', 'торт'], 'extra' => ['цена']],
                             'de' => [
                                 'sentence' => 'Wie viel für den Kuchen',
                                 'correct' => [
@@ -200,6 +207,7 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     '가격',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'pasta kaç lira', 'correct' => ['pasta', 'kaç', 'lira'], 'extra' => ['fiyat']],
                         ],
                     ],
                     'c' => [
@@ -224,6 +232,9 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     'menu',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qiymət tort', 'correct' => ['qiymət', 'tort'], 'extra' => ['menyu']],
+                            'ar' => ['sentence' => 'سعر كعكة', 'correct' => ['سعر', 'كعكة'], 'extra' => ['قائمة الطعام']],
+                            'ru' => ['sentence' => 'цена торт', 'correct' => ['цена', 'торт'], 'extra' => ['меню']],
                             'de' => [
                                 'sentence' => 'Der Preis des Kuchens',
                                 'correct' => [
@@ -271,6 +282,7 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     '메뉴',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'pastanın fiyatı', 'correct' => ['pastanın', 'fiyatı'], 'extra' => ['menü']],
                         ],
                     ],
                 ],
@@ -317,6 +329,9 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     'juice',
                                 ],
                             ],
+                            'az' => ['sentence' => 'şərab bahalı', 'correct' => ['şərab', 'bahalı'], 'extra' => ['ucuz', 'şirə']],
+                            'ar' => ['sentence' => 'نبيذ غالي', 'correct' => ['نبيذ', 'غالي'], 'extra' => ['رخيص', 'عصير']],
+                            'ru' => ['sentence' => 'вино дорогой', 'correct' => ['вино', 'дорогой'], 'extra' => ['дешёвый', 'сок']],
                             'de' => [
                                 'sentence' => 'Der Wein ist teuer',
                                 'correct' => [
@@ -365,6 +380,7 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     '싼',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'şarap pahalı', 'correct' => ['şarap', 'pahalı'], 'extra' => ['ucuz', 'meyve suyu']],
                         ],
                     ],
                     'b' => [
@@ -389,6 +405,9 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     'wine',
                                 ],
                             ],
+                            'az' => ['sentence' => 'şirə ucuz', 'correct' => ['şirə', 'ucuz'], 'extra' => ['bahalı', 'şərab']],
+                            'ar' => ['sentence' => 'عصير رخيص', 'correct' => ['عصير', 'رخيص'], 'extra' => ['غالي', 'نبيذ']],
+                            'ru' => ['sentence' => 'сок дешёвый', 'correct' => ['сок', 'дешёвый'], 'extra' => ['дорогой', 'вино']],
                             'de' => [
                                 'sentence' => 'Der Saft ist billig',
                                 'correct' => [
@@ -437,6 +456,7 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     '비싼',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'meyve suyu ucuz', 'correct' => ['meyve', 'suyu', 'ucuz'], 'extra' => ['pahalı', 'şarap']],
                         ],
                     ],
                     'c' => [
@@ -458,6 +478,9 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     'wine',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bahalı və ya ucuz', 'correct' => ['bahalı', 'və ya', 'ucuz'], 'extra' => ['şərab']],
+                            'ar' => ['sentence' => 'غالي أو رخيص', 'correct' => ['غالي', 'أو', 'رخيص'], 'extra' => ['نبيذ']],
+                            'ru' => ['sentence' => 'дорогой или дешёвый', 'correct' => ['дорогой', 'или', 'дешёвый'], 'extra' => ['вино']],
                             'de' => [
                                 'sentence' => 'Teuer oder billig',
                                 'correct' => [
@@ -501,6 +524,7 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     '와인',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'pahalı veya ucuz', 'correct' => ['pahalı', 'veya', 'ucuz'], 'extra' => ['şarap']],
                         ],
                     ],
                 ],
@@ -548,6 +572,9 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     'salad',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qəlyanaltı və bir şirniyyat', 'correct' => ['bir', 'qəlyanaltı', 'və', 'bir', 'şirniyyat'], 'extra' => ['salat']],
+                            'ar' => ['sentence' => 'مقبلات و حلوى', 'correct' => ['مقبلات', 'و', 'حلوى'], 'extra' => ['سلطة']],
+                            'ru' => ['sentence' => 'закуска и десерт', 'correct' => ['закуска', 'и', 'десерт'], 'extra' => ['салат']],
                             'de' => [
                                 'sentence' => 'Eine Vorspeise und ein Nachtisch',
                                 'correct' => [
@@ -595,6 +622,7 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     '샐러드',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir başlangıç ve bir tatlı', 'correct' => ['bir', 'başlangıç', 've', 'bir', 'tatlı'], 'extra' => ['salata']],
                         ],
                     ],
                     'b' => [
@@ -620,6 +648,9 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     'starter',
                                 ],
                             ],
+                            'az' => ['sentence' => 'tort şirniyyat', 'correct' => ['tort', 'şirniyyat'], 'extra' => ['qəlyanaltı']],
+                            'ar' => ['sentence' => 'كعكة حلوى', 'correct' => ['كعكة', 'حلوى'], 'extra' => ['مقبلات']],
+                            'ru' => ['sentence' => 'торт десерт', 'correct' => ['торт', 'десерт'], 'extra' => ['закуска']],
                             'de' => [
                                 'sentence' => 'Der Kuchen ist der Nachtisch',
                                 'correct' => [
@@ -668,6 +699,7 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     '전채',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'pasta tatlıdır', 'correct' => ['pasta', 'tatlıdır'], 'extra' => ['başlangıç']],
                         ],
                     ],
                     'c' => [
@@ -693,6 +725,9 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     'dessert',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir salat və ya bir tort', 'correct' => ['bir', 'salat', 'və ya', 'bir', 'tort'], 'extra' => ['şirniyyat']],
+                            'ar' => ['sentence' => 'سلطة أو كعكة', 'correct' => ['سلطة', 'أو', 'كعكة'], 'extra' => ['حلوى']],
+                            'ru' => ['sentence' => 'салат или торт', 'correct' => ['салат', 'или', 'торт'], 'extra' => ['десерт']],
                             'de' => [
                                 'sentence' => 'Ein Salat oder ein Kuchen',
                                 'correct' => [
@@ -741,6 +776,7 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     '디저트',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir salata veya bir pasta', 'correct' => ['bir', 'salata', 'veya', 'bir', 'pasta'], 'extra' => ['tatlı']],
                         ],
                     ],
                 ],
@@ -788,6 +824,9 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     'each',
                                 ],
                             ],
+                            'az' => ['sentence' => 'cəmi on dollar', 'correct' => ['cəmi', 'on', 'dollar'], 'extra' => ['hər biri']],
+                            'ar' => ['sentence' => 'المجموع عشرة دولارات', 'correct' => ['المجموع', 'عشرة', 'دولارات'], 'extra' => ['كل']],
+                            'ru' => ['sentence' => 'итого десять долларов', 'correct' => ['итого', 'десять', 'долларов'], 'extra' => ['каждый']],
                             'de' => [
                                 'sentence' => 'Die Summe ist zehn Dollar',
                                 'correct' => [
@@ -838,6 +877,7 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     '각각의',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'toplam on dolar', 'correct' => ['toplam', 'on', 'dolar'], 'extra' => ['her']],
                         ],
                     ],
                     'b' => [
@@ -863,6 +903,9 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     'total',
                                 ],
                             ],
+                            'az' => ['sentence' => 'hər biri sendviç qiyməti üç dollar', 'correct' => ['hər biri', 'sendviç', 'qiyməti', 'üç', 'dollar'], 'extra' => ['cəmi']],
+                            'ar' => ['sentence' => 'كل شطيرة يكلف ثلاثة دولارات', 'correct' => ['كل', 'شطيرة', 'يكلف', 'ثلاثة', 'دولارات'], 'extra' => ['المجموع']],
+                            'ru' => ['sentence' => 'каждый сэндвич стоит три долларов', 'correct' => ['каждый', 'сэндвич', 'стоит', 'три', 'долларов'], 'extra' => ['итого']],
                             'de' => [
                                 'sentence' => 'Jedes Sandwich kostet drei Dollar',
                                 'correct' => [
@@ -915,6 +958,7 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     '총액',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'her sandviç üç dolar', 'correct' => ['her', 'sandviç', 'üç', 'dolar'], 'extra' => ['toplam']],
                         ],
                     ],
                     'c' => [
@@ -941,6 +985,9 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     'each',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qəhvə və bir sendviç', 'correct' => ['bir', 'qəhvə', 'və', 'bir', 'sendviç'], 'extra' => ['cəmi', 'hər biri']],
+                            'ar' => ['sentence' => 'قهوة و شطيرة', 'correct' => ['قهوة', 'و', 'شطيرة'], 'extra' => ['المجموع', 'كل']],
+                            'ru' => ['sentence' => 'кофе и сэндвич', 'correct' => ['кофе', 'и', 'сэндвич'], 'extra' => ['итого', 'каждый']],
                             'de' => [
                                 'sentence' => 'Ein Kaffee und ein Sandwich',
                                 'correct' => [
@@ -988,6 +1035,7 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     '총액',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kahve ve bir sandviç', 'correct' => ['bir', 'kahve', 've', 'bir', 'sandviç'], 'extra' => ['toplam', 'her']],
                         ],
                     ],
                 ],
@@ -1029,6 +1077,9 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     'juice',
                                 ],
                             ],
+                            'az' => ['sentence' => 'istəyirəm seçmək', 'correct' => ['istəyirəm', 'seçmək'], 'extra' => ['şirə']],
+                            'ar' => ['sentence' => 'أريد الاختيار', 'correct' => ['أريد', 'الاختيار'], 'extra' => ['عصير']],
+                            'ru' => ['sentence' => 'я хочу выбрать', 'correct' => ['я', 'хочу', 'выбрать'], 'extra' => ['сок']],
                             'de' => [
                                 'sentence' => 'Ich möchte wählen',
                                 'correct' => [
@@ -1071,6 +1122,7 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     '음료',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'seçmek istiyorum', 'correct' => ['seçmek', 'istiyorum'], 'extra' => ['meyve suyu']],
                         ],
                     ],
                     'b' => [
@@ -1095,6 +1147,9 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     'to choose',
                                 ],
                             ],
+                            'az' => ['sentence' => 'içki ilə toyuq', 'correct' => ['içki', 'ilə', 'toyuq'], 'extra' => ['seçmək']],
+                            'ar' => ['sentence' => 'مشروب مع دجاج', 'correct' => ['مشروب', 'مع', 'دجاج'], 'extra' => ['الاختيار']],
+                            'ru' => ['sentence' => 'напиток с курица', 'correct' => ['напиток', 'с', 'курица'], 'extra' => ['выбрать']],
                             'de' => [
                                 'sentence' => 'Ein Getränk mit dem Hähnchen',
                                 'correct' => [
@@ -1141,6 +1196,7 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     '고르다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tavukla bir içecek', 'correct' => ['tavukla', 'bir', 'içecek'], 'extra' => ['seçmek']],
                         ],
                     ],
                     'c' => [
@@ -1162,6 +1218,9 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     'chicken',
                                 ],
                             ],
+                            'az' => ['sentence' => 'seçmək şirə', 'correct' => ['seçmək', 'şirə'], 'extra' => ['toyuq']],
+                            'ar' => ['sentence' => 'الاختيار عصير', 'correct' => ['الاختيار', 'عصير'], 'extra' => ['دجاج']],
+                            'ru' => ['sentence' => 'выбрать сок', 'correct' => ['выбрать', 'сок'], 'extra' => ['курица']],
                             'de' => [
                                 'sentence' => 'Den Saft wählen',
                                 'correct' => [
@@ -1205,6 +1264,7 @@ class EsUnitRestaurant02Seeder extends Seeder
                                     '음료',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'meyve suyunu seçmek', 'correct' => ['meyve', 'suyunu', 'seçmek'], 'extra' => ['tavuk']],
                         ],
                     ],
                 ],

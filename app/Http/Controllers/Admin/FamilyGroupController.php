@@ -4,16 +4,18 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\FamilyGroup;
+use App\Support\PerPage;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class FamilyGroupController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
         return view('admin.family-groups.index', [
             'familyGroups' => FamilyGroup::with(['owner.activeSubscription', 'members.user', 'pendingInvites'])
                 ->latest()
-                ->paginate(20),
+                ->paginate(PerPage::resolve($request))->withQueryString(),
         ]);
     }
 }

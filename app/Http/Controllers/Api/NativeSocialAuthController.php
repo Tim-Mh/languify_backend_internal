@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Notifications\WelcomeNotification;
+use App\Support\DeviceTimezone;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -69,7 +70,7 @@ class NativeSocialAuthController extends Controller
         $data = $request->validate([
             'identityToken' => ['required', 'string'],
             'fullName' => ['nullable', 'string', 'max:255'],
-            'timezone' => ['nullable', 'string', 'timezone'],
+            'timezone' => DeviceTimezone::RULES,
         ]);
 
         try {
@@ -99,18 +100,34 @@ class NativeSocialAuthController extends Controller
                 $existing = User::where('email', $identity['email'])->first();
 
                 if ($existing) {
-                    // Same rule as the browser callback: a provider verifying an
-                    // email does not prove this is the person who set that
-                    // account's password. Stash the link and make them prove it.
-                    SocialAuthController::stashPendingLink($provider, $existing->email, $identity['id']);
+                    // Same rule as the browser callback: link the provider to
+                    // the existing password account, because verifyGoogleToken()
+                    // above has already refused any token whose email_verified
+                    // claim is not true, and someone holding the mailbox could
+                    // reset the password anyway.
+                    //
+                    // Apple still has to prove it. Its tokens can carry a
+                    // private-relay address, or one Apple has not verified, so
+                    // the old stash-and-confirm flow stays for that provider.
+                    if ($provider !== 'google') {
+                        SocialAuthController::stashPendingLink($provider, $existing->email, $identity['id']);
 
-                    return response()->json([
-                        'message' => 'An account already exists for this email. Sign in with your password once, and this will be linked automatically.',
-                        'oauthConflict' => $provider,
-                        'email' => $existing->email,
-                    ], 409);
+                        return response()->json([
+                            'message' => 'An account already exists for this email. Sign in with your password once, and this will be linked automatically.',
+                            'oauthConflict' => $provider,
+                            'email' => $existing->email,
+                        ], 409);
+                    }
+
+                    $user = $existing;
+                    $user->forceFill([
+                        $column => $identity['id'],
+                        'email_verified_at' => $user->email_verified_at ?? now(),
+                    ])->save();
                 }
+            }
 
+            if (! $user) {
                 $user = User::create([
                     // Apple sends a name only on the very first authorization
                     // ever, and the SDK gives it to the app rather than putting
@@ -128,8 +145,8 @@ class NativeSocialAuthController extends Controller
                 // Set before the welcome email and before any game state exists,
                 // so this account's first day boundary is already in the
                 // learner's own timezone.
-                if (! empty($data['timezone'])) {
-                    $user->forceFill(['timezone' => $data['timezone']])->save();
+                if ($timezone = DeviceTimezone::normalise($data['timezone'] ?? null)) {
+                    $user->forceFill(['timezone' => $timezone])->save();
                 }
 
                 if (trim((string) $user->full_name) === '') {
@@ -142,8 +159,8 @@ class NativeSocialAuthController extends Controller
                     $user->forceFill(['full_name' => $identity['name'] ?: $data['fullName']])->save();
                 }
 
-                if (! $user->timezone && ! empty($data['timezone'])) {
-                    $user->forceFill(['timezone' => $data['timezone']])->save();
+                if (! $user->timezone && ($timezone = DeviceTimezone::normalise($data['timezone'] ?? null))) {
+                    $user->forceFill(['timezone' => $timezone])->save();
                 }
             }
         } catch (\Throwable $e) {

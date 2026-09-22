@@ -4,8 +4,10 @@ namespace App\Notifications;
 
 use App\Enums\NotificationCategory;
 use App\Notifications\Messages\ExpoMessage;
+use App\Services\LessonProgressService;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\Carbon;
 
 class SubscriptionConfirmedNotification extends Notification
 {
@@ -19,7 +21,30 @@ class SubscriptionConfirmedNotification extends Notification
         public ?string $currency = null,
         public ?string $interval = null,
         public ?string $expiresAt = null,
+        public ?string $planKey = null,
     ) {}
+
+    /**
+     * How to describe this plan's hearts in prose.
+     *
+     * Read from LessonProgressService rather than written out here, because
+     * only Family is uncapped: Monthly and Yearly get a raised cap, and this
+     * email used to tell all three of them they had unlimited hearts.
+     *
+     * A null planKey (an older queued job serialised before this argument
+     * existed) falls back to naming no number at all, which is vague but
+     * never wrong.
+     */
+    private function heartsPerk(): string
+    {
+        if ($this->planKey === null) {
+            return 'more hearts';
+        }
+
+        $max = LessonProgressService::maxHeartsForPlan($this->planKey);
+
+        return $max === null ? 'unlimited hearts' : "up to {$max} hearts";
+    }
 
     public function via(object $notifiable): array
     {
@@ -28,10 +53,14 @@ class SubscriptionConfirmedNotification extends Notification
 
     public function toExpo(object $notifiable): ExpoMessage
     {
+        // Names the actual perks rather than claiming content was unlocked.
+        // Every lesson and every language is free for everyone, so "everything
+        // is unlocked" told subscribers they had bought something they already
+        // had, and left the things they DID buy unmentioned.
         return ExpoMessage::make(
             NotificationCategory::Billing,
             "Your {$this->planTitle} plan is active",
-            'Welcome aboard — everything is unlocked.',
+            "No ads, {$this->heartsPerk()}, bonus gems and streak freezes.",
         )->deepLink('/shop');
     }
 
@@ -45,8 +74,9 @@ class SubscriptionConfirmedNotification extends Notification
                 'amountFormatted' => $this->formatAmount(),
                 'interval' => $this->interval,
                 'expiresFormatted' => $this->expiresAt
-                    ? \Illuminate\Support\Carbon::parse($this->expiresAt)->format('F j, Y')
+                    ? Carbon::parse($this->expiresAt)->format('F j, Y')
                     : null,
+                'heartsPerk' => $this->heartsPerk(),
                 'appUrl' => rtrim(config('app.frontend_url'), '/').'/dashboard',
             ]);
     }

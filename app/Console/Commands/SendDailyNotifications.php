@@ -107,7 +107,7 @@ class SendDailyNotifications extends Command
         // decide whether to skip them.
         User::query()
             ->with(['activeSubscription', 'familyMembership.familyGroup.owner.activeSubscription'])
-            ->chunkById(200, function ($users) use ($progress, $leagues, $badges, $planTitles, &$sent) {
+            ->chunkById(200, function ($users) use ($progress, $leagues, $badges, $plans, &$sent) {
                 foreach ($users as $user) {
                     if (! $user->hasActiveAppAccess()) {
                         continue;

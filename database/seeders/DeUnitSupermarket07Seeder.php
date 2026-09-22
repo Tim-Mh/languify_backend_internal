@@ -82,6 +82,9 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     'banana',
                                 ],
                             ],
+                            'az' => ['sentence' => 'müqayisə etmək qiymətlər', 'correct' => ['müqayisə etmək', 'qiymətlər'], 'extra' => ['alma', 'banan']],
+                            'ar' => ['sentence' => 'المقارنة أسعار', 'correct' => ['المقارنة', 'أسعار'], 'extra' => ['تفاحة', 'موزة']],
+                            'ru' => ['sentence' => 'сравнить цены', 'correct' => ['сравнить', 'цены'], 'extra' => ['яблоко', 'банан']],
                             'es' => [
                                 'sentence' => 'Comparar los precios',
                                 'correct' => [
@@ -127,6 +130,7 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     '사과',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'fiyatları karşılaştırmak', 'correct' => ['fiyatları', 'karşılaştırmak'], 'extra' => ['elma', 'muz']],
                         ],
                     ],
                     'b' => [
@@ -151,6 +155,9 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     'to compare',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qiymət alma', 'correct' => ['qiymət', 'alma'], 'extra' => ['müqayisə etmək']],
+                            'ar' => ['sentence' => 'سعر تفاحة', 'correct' => ['سعر', 'تفاحة'], 'extra' => ['المقارنة']],
+                            'ru' => ['sentence' => 'цена яблоко', 'correct' => ['цена', 'яблоко'], 'extra' => ['сравнить']],
                             'es' => [
                                 'sentence' => 'El precio de la manzana',
                                 'correct' => [
@@ -198,6 +205,7 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     '비교하다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'elmanın fiyatı', 'correct' => ['elmanın', 'fiyatı'], 'extra' => ['karşılaştırmak']],
                         ],
                     ],
                     'c' => [
@@ -225,6 +233,9 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     'price',
                                 ],
                             ],
+                            'az' => ['sentence' => 'müqayisə etmək alma və banan', 'correct' => ['müqayisə etmək', 'alma', 'və', 'banan'], 'extra' => ['qiymət']],
+                            'ar' => ['sentence' => 'المقارنة تفاحة و موزة', 'correct' => ['المقارنة', 'تفاحة', 'و', 'موزة'], 'extra' => ['سعر']],
+                            'ru' => ['sentence' => 'сравнить яблоко и банан', 'correct' => ['сравнить', 'яблоко', 'и', 'банан'], 'extra' => ['цена']],
                             'es' => [
                                 'sentence' => 'Comparar la manzana y el plátano',
                                 'correct' => [
@@ -277,6 +288,7 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     '가격',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'elmayı ve muzu karşılaştırmak', 'correct' => ['elmayı', 've', 'muzu', 'karşılaştırmak'], 'extra' => ['fiyat']],
                         ],
                     ],
                 ],
@@ -325,6 +337,9 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     'aisle',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir endirim üzərində pendir', 'correct' => ['bir', 'endirim', 'üzərində', 'pendir'], 'extra' => ['ucuz', 'şöbə']],
+                            'ar' => ['sentence' => 'خصم على جبن', 'correct' => ['خصم', 'على', 'جبن'], 'extra' => ['رخيص', 'قسم']],
+                            'ru' => ['sentence' => 'скидка на сыр', 'correct' => ['скидка', 'на', 'сыр'], 'extra' => ['дешёвый', 'отдел']],
                             'es' => [
                                 'sentence' => 'Un descuento en el queso',
                                 'correct' => [
@@ -374,6 +389,7 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     '싼',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'peynirde bir indirim', 'correct' => ['peynirde', 'bir', 'indirim'], 'extra' => ['ucuz', 'reyon']],
                         ],
                     ],
                     'b' => [
@@ -396,6 +412,9 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     'aisle',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir ucuz pendir', 'correct' => ['bir', 'ucuz', 'pendir'], 'extra' => ['endirim', 'şöbə']],
+                            'ar' => ['sentence' => 'رخيص جبن', 'correct' => ['رخيص', 'جبن'], 'extra' => ['خصم', 'قسم']],
+                            'ru' => ['sentence' => 'дешёвый сыр', 'correct' => ['дешёвый', 'сыр'], 'extra' => ['скидка', 'отдел']],
                             'es' => [
                                 'sentence' => 'Un queso barato',
                                 'correct' => [
@@ -439,6 +458,7 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     '할인',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ucuz bir peynir', 'correct' => ['ucuz', 'bir', 'peynir'], 'extra' => ['indirim', 'reyon']],
                         ],
                     ],
                     'c' => [
@@ -463,6 +483,9 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     'cheap',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir endirim içində şöbə', 'correct' => ['bir', 'endirim', 'içində', 'şöbə'], 'extra' => ['ucuz']],
+                            'ar' => ['sentence' => 'خصم في قسم', 'correct' => ['خصم', 'في', 'قسم'], 'extra' => ['رخيص']],
+                            'ru' => ['sentence' => 'скидка в отдел', 'correct' => ['скидка', 'в', 'отдел'], 'extra' => ['дешёвый']],
                             'es' => [
                                 'sentence' => 'Un descuento en el pasillo',
                                 'correct' => [
@@ -510,6 +533,7 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     '싼',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'reyonda bir indirim', 'correct' => ['reyonda', 'bir', 'indirim'], 'extra' => ['ucuz']],
                         ],
                     ],
                 ],
@@ -557,6 +581,9 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     'better',
                                 ],
                             ],
+                            'az' => ['sentence' => 'düyü daha az bahalı', 'correct' => ['düyü', 'daha az', 'bahalı'], 'extra' => ['daha yaxşı']],
+                            'ar' => ['sentence' => 'أرز أقل غالي', 'correct' => ['أرز', 'أقل', 'غالي'], 'extra' => ['أحسن']],
+                            'ru' => ['sentence' => 'рис меньше дорогой', 'correct' => ['рис', 'меньше', 'дорогой'], 'extra' => ['лучше']],
                             'es' => [
                                 'sentence' => 'El arroz es menos caro',
                                 'correct' => [
@@ -606,6 +633,7 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     '더 좋은',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'pirinç daha ucuz', 'correct' => ['pirinç', 'daha', 'ucuz'], 'extra' => ['daha iyi']],
                         ],
                     ],
                     'b' => [
@@ -630,6 +658,9 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     'rice',
                                 ],
                             ],
+                            'az' => ['sentence' => 'alma daha yaxşı', 'correct' => ['alma', 'daha yaxşı'], 'extra' => ['daha az', 'düyü']],
+                            'ar' => ['sentence' => 'تفاحة أحسن', 'correct' => ['تفاحة', 'أحسن'], 'extra' => ['أقل', 'أرز']],
+                            'ru' => ['sentence' => 'яблоко лучше', 'correct' => ['яблоко', 'лучше'], 'extra' => ['меньше', 'рис']],
                             'es' => [
                                 'sentence' => 'La manzana es mejor',
                                 'correct' => [
@@ -680,6 +711,7 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     '덜',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'elma daha iyi', 'correct' => ['elma', 'daha', 'iyi'], 'extra' => ['daha az', 'pirinç']],
                         ],
                     ],
                     'c' => [
@@ -709,6 +741,9 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     'apple',
                                 ],
                             ],
+                            'az' => ['sentence' => 'düyü daha yaxşı və daha az bahalı', 'correct' => ['düyü', 'daha yaxşı', 'və', 'daha az', 'bahalı'], 'extra' => ['alma']],
+                            'ar' => ['sentence' => 'أرز أحسن و أقل غالي', 'correct' => ['أرز', 'أحسن', 'و', 'أقل', 'غالي'], 'extra' => ['تفاحة']],
+                            'ru' => ['sentence' => 'рис лучше и меньше дорогой', 'correct' => ['рис', 'лучше', 'и', 'меньше', 'дорогой'], 'extra' => ['яблоко']],
                             'es' => [
                                 'sentence' => 'El arroz es mejor y menos caro',
                                 'correct' => [
@@ -765,6 +800,7 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     '사과',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'pirinç daha iyi ve daha ucuz', 'correct' => ['pirinç', 'daha', 'iyi', 've', 'daha', 'ucuz'], 'extra' => ['elma']],
                         ],
                     ],
                 ],
@@ -811,6 +847,9 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     'box',
                                 ],
                             ],
+                            'az' => ['sentence' => 'ödəmək ilə mənim pul', 'correct' => ['ödəmək', 'ilə', 'mənim', 'pul'], 'extra' => ['kifayət', 'qutu']],
+                            'ar' => ['sentence' => 'الدفع مع نقود', 'correct' => ['الدفع', 'مع', 'نقود'], 'extra' => ['كفى', 'علبة']],
+                            'ru' => ['sentence' => 'платить с мой деньги', 'correct' => ['платить', 'с', 'мой', 'деньги'], 'extra' => ['достаточно', 'коробка']],
                             'es' => [
                                 'sentence' => 'Pagar con mi dinero',
                                 'correct' => [
@@ -860,6 +899,7 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     '충분히',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'paramla ödemek', 'correct' => ['paramla', 'ödemek'], 'extra' => ['yeterli', 'kutu']],
                         ],
                     ],
                     'b' => [
@@ -880,6 +920,9 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     'box',
                                 ],
                             ],
+                            'az' => ['sentence' => 'kifayət pul', 'correct' => ['kifayət', 'pul'], 'extra' => ['ödə', 'qutu']],
+                            'ar' => ['sentence' => 'كفى نقود', 'correct' => ['كفى', 'نقود'], 'extra' => ['ادفع', 'علبة']],
+                            'ru' => ['sentence' => 'достаточно деньги', 'correct' => ['достаточно', 'деньги'], 'extra' => ['плати', 'коробка']],
                             'es' => [
                                 'sentence' => 'Bastante dinero',
                                 'correct' => [
@@ -921,6 +964,7 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     '지불하다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yeterli para', 'correct' => ['yeterli', 'para'], 'extra' => ['öde', 'kutu']],
                         ],
                     ],
                     'c' => [
@@ -946,6 +990,9 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     'enough',
                                 ],
                             ],
+                            'az' => ['sentence' => 'ödəmək qutu ilə pul', 'correct' => ['ödəmək', 'qutu', 'ilə', 'pul'], 'extra' => ['kifayət']],
+                            'ar' => ['sentence' => 'الدفع علبة مع نقود', 'correct' => ['الدفع', 'علبة', 'مع', 'نقود'], 'extra' => ['كفى']],
+                            'ru' => ['sentence' => 'платить коробка с деньги', 'correct' => ['платить', 'коробка', 'с', 'деньги'], 'extra' => ['достаточно']],
                             'es' => [
                                 'sentence' => 'Pagar la caja con dinero',
                                 'correct' => [
@@ -996,6 +1043,7 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     '충분히',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kutuyu parayla ödemek', 'correct' => ['kutuyu', 'parayla', 'ödemek'], 'extra' => ['yeterli']],
                         ],
                     ],
                 ],
@@ -1040,6 +1088,9 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     'trolley',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir yaxşı qiymət', 'correct' => ['bir', 'yaxşı', 'qiymət'], 'extra' => ['neçə', 'araba']],
+                            'ar' => ['sentence' => 'جيد سعر', 'correct' => ['جيد', 'سعر'], 'extra' => ['كم', 'عربة']],
+                            'ru' => ['sentence' => 'хороший цена', 'correct' => ['хороший', 'цена'], 'extra' => ['сколько', 'тележка']],
                             'es' => [
                                 'sentence' => 'Un buen precio',
                                 'correct' => [
@@ -1084,6 +1135,7 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     '몇 개',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'iyi bir fiyat', 'correct' => ['iyi', 'bir', 'fiyat'], 'extra' => ['kaç', 'araba']],
                         ],
                     ],
                     'b' => [
@@ -1109,6 +1161,9 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     'trolley',
                                 ],
                             ],
+                            'az' => ['sentence' => 'neçə üçün banan', 'correct' => ['neçə', 'üçün', 'banan'], 'extra' => ['yaxşıyam', 'araba']],
+                            'ar' => ['sentence' => 'كم لأجل موزة', 'correct' => ['كم', 'لأجل', 'موزة'], 'extra' => ['بخير', 'عربة']],
+                            'ru' => ['sentence' => 'сколько для банан', 'correct' => ['сколько', 'для', 'банан'], 'extra' => ['хорошо', 'тележка']],
                             'es' => [
                                 'sentence' => 'Cuánto por el plátano',
                                 'correct' => [
@@ -1156,6 +1211,7 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     '좋은',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'muz kaç lira', 'correct' => ['muz', 'kaç', 'lira'], 'extra' => ['iyi', 'araba']],
                         ],
                     ],
                     'c' => [
@@ -1183,6 +1239,9 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     'how many',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir yaxşı qiymət üçün araba', 'correct' => ['bir', 'yaxşı', 'qiymət', 'üçün', 'araba'], 'extra' => ['neçə']],
+                            'ar' => ['sentence' => 'جيد سعر لأجل عربة', 'correct' => ['جيد', 'سعر', 'لأجل', 'عربة'], 'extra' => ['كم']],
+                            'ru' => ['sentence' => 'хороший цена для тележка', 'correct' => ['хороший', 'цена', 'для', 'тележка'], 'extra' => ['сколько']],
                             'es' => [
                                 'sentence' => 'Un buen precio por el carrito',
                                 'correct' => [
@@ -1237,6 +1296,7 @@ class DeUnitSupermarket07Seeder extends Seeder
                                     '몇 개',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'araba için iyi bir fiyat', 'correct' => ['araba', 'için', 'iyi', 'bir', 'fiyat'], 'extra' => ['kaç']],
                         ],
                     ],
                 ],

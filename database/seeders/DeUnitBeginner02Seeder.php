@@ -78,6 +78,9 @@ class DeUnitBeginner02Seeder extends Seeder
                                     'pen',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir kitab', 'correct' => ['bir', 'kitab'], 'extra' => ['iki', 'qələm']],
+                            'ar' => ['sentence' => 'واحد كتاب', 'correct' => ['واحد', 'كتاب'], 'extra' => ['اثنان', 'قلم']],
+                            'ru' => ['sentence' => 'один книга', 'correct' => ['один', 'книга'], 'extra' => ['два', 'ручка']],
                             'es' => [
                                 'sentence' => 'Un libro',
                                 'correct' => [
@@ -123,6 +126,7 @@ class DeUnitBeginner02Seeder extends Seeder
                                     '펜',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kitap', 'correct' => ['bir', 'kitap'], 'extra' => ['iki', 'kalem']],
                         ],
                     ],
                     'b' => [
@@ -143,6 +147,9 @@ class DeUnitBeginner02Seeder extends Seeder
                                     'book',
                                 ],
                             ],
+                            'az' => ['sentence' => 'iki qələmlər', 'correct' => ['iki', 'qələmlər'], 'extra' => ['bir', 'kitab']],
+                            'ar' => ['sentence' => 'اثنان أقلام', 'correct' => ['اثنان', 'أقلام'], 'extra' => ['واحد', 'كتاب']],
+                            'ru' => ['sentence' => 'два ручки', 'correct' => ['два', 'ручки'], 'extra' => ['один', 'книга']],
                             'es' => [
                                 'sentence' => 'Dos bolígrafos',
                                 'correct' => [
@@ -188,6 +195,7 @@ class DeUnitBeginner02Seeder extends Seeder
                                     '책',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'iki kalem', 'correct' => ['iki', 'kalem'], 'extra' => ['bir', 'kitap']],
                         ],
                     ],
                     'c' => [
@@ -213,6 +221,9 @@ class DeUnitBeginner02Seeder extends Seeder
                                     'two',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir kitab və bir qələm', 'correct' => ['bir', 'kitab', 'və', 'bir', 'qələm'], 'extra' => ['iki']],
+                            'ar' => ['sentence' => 'كتاب و قلم', 'correct' => ['كتاب', 'و', 'قلم'], 'extra' => ['اثنان']],
+                            'ru' => ['sentence' => 'книга и ручка', 'correct' => ['книга', 'и', 'ручка'], 'extra' => ['два']],
                             'es' => [
                                 'sentence' => 'Un libro y un bolígrafo',
                                 'correct' => [
@@ -260,6 +271,7 @@ class DeUnitBeginner02Seeder extends Seeder
                                     '둘',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kitap ve bir kalem', 'correct' => ['bir', 'kitap', 've', 'bir', 'kalem'], 'extra' => ['iki']],
                         ],
                     ],
                 ],
@@ -304,6 +316,9 @@ class DeUnitBeginner02Seeder extends Seeder
                                     'pen',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qırmızı kitab', 'correct' => ['bir', 'qırmızı', 'kitab'], 'extra' => ['mavi', 'qələm']],
+                            'ar' => ['sentence' => 'أحمر كتاب', 'correct' => ['أحمر', 'كتاب'], 'extra' => ['أزرق', 'قلم']],
+                            'ru' => ['sentence' => 'красный книга', 'correct' => ['красный', 'книга'], 'extra' => ['синий', 'ручка']],
                             'es' => [
                                 'sentence' => 'Un libro rojo',
                                 'correct' => [
@@ -348,6 +363,7 @@ class DeUnitBeginner02Seeder extends Seeder
                                     '파란색',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kırmızı bir kitap', 'correct' => ['kırmızı', 'bir', 'kitap'], 'extra' => ['mavi', 'kalem']],
                         ],
                     ],
                     'b' => [
@@ -370,6 +386,9 @@ class DeUnitBeginner02Seeder extends Seeder
                                     'book',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir mavi qələm', 'correct' => ['bir', 'mavi', 'qələm'], 'extra' => ['qırmızı', 'kitab']],
+                            'ar' => ['sentence' => 'أزرق قلم', 'correct' => ['أزرق', 'قلم'], 'extra' => ['أحمر', 'كتاب']],
+                            'ru' => ['sentence' => 'синий ручка', 'correct' => ['синий', 'ручка'], 'extra' => ['красный', 'книга']],
                             'es' => [
                                 'sentence' => 'Un bolígrafo azul',
                                 'correct' => [
@@ -414,6 +433,7 @@ class DeUnitBeginner02Seeder extends Seeder
                                     '빨간색',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'mavi bir kalem', 'correct' => ['mavi', 'bir', 'kalem'], 'extra' => ['kırmızı', 'kitap']],
                         ],
                     ],
                     'c' => [
@@ -443,6 +463,9 @@ class DeUnitBeginner02Seeder extends Seeder
                                     'green',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qırmızı kitab və bir mavi qələm', 'correct' => ['bir', 'qırmızı', 'kitab', 'və', 'bir', 'mavi', 'qələm'], 'extra' => ['yaşıl']],
+                            'ar' => ['sentence' => 'أحمر كتاب و أزرق قلم', 'correct' => ['أحمر', 'كتاب', 'و', 'أزرق', 'قلم'], 'extra' => ['أخضر']],
+                            'ru' => ['sentence' => 'красный книга и синий ручка', 'correct' => ['красный', 'книга', 'и', 'синий', 'ручка'], 'extra' => ['зелёный']],
                             'es' => [
                                 'sentence' => 'Un libro rojo y un bolígrafo azul',
                                 'correct' => [
@@ -498,6 +521,7 @@ class DeUnitBeginner02Seeder extends Seeder
                                     '초록색',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kırmızı bir kitap ve mavi bir kalem', 'correct' => ['kırmızı', 'bir', 'kitap', 've', 'mavi', 'bir', 'kalem'], 'extra' => ['yeşil']],
                         ],
                     ],
                 ],
@@ -542,6 +566,9 @@ class DeUnitBeginner02Seeder extends Seeder
                                     'book',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir yaşıl qələm', 'correct' => ['bir', 'yaşıl', 'qələm'], 'extra' => ['sarı', 'kitab']],
+                            'ar' => ['sentence' => 'أخضر قلم', 'correct' => ['أخضر', 'قلم'], 'extra' => ['أصفر', 'كتاب']],
+                            'ru' => ['sentence' => 'зелёный ручка', 'correct' => ['зелёный', 'ручка'], 'extra' => ['жёлтый', 'книга']],
                             'es' => [
                                 'sentence' => 'Un bolígrafo verde',
                                 'correct' => [
@@ -586,6 +613,7 @@ class DeUnitBeginner02Seeder extends Seeder
                                     '노란색',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yeşil bir kalem', 'correct' => ['yeşil', 'bir', 'kalem'], 'extra' => ['sarı', 'kitap']],
                         ],
                     ],
                     'b' => [
@@ -608,6 +636,9 @@ class DeUnitBeginner02Seeder extends Seeder
                                     'pen',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir sarı kitab', 'correct' => ['bir', 'sarı', 'kitab'], 'extra' => ['yaşıl', 'qələm']],
+                            'ar' => ['sentence' => 'أصفر كتاب', 'correct' => ['أصفر', 'كتاب'], 'extra' => ['أخضر', 'قلم']],
+                            'ru' => ['sentence' => 'жёлтый книга', 'correct' => ['жёлтый', 'книга'], 'extra' => ['зелёный', 'ручка']],
                             'es' => [
                                 'sentence' => 'Un libro amarillo',
                                 'correct' => [
@@ -652,6 +683,7 @@ class DeUnitBeginner02Seeder extends Seeder
                                     '초록색',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sarı bir kitap', 'correct' => ['sarı', 'bir', 'kitap'], 'extra' => ['yeşil', 'kalem']],
                         ],
                     ],
                     'c' => [
@@ -681,6 +713,9 @@ class DeUnitBeginner02Seeder extends Seeder
                                     'red',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir yaşıl kitab və bir sarı qələm', 'correct' => ['bir', 'yaşıl', 'kitab', 'və', 'bir', 'sarı', 'qələm'], 'extra' => ['qırmızı']],
+                            'ar' => ['sentence' => 'أخضر كتاب و أصفر قلم', 'correct' => ['أخضر', 'كتاب', 'و', 'أصفر', 'قلم'], 'extra' => ['أحمر']],
+                            'ru' => ['sentence' => 'зелёный книга и жёлтый ручка', 'correct' => ['зелёный', 'книга', 'и', 'жёлтый', 'ручка'], 'extra' => ['красный']],
                             'es' => [
                                 'sentence' => 'Un libro verde y un bolígrafo amarillo',
                                 'correct' => [
@@ -736,6 +771,7 @@ class DeUnitBeginner02Seeder extends Seeder
                                     '빨간색',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yeşil bir kitap ve sarı bir kalem', 'correct' => ['yeşil', 'bir', 'kitap', 've', 'sarı', 'bir', 'kalem'], 'extra' => ['kırmızı']],
                         ],
                     ],
                 ],
@@ -780,6 +816,9 @@ class DeUnitBeginner02Seeder extends Seeder
                                     'book',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qara qələm', 'correct' => ['bir', 'qara', 'qələm'], 'extra' => ['ağ', 'kitab']],
+                            'ar' => ['sentence' => 'أسود قلم', 'correct' => ['أسود', 'قلم'], 'extra' => ['أبيض', 'كتاب']],
+                            'ru' => ['sentence' => 'чёрный ручка', 'correct' => ['чёрный', 'ручка'], 'extra' => ['белый', 'книга']],
                             'es' => [
                                 'sentence' => 'Un bolígrafo negro',
                                 'correct' => [
@@ -824,6 +863,7 @@ class DeUnitBeginner02Seeder extends Seeder
                                     '하얀색',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'siyah bir kalem', 'correct' => ['siyah', 'bir', 'kalem'], 'extra' => ['beyaz', 'kitap']],
                         ],
                     ],
                     'b' => [
@@ -846,6 +886,9 @@ class DeUnitBeginner02Seeder extends Seeder
                                     'pen',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir ağ kitab', 'correct' => ['bir', 'ağ', 'kitab'], 'extra' => ['qara', 'qələm']],
+                            'ar' => ['sentence' => 'أبيض كتاب', 'correct' => ['أبيض', 'كتاب'], 'extra' => ['أسود', 'قلم']],
+                            'ru' => ['sentence' => 'белый книга', 'correct' => ['белый', 'книга'], 'extra' => ['чёрный', 'ручка']],
                             'es' => [
                                 'sentence' => 'Un libro blanco',
                                 'correct' => [
@@ -890,6 +933,7 @@ class DeUnitBeginner02Seeder extends Seeder
                                     '검은색',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'beyaz bir kitap', 'correct' => ['beyaz', 'bir', 'kitap'], 'extra' => ['siyah', 'kalem']],
                         ],
                     ],
                     'c' => [
@@ -919,6 +963,9 @@ class DeUnitBeginner02Seeder extends Seeder
                                     'blue',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qara kitab və bir ağ qələm', 'correct' => ['bir', 'qara', 'kitab', 'və', 'bir', 'ağ', 'qələm'], 'extra' => ['mavi']],
+                            'ar' => ['sentence' => 'أسود كتاب و أبيض قلم', 'correct' => ['أسود', 'كتاب', 'و', 'أبيض', 'قلم'], 'extra' => ['أزرق']],
+                            'ru' => ['sentence' => 'чёрный книга и белый ручка', 'correct' => ['чёрный', 'книга', 'и', 'белый', 'ручка'], 'extra' => ['синий']],
                             'es' => [
                                 'sentence' => 'Un libro negro y un bolígrafo blanco',
                                 'correct' => [
@@ -974,6 +1021,7 @@ class DeUnitBeginner02Seeder extends Seeder
                                     '파란색',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'siyah bir kitap ve beyaz bir kalem', 'correct' => ['siyah', 'bir', 'kitap', 've', 'beyaz', 'bir', 'kalem'], 'extra' => ['mavi']],
                         ],
                     ],
                 ],
@@ -1016,6 +1064,9 @@ class DeUnitBeginner02Seeder extends Seeder
                                     'pen',
                                 ],
                             ],
+                            'az' => ['sentence' => 'üç kitablar', 'correct' => ['üç', 'kitablar'], 'extra' => ['on', 'qələm']],
+                            'ar' => ['sentence' => 'ثلاثة كتب', 'correct' => ['ثلاثة', 'كتب'], 'extra' => ['عشرة', 'قلم']],
+                            'ru' => ['sentence' => 'три книги', 'correct' => ['три', 'книги'], 'extra' => ['десять', 'ручка']],
                             'es' => [
                                 'sentence' => 'Tres libros',
                                 'correct' => [
@@ -1059,6 +1110,7 @@ class DeUnitBeginner02Seeder extends Seeder
                                     '열',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'üç kitap', 'correct' => ['üç', 'kitap'], 'extra' => ['on', 'kalem']],
                         ],
                     ],
                     'b' => [
@@ -1079,6 +1131,9 @@ class DeUnitBeginner02Seeder extends Seeder
                                     'books',
                                 ],
                             ],
+                            'az' => ['sentence' => 'on qələmlər', 'correct' => ['on', 'qələmlər'], 'extra' => ['üç', 'kitablar']],
+                            'ar' => ['sentence' => 'عشرة أقلام', 'correct' => ['عشرة', 'أقلام'], 'extra' => ['ثلاثة', 'كتب']],
+                            'ru' => ['sentence' => 'десять ручки', 'correct' => ['десять', 'ручки'], 'extra' => ['три', 'книги']],
                             'es' => [
                                 'sentence' => 'Diez bolígrafos',
                                 'correct' => [
@@ -1122,6 +1177,7 @@ class DeUnitBeginner02Seeder extends Seeder
                                     '셋',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'on kalem', 'correct' => ['on', 'kalem'], 'extra' => ['üç', 'kitaplar']],
                         ],
                     ],
                     'c' => [
@@ -1148,6 +1204,9 @@ class DeUnitBeginner02Seeder extends Seeder
                                     'ten',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir kitab və bir qələm', 'correct' => ['bir', 'kitab', 'və', 'bir', 'qələm'], 'extra' => ['üç', 'on']],
+                            'ar' => ['sentence' => 'كتاب و قلم', 'correct' => ['كتاب', 'و', 'قلم'], 'extra' => ['ثلاثة', 'عشرة']],
+                            'ru' => ['sentence' => 'книга и ручка', 'correct' => ['книга', 'и', 'ручка'], 'extra' => ['три', 'десять']],
                             'es' => [
                                 'sentence' => 'Un libro y un bolígrafo',
                                 'correct' => [
@@ -1199,6 +1258,7 @@ class DeUnitBeginner02Seeder extends Seeder
                                     '열',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kitap ve bir kalem', 'correct' => ['bir', 'kitap', 've', 'bir', 'kalem'], 'extra' => ['üç', 'on']],
                         ],
                     ],
                 ],

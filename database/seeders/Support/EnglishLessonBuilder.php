@@ -30,7 +30,7 @@ use Illuminate\Support\Str;
 class EnglishLessonBuilder
 {
     /** Native languages a learner can take an English course in. */
-    public const LANGS = ['es', 'de', 'ja', 'ko', 'fr'];
+    public const LANGS = ['es', 'de', 'ja', 'ko', 'fr', 'tr', 'ru', 'ar', 'az'];
 
     /**
      * @param  array<string, string>  $picturePool  English label => image slug,
@@ -115,8 +115,16 @@ class EnglishLessonBuilder
      */
     public function lesson(string $title, int $order, array $pictures, array $plain, array $phrases): array
     {
+        // One session per lesson, to match
+        // LessonProgressService::LESSON_TARGET_COMPLETIONS.
+        //
+        // A lesson used to be built as five progressive sessions, but only
+        // the first is ever served now, so building the other four just
+        // wrote rows nothing reads. Put this back to 5 to restore them:
+        // SESSION_PLAN and WORD_ROTATION still describe all five
+        // variations, so no content has to be rewritten to go back.
         $sessions = [];
-        for ($session = 0; $session < 5; $session++) {
+        for ($session = 0; $session < 1; $session++) {
             $sessions[] = $this->session($session, $pictures, $plain, $phrases);
         }
 
@@ -323,11 +331,16 @@ class EnglishLessonBuilder
     private function listenAndPick(array $words, array $word): array
     {
         $options = [[$word['en'], EnglishVocabulary::hint($word['en'])]];
+        $seen = [$word['en'] => true];
 
         foreach ($words as $other) {
-            if ($other['en'] === $word['en']) {
+            // Guard on the surface form rather than on the entry: a unit can
+            // introduce the same word twice, and adding it again would show the
+            // learner two identical tiles to choose between.
+            if (isset($seen[$other['en']])) {
                 continue;
             }
+            $seen[$other['en']] = true;
             $options[] = [$other['en'], EnglishVocabulary::hint($other['en'])];
             if (count($options) >= 4) {
                 break;

@@ -83,6 +83,9 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     'banana',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir kilo meyvələr', 'correct' => ['bir', 'kilo', 'meyvələr'], 'extra' => ['alma', 'banan']],
+                            'ar' => ['sentence' => 'كيلو فواكه', 'correct' => ['كيلو', 'فواكه'], 'extra' => ['تفاحة', 'موزة']],
+                            'ru' => ['sentence' => 'кило фрукты', 'correct' => ['кило', 'фрукты'], 'extra' => ['яблоко', 'банан']],
                             'es' => [
                                 'sentence' => 'Un kilo de frutas',
                                 'correct' => [
@@ -131,6 +134,7 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     '사과',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kilo meyve', 'correct' => ['bir', 'kilo', 'meyve'], 'extra' => ['elma', 'muz']],
                         ],
                     ],
                     'b' => [
@@ -156,6 +160,9 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     'kilo',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir alma və bir banan', 'correct' => ['bir', 'alma', 'və', 'bir', 'banan'], 'extra' => ['kilo']],
+                            'ar' => ['sentence' => 'تفاحة و موزة', 'correct' => ['تفاحة', 'و', 'موزة'], 'extra' => ['كيلو']],
+                            'ru' => ['sentence' => 'яблоко и банан', 'correct' => ['яблоко', 'и', 'банан'], 'extra' => ['кило']],
                             'es' => [
                                 'sentence' => 'Una manzana y un plátano',
                                 'correct' => [
@@ -203,6 +210,7 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     '킬로',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir elma ve bir muz', 'correct' => ['bir', 'elma', 've', 'bir', 'muz'], 'extra' => ['kilo']],
                         ],
                     ],
                     'c' => [
@@ -227,6 +235,9 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     'kilo',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir az meyvələr içində səbət', 'correct' => ['bir az', 'meyvələr', 'içində', 'səbət'], 'extra' => ['kilo']],
+                            'ar' => ['sentence' => 'بعض فواكه في سلة', 'correct' => ['بعض', 'فواكه', 'في', 'سلة'], 'extra' => ['كيلو']],
+                            'ru' => ['sentence' => 'немного фрукты в корзина', 'correct' => ['немного', 'фрукты', 'в', 'корзина'], 'extra' => ['кило']],
                             'es' => [
                                 'sentence' => 'Algo de frutas en la cesta',
                                 'correct' => [
@@ -277,6 +288,7 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     '킬로',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sepette biraz meyve', 'correct' => ['sepette', 'biraz', 'meyve'], 'extra' => ['kilo']],
                         ],
                     ],
                 ],
@@ -321,6 +333,9 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     'grapes',
                                 ],
                             ],
+                            'az' => ['sentence' => 'seçmək bir portağal', 'correct' => ['seçmək', 'bir', 'portağal'], 'extra' => ['almaq', 'üzüm']],
+                            'ar' => ['sentence' => 'الاختيار برتقالة', 'correct' => ['الاختيار', 'برتقالة'], 'extra' => ['الشراء', 'عنب']],
+                            'ru' => ['sentence' => 'выбрать апельсин', 'correct' => ['выбрать', 'апельсин'], 'extra' => ['купить', 'виноград']],
                             'es' => [
                                 'sentence' => 'Elegir una naranja',
                                 'correct' => [
@@ -366,6 +381,7 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     '사다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir portakal seçmek', 'correct' => ['bir', 'portakal', 'seçmek'], 'extra' => ['almak', 'üzüm']],
                         ],
                     ],
                     'b' => [
@@ -388,6 +404,9 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     'orange',
                                 ],
                             ],
+                            'az' => ['sentence' => 'almaq üzüm', 'correct' => ['almaq', 'üzüm'], 'extra' => ['seçmək', 'portağal']],
+                            'ar' => ['sentence' => 'الشراء عنب', 'correct' => ['الشراء', 'عنب'], 'extra' => ['الاختيار', 'برتقالة']],
+                            'ru' => ['sentence' => 'купить виноград', 'correct' => ['купить', 'виноград'], 'extra' => ['выбрать', 'апельсин']],
                             'es' => [
                                 'sentence' => 'Comprar las uvas',
                                 'correct' => [
@@ -432,6 +451,7 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     '고르다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'üzümü almak', 'correct' => ['üzümü', 'almak'], 'extra' => ['seçmek', 'portakal']],
                         ],
                     ],
                     'c' => [
@@ -455,6 +475,9 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     'to buy',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir portağal və ya üzüm', 'correct' => ['bir', 'portağal', 'və ya', 'üzüm'], 'extra' => ['almaq']],
+                            'ar' => ['sentence' => 'برتقالة أو عنب', 'correct' => ['برتقالة', 'أو', 'عنب'], 'extra' => ['الشراء']],
+                            'ru' => ['sentence' => 'апельсин или виноград', 'correct' => ['апельсин', 'или', 'виноград'], 'extra' => ['купить']],
                             'es' => [
                                 'sentence' => 'Una naranja o uvas',
                                 'correct' => [
@@ -501,6 +524,7 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     '사다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir portakal veya üzüm', 'correct' => ['bir', 'portakal', 'veya', 'üzüm'], 'extra' => ['almak']],
                         ],
                     ],
                 ],
@@ -545,6 +569,9 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     'apple',
                                 ],
                             ],
+                            'az' => ['sentence' => 'müqayisə etmək meyvələr', 'correct' => ['müqayisə etmək', 'meyvələr'], 'extra' => ['daha yaxşı', 'alma']],
+                            'ar' => ['sentence' => 'المقارنة فواكه', 'correct' => ['المقارنة', 'فواكه'], 'extra' => ['أحسن', 'تفاحة']],
+                            'ru' => ['sentence' => 'сравнить фрукты', 'correct' => ['сравнить', 'фрукты'], 'extra' => ['лучше', 'яблоко']],
                             'es' => [
                                 'sentence' => 'Comparar las frutas',
                                 'correct' => [
@@ -590,6 +617,7 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     '더 좋은',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'meyveleri karşılaştırmak', 'correct' => ['meyveleri', 'karşılaştırmak'], 'extra' => ['daha iyi', 'elma']],
                         ],
                     ],
                     'b' => [
@@ -614,6 +642,9 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     'orange',
                                 ],
                             ],
+                            'az' => ['sentence' => 'alma daha yaxşı', 'correct' => ['alma', 'daha yaxşı'], 'extra' => ['müqayisə etmək', 'portağal']],
+                            'ar' => ['sentence' => 'تفاحة أحسن', 'correct' => ['تفاحة', 'أحسن'], 'extra' => ['المقارنة', 'برتقالة']],
+                            'ru' => ['sentence' => 'яблоко лучше', 'correct' => ['яблоко', 'лучше'], 'extra' => ['сравнить', 'апельсин']],
                             'es' => [
                                 'sentence' => 'La manzana es mejor',
                                 'correct' => [
@@ -663,6 +694,7 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     '비교하다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'elma daha iyi', 'correct' => ['elma', 'daha', 'iyi'], 'extra' => ['karşılaştırmak', 'portakal']],
                         ],
                     ],
                     'c' => [
@@ -690,6 +722,9 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     'better',
                                 ],
                             ],
+                            'az' => ['sentence' => 'müqayisə etmək bir alma və bir portağal', 'correct' => ['müqayisə etmək', 'bir', 'alma', 'və', 'bir', 'portağal'], 'extra' => ['daha yaxşı']],
+                            'ar' => ['sentence' => 'المقارنة تفاحة و برتقالة', 'correct' => ['المقارنة', 'تفاحة', 'و', 'برتقالة'], 'extra' => ['أحسن']],
+                            'ru' => ['sentence' => 'сравнить яблоко и апельсин', 'correct' => ['сравнить', 'яблоко', 'и', 'апельсин'], 'extra' => ['лучше']],
                             'es' => [
                                 'sentence' => 'Comparar una manzana y una naranja',
                                 'correct' => [
@@ -742,6 +777,7 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     '더 좋은',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir elma ve bir portakal karşılaştırmak', 'correct' => ['bir', 'elma', 've', 'bir', 'portakal', 'karşılaştırmak'], 'extra' => ['daha iyi']],
                         ],
                     ],
                 ],
@@ -788,6 +824,9 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     'banana',
                                 ],
                             ],
+                            'az' => ['sentence' => 'üzüm yüngül', 'correct' => ['üzüm', 'yüngül'], 'extra' => ['qram', 'banan']],
+                            'ar' => ['sentence' => 'عنب خفيف', 'correct' => ['عنب', 'خفيف'], 'extra' => ['غرام', 'موزة']],
+                            'ru' => ['sentence' => 'виноград лёгкий', 'correct' => ['виноград', 'лёгкий'], 'extra' => ['грамм', 'банан']],
                             'es' => [
                                 'sentence' => 'Las uvas son ligeras',
                                 'correct' => [
@@ -836,6 +875,7 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     '그램',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'üzüm hafif', 'correct' => ['üzüm', 'hafif'], 'extra' => ['gram', 'muz']],
                         ],
                     ],
                     'b' => [
@@ -859,6 +899,9 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     'grapes',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qram meyvələr', 'correct' => ['bir', 'qram', 'meyvələr'], 'extra' => ['yüngül', 'üzüm']],
+                            'ar' => ['sentence' => 'غرام فواكه', 'correct' => ['غرام', 'فواكه'], 'extra' => ['خفيف', 'عنب']],
+                            'ru' => ['sentence' => 'грамм фрукты', 'correct' => ['грамм', 'фрукты'], 'extra' => ['лёгкий', 'виноград']],
                             'es' => [
                                 'sentence' => 'Un gramo de frutas',
                                 'correct' => [
@@ -906,6 +949,7 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     '가벼운',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir gram meyve', 'correct' => ['bir', 'gram', 'meyve'], 'extra' => ['hafif', 'üzüm']],
                         ],
                     ],
                     'c' => [
@@ -929,6 +973,9 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     'grapes',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qram banan', 'correct' => ['bir', 'qram', 'banan'], 'extra' => ['yüngül', 'üzüm']],
+                            'ar' => ['sentence' => 'غرام موزة', 'correct' => ['غرام', 'موزة'], 'extra' => ['خفيف', 'عنب']],
+                            'ru' => ['sentence' => 'грамм банан', 'correct' => ['грамм', 'банан'], 'extra' => ['лёгкий', 'виноград']],
                             'es' => [
                                 'sentence' => 'Un gramo de plátano',
                                 'correct' => [
@@ -976,6 +1023,7 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     '가벼운',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir gram muz', 'correct' => ['bir', 'gram', 'muz'], 'extra' => ['hafif', 'üzüm']],
                         ],
                     ],
                 ],
@@ -1025,6 +1073,9 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     'more',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qoymaq bir alma içində səbət', 'correct' => ['qoymaq', 'bir', 'alma', 'içində', 'səbət'], 'extra' => ['daha']],
+                            'ar' => ['sentence' => 'وضع تفاحة في سلة', 'correct' => ['وضع', 'تفاحة', 'في', 'سلة'], 'extra' => ['أكثر']],
+                            'ru' => ['sentence' => 'положить яблоко в корзина', 'correct' => ['положить', 'яблоко', 'в', 'корзина'], 'extra' => ['больше']],
                             'es' => [
                                 'sentence' => 'Poner una manzana en la cesta',
                                 'correct' => [
@@ -1077,6 +1128,7 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     '더',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sepete bir elma koymak', 'correct' => ['sepete', 'bir', 'elma', 'koymak'], 'extra' => ['daha çok']],
                         ],
                     ],
                     'b' => [
@@ -1097,6 +1149,9 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     'basket',
                                 ],
                             ],
+                            'az' => ['sentence' => 'daha meyvələr', 'correct' => ['daha', 'meyvələr'], 'extra' => ['qoymaq', 'səbət']],
+                            'ar' => ['sentence' => 'أكثر فواكه', 'correct' => ['أكثر', 'فواكه'], 'extra' => ['وضع', 'سلة']],
+                            'ru' => ['sentence' => 'больше фрукты', 'correct' => ['больше', 'фрукты'], 'extra' => ['положить', 'корзина']],
                             'es' => [
                                 'sentence' => 'Más frutas',
                                 'correct' => [
@@ -1139,6 +1194,7 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     '넣다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'daha çok meyve', 'correct' => ['daha', 'çok', 'meyve'], 'extra' => ['koymak', 'sepet']],
                         ],
                     ],
                     'c' => [
@@ -1161,6 +1217,9 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     'basket',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qoymaq daha meyvələr', 'correct' => ['qoymaq', 'daha', 'meyvələr'], 'extra' => ['alma', 'səbət']],
+                            'ar' => ['sentence' => 'وضع أكثر فواكه', 'correct' => ['وضع', 'أكثر', 'فواكه'], 'extra' => ['تفاحة', 'سلة']],
+                            'ru' => ['sentence' => 'положить больше фрукты', 'correct' => ['положить', 'больше', 'фрукты'], 'extra' => ['яблоко', 'корзина']],
                             'es' => [
                                 'sentence' => 'Poner más frutas',
                                 'correct' => [
@@ -1208,6 +1267,7 @@ class DeUnitSupermarket02Seeder extends Seeder
                                     '사과',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'daha çok meyve koymak', 'correct' => ['daha', 'çok', 'meyve', 'koymak'], 'extra' => ['elma', 'sepet']],
                         ],
                     ],
                 ],

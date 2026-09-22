@@ -5,6 +5,8 @@
 @section('content')
     <p class="mb-4 text-sm text-gray-500">Every active Family plan group — the owner is the paying subscriber; members ride on the owner's subscription for free (see FamilyService).</p>
 
+    <x-per-page :paginator="$familyGroups" noun="groups" />
+
     <div class="space-y-4">
         @forelse ($familyGroups as $group)
             @php

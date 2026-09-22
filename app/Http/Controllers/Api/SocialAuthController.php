@@ -28,11 +28,38 @@ class SocialAuthController extends Controller
     {
         return self::withMobileRedirectCookie(
             self::withTimezoneCookie(
-                Socialite::driver('google')->stateless()->redirect(),
+                Socialite::driver('google')
+                    ->stateless()
+                    // Always show the account picker. Without this Google
+                    // silently reuses the one session already signed in to the
+                    // browser, so anyone with more than one account (a personal
+                    // and a work one, say) gets whichever Google picked and has
+                    // no way to choose from inside our app.
+                    ->with(['prompt' => 'select_account'])
+                    ->redirect(),
                 $request,
             ),
             $request,
         );
+    }
+
+    /**
+     * Whether Google states it has verified this account's email address.
+     *
+     * Socialite copies the provider's `email_verified` claim into the raw user
+     * array and also mirrors it as `verified_email`, so both are checked. The
+     * value arrives as a real boolean from the v3 userinfo endpoint but as the
+     * string "true" from some other Google surfaces, hence FILTER_VALIDATE_BOOLEAN
+     * rather than a plain cast, which would read "false" as true.
+     *
+     * Anything missing or unrecognised is treated as NOT verified.
+     */
+    private static function googleVerifiedEmail(\Laravel\Socialite\Contracts\User $googleUser): bool
+    {
+        $raw = (array) ($googleUser->user ?? []);
+        $claim = $raw['email_verified'] ?? $raw['verified_email'] ?? null;
+
+        return filter_var($claim, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) === true;
     }
 
     #[OA\Get(
@@ -62,17 +89,38 @@ class SocialAuthController extends Controller
                 $existingByEmail = User::where('email', $googleUser->getEmail())->first();
 
                 if ($existingByEmail) {
-                    // Don't silently attach this Google account to a pre-existing
-                    // (password-based) account just because the email matches —
-                    // Google verifying the email doesn't prove this is the same
-                    // person who set that account's password. Stash the pending
-                    // link and make them prove ownership via their real password
-                    // first; AuthController::login() applies it after that.
-                    self::stashPendingOAuthLink('google', $existingByEmail->email, $googleUser->getId());
+                    // An account already exists for this email, created with a
+                    // password. Link Google to it and sign them in, PROVIDED
+                    // Google says it verified the address.
+                    //
+                    // That proviso is the whole security argument. Someone who
+                    // controls the mailbox can already take the account over
+                    // through "forgot password", so linking on a verified email
+                    // opens no door that was not open already. On an
+                    // unverified one it would, which is why that case still
+                    // falls through to the old prove-it-with-your-password
+                    // flow rather than being waved through.
+                    if (! self::googleVerifiedEmail($googleUser)) {
+                        self::stashPendingOAuthLink('google', $existingByEmail->email, $googleUser->getId());
 
-                    return redirect($frontendUrl.'/login?oauthConflict=google&email='.urlencode($existingByEmail->email));
+                        return redirect($frontendUrl.'/login?oauthConflict=google&email='.urlencode($existingByEmail->email));
+                    }
+
+                    // Linked. From here it is an ordinary returning user, so
+                    // the branch below fills in the name and timezone exactly
+                    // as it would on any later sign-in.
+                    $user = $existingByEmail;
+                    $user->forceFill([
+                        'google_id' => $googleUser->getId(),
+                        // Signing in through a provider that verified the
+                        // address also settles an account that never confirmed
+                        // its own email.
+                        'email_verified_at' => $user->email_verified_at ?? now(),
+                    ])->save();
                 }
+            }
 
+            if (! $user) {
                 $user = User::create([
                     'full_name' => self::resolveFullName($googleUser),
                     'email' => $googleUser->getEmail(),

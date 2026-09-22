@@ -81,6 +81,9 @@ class EsUnitConversation06Seeder extends Seeder
                                     'school',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gedirəm park', 'correct' => ['gedirəm', 'park'], 'extra' => ['səhər', 'məktəb']],
+                            'ar' => ['sentence' => 'أذهب إلى حديقة', 'correct' => ['أذهب', 'إلى', 'حديقة'], 'extra' => ['صباح', 'مدرسة']],
+                            'ru' => ['sentence' => 'я иду в парк', 'correct' => ['я', 'иду', 'в', 'парк'], 'extra' => ['утро', 'школа']],
                             'de' => [
                                 'sentence' => 'Ich gehe zum Park',
                                 'correct' => [
@@ -131,6 +134,7 @@ class EsUnitConversation06Seeder extends Seeder
                                     '내일',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'parka gidiyorum', 'correct' => ['parka', 'gidiyorum'], 'extra' => ['sabah', 'okul']],
                         ],
                     ],
                     'b' => [
@@ -151,6 +155,9 @@ class EsUnitConversation06Seeder extends Seeder
                                     'school',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gedirəm sabah', 'correct' => ['gedirəm', 'sabah'], 'extra' => ['park', 'məktəb']],
+                            'ar' => ['sentence' => 'أذهب غدا', 'correct' => ['أذهب', 'غدا'], 'extra' => ['حديقة', 'مدرسة']],
+                            'ru' => ['sentence' => 'я иду завтра', 'correct' => ['я', 'иду', 'завтра'], 'extra' => ['парк', 'школа']],
                             'de' => [
                                 'sentence' => 'Ich gehe morgen',
                                 'correct' => [
@@ -196,6 +203,7 @@ class EsUnitConversation06Seeder extends Seeder
                                     '공원',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yarın gidiyorum', 'correct' => ['yarın', 'gidiyorum'], 'extra' => ['park', 'okul']],
                         ],
                     ],
                     'c' => [
@@ -221,6 +229,9 @@ class EsUnitConversation06Seeder extends Seeder
                                     'park',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gedirəm məktəb sabah', 'correct' => ['gedirəm', 'məktəb', 'sabah'], 'extra' => ['park']],
+                            'ar' => ['sentence' => 'أذهب إلى مدرسة غدا', 'correct' => ['أذهب', 'إلى', 'مدرسة', 'غدا'], 'extra' => ['حديقة']],
+                            'ru' => ['sentence' => 'я иду в школа завтра', 'correct' => ['я', 'иду', 'в', 'школа', 'завтра'], 'extra' => ['парк']],
                             'de' => [
                                 'sentence' => 'Ich gehe morgen zur Schule',
                                 'correct' => [
@@ -273,6 +284,7 @@ class EsUnitConversation06Seeder extends Seeder
                                     '공원',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yarın okula gidiyorum', 'correct' => ['yarın', 'okula', 'gidiyorum'], 'extra' => ['park']],
                         ],
                     ],
                 ],
@@ -318,6 +330,9 @@ class EsUnitConversation06Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'əvvəl mağaza', 'correct' => ['əvvəl', 'mağaza'], 'extra' => ['sonra', 'ev']],
+                            'ar' => ['sentence' => 'قبل متجر', 'correct' => ['قبل', 'متجر'], 'extra' => ['بعد', 'بيت']],
+                            'ru' => ['sentence' => 'до магазин', 'correct' => ['до', 'магазин'], 'extra' => ['после', 'дом']],
                             'de' => [
                                 'sentence' => 'Vor dem Geschäft',
                                 'correct' => [
@@ -362,6 +377,7 @@ class EsUnitConversation06Seeder extends Seeder
                                     '후에',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'dükkandan önce', 'correct' => ['dükkandan', 'önce'], 'extra' => ['sonra', 'ev']],
                         ],
                     ],
                     'b' => [
@@ -385,6 +401,9 @@ class EsUnitConversation06Seeder extends Seeder
                                     'shop',
                                 ],
                             ],
+                            'az' => ['sentence' => 'sonra ev', 'correct' => ['sonra', 'ev'], 'extra' => ['əvvəl', 'mağaza']],
+                            'ar' => ['sentence' => 'بعد بيت', 'correct' => ['بعد', 'بيت'], 'extra' => ['قبل', 'متجر']],
+                            'ru' => ['sentence' => 'после дом', 'correct' => ['после', 'дом'], 'extra' => ['до', 'магазин']],
                             'de' => [
                                 'sentence' => 'Nach dem Haus',
                                 'correct' => [
@@ -430,6 +449,7 @@ class EsUnitConversation06Seeder extends Seeder
                                     '전에',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'evden sonra', 'correct' => ['evden', 'sonra'], 'extra' => ['önce', 'dükkan']],
                         ],
                     ],
                     'c' => [
@@ -451,6 +471,9 @@ class EsUnitConversation06Seeder extends Seeder
                                     'shop',
                                 ],
                             ],
+                            'az' => ['sentence' => 'əvvəl və ya sonra', 'correct' => ['əvvəl', 'və ya', 'sonra'], 'extra' => ['mağaza']],
+                            'ar' => ['sentence' => 'قبل أو بعد', 'correct' => ['قبل', 'أو', 'بعد'], 'extra' => ['متجر']],
+                            'ru' => ['sentence' => 'до или после', 'correct' => ['до', 'или', 'после'], 'extra' => ['магазин']],
                             'de' => [
                                 'sentence' => 'Vor oder nach',
                                 'correct' => [
@@ -495,6 +518,7 @@ class EsUnitConversation06Seeder extends Seeder
                                     '집',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'önce veya sonra', 'correct' => ['önce', 'veya', 'sonra'], 'extra' => ['dükkan']],
                         ],
                     ],
                 ],
@@ -539,6 +563,9 @@ class EsUnitConversation06Seeder extends Seeder
                                     'park',
                                 ],
                             ],
+                            'az' => ['sentence' => 'istəyirəm bir kitab', 'correct' => ['istəyirəm', 'bir', 'kitab'], 'extra' => ['mən', 'bacarıram', 'park']],
+                            'ar' => ['sentence' => 'أريد كتاب', 'correct' => ['أريد', 'كتاب'], 'extra' => ['أنا', 'أستطيع', 'حديقة']],
+                            'ru' => ['sentence' => 'я хочу книга', 'correct' => ['я хочу', 'книга'], 'extra' => ['я', 'могу', 'парк']],
                             'de' => [
                                 'sentence' => 'Ich will ein Buch',
                                 'correct' => [
@@ -587,6 +614,7 @@ class EsUnitConversation06Seeder extends Seeder
                                     '나는 할 수 있다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kitap istiyorum', 'correct' => ['bir', 'kitap', 'istiyorum'], 'extra' => ['yapabilirim', 'park']],
                         ],
                     ],
                     'b' => [
@@ -607,6 +635,9 @@ class EsUnitConversation06Seeder extends Seeder
                                     'book',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən bacarıram gedirəm', 'correct' => ['mən', 'bacarıram', 'gedirəm'], 'extra' => ['istəyirəm', 'kitab']],
+                            'ar' => ['sentence' => 'أنا أستطيع أذهب', 'correct' => ['أنا', 'أستطيع', 'أذهب'], 'extra' => ['أريد', 'كتاب']],
+                            'ru' => ['sentence' => 'я могу иду', 'correct' => ['я', 'могу', 'иду'], 'extra' => ['я хочу', 'книга']],
                             'de' => [
                                 'sentence' => 'Ich kann gehen',
                                 'correct' => [
@@ -652,6 +683,7 @@ class EsUnitConversation06Seeder extends Seeder
                                     '나는 원한다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'gidebilirim', 'correct' => ['gidebilirim'], 'extra' => ['istiyorum', 'kitap']],
                         ],
                     ],
                     'c' => [
@@ -677,6 +709,9 @@ class EsUnitConversation06Seeder extends Seeder
                                     'I can',
                                 ],
                             ],
+                            'az' => ['sentence' => 'istəyirəm gedirəm park', 'correct' => ['istəyirəm', 'gedirəm', 'park'], 'extra' => ['mən', 'bacarıram']],
+                            'ar' => ['sentence' => 'أريد إلى أذهب إلى حديقة', 'correct' => ['أريد', 'إلى', 'أذهب', 'إلى', 'حديقة'], 'extra' => ['أنا', 'أستطيع']],
+                            'ru' => ['sentence' => 'я хочу в иду в парк', 'correct' => ['я хочу', 'в', 'иду', 'в', 'парк'], 'extra' => ['я', 'могу']],
                             'de' => [
                                 'sentence' => 'Ich will zum Park gehen',
                                 'correct' => [
@@ -728,6 +763,7 @@ class EsUnitConversation06Seeder extends Seeder
                                     '나는 할 수 있다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'parka gitmek istiyorum', 'correct' => ['parka', 'gitmek', 'istiyorum'], 'extra' => ['yapabilirim']],
                         ],
                     ],
                 ],
@@ -770,6 +806,9 @@ class EsUnitConversation06Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən hazır', 'correct' => ['mən', 'hazır'], 'extra' => ['pulsuz', 'dost']],
+                            'ar' => ['sentence' => 'أنا جاهز', 'correct' => ['أنا', 'جاهز'], 'extra' => ['مجاني', 'صديق']],
+                            'ru' => ['sentence' => 'я готов', 'correct' => ['я', 'готов'], 'extra' => ['бесплатно', 'друг']],
                             'de' => [
                                 'sentence' => 'Ich bin bereit',
                                 'correct' => [
@@ -813,6 +852,7 @@ class EsUnitConversation06Seeder extends Seeder
                                     '한가한',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'hazırım', 'correct' => ['hazırım'], 'extra' => ['boş', 'arkadaş']],
                         ],
                     ],
                     'b' => [
@@ -837,6 +877,9 @@ class EsUnitConversation06Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim dost pulsuz', 'correct' => ['mənim', 'dost', 'pulsuz'], 'extra' => ['hazır', 'ev']],
+                            'ar' => ['sentence' => 'صديق مجاني', 'correct' => ['صديق', 'مجاني'], 'extra' => ['جاهز', 'بيت']],
+                            'ru' => ['sentence' => 'мой друг бесплатно', 'correct' => ['мой', 'друг', 'бесплатно'], 'extra' => ['готов', 'дом']],
                             'de' => [
                                 'sentence' => 'Mein Freund ist frei',
                                 'correct' => [
@@ -887,6 +930,7 @@ class EsUnitConversation06Seeder extends Seeder
                                     '준비된',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'arkadaşım müsait', 'correct' => ['arkadaşım', 'müsait'], 'extra' => ['hazır', 'ev']],
                         ],
                     ],
                     'c' => [
@@ -910,6 +954,9 @@ class EsUnitConversation06Seeder extends Seeder
                                     'free',
                                 ],
                             ],
+                            'az' => ['sentence' => 'hazır içində ev', 'correct' => ['hazır', 'içində', 'ev'], 'extra' => ['pulsuz']],
+                            'ar' => ['sentence' => 'جاهز في بيت', 'correct' => ['جاهز', 'في', 'بيت'], 'extra' => ['مجاني']],
+                            'ru' => ['sentence' => 'готов в дом', 'correct' => ['готов', 'в', 'дом'], 'extra' => ['бесплатно']],
                             'de' => [
                                 'sentence' => 'Bereit im Haus',
                                 'correct' => [
@@ -955,6 +1002,7 @@ class EsUnitConversation06Seeder extends Seeder
                                     '한가한',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'evde hazır', 'correct' => ['evde', 'hazır'], 'extra' => ['boş']],
                         ],
                     ],
                 ],
@@ -998,6 +1046,9 @@ class EsUnitConversation06Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'növbəti həftə', 'correct' => ['növbəti', 'həftə'], 'extra' => ['məktəb', 'dost']],
+                            'ar' => ['sentence' => 'التالي أسبوع', 'correct' => ['التالي', 'أسبوع'], 'extra' => ['مدرسة', 'صديق']],
+                            'ru' => ['sentence' => 'следующий неделя', 'correct' => ['следующий', 'неделя'], 'extra' => ['школа', 'друг']],
                             'de' => [
                                 'sentence' => 'Nächste Woche',
                                 'correct' => [
@@ -1040,6 +1091,7 @@ class EsUnitConversation06Seeder extends Seeder
                                     '학교',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'gelecek hafta', 'correct' => ['gelecek', 'hafta'], 'extra' => ['okul', 'arkadaş']],
                         ],
                     ],
                     'b' => [
@@ -1062,6 +1114,9 @@ class EsUnitConversation06Seeder extends Seeder
                                     'school',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gedirəm növbəti həftə', 'correct' => ['gedirəm', 'növbəti', 'həftə'], 'extra' => ['məktəb']],
+                            'ar' => ['sentence' => 'أذهب التالي أسبوع', 'correct' => ['أذهب', 'التالي', 'أسبوع'], 'extra' => ['مدرسة']],
+                            'ru' => ['sentence' => 'я иду следующий неделя', 'correct' => ['я', 'иду', 'следующий', 'неделя'], 'extra' => ['школа']],
                             'de' => [
                                 'sentence' => 'Ich gehe nächste Woche',
                                 'correct' => [
@@ -1109,6 +1164,7 @@ class EsUnitConversation06Seeder extends Seeder
                                     '학교',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'haftaya gidiyorum', 'correct' => ['haftaya', 'gidiyorum'], 'extra' => ['okul']],
                         ],
                     ],
                     'c' => [
@@ -1134,6 +1190,9 @@ class EsUnitConversation06Seeder extends Seeder
                                     'week',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim dost və məktəb', 'correct' => ['mənim', 'dost', 'və', 'məktəb'], 'extra' => ['həftə']],
+                            'ar' => ['sentence' => 'صديق و مدرسة', 'correct' => ['صديق', 'و', 'مدرسة'], 'extra' => ['أسبوع']],
+                            'ru' => ['sentence' => 'мой друг и школа', 'correct' => ['мой', 'друг', 'и', 'школа'], 'extra' => ['неделя']],
                             'de' => [
                                 'sentence' => 'Mein Freund und die Schule',
                                 'correct' => [
@@ -1182,6 +1241,7 @@ class EsUnitConversation06Seeder extends Seeder
                                     '주',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'arkadaşım ve okul', 'correct' => ['arkadaşım', 've', 'okul'], 'extra' => ['hafta']],
                         ],
                     ],
                 ],

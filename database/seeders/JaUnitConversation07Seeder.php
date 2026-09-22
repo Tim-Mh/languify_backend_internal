@@ -82,6 +82,9 @@ class JaUnitConversation07Seeder extends Seeder
                                     'turn',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gedirəm düz üzərində küçə', 'correct' => ['gedirəm', 'düz', 'üzərində', 'küçə'], 'extra' => ['dönüş']],
+                            'ar' => ['sentence' => 'أذهب مباشرة على شارع', 'correct' => ['أذهب', 'مباشرة', 'على', 'شارع'], 'extra' => ['منعطف']],
+                            'ru' => ['sentence' => 'иду прямо на улица', 'correct' => ['иду', 'прямо', 'на', 'улица'], 'extra' => ['поворот']],
                             'es' => [
                                 'sentence' => 'Ve recto por la calle',
                                 'correct' => [
@@ -132,6 +135,7 @@ class JaUnitConversation07Seeder extends Seeder
                                     '돌다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'caddede düz git', 'correct' => ['caddede', 'düz', 'git'], 'extra' => ['dön']],
                         ],
                     ],
                     'b' => [
@@ -152,6 +156,9 @@ class JaUnitConversation07Seeder extends Seeder
                                     'straight',
                                 ],
                             ],
+                            'az' => ['sentence' => 'dönüş sağ', 'correct' => ['dönüş', 'sağ'], 'extra' => ['düz']],
+                            'ar' => ['sentence' => 'منعطف يمين', 'correct' => ['منعطف', 'يمين'], 'extra' => ['مباشرة']],
+                            'ru' => ['sentence' => 'поворот правый', 'correct' => ['поворот', 'правый'], 'extra' => ['прямо']],
                             'es' => [
                                 'sentence' => 'Gira a la derecha',
                                 'correct' => [
@@ -195,6 +202,7 @@ class JaUnitConversation07Seeder extends Seeder
                                     '똑바로',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sağa dön', 'correct' => ['sağa', 'dön'], 'extra' => ['düz']],
                         ],
                     ],
                     'c' => [
@@ -219,6 +227,9 @@ class JaUnitConversation07Seeder extends Seeder
                                     'street',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gedirəm düz stansiya', 'correct' => ['gedirəm', 'düz', 'stansiya'], 'extra' => ['küçə']],
+                            'ar' => ['sentence' => 'أذهب مباشرة إلى محطة', 'correct' => ['أذهب', 'مباشرة', 'إلى', 'محطة'], 'extra' => ['شارع']],
+                            'ru' => ['sentence' => 'иду прямо в станция', 'correct' => ['иду', 'прямо', 'в', 'станция'], 'extra' => ['улица']],
                             'es' => [
                                 'sentence' => 'Ve recto a la estación',
                                 'correct' => [
@@ -269,6 +280,7 @@ class JaUnitConversation07Seeder extends Seeder
                                     '거리',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'istasyona düz git', 'correct' => ['istasyona', 'düz', 'git'], 'extra' => ['cadde']],
                         ],
                     ],
                 ],
@@ -312,6 +324,9 @@ class JaUnitConversation07Seeder extends Seeder
                                     'continue',
                                 ],
                             ],
+                            'az' => ['sentence' => 'keç küçə', 'correct' => ['keç', 'küçə'], 'extra' => ['davam et']],
+                            'ar' => ['sentence' => 'اعبر شارع', 'correct' => ['اعبر', 'شارع'], 'extra' => ['تابع']],
+                            'ru' => ['sentence' => 'перейди улица', 'correct' => ['перейди', 'улица'], 'extra' => ['продолжай']],
                             'es' => [
                                 'sentence' => 'Cruza la calle',
                                 'correct' => [
@@ -358,6 +373,7 @@ class JaUnitConversation07Seeder extends Seeder
                                     '계속하다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'caddeyi geç', 'correct' => ['caddeyi', 'geç'], 'extra' => ['devam et']],
                         ],
                     ],
                     'b' => [
@@ -380,6 +396,9 @@ class JaUnitConversation07Seeder extends Seeder
                                     'cross',
                                 ],
                             ],
+                            'az' => ['sentence' => 'davam et park', 'correct' => ['davam et', 'park'], 'extra' => ['keç']],
+                            'ar' => ['sentence' => 'تابع إلى حديقة', 'correct' => ['تابع', 'إلى', 'حديقة'], 'extra' => ['اعبر']],
+                            'ru' => ['sentence' => 'продолжай в парк', 'correct' => ['продолжай', 'в', 'парк'], 'extra' => ['перейди']],
                             'es' => [
                                 'sentence' => 'Continúa al parque',
                                 'correct' => [
@@ -429,6 +448,7 @@ class JaUnitConversation07Seeder extends Seeder
                                     '건너다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'parka devam et', 'correct' => ['parka', 'devam', 'et'], 'extra' => ['geç']],
                         ],
                     ],
                     'c' => [
@@ -449,6 +469,9 @@ class JaUnitConversation07Seeder extends Seeder
                                     'park',
                                 ],
                             ],
+                            'az' => ['sentence' => 'keç və davam et', 'correct' => ['keç', 'və', 'davam et'], 'extra' => ['park']],
+                            'ar' => ['sentence' => 'اعبر و تابع', 'correct' => ['اعبر', 'و', 'تابع'], 'extra' => ['حديقة']],
+                            'ru' => ['sentence' => 'перейди и продолжай', 'correct' => ['перейди', 'и', 'продолжай'], 'extra' => ['парк']],
                             'es' => [
                                 'sentence' => 'Cruza y continúa',
                                 'correct' => [
@@ -492,6 +515,7 @@ class JaUnitConversation07Seeder extends Seeder
                                     '공원',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'geç ve devam et', 'correct' => ['geç', 've', 'devam', 'et'], 'extra' => ['park']],
                         ],
                     ],
                 ],
@@ -535,6 +559,9 @@ class JaUnitConversation07Seeder extends Seeder
                                     'behind',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qarşıda mağaza', 'correct' => ['qarşıda', 'mağaza'], 'extra' => ['arxada']],
+                            'ar' => ['sentence' => 'أمام متجر', 'correct' => ['أمام', 'متجر'], 'extra' => ['خلف']],
+                            'ru' => ['sentence' => 'впереди магазин', 'correct' => ['впереди', 'магазин'], 'extra' => ['сзади']],
                             'es' => [
                                 'sentence' => 'Delante de la tienda',
                                 'correct' => [
@@ -584,6 +611,7 @@ class JaUnitConversation07Seeder extends Seeder
                                     '뒤에',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'dükkanın önünde', 'correct' => ['dükkanın', 'önünde'], 'extra' => ['arkasında']],
                         ],
                     ],
                     'b' => [
@@ -604,6 +632,9 @@ class JaUnitConversation07Seeder extends Seeder
                                     'before',
                                 ],
                             ],
+                            'az' => ['sentence' => 'arxada ev', 'correct' => ['arxada', 'ev'], 'extra' => ['əvvəl']],
+                            'ar' => ['sentence' => 'خلف بيت', 'correct' => ['خلف', 'بيت'], 'extra' => ['قبل']],
+                            'ru' => ['sentence' => 'сзади дом', 'correct' => ['сзади', 'дом'], 'extra' => ['до']],
                             'es' => [
                                 'sentence' => 'Detrás de la casa',
                                 'correct' => [
@@ -650,6 +681,7 @@ class JaUnitConversation07Seeder extends Seeder
                                     '앞에',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'evin arkasında', 'correct' => ['evin', 'arkasında'], 'extra' => ['önce']],
                         ],
                     ],
                     'c' => [
@@ -671,6 +703,9 @@ class JaUnitConversation07Seeder extends Seeder
                                     'shop',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qarşıda və ya arxada', 'correct' => ['qarşıda', 'və ya', 'arxada'], 'extra' => ['mağaza']],
+                            'ar' => ['sentence' => 'أمام أو خلف', 'correct' => ['أمام', 'أو', 'خلف'], 'extra' => ['متجر']],
+                            'ru' => ['sentence' => 'впереди или сзади', 'correct' => ['впереди', 'или', 'сзади'], 'extra' => ['магазин']],
                             'es' => [
                                 'sentence' => 'Delante o detrás',
                                 'correct' => [
@@ -715,6 +750,7 @@ class JaUnitConversation07Seeder extends Seeder
                                     '가게',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'önde veya arkada', 'correct' => ['önde', 'veya', 'arkada'], 'extra' => ['dükkan']],
                         ],
                     ],
                 ],
@@ -761,6 +797,9 @@ class JaUnitConversation07Seeder extends Seeder
                                     'south',
                                 ],
                             ],
+                            'az' => ['sentence' => 'stansiya şimal', 'correct' => ['stansiya', 'şimal'], 'extra' => ['cənub']],
+                            'ar' => ['sentence' => 'محطة شمال', 'correct' => ['محطة', 'شمال'], 'extra' => ['جنوب']],
+                            'ru' => ['sentence' => 'станция север', 'correct' => ['станция', 'север'], 'extra' => ['юг']],
                             'es' => [
                                 'sentence' => 'La estación está al norte',
                                 'correct' => [
@@ -811,6 +850,7 @@ class JaUnitConversation07Seeder extends Seeder
                                     '남쪽',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'istasyon kuzeyde', 'correct' => ['istasyon', 'kuzeyde'], 'extra' => ['güney']],
                         ],
                     ],
                     'b' => [
@@ -835,6 +875,9 @@ class JaUnitConversation07Seeder extends Seeder
                                     'north',
                                 ],
                             ],
+                            'az' => ['sentence' => 'məktəb cənub', 'correct' => ['məktəb', 'cənub'], 'extra' => ['şimal']],
+                            'ar' => ['sentence' => 'مدرسة جنوب', 'correct' => ['مدرسة', 'جنوب'], 'extra' => ['شمال']],
+                            'ru' => ['sentence' => 'школа юг', 'correct' => ['школа', 'юг'], 'extra' => ['север']],
                             'es' => [
                                 'sentence' => 'La escuela está al sur',
                                 'correct' => [
@@ -885,6 +928,7 @@ class JaUnitConversation07Seeder extends Seeder
                                     '북쪽',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'okul güneyde', 'correct' => ['okul', 'güneyde'], 'extra' => ['kuzey']],
                         ],
                     ],
                     'c' => [
@@ -906,6 +950,9 @@ class JaUnitConversation07Seeder extends Seeder
                                     'school',
                                 ],
                             ],
+                            'az' => ['sentence' => 'şimal və ya cənub', 'correct' => ['şimal', 'və ya', 'cənub'], 'extra' => ['məktəb']],
+                            'ar' => ['sentence' => 'شمال أو جنوب', 'correct' => ['شمال', 'أو', 'جنوب'], 'extra' => ['مدرسة']],
+                            'ru' => ['sentence' => 'север или юг', 'correct' => ['север', 'или', 'юг'], 'extra' => ['школа']],
                             'es' => [
                                 'sentence' => 'Norte o sur',
                                 'correct' => [
@@ -950,6 +997,7 @@ class JaUnitConversation07Seeder extends Seeder
                                     '학교',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kuzey veya güney', 'correct' => ['kuzey', 'veya', 'güney'], 'extra' => ['okul']],
                         ],
                     ],
                 ],
@@ -997,6 +1045,9 @@ class JaUnitConversation07Seeder extends Seeder
                                     'straight',
                                 ],
                             ],
+                            'az' => ['sentence' => 'dönüş sağ yanında stansiya', 'correct' => ['dönüş', 'sağ', 'yanında', 'stansiya'], 'extra' => ['düz']],
+                            'ar' => ['sentence' => 'منعطف يمين على محطة', 'correct' => ['منعطف', 'يمين', 'على', 'محطة'], 'extra' => ['مباشرة']],
+                            'ru' => ['sentence' => 'поворот правый на станция', 'correct' => ['поворот', 'правый', 'на', 'станция'], 'extra' => ['прямо']],
                             'es' => [
                                 'sentence' => 'Gira a la derecha en la estación',
                                 'correct' => [
@@ -1047,6 +1098,7 @@ class JaUnitConversation07Seeder extends Seeder
                                     '똑바로',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'istasyonda sağa dön', 'correct' => ['istasyonda', 'sağa', 'dön'], 'extra' => ['düz']],
                         ],
                     ],
                     'b' => [
@@ -1071,6 +1123,9 @@ class JaUnitConversation07Seeder extends Seeder
                                     'turn',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gedirəm düz üzərində küçə', 'correct' => ['gedirəm', 'düz', 'üzərində', 'küçə'], 'extra' => ['dönüş']],
+                            'ar' => ['sentence' => 'أذهب مباشرة على شارع', 'correct' => ['أذهب', 'مباشرة', 'على', 'شارع'], 'extra' => ['منعطف']],
+                            'ru' => ['sentence' => 'иду прямо на улица', 'correct' => ['иду', 'прямо', 'на', 'улица'], 'extra' => ['поворот']],
                             'es' => [
                                 'sentence' => 'Ve recto por la calle',
                                 'correct' => [
@@ -1121,6 +1176,7 @@ class JaUnitConversation07Seeder extends Seeder
                                     '돌다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'caddede düz git', 'correct' => ['caddede', 'düz', 'git'], 'extra' => ['dön']],
                         ],
                     ],
                     'c' => [
@@ -1143,6 +1199,9 @@ class JaUnitConversation07Seeder extends Seeder
                                     'station',
                                 ],
                             ],
+                            'az' => ['sentence' => 'dönüş və gedirəm düz', 'correct' => ['dönüş', 'və', 'gedirəm', 'düz'], 'extra' => ['stansiya']],
+                            'ar' => ['sentence' => 'منعطف و أذهب مباشرة', 'correct' => ['منعطف', 'و', 'أذهب', 'مباشرة'], 'extra' => ['محطة']],
+                            'ru' => ['sentence' => 'поворот и иду прямо', 'correct' => ['поворот', 'и', 'иду', 'прямо'], 'extra' => ['станция']],
                             'es' => [
                                 'sentence' => 'Gira y ve recto',
                                 'correct' => [
@@ -1190,6 +1249,7 @@ class JaUnitConversation07Seeder extends Seeder
                                     '역',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'dön ve düz git', 'correct' => ['dön', 've', 'düz', 'git'], 'extra' => ['istasyon']],
                         ],
                     ],
                 ],

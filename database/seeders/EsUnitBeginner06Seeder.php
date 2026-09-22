@@ -80,6 +80,9 @@ class EsUnitBeginner06Seeder extends Seeder
                                     'water',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən yeyirəm çörək', 'correct' => ['mən', 'yeyirəm', 'çörək'], 'extra' => ['içki', 'su']],
+                            'ar' => ['sentence' => 'أنا آكل خبز', 'correct' => ['أنا', 'آكل', 'خبز'], 'extra' => ['مشروب', 'ماء']],
+                            'ru' => ['sentence' => 'я ем хлеб', 'correct' => ['я', 'ем', 'хлеб'], 'extra' => ['напиток', 'вода']],
                             'de' => [
                                 'sentence' => 'Ich esse Brot',
                                 'correct' => [
@@ -128,6 +131,7 @@ class EsUnitBeginner06Seeder extends Seeder
                                     '마시다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ekmek yiyorum', 'correct' => ['ekmek', 'yiyorum'], 'extra' => ['iç', 'su']],
                         ],
                     ],
                     'b' => [
@@ -150,6 +154,9 @@ class EsUnitBeginner06Seeder extends Seeder
                                     'bread',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən içki su', 'correct' => ['mən', 'içki', 'su'], 'extra' => ['yeyirəm', 'çörək']],
+                            'ar' => ['sentence' => 'أنا مشروب ماء', 'correct' => ['أنا', 'مشروب', 'ماء'], 'extra' => ['آكل', 'خبز']],
+                            'ru' => ['sentence' => 'я напиток вода', 'correct' => ['я', 'напиток', 'вода'], 'extra' => ['ем', 'хлеб']],
                             'de' => [
                                 'sentence' => 'Ich trinke Wasser',
                                 'correct' => [
@@ -198,6 +205,7 @@ class EsUnitBeginner06Seeder extends Seeder
                                     '먹다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'su içiyorum', 'correct' => ['su', 'içiyorum'], 'extra' => ['ye', 'ekmek']],
                         ],
                     ],
                     'c' => [
@@ -221,6 +229,9 @@ class EsUnitBeginner06Seeder extends Seeder
                                     'water',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yeyirəm və içki birlikdə', 'correct' => ['yeyirəm', 'və', 'içki', 'birlikdə'], 'extra' => ['su']],
+                            'ar' => ['sentence' => 'آكل و مشروب معا', 'correct' => ['آكل', 'و', 'مشروب', 'معا'], 'extra' => ['ماء']],
+                            'ru' => ['sentence' => 'ем и напиток вместе', 'correct' => ['ем', 'и', 'напиток', 'вместе'], 'extra' => ['вода']],
                             'de' => [
                                 'sentence' => 'Zusammen essen und trinken',
                                 'correct' => [
@@ -267,6 +278,7 @@ class EsUnitBeginner06Seeder extends Seeder
                                     '물',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'birlikte ye ve iç', 'correct' => ['birlikte', 'ye', 've', 'iç'], 'extra' => ['su']],
                         ],
                     ],
                 ],
@@ -311,6 +323,9 @@ class EsUnitBeginner06Seeder extends Seeder
                                     'now',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən gəzirəm yavaş', 'correct' => ['mən', 'gəzirəm', 'yavaş'], 'extra' => ['danışıram', 'indi']],
+                            'ar' => ['sentence' => 'أنا أتمشى ببطء', 'correct' => ['أنا', 'أتمشى', 'ببطء'], 'extra' => ['أتكلم', 'الآن']],
+                            'ru' => ['sentence' => 'я гуляю медленно', 'correct' => ['я', 'гуляю', 'медленно'], 'extra' => ['говорю', 'сейчас']],
                             'de' => [
                                 'sentence' => 'Ich gehe langsam',
                                 'correct' => [
@@ -358,6 +373,7 @@ class EsUnitBeginner06Seeder extends Seeder
                                     '말하다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ben yavaş yürüyorum', 'correct' => ['ben', 'yavaş', 'yürüyorum'], 'extra' => ['konuş', 'şimdi']],
                         ],
                     ],
                     'b' => [
@@ -378,6 +394,9 @@ class EsUnitBeginner06Seeder extends Seeder
                                     'slowly',
                                 ],
                             ],
+                            'az' => ['sentence' => 'danışıram indi', 'correct' => ['danışıram', 'indi'], 'extra' => ['gəzirəm', 'yavaş']],
+                            'ar' => ['sentence' => 'أتكلم الآن', 'correct' => ['أتكلم', 'الآن'], 'extra' => ['أتمشى', 'ببطء']],
+                            'ru' => ['sentence' => 'говорю сейчас', 'correct' => ['говорю', 'сейчас'], 'extra' => ['гуляю', 'медленно']],
                             'de' => [
                                 'sentence' => 'Sprich jetzt',
                                 'correct' => [
@@ -420,6 +439,7 @@ class EsUnitBeginner06Seeder extends Seeder
                                     '걷다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'şimdi konuş', 'correct' => ['şimdi', 'konuş'], 'extra' => ['yürü', 'yavaş']],
                         ],
                     ],
                     'c' => [
@@ -443,6 +463,9 @@ class EsUnitBeginner06Seeder extends Seeder
                                     'now',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gəzirəm və danışıram yavaş', 'correct' => ['gəzirəm', 'və', 'danışıram', 'yavaş'], 'extra' => ['indi']],
+                            'ar' => ['sentence' => 'أتمشى و أتكلم ببطء', 'correct' => ['أتمشى', 'و', 'أتكلم', 'ببطء'], 'extra' => ['الآن']],
+                            'ru' => ['sentence' => 'гуляю и говорю медленно', 'correct' => ['гуляю', 'и', 'говорю', 'медленно'], 'extra' => ['сейчас']],
                             'de' => [
                                 'sentence' => 'Geh und sprich langsam',
                                 'correct' => [
@@ -489,6 +512,7 @@ class EsUnitBeginner06Seeder extends Seeder
                                     '지금',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yavaş yürü ve konuş', 'correct' => ['yavaş', 'yürü', 've', 'konuş'], 'extra' => ['şimdi']],
                         ],
                     ],
                 ],
@@ -533,6 +557,9 @@ class EsUnitBeginner06Seeder extends Seeder
                                     'now',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən yatıram yaxşıyam', 'correct' => ['mən', 'yatıram', 'yaxşıyam'], 'extra' => ['yeyirəm', 'indi']],
+                            'ar' => ['sentence' => 'أنا أنام بخير', 'correct' => ['أنا', 'أنام', 'بخير'], 'extra' => ['آكل', 'الآن']],
+                            'ru' => ['sentence' => 'я сплю хорошо', 'correct' => ['я', 'сплю', 'хорошо'], 'extra' => ['ем', 'сейчас']],
                             'de' => [
                                 'sentence' => 'Ich schlafe gut',
                                 'correct' => [
@@ -580,6 +607,7 @@ class EsUnitBeginner06Seeder extends Seeder
                                     '먹다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ben iyi uyuyorum', 'correct' => ['ben', 'iyi', 'uyuyorum'], 'extra' => ['ye', 'şimdi']],
                         ],
                     ],
                     'b' => [
@@ -600,6 +628,9 @@ class EsUnitBeginner06Seeder extends Seeder
                                     'well',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yeyirəm indi', 'correct' => ['yeyirəm', 'indi'], 'extra' => ['yatıram', 'yaxşıyam']],
+                            'ar' => ['sentence' => 'آكل الآن', 'correct' => ['آكل', 'الآن'], 'extra' => ['أنام', 'بخير']],
+                            'ru' => ['sentence' => 'ем сейчас', 'correct' => ['ем', 'сейчас'], 'extra' => ['сплю', 'хорошо']],
                             'de' => [
                                 'sentence' => 'Iss jetzt',
                                 'correct' => [
@@ -642,6 +673,7 @@ class EsUnitBeginner06Seeder extends Seeder
                                     '자다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'şimdi ye', 'correct' => ['şimdi', 'ye'], 'extra' => ['uyu', 'iyi']],
                         ],
                     ],
                     'c' => [
@@ -665,6 +697,9 @@ class EsUnitBeginner06Seeder extends Seeder
                                     'now',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yatıram və yeyirəm yaxşıyam', 'correct' => ['yatıram', 'və', 'yeyirəm', 'yaxşıyam'], 'extra' => ['indi']],
+                            'ar' => ['sentence' => 'أنام و آكل بخير', 'correct' => ['أنام', 'و', 'آكل', 'بخير'], 'extra' => ['الآن']],
+                            'ru' => ['sentence' => 'сплю и ем хорошо', 'correct' => ['сплю', 'и', 'ем', 'хорошо'], 'extra' => ['сейчас']],
                             'de' => [
                                 'sentence' => 'Schlaf und iss gut',
                                 'correct' => [
@@ -711,6 +746,7 @@ class EsUnitBeginner06Seeder extends Seeder
                                     '지금',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'iyi uyu ve ye', 'correct' => ['iyi', 'uyu', 've', 'ye'], 'extra' => ['şimdi']],
                         ],
                     ],
                 ],
@@ -755,6 +791,9 @@ class EsUnitBeginner06Seeder extends Seeder
                                     'read',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən yeyirəm çox artıq', 'correct' => ['mən', 'yeyirəm', 'çox artıq'], 'extra' => ['içki', 'oxuyuram']],
+                            'ar' => ['sentence' => 'أنا آكل كثير جدا', 'correct' => ['أنا', 'آكل', 'كثير جدا'], 'extra' => ['مشروب', 'أقرأ']],
+                            'ru' => ['sentence' => 'я ем слишком много', 'correct' => ['я', 'ем', 'слишком много'], 'extra' => ['напиток', 'читаю']],
                             'de' => [
                                 'sentence' => 'Ich esse zu viel',
                                 'correct' => [
@@ -802,6 +841,7 @@ class EsUnitBeginner06Seeder extends Seeder
                                     '마시다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'çok fazla yiyorum', 'correct' => ['çok', 'fazla', 'yiyorum'], 'extra' => ['iç', 'oku']],
                         ],
                     ],
                     'b' => [
@@ -824,6 +864,9 @@ class EsUnitBeginner06Seeder extends Seeder
                                     'too much',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən oxuyuram indi', 'correct' => ['mən', 'oxuyuram', 'indi'], 'extra' => ['yeyirəm', 'çox artıq']],
+                            'ar' => ['sentence' => 'أنا أقرأ الآن', 'correct' => ['أنا', 'أقرأ', 'الآن'], 'extra' => ['آكل', 'كثير جدا']],
+                            'ru' => ['sentence' => 'я читаю сейчас', 'correct' => ['я', 'читаю', 'сейчас'], 'extra' => ['ем', 'слишком много']],
                             'de' => [
                                 'sentence' => 'Ich lese jetzt',
                                 'correct' => [
@@ -871,6 +914,7 @@ class EsUnitBeginner06Seeder extends Seeder
                                     '먹다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'şimdi okuyorum', 'correct' => ['şimdi', 'okuyorum'], 'extra' => ['ye', 'çok fazla']],
                         ],
                     ],
                     'c' => [
@@ -893,6 +937,9 @@ class EsUnitBeginner06Seeder extends Seeder
                                     'eat',
                                 ],
                             ],
+                            'az' => ['sentence' => 'içki və oxuyuram', 'correct' => ['içki', 'və', 'oxuyuram'], 'extra' => ['çox artıq', 'yeyirəm']],
+                            'ar' => ['sentence' => 'مشروب و أقرأ', 'correct' => ['مشروب', 'و', 'أقرأ'], 'extra' => ['كثير جدا', 'آكل']],
+                            'ru' => ['sentence' => 'напиток и читаю', 'correct' => ['напиток', 'и', 'читаю'], 'extra' => ['слишком много', 'ем']],
                             'de' => [
                                 'sentence' => 'Trinken und lesen',
                                 'correct' => [
@@ -937,6 +984,7 @@ class EsUnitBeginner06Seeder extends Seeder
                                     '너무',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'iç ve oku', 'correct' => ['iç', 've', 'oku'], 'extra' => ['çok fazla', 'ye']],
                         ],
                     ],
                 ],
@@ -979,6 +1027,9 @@ class EsUnitBeginner06Seeder extends Seeder
                                     'now',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gəzirəm yavaş', 'correct' => ['gəzirəm', 'yavaş'], 'extra' => ['yatıram', 'indi']],
+                            'ar' => ['sentence' => 'أتمشى ببطء', 'correct' => ['أتمشى', 'ببطء'], 'extra' => ['أنام', 'الآن']],
+                            'ru' => ['sentence' => 'гуляю медленно', 'correct' => ['гуляю', 'медленно'], 'extra' => ['сплю', 'сейчас']],
                             'de' => [
                                 'sentence' => 'Geh langsam',
                                 'correct' => [
@@ -1021,6 +1072,7 @@ class EsUnitBeginner06Seeder extends Seeder
                                     '자다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yavaş yürü', 'correct' => ['yavaş', 'yürü'], 'extra' => ['uyu', 'şimdi']],
                         ],
                     ],
                     'b' => [
@@ -1041,6 +1093,9 @@ class EsUnitBeginner06Seeder extends Seeder
                                     'slowly',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yatıram indi', 'correct' => ['yatıram', 'indi'], 'extra' => ['gəzirəm', 'yavaş']],
+                            'ar' => ['sentence' => 'أنام الآن', 'correct' => ['أنام', 'الآن'], 'extra' => ['أتمشى', 'ببطء']],
+                            'ru' => ['sentence' => 'сплю сейчас', 'correct' => ['сплю', 'сейчас'], 'extra' => ['гуляю', 'медленно']],
                             'de' => [
                                 'sentence' => 'Schlaf jetzt',
                                 'correct' => [
@@ -1083,6 +1138,7 @@ class EsUnitBeginner06Seeder extends Seeder
                                     '걷다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'şimdi uyu', 'correct' => ['şimdi', 'uyu'], 'extra' => ['yürü', 'yavaş']],
                         ],
                     ],
                     'c' => [
@@ -1106,6 +1162,9 @@ class EsUnitBeginner06Seeder extends Seeder
                                     'sleep',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən gəzirəm yavaş indi', 'correct' => ['mən', 'gəzirəm', 'yavaş', 'indi'], 'extra' => ['yatıram']],
+                            'ar' => ['sentence' => 'أنا أتمشى ببطء الآن', 'correct' => ['أنا', 'أتمشى', 'ببطء', 'الآن'], 'extra' => ['أنام']],
+                            'ru' => ['sentence' => 'я гуляю медленно сейчас', 'correct' => ['я', 'гуляю', 'медленно', 'сейчас'], 'extra' => ['сплю']],
                             'de' => [
                                 'sentence' => 'Ich gehe jetzt langsam',
                                 'correct' => [
@@ -1155,6 +1214,7 @@ class EsUnitBeginner06Seeder extends Seeder
                                     '자다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'şimdi yavaş yürüyorum', 'correct' => ['şimdi', 'yavaş', 'yürüyorum'], 'extra' => ['uyu']],
                         ],
                     ],
                 ],

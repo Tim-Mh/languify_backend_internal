@@ -17,7 +17,7 @@ class Language extends Model
      * Add a code here when a course's alphabet is the barrier, not its
      * vocabulary.
      */
-    private const NON_LATIN_SCRIPTS = ['ja', 'ko'];
+    private const NON_LATIN_SCRIPTS = ['ja', 'ko', 'ru', 'ar'];
 
     protected function casts(): array
     {

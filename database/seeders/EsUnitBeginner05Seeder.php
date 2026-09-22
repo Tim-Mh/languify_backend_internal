@@ -78,6 +78,9 @@ class EsUnitBeginner05Seeder extends Seeder
                                     'clock',
                                 ],
                             ],
+                            'az' => ['sentence' => 'səhər', 'correct' => ['səhər'], 'extra' => ['axşam', 'saat']],
+                            'ar' => ['sentence' => 'صباح', 'correct' => ['صباح'], 'extra' => ['مساء', 'ساعة']],
+                            'ru' => ['sentence' => 'утро', 'correct' => ['утро'], 'extra' => ['вечер', 'часы']],
                             'de' => [
                                 'sentence' => 'Der Morgen',
                                 'correct' => [
@@ -118,6 +121,7 @@ class EsUnitBeginner05Seeder extends Seeder
                                     '저녁',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sabah', 'correct' => ['sabah'], 'extra' => ['akşam', 'saat']],
                         ],
                     ],
                     'b' => [
@@ -138,6 +142,9 @@ class EsUnitBeginner05Seeder extends Seeder
                                     'calendar',
                                 ],
                             ],
+                            'az' => ['sentence' => 'axşam', 'correct' => ['axşam'], 'extra' => ['səhər', 'təqvim']],
+                            'ar' => ['sentence' => 'مساء', 'correct' => ['مساء'], 'extra' => ['صباح', 'تقويم']],
+                            'ru' => ['sentence' => 'вечер', 'correct' => ['вечер'], 'extra' => ['утро', 'календарь']],
                             'de' => [
                                 'sentence' => 'Der Abend',
                                 'correct' => [
@@ -178,6 +185,7 @@ class EsUnitBeginner05Seeder extends Seeder
                                     '아침',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'akşam', 'correct' => ['akşam'], 'extra' => ['sabah', 'takvim']],
                         ],
                     ],
                     'c' => [
@@ -203,6 +211,9 @@ class EsUnitBeginner05Seeder extends Seeder
                                     'morning',
                                 ],
                             ],
+                            'az' => ['sentence' => 'saat və təqvim', 'correct' => ['saat', 'və', 'təqvim'], 'extra' => ['səhər']],
+                            'ar' => ['sentence' => 'ساعة و تقويم', 'correct' => ['ساعة', 'و', 'تقويم'], 'extra' => ['صباح']],
+                            'ru' => ['sentence' => 'часы и календарь', 'correct' => ['часы', 'и', 'календарь'], 'extra' => ['утро']],
                             'de' => [
                                 'sentence' => 'Die Uhr und der Kalender',
                                 'correct' => [
@@ -249,6 +260,7 @@ class EsUnitBeginner05Seeder extends Seeder
                                     '아침',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'saat ve takvim', 'correct' => ['saat', 've', 'takvim'], 'extra' => ['sabah']],
                         ],
                     ],
                 ],
@@ -293,6 +305,9 @@ class EsUnitBeginner05Seeder extends Seeder
                                     'calendar',
                                 ],
                             ],
+                            'az' => ['sentence' => 'saat bu gün', 'correct' => ['saat', 'bu gün'], 'extra' => ['təqvim']],
+                            'ar' => ['sentence' => 'ساعة اليوم', 'correct' => ['ساعة', 'اليوم'], 'extra' => ['تقويم']],
+                            'ru' => ['sentence' => 'часы сегодня', 'correct' => ['часы', 'сегодня'], 'extra' => ['час', 'календарь']],
                             'de' => [
                                 'sentence' => 'Die Uhr heute',
                                 'correct' => [
@@ -337,6 +352,7 @@ class EsUnitBeginner05Seeder extends Seeder
                                     '시간',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bugün saat', 'correct' => ['bugün', 'saat'], 'extra' => ['saat', 'takvim']],
                         ],
                     ],
                     'b' => [
@@ -357,6 +373,9 @@ class EsUnitBeginner05Seeder extends Seeder
                                     'clock',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir saat', 'correct' => ['bir', 'saat'], 'extra' => ['bu gün']],
+                            'ar' => ['sentence' => 'واحد ساعة', 'correct' => ['واحد', 'ساعة'], 'extra' => ['اليوم']],
+                            'ru' => ['sentence' => 'один час', 'correct' => ['один', 'час'], 'extra' => ['сегодня', 'часы']],
                             'de' => [
                                 'sentence' => 'Eine Stunde',
                                 'correct' => [
@@ -398,6 +417,7 @@ class EsUnitBeginner05Seeder extends Seeder
                                     '오늘',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir saat', 'correct' => ['bir', 'saat'], 'extra' => ['bugün', 'saat']],
                         ],
                     ],
                     'c' => [
@@ -420,6 +440,9 @@ class EsUnitBeginner05Seeder extends Seeder
                                     'clock',
                                 ],
                             ],
+                            'az' => ['sentence' => 'təqvim bu gün', 'correct' => ['təqvim', 'bu gün'], 'extra' => ['saat']],
+                            'ar' => ['sentence' => 'تقويم اليوم', 'correct' => ['تقويم', 'اليوم'], 'extra' => ['ساعة']],
+                            'ru' => ['sentence' => 'календарь сегодня', 'correct' => ['календарь', 'сегодня'], 'extra' => ['час', 'часы']],
                             'de' => [
                                 'sentence' => 'Der Kalender heute',
                                 'correct' => [
@@ -464,6 +487,7 @@ class EsUnitBeginner05Seeder extends Seeder
                                     '시간',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bugün takvim', 'correct' => ['bugün', 'takvim'], 'extra' => ['saat']],
                         ],
                     ],
                 ],
@@ -507,6 +531,9 @@ class EsUnitBeginner05Seeder extends Seeder
                                     'Tuesday',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bu gün bazar ertəsi', 'correct' => ['bu gün', 'bazar ertəsi'], 'extra' => ['çərşənbə axşamı']],
+                            'ar' => ['sentence' => 'اليوم الاثنين', 'correct' => ['اليوم', 'الاثنين'], 'extra' => ['الثلاثاء']],
+                            'ru' => ['sentence' => 'сегодня понедельник', 'correct' => ['сегодня', 'понедельник'], 'extra' => ['вторник']],
                             'de' => [
                                 'sentence' => 'Heute ist Montag',
                                 'correct' => [
@@ -551,6 +578,7 @@ class EsUnitBeginner05Seeder extends Seeder
                                     '화요일',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bugün pazartesi', 'correct' => ['bugün', 'pazartesi'], 'extra' => ['salı']],
                         ],
                     ],
                     'b' => [
@@ -575,6 +603,9 @@ class EsUnitBeginner05Seeder extends Seeder
                                     'Monday',
                                 ],
                             ],
+                            'az' => ['sentence' => 'çərşənbə axşamı bir gün', 'correct' => ['çərşənbə axşamı', 'bir', 'gün'], 'extra' => ['bazar ertəsi']],
+                            'ar' => ['sentence' => 'الثلاثاء يوم', 'correct' => ['الثلاثاء', 'يوم'], 'extra' => ['الاثنين']],
+                            'ru' => ['sentence' => 'вторник день', 'correct' => ['вторник', 'день'], 'extra' => ['понедельник']],
                             'de' => [
                                 'sentence' => 'Dienstag ist ein Tag',
                                 'correct' => [
@@ -622,6 +653,7 @@ class EsUnitBeginner05Seeder extends Seeder
                                     '월요일',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'salı bir gün', 'correct' => ['salı', 'bir', 'gün'], 'extra' => ['pazartesi']],
                         ],
                     ],
                     'c' => [
@@ -647,6 +679,9 @@ class EsUnitBeginner05Seeder extends Seeder
                                     'Monday',
                                 ],
                             ],
+                            'az' => ['sentence' => 'saat və təqvim', 'correct' => ['saat', 'və', 'təqvim'], 'extra' => ['bazar ertəsi']],
+                            'ar' => ['sentence' => 'ساعة و تقويم', 'correct' => ['ساعة', 'و', 'تقويم'], 'extra' => ['الاثنين']],
+                            'ru' => ['sentence' => 'часы и календарь', 'correct' => ['часы', 'и', 'календарь'], 'extra' => ['понедельник']],
                             'de' => [
                                 'sentence' => 'Die Uhr und der Kalender',
                                 'correct' => [
@@ -693,6 +728,7 @@ class EsUnitBeginner05Seeder extends Seeder
                                     '월요일',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'saat ve takvim', 'correct' => ['saat', 've', 'takvim'], 'extra' => ['pazartesi']],
                         ],
                     ],
                 ],
@@ -736,6 +772,9 @@ class EsUnitBeginner05Seeder extends Seeder
                                     'clock',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bu gün və sabah', 'correct' => ['bu gün', 'və', 'sabah'], 'extra' => ['saat']],
+                            'ar' => ['sentence' => 'اليوم و غدا', 'correct' => ['اليوم', 'و', 'غدا'], 'extra' => ['ساعة']],
+                            'ru' => ['sentence' => 'сегодня и завтра', 'correct' => ['сегодня', 'и', 'завтра'], 'extra' => ['часы']],
                             'de' => [
                                 'sentence' => 'Heute und morgen',
                                 'correct' => [
@@ -779,6 +818,7 @@ class EsUnitBeginner05Seeder extends Seeder
                                     '시계',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bugün ve yarın', 'correct' => ['bugün', 've', 'yarın'], 'extra' => ['saat']],
                         ],
                     ],
                     'b' => [
@@ -800,6 +840,9 @@ class EsUnitBeginner05Seeder extends Seeder
                                     'morning',
                                 ],
                             ],
+                            'az' => ['sentence' => 'təqvim bu gün', 'correct' => ['təqvim', 'bu gün'], 'extra' => ['səhər']],
+                            'ar' => ['sentence' => 'تقويم اليوم', 'correct' => ['تقويم', 'اليوم'], 'extra' => ['صباح']],
+                            'ru' => ['sentence' => 'календарь сегодня', 'correct' => ['календарь', 'сегодня'], 'extra' => ['утро']],
                             'de' => [
                                 'sentence' => 'Der Kalender heute',
                                 'correct' => [
@@ -843,6 +886,7 @@ class EsUnitBeginner05Seeder extends Seeder
                                     '내일',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bugün takvim', 'correct' => ['bugün', 'takvim'], 'extra' => ['sabah']],
                         ],
                     ],
                     'c' => [
@@ -866,6 +910,9 @@ class EsUnitBeginner05Seeder extends Seeder
                                     'today',
                                 ],
                             ],
+                            'az' => ['sentence' => 'saat və sabah', 'correct' => ['saat', 'və', 'sabah'], 'extra' => ['bu gün']],
+                            'ar' => ['sentence' => 'ساعة و غدا', 'correct' => ['ساعة', 'و', 'غدا'], 'extra' => ['اليوم']],
+                            'ru' => ['sentence' => 'часы и завтра', 'correct' => ['часы', 'и', 'завтра'], 'extra' => ['сегодня']],
                             'de' => [
                                 'sentence' => 'Die Uhr und morgen',
                                 'correct' => [
@@ -910,6 +957,7 @@ class EsUnitBeginner05Seeder extends Seeder
                                     '오늘',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'saat ve yarın', 'correct' => ['saat', 've', 'yarın'], 'extra' => ['bugün']],
                         ],
                     ],
                 ],
@@ -957,6 +1005,9 @@ class EsUnitBeginner05Seeder extends Seeder
                                     'night',
                                 ],
                             ],
+                            'az' => ['sentence' => 'həftə üzərində təqvim', 'correct' => ['həftə', 'üzərində', 'təqvim'], 'extra' => ['gecə']],
+                            'ar' => ['sentence' => 'أسبوع على تقويم', 'correct' => ['أسبوع', 'على', 'تقويم'], 'extra' => ['ليل']],
+                            'ru' => ['sentence' => 'неделя на календарь', 'correct' => ['неделя', 'на', 'календарь'], 'extra' => ['ночь']],
                             'de' => [
                                 'sentence' => 'Die Woche im Kalender',
                                 'correct' => [
@@ -1004,6 +1055,7 @@ class EsUnitBeginner05Seeder extends Seeder
                                     '밤',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'takvimde hafta', 'correct' => ['takvimde', 'hafta'], 'extra' => ['gece']],
                         ],
                     ],
                     'b' => [
@@ -1024,6 +1076,9 @@ class EsUnitBeginner05Seeder extends Seeder
                                     'clock',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gecə', 'correct' => ['gecə'], 'extra' => ['həftə', 'saat']],
+                            'ar' => ['sentence' => 'ليل', 'correct' => ['ليل'], 'extra' => ['أسبوع', 'ساعة']],
+                            'ru' => ['sentence' => 'ночь', 'correct' => ['ночь'], 'extra' => ['неделя', 'часы']],
                             'de' => [
                                 'sentence' => 'Die Nacht',
                                 'correct' => [
@@ -1064,6 +1119,7 @@ class EsUnitBeginner05Seeder extends Seeder
                                     '주',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'gece', 'correct' => ['gece'], 'extra' => ['hafta', 'saat']],
                         ],
                     ],
                     'c' => [
@@ -1089,6 +1145,9 @@ class EsUnitBeginner05Seeder extends Seeder
                                     'week',
                                 ],
                             ],
+                            'az' => ['sentence' => 'saat və gecə', 'correct' => ['saat', 'və', 'gecə'], 'extra' => ['həftə']],
+                            'ar' => ['sentence' => 'ساعة و ليل', 'correct' => ['ساعة', 'و', 'ليل'], 'extra' => ['أسبوع']],
+                            'ru' => ['sentence' => 'часы и ночь', 'correct' => ['часы', 'и', 'ночь'], 'extra' => ['неделя']],
                             'de' => [
                                 'sentence' => 'Die Uhr und die Nacht',
                                 'correct' => [
@@ -1135,6 +1194,7 @@ class EsUnitBeginner05Seeder extends Seeder
                                     '주',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'saat ve gece', 'correct' => ['saat', 've', 'gece'], 'extra' => ['hafta']],
                         ],
                     ],
                 ],

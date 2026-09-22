@@ -76,6 +76,9 @@ class JaUnitBeginner05Seeder extends Seeder
                                     'evening',
                                 ],
                             ],
+                            'az' => ['sentence' => 'səhər', 'correct' => ['səhər'], 'extra' => ['axşam']],
+                            'ar' => ['sentence' => 'صباح', 'correct' => ['صباح'], 'extra' => ['مساء']],
+                            'ru' => ['sentence' => 'утро', 'correct' => ['утро'], 'extra' => ['вечер']],
                             'es' => [
                                 'sentence' => 'La mañana',
                                 'correct' => [
@@ -118,6 +121,7 @@ class JaUnitBeginner05Seeder extends Seeder
                                     '저녁',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sabah', 'correct' => ['sabah'], 'extra' => ['akşam']],
                         ],
                     ],
                     'b' => [
@@ -136,6 +140,9 @@ class JaUnitBeginner05Seeder extends Seeder
                                     'morning',
                                 ],
                             ],
+                            'az' => ['sentence' => 'axşam', 'correct' => ['axşam'], 'extra' => ['səhər']],
+                            'ar' => ['sentence' => 'مساء', 'correct' => ['مساء'], 'extra' => ['صباح']],
+                            'ru' => ['sentence' => 'вечер', 'correct' => ['вечер'], 'extra' => ['утро']],
                             'es' => [
                                 'sentence' => 'La tarde',
                                 'correct' => [
@@ -178,6 +185,7 @@ class JaUnitBeginner05Seeder extends Seeder
                                     '아침',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'akşam', 'correct' => ['akşam'], 'extra' => ['sabah']],
                         ],
                     ],
                     'c' => [
@@ -201,6 +209,9 @@ class JaUnitBeginner05Seeder extends Seeder
                                     'morning',
                                 ],
                             ],
+                            'az' => ['sentence' => 'saat və təqvim', 'correct' => ['saat', 'və', 'təqvim'], 'extra' => ['səhər']],
+                            'ar' => ['sentence' => 'ساعة و تقويم', 'correct' => ['ساعة', 'و', 'تقويم'], 'extra' => ['صباح']],
+                            'ru' => ['sentence' => 'часы и календарь', 'correct' => ['часы', 'и', 'календарь'], 'extra' => ['утро']],
                             'es' => [
                                 'sentence' => 'El reloj y el calendario',
                                 'correct' => [
@@ -249,6 +260,7 @@ class JaUnitBeginner05Seeder extends Seeder
                                     '아침',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'saat ve takvim', 'correct' => ['saat', 've', 'takvim'], 'extra' => ['sabah']],
                         ],
                     ],
                 ],
@@ -292,6 +304,9 @@ class JaUnitBeginner05Seeder extends Seeder
                                     'hour',
                                 ],
                             ],
+                            'az' => ['sentence' => 'saat bu gün', 'correct' => ['saat', 'bu gün'], 'extra' => []],
+                            'ar' => ['sentence' => 'ساعة اليوم', 'correct' => ['ساعة', 'اليوم'], 'extra' => []],
+                            'ru' => ['sentence' => 'часы сегодня', 'correct' => ['часы', 'сегодня'], 'extra' => ['час']],
                             'es' => [
                                 'sentence' => 'El reloj hoy',
                                 'correct' => [
@@ -337,6 +352,7 @@ class JaUnitBeginner05Seeder extends Seeder
                                     '시간',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bugün saat', 'correct' => ['bugün', 'saat'], 'extra' => ['saat']],
                         ],
                     ],
                     'b' => [
@@ -355,6 +371,9 @@ class JaUnitBeginner05Seeder extends Seeder
                                     'today',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir saat', 'correct' => ['bir', 'saat'], 'extra' => ['bu gün']],
+                            'ar' => ['sentence' => 'واحد ساعة', 'correct' => ['واحد', 'ساعة'], 'extra' => ['اليوم']],
+                            'ru' => ['sentence' => 'один час', 'correct' => ['один', 'час'], 'extra' => ['сегодня']],
                             'es' => [
                                 'sentence' => 'Una hora',
                                 'correct' => [
@@ -398,6 +417,7 @@ class JaUnitBeginner05Seeder extends Seeder
                                     '오늘',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir saat', 'correct' => ['bir', 'saat'], 'extra' => ['bugün']],
                         ],
                     ],
                     'c' => [
@@ -419,6 +439,9 @@ class JaUnitBeginner05Seeder extends Seeder
                                     'hour',
                                 ],
                             ],
+                            'az' => ['sentence' => 'təqvim bu gün', 'correct' => ['təqvim', 'bu gün'], 'extra' => ['saat']],
+                            'ar' => ['sentence' => 'تقويم اليوم', 'correct' => ['تقويم', 'اليوم'], 'extra' => ['ساعة']],
+                            'ru' => ['sentence' => 'календарь сегодня', 'correct' => ['календарь', 'сегодня'], 'extra' => ['час']],
                             'es' => [
                                 'sentence' => 'El calendario hoy',
                                 'correct' => [
@@ -464,6 +487,7 @@ class JaUnitBeginner05Seeder extends Seeder
                                     '시간',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bugün takvim', 'correct' => ['bugün', 'takvim'], 'extra' => ['saat']],
                         ],
                     ],
                 ],
@@ -508,6 +532,9 @@ class JaUnitBeginner05Seeder extends Seeder
                                     'Tuesday',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bu gün bazar ertəsi', 'correct' => ['bu gün', 'bazar ertəsi'], 'extra' => ['çərşənbə axşamı']],
+                            'ar' => ['sentence' => 'اليوم الاثنين', 'correct' => ['اليوم', 'الاثنين'], 'extra' => ['الثلاثاء']],
+                            'ru' => ['sentence' => 'сегодня понедельник', 'correct' => ['сегодня', 'понедельник'], 'extra' => ['вторник']],
                             'es' => [
                                 'sentence' => 'Hoy es lunes',
                                 'correct' => [
@@ -551,6 +578,7 @@ class JaUnitBeginner05Seeder extends Seeder
                                     '화요일',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bugün pazartesi', 'correct' => ['bugün', 'pazartesi'], 'extra' => ['salı']],
                         ],
                     ],
                     'b' => [
@@ -575,6 +603,9 @@ class JaUnitBeginner05Seeder extends Seeder
                                     'Monday',
                                 ],
                             ],
+                            'az' => ['sentence' => 'çərşənbə axşamı bir gün', 'correct' => ['çərşənbə axşamı', 'bir', 'gün'], 'extra' => ['bazar ertəsi']],
+                            'ar' => ['sentence' => 'الثلاثاء يوم', 'correct' => ['الثلاثاء', 'يوم'], 'extra' => ['الاثنين']],
+                            'ru' => ['sentence' => 'вторник день', 'correct' => ['вторник', 'день'], 'extra' => ['понедельник']],
                             'es' => [
                                 'sentence' => 'El martes es un día',
                                 'correct' => [
@@ -621,6 +652,7 @@ class JaUnitBeginner05Seeder extends Seeder
                                     '월요일',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'salı bir gün', 'correct' => ['salı', 'bir', 'gün'], 'extra' => ['pazartesi']],
                         ],
                     ],
                     'c' => [
@@ -644,6 +676,9 @@ class JaUnitBeginner05Seeder extends Seeder
                                     'Monday',
                                 ],
                             ],
+                            'az' => ['sentence' => 'saat və təqvim', 'correct' => ['saat', 'və', 'təqvim'], 'extra' => ['bazar ertəsi']],
+                            'ar' => ['sentence' => 'ساعة و تقويم', 'correct' => ['ساعة', 'و', 'تقويم'], 'extra' => ['الاثنين']],
+                            'ru' => ['sentence' => 'часы и календарь', 'correct' => ['часы', 'и', 'календарь'], 'extra' => ['понедельник']],
                             'es' => [
                                 'sentence' => 'El reloj y el calendario',
                                 'correct' => [
@@ -692,6 +727,7 @@ class JaUnitBeginner05Seeder extends Seeder
                                     '월요일',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'saat ve takvim', 'correct' => ['saat', 've', 'takvim'], 'extra' => ['pazartesi']],
                         ],
                     ],
                 ],
@@ -735,6 +771,9 @@ class JaUnitBeginner05Seeder extends Seeder
                                     'clock',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bu gün və sabah', 'correct' => ['bu gün', 'və', 'sabah'], 'extra' => ['saat']],
+                            'ar' => ['sentence' => 'اليوم و غدا', 'correct' => ['اليوم', 'و', 'غدا'], 'extra' => ['ساعة']],
+                            'ru' => ['sentence' => 'сегодня и завтра', 'correct' => ['сегодня', 'и', 'завтра'], 'extra' => ['часы']],
                             'es' => [
                                 'sentence' => 'Hoy y mañana',
                                 'correct' => [
@@ -778,6 +817,7 @@ class JaUnitBeginner05Seeder extends Seeder
                                     '시계',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bugün ve yarın', 'correct' => ['bugün', 've', 'yarın'], 'extra' => ['saat']],
                         ],
                     ],
                     'b' => [
@@ -799,6 +839,9 @@ class JaUnitBeginner05Seeder extends Seeder
                                     'tomorrow',
                                 ],
                             ],
+                            'az' => ['sentence' => 'təqvim bu gün', 'correct' => ['təqvim', 'bu gün'], 'extra' => ['sabah']],
+                            'ar' => ['sentence' => 'تقويم اليوم', 'correct' => ['تقويم', 'اليوم'], 'extra' => ['غدا']],
+                            'ru' => ['sentence' => 'календарь сегодня', 'correct' => ['календарь', 'сегодня'], 'extra' => ['завтра']],
                             'es' => [
                                 'sentence' => 'El calendario hoy',
                                 'correct' => [
@@ -842,6 +885,7 @@ class JaUnitBeginner05Seeder extends Seeder
                                     '내일',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bugün takvim', 'correct' => ['bugün', 'takvim'], 'extra' => ['yarın']],
                         ],
                     ],
                     'c' => [
@@ -864,6 +908,9 @@ class JaUnitBeginner05Seeder extends Seeder
                                     'today',
                                 ],
                             ],
+                            'az' => ['sentence' => 'saat və sabah', 'correct' => ['saat', 'və', 'sabah'], 'extra' => ['bu gün']],
+                            'ar' => ['sentence' => 'ساعة و غدا', 'correct' => ['ساعة', 'و', 'غدا'], 'extra' => ['اليوم']],
+                            'ru' => ['sentence' => 'часы и завтра', 'correct' => ['часы', 'и', 'завтра'], 'extra' => ['сегодня']],
                             'es' => [
                                 'sentence' => 'El reloj y mañana',
                                 'correct' => [
@@ -909,6 +956,7 @@ class JaUnitBeginner05Seeder extends Seeder
                                     '오늘',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'saat ve yarın', 'correct' => ['saat', 've', 'yarın'], 'extra' => ['bugün']],
                         ],
                     ],
                 ],
@@ -954,6 +1002,9 @@ class JaUnitBeginner05Seeder extends Seeder
                                     'night',
                                 ],
                             ],
+                            'az' => ['sentence' => 'həftə üzərində təqvim', 'correct' => ['həftə', 'üzərində', 'təqvim'], 'extra' => ['gecə']],
+                            'ar' => ['sentence' => 'أسبوع على تقويم', 'correct' => ['أسبوع', 'على', 'تقويم'], 'extra' => ['ليل']],
+                            'ru' => ['sentence' => 'неделя на календарь', 'correct' => ['неделя', 'на', 'календарь'], 'extra' => ['ночь']],
                             'es' => [
                                 'sentence' => 'La semana en el calendario',
                                 'correct' => [
@@ -1003,6 +1054,7 @@ class JaUnitBeginner05Seeder extends Seeder
                                     '밤',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'takvimde hafta', 'correct' => ['takvimde', 'hafta'], 'extra' => ['gece']],
                         ],
                     ],
                     'b' => [
@@ -1021,6 +1073,9 @@ class JaUnitBeginner05Seeder extends Seeder
                                     'week',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gecə', 'correct' => ['gecə'], 'extra' => ['həftə']],
+                            'ar' => ['sentence' => 'ليل', 'correct' => ['ليل'], 'extra' => ['أسبوع']],
+                            'ru' => ['sentence' => 'ночь', 'correct' => ['ночь'], 'extra' => ['неделя']],
                             'es' => [
                                 'sentence' => 'La noche',
                                 'correct' => [
@@ -1063,6 +1118,7 @@ class JaUnitBeginner05Seeder extends Seeder
                                     '주',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'gece', 'correct' => ['gece'], 'extra' => ['hafta']],
                         ],
                     ],
                     'c' => [
@@ -1086,6 +1142,9 @@ class JaUnitBeginner05Seeder extends Seeder
                                     'week',
                                 ],
                             ],
+                            'az' => ['sentence' => 'saat və gecə', 'correct' => ['saat', 'və', 'gecə'], 'extra' => ['həftə']],
+                            'ar' => ['sentence' => 'ساعة و ليل', 'correct' => ['ساعة', 'و', 'ليل'], 'extra' => ['أسبوع']],
+                            'ru' => ['sentence' => 'часы и ночь', 'correct' => ['часы', 'и', 'ночь'], 'extra' => ['неделя']],
                             'es' => [
                                 'sentence' => 'El reloj y la noche',
                                 'correct' => [
@@ -1134,6 +1193,7 @@ class JaUnitBeginner05Seeder extends Seeder
                                     '주',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'saat ve gece', 'correct' => ['saat', 've', 'gece'], 'extra' => ['hafta']],
                         ],
                     ],
                 ],

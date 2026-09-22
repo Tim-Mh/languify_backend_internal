@@ -52,7 +52,7 @@ class ExpireSubscriptions extends Command
             $planTitle = $planTitles[$subscription->plan_key] ?? ucfirst((string) $subscription->plan_key);
 
             try {
-                $owner->notify(new SubscriptionExpiredNotification($planTitle));
+                $owner->notify(new SubscriptionExpiredNotification($planTitle, (string) $subscription->plan_key));
             } catch (\Throwable) {
                 // Best-effort — a mail failure must not abort the sweep.
             }

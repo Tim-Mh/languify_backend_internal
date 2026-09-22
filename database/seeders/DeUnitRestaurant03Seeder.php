@@ -82,6 +82,9 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     'pay',
                                 ],
                             ],
+                            'az' => ['sentence' => 'hesab zəhmət olmasa', 'correct' => ['hesab', 'zəhmət olmasa'], 'extra' => ['pul', 'ödə']],
+                            'ar' => ['sentence' => 'الحساب من فضلك', 'correct' => ['الحساب', 'من فضلك'], 'extra' => ['نقود', 'ادفع']],
+                            'ru' => ['sentence' => 'счёт пожалуйста', 'correct' => ['счёт', 'пожалуйста'], 'extra' => ['деньги', 'плати']],
                             'es' => [
                                 'sentence' => 'La cuenta, por favor',
                                 'correct' => [
@@ -125,6 +128,7 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     '돈',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'hesap lütfen', 'correct' => ['hesap', 'lütfen'], 'extra' => ['para', 'öde']],
                         ],
                     ],
                     'b' => [
@@ -149,6 +153,9 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     'the bill',
                                 ],
                             ],
+                            'az' => ['sentence' => 'istəyirəm ödəmək ilə pul', 'correct' => ['istəyirəm', 'ödəmək', 'ilə', 'pul'], 'extra' => ['hesab']],
+                            'ar' => ['sentence' => 'أريد الدفع مع نقود', 'correct' => ['أريد', 'الدفع', 'مع', 'نقود'], 'extra' => ['الحساب']],
+                            'ru' => ['sentence' => 'я хочу платить с деньги', 'correct' => ['я', 'хочу', 'платить', 'с', 'деньги'], 'extra' => ['счёт']],
                             'es' => [
                                 'sentence' => 'Quisiera pagar con dinero',
                                 'correct' => [
@@ -196,6 +203,7 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     '계산서',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'parayla ödemek istiyorum', 'correct' => ['parayla', 'ödemek', 'istiyorum'], 'extra' => ['hesap']],
                         ],
                     ],
                     'c' => [
@@ -220,6 +228,9 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     'pay',
                                 ],
                             ],
+                            'az' => ['sentence' => 'menyu və hesab', 'correct' => ['menyu', 'və', 'hesab'], 'extra' => ['ödə']],
+                            'ar' => ['sentence' => 'قائمة الطعام و الحساب', 'correct' => ['قائمة الطعام', 'و', 'الحساب'], 'extra' => ['ادفع']],
+                            'ru' => ['sentence' => 'меню и счёт', 'correct' => ['меню', 'и', 'счёт'], 'extra' => ['плати']],
                             'es' => [
                                 'sentence' => 'El menú y la cuenta',
                                 'correct' => [
@@ -265,6 +276,7 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     '돈',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'menü ve hesap', 'correct' => ['menü', 've', 'hesap'], 'extra' => ['öde']],
                         ],
                     ],
                 ],
@@ -310,6 +322,9 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     'wine',
                                 ],
                             ],
+                            'az' => ['sentence' => 'ödəyirəm içində nağd', 'correct' => ['ödəyirəm', 'içində', 'nağd'], 'extra' => ['qalıq', 'şərab']],
+                            'ar' => ['sentence' => 'أدفع في كاش', 'correct' => ['أدفع', 'في', 'كاش'], 'extra' => ['الباقي', 'نبيذ']],
+                            'ru' => ['sentence' => 'я плачу в наличные', 'correct' => ['я плачу', 'в', 'наличные'], 'extra' => ['сдача', 'вино']],
                             'es' => [
                                 'sentence' => 'Pago en efectivo',
                                 'correct' => [
@@ -357,6 +372,7 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     '거스름돈',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'nakit ödüyorum', 'correct' => ['nakit', 'ödüyorum'], 'extra' => ['para üstü', 'şarap']],
                         ],
                     ],
                     'b' => [
@@ -379,6 +395,9 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     'juice',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qalıq zəhmət olmasa', 'correct' => ['qalıq', 'zəhmət olmasa'], 'extra' => ['nağd', 'şirə']],
+                            'ar' => ['sentence' => 'الباقي من فضلك', 'correct' => ['الباقي', 'من فضلك'], 'extra' => ['كاش', 'عصير']],
+                            'ru' => ['sentence' => 'сдача пожалуйста', 'correct' => ['сдача', 'пожалуйста'], 'extra' => ['наличные', 'сок']],
                             'es' => [
                                 'sentence' => 'El cambio, por favor',
                                 'correct' => [
@@ -423,6 +442,7 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     '현금으로',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'para üstü lütfen', 'correct' => ['para', 'üstü', 'lütfen'], 'extra' => ['nakit', 'meyve suyu']],
                         ],
                     ],
                     'c' => [
@@ -448,6 +468,9 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     'change',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir şərab və bir şirə', 'correct' => ['bir', 'şərab', 'və', 'bir', 'şirə'], 'extra' => ['qalıq']],
+                            'ar' => ['sentence' => 'نبيذ و عصير', 'correct' => ['نبيذ', 'و', 'عصير'], 'extra' => ['الباقي']],
+                            'ru' => ['sentence' => 'вино и сок', 'correct' => ['вино', 'и', 'сок'], 'extra' => ['сдача']],
                             'es' => [
                                 'sentence' => 'Un vino y un zumo',
                                 'correct' => [
@@ -495,6 +518,7 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     '거스름돈',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir şarap ve bir meyve suyu', 'correct' => ['bir', 'şarap', 've', 'bir', 'meyve', 'suyu'], 'extra' => ['para üstü']],
                         ],
                     ],
                 ],
@@ -544,6 +568,9 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     'receipt',
                                 ],
                             ],
+                            'az' => ['sentence' => 'çaypulu üzərində masa', 'correct' => ['çaypulu', 'üzərində', 'masa'], 'extra' => ['qəbz']],
+                            'ar' => ['sentence' => 'بقشيش على طاولة', 'correct' => ['بقشيش', 'على', 'طاولة'], 'extra' => ['إيصال']],
+                            'ru' => ['sentence' => 'чаевые на стол', 'correct' => ['чаевые', 'на', 'стол'], 'extra' => ['чек']],
                             'es' => [
                                 'sentence' => 'La propina está en la mesa',
                                 'correct' => [
@@ -597,6 +624,7 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     '영수증',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bahşiş masada', 'correct' => ['bahşiş', 'masada'], 'extra' => ['fiş']],
                         ],
                     ],
                     'b' => [
@@ -619,6 +647,9 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     'coffee',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qəbz zəhmət olmasa', 'correct' => ['qəbz', 'zəhmət olmasa'], 'extra' => ['çaypulu', 'qəhvə']],
+                            'ar' => ['sentence' => 'إيصال من فضلك', 'correct' => ['إيصال', 'من فضلك'], 'extra' => ['بقشيش', 'قهوة']],
+                            'ru' => ['sentence' => 'чек пожалуйста', 'correct' => ['чек', 'пожалуйста'], 'extra' => ['чаевые', 'кофе']],
                             'es' => [
                                 'sentence' => 'El recibo, por favor',
                                 'correct' => [
@@ -663,6 +694,7 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     '팁',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'fiş lütfen', 'correct' => ['fiş', 'lütfen'], 'extra' => ['bahşiş', 'kahve']],
                         ],
                     ],
                     'c' => [
@@ -688,6 +720,9 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     'tip',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qəhvə ilə bir tort', 'correct' => ['bir', 'qəhvə', 'ilə', 'bir', 'tort'], 'extra' => ['çaypulu']],
+                            'ar' => ['sentence' => 'قهوة مع كعكة', 'correct' => ['قهوة', 'مع', 'كعكة'], 'extra' => ['بقشيش']],
+                            'ru' => ['sentence' => 'кофе с торт', 'correct' => ['кофе', 'с', 'торт'], 'extra' => ['чаевые']],
                             'es' => [
                                 'sentence' => 'Un café con un pastel',
                                 'correct' => [
@@ -736,6 +771,7 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     '팁',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'pastalı bir kahve', 'correct' => ['pastalı', 'bir', 'kahve'], 'extra' => ['bahşiş']],
                         ],
                     ],
                 ],
@@ -780,6 +816,9 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     'salad',
                                 ],
                             ],
+                            'az' => ['sentence' => 'ödəmək birlikdə zəhmət olmasa', 'correct' => ['ödəmək', 'birlikdə', 'zəhmət olmasa'], 'extra' => ['ayrıca', 'salat']],
+                            'ar' => ['sentence' => 'الدفع معا من فضلك', 'correct' => ['الدفع', 'معا', 'من فضلك'], 'extra' => ['منفصل', 'سلطة']],
+                            'ru' => ['sentence' => 'платить вместе пожалуйста', 'correct' => ['платить', 'вместе', 'пожалуйста'], 'extra' => ['отдельно', 'салат']],
                             'es' => [
                                 'sentence' => 'Pagar juntos, por favor',
                                 'correct' => [
@@ -825,6 +864,7 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     '따로',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'birlikte ödemek lütfen', 'correct' => ['birlikte', 'ödemek', 'lütfen'], 'extra' => ['ayrı', 'salata']],
                         ],
                     ],
                     'b' => [
@@ -848,6 +888,9 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     'sandwich',
                                 ],
                             ],
+                            'az' => ['sentence' => 'istəyirəm ödəmək ayrıca', 'correct' => ['istəyirəm', 'ödəmək', 'ayrıca'], 'extra' => ['birlikdə', 'sendviç']],
+                            'ar' => ['sentence' => 'أريد الدفع منفصل', 'correct' => ['أريد', 'الدفع', 'منفصل'], 'extra' => ['معا', 'شطيرة']],
+                            'ru' => ['sentence' => 'я хочу платить отдельно', 'correct' => ['я', 'хочу', 'платить', 'отдельно'], 'extra' => ['вместе', 'сэндвич']],
                             'es' => [
                                 'sentence' => 'Quisiera pagar por separado',
                                 'correct' => [
@@ -893,6 +936,7 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     '함께',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ayrı ödemek istiyorum', 'correct' => ['ayrı', 'ödemek', 'istiyorum'], 'extra' => ['birlikte', 'sandviç']],
                         ],
                     ],
                     'c' => [
@@ -918,6 +962,9 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     'together',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir sendviç və bir salat', 'correct' => ['bir', 'sendviç', 'və', 'bir', 'salat'], 'extra' => ['birlikdə']],
+                            'ar' => ['sentence' => 'شطيرة و سلطة', 'correct' => ['شطيرة', 'و', 'سلطة'], 'extra' => ['معا']],
+                            'ru' => ['sentence' => 'сэндвич и салат', 'correct' => ['сэндвич', 'и', 'салат'], 'extra' => ['вместе']],
                             'es' => [
                                 'sentence' => 'Un sándwich y una ensalada',
                                 'correct' => [
@@ -965,6 +1012,7 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     '함께',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir sandviç ve bir salata', 'correct' => ['bir', 'sandviç', 've', 'bir', 'salata'], 'extra' => ['birlikte']],
                         ],
                     ],
                 ],
@@ -1011,6 +1059,9 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     'plate',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bağışlayın hesab zəhmət olmasa', 'correct' => ['bağışlayın', 'hesab', 'zəhmət olmasa'], 'extra' => ['ödəyirəm', 'boşqab']],
+                            'ar' => ['sentence' => 'عفوا الحساب من فضلك', 'correct' => ['عفوا', 'الحساب', 'من فضلك'], 'extra' => ['أدفع', 'صحن']],
+                            'ru' => ['sentence' => 'извините счёт пожалуйста', 'correct' => ['извините', 'счёт', 'пожалуйста'], 'extra' => ['я плачу', 'тарелка']],
                             'es' => [
                                 'sentence' => 'Disculpe, la cuenta por favor',
                                 'correct' => [
@@ -1057,6 +1108,7 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     '제가 냅니다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'affedersiniz hesap lütfen', 'correct' => ['affedersiniz', 'hesap', 'lütfen'], 'extra' => ['ödüyorum', 'tabak']],
                         ],
                     ],
                     'b' => [
@@ -1078,6 +1130,9 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     'menu',
                                 ],
                             ],
+                            'az' => ['sentence' => 'ödəyirəm indi', 'correct' => ['ödəyirəm', 'indi'], 'extra' => ['bağışlayın', 'menyu']],
+                            'ar' => ['sentence' => 'أدفع الآن', 'correct' => ['أدفع', 'الآن'], 'extra' => ['عفوا', 'قائمة الطعام']],
+                            'ru' => ['sentence' => 'я плачу сейчас', 'correct' => ['я плачу', 'сейчас'], 'extra' => ['извините', 'меню']],
                             'es' => [
                                 'sentence' => 'Pago ahora',
                                 'correct' => [
@@ -1119,6 +1174,7 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     '실례합니다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'şimdi ödüyorum', 'correct' => ['şimdi', 'ödüyorum'], 'extra' => ['affedersiniz', 'menü']],
                         ],
                     ],
                     'c' => [
@@ -1144,6 +1200,9 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     'I pay',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir boşqab və bir menyu', 'correct' => ['bir', 'boşqab', 'və', 'bir', 'menyu'], 'extra' => ['ödəyirəm']],
+                            'ar' => ['sentence' => 'صحن و قائمة الطعام', 'correct' => ['صحن', 'و', 'قائمة الطعام'], 'extra' => ['أدفع']],
+                            'ru' => ['sentence' => 'тарелка и меню', 'correct' => ['тарелка', 'и', 'меню'], 'extra' => ['я плачу']],
                             'es' => [
                                 'sentence' => 'Un plato y un menú',
                                 'correct' => [
@@ -1191,6 +1250,7 @@ class DeUnitRestaurant03Seeder extends Seeder
                                     '제가 냅니다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir tabak ve bir menü', 'correct' => ['bir', 'tabak', 've', 'bir', 'menü'], 'extra' => ['ödüyorum']],
                         ],
                     ],
                 ],

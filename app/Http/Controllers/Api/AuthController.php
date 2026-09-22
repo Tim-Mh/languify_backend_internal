@@ -9,6 +9,7 @@ use App\Notifications\OtpNotification;
 use App\Notifications\PasswordChangedNotification;
 use App\Notifications\PasswordResetNotification;
 use App\Notifications\WelcomeNotification;
+use App\Support\DeviceTimezone;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -43,14 +44,14 @@ class AuthController extends Controller
             'fullName' => ['nullable', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'string', 'min:6'],
-            'timezone' => ['nullable', 'string', 'timezone'],
+            'timezone' => DeviceTimezone::RULES,
         ]);
 
         $user = User::create([
             'full_name' => $data['fullName'] ?? null,
             'email' => $data['email'],
             'password' => $data['password'],
-            'timezone' => $data['timezone'] ?? null,
+            'timezone' => DeviceTimezone::normalise($data['timezone'] ?? null),
         ]);
 
         $this->sendOtp($user);
@@ -155,7 +156,7 @@ class AuthController extends Controller
         $data = $request->validate([
             'email' => ['required', 'string', 'email'],
             'password' => ['required', 'string'],
-            'timezone' => ['nullable', 'string', 'timezone'],
+            'timezone' => DeviceTimezone::RULES,
         ]);
 
         $user = User::where('email', $data['email'])->first();
@@ -176,8 +177,13 @@ class AuthController extends Controller
             ], 403);
         }
 
-        if (! empty($data['timezone']) && $data['timezone'] !== $user->timezone) {
-            $user->forceFill(['timezone' => $data['timezone']])->save();
+        // Refreshed on every login in case the learner has traveled. A device
+        // that cannot name its own timezone leaves the stored one alone rather
+        // than overwriting a good value with `Etc/Unknown`.
+        $timezone = DeviceTimezone::normalise($data['timezone'] ?? null);
+
+        if ($timezone !== null && $timezone !== $user->timezone) {
+            $user->forceFill(['timezone' => $timezone])->save();
         }
 
         // Proving the password is what makes it safe to attach any Google/Apple

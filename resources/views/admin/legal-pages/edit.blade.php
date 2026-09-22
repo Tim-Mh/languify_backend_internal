@@ -1,8 +1,10 @@
 @extends('layouts.admin')
 
-@php($useRichEditor = in_array($page->slug, ['terms', 'privacy']))
+@php($useRichEditor = in_array($slug, ['terms', 'privacy']))
+@php($isSource = $locale === \App\Models\LegalPage::SOURCE_LOCALE)
+@php($localeName = \App\Models\LegalPage::LOCALE_NAMES[$locale] ?? $locale)
 
-@section('title', 'Edit ' . $page->title)
+@section('title', 'Edit ' . $source->title . ' — ' . $localeName)
 
 @if ($useRichEditor)
     @push('styles')
@@ -16,43 +18,102 @@
 @endif
 
 @section('content')
-    <div class="bg-white rounded-lg shadow p-6 max-w-3xl">
-        <form id="legal-page-form" action="{{ route('admin.legal-pages.update', $page) }}" method="POST">
-            @csrf
-            @method('PUT')
+    <div class="max-w-3xl">
+        {{-- One tab per language. English is the source everything else is
+             translated from, so it is first and labelled as such. --}}
+        <div class="flex flex-wrap gap-1 mb-4 border-b">
+            @foreach (\App\Models\LegalPage::LOCALES as $code)
+                @php($row = $translations->get($code))
+                @php($written = $row && trim((string) $row->content) !== '')
+                @php($stale = $row && $row->isOutdated($source))
+                <a href="{{ route('admin.legal-pages.edit', ['legal_page' => $slug, 'locale' => $code]) }}"
+                   class="px-3 py-2 -mb-px border-b-2 text-sm {{ $code === $locale ? 'border-blue-600 text-blue-700 font-semibold' : 'border-transparent text-gray-600 hover:text-gray-900' }}">
+                    {{ \App\Models\LegalPage::LOCALE_NAMES[$code] ?? $code }}
+                    @if ($code === \App\Models\LegalPage::SOURCE_LOCALE)
+                        <span class="ml-1 text-xs text-gray-400">source</span>
+                    @elseif ($stale)
+                        <span class="ml-1 text-xs text-amber-600" title="The English text changed after this was written">out of date</span>
+                    @elseif (! $written)
+                        <span class="ml-1 text-xs text-gray-400">empty</span>
+                    @else
+                        <span class="ml-1 text-xs text-green-600">&check;</span>
+                    @endif
+                </a>
+            @endforeach
+        </div>
 
-            <div class="mb-4">
-                <label class="block text-sm font-medium mb-1">Title</label>
-                <input type="text" name="title" value="{{ old('title', $page->title) }}" class="w-full border rounded px-3 py-2" maxlength="255">
-                @error('title') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+        @if ($outdated)
+            <div class="mb-4 rounded border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+                <strong>The English version changed after this translation was written.</strong>
+                Re-read it against the English and save again to clear this notice. Learners are still
+                being shown this text in the meantime.
             </div>
+        @endif
 
-            <div class="mb-2">
-                <label class="block text-sm font-medium mb-1">Content</label>
-
-                @if ($useRichEditor)
-                    <div id="editor"></div>
-                    <textarea name="content" class="hidden">{{ old('content', $page->content) }}</textarea>
-                    <p class="text-xs text-gray-500 mt-2">
-                        Just type and format like a normal document — use the toolbar for bold, headings, font size, lists, and links.
-                        This is shown to every visitor on the public <code>/{{ $page->slug }}</code> page.
-                    </p>
-                @else
-                    <textarea name="content" rows="22" class="w-full border rounded px-3 py-2 font-mono text-sm">{{ old('content', $page->content) }}</textarea>
-                    <p class="text-xs text-gray-500 mt-2">
-                        Basic HTML tags are supported: <code>&lt;h2&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ul&gt;/&lt;li&gt;</code>,
-                        <code>&lt;strong&gt;</code>, <code>&lt;a href="..."&gt;</code>. This is shown to every visitor on the public
-                        <code>/{{ $page->slug }}</code> page — there is no preview here, so check the live page after saving.
-                    </p>
-                @endif
-                @error('content') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+        @if (! $isSource && ! $page)
+            <div class="mb-4 rounded border border-gray-300 bg-gray-50 px-4 py-3 text-sm text-gray-700">
+                Nothing written in {{ $localeName }} yet. Until you save something here, learners with this
+                language are shown the English page.
             </div>
+        @endif
 
-            <div class="mt-6">
-                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save</button>
-                <a href="{{ route('admin.legal-pages.index') }}" class="ml-2 text-gray-600 hover:underline">Cancel</a>
+        <div class="bg-white rounded-lg shadow p-6">
+            <form id="legal-page-form" action="{{ route('admin.legal-pages.update', ['legal_page' => $slug]) }}" method="POST">
+                @csrf
+                @method('PUT')
+                <input type="hidden" name="locale" value="{{ $locale }}">
+
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-1">Title <span class="text-gray-400">({{ $localeName }})</span></label>
+                    <input type="text" name="title" value="{{ old('title', $page->title ?? $source->title) }}" class="w-full border rounded px-3 py-2" maxlength="255">
+                    @error('title') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+                </div>
+
+                <div class="mb-2">
+                    <label class="block text-sm font-medium mb-1">Content <span class="text-gray-400">({{ $localeName }})</span></label>
+
+                    @if ($useRichEditor)
+                        <div id="editor"></div>
+                        {{-- Deliberately blank rather than pre-filled with the English when a
+                             translation does not exist yet: a page that looks translated but is
+                             not is the exact problem this feature exists to avoid. The English
+                             is shown side by side below to translate from. --}}
+                        <textarea name="content" class="hidden">{{ old('content', $page->content ?? '') }}</textarea>
+                        <p class="text-xs text-gray-500 mt-2">
+                            Just type and format like a normal document — use the toolbar for bold, headings, font size, lists, and links.
+                            @if ($isSource)
+                                This is the source text. Editing it marks every translation made from the old version as out of date.
+                            @else
+                                Shown to learners whose app language is {{ $localeName }}.
+                            @endif
+                        </p>
+                    @else
+                        <textarea name="content" rows="22" class="w-full border rounded px-3 py-2 font-mono text-sm">{{ old('content', $page->content ?? '') }}</textarea>
+                        <p class="text-xs text-gray-500 mt-2">
+                            Basic HTML tags are supported: <code>&lt;h2&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ul&gt;/&lt;li&gt;</code>,
+                            <code>&lt;strong&gt;</code>, <code>&lt;a href="..."&gt;</code>.
+                        </p>
+                    @endif
+                    @error('content') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+                </div>
+
+                <div class="mt-6">
+                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save {{ $localeName }}</button>
+                    <a href="{{ route('admin.legal-pages.index') }}" class="ml-2 text-gray-600 hover:underline">Cancel</a>
+                </div>
+            </form>
+        </div>
+
+        {{-- The English, to translate from, so the admin is not flipping tabs and
+             holding a legal document in their head. --}}
+        @if (! $isSource)
+            <div class="mt-6 bg-white rounded-lg shadow p-6">
+                <h2 class="text-sm font-semibold text-gray-700 mb-2">English (source)</h2>
+                <div class="prose prose-sm max-w-none border rounded p-4 bg-gray-50 max-h-96 overflow-y-auto">
+                    {!! $source->content !!}
+                </div>
             </div>
-        </form>
+        @endif
     </div>
 @endsection
 

@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Facades\Log;
+
 /**
  * Prepares an exercise's `data` for one specific learner, at request time.
  *
@@ -51,12 +53,56 @@ class ExerciseContentService
         if (array_key_exists('i18n', $value) && is_array($value['i18n'])) {
             $translations = $value['i18n'];
 
-            return $translations[$languageCode]
-                ?? $translations[self::FALLBACK_LANGUAGE]
-                ?? reset($translations);
+            if (array_key_exists($languageCode, $translations)) {
+                return $translations[$languageCode];
+            }
+
+            if (array_key_exists(self::FALLBACK_LANGUAGE, $translations)) {
+                return $translations[self::FALLBACK_LANGUAGE];
+            }
+
+            // Last resort: whichever translation sorts first. This is a real
+            // failure dressed up as a result — an Arabic speaker learning
+            // English was served the German word bank, because the English
+            // course's maps never contain 'en' (English is the source), so a
+            // missing 'ar' fell straight past both branches above and `de`
+            // happened to be first.
+            //
+            // It still returns something, because a blank tile is worse than a
+            // wrong one mid-lesson, but it says so once per language per
+            // request so the gap shows up in the log instead of in a
+            // screenshot. The cure is always to re-seed the course.
+            $this->warnOnce($languageCode, array_keys($translations));
+
+            return reset($translations);
         }
 
         return array_map(fn (mixed $item) => $this->localize($item, $languageCode), $value);
+    }
+
+    /**
+     * Languages already reported this request.
+     *
+     * A lesson resolves thousands of maps, so logging each one would bury the
+     * signal in its own noise. One line names the language and what the map
+     * actually held, which is all anyone needs to know what to re-seed.
+     *
+     * @var array<string, true>
+     */
+    private array $warned = [];
+
+    private function warnOnce(string $languageCode, array $available): void
+    {
+        if (isset($this->warned[$languageCode])) {
+            return;
+        }
+
+        $this->warned[$languageCode] = true;
+
+        Log::warning('exercise content has no translation for this language; serving another', [
+            'wanted' => $languageCode,
+            'available' => $available,
+        ]);
     }
 
     /**

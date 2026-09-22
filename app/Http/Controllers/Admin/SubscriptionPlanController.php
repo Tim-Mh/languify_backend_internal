@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\SubscriptionPlan;
+use App\Support\PerPage;
 use App\Support\Sluggable;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -12,10 +13,10 @@ use Illuminate\View\View;
 
 class SubscriptionPlanController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
         return view('admin.subscription-plans.index', [
-            'subscriptionPlans' => SubscriptionPlan::orderBy('order_number')->paginate(25),
+            'subscriptionPlans' => SubscriptionPlan::orderBy('order_number')->paginate(PerPage::resolve($request))->withQueryString(),
         ]);
     }
 

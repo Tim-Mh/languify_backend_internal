@@ -72,6 +72,9 @@ class TrUnitConversation04Seeder extends Seeder
                         'words' => ['ben', 'mutluyum'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'I am happy', 'correct' => ['I am', 'happy'], 'extra' => ['sad', 'friend']],
+                            'az' => ['sentence' => 'mən xoşbəxt', 'correct' => ['mən', 'xoşbəxt'], 'extra' => ['kədərli', 'dost']],
+                            'ar' => ['sentence' => 'أنا فرح', 'correct' => ['أنا', 'فرح'], 'extra' => ['حزين', 'صديق']],
+                            'ru' => ['sentence' => 'я счастливый', 'correct' => ['я', 'счастливый'], 'extra' => ['грустный', 'друг']],
                             'fr' => ['sentence' => 'Je suis heureux', 'correct' => ['je suis', 'heureux'], 'extra' => ['triste', 'ami']],
                             'es' => ['sentence' => 'Estoy feliz', 'correct' => ['estoy', 'feliz'], 'extra' => ['triste', 'amigo']],
                             'de' => ['sentence' => 'Ich bin glücklich', 'correct' => ['ich bin', 'glücklich'], 'extra' => ['traurig', 'Freund']],
@@ -84,6 +87,9 @@ class TrUnitConversation04Seeder extends Seeder
                         'words' => ['arkadaşım', 'üzgün'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'My friend is sad', 'correct' => ['my', 'friend', 'is', 'sad'], 'extra' => ['happy', 'mother']],
+                            'az' => ['sentence' => 'mənim dost kədərli', 'correct' => ['mənim', 'dost', 'kədərli'], 'extra' => ['xoşbəxt', 'ana']],
+                            'ar' => ['sentence' => 'صديق حزين', 'correct' => ['صديق', 'حزين'], 'extra' => ['فرح', 'أم']],
+                            'ru' => ['sentence' => 'мой друг грустный', 'correct' => ['мой', 'друг', 'грустный'], 'extra' => ['счастливый', 'мама']],
                             'fr' => ['sentence' => 'Mon ami est triste', 'correct' => ['mon', 'ami', 'est', 'triste'], 'extra' => ['heureux', 'mère']],
                             'es' => ['sentence' => 'Mi amigo está triste', 'correct' => ['mi', 'amigo', 'está', 'triste'], 'extra' => ['feliz', 'madre']],
                             'de' => ['sentence' => 'Mein Freund ist traurig', 'correct' => ['mein', 'Freund', 'ist', 'traurig'], 'extra' => ['glücklich', 'Mutter']],
@@ -95,6 +101,9 @@ class TrUnitConversation04Seeder extends Seeder
                         'words' => ['annem', 'mutlu'], 'blank' => 0,
                         'means' => [
                             'en' => ['sentence' => 'My mother is happy', 'correct' => ['my', 'mother', 'is', 'happy'], 'extra' => ['sad']],
+                            'az' => ['sentence' => 'mənim ana xoşbəxt', 'correct' => ['mənim', 'ana', 'xoşbəxt'], 'extra' => ['kədərli']],
+                            'ar' => ['sentence' => 'أم فرح', 'correct' => ['أم', 'فرح'], 'extra' => ['حزين']],
+                            'ru' => ['sentence' => 'мой мама счастливый', 'correct' => ['мой', 'мама', 'счастливый'], 'extra' => ['грустный']],
                             'fr' => ['sentence' => 'Ma mère est heureuse', 'correct' => ['ma', 'mère', 'est', 'heureuse'], 'extra' => ['triste']],
                             'es' => ['sentence' => 'Mi madre está feliz', 'correct' => ['mi', 'madre', 'está', 'feliz'], 'extra' => ['triste']],
                             'de' => ['sentence' => 'Meine Mutter ist glücklich', 'correct' => ['meine', 'Mutter', 'ist', 'glücklich'], 'extra' => ['traurig']],
@@ -113,6 +122,9 @@ class TrUnitConversation04Seeder extends Seeder
                         'words' => ['ben', 'yorgunum'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'I am tired', 'correct' => ['I am', 'tired'], 'extra' => ['sick', 'brother']],
+                            'az' => ['sentence' => 'mən yorğun', 'correct' => ['mən', 'yorğun'], 'extra' => ['xəstə', 'qardaş']],
+                            'ar' => ['sentence' => 'أنا متعب', 'correct' => ['أنا', 'متعب'], 'extra' => ['مريض', 'أخ']],
+                            'ru' => ['sentence' => 'я усталый', 'correct' => ['я', 'усталый'], 'extra' => ['больной', 'брат']],
                             'fr' => ['sentence' => 'Je suis fatigué', 'correct' => ['je suis', 'fatigué'], 'extra' => ['malade', 'frère']],
                             'es' => ['sentence' => 'Estoy cansado', 'correct' => ['estoy', 'cansado'], 'extra' => ['enfermo', 'hermano']],
                             'de' => ['sentence' => 'Ich bin müde', 'correct' => ['ich bin', 'müde'], 'extra' => ['krank', 'Bruder']],
@@ -124,6 +136,9 @@ class TrUnitConversation04Seeder extends Seeder
                         'words' => ['kardeşim', 'hasta'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'My brother is sick', 'correct' => ['my', 'brother', 'is', 'sick'], 'extra' => ['tired', 'doctor']],
+                            'az' => ['sentence' => 'mənim qardaş xəstə', 'correct' => ['mənim', 'qardaş', 'xəstə'], 'extra' => ['yorğun', 'həkim']],
+                            'ar' => ['sentence' => 'أخ مريض', 'correct' => ['أخ', 'مريض'], 'extra' => ['متعب', 'طبيب']],
+                            'ru' => ['sentence' => 'мой брат больной', 'correct' => ['мой', 'брат', 'больной'], 'extra' => ['усталый', 'врач']],
                             'fr' => ['sentence' => 'Mon frère est malade', 'correct' => ['mon', 'frère', 'est', 'malade'], 'extra' => ['fatigué', 'médecin']],
                             'es' => ['sentence' => 'Mi hermano está enfermo', 'correct' => ['mi', 'hermano', 'está', 'enfermo'], 'extra' => ['cansado', 'médico']],
                             'de' => ['sentence' => 'Mein Bruder ist krank', 'correct' => ['mein', 'Bruder', 'ist', 'krank'], 'extra' => ['müde', 'Arzt']],
@@ -135,6 +150,9 @@ class TrUnitConversation04Seeder extends Seeder
                         'words' => ['doktor', 've', 'kardeşim'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'The doctor and my brother', 'correct' => ['the', 'doctor', 'and', 'my', 'brother'], 'extra' => ['sick']],
+                            'az' => ['sentence' => 'həkim və mənim qardaş', 'correct' => ['həkim', 'və', 'mənim', 'qardaş'], 'extra' => ['xəstə']],
+                            'ar' => ['sentence' => 'طبيب و أخ', 'correct' => ['طبيب', 'و', 'أخ'], 'extra' => ['مريض']],
+                            'ru' => ['sentence' => 'врач и мой брат', 'correct' => ['врач', 'и', 'мой', 'брат'], 'extra' => ['больной']],
                             'fr' => ['sentence' => 'Le médecin et mon frère', 'correct' => ['le', 'médecin', 'et', 'mon', 'frère'], 'extra' => ['malade']],
                             'es' => ['sentence' => 'El médico y mi hermano', 'correct' => ['el', 'médico', 'y', 'mi', 'hermano'], 'extra' => ['enfermo']],
                             'de' => ['sentence' => 'Der Arzt und mein Bruder', 'correct' => ['der', 'Arzt', 'und', 'mein', 'Bruder'], 'extra' => ['krank']],
@@ -153,6 +171,9 @@ class TrUnitConversation04Seeder extends Seeder
                         'words' => ['ben', 'memnunum'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'I am glad', 'correct' => ['I am', 'glad'], 'extra' => ['calm', 'sister']],
+                            'az' => ['sentence' => 'mən şad', 'correct' => ['mən', 'şad'], 'extra' => ['sakit', 'bacı']],
+                            'ar' => ['sentence' => 'أنا سعيد', 'correct' => ['أنا', 'سعيد'], 'extra' => ['هادئ', 'أخت']],
+                            'ru' => ['sentence' => 'я рада', 'correct' => ['я', 'рада'], 'extra' => ['спокойный', 'сестра']],
                             'fr' => ['sentence' => 'Je suis content', 'correct' => ['je suis', 'content'], 'extra' => ['calme', 'soeur']],
                             'es' => ['sentence' => 'Estoy contento', 'correct' => ['estoy', 'contento'], 'extra' => ['tranquilo', 'hermana']],
                             'de' => ['sentence' => 'Ich bin froh', 'correct' => ['ich bin', 'froh'], 'extra' => ['ruhig', 'Schwester']],
@@ -164,6 +185,9 @@ class TrUnitConversation04Seeder extends Seeder
                         'words' => ['kız kardeşim', 'sakin'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'My sister is calm', 'correct' => ['my', 'sister', 'is', 'calm'], 'extra' => ['glad', 'friend']],
+                            'az' => ['sentence' => 'mənim bacı sakit', 'correct' => ['mənim', 'bacı', 'sakit'], 'extra' => ['şad', 'dost']],
+                            'ar' => ['sentence' => 'أخت هادئ', 'correct' => ['أخت', 'هادئ'], 'extra' => ['سعيد', 'صديق']],
+                            'ru' => ['sentence' => 'мой сестра спокойный', 'correct' => ['мой', 'сестра', 'спокойный'], 'extra' => ['рада', 'друг']],
                             'fr' => ['sentence' => 'Ma soeur est calme', 'correct' => ['ma', 'soeur', 'est', 'calme'], 'extra' => ['content', 'ami']],
                             'es' => ['sentence' => 'Mi hermana está tranquila', 'correct' => ['mi', 'hermana', 'está', 'tranquila'], 'extra' => ['contento', 'amigo']],
                             'de' => ['sentence' => 'Meine Schwester ist ruhig', 'correct' => ['meine', 'Schwester', 'ist', 'ruhig'], 'extra' => ['froh', 'Freund']],
@@ -175,6 +199,9 @@ class TrUnitConversation04Seeder extends Seeder
                         'words' => ['arkadaşım', 'memnun'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'My friend is glad', 'correct' => ['my', 'friend', 'is', 'glad'], 'extra' => ['calm']],
+                            'az' => ['sentence' => 'mənim dost şad', 'correct' => ['mənim', 'dost', 'şad'], 'extra' => ['sakit']],
+                            'ar' => ['sentence' => 'صديق سعيد', 'correct' => ['صديق', 'سعيد'], 'extra' => ['هادئ']],
+                            'ru' => ['sentence' => 'мой друг рада', 'correct' => ['мой', 'друг', 'рада'], 'extra' => ['спокойный']],
                             'fr' => ['sentence' => 'Mon ami est content', 'correct' => ['mon', 'ami', 'est', 'content'], 'extra' => ['calme']],
                             'es' => ['sentence' => 'Mi amigo está contento', 'correct' => ['mi', 'amigo', 'está', 'contento'], 'extra' => ['tranquilo']],
                             'de' => ['sentence' => 'Mein Freund ist froh', 'correct' => ['mein', 'Freund', 'ist', 'froh'], 'extra' => ['ruhig']],
@@ -193,6 +220,9 @@ class TrUnitConversation04Seeder extends Seeder
                         'words' => ['ben', 'biraz', 'yorgunum'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'I am a little tired', 'correct' => ['I am', 'a little', 'tired'], 'extra' => ['because', 'mother']],
+                            'az' => ['sentence' => 'mən az yorğun', 'correct' => ['mən', 'az', 'yorğun'], 'extra' => ['çünki', 'ana']],
+                            'ar' => ['sentence' => 'أنا قليل متعب', 'correct' => ['أنا', 'قليل', 'متعب'], 'extra' => ['لأن', 'أم']],
+                            'ru' => ['sentence' => 'я немного усталый', 'correct' => ['я', 'немного', 'усталый'], 'extra' => ['потому что', 'мама']],
                             'fr' => ['sentence' => 'Je suis un peu fatigué', 'correct' => ['je suis', 'un peu', 'fatigué'], 'extra' => ['parce que', 'mère']],
                             'es' => ['sentence' => 'Estoy un poco cansado', 'correct' => ['estoy', 'un poco', 'cansado'], 'extra' => ['porque', 'madre']],
                             'de' => ['sentence' => 'Ich bin ein bisschen müde', 'correct' => ['ich bin', 'ein bisschen', 'müde'], 'extra' => ['weil', 'Mutter']],
@@ -204,6 +234,9 @@ class TrUnitConversation04Seeder extends Seeder
                         'words' => ['mutlu', 'çünkü', 'annem'], 'blank' => 0,
                         'means' => [
                             'en' => ['sentence' => 'Happy because my mother', 'correct' => ['happy', 'because', 'my', 'mother'], 'extra' => ['a little']],
+                            'az' => ['sentence' => 'xoşbəxt çünki mənim ana', 'correct' => ['xoşbəxt', 'çünki', 'mənim', 'ana'], 'extra' => ['az']],
+                            'ar' => ['sentence' => 'فرح لأن أم', 'correct' => ['فرح', 'لأن', 'أم'], 'extra' => ['قليل']],
+                            'ru' => ['sentence' => 'счастливый потому что мой мама', 'correct' => ['счастливый', 'потому что', 'мой', 'мама'], 'extra' => ['немного']],
                             'fr' => ['sentence' => 'Heureux parce que ma mère', 'correct' => ['heureux', 'parce que', 'ma', 'mère'], 'extra' => ['un peu']],
                             'es' => ['sentence' => 'Feliz porque mi madre', 'correct' => ['feliz', 'porque', 'mi', 'madre'], 'extra' => ['un poco']],
                             'de' => ['sentence' => 'Glücklich weil meine Mutter', 'correct' => ['glücklich', 'weil', 'meine', 'Mutter'], 'extra' => ['ein bisschen']],
@@ -216,6 +249,9 @@ class TrUnitConversation04Seeder extends Seeder
                         'words' => ['evde', 'biraz', 'üzgün'], 'blank' => 0,
                         'means' => [
                             'en' => ['sentence' => 'A little sad in the house', 'correct' => ['a little', 'sad', 'in', 'the', 'house'], 'extra' => ['because']],
+                            'az' => ['sentence' => 'az kədərli içində ev', 'correct' => ['az', 'kədərli', 'içində', 'ev'], 'extra' => ['çünki']],
+                            'ar' => ['sentence' => 'قليل حزين في بيت', 'correct' => ['قليل', 'حزين', 'في', 'بيت'], 'extra' => ['لأن']],
+                            'ru' => ['sentence' => 'немного грустный в дом', 'correct' => ['немного', 'грустный', 'в', 'дом'], 'extra' => ['потому что']],
                             'fr' => ['sentence' => 'Un peu triste à la maison', 'correct' => ['un peu', 'triste', 'à la', 'maison'], 'extra' => ['parce que']],
                             'es' => ['sentence' => 'Un poco triste en la casa', 'correct' => ['un poco', 'triste', 'en', 'la', 'casa'], 'extra' => ['porque']],
                             'de' => ['sentence' => 'Ein bisschen traurig im Haus', 'correct' => ['ein bisschen', 'traurig', 'im', 'Haus'], 'extra' => ['weil']],
@@ -235,6 +271,9 @@ class TrUnitConversation04Seeder extends Seeder
                         'words' => ['bugün', 'mutlu', 'hissediyorum'], 'blank' => 2,
                         'means' => [
                             'en' => ['sentence' => 'I feel happy today', 'correct' => ['I feel', 'happy', 'today'], 'extra' => ['sad', 'friend']],
+                            'az' => ['sentence' => 'hiss edirəm xoşbəxt bu gün', 'correct' => ['hiss edirəm', 'xoşbəxt', 'bu gün'], 'extra' => ['kədərli', 'dost']],
+                            'ar' => ['sentence' => 'أشعر فرح اليوم', 'correct' => ['أشعر', 'فرح', 'اليوم'], 'extra' => ['حزين', 'صديق']],
+                            'ru' => ['sentence' => 'я чувствую счастливый сегодня', 'correct' => ['я', 'чувствую', 'счастливый', 'сегодня'], 'extra' => ['грустный', 'друг']],
                             'fr' => ['sentence' => "Je me sens heureux aujourd'hui", 'correct' => ['je me sens', 'heureux', "aujourd'hui"], 'extra' => ['triste', 'ami']],
                             'es' => ['sentence' => 'Hoy me siento feliz', 'correct' => ['hoy', 'me siento', 'feliz'], 'extra' => ['triste', 'amigo']],
                             'de' => ['sentence' => 'Ich fühle mich heute glücklich', 'correct' => ['ich fühle mich', 'heute', 'glücklich'], 'extra' => ['traurig', 'Freund']],
@@ -246,6 +285,9 @@ class TrUnitConversation04Seeder extends Seeder
                         'words' => ['kız kardeşim', 'bugün', 'memnun'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'My sister is glad today', 'correct' => ['my', 'sister', 'is', 'glad', 'today'], 'extra' => ['I feel']],
+                            'az' => ['sentence' => 'mənim bacı şad bu gün', 'correct' => ['mənim', 'bacı', 'şad', 'bu gün'], 'extra' => ['hiss edirəm']],
+                            'ar' => ['sentence' => 'أخت سعيد اليوم', 'correct' => ['أخت', 'سعيد', 'اليوم'], 'extra' => ['أشعر']],
+                            'ru' => ['sentence' => 'мой сестра рада сегодня', 'correct' => ['мой', 'сестра', 'рада', 'сегодня'], 'extra' => ['я', 'чувствую']],
                             'fr' => ['sentence' => "Ma soeur est contente aujourd'hui", 'correct' => ['ma', 'soeur', 'est', 'contente', "aujourd'hui"], 'extra' => ['je me sens']],
                             'es' => ['sentence' => 'Mi hermana está contenta hoy', 'correct' => ['mi', 'hermana', 'está', 'contenta', 'hoy'], 'extra' => ['me siento']],
                             'de' => ['sentence' => 'Meine Schwester ist heute froh', 'correct' => ['meine', 'Schwester', 'ist', 'heute', 'froh'], 'extra' => ['ich fühle mich']],
@@ -258,6 +300,9 @@ class TrUnitConversation04Seeder extends Seeder
                         'words' => ['arkadaşımla', 'sakin', 'hissediyorum'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'I feel calm with my friend', 'correct' => ['I feel', 'calm', 'with', 'my', 'friend'], 'extra' => ['today']],
+                            'az' => ['sentence' => 'hiss edirəm sakit ilə mənim dost', 'correct' => ['hiss edirəm', 'sakit', 'ilə', 'mənim', 'dost'], 'extra' => ['bu gün']],
+                            'ar' => ['sentence' => 'أشعر هادئ مع صديق', 'correct' => ['أشعر', 'هادئ', 'مع', 'صديق'], 'extra' => ['اليوم']],
+                            'ru' => ['sentence' => 'я чувствую спокойный с мой друг', 'correct' => ['я', 'чувствую', 'спокойный', 'с', 'мой', 'друг'], 'extra' => ['сегодня']],
                             'fr' => ['sentence' => 'Je me sens calme avec mon ami', 'correct' => ['je me sens', 'calme', 'avec', 'mon', 'ami'], 'extra' => ["aujourd'hui"]],
                             'es' => ['sentence' => 'Me siento tranquilo con mi amigo', 'correct' => ['me siento', 'tranquilo', 'con', 'mi', 'amigo'], 'extra' => ['hoy']],
                             'de' => ['sentence' => 'Ich fühle mich ruhig mit meinem Freund', 'correct' => ['ich fühle mich', 'ruhig', 'mit', 'meinem', 'Freund'], 'extra' => ['heute']],

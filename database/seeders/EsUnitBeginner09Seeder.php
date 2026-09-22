@@ -80,6 +80,9 @@ class EsUnitBeginner09Seeder extends Seeder
                                     'today',
                                 ],
                             ],
+                            'az' => ['sentence' => 'soyuq yağış', 'correct' => ['soyuq', 'yağış'], 'extra' => ['qar', 'bu gün']],
+                            'ar' => ['sentence' => 'بارد مطر', 'correct' => ['بارد', 'مطر'], 'extra' => ['ثلج', 'اليوم']],
+                            'ru' => ['sentence' => 'холодный дождь', 'correct' => ['холодный', 'дождь'], 'extra' => ['снег', 'сегодня']],
                             'de' => [
                                 'sentence' => 'Kalter Regen',
                                 'correct' => [
@@ -122,6 +125,7 @@ class EsUnitBeginner09Seeder extends Seeder
                                     '눈',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'soğuk yağmur', 'correct' => ['soğuk', 'yağmur'], 'extra' => ['kar', 'bugün']],
                         ],
                     ],
                     'b' => [
@@ -144,6 +148,9 @@ class EsUnitBeginner09Seeder extends Seeder
                                     'cold',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qar bu gün', 'correct' => ['qar', 'bu gün'], 'extra' => ['yağış', 'soyuq']],
+                            'ar' => ['sentence' => 'ثلج اليوم', 'correct' => ['ثلج', 'اليوم'], 'extra' => ['مطر', 'بارد']],
+                            'ru' => ['sentence' => 'снег сегодня', 'correct' => ['снег', 'сегодня'], 'extra' => ['дождь', 'холодный']],
                             'de' => [
                                 'sentence' => 'Der Schnee heute',
                                 'correct' => [
@@ -189,6 +196,7 @@ class EsUnitBeginner09Seeder extends Seeder
                                     '비',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bugün kar', 'correct' => ['bugün', 'kar'], 'extra' => ['yağmur', 'soğuk']],
                         ],
                     ],
                     'c' => [
@@ -210,6 +218,9 @@ class EsUnitBeginner09Seeder extends Seeder
                                     'today',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yağış və qar', 'correct' => ['yağış', 'və', 'qar'], 'extra' => ['bu gün']],
+                            'ar' => ['sentence' => 'مطر و ثلج', 'correct' => ['مطر', 'و', 'ثلج'], 'extra' => ['اليوم']],
+                            'ru' => ['sentence' => 'дождь и снег', 'correct' => ['дождь', 'и', 'снег'], 'extra' => ['сегодня']],
                             'de' => [
                                 'sentence' => 'Regen und Schnee',
                                 'correct' => [
@@ -253,6 +264,7 @@ class EsUnitBeginner09Seeder extends Seeder
                                     '오늘',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yağmur ve kar', 'correct' => ['yağmur', 've', 'kar'], 'extra' => ['bugün']],
                         ],
                     ],
                 ],
@@ -297,6 +309,9 @@ class EsUnitBeginner09Seeder extends Seeder
                                     'wind',
                                 ],
                             ],
+                            'az' => ['sentence' => 'isti günəş', 'correct' => ['isti', 'günəş'], 'extra' => ['göy', 'külək']],
+                            'ar' => ['sentence' => 'دافئ شمس', 'correct' => ['دافئ', 'شمس'], 'extra' => ['سماء', 'ريح']],
+                            'ru' => ['sentence' => 'тёплый солнце', 'correct' => ['тёплый', 'солнце'], 'extra' => ['небо', 'ветер']],
                             'de' => [
                                 'sentence' => 'Die warme Sonne',
                                 'correct' => [
@@ -341,6 +356,7 @@ class EsUnitBeginner09Seeder extends Seeder
                                     '하늘',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sıcak güneş', 'correct' => ['sıcak', 'güneş'], 'extra' => ['gökyüzü', 'rüzgâr']],
                         ],
                     ],
                     'b' => [
@@ -366,6 +382,9 @@ class EsUnitBeginner09Seeder extends Seeder
                                     'sun',
                                 ],
                             ],
+                            'az' => ['sentence' => 'külək içində göy', 'correct' => ['külək', 'içində', 'göy'], 'extra' => ['günəş']],
+                            'ar' => ['sentence' => 'ريح في سماء', 'correct' => ['ريح', 'في', 'سماء'], 'extra' => ['شمس']],
+                            'ru' => ['sentence' => 'ветер в небо', 'correct' => ['ветер', 'в', 'небо'], 'extra' => ['солнце']],
                             'de' => [
                                 'sentence' => 'Der Wind im Himmel',
                                 'correct' => [
@@ -413,6 +432,7 @@ class EsUnitBeginner09Seeder extends Seeder
                                     '해',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'gökyüzünde rüzgâr', 'correct' => ['gökyüzünde', 'rüzgâr'], 'extra' => ['güneş']],
                         ],
                     ],
                     'c' => [
@@ -438,6 +458,9 @@ class EsUnitBeginner09Seeder extends Seeder
                                     'sky',
                                 ],
                             ],
+                            'az' => ['sentence' => 'günəş və külək', 'correct' => ['günəş', 'və', 'külək'], 'extra' => ['göy']],
+                            'ar' => ['sentence' => 'شمس و ريح', 'correct' => ['شمس', 'و', 'ريح'], 'extra' => ['سماء']],
+                            'ru' => ['sentence' => 'солнце и ветер', 'correct' => ['солнце', 'и', 'ветер'], 'extra' => ['небо']],
                             'de' => [
                                 'sentence' => 'Die Sonne und der Wind',
                                 'correct' => [
@@ -485,6 +508,7 @@ class EsUnitBeginner09Seeder extends Seeder
                                     '하늘',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'güneş ve rüzgâr', 'correct' => ['güneş', 've', 'rüzgâr'], 'extra' => ['gökyüzü']],
                         ],
                     ],
                 ],
@@ -532,6 +556,9 @@ class EsUnitBeginner09Seeder extends Seeder
                                     'warm',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yaz bir mövsüm', 'correct' => ['yaz', 'bir', 'mövsüm'], 'extra' => ['yay', 'isti']],
+                            'ar' => ['sentence' => 'ربيع موسم', 'correct' => ['ربيع', 'موسم'], 'extra' => ['صيف', 'دافئ']],
+                            'ru' => ['sentence' => 'весна сезон', 'correct' => ['весна', 'сезон'], 'extra' => ['лето', 'тёплый']],
                             'de' => [
                                 'sentence' => 'Frühling ist eine Jahreszeit',
                                 'correct' => [
@@ -580,6 +607,7 @@ class EsUnitBeginner09Seeder extends Seeder
                                     '여름',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ilkbahar bir mevsim', 'correct' => ['ilkbahar', 'bir', 'mevsim'], 'extra' => ['yaz', 'sıcak']],
                         ],
                     ],
                     'b' => [
@@ -603,6 +631,9 @@ class EsUnitBeginner09Seeder extends Seeder
                                     'station',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yay isti', 'correct' => ['yay', 'isti'], 'extra' => ['yaz', 'stansiya']],
+                            'ar' => ['sentence' => 'صيف دافئ', 'correct' => ['صيف', 'دافئ'], 'extra' => ['ربيع', 'محطة']],
+                            'ru' => ['sentence' => 'лето тёплый', 'correct' => ['лето', 'тёплый'], 'extra' => ['весна', 'станция']],
                             'de' => [
                                 'sentence' => 'Sommer ist warm',
                                 'correct' => [
@@ -649,6 +680,7 @@ class EsUnitBeginner09Seeder extends Seeder
                                     '봄',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yaz sıcak', 'correct' => ['yaz', 'sıcak'], 'extra' => ['ilkbahar', 'istasyon']],
                         ],
                     ],
                     'c' => [
@@ -670,6 +702,9 @@ class EsUnitBeginner09Seeder extends Seeder
                                     'station',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yaz və yay', 'correct' => ['yaz', 'və', 'yay'], 'extra' => ['stansiya']],
+                            'ar' => ['sentence' => 'ربيع و صيف', 'correct' => ['ربيع', 'و', 'صيف'], 'extra' => ['محطة']],
+                            'ru' => ['sentence' => 'весна и лето', 'correct' => ['весна', 'и', 'лето'], 'extra' => ['станция']],
                             'de' => [
                                 'sentence' => 'Frühling und Sommer',
                                 'correct' => [
@@ -713,6 +748,7 @@ class EsUnitBeginner09Seeder extends Seeder
                                     '계절',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ilkbahar ve yaz', 'correct' => ['ilkbahar', 've', 'yaz'], 'extra' => ['istasyon']],
                         ],
                     ],
                 ],
@@ -760,6 +796,9 @@ class EsUnitBeginner09Seeder extends Seeder
                                     'cold',
                                 ],
                             ],
+                            'az' => ['sentence' => 'payız bir mövsüm', 'correct' => ['payız', 'bir', 'mövsüm'], 'extra' => ['qış', 'soyuq']],
+                            'ar' => ['sentence' => 'خريف موسم', 'correct' => ['خريف', 'موسم'], 'extra' => ['شتاء', 'بارد']],
+                            'ru' => ['sentence' => 'осень сезон', 'correct' => ['осень', 'сезон'], 'extra' => ['зима', 'холодный']],
                             'de' => [
                                 'sentence' => 'Herbst ist eine Jahreszeit',
                                 'correct' => [
@@ -808,6 +847,7 @@ class EsUnitBeginner09Seeder extends Seeder
                                     '겨울',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sonbahar bir mevsim', 'correct' => ['sonbahar', 'bir', 'mevsim'], 'extra' => ['kış', 'soğuk']],
                         ],
                     ],
                     'b' => [
@@ -831,6 +871,9 @@ class EsUnitBeginner09Seeder extends Seeder
                                     'station',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qış soyuq', 'correct' => ['qış', 'soyuq'], 'extra' => ['payız', 'stansiya']],
+                            'ar' => ['sentence' => 'شتاء بارد', 'correct' => ['شتاء', 'بارد'], 'extra' => ['خريف', 'محطة']],
+                            'ru' => ['sentence' => 'зима холодный', 'correct' => ['зима', 'холодный'], 'extra' => ['осень', 'станция']],
                             'de' => [
                                 'sentence' => 'Winter ist kalt',
                                 'correct' => [
@@ -877,6 +920,7 @@ class EsUnitBeginner09Seeder extends Seeder
                                     '가을',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kış soğuk', 'correct' => ['kış', 'soğuk'], 'extra' => ['sonbahar', 'istasyon']],
                         ],
                     ],
                     'c' => [
@@ -898,6 +942,9 @@ class EsUnitBeginner09Seeder extends Seeder
                                     'station',
                                 ],
                             ],
+                            'az' => ['sentence' => 'payız və qış', 'correct' => ['payız', 'və', 'qış'], 'extra' => ['stansiya']],
+                            'ar' => ['sentence' => 'خريف و شتاء', 'correct' => ['خريف', 'و', 'شتاء'], 'extra' => ['محطة']],
+                            'ru' => ['sentence' => 'осень и зима', 'correct' => ['осень', 'и', 'зима'], 'extra' => ['станция']],
                             'de' => [
                                 'sentence' => 'Herbst und Winter',
                                 'correct' => [
@@ -941,6 +988,7 @@ class EsUnitBeginner09Seeder extends Seeder
                                     '계절',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sonbahar ve kış', 'correct' => ['sonbahar', 've', 'kış'], 'extra' => ['istasyon']],
                         ],
                     ],
                 ],
@@ -985,6 +1033,9 @@ class EsUnitBeginner09Seeder extends Seeder
                                     'sun',
                                 ],
                             ],
+                            'az' => ['sentence' => 'hava bu gün', 'correct' => ['hava', 'bu gün'], 'extra' => ['yağış', 'günəş']],
+                            'ar' => ['sentence' => 'طقس اليوم', 'correct' => ['طقس', 'اليوم'], 'extra' => ['مطر', 'شمس']],
+                            'ru' => ['sentence' => 'погода сегодня', 'correct' => ['погода', 'сегодня'], 'extra' => ['дождь', 'солнце']],
                             'de' => [
                                 'sentence' => 'Das Wetter heute',
                                 'correct' => [
@@ -1030,6 +1081,7 @@ class EsUnitBeginner09Seeder extends Seeder
                                     '비',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bugün hava', 'correct' => ['bugün', 'hava'], 'extra' => ['yağmur', 'güneş']],
                         ],
                     ],
                     'b' => [
@@ -1050,6 +1102,9 @@ class EsUnitBeginner09Seeder extends Seeder
                                     'weather',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yağış bu gün', 'correct' => ['yağış', 'bu gün'], 'extra' => ['günəş', 'hava']],
+                            'ar' => ['sentence' => 'مطر اليوم', 'correct' => ['مطر', 'اليوم'], 'extra' => ['شمس', 'طقس']],
+                            'ru' => ['sentence' => 'дождь сегодня', 'correct' => ['дождь', 'сегодня'], 'extra' => ['солнце', 'погода']],
                             'de' => [
                                 'sentence' => 'Regen heute',
                                 'correct' => [
@@ -1093,6 +1148,7 @@ class EsUnitBeginner09Seeder extends Seeder
                                     '해',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bugün yağmur', 'correct' => ['bugün', 'yağmur'], 'extra' => ['güneş', 'hava']],
                         ],
                     ],
                     'c' => [
@@ -1114,6 +1170,9 @@ class EsUnitBeginner09Seeder extends Seeder
                                     'weather',
                                 ],
                             ],
+                            'az' => ['sentence' => 'günəş və ya yağış', 'correct' => ['günəş', 'və ya', 'yağış'], 'extra' => ['hava']],
+                            'ar' => ['sentence' => 'شمس أو مطر', 'correct' => ['شمس', 'أو', 'مطر'], 'extra' => ['طقس']],
+                            'ru' => ['sentence' => 'солнце или дождь', 'correct' => ['солнце', 'или', 'дождь'], 'extra' => ['погода']],
                             'de' => [
                                 'sentence' => 'Sonne oder Regen',
                                 'correct' => [
@@ -1158,6 +1217,7 @@ class EsUnitBeginner09Seeder extends Seeder
                                     '날씨',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'güneş veya yağmur', 'correct' => ['güneş', 'veya', 'yağmur'], 'extra' => ['hava']],
                         ],
                     ],
                 ],

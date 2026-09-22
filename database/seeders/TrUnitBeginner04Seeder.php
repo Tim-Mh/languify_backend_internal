@@ -68,6 +68,9 @@ class TrUnitBeginner04Seeder extends Seeder
                         'words' => ['bir', 'elma', 'yemek'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'To eat an apple', 'correct' => ['to eat', 'an', 'apple'], 'extra' => ['bread']],
+                            'az' => ['sentence' => 'yemək yemək bir alma', 'correct' => ['yemək yemək', 'bir', 'alma'], 'extra' => ['çörək']],
+                            'ar' => ['sentence' => 'الأكل تفاحة', 'correct' => ['الأكل', 'تفاحة'], 'extra' => ['خبز']],
+                            'ru' => ['sentence' => 'кушать яблоко', 'correct' => ['кушать', 'яблоко'], 'extra' => ['хлеб']],
                             'fr' => ['sentence' => 'Manger une pomme', 'correct' => ['manger', 'une', 'pomme'], 'extra' => ['pain']],
                             'es' => ['sentence' => 'Comer una manzana', 'correct' => ['comer', 'una', 'manzana'], 'extra' => ['pan']],
                             'de' => ['sentence' => 'Einen Apfel essen', 'correct' => ['einen', 'Apfel', 'essen'], 'extra' => ['Brot']],
@@ -80,6 +83,9 @@ class TrUnitBeginner04Seeder extends Seeder
                         'words' => ['elmayı', 'yemek'], 'blank' => 0,
                         'means' => [
                             'en' => ['sentence' => 'To eat the apple', 'correct' => ['to eat', 'the apple'], 'extra' => ['bread']],
+                            'az' => ['sentence' => 'yemək yemək alma', 'correct' => ['yemək yemək', 'alma'], 'extra' => ['çörək']],
+                            'ar' => ['sentence' => 'الأكل تفاحة', 'correct' => ['الأكل', 'تفاحة'], 'extra' => ['خبز']],
+                            'ru' => ['sentence' => 'кушать яблоко', 'correct' => ['кушать', 'яблоко'], 'extra' => ['хлеб']],
                             'fr' => ['sentence' => 'Manger la pomme', 'correct' => ['manger', 'la pomme'], 'extra' => ['pain']],
                             'es' => ['sentence' => 'Comer la manzana', 'correct' => ['comer', 'la manzana'], 'extra' => ['pan']],
                             'de' => ['sentence' => 'Den Apfel essen', 'correct' => ['den Apfel', 'essen'], 'extra' => ['Brot']],
@@ -91,6 +97,9 @@ class TrUnitBeginner04Seeder extends Seeder
                         'words' => ['bir', 'elma', 've', 'bir', 'ekmek', 'yemek'], 'blank' => 4,
                         'means' => [
                             'en' => ['sentence' => 'To eat an apple and a bread', 'correct' => ['to eat', 'an', 'apple', 'and', 'a', 'bread'], 'extra' => ['fish']],
+                            'az' => ['sentence' => 'yemək yemək bir alma və bir çörək', 'correct' => ['yemək yemək', 'bir', 'alma', 'və', 'bir', 'çörək'], 'extra' => ['balıq']],
+                            'ar' => ['sentence' => 'الأكل تفاحة و خبز', 'correct' => ['الأكل', 'تفاحة', 'و', 'خبز'], 'extra' => ['سمك']],
+                            'ru' => ['sentence' => 'кушать яблоко и хлеб', 'correct' => ['кушать', 'яблоко', 'и', 'хлеб'], 'extra' => ['рыба']],
                             'fr' => ['sentence' => 'Manger une pomme et un pain', 'correct' => ['manger', 'une', 'pomme', 'et', 'un', 'pain'], 'extra' => ['poisson']],
                             'es' => ['sentence' => 'Comer una manzana y un pan', 'correct' => ['comer', 'una', 'manzana', 'y', 'un', 'pan'], 'extra' => ['pescado']],
                             'de' => ['sentence' => 'Einen Apfel und ein Brot essen', 'correct' => ['einen', 'Apfel', 'und', 'ein', 'Brot', 'essen'], 'extra' => ['Fisch']],
@@ -109,6 +118,9 @@ class TrUnitBeginner04Seeder extends Seeder
                         'words' => ['bir', 'balık', 'yemek'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'To eat a fish', 'correct' => ['to eat', 'a', 'fish'], 'extra' => ['meat']],
+                            'az' => ['sentence' => 'yemək yemək bir balıq', 'correct' => ['yemək yemək', 'bir', 'balıq'], 'extra' => ['ət']],
+                            'ar' => ['sentence' => 'الأكل سمك', 'correct' => ['الأكل', 'سمك'], 'extra' => ['لحم']],
+                            'ru' => ['sentence' => 'кушать рыба', 'correct' => ['кушать', 'рыба'], 'extra' => ['мясо']],
                             'fr' => ['sentence' => 'Manger un poisson', 'correct' => ['manger', 'un', 'poisson'], 'extra' => ['viande']],
                             'es' => ['sentence' => 'Comer un pescado', 'correct' => ['comer', 'un', 'pescado'], 'extra' => ['carne']],
                             'de' => ['sentence' => 'Einen Fisch essen', 'correct' => ['einen', 'Fisch', 'essen'], 'extra' => ['Fleisch']],
@@ -121,6 +133,9 @@ class TrUnitBeginner04Seeder extends Seeder
                         'words' => ['balığı', 'yemek'], 'blank' => 0,
                         'means' => [
                             'en' => ['sentence' => 'To eat the fish', 'correct' => ['to eat', 'the fish'], 'extra' => ['meat']],
+                            'az' => ['sentence' => 'yemək yemək balığı', 'correct' => ['yemək yemək', 'balığı'], 'extra' => ['ət']],
+                            'ar' => ['sentence' => 'الأكل السمك', 'correct' => ['الأكل', 'السمك'], 'extra' => ['لحم']],
+                            'ru' => ['sentence' => 'кушать рыбу', 'correct' => ['кушать', 'рыбу'], 'extra' => ['мясо']],
                             'fr' => ['sentence' => 'Manger le poisson', 'correct' => ['manger', 'le poisson'], 'extra' => ['viande']],
                             'es' => ['sentence' => 'Comer el pescado', 'correct' => ['comer', 'el pescado'], 'extra' => ['carne']],
                             'de' => ['sentence' => 'Den Fisch essen', 'correct' => ['den Fisch', 'essen'], 'extra' => ['Fleisch']],
@@ -132,7 +147,10 @@ class TrUnitBeginner04Seeder extends Seeder
                         'words' => ['balık', 've', 'et', 'yemek'], 'blank' => 2,
                         'means' => [
                             'en' => ['sentence' => 'To eat fish and meat', 'correct' => ['to eat', 'fish', 'and', 'meat'], 'extra' => ['rice']],
-                            'fr' => ['sentence' => 'Manger du poisson et de la viande', 'correct' => ['manger', 'poisson', 'et', 'viande'], 'extra' => ['riz']],
+                            'az' => ['sentence' => 'yemək yemək balıq və ət', 'correct' => ['yemək yemək', 'balıq', 'və', 'ət'], 'extra' => ['düyü']],
+                            'ar' => ['sentence' => 'الأكل سمك و لحم', 'correct' => ['الأكل', 'سمك', 'و', 'لحم'], 'extra' => ['أرز']],
+                            'ru' => ['sentence' => 'кушать рыба и мясо', 'correct' => ['кушать', 'рыба', 'и', 'мясо'], 'extra' => ['рис']],
+                            'fr' => ['sentence' => 'Manger du poisson et de la viande', 'correct' => ['manger du', 'poisson', 'et de la', 'viande'], 'extra' => ['riz']],
                             'es' => ['sentence' => 'Comer pescado y carne', 'correct' => ['comer', 'pescado', 'y', 'carne'], 'extra' => ['arroz']],
                             'de' => ['sentence' => 'Fisch und Fleisch essen', 'correct' => ['Fisch', 'und', 'Fleisch', 'essen'], 'extra' => ['Reis']],
                             'ja' => ['sentence' => '魚と肉を食べる', 'correct' => ['魚', 'と', '肉', 'を', '食べる'], 'extra' => ['米']],
@@ -150,6 +168,9 @@ class TrUnitBeginner04Seeder extends Seeder
                         'words' => ['bir', 'çorba', 'yemek'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'To eat a soup', 'correct' => ['to eat', 'a', 'soup'], 'extra' => ['salad']],
+                            'az' => ['sentence' => 'yemək yemək bir şorba', 'correct' => ['yemək yemək', 'bir', 'şorba'], 'extra' => ['salat']],
+                            'ar' => ['sentence' => 'الأكل حساء', 'correct' => ['الأكل', 'حساء'], 'extra' => ['سلطة']],
+                            'ru' => ['sentence' => 'кушать суп', 'correct' => ['кушать', 'суп'], 'extra' => ['салат']],
                             'fr' => ['sentence' => 'Manger une soupe', 'correct' => ['manger', 'une', 'soupe'], 'extra' => ['salade']],
                             'es' => ['sentence' => 'Comer una sopa', 'correct' => ['comer', 'una', 'sopa'], 'extra' => ['ensalada']],
                             'de' => ['sentence' => 'Eine Suppe essen', 'correct' => ['eine', 'Suppe', 'essen'], 'extra' => ['Salat']],
@@ -161,6 +182,9 @@ class TrUnitBeginner04Seeder extends Seeder
                         'words' => ['çorbayı', 'yemek'], 'blank' => 0,
                         'means' => [
                             'en' => ['sentence' => 'To eat the soup', 'correct' => ['to eat', 'the soup'], 'extra' => ['salad']],
+                            'az' => ['sentence' => 'yemək yemək şorba', 'correct' => ['yemək yemək', 'şorba'], 'extra' => ['salat']],
+                            'ar' => ['sentence' => 'الأكل حساء', 'correct' => ['الأكل', 'حساء'], 'extra' => ['سلطة']],
+                            'ru' => ['sentence' => 'кушать суп', 'correct' => ['кушать', 'суп'], 'extra' => ['салат']],
                             'fr' => ['sentence' => 'Manger la soupe', 'correct' => ['manger', 'la soupe'], 'extra' => ['salade']],
                             'es' => ['sentence' => 'Comer la sopa', 'correct' => ['comer', 'la sopa'], 'extra' => ['ensalada']],
                             'de' => ['sentence' => 'Die Suppe essen', 'correct' => ['die Suppe', 'essen'], 'extra' => ['Salat']],
@@ -172,6 +196,9 @@ class TrUnitBeginner04Seeder extends Seeder
                         'words' => ['bir', 'çorba', 've', 'bir', 'salata'], 'blank' => 2,
                         'means' => [
                             'en' => ['sentence' => 'A soup and a salad', 'correct' => ['a', 'soup', 'and', 'a', 'salad'], 'extra' => ['rice']],
+                            'az' => ['sentence' => 'bir şorba və bir salat', 'correct' => ['bir', 'şorba', 'və', 'bir', 'salat'], 'extra' => ['düyü']],
+                            'ar' => ['sentence' => 'حساء و سلطة', 'correct' => ['حساء', 'و', 'سلطة'], 'extra' => ['أرز']],
+                            'ru' => ['sentence' => 'суп и салат', 'correct' => ['суп', 'и', 'салат'], 'extra' => ['рис']],
                             'fr' => ['sentence' => 'Une soupe et une salade', 'correct' => ['une', 'soupe', 'et', 'une', 'salade'], 'extra' => ['riz']],
                             'es' => ['sentence' => 'Una sopa y una ensalada', 'correct' => ['una', 'sopa', 'y', 'una', 'ensalada'], 'extra' => ['arroz']],
                             'de' => ['sentence' => 'Eine Suppe und ein Salat', 'correct' => ['eine', 'Suppe', 'und', 'ein', 'Salat'], 'extra' => ['Reis']],
@@ -190,6 +217,9 @@ class TrUnitBeginner04Seeder extends Seeder
                         'words' => ['bir', 'su', 'içmek'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'To drink a water', 'correct' => ['to drink', 'a', 'water'], 'extra' => ['tea']],
+                            'az' => ['sentence' => 'içmək bir su', 'correct' => ['içmək', 'bir', 'su'], 'extra' => ['çay']],
+                            'ar' => ['sentence' => 'الشرب ماء', 'correct' => ['الشرب', 'ماء'], 'extra' => ['شاي']],
+                            'ru' => ['sentence' => 'пить вода', 'correct' => ['пить', 'вода'], 'extra' => ['чай']],
                             'fr' => ['sentence' => 'Boire une eau', 'correct' => ['boire', 'une', 'eau'], 'extra' => ['thé']],
                             'es' => ['sentence' => 'Beber un agua', 'correct' => ['beber', 'un', 'agua'], 'extra' => ['té']],
                             'de' => ['sentence' => 'Ein Wasser trinken', 'correct' => ['ein', 'Wasser', 'trinken'], 'extra' => ['Tee']],
@@ -202,6 +232,9 @@ class TrUnitBeginner04Seeder extends Seeder
                         'words' => ['suyu', 'içmek'], 'blank' => 0,
                         'means' => [
                             'en' => ['sentence' => 'To drink the water', 'correct' => ['to drink', 'the water'], 'extra' => ['tea']],
+                            'az' => ['sentence' => 'içmək suyu', 'correct' => ['içmək', 'suyu'], 'extra' => ['çay']],
+                            'ar' => ['sentence' => 'الشرب الماء', 'correct' => ['الشرب', 'الماء'], 'extra' => ['شاي']],
+                            'ru' => ['sentence' => 'пить воду', 'correct' => ['пить', 'воду'], 'extra' => ['чай']],
                             'fr' => ['sentence' => "Boire l'eau", 'correct' => ['boire', "l'eau"], 'extra' => ['thé']],
                             'es' => ['sentence' => 'Beber el agua', 'correct' => ['beber', 'el agua'], 'extra' => ['té']],
                             'de' => ['sentence' => 'Das Wasser trinken', 'correct' => ['das Wasser', 'trinken'], 'extra' => ['Tee']],
@@ -213,6 +246,9 @@ class TrUnitBeginner04Seeder extends Seeder
                         'words' => ['bir', 'çay', 've', 'bir', 'su', 'içmek'], 'blank' => 4,
                         'means' => [
                             'en' => ['sentence' => 'To drink a tea and a water', 'correct' => ['to drink', 'a', 'tea', 'and', 'a', 'water'], 'extra' => ['milk']],
+                            'az' => ['sentence' => 'içmək bir çay və bir su', 'correct' => ['içmək', 'bir', 'çay', 'və', 'bir', 'su'], 'extra' => ['süd']],
+                            'ar' => ['sentence' => 'الشرب شاي و ماء', 'correct' => ['الشرب', 'شاي', 'و', 'ماء'], 'extra' => ['حليب']],
+                            'ru' => ['sentence' => 'пить чай и вода', 'correct' => ['пить', 'чай', 'и', 'вода'], 'extra' => ['молоко']],
                             'fr' => ['sentence' => 'Boire un thé et une eau', 'correct' => ['boire', 'un', 'thé', 'et', 'une', 'eau'], 'extra' => ['lait']],
                             'es' => ['sentence' => 'Beber un té y un agua', 'correct' => ['beber', 'un', 'té', 'y', 'un', 'agua'], 'extra' => ['leche']],
                             'de' => ['sentence' => 'Einen Tee und ein Wasser trinken', 'correct' => ['einen', 'Tee', 'und', 'ein', 'Wasser', 'trinken'], 'extra' => ['Milch']],
@@ -231,7 +267,10 @@ class TrUnitBeginner04Seeder extends Seeder
                         'words' => ['pirinç', 've', 'et', 'yemek'], 'blank' => 2,
                         'means' => [
                             'en' => ['sentence' => 'To eat rice and meat', 'correct' => ['to eat', 'rice', 'and', 'meat'], 'extra' => ['fish']],
-                            'fr' => ['sentence' => 'Manger du riz et de la viande', 'correct' => ['manger', 'riz', 'et', 'viande'], 'extra' => ['poisson']],
+                            'az' => ['sentence' => 'yemək yemək düyü və ət', 'correct' => ['yemək yemək', 'düyü', 'və', 'ət'], 'extra' => ['balıq']],
+                            'ar' => ['sentence' => 'الأكل أرز و لحم', 'correct' => ['الأكل', 'أرز', 'و', 'لحم'], 'extra' => ['سمك']],
+                            'ru' => ['sentence' => 'кушать рис и мясо', 'correct' => ['кушать', 'рис', 'и', 'мясо'], 'extra' => ['рыба']],
+                            'fr' => ['sentence' => 'Manger du riz et de la viande', 'correct' => ['manger du', 'riz', 'et de la', 'viande'], 'extra' => ['poisson']],
                             'es' => ['sentence' => 'Comer arroz y carne', 'correct' => ['comer', 'arroz', 'y', 'carne'], 'extra' => ['pescado']],
                             'de' => ['sentence' => 'Reis und Fleisch essen', 'correct' => ['Reis', 'und', 'Fleisch', 'essen'], 'extra' => ['Fisch']],
                             'ja' => ['sentence' => '米と肉を食べる', 'correct' => ['米', 'と', '肉', 'を', '食べる'], 'extra' => ['魚']],
@@ -242,6 +281,9 @@ class TrUnitBeginner04Seeder extends Seeder
                         'words' => ['bir', 'salata', 'istiyorum'], 'blank' => 1,
                         'means' => [
                             'en' => ['sentence' => 'I would like a salad', 'correct' => ['I would like', 'a', 'salad'], 'extra' => ['soup']],
+                            'az' => ['sentence' => 'istəyirəm bir salat', 'correct' => ['istəyirəm', 'bir', 'salat'], 'extra' => ['şorba']],
+                            'ar' => ['sentence' => 'أريد سلطة', 'correct' => ['أريد', 'سلطة'], 'extra' => ['حساء']],
+                            'ru' => ['sentence' => 'я хочу салат', 'correct' => ['я', 'хочу', 'салат'], 'extra' => ['суп']],
                             'fr' => ['sentence' => 'Je voudrais une salade', 'correct' => ['je voudrais', 'une', 'salade'], 'extra' => ['soupe']],
                             'es' => ['sentence' => 'Quisiera una ensalada', 'correct' => ['quisiera', 'una', 'ensalada'], 'extra' => ['sopa']],
                             'de' => ['sentence' => 'Ich möchte einen Salat', 'correct' => ['ich möchte', 'einen', 'Salat'], 'extra' => ['Suppe']],
@@ -253,6 +295,9 @@ class TrUnitBeginner04Seeder extends Seeder
                         'words' => ['bir', 'çorba', 'istiyorum', 've', 'su', 'içmek'], 'blank' => 3,
                         'means' => [
                             'en' => ['sentence' => 'I would like a soup and to drink water', 'correct' => ['I would like', 'a', 'soup', 'and', 'to drink', 'water'], 'extra' => ['meat']],
+                            'az' => ['sentence' => 'istəyirəm bir şorba və içmək su', 'correct' => ['istəyirəm', 'bir', 'şorba', 'və', 'içmək', 'su'], 'extra' => ['ət']],
+                            'ar' => ['sentence' => 'أريد حساء و الشرب ماء', 'correct' => ['أريد', 'حساء', 'و', 'الشرب', 'ماء'], 'extra' => ['لحم']],
+                            'ru' => ['sentence' => 'я хочу суп и пить вода', 'correct' => ['я', 'хочу', 'суп', 'и', 'пить', 'вода'], 'extra' => ['мясо']],
                             'fr' => ['sentence' => "Je voudrais une soupe et boire de l'eau", 'correct' => ['je voudrais', 'une', 'soupe', 'et', 'boire', 'eau'], 'extra' => ['viande']],
                             'es' => ['sentence' => 'Quisiera una sopa y beber agua', 'correct' => ['quisiera', 'una', 'sopa', 'y', 'beber', 'agua'], 'extra' => ['carne']],
                             'de' => ['sentence' => 'Ich möchte eine Suppe und Wasser trinken', 'correct' => ['ich möchte', 'eine', 'Suppe', 'und', 'Wasser', 'trinken'], 'extra' => ['Fleisch']],

@@ -1,0 +1,299 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Enums\ChapterKey;
+use App\Models\Chapter;
+use App\Models\Language;
+use Database\Seeders\Support\TurkishLessonBuilder;
+use Illuminate\Database\Seeder;
+
+class TrUnitSupermarket10Seeder extends Seeder
+{
+    /** Pictures this unit can offer as wrong answers. */
+    private const PICTURES = [
+        'Market' => 'shop',
+        'Elma' => 'apple',
+        'Süt' => 'milk',
+        'Ekmek' => 'bread',
+        'Kasa' => 'checkout',
+    ];
+
+    /**
+     * Turkish Supermarket Unit 10 - the chapter, and the course, in one place.
+     *
+     * There is no new grammar here on purpose. This unit walks a complete trip:
+     * going to the shop, finding things, weighing them, checking a price, paying
+     * and leaving, using only what the previous nine units taught.
+     *
+     * Every suffix the chapter introduced appears at least once: dative for going
+     * (`markete`), locative for being there (`reyonda`), ablative for comparing
+     * (`sudan`), plural and its cancellation by a number, and the measure-word frame
+     * with nothing between it and its noun. If a learner can build these fifteen
+     * sentences, the chapter has done its job.
+     */
+
+    public function run(): void
+    {
+        $language = Language::where('code', 'tr')->firstOrFail();
+
+        $chapter = Chapter::where('language_id', $language->id)
+            ->where('chapter_key', ChapterKey::Supermarket)
+            ->firstOrFail();
+
+        $builder = new TurkishLessonBuilder(self::PICTURES);
+
+        $builder->seedUnit($chapter->id, 10, 'Unit 10: A Whole Shopping Trip', $this->lessonsData($builder));
+    }
+
+    private function lessonsData(TurkishLessonBuilder $builder): array
+    {
+        return [
+            $builder->lesson('Lesson 1: Going to the Shop', 1,
+                pictures: [['tr' => 'Market', 'img' => 'shop'], ['tr' => 'Elma', 'img' => 'apple']],
+                plain: [['tr' => 'Market'], ['tr' => 'Liste']],
+                phrases: [
+                    'a' => [
+                        'words' => ['markete', 'gidiyorum'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'I am going to the supermarket', 'correct' => ['I am going', 'to the supermarket'], 'extra' => ['list']],
+                            'az' => ['sentence' => 'gedirəm supermarketə', 'correct' => ['gedirəm', 'supermarketə'], 'extra' => ['siyahı']],
+                            'ar' => ['sentence' => 'أذهب إلى السوبرماركت', 'correct' => ['أذهب', 'إلى', 'السوبرماركت'], 'extra' => ['قائمة']],
+                            'ru' => ['sentence' => 'я иду в супермаркет', 'correct' => ['я', 'иду', 'в', 'супермаркет'], 'extra' => ['список']],
+                            'fr' => ['sentence' => 'Je vais au supermarché', 'correct' => ['je vais', 'au supermarché'], 'extra' => ['liste']],
+                            'es' => ['sentence' => 'Voy al supermercado', 'correct' => ['voy', 'al supermercado'], 'extra' => ['lista']],
+                            'de' => ['sentence' => 'Ich gehe zum Supermarkt', 'correct' => ['ich gehe', 'zum Supermarkt'], 'extra' => ['Liste']],
+                            'ja' => ['sentence' => 'スーパーへ行きます', 'correct' => ['スーパーへ', '行きます'], 'extra' => ['リスト']],
+                            'ko' => ['sentence' => '슈퍼마켓에 가요', 'correct' => ['슈퍼마켓에', '가요'], 'extra' => ['목록']],
+                        ],
+                    ],
+                    'b' => [
+                        'words' => ['listede', 'elma', 'var'], 'blank' => 2,
+                        'means' => [
+                            'en' => ['sentence' => 'There is an apple on the list', 'correct' => ['there is', 'an', 'apple', 'on the list'], 'extra' => ['milk']],
+                            'az' => ['sentence' => 'var bir alma siyahıda', 'correct' => ['var', 'bir', 'alma', 'siyahıda'], 'extra' => ['süd']],
+                            'ar' => ['sentence' => 'يوجد تفاحة في القائمة', 'correct' => ['يوجد', 'تفاحة', 'في القائمة'], 'extra' => ['حليب']],
+                            'ru' => ['sentence' => 'есть яблоко в списке', 'correct' => ['есть', 'яблоко', 'в', 'списке'], 'extra' => ['молоко']],
+                            'fr' => ['sentence' => 'Il y a une pomme sur la liste', 'correct' => ['il y a', 'une', 'pomme', 'sur la liste'], 'extra' => ['lait']],
+                            'es' => ['sentence' => 'Hay una manzana en la lista', 'correct' => ['hay', 'una', 'manzana', 'en la lista'], 'extra' => ['leche']],
+                            'de' => ['sentence' => 'Es gibt einen Apfel auf der Liste', 'correct' => ['es gibt', 'einen', 'Apfel', 'auf der Liste'], 'extra' => ['Milch']],
+                            'ja' => ['sentence' => 'リストにりんごがあります', 'correct' => ['リストに', 'りんごが', 'あります'], 'extra' => ['牛乳']],
+                            'ko' => ['sentence' => '목록에 사과가 있어요', 'correct' => ['목록에', '사과가', '있어요'], 'extra' => ['우유']],
+                        ],
+                    ],
+                    'c' => [
+                        'words' => ['bir', 'sepet', 'alıyorum'], 'blank' => 2,
+                        'means' => [
+                            'en' => ['sentence' => 'I am buying a basket', 'correct' => ['I am buying', 'a', 'basket'], 'extra' => ['list']],
+                            'az' => ['sentence' => 'alıram bir səbət', 'correct' => ['alıram', 'bir', 'səbət'], 'extra' => ['siyahı']],
+                            'ar' => ['sentence' => 'أشتري سلة', 'correct' => ['أشتري', 'سلة'], 'extra' => ['قائمة']],
+                            'ru' => ['sentence' => 'я покупаю корзина', 'correct' => ['я', 'покупаю', 'корзина'], 'extra' => ['список']],
+                            'fr' => ['sentence' => 'J’achète un panier', 'correct' => ['j’achète', 'un', 'panier'], 'extra' => ['liste']],
+                            'es' => ['sentence' => 'Compro una cesta', 'correct' => ['compro', 'una', 'cesta'], 'extra' => ['lista']],
+                            'de' => ['sentence' => 'Ich kaufe einen Korb', 'correct' => ['ich kaufe', 'einen', 'Korb'], 'extra' => ['Liste']],
+                            'ja' => ['sentence' => 'かごを買います', 'correct' => ['かごを', '買います'], 'extra' => ['リスト']],
+                            'ko' => ['sentence' => '바구니를 삽니다', 'correct' => ['바구니를', '삽니다'], 'extra' => ['목록']],
+                        ],
+                    ],
+                ],
+            ),
+
+            $builder->lesson('Lesson 2: Finding Things', 2,
+                pictures: [['tr' => 'Süt', 'img' => 'milk'], ['tr' => 'Ekmek', 'img' => 'bread']],
+                plain: [['tr' => 'Nerede'], ['tr' => 'Reyon']],
+                phrases: [
+                    'a' => [
+                        'words' => ['süt', 'nerede'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'Where is the milk', 'correct' => ['where', 'is', 'the milk'], 'extra' => ['bread']],
+                            'az' => ['sentence' => 'harada süd', 'correct' => ['harada', 'süd'], 'extra' => ['çörək']],
+                            'ar' => ['sentence' => 'أين حليب', 'correct' => ['أين', 'حليب'], 'extra' => ['خبز']],
+                            'ru' => ['sentence' => 'где молоко', 'correct' => ['где', 'молоко'], 'extra' => ['хлеб']],
+                            'fr' => ['sentence' => 'Où est le lait', 'correct' => ['où', 'est', 'le lait'], 'extra' => ['pain']],
+                            'es' => ['sentence' => 'Dónde está la leche', 'correct' => ['dónde', 'está', 'la leche'], 'extra' => ['pan']],
+                            'de' => ['sentence' => 'Wo ist die Milch', 'correct' => ['wo', 'ist', 'die Milch'], 'extra' => ['Brot']],
+                            'ja' => ['sentence' => '牛乳はどこですか', 'correct' => ['牛乳は', 'どこですか'], 'extra' => ['パン']],
+                            'ko' => ['sentence' => '우유는 어디에 있어요', 'correct' => ['우유는', '어디에', '있어요'], 'extra' => ['빵']],
+                        ],
+                    ],
+                    'b' => [
+                        'words' => ['süt', 'reyonda'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'The milk is in the aisle', 'correct' => ['the milk', 'is', 'in the aisle'], 'extra' => ['bread']],
+                            'az' => ['sentence' => 'süd şöbədə', 'correct' => ['süd', 'şöbədə'], 'extra' => ['çörək']],
+                            'ar' => ['sentence' => 'حليب في القسم', 'correct' => ['حليب', 'في القسم'], 'extra' => ['خبز']],
+                            'ru' => ['sentence' => 'молоко в отделе', 'correct' => ['молоко', 'в', 'отделе'], 'extra' => ['хлеб']],
+                            'fr' => ['sentence' => 'Le lait est au rayon', 'correct' => ['le lait', 'est', 'au rayon'], 'extra' => ['pain']],
+                            'es' => ['sentence' => 'La leche está en el pasillo', 'correct' => ['la leche', 'está', 'en el pasillo'], 'extra' => ['pan']],
+                            'de' => ['sentence' => 'Die Milch ist im Regal', 'correct' => ['die Milch', 'ist', 'im Regal'], 'extra' => ['Brot']],
+                            'ja' => ['sentence' => '牛乳は売り場にあります', 'correct' => ['牛乳は', '売り場に', 'あります'], 'extra' => ['パン']],
+                            'ko' => ['sentence' => '우유는 코너에 있어요', 'correct' => ['우유는', '코너에', '있어요'], 'extra' => ['빵']],
+                        ],
+                    ],
+                    'c' => [
+                        'words' => ['taze', 'ekmek', 'alıyorum'], 'blank' => 2,
+                        'means' => [
+                            'en' => ['sentence' => 'I am buying fresh bread', 'correct' => ['I am buying', 'fresh', 'bread'], 'extra' => ['milk']],
+                            'az' => ['sentence' => 'alıram təzə çörək', 'correct' => ['alıram', 'təzə', 'çörək'], 'extra' => ['süd']],
+                            'ar' => ['sentence' => 'أشتري طازج خبز', 'correct' => ['أشتري', 'طازج', 'خبز'], 'extra' => ['حليب']],
+                            'ru' => ['sentence' => 'я покупаю свежий хлеб', 'correct' => ['я', 'покупаю', 'свежий', 'хлеб'], 'extra' => ['молоко']],
+                            'fr' => ['sentence' => 'J’achète du pain frais', 'correct' => ['j’achète', 'du pain', 'frais'], 'extra' => ['lait']],
+                            'es' => ['sentence' => 'Compro pan fresco', 'correct' => ['compro', 'pan', 'fresco'], 'extra' => ['leche']],
+                            'de' => ['sentence' => 'Ich kaufe frisches Brot', 'correct' => ['ich kaufe', 'frisches', 'Brot'], 'extra' => ['Milch']],
+                            'ja' => ['sentence' => '新鮮なパンを買います', 'correct' => ['新鮮な', 'パンを', '買います'], 'extra' => ['牛乳']],
+                            'ko' => ['sentence' => '신선한 빵을 삽니다', 'correct' => ['신선한', '빵을', '삽니다'], 'extra' => ['우유']],
+                        ],
+                    ],
+                ],
+            ),
+
+            $builder->lesson('Lesson 3: Weighing', 3,
+                pictures: [['tr' => 'Elma', 'img' => 'apple'], ['tr' => 'Süt', 'img' => 'milk']],
+                plain: [['tr' => 'Kilo'], ['tr' => 'Şişe']],
+                phrases: [
+                    'a' => [
+                        'words' => ['iki', 'kilo', 'elma'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'Two kilos of apples', 'correct' => ['two', 'kilos', 'of', 'apples'], 'extra' => ['milk']],
+                            'az' => ['sentence' => 'iki kilo almalar', 'correct' => ['iki', 'kilo', 'almalar'], 'extra' => ['süd']],
+                            'ar' => ['sentence' => 'اثنان كيلو تفاح', 'correct' => ['اثنان', 'كيلو', 'تفاح'], 'extra' => ['حليب']],
+                            'ru' => ['sentence' => 'два кило яблоки', 'correct' => ['два', 'кило', 'яблоки'], 'extra' => ['молоко']],
+                            'fr' => ['sentence' => 'Deux kilos de pommes', 'correct' => ['deux', 'kilos', 'de', 'pommes'], 'extra' => ['lait']],
+                            'es' => ['sentence' => 'Dos kilos de manzanas', 'correct' => ['dos', 'kilos', 'de', 'manzanas'], 'extra' => ['leche']],
+                            'de' => ['sentence' => 'Zwei Kilo Äpfel', 'correct' => ['zwei', 'Kilo', 'Äpfel'], 'extra' => ['Milch']],
+                            'ja' => ['sentence' => 'りんご二キロ', 'correct' => ['りんご', '二キロ'], 'extra' => ['牛乳']],
+                            'ko' => ['sentence' => '사과 이 킬로', 'correct' => ['사과', '이', '킬로'], 'extra' => ['우유']],
+                        ],
+                    ],
+                    'b' => [
+                        'words' => ['bir', 'şişe', 'süt'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'A bottle of milk', 'correct' => ['a', 'bottle', 'of', 'milk'], 'extra' => ['apple']],
+                            'az' => ['sentence' => 'bir şüşə süd', 'correct' => ['bir', 'şüşə', 'süd'], 'extra' => ['alma']],
+                            'ar' => ['sentence' => 'زجاجة حليب', 'correct' => ['زجاجة', 'حليب'], 'extra' => ['تفاحة']],
+                            'ru' => ['sentence' => 'бутылка молоко', 'correct' => ['бутылка', 'молоко'], 'extra' => ['яблоко']],
+                            'fr' => ['sentence' => 'Une bouteille de lait', 'correct' => ['une', 'bouteille', 'de', 'lait'], 'extra' => ['pomme']],
+                            'es' => ['sentence' => 'Una botella de leche', 'correct' => ['una', 'botella', 'de', 'leche'], 'extra' => ['manzana']],
+                            'de' => ['sentence' => 'Eine Flasche Milch', 'correct' => ['eine', 'Flasche', 'Milch'], 'extra' => ['Apfel']],
+                            'ja' => ['sentence' => '牛乳一本', 'correct' => ['牛乳', '一本'], 'extra' => ['りんご']],
+                            'ko' => ['sentence' => '우유 한 병', 'correct' => ['우유', '한', '병'], 'extra' => ['사과']],
+                        ],
+                    ],
+                    'c' => [
+                        'words' => ['elmalar', 'taze'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'The apples are fresh', 'correct' => ['the apples', 'are', 'fresh'], 'extra' => ['milk']],
+                            'az' => ['sentence' => 'almalar təzə', 'correct' => ['almalar', 'təzə'], 'extra' => ['süd']],
+                            'ar' => ['sentence' => 'تفاح طازج', 'correct' => ['تفاح', 'طازج'], 'extra' => ['حليب']],
+                            'ru' => ['sentence' => 'яблоки свежий', 'correct' => ['яблоки', 'свежий'], 'extra' => ['молоко']],
+                            'fr' => ['sentence' => 'Les pommes sont fraîches', 'correct' => ['les pommes', 'sont', 'fraîches'], 'extra' => ['lait']],
+                            'es' => ['sentence' => 'Las manzanas están frescas', 'correct' => ['las manzanas', 'están', 'frescas'], 'extra' => ['leche']],
+                            'de' => ['sentence' => 'Die Äpfel sind frisch', 'correct' => ['die Äpfel', 'sind', 'frisch'], 'extra' => ['Milch']],
+                            'ja' => ['sentence' => 'りんごは新鮮です', 'correct' => ['りんごは', '新鮮です'], 'extra' => ['牛乳']],
+                            'ko' => ['sentence' => '사과는 신선해요', 'correct' => ['사과는', '신선해요'], 'extra' => ['우유']],
+                        ],
+                    ],
+                ],
+            ),
+
+            $builder->lesson('Lesson 4: Checking the Price', 4,
+                pictures: [['tr' => 'Elma', 'img' => 'apple'], ['tr' => 'Kasa', 'img' => 'checkout']],
+                plain: [['tr' => 'Fiyat'], ['tr' => 'İndirim']],
+                phrases: [
+                    'a' => [
+                        'words' => ['elma', 'kaç', 'lira'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'How many lira is the apple', 'correct' => ['how many', 'lira', 'is', 'the apple'], 'extra' => ['total']],
+                            'az' => ['sentence' => 'neçə manat alma', 'correct' => ['neçə', 'manat', 'alma'], 'extra' => ['cəmi']],
+                            'ar' => ['sentence' => 'كم ريال تفاحة', 'correct' => ['كم', 'ريال', 'تفاحة'], 'extra' => ['المجموع']],
+                            'ru' => ['sentence' => 'сколько рубль яблоко', 'correct' => ['сколько', 'рубль', 'яблоко'], 'extra' => ['итого']],
+                            'fr' => ['sentence' => 'Combien de lires est la pomme', 'correct' => ['combien de', 'lires', 'est', 'la pomme'], 'extra' => ['total']],
+                            'es' => ['sentence' => 'Cuántas liras es la manzana', 'correct' => ['cuántas', 'liras', 'es', 'la manzana'], 'extra' => ['total']],
+                            'de' => ['sentence' => 'Wie viele Lira ist der Apfel', 'correct' => ['wie viele', 'Lira', 'ist', 'der Apfel'], 'extra' => ['Gesamt']],
+                            'ja' => ['sentence' => 'りんごは何リラですか', 'correct' => ['りんごは', '何', 'リラですか'], 'extra' => ['合計']],
+                            'ko' => ['sentence' => '사과는 몇 리라예요', 'correct' => ['사과는', '몇', '리라예요'], 'extra' => ['합계']],
+                        ],
+                    ],
+                    'b' => [
+                        'words' => ['elma', 'indirimde'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'The apple is on discount', 'correct' => ['the apple', 'is', 'on discount'], 'extra' => ['expensive']],
+                            'az' => ['sentence' => 'alma endirimdə', 'correct' => ['alma', 'endirimdə'], 'extra' => ['bahalı']],
+                            'ar' => ['sentence' => 'تفاحة بخصم', 'correct' => ['تفاحة', 'بخصم'], 'extra' => ['غالي']],
+                            'ru' => ['sentence' => 'яблоко со скидкой', 'correct' => ['яблоко', 'со скидкой'], 'extra' => ['дорогой']],
+                            'fr' => ['sentence' => 'La pomme est en réduction', 'correct' => ['la pomme', 'est', 'en réduction'], 'extra' => ['cher']],
+                            'es' => ['sentence' => 'La manzana está en descuento', 'correct' => ['la manzana', 'está', 'en descuento'], 'extra' => ['caro']],
+                            'de' => ['sentence' => 'Der Apfel ist im Rabatt', 'correct' => ['der Apfel', 'ist', 'im Rabatt'], 'extra' => ['teuer']],
+                            'ja' => ['sentence' => 'りんごは割引です', 'correct' => ['りんごは', '割引です'], 'extra' => ['高い']],
+                            'ko' => ['sentence' => '사과는 할인이에요', 'correct' => ['사과는', '할인이에요'], 'extra' => ['비싼']],
+                        ],
+                    ],
+                    'c' => [
+                        'words' => ['süt', 'sudan', 'pahalı'], 'blank' => 2,
+                        'means' => [
+                            'en' => ['sentence' => 'The milk is more expensive than the water', 'correct' => ['the milk', 'is', 'more expensive', 'than the water'], 'extra' => ['cheap']],
+                            'az' => ['sentence' => 'süd daha bahalı sudan', 'correct' => ['süd', 'daha bahalı', 'sudan'], 'extra' => ['ucuz']],
+                            'ar' => ['sentence' => 'حليب أغلى من الماء', 'correct' => ['حليب', 'أغلى', 'من', 'الماء'], 'extra' => ['رخيص']],
+                            'ru' => ['sentence' => 'молоко дороже чем воды', 'correct' => ['молоко', 'дороже', 'чем', 'воды'], 'extra' => ['дешёвый']],
+                            'fr' => ['sentence' => 'Le lait est plus cher que l’eau', 'correct' => ['le lait', 'est', 'plus cher', 'que l’eau'], 'extra' => ['bon marché']],
+                            'es' => ['sentence' => 'La leche es más cara que el agua', 'correct' => ['la leche', 'es', 'más cara', 'que el agua'], 'extra' => ['barato']],
+                            'de' => ['sentence' => 'Die Milch ist teurer als das Wasser', 'correct' => ['die Milch', 'ist', 'teurer', 'als das Wasser'], 'extra' => ['billig']],
+                            'ja' => ['sentence' => '牛乳は水より高いです', 'correct' => ['牛乳は', '水より', '高いです'], 'extra' => ['安い']],
+                            'ko' => ['sentence' => '우유는 물보다 비싸요', 'correct' => ['우유는', '물보다', '비싸요'], 'extra' => ['싼']],
+                        ],
+                    ],
+                ],
+            ),
+
+            $builder->lesson('Lesson 5: Paying and Leaving', 5,
+                pictures: [['tr' => 'Kasa', 'img' => 'checkout'], ['tr' => 'Ekmek', 'img' => 'bread']],
+                plain: [['tr' => 'Kasa'], ['tr' => 'Toplam']],
+                phrases: [
+                    'a' => [
+                        'words' => ['kasa', 'nerede'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'Where is the checkout', 'correct' => ['where', 'is', 'the checkout'], 'extra' => ['aisle']],
+                            'az' => ['sentence' => 'harada kassa', 'correct' => ['harada', 'kassa'], 'extra' => ['şöbə']],
+                            'ar' => ['sentence' => 'أين صندوق الدفع', 'correct' => ['أين', 'صندوق الدفع'], 'extra' => ['قسم']],
+                            'ru' => ['sentence' => 'где касса', 'correct' => ['где', 'касса'], 'extra' => ['отдел']],
+                            'fr' => ['sentence' => 'Où est la caisse', 'correct' => ['où', 'est', 'la caisse'], 'extra' => ['rayon']],
+                            'es' => ['sentence' => 'Dónde está la caja', 'correct' => ['dónde', 'está', 'la caja'], 'extra' => ['pasillo']],
+                            'de' => ['sentence' => 'Wo ist die Kasse', 'correct' => ['wo', 'ist', 'die Kasse'], 'extra' => ['Regal']],
+                            'ja' => ['sentence' => 'レジはどこですか', 'correct' => ['レジは', 'どこですか'], 'extra' => ['売り場']],
+                            'ko' => ['sentence' => '계산대는 어디에 있어요', 'correct' => ['계산대는', '어디에', '있어요'], 'extra' => ['코너']],
+                        ],
+                    ],
+                    'b' => [
+                        'words' => ['kart', 'ile', 'ödüyorum'], 'blank' => 2,
+                        'means' => [
+                            'en' => ['sentence' => 'I am paying with a card', 'correct' => ['I am paying', 'with', 'a', 'card'], 'extra' => ['cash']],
+                            'az' => ['sentence' => 'ödəyirəm ilə bir kart', 'correct' => ['ödəyirəm', 'ilə', 'bir', 'kart'], 'extra' => ['nağd']],
+                            'ar' => ['sentence' => 'أدفع مع بطاقة', 'correct' => ['أدفع', 'مع', 'بطاقة'], 'extra' => ['كاش']],
+                            'ru' => ['sentence' => 'я плачу с карта', 'correct' => ['я', 'плачу', 'с', 'карта'], 'extra' => ['наличные']],
+                            'fr' => ['sentence' => 'Je paie avec une carte', 'correct' => ['je paie', 'avec', 'une', 'carte'], 'extra' => ['espèces']],
+                            'es' => ['sentence' => 'Pago con una tarjeta', 'correct' => ['pago', 'con', 'una', 'tarjeta'], 'extra' => ['efectivo']],
+                            'de' => ['sentence' => 'Ich zahle mit einer Karte', 'correct' => ['ich zahle', 'mit', 'einer', 'Karte'], 'extra' => ['Bargeld']],
+                            'ja' => ['sentence' => 'カードで払います', 'correct' => ['カードで', '払います'], 'extra' => ['現金']],
+                            'ko' => ['sentence' => '카드로 계산해요', 'correct' => ['카드로', '계산해요'], 'extra' => ['현금']],
+                        ],
+                    ],
+                    'c' => [
+                        'words' => ['teşekkürler', 've', 'hoşça kal'], 'blank' => 1,
+                        'means' => [
+                            'en' => ['sentence' => 'Thank you and goodbye', 'correct' => ['thank you', 'and', 'goodbye'], 'extra' => ['hello']],
+                            'az' => ['sentence' => 'təşəkkür və sağ ol', 'correct' => ['təşəkkür', 'və', 'sağ ol'], 'extra' => ['salam']],
+                            'ar' => ['sentence' => 'شكرا و مع السلامة', 'correct' => ['شكرا', 'و', 'مع السلامة'], 'extra' => ['مرحبا']],
+                            'ru' => ['sentence' => 'спасибо и до свидания', 'correct' => ['спасибо', 'и', 'до свидания'], 'extra' => ['привет']],
+                            'fr' => ['sentence' => 'Merci et au revoir', 'correct' => ['merci', 'et', 'au revoir'], 'extra' => ['bonjour']],
+                            'es' => ['sentence' => 'Gracias y adiós', 'correct' => ['gracias', 'y', 'adiós'], 'extra' => ['hola']],
+                            'de' => ['sentence' => 'Danke und auf Wiedersehen', 'correct' => ['danke', 'und', 'auf Wiedersehen'], 'extra' => ['hallo']],
+                            'ja' => ['sentence' => 'ありがとうさようなら', 'correct' => ['ありがとう', 'さようなら'], 'extra' => ['こんにちは']],
+                            'ko' => ['sentence' => '고맙습니다 안녕히 계세요', 'correct' => ['고맙습니다', '안녕히 계세요'], 'extra' => ['안녕하세요']],
+                        ],
+                    ],
+                ],
+            ),
+
+        ];
+    }
+}

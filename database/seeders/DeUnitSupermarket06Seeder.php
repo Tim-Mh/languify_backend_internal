@@ -83,6 +83,9 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     'bottle',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir litr şirə', 'correct' => ['bir', 'litr', 'şirə'], 'extra' => ['qutu', 'şüşə']],
+                            'ar' => ['sentence' => 'لتر عصير', 'correct' => ['لتر', 'عصير'], 'extra' => ['علبة', 'زجاجة']],
+                            'ru' => ['sentence' => 'литр сок', 'correct' => ['литр', 'сок'], 'extra' => ['коробка', 'бутылка']],
                             'es' => [
                                 'sentence' => 'Un litro de zumo',
                                 'correct' => [
@@ -131,6 +134,7 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     '상자',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir litre meyve suyu', 'correct' => ['bir', 'litre', 'meyve', 'suyu'], 'extra' => ['kutu', 'şişe']],
                         ],
                     ],
                     'b' => [
@@ -156,6 +160,9 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     'litre',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qutu və bir şüşə', 'correct' => ['bir', 'qutu', 'və', 'bir', 'şüşə'], 'extra' => ['litr']],
+                            'ar' => ['sentence' => 'علبة و زجاجة', 'correct' => ['علبة', 'و', 'زجاجة'], 'extra' => ['لتر']],
+                            'ru' => ['sentence' => 'коробка и бутылка', 'correct' => ['коробка', 'и', 'бутылка'], 'extra' => ['литр']],
                             'es' => [
                                 'sentence' => 'Una caja y una botella',
                                 'correct' => [
@@ -203,6 +210,7 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     '리터',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kutu ve bir şişe', 'correct' => ['bir', 'kutu', 've', 'bir', 'şişe'], 'extra' => ['litre']],
                         ],
                     ],
                     'c' => [
@@ -225,6 +233,9 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     'box',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir şüşə şirə', 'correct' => ['bir', 'şüşə', 'şirə'], 'extra' => ['qutu']],
+                            'ar' => ['sentence' => 'زجاجة عصير', 'correct' => ['زجاجة', 'عصير'], 'extra' => ['علبة']],
+                            'ru' => ['sentence' => 'бутылка сок', 'correct' => ['бутылка', 'сок'], 'extra' => ['коробка']],
                             'es' => [
                                 'sentence' => 'Una botella de zumo',
                                 'correct' => [
@@ -271,6 +282,7 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     '상자',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir şişe meyve suyu', 'correct' => ['bir', 'şişe', 'meyve', 'suyu'], 'extra' => ['kutu']],
                         ],
                     ],
                 ],
@@ -315,6 +327,9 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     'scales',
                                 ],
                             ],
+                            'az' => ['sentence' => 'çəkmək bir alma', 'correct' => ['çəkmək', 'bir', 'alma'], 'extra' => ['qram', 'tərəzi']],
+                            'ar' => ['sentence' => 'الوزن تفاحة', 'correct' => ['الوزن', 'تفاحة'], 'extra' => ['غرام', 'ميزان']],
+                            'ru' => ['sentence' => 'взвесить яблоко', 'correct' => ['взвесить', 'яблоко'], 'extra' => ['грамм', 'весы']],
                             'es' => [
                                 'sentence' => 'Pesar una manzana',
                                 'correct' => [
@@ -361,6 +376,7 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     '그램',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir elma tartmak', 'correct' => ['bir', 'elma', 'tartmak'], 'extra' => ['gram', 'terazi']],
                         ],
                     ],
                     'b' => [
@@ -387,6 +403,9 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     'apple',
                                 ],
                             ],
+                            'az' => ['sentence' => 'tərəzi və qram', 'correct' => ['tərəzi', 'və', 'qram'], 'extra' => ['çəkmək', 'alma']],
+                            'ar' => ['sentence' => 'ميزان و غرام', 'correct' => ['ميزان', 'و', 'غرام'], 'extra' => ['الوزن', 'تفاحة']],
+                            'ru' => ['sentence' => 'весы и грамм', 'correct' => ['весы', 'и', 'грамм'], 'extra' => ['взвесить', 'яблоко']],
                             'es' => [
                                 'sentence' => 'La balanza y el gramo',
                                 'correct' => [
@@ -435,6 +454,7 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     '무게를 재다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'terazi ve gram', 'correct' => ['terazi', 've', 'gram'], 'extra' => ['tartmak', 'elma']],
                         ],
                     ],
                     'c' => [
@@ -459,6 +479,9 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     'apple',
                                 ],
                             ],
+                            'az' => ['sentence' => 'çəkmək üzərində tərəzi', 'correct' => ['çəkmək', 'üzərində', 'tərəzi'], 'extra' => ['qram', 'alma']],
+                            'ar' => ['sentence' => 'الوزن على ميزان', 'correct' => ['الوزن', 'على', 'ميزان'], 'extra' => ['غرام', 'تفاحة']],
+                            'ru' => ['sentence' => 'взвесить на весы', 'correct' => ['взвесить', 'на', 'весы'], 'extra' => ['грамм', 'яблоко']],
                             'es' => [
                                 'sentence' => 'Pesar en la balanza',
                                 'correct' => [
@@ -509,6 +532,7 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     '그램',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'terazide tartmak', 'correct' => ['terazide', 'tartmak'], 'extra' => ['gram', 'elma']],
                         ],
                     ],
                 ],
@@ -554,6 +578,9 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     'big',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qutu şəkər', 'correct' => ['bir', 'qutu', 'şəkər'], 'extra' => ['kiçik', 'böyük']],
+                            'ar' => ['sentence' => 'علبة سكر', 'correct' => ['علبة', 'سكر'], 'extra' => ['صغير', 'كبير']],
+                            'ru' => ['sentence' => 'коробка сахар', 'correct' => ['коробка', 'сахар'], 'extra' => ['маленький', 'большой']],
                             'es' => [
                                 'sentence' => 'Una caja de azúcar',
                                 'correct' => [
@@ -602,6 +629,7 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     '작은',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kutu şeker', 'correct' => ['bir', 'kutu', 'şeker'], 'extra' => ['küçük', 'büyük']],
                         ],
                     ],
                     'b' => [
@@ -624,6 +652,9 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     'sugar',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir kiçik qutu', 'correct' => ['bir', 'kiçik', 'qutu'], 'extra' => ['böyük', 'şəkər']],
+                            'ar' => ['sentence' => 'صغير علبة', 'correct' => ['صغير', 'علبة'], 'extra' => ['كبير', 'سكر']],
+                            'ru' => ['sentence' => 'маленький коробка', 'correct' => ['маленький', 'коробка'], 'extra' => ['большой', 'сахар']],
                             'es' => [
                                 'sentence' => 'Una caja pequeña',
                                 'correct' => [
@@ -667,6 +698,7 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     '큰',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'küçük bir kutu', 'correct' => ['küçük', 'bir', 'kutu'], 'extra' => ['büyük', 'şeker']],
                         ],
                     ],
                     'c' => [
@@ -691,6 +723,9 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     'small',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir böyük qutu şəkər', 'correct' => ['bir', 'böyük', 'qutu', 'şəkər'], 'extra' => ['kiçik']],
+                            'ar' => ['sentence' => 'كبير علبة سكر', 'correct' => ['كبير', 'علبة', 'سكر'], 'extra' => ['صغير']],
+                            'ru' => ['sentence' => 'большой коробка сахар', 'correct' => ['большой', 'коробка', 'сахар'], 'extra' => ['маленький']],
                             'es' => [
                                 'sentence' => 'Una caja grande de azúcar',
                                 'correct' => [
@@ -740,6 +775,7 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     '작은',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'büyük bir kutu şeker', 'correct' => ['büyük', 'bir', 'kutu', 'şeker'], 'extra' => ['küçük']],
                         ],
                     ],
                 ],
@@ -784,6 +820,9 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     'bottle',
                                 ],
                             ],
+                            'az' => ['sentence' => 'iki litr su', 'correct' => ['iki', 'litr', 'su'], 'extra' => ['şüşə']],
+                            'ar' => ['sentence' => 'اثنان لتر ماء', 'correct' => ['اثنان', 'لتر', 'ماء'], 'extra' => ['زجاجة']],
+                            'ru' => ['sentence' => 'два литр вода', 'correct' => ['два', 'литр', 'вода'], 'extra' => ['бутылка']],
                             'es' => [
                                 'sentence' => 'Dos litros de agua',
                                 'correct' => [
@@ -830,6 +869,7 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     '병',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'iki litre su', 'correct' => ['iki', 'litre', 'su'], 'extra' => ['şişe']],
                         ],
                     ],
                     'b' => [
@@ -853,6 +893,9 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     'litre',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir şüşə su', 'correct' => ['bir', 'şüşə', 'su'], 'extra' => ['iki', 'litr']],
+                            'ar' => ['sentence' => 'زجاجة ماء', 'correct' => ['زجاجة', 'ماء'], 'extra' => ['اثنان', 'لتر']],
+                            'ru' => ['sentence' => 'бутылка вода', 'correct' => ['бутылка', 'вода'], 'extra' => ['два', 'литр']],
                             'es' => [
                                 'sentence' => 'Una botella de agua',
                                 'correct' => [
@@ -900,6 +943,7 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     '리터',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir şişe su', 'correct' => ['bir', 'şişe', 'su'], 'extra' => ['iki', 'litre']],
                         ],
                     ],
                     'c' => [
@@ -922,6 +966,9 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     'litre',
                                 ],
                             ],
+                            'az' => ['sentence' => 'iki şüşə su', 'correct' => ['iki', 'şüşə', 'su'], 'extra' => ['litr']],
+                            'ar' => ['sentence' => 'اثنان زجاجة ماء', 'correct' => ['اثنان', 'زجاجة', 'ماء'], 'extra' => ['لتر']],
+                            'ru' => ['sentence' => 'два бутылка вода', 'correct' => ['два', 'бутылка', 'вода'], 'extra' => ['литр']],
                             'es' => [
                                 'sentence' => 'Dos botellas de agua',
                                 'correct' => [
@@ -967,6 +1014,7 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     '리터',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'iki şişe su', 'correct' => ['iki', 'şişe', 'su'], 'extra' => ['litre']],
                         ],
                     ],
                 ],
@@ -1016,6 +1064,9 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     'juice',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qoymaq bir qutu içində araba', 'correct' => ['qoymaq', 'bir', 'qutu', 'içində', 'araba'], 'extra' => ['şirə']],
+                            'ar' => ['sentence' => 'وضع علبة في عربة', 'correct' => ['وضع', 'علبة', 'في', 'عربة'], 'extra' => ['عصير']],
+                            'ru' => ['sentence' => 'положить коробка в тележка', 'correct' => ['положить', 'коробка', 'в', 'тележка'], 'extra' => ['сок']],
                             'es' => [
                                 'sentence' => 'Poner una caja en el carrito',
                                 'correct' => [
@@ -1068,6 +1119,7 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     '주스',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'arabaya bir kutu koymak', 'correct' => ['arabaya', 'bir', 'kutu', 'koymak'], 'extra' => ['meyve suyu']],
                         ],
                     ],
                     'b' => [
@@ -1091,6 +1143,9 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     'trolley',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qutu şirə', 'correct' => ['bir', 'qutu', 'şirə'], 'extra' => ['qoymaq', 'araba']],
+                            'ar' => ['sentence' => 'علبة عصير', 'correct' => ['علبة', 'عصير'], 'extra' => ['وضع', 'عربة']],
+                            'ru' => ['sentence' => 'коробка сок', 'correct' => ['коробка', 'сок'], 'extra' => ['положить', 'тележка']],
                             'es' => [
                                 'sentence' => 'Una caja de zumo',
                                 'correct' => [
@@ -1138,6 +1193,7 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     '넣다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kutu meyve suyu', 'correct' => ['bir', 'kutu', 'meyve', 'suyu'], 'extra' => ['koymak', 'araba']],
                         ],
                     ],
                     'c' => [
@@ -1163,6 +1219,9 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     'box',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qoymaq şirə içində araba', 'correct' => ['qoymaq', 'şirə', 'içində', 'araba'], 'extra' => ['qutu']],
+                            'ar' => ['sentence' => 'وضع عصير في عربة', 'correct' => ['وضع', 'عصير', 'في', 'عربة'], 'extra' => ['علبة']],
+                            'ru' => ['sentence' => 'положить сок в тележка', 'correct' => ['положить', 'сок', 'в', 'тележка'], 'extra' => ['коробка']],
                             'es' => [
                                 'sentence' => 'Poner zumo en el carrito',
                                 'correct' => [
@@ -1213,6 +1272,7 @@ class DeUnitSupermarket06Seeder extends Seeder
                                     '상자',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'arabaya meyve suyu koymak', 'correct' => ['arabaya', 'meyve', 'suyu', 'koymak'], 'extra' => ['kutu']],
                         ],
                     ],
                 ],

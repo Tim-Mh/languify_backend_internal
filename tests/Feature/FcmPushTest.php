@@ -23,11 +23,25 @@ class FcmPushTest extends TestCase
 
     protected function setUp(): void
     {
-        parent::setUp();
+        // Generated BEFORE parent::setUp(), deliberately. openssl_pkey_new()
+        // returns false when OpenSSL cannot find its config file, which is the
+        // default state of a stock Windows PHP build, and openssl_pkey_export()
+        // then throws. Doing it after parent::setUp() meant that throw escaped
+        // with RefreshDatabase's transaction already open and nothing to roll
+        // it back, so every later test in the process died with "cannot start a
+        // transaction within a transaction" -- one broken test hiding eighty.
+        //
+        // Skipping here costs four tests on a machine without a usable OpenSSL
+        // and keeps the other hundred-odd meaningful. CI on Linux runs them all.
+        $pair = @openssl_pkey_new(['private_key_bits' => 2048, 'private_key_type' => OPENSSL_KEYTYPE_RSA]);
 
-        // A real (throwaway) RSA key, so the JWT assertion actually signs.
-        $pair = openssl_pkey_new(['private_key_bits' => 2048, 'private_key_type' => OPENSSL_KEYTYPE_RSA]);
+        if ($pair === false) {
+            $this->markTestSkipped('OpenSSL cannot generate a key here (no openssl.cnf); FCM signing cannot be exercised.');
+        }
+
         openssl_pkey_export($pair, $privateKey);
+
+        parent::setUp();
 
         $this->keyFile = tempnam(sys_get_temp_dir(), 'fcm-test-');
         file_put_contents($this->keyFile, json_encode([
@@ -46,7 +60,11 @@ class FcmPushTest extends TestCase
 
     protected function tearDown(): void
     {
-        @unlink($this->keyFile);
+        // isset() rather than a bare read: the property is typed and stays
+        // uninitialised when setUp skipped before assigning it.
+        if (isset($this->keyFile)) {
+            @unlink($this->keyFile);
+        }
 
         parent::tearDown();
     }

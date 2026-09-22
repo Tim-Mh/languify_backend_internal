@@ -140,7 +140,17 @@ class FamilyService
                 'expires_at' => Carbon::now()->addDays(self::INVITE_TTL_DAYS),
             ]);
 
-            Notification::route('mail', $email)->notify(new FamilyInviteNotification($invite, $owner));
+            // Notify the account when there is one, so the invite reaches their
+            // phone as well as their inbox. Only an address with no account
+            // behind it falls back to the on-demand mail route, which has no
+            // device to push to.
+            $notification = new FamilyInviteNotification($invite, $owner);
+
+            if ($existingUser) {
+                $existingUser->notify($notification);
+            } else {
+                Notification::route('mail', $email)->notify($notification);
+            }
 
             return $invite;
         });

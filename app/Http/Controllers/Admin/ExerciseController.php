@@ -6,6 +6,7 @@ use App\Enums\ExerciseType;
 use App\Http\Controllers\Controller;
 use App\Models\Exercise;
 use App\Models\Lesson;
+use App\Support\PerPage;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -13,10 +14,10 @@ use Illuminate\View\View;
 
 class ExerciseController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
         return view('admin.exercises.index', [
-            'exercises' => Exercise::with('lesson.unit.chapter.language')->orderBy('lesson_id')->orderBy('order_number')->paginate(25),
+            'exercises' => Exercise::with('lesson.unit.chapter.language')->orderBy('lesson_id')->orderBy('order_number')->paginate(PerPage::resolve($request))->withQueryString(),
         ]);
     }
 

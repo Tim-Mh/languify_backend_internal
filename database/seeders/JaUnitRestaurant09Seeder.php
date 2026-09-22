@@ -81,6 +81,9 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     'napkin',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənə gətir bir çəngəl', 'correct' => ['mənə gətir', 'bir', 'çəngəl'], 'extra' => ['salfet']],
+                            'ar' => ['sentence' => 'أحضر لي شوكة', 'correct' => ['أحضر لي', 'شوكة'], 'extra' => ['منديل']],
+                            'ru' => ['sentence' => 'принесите мне вилка', 'correct' => ['принесите мне', 'вилка'], 'extra' => ['салфетка']],
                             'es' => [
                                 'sentence' => 'Tráigame un tenedor',
                                 'correct' => [
@@ -127,6 +130,7 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     '냅킨',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bana bir çatal getirin', 'correct' => ['bana', 'bir', 'çatal', 'getirin'], 'extra' => ['peçete']],
                         ],
                     ],
                     'b' => [
@@ -150,6 +154,9 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     'bring me',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir bıçaq və bir salfet', 'correct' => ['bir', 'bıçaq', 'və', 'bir', 'salfet'], 'extra' => ['mənə gətir']],
+                            'ar' => ['sentence' => 'سكين و منديل', 'correct' => ['سكين', 'و', 'منديل'], 'extra' => ['أحضر لي']],
+                            'ru' => ['sentence' => 'нож и салфетка', 'correct' => ['нож', 'и', 'салфетка'], 'extra' => ['принесите мне']],
                             'es' => [
                                 'sentence' => 'Un cuchillo y una servilleta',
                                 'correct' => [
@@ -199,6 +206,7 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     '가져다주세요',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir bıçak ve bir peçete', 'correct' => ['bir', 'bıçak', 've', 'bir', 'peçete'], 'extra' => ['bana getirin']],
                         ],
                     ],
                     'c' => [
@@ -222,6 +230,9 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     'napkin',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənə gətir bir təmiz bıçaq', 'correct' => ['mənə gətir', 'bir', 'təmiz', 'bıçaq'], 'extra' => ['salfet']],
+                            'ar' => ['sentence' => 'أحضر لي نظيف سكين', 'correct' => ['أحضر لي', 'نظيف', 'سكين'], 'extra' => ['منديل']],
+                            'ru' => ['sentence' => 'принесите мне чистый нож', 'correct' => ['принесите мне', 'чистый', 'нож'], 'extra' => ['салфетка']],
                             'es' => [
                                 'sentence' => 'Tráigame un cuchillo limpio',
                                 'correct' => [
@@ -269,6 +280,7 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     '냅킨',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bana temiz bir bıçak getirin', 'correct' => ['bana', 'temiz', 'bir', 'bıçak', 'getirin'], 'extra' => ['peçete']],
                         ],
                     ],
                 ],
@@ -315,6 +327,9 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     'plate',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bacarıram sən gətir bir qaşıq', 'correct' => ['bacarıram', 'sən', 'gətir', 'bir', 'qaşıq'], 'extra' => ['boşqab']],
+                            'ar' => ['sentence' => 'أستطيع أنت أحضر ملعقة', 'correct' => ['أستطيع', 'أنت', 'أحضر', 'ملعقة'], 'extra' => ['صحن']],
+                            'ru' => ['sentence' => 'могу ты принеси ложка', 'correct' => ['могу', 'ты', 'принеси', 'ложка'], 'extra' => ['тарелка']],
                             'es' => [
                                 'sentence' => 'Puede traer una cuchara',
                                 'correct' => [
@@ -363,6 +378,7 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     '접시',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kaşık getirebilir misiniz', 'correct' => ['bir', 'kaşık', 'getirebilir', 'misiniz'], 'extra' => ['tabak']],
                         ],
                     ],
                     'b' => [
@@ -388,6 +404,9 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     'spoon',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir boşqab üzərində masa', 'correct' => ['bir', 'boşqab', 'üzərində', 'masa'], 'extra' => ['qaşıq']],
+                            'ar' => ['sentence' => 'صحن على طاولة', 'correct' => ['صحن', 'على', 'طاولة'], 'extra' => ['ملعقة']],
+                            'ru' => ['sentence' => 'тарелка на стол', 'correct' => ['тарелка', 'на', 'стол'], 'extra' => ['ложка']],
                             'es' => [
                                 'sentence' => 'Un plato en la mesa',
                                 'correct' => [
@@ -438,6 +457,7 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     '숟가락',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'masada bir tabak', 'correct' => ['masada', 'bir', 'tabak'], 'extra' => ['kaşık']],
                         ],
                     ],
                     'c' => [
@@ -464,6 +484,9 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     'spoon',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bacarıram sən gətir bir təmiz boşqab', 'correct' => ['bacarıram', 'sən', 'gətir', 'bir', 'təmiz', 'boşqab'], 'extra' => ['qaşıq']],
+                            'ar' => ['sentence' => 'أستطيع أنت أحضر نظيف صحن', 'correct' => ['أستطيع', 'أنت', 'أحضر', 'نظيف', 'صحن'], 'extra' => ['ملعقة']],
+                            'ru' => ['sentence' => 'могу ты принеси чистый тарелка', 'correct' => ['могу', 'ты', 'принеси', 'чистый', 'тарелка'], 'extra' => ['ложка']],
                             'es' => [
                                 'sentence' => 'Puede traer un plato limpio',
                                 'correct' => [
@@ -516,6 +539,7 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     '숟가락',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'temiz bir tabak getirebilir misiniz', 'correct' => ['temiz', 'bir', 'tabak', 'getirebilir', 'misiniz'], 'extra' => ['kaşık']],
                         ],
                     ],
                 ],
@@ -560,6 +584,9 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     'here is',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən bacarıram ödə stəkan', 'correct' => ['mən', 'bacarıram', 'ödə', 'stəkan'], 'extra' => ['burada']],
+                            'ar' => ['sentence' => 'أنا أستطيع ادفع كوب', 'correct' => ['أنا', 'أستطيع', 'ادفع', 'كوب'], 'extra' => ['هنا']],
+                            'ru' => ['sentence' => 'я могу плати стакан', 'correct' => ['я', 'могу', 'плати', 'стакан'], 'extra' => ['здесь']],
                             'es' => [
                                 'sentence' => 'Puedo pagar el vaso',
                                 'correct' => [
@@ -611,6 +638,7 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     '여기',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bardağı ödeyebilirim', 'correct' => ['bardağı', 'ödeyebilirim'], 'extra' => ['işte']],
                         ],
                     ],
                     'b' => [
@@ -632,6 +660,9 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     'glass',
                                 ],
                             ],
+                            'az' => ['sentence' => 'burada menyu', 'correct' => ['burada', 'menyu'], 'extra' => ['stəkan']],
+                            'ar' => ['sentence' => 'هنا قائمة الطعام', 'correct' => ['هنا', 'قائمة الطعام'], 'extra' => ['كوب']],
+                            'ru' => ['sentence' => 'здесь меню', 'correct' => ['здесь', 'меню'], 'extra' => ['стакан']],
                             'es' => [
                                 'sentence' => 'Aquí está el menú',
                                 'correct' => [
@@ -677,6 +708,7 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     '유리잔',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'işte menü', 'correct' => ['işte', 'menü'], 'extra' => ['bardak']],
                         ],
                     ],
                     'c' => [
@@ -699,6 +731,9 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     'here is',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən bacarıram seç menyu', 'correct' => ['mən', 'bacarıram', 'seç', 'menyu'], 'extra' => ['burada']],
+                            'ar' => ['sentence' => 'أنا أستطيع اختر قائمة الطعام', 'correct' => ['أنا', 'أستطيع', 'اختر', 'قائمة الطعام'], 'extra' => ['هنا']],
+                            'ru' => ['sentence' => 'я могу выбери меню', 'correct' => ['я', 'могу', 'выбери', 'меню'], 'extra' => ['здесь']],
                             'es' => [
                                 'sentence' => 'Puedo elegir el menú',
                                 'correct' => [
@@ -749,6 +784,7 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     '여기',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'menüyü seçebilirim', 'correct' => ['menüyü', 'seçebilirim'], 'extra' => ['işte']],
                         ],
                     ],
                 ],
@@ -790,6 +826,9 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     'more',
                                 ],
                             ],
+                            'az' => ['sentence' => 'az düyü', 'correct' => ['az', 'düyü'], 'extra' => ['daha']],
+                            'ar' => ['sentence' => 'قليل أرز', 'correct' => ['قليل', 'أرز'], 'extra' => ['أكثر']],
+                            'ru' => ['sentence' => 'немного рис', 'correct' => ['немного', 'рис'], 'extra' => ['больше']],
                             'es' => [
                                 'sentence' => 'Un poco de arroz',
                                 'correct' => [
@@ -833,6 +872,7 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     '더',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'az pirinç', 'correct' => ['az', 'pirinç'], 'extra' => ['daha çok']],
                         ],
                     ],
                     'b' => [
@@ -855,6 +895,9 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     'a little',
                                 ],
                             ],
+                            'az' => ['sentence' => 'daha ilə qaşıq', 'correct' => ['daha', 'ilə', 'qaşıq'], 'extra' => ['az']],
+                            'ar' => ['sentence' => 'أكثر مع ملعقة', 'correct' => ['أكثر', 'مع', 'ملعقة'], 'extra' => ['قليل']],
+                            'ru' => ['sentence' => 'больше с ложка', 'correct' => ['больше', 'с', 'ложка'], 'extra' => ['немного']],
                             'es' => [
                                 'sentence' => 'Más con la cuchara',
                                 'correct' => [
@@ -903,6 +946,7 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     '조금',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kaşıkla daha çok', 'correct' => ['kaşıkla', 'daha', 'çok'], 'extra' => ['biraz']],
                         ],
                     ],
                     'c' => [
@@ -924,6 +968,9 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     'spoon',
                                 ],
                             ],
+                            'az' => ['sentence' => 'az daha düyü', 'correct' => ['az', 'daha', 'düyü'], 'extra' => ['qaşıq']],
+                            'ar' => ['sentence' => 'قليل أكثر أرز', 'correct' => ['قليل', 'أكثر', 'أرز'], 'extra' => ['ملعقة']],
+                            'ru' => ['sentence' => 'немного больше рис', 'correct' => ['немного', 'больше', 'рис'], 'extra' => ['ложка']],
                             'es' => [
                                 'sentence' => 'Un poco más de arroz',
                                 'correct' => [
@@ -968,6 +1015,7 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     '숟가락',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'biraz daha pirinç', 'correct' => ['biraz', 'daha', 'pirinç'], 'extra' => ['kaşık']],
                         ],
                     ],
                 ],
@@ -1015,6 +1063,9 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     'order',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yemək hazır', 'correct' => ['yemək', 'hazır'], 'extra' => ['sifariş']],
+                            'ar' => ['sentence' => 'طبق جاهز', 'correct' => ['طبق', 'جاهز'], 'extra' => ['طلب']],
+                            'ru' => ['sentence' => 'блюдо готов', 'correct' => ['блюдо', 'готов'], 'extra' => ['заказ']],
                             'es' => [
                                 'sentence' => 'El plato está listo',
                                 'correct' => [
@@ -1061,6 +1112,7 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     '주문',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yemek hazır', 'correct' => ['yemek', 'hazır'], 'extra' => ['sipariş']],
                         ],
                     ],
                     'b' => [
@@ -1083,6 +1135,9 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     'ready',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim sifariş zəhmət olmasa', 'correct' => ['mənim', 'sifariş', 'zəhmət olmasa'], 'extra' => ['hazır']],
+                            'ar' => ['sentence' => 'طلب من فضلك', 'correct' => ['طلب', 'من فضلك'], 'extra' => ['جاهز']],
+                            'ru' => ['sentence' => 'мой заказ пожалуйста', 'correct' => ['мой', 'заказ', 'пожалуйста'], 'extra' => ['готов']],
                             'es' => [
                                 'sentence' => 'Mi pedido, por favor',
                                 'correct' => [
@@ -1129,6 +1184,7 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     '준비된',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'siparişim lütfen', 'correct' => ['siparişim', 'lütfen'], 'extra' => ['hazır']],
                         ],
                     ],
                     'c' => [
@@ -1152,6 +1208,9 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     'order',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir boşqab və bir şorba', 'correct' => ['bir', 'boşqab', 'və', 'bir', 'şorba'], 'extra' => ['sifariş']],
+                            'ar' => ['sentence' => 'صحن و حساء', 'correct' => ['صحن', 'و', 'حساء'], 'extra' => ['طلب']],
+                            'ru' => ['sentence' => 'тарелка и суп', 'correct' => ['тарелка', 'и', 'суп'], 'extra' => ['заказ']],
                             'es' => [
                                 'sentence' => 'Un plato y una sopa',
                                 'correct' => [
@@ -1201,6 +1260,7 @@ class JaUnitRestaurant09Seeder extends Seeder
                                     '주문',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir tabak ve bir çorba', 'correct' => ['bir', 'tabak', 've', 'bir', 'çorba'], 'extra' => ['sipariş']],
                         ],
                     ],
                 ],

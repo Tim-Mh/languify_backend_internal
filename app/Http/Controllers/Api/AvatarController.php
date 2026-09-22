@@ -7,6 +7,7 @@ use App\Models\AvatarOption;
 use App\Models\UserAvatar;
 use App\Models\UserAvatarUnlock;
 use App\Models\UserGameState;
+use App\Support\GemLedger;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -120,7 +121,7 @@ class AvatarController extends Controller
                 return response()->json(['message' => 'Not enough gems.'], 422);
             }
 
-            $state->gems -= $option->price_gems;
+            GemLedger::apply($state, -$option->price_gems, 'avatar.unlock');
             $state->save();
 
             UserAvatarUnlock::create([

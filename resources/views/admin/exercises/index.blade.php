@@ -8,6 +8,8 @@
         <a href="{{ route('admin.exercises.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">+ Add Exercise</a>
     </div>
 
+    <x-per-page :paginator="$exercises" noun="exercises" />
+
     <div class="bg-white rounded-lg shadow overflow-hidden">
         <table class="w-full text-left">
             <thead class="bg-gray-50 text-sm text-gray-500">

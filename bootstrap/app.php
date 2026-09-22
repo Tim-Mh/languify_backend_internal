@@ -3,6 +3,7 @@
 use App\Http\Middleware\AuthenticateFromCookie;
 use App\Http\Middleware\EnsureUserHasRole;
 use App\Http\Middleware\RequireActiveSubscription;
+use App\Http\Middleware\SecurityHeaders;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Contracts\Auth\Middleware\AuthenticatesRequests;
 use Illuminate\Foundation\Application;
@@ -18,6 +19,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // SEC-06: hardening headers on every response, web and API alike.
+        $middleware->append(SecurityHeaders::class);
+
         $middleware->alias([
             'auth.cookie' => AuthenticateFromCookie::class,
             'role' => EnsureUserHasRole::class,

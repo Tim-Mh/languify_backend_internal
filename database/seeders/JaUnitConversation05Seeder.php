@@ -83,6 +83,9 @@ class JaUnitConversation05Seeder extends Seeder
                                     'apple',
                                 ],
                             ],
+                            'az' => ['sentence' => 'dünən yedim çörək', 'correct' => ['dünən', 'yedim', 'çörək'], 'extra' => ['alma']],
+                            'ar' => ['sentence' => 'أمس أكلت خبز', 'correct' => ['أمس', 'أكلت', 'خبز'], 'extra' => ['تفاحة']],
+                            'ru' => ['sentence' => 'вчера я ел хлеб', 'correct' => ['вчера', 'я', 'ел', 'хлеб'], 'extra' => ['яблоко']],
                             'es' => [
                                 'sentence' => 'Ayer comí pan',
                                 'correct' => [
@@ -98,7 +101,7 @@ class JaUnitConversation05Seeder extends Seeder
                                 'sentence' => 'Gestern aß ich Brot',
                                 'correct' => [
                                     'gestern',
-                                    'ich aß',
+                                    'aß ich',
                                     'Brot',
                                 ],
                                 'extra' => [
@@ -127,6 +130,7 @@ class JaUnitConversation05Seeder extends Seeder
                                     '사과',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'dün ekmek yedim', 'correct' => ['dün', 'ekmek', 'yedim'], 'extra' => ['elma']],
                         ],
                     ],
                     'b' => [
@@ -148,6 +152,9 @@ class JaUnitConversation05Seeder extends Seeder
                                     'bread',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yedim bir alma', 'correct' => ['yedim', 'bir', 'alma'], 'extra' => ['çörək']],
+                            'ar' => ['sentence' => 'أكلت تفاحة', 'correct' => ['أكلت', 'تفاحة'], 'extra' => ['خبز']],
+                            'ru' => ['sentence' => 'я ел яблоко', 'correct' => ['я', 'ел', 'яблоко'], 'extra' => ['хлеб']],
                             'es' => [
                                 'sentence' => 'Comí una manzana',
                                 'correct' => [
@@ -193,6 +200,7 @@ class JaUnitConversation05Seeder extends Seeder
                                     '빵',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir elma yedim', 'correct' => ['bir', 'elma', 'yedim'], 'extra' => ['ekmek']],
                         ],
                     ],
                     'c' => [
@@ -215,6 +223,9 @@ class JaUnitConversation05Seeder extends Seeder
                                     'yesterday',
                                 ],
                             ],
+                            'az' => ['sentence' => 'çörək və bir alma', 'correct' => ['çörək', 'və', 'bir', 'alma'], 'extra' => ['dünən']],
+                            'ar' => ['sentence' => 'خبز و تفاحة', 'correct' => ['خبز', 'و', 'تفاحة'], 'extra' => ['أمس']],
+                            'ru' => ['sentence' => 'хлеб и яблоко', 'correct' => ['хлеб', 'и', 'яблоко'], 'extra' => ['вчера']],
                             'es' => [
                                 'sentence' => 'Pan y una manzana',
                                 'correct' => [
@@ -261,6 +272,7 @@ class JaUnitConversation05Seeder extends Seeder
                                     '어제',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ekmek ve elma', 'correct' => ['ekmek', 've', 'elma'], 'extra' => ['dün']],
                         ],
                     ],
                 ],
@@ -303,6 +315,9 @@ class JaUnitConversation05Seeder extends Seeder
                                     'water',
                                 ],
                             ],
+                            'az' => ['sentence' => 'içdim qəhvə', 'correct' => ['içdim', 'qəhvə'], 'extra' => ['su']],
+                            'ar' => ['sentence' => 'شربت قهوة', 'correct' => ['شربت', 'قهوة'], 'extra' => ['ماء']],
+                            'ru' => ['sentence' => 'я пил кофе', 'correct' => ['я', 'пил', 'кофе'], 'extra' => ['вода']],
                             'es' => [
                                 'sentence' => 'Bebí café',
                                 'correct' => [
@@ -346,6 +361,7 @@ class JaUnitConversation05Seeder extends Seeder
                                     '물',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kahve içtim', 'correct' => ['kahve', 'içtim'], 'extra' => ['su']],
                         ],
                     ],
                     'b' => [
@@ -365,6 +381,9 @@ class JaUnitConversation05Seeder extends Seeder
                                     'I drank',
                                 ],
                             ],
+                            'az' => ['sentence' => 'idi yaxşı', 'correct' => ['idi', 'yaxşı'], 'extra' => ['içdim']],
+                            'ar' => ['sentence' => 'كان جيد', 'correct' => ['كان', 'جيد'], 'extra' => ['شربت']],
+                            'ru' => ['sentence' => 'было хороший', 'correct' => ['было', 'хороший'], 'extra' => ['я', 'пил']],
                             'es' => [
                                 'sentence' => 'Fue bueno',
                                 'correct' => [
@@ -408,6 +427,7 @@ class JaUnitConversation05Seeder extends Seeder
                                     '나는 마셨다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'o iyiydi', 'correct' => ['o', 'iyiydi'], 'extra' => ['içtim']],
                         ],
                     ],
                     'c' => [
@@ -428,6 +448,9 @@ class JaUnitConversation05Seeder extends Seeder
                                     'coffee',
                                 ],
                             ],
+                            'az' => ['sentence' => 'içdim su', 'correct' => ['içdim', 'su'], 'extra' => ['qəhvə']],
+                            'ar' => ['sentence' => 'شربت ماء', 'correct' => ['شربت', 'ماء'], 'extra' => ['قهوة']],
+                            'ru' => ['sentence' => 'я пил вода', 'correct' => ['я', 'пил', 'вода'], 'extra' => ['кофе']],
                             'es' => [
                                 'sentence' => 'Bebí agua',
                                 'correct' => [
@@ -470,6 +493,7 @@ class JaUnitConversation05Seeder extends Seeder
                                     '커피',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'su içtim', 'correct' => ['su', 'içtim'], 'extra' => ['kahve']],
                         ],
                     ],
                 ],
@@ -513,6 +537,9 @@ class JaUnitConversation05Seeder extends Seeder
                                     'already',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gördüm park', 'correct' => ['gördüm', 'park'], 'extra' => ['artıq']],
+                            'ar' => ['sentence' => 'رأيت حديقة', 'correct' => ['رأيت', 'حديقة'], 'extra' => ['بالفعل']],
+                            'ru' => ['sentence' => 'я видел парк', 'correct' => ['я', 'видел', 'парк'], 'extra' => ['уже']],
                             'es' => [
                                 'sentence' => 'Vi el parque',
                                 'correct' => [
@@ -559,6 +586,7 @@ class JaUnitConversation05Seeder extends Seeder
                                     '이미',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'parkı gördüm', 'correct' => ['parkı', 'gördüm'], 'extra' => ['zaten']],
                         ],
                     ],
                     'b' => [
@@ -579,6 +607,9 @@ class JaUnitConversation05Seeder extends Seeder
                                     'I saw',
                                 ],
                             ],
+                            'az' => ['sentence' => 'artıq burada', 'correct' => ['artıq', 'burada'], 'extra' => ['gördüm']],
+                            'ar' => ['sentence' => 'بالفعل هنا', 'correct' => ['بالفعل', 'هنا'], 'extra' => ['رأيت']],
+                            'ru' => ['sentence' => 'уже здесь', 'correct' => ['уже', 'здесь'], 'extra' => ['я', 'видел']],
                             'es' => [
                                 'sentence' => 'Ya aquí',
                                 'correct' => [
@@ -622,6 +653,7 @@ class JaUnitConversation05Seeder extends Seeder
                                     '나는 보았다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'zaten burada', 'correct' => ['zaten', 'burada'], 'extra' => ['gördüm']],
                         ],
                     ],
                     'c' => [
@@ -645,6 +677,9 @@ class JaUnitConversation05Seeder extends Seeder
                                     'park',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gördüm ev artıq', 'correct' => ['gördüm', 'ev', 'artıq'], 'extra' => ['park']],
+                            'ar' => ['sentence' => 'رأيت بيت بالفعل', 'correct' => ['رأيت', 'بيت', 'بالفعل'], 'extra' => ['حديقة']],
+                            'ru' => ['sentence' => 'я видел дом уже', 'correct' => ['я', 'видел', 'дом', 'уже'], 'extra' => ['парк']],
                             'es' => [
                                 'sentence' => 'Ya vi la casa',
                                 'correct' => [
@@ -672,10 +707,10 @@ class JaUnitConversation05Seeder extends Seeder
                             'fr' => [
                                 'sentence' => 'J\'ai déjà vu la maison',
                                 'correct' => [
-                                    'j\'ai vu',
+                                    'j\'ai déjà',
+                                    'vu',
                                     'la',
                                     'maison',
-                                    'déjà',
                                 ],
                                 'extra' => [
                                     'parc',
@@ -692,6 +727,7 @@ class JaUnitConversation05Seeder extends Seeder
                                     '공원',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'evi zaten gördüm', 'correct' => ['evi', 'zaten', 'gördüm'], 'extra' => ['park']],
                         ],
                     ],
                 ],
@@ -738,6 +774,9 @@ class JaUnitConversation05Seeder extends Seeder
                                     'then',
                                 ],
                             ],
+                            'az' => ['sentence' => 'idim içində məktəb', 'correct' => ['idim', 'içində', 'məktəb'], 'extra' => ['sonra']],
+                            'ar' => ['sentence' => 'كنت في مدرسة', 'correct' => ['كنت', 'في', 'مدرسة'], 'extra' => ['ثم']],
+                            'ru' => ['sentence' => 'я был в школа', 'correct' => ['я', 'был', 'в', 'школа'], 'extra' => ['потом']],
                             'es' => [
                                 'sentence' => 'Estaba en la escuela',
                                 'correct' => [
@@ -788,6 +827,7 @@ class JaUnitConversation05Seeder extends Seeder
                                     '그러면',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ben okuldaydım', 'correct' => ['ben', 'okuldaydım'], 'extra' => ['sonra']],
                         ],
                     ],
                     'b' => [
@@ -808,6 +848,9 @@ class JaUnitConversation05Seeder extends Seeder
                                     'I was',
                                 ],
                             ],
+                            'az' => ['sentence' => 'sonra mağaza', 'correct' => ['sonra', 'mağaza'], 'extra' => ['idim']],
+                            'ar' => ['sentence' => 'ثم متجر', 'correct' => ['ثم', 'متجر'], 'extra' => ['كنت']],
+                            'ru' => ['sentence' => 'потом магазин', 'correct' => ['потом', 'магазин'], 'extra' => ['я', 'был']],
                             'es' => [
                                 'sentence' => 'Entonces la tienda',
                                 'correct' => [
@@ -854,6 +897,7 @@ class JaUnitConversation05Seeder extends Seeder
                                     '였습니다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sonra dükkan', 'correct' => ['sonra', 'dükkan'], 'extra' => ['idim']],
                         ],
                     ],
                     'c' => [
@@ -878,6 +922,9 @@ class JaUnitConversation05Seeder extends Seeder
                                     'shop',
                                 ],
                             ],
+                            'az' => ['sentence' => 'idim burada sonra', 'correct' => ['idim', 'burada', 'sonra'], 'extra' => ['mağaza']],
+                            'ar' => ['sentence' => 'كنت هنا ثم', 'correct' => ['كنت', 'هنا', 'ثم'], 'extra' => ['متجر']],
+                            'ru' => ['sentence' => 'я был здесь потом', 'correct' => ['я', 'был', 'здесь', 'потом'], 'extra' => ['магазин']],
                             'es' => [
                                 'sentence' => 'Estaba aquí entonces',
                                 'correct' => [
@@ -923,6 +970,7 @@ class JaUnitConversation05Seeder extends Seeder
                                     '가게',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sonra buradaydım', 'correct' => ['sonra', 'buradaydım'], 'extra' => ['dükkan']],
                         ],
                     ],
                 ],
@@ -967,6 +1015,9 @@ class JaUnitConversation05Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'dünən idi yaxşı', 'correct' => ['dünən', 'idi', 'yaxşı'], 'extra' => ['dost']],
+                            'ar' => ['sentence' => 'أمس كان جيد', 'correct' => ['أمس', 'كان', 'جيد'], 'extra' => ['صديق']],
+                            'ru' => ['sentence' => 'вчера было хороший', 'correct' => ['вчера', 'было', 'хороший'], 'extra' => ['друг']],
                             'es' => [
                                 'sentence' => 'Ayer fue bueno',
                                 'correct' => [
@@ -983,7 +1034,7 @@ class JaUnitConversation05Seeder extends Seeder
                                 'sentence' => 'Gestern war es gut',
                                 'correct' => [
                                     'gestern',
-                                    'es war',
+                                    'war es',
                                     'gut',
                                 ],
                                 'extra' => [
@@ -1013,6 +1064,7 @@ class JaUnitConversation05Seeder extends Seeder
                                     '친구',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'dün iyiydi', 'correct' => ['dün', 'iyiydi'], 'extra' => ['arkadaş']],
                         ],
                     ],
                     'b' => [
@@ -1037,6 +1089,9 @@ class JaUnitConversation05Seeder extends Seeder
                                     'yesterday',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim dost yaxşı', 'correct' => ['mənim', 'dost', 'yaxşı'], 'extra' => ['dünən']],
+                            'ar' => ['sentence' => 'صديق جيد', 'correct' => ['صديق', 'جيد'], 'extra' => ['أمس']],
+                            'ru' => ['sentence' => 'мой друг хороший', 'correct' => ['мой', 'друг', 'хороший'], 'extra' => ['вчера']],
                             'es' => [
                                 'sentence' => 'Mi amigo es bueno',
                                 'correct' => [
@@ -1086,6 +1141,7 @@ class JaUnitConversation05Seeder extends Seeder
                                     '어제',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'arkadaşım iyi', 'correct' => ['arkadaşım', 'iyi'], 'extra' => ['dün']],
                         ],
                     ],
                     'c' => [
@@ -1106,6 +1162,9 @@ class JaUnitConversation05Seeder extends Seeder
                                     'yesterday',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir yaxşı ev', 'correct' => ['bir', 'yaxşı', 'ev'], 'extra' => ['dünən']],
+                            'ar' => ['sentence' => 'جيد بيت', 'correct' => ['جيد', 'بيت'], 'extra' => ['أمس']],
+                            'ru' => ['sentence' => 'хороший дом', 'correct' => ['хороший', 'дом'], 'extra' => ['вчера']],
                             'es' => [
                                 'sentence' => 'Una casa buena',
                                 'correct' => [
@@ -1151,6 +1210,7 @@ class JaUnitConversation05Seeder extends Seeder
                                     '어제',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'iyi bir ev', 'correct' => ['iyi', 'bir', 'ev'], 'extra' => ['dün']],
                         ],
                     ],
                 ],

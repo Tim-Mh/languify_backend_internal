@@ -47,7 +47,13 @@ class SubscriptionPerksTest extends TestCase
     {
         $user = User::factory()->create();
         $this->subscribe($user, 'monthly');
-        UserGameState::create(['user_id' => $user->id, 'hearts' => 3]);
+        // The monthly allowance is granted once a billing month; marking it
+        // spent lets this test start from the heart count it means to test.
+        UserGameState::create([
+            'user_id' => $user->id,
+            'hearts' => 3,
+            'subscriber_hearts_granted_at' => now(),
+        ]);
 
         // Same 5-heart-cap behavior as a free user while above 1 heart.
         $this->actingAs($user)->postJson('/api/game-state/lose-heart')
@@ -61,7 +67,11 @@ class SubscriptionPerksTest extends TestCase
     {
         $user = User::factory()->create();
         $this->subscribe($user, 'monthly');
-        UserGameState::create(['user_id' => $user->id, 'hearts' => 1]);
+        UserGameState::create([
+            'user_id' => $user->id,
+            'hearts' => 1,
+            'subscriber_hearts_granted_at' => now(),
+        ]);
 
         $this->actingAs($user)->postJson('/api/game-state/lose-heart')
             ->assertOk()
@@ -211,5 +221,110 @@ class SubscriptionPerksTest extends TestCase
         $this->actingAs($user)->getJson('/api/game-state')
             ->assertOk()
             ->assertJsonPath('gameState.streak', 0);
+    }
+
+    public function test_the_monthly_allowance_is_granted_on_first_read(): void
+    {
+        $user = User::factory()->create();
+        $this->subscribe($user, 'monthly');
+        UserGameState::create(['user_id' => $user->id, 'hearts' => 5]);
+
+        $this->actingAs($user)->getJson('/api/game-state')
+            ->assertOk()
+            ->assertJsonPath('gameState.hearts', 100);
+    }
+
+    public function test_spent_allowance_does_not_regenerate_back_up(): void
+    {
+        $user = User::factory()->create();
+        $this->subscribe($user, 'monthly');
+
+        // Already granted this month, three hearts spent, and long enough ago
+        // that passive regen would have refilled everything if it applied.
+        UserGameState::create([
+            'user_id' => $user->id,
+            'hearts' => 97,
+            'subscriber_hearts_granted_at' => now()->subDays(2),
+            'hearts_updated_at' => now()->subDays(2),
+        ]);
+
+        // This is the whole bug: 97 used to trickle back to 100 one heart every
+        // fifteen minutes, so the allowance could never actually be spent.
+        $this->actingAs($user)->getJson('/api/game-state')
+            ->assertOk()
+            ->assertJsonPath('gameState.hearts', 97)
+            ->assertJsonPath('gameState.heartsRegenSecondsRemaining', 0);
+    }
+
+    public function test_a_subscriber_below_five_regenerates_only_up_to_five(): void
+    {
+        $user = User::factory()->create();
+        $this->subscribe($user, 'monthly');
+
+        UserGameState::create([
+            'user_id' => $user->id,
+            'hearts' => 0,
+            'subscriber_hearts_granted_at' => now()->subDays(2),
+            'hearts_updated_at' => now()->subDays(2),
+        ]);
+
+        // Regen is the safety net that gets someone off zero, not a refill of
+        // the allowance, so it stops at five however long has passed.
+        $this->actingAs($user)->getJson('/api/game-state')
+            ->assertOk()
+            ->assertJsonPath('gameState.hearts', 5);
+    }
+
+    public function test_the_allowance_is_granted_again_the_next_month(): void
+    {
+        $user = User::factory()->create();
+        $this->subscribe($user, 'monthly');
+
+        UserGameState::create([
+            'user_id' => $user->id,
+            'hearts' => 12,
+            'subscriber_hearts_granted_at' => now()->subMonths(2),
+            'hearts_updated_at' => now()->subMonths(2),
+        ]);
+
+        $this->actingAs($user)->getJson('/api/game-state')
+            ->assertOk()
+            ->assertJsonPath('gameState.hearts', 100);
+    }
+
+    public function test_a_yearly_plan_is_topped_up_monthly_too(): void
+    {
+        $user = User::factory()->create();
+        $this->subscribe($user, 'yearly');
+
+        UserGameState::create([
+            'user_id' => $user->id,
+            'hearts' => 8,
+            'subscriber_hearts_granted_at' => now()->subMonth()->subDay(),
+            'hearts_updated_at' => now()->subMonth()->subDay(),
+        ]);
+
+        // A year's plan buys a hundred hearts a month, not a hundred for the year.
+        $this->actingAs($user)->getJson('/api/game-state')
+            ->assertOk()
+            ->assertJsonPath('gameState.hearts', 100);
+    }
+
+    public function test_an_ended_plan_drops_the_wallet_back_to_five(): void
+    {
+        $user = User::factory()->unsubscribed()->create();
+
+        UserGameState::create([
+            'user_id' => $user->id,
+            'hearts' => 100,
+            'subscriber_hearts_granted_at' => now()->subDay(),
+            'hearts_updated_at' => now()->subDay(),
+        ]);
+
+        // Nothing else lowers the count when a plan lapses, so the trim has to
+        // happen on the next read however the plan actually ended.
+        $this->actingAs($user)->getJson('/api/game-state')
+            ->assertOk()
+            ->assertJsonPath('gameState.hearts', 5);
     }
 }

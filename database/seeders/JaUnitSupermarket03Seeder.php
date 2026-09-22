@@ -81,6 +81,9 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     'carrot',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yeyirəm bir az tərəvəzlər', 'correct' => ['yeyirəm', 'bir az', 'tərəvəzlər'], 'extra' => ['yerkökü']],
+                            'ar' => ['sentence' => 'آكل بعض خضروات', 'correct' => ['آكل', 'بعض', 'خضروات'], 'extra' => ['جزر']],
+                            'ru' => ['sentence' => 'ем немного овощи', 'correct' => ['ем', 'немного', 'овощи'], 'extra' => ['морковь']],
                             'es' => [
                                 'sentence' => 'Comer verduras',
                                 'correct' => [
@@ -127,6 +130,7 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     '당근',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'biraz sebze ye', 'correct' => ['biraz', 'sebze', 'ye'], 'extra' => ['havuç']],
                         ],
                     ],
                     'b' => [
@@ -150,6 +154,9 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     'vegetables',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir yerkökü və bir pomidor', 'correct' => ['bir', 'yerkökü', 'və', 'bir', 'pomidor'], 'extra' => ['tərəvəzlər']],
+                            'ar' => ['sentence' => 'جزر و طماطم', 'correct' => ['جزر', 'و', 'طماطم'], 'extra' => ['خضروات']],
+                            'ru' => ['sentence' => 'морковь и помидор', 'correct' => ['морковь', 'и', 'помидор'], 'extra' => ['овощи']],
                             'es' => [
                                 'sentence' => 'Una zanahoria y un tomate',
                                 'correct' => [
@@ -199,6 +206,7 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     '채소',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir havuç ve bir domates', 'correct' => ['bir', 'havuç', 've', 'bir', 'domates'], 'extra' => ['sebze']],
                         ],
                     ],
                     'c' => [
@@ -220,6 +228,9 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     'vegetables',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yeyirəm bir pomidor', 'correct' => ['yeyirəm', 'bir', 'pomidor'], 'extra' => ['tərəvəzlər']],
+                            'ar' => ['sentence' => 'آكل طماطم', 'correct' => ['آكل', 'طماطم'], 'extra' => ['خضروات']],
+                            'ru' => ['sentence' => 'ем помидор', 'correct' => ['ем', 'помидор'], 'extra' => ['овощи']],
                             'es' => [
                                 'sentence' => 'Comer un tomate',
                                 'correct' => [
@@ -265,6 +276,7 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     '채소',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir domates ye', 'correct' => ['bir', 'domates', 'ye'], 'extra' => ['sebze']],
                         ],
                     ],
                 ],
@@ -308,6 +320,9 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     'scales',
                                 ],
                             ],
+                            'az' => ['sentence' => 'çəkmək bir soğan', 'correct' => ['çəkmək', 'bir', 'soğan'], 'extra' => ['tərəzi']],
+                            'ar' => ['sentence' => 'الوزن بصل', 'correct' => ['الوزن', 'بصل'], 'extra' => ['ميزان']],
+                            'ru' => ['sentence' => 'взвесить лук', 'correct' => ['взвесить', 'лук'], 'extra' => ['весы']],
                             'es' => [
                                 'sentence' => 'Pesar una cebolla',
                                 'correct' => [
@@ -355,6 +370,7 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     '저울',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir soğan tartmak', 'correct' => ['bir', 'soğan', 'tartmak'], 'extra' => ['terazi']],
                         ],
                     ],
                     'b' => [
@@ -378,6 +394,9 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     'to weigh',
                                 ],
                             ],
+                            'az' => ['sentence' => 'tərəzi burada', 'correct' => ['tərəzi', 'burada'], 'extra' => ['çəkmək']],
+                            'ar' => ['sentence' => 'ميزان هنا', 'correct' => ['ميزان', 'هنا'], 'extra' => ['الوزن']],
+                            'ru' => ['sentence' => 'весы здесь', 'correct' => ['весы', 'здесь'], 'extra' => ['взвесить']],
                             'es' => [
                                 'sentence' => 'La balanza está aquí',
                                 'correct' => [
@@ -427,6 +446,7 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     '무게를 재다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'terazi burada', 'correct' => ['terazi', 'burada'], 'extra' => ['tartmak']],
                         ],
                     ],
                     'c' => [
@@ -448,6 +468,9 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     'scales',
                                 ],
                             ],
+                            'az' => ['sentence' => 'çəkmək bir kartof', 'correct' => ['çəkmək', 'bir', 'kartof'], 'extra' => ['tərəzi']],
+                            'ar' => ['sentence' => 'الوزن بطاطا', 'correct' => ['الوزن', 'بطاطا'], 'extra' => ['ميزان']],
+                            'ru' => ['sentence' => 'взвесить картофель', 'correct' => ['взвесить', 'картофель'], 'extra' => ['весы']],
                             'es' => [
                                 'sentence' => 'Pesar una patata',
                                 'correct' => [
@@ -494,6 +517,7 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     '저울',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir patates tartmak', 'correct' => ['bir', 'patates', 'tartmak'], 'extra' => ['terazi']],
                         ],
                     ],
                 ],
@@ -539,6 +563,9 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     'behind',
                                 ],
                             ],
+                            'az' => ['sentence' => 'şöbə qarşıda', 'correct' => ['şöbə', 'qarşıda'], 'extra' => ['arxada']],
+                            'ar' => ['sentence' => 'قسم أمام', 'correct' => ['قسم', 'أمام'], 'extra' => ['خلف']],
+                            'ru' => ['sentence' => 'отдел впереди', 'correct' => ['отдел', 'впереди'], 'extra' => ['сзади']],
                             'es' => [
                                 'sentence' => 'El pasillo está delante',
                                 'correct' => [
@@ -589,6 +616,7 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     '뒤에',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'reyon önde', 'correct' => ['reyon', 'önde'], 'extra' => ['arkasında']],
                         ],
                     ],
                     'b' => [
@@ -614,6 +642,9 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     'before',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir soğan arxada şöbə', 'correct' => ['bir', 'soğan', 'arxada', 'şöbə'], 'extra' => ['əvvəl']],
+                            'ar' => ['sentence' => 'بصل خلف قسم', 'correct' => ['بصل', 'خلف', 'قسم'], 'extra' => ['قبل']],
+                            'ru' => ['sentence' => 'лук сзади отдел', 'correct' => ['лук', 'сзади', 'отдел'], 'extra' => ['до']],
                             'es' => [
                                 'sentence' => 'Una cebolla detrás del pasillo',
                                 'correct' => [
@@ -664,6 +695,7 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     '앞에',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'reyonun arkasında bir soğan', 'correct' => ['reyonun', 'arkasında', 'bir', 'soğan'], 'extra' => ['önce']],
                         ],
                     ],
                     'c' => [
@@ -685,6 +717,9 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     'onion',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qarşıda və ya arxada', 'correct' => ['qarşıda', 'və ya', 'arxada'], 'extra' => ['soğan']],
+                            'ar' => ['sentence' => 'أمام أو خلف', 'correct' => ['أمام', 'أو', 'خلف'], 'extra' => ['بصل']],
+                            'ru' => ['sentence' => 'впереди или сзади', 'correct' => ['впереди', 'или', 'сзади'], 'extra' => ['лук']],
                             'es' => [
                                 'sentence' => 'Delante o detrás',
                                 'correct' => [
@@ -729,6 +764,7 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     '양파',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'önde veya arkada', 'correct' => ['önde', 'veya', 'arkada'], 'extra' => ['soğan']],
                         ],
                     ],
                 ],
@@ -770,6 +806,9 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     'too much',
                                 ],
                             ],
+                            'az' => ['sentence' => 'kifayət tərəvəzlər', 'correct' => ['kifayət', 'tərəvəzlər'], 'extra' => ['çox artıq']],
+                            'ar' => ['sentence' => 'كفى خضروات', 'correct' => ['كفى', 'خضروات'], 'extra' => ['كثير جدا']],
+                            'ru' => ['sentence' => 'достаточно овощи', 'correct' => ['достаточно', 'овощи'], 'extra' => ['слишком много']],
                             'es' => [
                                 'sentence' => 'Bastantes verduras',
                                 'correct' => [
@@ -813,6 +852,7 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     '너무',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yeterli sebze', 'correct' => ['yeterli', 'sebze'], 'extra' => ['çok fazla']],
                         ],
                     ],
                     'b' => [
@@ -833,6 +873,9 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     'enough',
                                 ],
                             ],
+                            'az' => ['sentence' => 'çox artıq pomidor', 'correct' => ['çox artıq', 'pomidor'], 'extra' => ['kifayət']],
+                            'ar' => ['sentence' => 'كثير جدا طماطم', 'correct' => ['كثير جدا', 'طماطم'], 'extra' => ['كفى']],
+                            'ru' => ['sentence' => 'слишком много помидор', 'correct' => ['слишком много', 'помидор'], 'extra' => ['достаточно']],
                             'es' => [
                                 'sentence' => 'Demasiado tomate',
                                 'correct' => [
@@ -876,6 +919,7 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     '충분히',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'çok fazla domates', 'correct' => ['çok', 'fazla', 'domates'], 'extra' => ['yeterli']],
                         ],
                     ],
                     'c' => [
@@ -901,6 +945,9 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     'vegetables',
                                 ],
                             ],
+                            'az' => ['sentence' => 'kifayət yerkökü və çox artıq pomidor', 'correct' => ['kifayət', 'yerkökü', 'və', 'çox artıq', 'pomidor'], 'extra' => ['tərəvəzlər']],
+                            'ar' => ['sentence' => 'كفى جزر و كثير جدا طماطم', 'correct' => ['كفى', 'جزر', 'و', 'كثير جدا', 'طماطم'], 'extra' => ['خضروات']],
+                            'ru' => ['sentence' => 'достаточно морковь и слишком много помидор', 'correct' => ['достаточно', 'морковь', 'и', 'слишком много', 'помидор'], 'extra' => ['овощи']],
                             'es' => [
                                 'sentence' => 'Bastante zanahoria y demasiado tomate',
                                 'correct' => [
@@ -953,6 +1000,7 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     '채소',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yeterli havuç ve çok fazla domates', 'correct' => ['yeterli', 'havuç', 've', 'çok', 'fazla', 'domates'], 'extra' => ['sebze']],
                         ],
                     ],
                 ],
@@ -995,6 +1043,9 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     'now',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir ucuz soğan', 'correct' => ['bir', 'ucuz', 'soğan'], 'extra' => ['indi']],
+                            'ar' => ['sentence' => 'رخيص بصل', 'correct' => ['رخيص', 'بصل'], 'extra' => ['الآن']],
+                            'ru' => ['sentence' => 'дешёвый лук', 'correct' => ['дешёвый', 'лук'], 'extra' => ['сейчас']],
                             'es' => [
                                 'sentence' => 'Una cebolla barata',
                                 'correct' => [
@@ -1041,6 +1092,7 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     '지금',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ucuz bir soğan', 'correct' => ['ucuz', 'bir', 'soğan'], 'extra' => ['şimdi']],
                         ],
                     ],
                     'b' => [
@@ -1060,6 +1112,9 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     'cheap',
                                 ],
                             ],
+                            'az' => ['sentence' => 'al indi', 'correct' => ['al', 'indi'], 'extra' => ['ucuz']],
+                            'ar' => ['sentence' => 'اشتر الآن', 'correct' => ['اشتر', 'الآن'], 'extra' => ['رخيص']],
+                            'ru' => ['sentence' => 'купи сейчас', 'correct' => ['купи', 'сейчас'], 'extra' => ['дешёвый']],
                             'es' => [
                                 'sentence' => 'Comprar ahora',
                                 'correct' => [
@@ -1102,6 +1157,7 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     '싼',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'şimdi al', 'correct' => ['şimdi', 'al'], 'extra' => ['ucuz']],
                         ],
                     ],
                     'c' => [
@@ -1125,6 +1181,9 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     'cheap',
                                 ],
                             ],
+                            'az' => ['sentence' => 'al bir kartof indi', 'correct' => ['al', 'bir', 'kartof', 'indi'], 'extra' => ['ucuz']],
+                            'ar' => ['sentence' => 'اشتر بطاطا الآن', 'correct' => ['اشتر', 'بطاطا', 'الآن'], 'extra' => ['رخيص']],
+                            'ru' => ['sentence' => 'купи картофель сейчас', 'correct' => ['купи', 'картофель', 'сейчас'], 'extra' => ['дешёвый']],
                             'es' => [
                                 'sentence' => 'Comprar una patata ahora',
                                 'correct' => [
@@ -1173,6 +1232,7 @@ class JaUnitSupermarket03Seeder extends Seeder
                                     '싼',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'şimdi bir patates al', 'correct' => ['şimdi', 'bir', 'patates', 'al'], 'extra' => ['ucuz']],
                         ],
                     ],
                 ],

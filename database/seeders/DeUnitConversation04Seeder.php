@@ -79,6 +79,9 @@ class DeUnitConversation04Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən xoşbəxt', 'correct' => ['mən', 'xoşbəxt'], 'extra' => ['kədərli', 'dost']],
+                            'ar' => ['sentence' => 'أنا فرح', 'correct' => ['أنا', 'فرح'], 'extra' => ['حزين', 'صديق']],
+                            'ru' => ['sentence' => 'я счастливый', 'correct' => ['я', 'счастливый'], 'extra' => ['грустный', 'друг']],
                             'es' => [
                                 'sentence' => 'Estoy feliz',
                                 'correct' => [
@@ -123,6 +126,7 @@ class DeUnitConversation04Seeder extends Seeder
                                     '슬픈',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ben mutluyum', 'correct' => ['ben', 'mutluyum'], 'extra' => ['üzgün', 'arkadaş']],
                         ],
                     ],
                     'b' => [
@@ -147,6 +151,9 @@ class DeUnitConversation04Seeder extends Seeder
                                     'mother',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim dost kədərli', 'correct' => ['mənim', 'dost', 'kədərli'], 'extra' => ['xoşbəxt', 'ana']],
+                            'ar' => ['sentence' => 'صديق حزين', 'correct' => ['صديق', 'حزين'], 'extra' => ['فرح', 'أم']],
+                            'ru' => ['sentence' => 'мой друг грустный', 'correct' => ['мой', 'друг', 'грустный'], 'extra' => ['счастливый', 'мама']],
                             'es' => [
                                 'sentence' => 'Mi amigo está triste',
                                 'correct' => [
@@ -197,6 +204,7 @@ class DeUnitConversation04Seeder extends Seeder
                                     '행복한',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'arkadaşım üzgün', 'correct' => ['arkadaşım', 'üzgün'], 'extra' => ['mutlu', 'anne']],
                         ],
                     ],
                     'c' => [
@@ -220,6 +228,9 @@ class DeUnitConversation04Seeder extends Seeder
                                     'sad',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim ana xoşbəxt', 'correct' => ['mənim', 'ana', 'xoşbəxt'], 'extra' => ['kədərli']],
+                            'ar' => ['sentence' => 'أم فرح', 'correct' => ['أم', 'فرح'], 'extra' => ['حزين']],
+                            'ru' => ['sentence' => 'мой мама счастливый', 'correct' => ['мой', 'мама', 'счастливый'], 'extra' => ['грустный']],
                             'es' => [
                                 'sentence' => 'Mi madre está feliz',
                                 'correct' => [
@@ -268,6 +279,7 @@ class DeUnitConversation04Seeder extends Seeder
                                     '슬픈',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'annem mutlu', 'correct' => ['annem', 'mutlu'], 'extra' => ['üzgün']],
                         ],
                     ],
                 ],
@@ -311,6 +323,9 @@ class DeUnitConversation04Seeder extends Seeder
                                     'brother',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən yorğun', 'correct' => ['mən', 'yorğun'], 'extra' => ['xəstə', 'qardaş']],
+                            'ar' => ['sentence' => 'أنا متعب', 'correct' => ['أنا', 'متعب'], 'extra' => ['مريض', 'أخ']],
+                            'ru' => ['sentence' => 'я усталый', 'correct' => ['я', 'усталый'], 'extra' => ['больной', 'брат']],
                             'es' => [
                                 'sentence' => 'Estoy cansado',
                                 'correct' => [
@@ -355,6 +370,7 @@ class DeUnitConversation04Seeder extends Seeder
                                     '아픈',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ben yorgunum', 'correct' => ['ben', 'yorgunum'], 'extra' => ['hasta', 'erkek kardeş']],
                         ],
                     ],
                     'b' => [
@@ -379,6 +395,9 @@ class DeUnitConversation04Seeder extends Seeder
                                     'doctor',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim qardaş xəstə', 'correct' => ['mənim', 'qardaş', 'xəstə'], 'extra' => ['yorğun', 'həkim']],
+                            'ar' => ['sentence' => 'أخ مريض', 'correct' => ['أخ', 'مريض'], 'extra' => ['متعب', 'طبيب']],
+                            'ru' => ['sentence' => 'мой брат больной', 'correct' => ['мой', 'брат', 'больной'], 'extra' => ['усталый', 'врач']],
                             'es' => [
                                 'sentence' => 'Mi hermano está enfermo',
                                 'correct' => [
@@ -429,6 +448,7 @@ class DeUnitConversation04Seeder extends Seeder
                                     '피곤한',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kardeşim hasta', 'correct' => ['kardeşim', 'hasta'], 'extra' => ['yorgun', 'doktor']],
                         ],
                     ],
                     'c' => [
@@ -454,6 +474,9 @@ class DeUnitConversation04Seeder extends Seeder
                                     'sick',
                                 ],
                             ],
+                            'az' => ['sentence' => 'həkim və mənim qardaş', 'correct' => ['həkim', 'və', 'mənim', 'qardaş'], 'extra' => ['xəstə']],
+                            'ar' => ['sentence' => 'طبيب و أخ', 'correct' => ['طبيب', 'و', 'أخ'], 'extra' => ['مريض']],
+                            'ru' => ['sentence' => 'врач и мой брат', 'correct' => ['врач', 'и', 'мой', 'брат'], 'extra' => ['больной']],
                             'es' => [
                                 'sentence' => 'El médico y mi hermano',
                                 'correct' => [
@@ -503,6 +526,7 @@ class DeUnitConversation04Seeder extends Seeder
                                     '아픈',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'doktor ve kardeşim', 'correct' => ['doktor', 've', 'kardeşim'], 'extra' => ['hasta']],
                         ],
                     ],
                 ],
@@ -546,6 +570,9 @@ class DeUnitConversation04Seeder extends Seeder
                                     'sister',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən şad', 'correct' => ['mən', 'şad'], 'extra' => ['sakit', 'bacı']],
+                            'ar' => ['sentence' => 'أنا سعيد', 'correct' => ['أنا', 'سعيد'], 'extra' => ['هادئ', 'أخت']],
+                            'ru' => ['sentence' => 'я рада', 'correct' => ['я', 'рада'], 'extra' => ['спокойный', 'сестра']],
                             'es' => [
                                 'sentence' => 'Estoy contento',
                                 'correct' => [
@@ -590,6 +617,7 @@ class DeUnitConversation04Seeder extends Seeder
                                     '차분한',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ben memnunum', 'correct' => ['ben', 'memnunum'], 'extra' => ['sakin', 'kız kardeş']],
                         ],
                     ],
                     'b' => [
@@ -614,6 +642,9 @@ class DeUnitConversation04Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim bacı sakit', 'correct' => ['mənim', 'bacı', 'sakit'], 'extra' => ['şad', 'dost']],
+                            'ar' => ['sentence' => 'أخت هادئ', 'correct' => ['أخت', 'هادئ'], 'extra' => ['سعيد', 'صديق']],
+                            'ru' => ['sentence' => 'мой сестра спокойный', 'correct' => ['мой', 'сестра', 'спокойный'], 'extra' => ['рада', 'друг']],
                             'es' => [
                                 'sentence' => 'Mi hermana está tranquila',
                                 'correct' => [
@@ -664,6 +695,7 @@ class DeUnitConversation04Seeder extends Seeder
                                     '기쁜',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kız kardeşim sakin', 'correct' => ['kız', 'kardeşim', 'sakin'], 'extra' => ['memnun', 'arkadaş']],
                         ],
                     ],
                     'c' => [
@@ -687,6 +719,9 @@ class DeUnitConversation04Seeder extends Seeder
                                     'calm',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim dost şad', 'correct' => ['mənim', 'dost', 'şad'], 'extra' => ['sakit']],
+                            'ar' => ['sentence' => 'صديق سعيد', 'correct' => ['صديق', 'سعيد'], 'extra' => ['هادئ']],
+                            'ru' => ['sentence' => 'мой друг рада', 'correct' => ['мой', 'друг', 'рада'], 'extra' => ['спокойный']],
                             'es' => [
                                 'sentence' => 'Mi amigo está contento',
                                 'correct' => [
@@ -735,6 +770,7 @@ class DeUnitConversation04Seeder extends Seeder
                                     '차분한',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'arkadaşım memnun', 'correct' => ['arkadaşım', 'memnun'], 'extra' => ['sakin']],
                         ],
                     ],
                 ],
@@ -781,6 +817,9 @@ class DeUnitConversation04Seeder extends Seeder
                                     'mother',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən az yorğun', 'correct' => ['mən', 'az', 'yorğun'], 'extra' => ['çünki', 'ana']],
+                            'ar' => ['sentence' => 'أنا قليل متعب', 'correct' => ['أنا', 'قليل', 'متعب'], 'extra' => ['لأن', 'أم']],
+                            'ru' => ['sentence' => 'я немного усталый', 'correct' => ['я', 'немного', 'усталый'], 'extra' => ['потому что', 'мама']],
                             'es' => [
                                 'sentence' => 'Estoy un poco cansado',
                                 'correct' => [
@@ -829,6 +868,7 @@ class DeUnitConversation04Seeder extends Seeder
                                     '왜냐하면',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ben biraz yorgunum', 'correct' => ['ben', 'biraz', 'yorgunum'], 'extra' => ['çünkü', 'anne']],
                         ],
                     ],
                     'b' => [
@@ -852,6 +892,9 @@ class DeUnitConversation04Seeder extends Seeder
                                     'a little',
                                 ],
                             ],
+                            'az' => ['sentence' => 'xoşbəxt çünki mənim ana', 'correct' => ['xoşbəxt', 'çünki', 'mənim', 'ana'], 'extra' => ['az']],
+                            'ar' => ['sentence' => 'فرح لأن أم', 'correct' => ['فرح', 'لأن', 'أم'], 'extra' => ['قليل']],
+                            'ru' => ['sentence' => 'счастливый потому что мой мама', 'correct' => ['счастливый', 'потому что', 'мой', 'мама'], 'extra' => ['немного']],
                             'es' => [
                                 'sentence' => 'Feliz porque mi madre',
                                 'correct' => [
@@ -900,6 +943,7 @@ class DeUnitConversation04Seeder extends Seeder
                                     '조금',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'mutlu çünkü annem', 'correct' => ['mutlu', 'çünkü', 'annem'], 'extra' => ['biraz']],
                         ],
                     ],
                     'c' => [
@@ -925,6 +969,9 @@ class DeUnitConversation04Seeder extends Seeder
                                     'because',
                                 ],
                             ],
+                            'az' => ['sentence' => 'az kədərli içində ev', 'correct' => ['az', 'kədərli', 'içində', 'ev'], 'extra' => ['çünki']],
+                            'ar' => ['sentence' => 'قليل حزين في بيت', 'correct' => ['قليل', 'حزين', 'في', 'بيت'], 'extra' => ['لأن']],
+                            'ru' => ['sentence' => 'немного грустный в дом', 'correct' => ['немного', 'грустный', 'в', 'дом'], 'extra' => ['потому что']],
                             'es' => [
                                 'sentence' => 'Un poco triste en la casa',
                                 'correct' => [
@@ -974,6 +1021,7 @@ class DeUnitConversation04Seeder extends Seeder
                                     '왜냐하면',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'evde biraz üzgün', 'correct' => ['evde', 'biraz', 'üzgün'], 'extra' => ['çünkü']],
                         ],
                     ],
                 ],
@@ -1020,6 +1068,9 @@ class DeUnitConversation04Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'hiss edirəm xoşbəxt bu gün', 'correct' => ['hiss edirəm', 'xoşbəxt', 'bu gün'], 'extra' => ['kədərli', 'dost']],
+                            'ar' => ['sentence' => 'أشعر فرح اليوم', 'correct' => ['أشعر', 'فرح', 'اليوم'], 'extra' => ['حزين', 'صديق']],
+                            'ru' => ['sentence' => 'я чувствую счастливый сегодня', 'correct' => ['я', 'чувствую', 'счастливый', 'сегодня'], 'extra' => ['грустный', 'друг']],
                             'es' => [
                                 'sentence' => 'Hoy me siento feliz',
                                 'correct' => [
@@ -1068,6 +1119,7 @@ class DeUnitConversation04Seeder extends Seeder
                                     '슬픈',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bugün mutlu hissediyorum', 'correct' => ['bugün', 'mutlu', 'hissediyorum'], 'extra' => ['üzgün', 'arkadaş']],
                         ],
                     ],
                     'b' => [
@@ -1093,6 +1145,9 @@ class DeUnitConversation04Seeder extends Seeder
                                     'I feel',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim bacı şad bu gün', 'correct' => ['mənim', 'bacı', 'şad', 'bu gün'], 'extra' => ['hiss edirəm']],
+                            'ar' => ['sentence' => 'أخت سعيد اليوم', 'correct' => ['أخت', 'سعيد', 'اليوم'], 'extra' => ['أشعر']],
+                            'ru' => ['sentence' => 'мой сестра рада сегодня', 'correct' => ['мой', 'сестра', 'рада', 'сегодня'], 'extra' => ['я', 'чувствую']],
                             'es' => [
                                 'sentence' => 'Mi hermana está contenta hoy',
                                 'correct' => [
@@ -1145,6 +1200,7 @@ class DeUnitConversation04Seeder extends Seeder
                                     '나는 느낍니다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kız kardeşim bugün memnun', 'correct' => ['kız', 'kardeşim', 'bugün', 'memnun'], 'extra' => ['hissediyorum']],
                         ],
                     ],
                     'c' => [
@@ -1172,6 +1228,9 @@ class DeUnitConversation04Seeder extends Seeder
                                     'today',
                                 ],
                             ],
+                            'az' => ['sentence' => 'hiss edirəm sakit ilə mənim dost', 'correct' => ['hiss edirəm', 'sakit', 'ilə', 'mənim', 'dost'], 'extra' => ['bu gün']],
+                            'ar' => ['sentence' => 'أشعر هادئ مع صديق', 'correct' => ['أشعر', 'هادئ', 'مع', 'صديق'], 'extra' => ['اليوم']],
+                            'ru' => ['sentence' => 'я чувствую спокойный с мой друг', 'correct' => ['я', 'чувствую', 'спокойный', 'с', 'мой', 'друг'], 'extra' => ['сегодня']],
                             'es' => [
                                 'sentence' => 'Me siento tranquilo con mi amigo',
                                 'correct' => [
@@ -1224,6 +1283,7 @@ class DeUnitConversation04Seeder extends Seeder
                                     '오늘',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'arkadaşımla sakin hissediyorum', 'correct' => ['arkadaşımla', 'sakin', 'hissediyorum'], 'extra' => ['bugün']],
                         ],
                     ],
                 ],

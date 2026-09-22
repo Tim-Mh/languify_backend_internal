@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\ChestRewardConfig;
 use App\Models\User;
 use App\Models\UserGameState;
 use Carbon\Carbon;
@@ -29,42 +30,43 @@ class ChestTest extends TestCase
             ->assertJsonPath('reward.xp', 0)
             ->assertJsonPath('reward.hearts', 0);
 
-        // Base reward is 10-20 gems; every factory user is a subscriber by
-        // default (see UserFactory::configure()), so +50% bonus always applies.
+        // Bounds come from the same config row the service rewards from, not
+        // from a number typed here: the seeded daily range has already moved
+        // once (10-20 to 20-30) and left this test failing on any high roll.
+        // Every factory user is a subscriber by default (see
+        // UserFactory::configure()), so the +50% bonus always applies.
+        $config = ChestRewardConfig::where('chest_type', 'daily')->firstOrFail();
         $gems = UserGameState::where('user_id', $user->id)->value('gems');
-        $this->assertGreaterThanOrEqual(15, $gems);
-        $this->assertLessThanOrEqual(30, $gems);
+
+        $this->assertGreaterThanOrEqual((int) floor($config->min_gems * 1.5), $gems);
+        $this->assertLessThanOrEqual((int) ceil($config->max_gems * 1.5), $gems);
 
         $this->actingAs($user)->postJson('/api/chests/daily/claim')
             ->assertStatus(422);
     }
 
-    public function test_streak_chest_becomes_claimable_after_reaching_a_3_day_streak(): void
+    /**
+     * The streak and unit-bonus chests were removed from the product: only the
+     * daily chest is offered, and routes/api.php drops both claim routes so
+     * they cannot be reached even by a direct API call.
+     *
+     * This test exists to keep them gone. If someone re-adds a route, this
+     * fails and they have to make the case for it deliberately, which is the
+     * whole point of deleting a route rather than hiding a button.
+     */
+    public function test_the_streak_and_unit_bonus_chest_claims_stay_unreachable(): void
     {
         $user = User::factory()->create();
         [, $learning] = $this->enrollUserInCourse($user);
-        $lessons = $this->createChapterWithLessons($learning, 3)['lessons'];
+        $unit = $this->createChapterWithLessons($learning, 2);
 
-        Carbon::setTestNow(Carbon::parse('2026-01-01 10:00:00'));
-        $this->actingAs($user)->postJson("/api/lessons/{$lessons[0]->id}/complete", ['mistakes' => 0])
-            ->assertJsonPath('streak', 1);
+        $this->actingAs($user)
+            ->postJson('/api/chests/streak/claim')
+            ->assertStatus(404);
 
-        Carbon::setTestNow(Carbon::parse('2026-01-02 10:00:00'));
-        $this->actingAs($user)->postJson("/api/lessons/{$lessons[1]->id}/complete", ['mistakes' => 0])
-            ->assertJsonPath('streak', 2);
-
-        Carbon::setTestNow(Carbon::parse('2026-01-03 10:00:00'));
-        $response = $this->actingAs($user)->postJson("/api/lessons/{$lessons[2]->id}/complete", ['mistakes' => 0]);
-        $response->assertJsonPath('streak', 3);
-        $this->assertSame(3, $response->json('streakMilestoneHit.days'));
-
-        $claim = $this->actingAs($user)->postJson('/api/chests/streak/claim');
-        $claim->assertOk()->assertJsonPath('reward.milestoneDays', 3);
-
-        // The 3-day milestone reward is "Badge on profile" — 0 gems.
-        $claim->assertJsonPath('reward.gems', 0);
-
-        $this->actingAs($user)->postJson('/api/chests/streak/claim')->assertStatus(422);
+        $this->actingAs($user)
+            ->postJson('/api/chests/unit-bonus/claim', ['unitId' => $unit['unit']->id])
+            ->assertStatus(404);
     }
 
     public function test_streak_resets_after_a_missed_day(): void
@@ -92,28 +94,6 @@ class ChestTest extends TestCase
         Carbon::setTestNow(Carbon::parse('2026-01-03 10:00:00'));
         $this->actingAs($user)->postJson("/api/lessons/{$lessons[1]->id}/complete", ['mistakes' => 0])
             ->assertJsonPath('streak', 1);
-    }
-
-    public function test_unit_bonus_chest_requires_the_first_lesson_to_be_completed(): void
-    {
-        $user = User::factory()->create();
-        [, $learning] = $this->enrollUserInCourse($user);
-        $unit = $this->createChapterWithLessons($learning, 2);
-
-        $this->actingAs($user)
-            ->postJson('/api/chests/unit-bonus/claim', ['unitId' => $unit['unit']->id])
-            ->assertStatus(422);
-
-        $this->actingAs($user)->postJson("/api/lessons/{$unit['lessons'][0]->id}/complete", ['mistakes' => 0]);
-
-        $this->actingAs($user)
-            ->postJson('/api/chests/unit-bonus/claim', ['unitId' => $unit['unit']->id])
-            ->assertOk();
-
-        // Claiming twice is rejected.
-        $this->actingAs($user)
-            ->postJson('/api/chests/unit-bonus/claim', ['unitId' => $unit['unit']->id])
-            ->assertStatus(422);
     }
 
     public function test_chest_endpoints_require_authentication(): void

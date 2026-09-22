@@ -81,6 +81,9 @@ class JaUnitBeginner06Seeder extends Seeder
                                     'drink',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən yeyirəm çörək', 'correct' => ['mən', 'yeyirəm', 'çörək'], 'extra' => ['içki']],
+                            'ar' => ['sentence' => 'أنا آكل خبز', 'correct' => ['أنا', 'آكل', 'خبز'], 'extra' => ['مشروب']],
+                            'ru' => ['sentence' => 'я ем хлеб', 'correct' => ['я', 'ем', 'хлеб'], 'extra' => ['напиток']],
                             'es' => [
                                 'sentence' => 'Yo como pan',
                                 'correct' => [
@@ -128,6 +131,7 @@ class JaUnitBeginner06Seeder extends Seeder
                                     '마시다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ekmek yiyorum', 'correct' => ['ekmek', 'yiyorum'], 'extra' => ['iç']],
                         ],
                     ],
                     'b' => [
@@ -151,6 +155,9 @@ class JaUnitBeginner06Seeder extends Seeder
                                     'eat',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən içki su', 'correct' => ['mən', 'içki', 'su'], 'extra' => ['yeyirəm']],
+                            'ar' => ['sentence' => 'أنا مشروب ماء', 'correct' => ['أنا', 'مشروب', 'ماء'], 'extra' => ['آكل']],
+                            'ru' => ['sentence' => 'я напиток вода', 'correct' => ['я', 'напиток', 'вода'], 'extra' => ['ем']],
                             'es' => [
                                 'sentence' => 'Yo bebo agua',
                                 'correct' => [
@@ -198,6 +205,7 @@ class JaUnitBeginner06Seeder extends Seeder
                                     '먹다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'su içiyorum', 'correct' => ['su', 'içiyorum'], 'extra' => ['ye']],
                         ],
                     ],
                     'c' => [
@@ -220,6 +228,9 @@ class JaUnitBeginner06Seeder extends Seeder
                                     'water',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yeyirəm və içki birlikdə', 'correct' => ['yeyirəm', 'və', 'içki', 'birlikdə'], 'extra' => ['su']],
+                            'ar' => ['sentence' => 'آكل و مشروب معا', 'correct' => ['آكل', 'و', 'مشروب', 'معا'], 'extra' => ['ماء']],
+                            'ru' => ['sentence' => 'ем и напиток вместе', 'correct' => ['ем', 'и', 'напиток', 'вместе'], 'extra' => ['вода']],
                             'es' => [
                                 'sentence' => 'Comer y beber juntos',
                                 'correct' => [
@@ -267,6 +278,7 @@ class JaUnitBeginner06Seeder extends Seeder
                                     '물',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'birlikte ye ve iç', 'correct' => ['birlikte', 'ye', 've', 'iç'], 'extra' => ['su']],
                         ],
                     ],
                 ],
@@ -311,6 +323,9 @@ class JaUnitBeginner06Seeder extends Seeder
                                     'speak',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən gəzirəm yavaş', 'correct' => ['mən', 'gəzirəm', 'yavaş'], 'extra' => ['danışıram']],
+                            'ar' => ['sentence' => 'أنا أتمشى ببطء', 'correct' => ['أنا', 'أتمشى', 'ببطء'], 'extra' => ['أتكلم']],
+                            'ru' => ['sentence' => 'я гуляю медленно', 'correct' => ['я', 'гуляю', 'медленно'], 'extra' => ['говорю']],
                             'es' => [
                                 'sentence' => 'Yo camino despacio',
                                 'correct' => [
@@ -358,6 +373,7 @@ class JaUnitBeginner06Seeder extends Seeder
                                     '말하다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ben yavaş yürüyorum', 'correct' => ['ben', 'yavaş', 'yürüyorum'], 'extra' => ['konuş']],
                         ],
                     ],
                     'b' => [
@@ -377,6 +393,9 @@ class JaUnitBeginner06Seeder extends Seeder
                                     'walk',
                                 ],
                             ],
+                            'az' => ['sentence' => 'danışıram indi', 'correct' => ['danışıram', 'indi'], 'extra' => ['gəzirəm']],
+                            'ar' => ['sentence' => 'أتكلم الآن', 'correct' => ['أتكلم', 'الآن'], 'extra' => ['أتمشى']],
+                            'ru' => ['sentence' => 'говорю сейчас', 'correct' => ['говорю', 'сейчас'], 'extra' => ['гуляю']],
                             'es' => [
                                 'sentence' => 'Habla ahora',
                                 'correct' => [
@@ -420,6 +439,7 @@ class JaUnitBeginner06Seeder extends Seeder
                                     '걷다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'şimdi konuş', 'correct' => ['şimdi', 'konuş'], 'extra' => ['yürü']],
                         ],
                     ],
                     'c' => [
@@ -442,6 +462,9 @@ class JaUnitBeginner06Seeder extends Seeder
                                     'now',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gəzirəm və danışıram yavaş', 'correct' => ['gəzirəm', 'və', 'danışıram', 'yavaş'], 'extra' => ['indi']],
+                            'ar' => ['sentence' => 'أتمشى و أتكلم ببطء', 'correct' => ['أتمشى', 'و', 'أتكلم', 'ببطء'], 'extra' => ['الآن']],
+                            'ru' => ['sentence' => 'гуляю и говорю медленно', 'correct' => ['гуляю', 'и', 'говорю', 'медленно'], 'extra' => ['сейчас']],
                             'es' => [
                                 'sentence' => 'Camina y habla despacio',
                                 'correct' => [
@@ -489,6 +512,7 @@ class JaUnitBeginner06Seeder extends Seeder
                                     '지금',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yavaş yürü ve konuş', 'correct' => ['yavaş', 'yürü', 've', 'konuş'], 'extra' => ['şimdi']],
                         ],
                     ],
                 ],
@@ -533,6 +557,9 @@ class JaUnitBeginner06Seeder extends Seeder
                                     'eat',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən yatıram yaxşıyam', 'correct' => ['mən', 'yatıram', 'yaxşıyam'], 'extra' => ['yeyirəm']],
+                            'ar' => ['sentence' => 'أنا أنام بخير', 'correct' => ['أنا', 'أنام', 'بخير'], 'extra' => ['آكل']],
+                            'ru' => ['sentence' => 'я сплю хорошо', 'correct' => ['я', 'сплю', 'хорошо'], 'extra' => ['ем']],
                             'es' => [
                                 'sentence' => 'Yo duermo bien',
                                 'correct' => [
@@ -580,6 +607,7 @@ class JaUnitBeginner06Seeder extends Seeder
                                     '먹다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ben iyi uyuyorum', 'correct' => ['ben', 'iyi', 'uyuyorum'], 'extra' => ['ye']],
                         ],
                     ],
                     'b' => [
@@ -599,6 +627,9 @@ class JaUnitBeginner06Seeder extends Seeder
                                     'sleep',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yeyirəm indi', 'correct' => ['yeyirəm', 'indi'], 'extra' => ['yatıram']],
+                            'ar' => ['sentence' => 'آكل الآن', 'correct' => ['آكل', 'الآن'], 'extra' => ['أنام']],
+                            'ru' => ['sentence' => 'ем сейчас', 'correct' => ['ем', 'сейчас'], 'extra' => ['сплю']],
                             'es' => [
                                 'sentence' => 'Come ahora',
                                 'correct' => [
@@ -642,6 +673,7 @@ class JaUnitBeginner06Seeder extends Seeder
                                     '자다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'şimdi ye', 'correct' => ['şimdi', 'ye'], 'extra' => ['uyu']],
                         ],
                     ],
                     'c' => [
@@ -664,6 +696,9 @@ class JaUnitBeginner06Seeder extends Seeder
                                     'now',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yatıram və yeyirəm yaxşıyam', 'correct' => ['yatıram', 'və', 'yeyirəm', 'yaxşıyam'], 'extra' => ['indi']],
+                            'ar' => ['sentence' => 'أنام و آكل بخير', 'correct' => ['أنام', 'و', 'آكل', 'بخير'], 'extra' => ['الآن']],
+                            'ru' => ['sentence' => 'сплю и ем хорошо', 'correct' => ['сплю', 'и', 'ем', 'хорошо'], 'extra' => ['сейчас']],
                             'es' => [
                                 'sentence' => 'Duerme y come bien',
                                 'correct' => [
@@ -711,6 +746,7 @@ class JaUnitBeginner06Seeder extends Seeder
                                     '지금',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'iyi uyu ve ye', 'correct' => ['iyi', 'uyu', 've', 'ye'], 'extra' => ['şimdi']],
                         ],
                     ],
                 ],
@@ -754,6 +790,9 @@ class JaUnitBeginner06Seeder extends Seeder
                                     'drink',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən yeyirəm çox artıq', 'correct' => ['mən', 'yeyirəm', 'çox artıq'], 'extra' => ['içki']],
+                            'ar' => ['sentence' => 'أنا آكل كثير جدا', 'correct' => ['أنا', 'آكل', 'كثير جدا'], 'extra' => ['مشروب']],
+                            'ru' => ['sentence' => 'я ем слишком много', 'correct' => ['я', 'ем', 'слишком много'], 'extra' => ['напиток']],
                             'es' => [
                                 'sentence' => 'Yo como demasiado',
                                 'correct' => [
@@ -802,6 +841,7 @@ class JaUnitBeginner06Seeder extends Seeder
                                     '마시다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'çok fazla yiyorum', 'correct' => ['çok', 'fazla', 'yiyorum'], 'extra' => ['iç']],
                         ],
                     ],
                     'b' => [
@@ -824,6 +864,9 @@ class JaUnitBeginner06Seeder extends Seeder
                                     'eat',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən oxuyuram indi', 'correct' => ['mən', 'oxuyuram', 'indi'], 'extra' => ['yeyirəm']],
+                            'ar' => ['sentence' => 'أنا أقرأ الآن', 'correct' => ['أنا', 'أقرأ', 'الآن'], 'extra' => ['آكل']],
+                            'ru' => ['sentence' => 'я читаю сейчас', 'correct' => ['я', 'читаю', 'сейчас'], 'extra' => ['ем']],
                             'es' => [
                                 'sentence' => 'Yo leo ahora',
                                 'correct' => [
@@ -871,6 +914,7 @@ class JaUnitBeginner06Seeder extends Seeder
                                     '먹다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'şimdi okuyorum', 'correct' => ['şimdi', 'okuyorum'], 'extra' => ['ye']],
                         ],
                     ],
                     'c' => [
@@ -891,6 +935,9 @@ class JaUnitBeginner06Seeder extends Seeder
                                     'too much',
                                 ],
                             ],
+                            'az' => ['sentence' => 'içki və oxuyuram', 'correct' => ['içki', 'və', 'oxuyuram'], 'extra' => ['çox artıq']],
+                            'ar' => ['sentence' => 'مشروب و أقرأ', 'correct' => ['مشروب', 'و', 'أقرأ'], 'extra' => ['كثير جدا']],
+                            'ru' => ['sentence' => 'напиток и читаю', 'correct' => ['напиток', 'и', 'читаю'], 'extra' => ['слишком много']],
                             'es' => [
                                 'sentence' => 'Beber y leer',
                                 'correct' => [
@@ -937,6 +984,7 @@ class JaUnitBeginner06Seeder extends Seeder
                                     '너무',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'iç ve oku', 'correct' => ['iç', 've', 'oku'], 'extra' => ['çok fazla']],
                         ],
                     ],
                 ],
@@ -978,6 +1026,9 @@ class JaUnitBeginner06Seeder extends Seeder
                                     'sleep',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gəzirəm yavaş', 'correct' => ['gəzirəm', 'yavaş'], 'extra' => ['yatıram']],
+                            'ar' => ['sentence' => 'أتمشى ببطء', 'correct' => ['أتمشى', 'ببطء'], 'extra' => ['أنام']],
+                            'ru' => ['sentence' => 'гуляю медленно', 'correct' => ['гуляю', 'медленно'], 'extra' => ['сплю']],
                             'es' => [
                                 'sentence' => 'Camina despacio',
                                 'correct' => [
@@ -1021,6 +1072,7 @@ class JaUnitBeginner06Seeder extends Seeder
                                     '자다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yavaş yürü', 'correct' => ['yavaş', 'yürü'], 'extra' => ['uyu']],
                         ],
                     ],
                     'b' => [
@@ -1040,6 +1092,9 @@ class JaUnitBeginner06Seeder extends Seeder
                                     'walk',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yatıram indi', 'correct' => ['yatıram', 'indi'], 'extra' => ['gəzirəm']],
+                            'ar' => ['sentence' => 'أنام الآن', 'correct' => ['أنام', 'الآن'], 'extra' => ['أتمشى']],
+                            'ru' => ['sentence' => 'сплю сейчас', 'correct' => ['сплю', 'сейчас'], 'extra' => ['гуляю']],
                             'es' => [
                                 'sentence' => 'Duerme ahora',
                                 'correct' => [
@@ -1083,6 +1138,7 @@ class JaUnitBeginner06Seeder extends Seeder
                                     '걷다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'şimdi uyu', 'correct' => ['şimdi', 'uyu'], 'extra' => ['yürü']],
                         ],
                     ],
                     'c' => [
@@ -1107,6 +1163,9 @@ class JaUnitBeginner06Seeder extends Seeder
                                     'sleep',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən gəzirəm yavaş indi', 'correct' => ['mən', 'gəzirəm', 'yavaş', 'indi'], 'extra' => ['yatıram']],
+                            'ar' => ['sentence' => 'أنا أتمشى ببطء الآن', 'correct' => ['أنا', 'أتمشى', 'ببطء', 'الآن'], 'extra' => ['أنام']],
+                            'ru' => ['sentence' => 'я гуляю медленно сейчас', 'correct' => ['я', 'гуляю', 'медленно', 'сейчас'], 'extra' => ['сплю']],
                             'es' => [
                                 'sentence' => 'Yo camino despacio ahora',
                                 'correct' => [
@@ -1155,6 +1214,7 @@ class JaUnitBeginner06Seeder extends Seeder
                                     '자다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'şimdi yavaş yürüyorum', 'correct' => ['şimdi', 'yavaş', 'yürüyorum'], 'extra' => ['uyu']],
                         ],
                     ],
                 ],

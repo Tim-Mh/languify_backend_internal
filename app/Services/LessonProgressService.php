@@ -11,6 +11,7 @@ use App\Models\ChestRewardConfig;
 use App\Models\Lesson;
 use App\Models\StreakFreezeUse;
 use App\Models\User;
+use App\Models\UserActivityDay;
 use App\Models\UserBadge;
 use App\Models\UserCompletedLanguage;
 use App\Models\UserGameState;
@@ -20,6 +21,7 @@ use App\Notifications\StreakBrokenNotification;
 use App\Notifications\StreakFreezeUsedNotification;
 use App\Notifications\StreakGoalReachedNotification;
 use App\Notifications\StreakMilestoneNotification;
+use App\Support\GemLedger;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
@@ -50,11 +52,25 @@ class LessonProgressService
     private const LANGUAGE_BONUS_GEMS = 300;
 
     /**
-     * How many times a lesson must be completed to be "mastered" (fills its
-     * progress ring and unlocks the next lesson). Duolingo-style repetition —
-     * each play is one session.
+     * How many times a lesson is played before it counts as "mastered", which
+     * fills its progress ring and unlocks the next lesson.
+     *
+     * One. A lesson used to be five progressive sessions, each play serving the
+     * next set with the ring only filling on the fifth, so finishing a single
+     * lesson meant sitting it five times.
+     *
+     * Everything downstream reads this rather than hardcoding a number, so it
+     * is the only line that has to change: `$mastered` becomes true on the
+     * first completion, the badge and daily-quest counters fire on that same
+     * one, and the progress ring is full at 1/1. It also resolves existing
+     * progress for free, because anyone part-way through already has at least
+     * one completion and is therefore at or past the new target. Nobody is sent
+     * backwards and no rows have to be rewritten.
+     *
+     * The exercises tagged sessions 2 to 5 stay in the database, untouched and
+     * unserved. Putting this back to 5 restores the old behaviour exactly.
      */
-    public const LESSON_TARGET_COMPLETIONS = 5;
+    public const LESSON_TARGET_COMPLETIONS = 1;
 
     public const MAX_HEARTS = 5;
 
@@ -223,7 +239,23 @@ class LessonProgressService
      */
     public function effectiveMaxHearts(User $user): ?int
     {
-        return match (PlanKey::tryFrom((string) $this->planKey($user))) {
+        return self::maxHeartsForPlan($this->planKey($user));
+    }
+
+    /**
+     * The heart cap a plan key grants, without needing a User to ask about.
+     *
+     * Split out so anything describing a plan to the learner (the subscription
+     * emails, most of all) reads the cap from the same match as the code that
+     * enforces it. They used to be written out separately, which is how every
+     * plan's confirmation email ended up promising "unlimited hearts" when only
+     * Family actually gets them.
+     *
+     * null means genuinely uncapped.
+     */
+    public static function maxHeartsForPlan(?string $planKey): ?int
+    {
+        return match (PlanKey::tryFrom((string) $planKey)) {
             PlanKey::Family => null,
             PlanKey::Monthly, PlanKey::Yearly => self::SUBSCRIBER_MAX_HEARTS,
             default => self::MAX_HEARTS,
@@ -368,31 +400,26 @@ class LessonProgressService
      */
     public function activityDaysForMonth(User $user, int $year, int $month): array
     {
-        $timezone = $user->timezone ?: config('app.timezone');
-        $monthStart = Carbon::create($year, $month, 1, 0, 0, 0, $timezone)->startOfMonth();
-        $monthEnd = $monthStart->copy()->endOfMonth();
+        // Straight off the day records. activity_date is already the date in
+        // the learner's own timezone, so there is nothing to convert and no
+        // cross-timezone skew to get wrong at the month boundary.
+        //
+        // This used to read user_lesson_completions.completed_at, which holds
+        // one row per LESSON and overwrites it on every play. A learner who
+        // replayed one lesson three days running therefore had a three-day
+        // streak and one tick on the calendar. See UserActivityDay.
+        $days = UserActivityDay::where('user_id', $user->id)
+            ->whereYear('activity_date', $year)
+            ->whereMonth('activity_date', $month)
+            ->pluck('activity_date')
+            ->map(fn (Carbon $date) => (int) $date->day)
+            ->unique()
+            ->values()
+            ->all();
 
-        $completedAtTimestamps = UserLessonCompletion::where('user_id', $user->id)
-            ->whereBetween('completed_at', [
-                $monthStart->copy()->setTimezone('UTC'),
-                $monthEnd->copy()->setTimezone('UTC'),
-            ])
-            ->pluck('completed_at');
+        sort($days);
 
-        $days = [];
-
-        foreach ($completedAtTimestamps as $timestamp) {
-            $localDate = $timestamp->copy()->setTimezone($timezone);
-
-            if ($localDate->year === $year && $localDate->month === $month) {
-                $days[$localDate->day] = true;
-            }
-        }
-
-        $result = array_keys($days);
-        sort($result);
-
-        return $result;
+        return $days;
     }
 
     /**
@@ -421,9 +448,16 @@ class LessonProgressService
      */
     public function heartsRegenSecondsRemaining(UserGameState $state, User $user): int
     {
-        $maxHearts = $this->effectiveMaxHearts($user);
+        $walletCap = $this->effectiveMaxHearts($user);
 
-        if ($maxHearts === null || $state->hearts >= $maxHearts || ! $state->hearts_updated_at) {
+        if ($walletCap === null || ! $state->hearts_updated_at) {
+            return 0;
+        }
+
+        // Against the regen cap, not the wallet cap: a subscriber sitting on 97
+        // of their 100 is not waiting for anything, and counting down toward a
+        // hundredth heart that will never arrive is worse than showing nothing.
+        if ($state->hearts >= min(self::MAX_HEARTS, $walletCap)) {
             return 0;
         }
 
@@ -438,6 +472,8 @@ class LessonProgressService
      *     xpAwarded: int, unitXpAwarded: int, newBadges: array<int, array<string, mixed>>,
      *     streakMilestoneHit: ?array<string, mixed>, streak: int, totalXp: int,
      *     gems: int, hearts: int, alreadyCompletedBefore: bool,
+     *     alreadyMastered: bool, completionsCount: int, targetCompletions: int,
+     *     mastered: bool,
      * }
      */
     public function completeLesson(User $user, Lesson $lesson, int $mistakes): array
@@ -475,20 +511,37 @@ class LessonProgressService
             ]);
             $wasFirstCompletion = ! $completion->exists;
 
-            // XP accrues on EVERY session (replaying earns XP, Duolingo-style),
-            // which is what motivates completing a lesson the required 5 times.
-            $xpAwarded = self::LESSON_XP + ($isPerfect ? self::PERFECT_BONUS_XP : 0);
+            // Whether the lesson was ALREADY finished before this play. Read
+            // before the increment below, because after it every play looks
+            // finished.
+            $alreadyMastered = (int) ($completion->completions_count ?? 0) >= self::LESSON_TARGET_COMPLETIONS;
+
+            // A finished lesson can still be replayed, but it pays nothing.
+            // XP used to accrue on every play, which made sense while a lesson
+            // took five of them: the XP was the reason to come back and finish
+            // it. Now that one play finishes a lesson, that same rule would let
+            // someone farm the easiest lesson in the course for unlimited XP,
+            // league standing and badges. Replays stay available for practice.
+            $xpAwarded = $alreadyMastered
+                ? 0
+                : self::LESSON_XP + ($isPerfect ? self::PERFECT_BONUS_XP : 0);
 
             $completion->completions_count = ($completion->completions_count ?? 0) + 1;
             $completion->mistakes = $mistakes;
             $completion->is_perfect = $isPerfect;
-            $completion->xp_awarded = $xpAwarded;
+            // Left alone on an unpaid replay so the row keeps the XP the lesson
+            // actually earned rather than being overwritten with a zero.
+            if (! $alreadyMastered) {
+                $completion->xp_awarded = $xpAwarded;
+            }
             $completion->completed_at = Carbon::now();
             $completion->save();
 
             $completionsCount = $completion->completions_count;
             $mastered = $completionsCount >= self::LESSON_TARGET_COMPLETIONS;
 
+            // All zero on an unpaid replay, but written unconditionally so the
+            // weekly league total can never drift from the XP actually earned.
             $state->total_xp += $xpAwarded;
             $state->today_xp += $xpAwarded;
             $state->weekly_league_xp += $xpAwarded;
@@ -507,12 +560,34 @@ class LessonProgressService
                 $state->perfect_lessons += 1;
             }
 
+            // Deliberately NOT gated on $alreadyMastered. The streak records
+            // that the learner turned up today, which a replay is still proof
+            // of, and someone who has finished every lesson available to them
+            // would otherwise watch their streak die for practising. Move this
+            // inside the guard above if replays should stop counting as
+            // activity.
+            // The Activity Calendar's own record, written for EVERY play,
+            // replays included. It has to agree with the streak below, and the
+            // streak counts a replay as turning up. Deriving the calendar from
+            // lesson completions instead is what used to make a three-day
+            // streak show a single tick: that table keeps one row per lesson
+            // and moves its timestamp, so replaying one lesson three days
+            // running left one date behind.
+            UserActivityDay::firstOrCreate([
+                'user_id' => $user->id,
+                'activity_date' => $this->userToday($user)->format('Y-m-d'),
+            ]);
+
             $streakIncreased = $this->applyStreak($state, $user);
 
-            // Daily counters advance every session so replays still count
-            // toward the daily goal / "complete N lessons today" quests.
-            $state->lessons_today += 1;
-            $state->max_lessons_in_a_day = max($state->max_lessons_in_a_day, $state->lessons_today);
+            // Only a play that actually finished something counts toward the
+            // day's tally. max_lessons_in_a_day is a badge requirement, so
+            // letting replays feed it would hand out a badge for sitting the
+            // same lesson twenty times.
+            if (! $alreadyMastered) {
+                $state->lessons_today += 1;
+                $state->max_lessons_in_a_day = max($state->max_lessons_in_a_day, $state->lessons_today);
+            }
 
             $lesson->loadMissing('unit.chapter');
             $unitBonus = $this->maybeCompleteUnit($user, $state, $lesson->unit);
@@ -569,6 +644,11 @@ class LessonProgressService
                 'gems' => $state->gems,
                 'hearts' => $state->hearts,
                 'alreadyCompletedBefore' => ! $wasFirstCompletion,
+                // The lesson was already finished when this play started, so
+                // nothing above was awarded. Distinct from
+                // alreadyCompletedBefore, which only says it had been played
+                // before; the two coincide only while the target is 1.
+                'alreadyMastered' => $alreadyMastered,
                 'completionsCount' => $completionsCount,
                 'targetCompletions' => self::LESSON_TARGET_COMPLETIONS,
                 'mastered' => $mastered,
@@ -662,7 +742,7 @@ class LessonProgressService
         $state->total_xp += self::UNIT_XP;
         $state->today_xp += self::UNIT_XP;
         $state->weekly_league_xp += self::UNIT_XP;
-        $state->gems += $gems;
+        GemLedger::apply($state, $gems, 'lesson.bonus');
         $state->units_completed_count += 1;
 
         return ['xp' => self::UNIT_XP, 'gems' => $gems];
@@ -696,7 +776,7 @@ class LessonProgressService
         $state->total_xp += self::LANGUAGE_BONUS_XP;
         $state->today_xp += self::LANGUAGE_BONUS_XP;
         $state->weekly_league_xp += self::LANGUAGE_BONUS_XP;
-        $state->gems += $gems;
+        GemLedger::apply($state, $gems, 'lesson.bonus');
 
         UserCompletedLanguage::create([
             'user_id' => $user->id,
@@ -895,7 +975,7 @@ class LessonProgressService
             $gems = $this->applyGemsBonus($user, $reward['gems']);
             $maxHearts = $this->effectiveMaxHearts($user);
 
-            $state->gems += $gems;
+            GemLedger::apply($state, $gems, 'lesson.bonus');
             $state->hearts = $maxHearts === null ? $state->hearts + $reward['hearts'] : min($maxHearts, $state->hearts + $reward['hearts']);
             $state->total_xp += $reward['xp'];
             $state->today_xp += $reward['xp'];
@@ -940,7 +1020,7 @@ class LessonProgressService
             UserBadge::create(['user_id' => $user->id, 'badge_key' => $badge->key, 'earned_at' => Carbon::now()]);
 
             $reward = Badge::tierReward($badge->tier);
-            $state->gems += $this->applyGemsBonus($user, $reward['gems']);
+            GemLedger::apply($state, $this->applyGemsBonus($user, $reward['gems']), 'badge.claim');
             $maxHearts = $this->effectiveMaxHearts($user);
             $state->hearts = $maxHearts === null ? $state->hearts + $reward['hearts'] : min($maxHearts, $state->hearts + $reward['hearts']);
             $state->total_xp += $reward['xp'];
@@ -997,23 +1077,43 @@ class LessonProgressService
 
     private function applyHeartRegen(UserGameState $state, User $user): void
     {
-        $maxHearts = $this->effectiveMaxHearts($user);
+        $walletCap = $this->effectiveMaxHearts($user);
 
-        if ($maxHearts === null) {
-            return; // Family: truly unlimited, nothing to regen toward.
+        if ($walletCap === null) {
+            return; // Family: truly unlimited, nothing to hold back or regen toward.
         }
 
-        if ($state->hearts >= $maxHearts) {
-            // Trim anything ABOVE the cap. Subscribing raises the cap to 100 and
-            // tops the wallet up to match; when the plan ends the cap drops back
-            // to 5, and without this the learner would keep sitting on 100
-            // hearts indefinitely, since nothing else ever lowers the count.
-            //
-            // Done here, rather than at each of the several places a plan can
-            // end (cancelling, the nightly expiry sweep, a Stripe webhook, a
-            // family owner's plan lapsing), so it self-corrects on the very next
-            // request however the plan actually ended.
-            $state->hearts = min($state->hearts, $maxHearts);
+        $this->grantSubscriberHearts($state, $user, $walletCap);
+
+        // Trim anything ABOVE the wallet cap. When a plan ends the cap drops
+        // back to 5, and without this the learner would keep sitting on their
+        // last allowance indefinitely, since nothing else ever lowers the count.
+        //
+        // Done here, rather than at each of the several places a plan can end
+        // (cancelling, the nightly expiry sweep, a Stripe webhook, a family
+        // owner's plan lapsing), so it self-corrects on the very next request
+        // however the plan actually ended.
+        if ($state->hearts > $walletCap) {
+            $state->hearts = $walletCap;
+            $state->hearts_updated_at = Carbon::now();
+        }
+
+        // Passive regen fills to five for everyone, subscriber or not — it is
+        // never the thing that restores an allowance.
+        //
+        // This is the whole point of the split. The subscriber cap used to be
+        // the regen target too, so someone who spent three of their hundred
+        // hearts watched them trickle back one every fifteen minutes until they
+        // were at a hundred again, which made the allowance impossible to
+        // actually spend. Now the hundred is granted monthly and drawn down,
+        // and regen is only ever the safety net that gets a learner off zero.
+        $regenCap = min(self::MAX_HEARTS, $walletCap);
+
+        if ($state->hearts >= $regenCap) {
+            // Above the regen line, so nothing accrues. The timestamp is moved
+            // up regardless: leaving it stale would let a learner who spends a
+            // long-held allowance down past five collect every heart's worth of
+            // regen that accumulated while they were nowhere near needing it.
             $state->hearts_updated_at = Carbon::now();
 
             return;
@@ -1024,8 +1124,43 @@ class LessonProgressService
         $regenCount = intdiv($elapsedMinutes, self::HEART_REGEN_MINUTES);
 
         if ($regenCount > 0) {
-            $state->hearts = min($maxHearts, $state->hearts + $regenCount);
+            $state->hearts = min($regenCap, $state->hearts + $regenCount);
             $state->hearts_updated_at = $last->copy()->addMinutes($regenCount * self::HEART_REGEN_MINUTES);
         }
+    }
+
+    /**
+     * Tops a paying learner up to their monthly allowance.
+     *
+     * Once per billing month, for monthly and yearly alike: a yearly plan buys
+     * a hundred hearts a month for a year, not a hundred hearts for the year.
+     *
+     * Anchored on the last grant rather than on the subscription's period dates
+     * so it stays correct through a plan change, a card retry, or a webhook
+     * that never arrived — and so it is idempotent. Several requests a second
+     * all run this; only the first one where a month has actually elapsed does
+     * anything.
+     *
+     * `max()` rather than assignment, so a learner who bought extra hearts in
+     * the shop is never knocked back down to the allowance by their own
+     * renewal.
+     */
+    private function grantSubscriberHearts(UserGameState $state, User $user, int $walletCap): void
+    {
+        if ($walletCap <= self::MAX_HEARTS) {
+            return; // Not on a plan that carries an allowance.
+        }
+
+        $lastGrant = $state->subscriber_hearts_granted_at;
+
+        // Null means never granted, which covers both a fresh subscription and
+        // every subscriber who predates this column.
+        if ($lastGrant !== null && $lastGrant->copy()->addMonth()->isFuture()) {
+            return;
+        }
+
+        $state->hearts = max($state->hearts, $walletCap);
+        $state->subscriber_hearts_granted_at = Carbon::now();
+        $state->hearts_updated_at = Carbon::now();
     }
 }

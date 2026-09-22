@@ -400,12 +400,24 @@ class CourseController extends Controller
         // to master a lesson shows fresh, harder content each time. Lessons that
         // don't use sessions have everything at session_number = 1, so this is a
         // no-op for them.
+        //
+        // Also capped at LESSON_TARGET_COMPLETIONS, which is what ties this to
+        // the number of plays a lesson takes. At the current target of 1 that
+        // pins every play to session 1: a lesson is one sitting, and replaying
+        // it repeats that sitting rather than walking into content the learner
+        // was never asked to finish. Raising the target back to 5 restores the
+        // progressive behaviour with no other change, which is why the cap is
+        // derived here rather than written as a literal 1.
         $maxSession = (int) ($lesson->exercises()->max('session_number') ?: 1);
         $completionsCount = (int) UserLessonCompletion::where('user_id', $user->id)
             ->where('native_language_id', $user->native_language_id)
             ->where('lesson_id', $lesson->id)
             ->value('completions_count');
-        $currentSession = min($completionsCount + 1, $maxSession);
+        $currentSession = min(
+            $completionsCount + 1,
+            $maxSession,
+            LessonProgressService::LESSON_TARGET_COMPLETIONS,
+        );
 
         $exercises = $lesson->exercises()
             ->where('session_number', $currentSession)

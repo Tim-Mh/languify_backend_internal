@@ -11,6 +11,7 @@ use App\Models\TriviaTopic;
 use App\Models\User;
 use App\Models\UserGameState;
 use App\Services\LessonProgressService;
+use App\Support\GemLedger;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
@@ -276,7 +277,7 @@ class TriviaController extends Controller
             $infiniteHeartsGranted = false;
 
             if ($gemsAwarded > 0 || $xpAwarded > 0 || $isPerfect) {
-                $state->gems += $gemsAwarded;
+                GemLedger::apply($state, $gemsAwarded, 'trivia.reward');
                 $state->total_xp += $xpAwarded;
                 $state->today_xp += $xpAwarded;
                 $state->weekly_league_xp += $xpAwarded;

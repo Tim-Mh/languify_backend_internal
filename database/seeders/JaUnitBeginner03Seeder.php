@@ -79,6 +79,9 @@ class JaUnitBeginner03Seeder extends Seeder
                                     'father',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim ana', 'correct' => ['mənim', 'ana'], 'extra' => ['ata']],
+                            'ar' => ['sentence' => 'أم', 'correct' => ['أم'], 'extra' => ['أب']],
+                            'ru' => ['sentence' => 'мой мама', 'correct' => ['мой', 'мама'], 'extra' => ['папа']],
                             'es' => [
                                 'sentence' => 'Mi madre',
                                 'correct' => [
@@ -122,6 +125,7 @@ class JaUnitBeginner03Seeder extends Seeder
                                     '아버지',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'annem', 'correct' => ['annem'], 'extra' => ['baba']],
                         ],
                     ],
                     'b' => [
@@ -144,6 +148,9 @@ class JaUnitBeginner03Seeder extends Seeder
                                     'mother',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bu mənim ata', 'correct' => ['bu', 'mənim', 'ata'], 'extra' => ['ana']],
+                            'ar' => ['sentence' => 'هذا أب', 'correct' => ['هذا', 'أب'], 'extra' => ['أم']],
+                            'ru' => ['sentence' => 'это мой папа', 'correct' => ['это', 'мой', 'папа'], 'extra' => ['мама']],
                             'es' => [
                                 'sentence' => 'Este es mi padre',
                                 'correct' => [
@@ -188,6 +195,7 @@ class JaUnitBeginner03Seeder extends Seeder
                                     '어머니',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bu benim babam', 'correct' => ['bu', 'benim', 'babam'], 'extra' => ['anne']],
                         ],
                     ],
                     'c' => [
@@ -211,6 +219,9 @@ class JaUnitBeginner03Seeder extends Seeder
                                     'this is',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim ana və mənim ata', 'correct' => ['mənim', 'ana', 'və', 'mənim', 'ata'], 'extra' => ['bu']],
+                            'ar' => ['sentence' => 'أم و أب', 'correct' => ['أم', 'و', 'أب'], 'extra' => ['هذا']],
+                            'ru' => ['sentence' => 'мой мама и мой папа', 'correct' => ['мой', 'мама', 'и', 'мой', 'папа'], 'extra' => ['это']],
                             'es' => [
                                 'sentence' => 'Mi madre y mi padre',
                                 'correct' => [
@@ -260,6 +271,7 @@ class JaUnitBeginner03Seeder extends Seeder
                                     '이분은',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'annem ve babam', 'correct' => ['annem', 've', 'babam'], 'extra' => ['bu']],
                         ],
                     ],
                 ],
@@ -304,6 +316,9 @@ class JaUnitBeginner03Seeder extends Seeder
                                     'sister',
                                 ],
                             ],
+                            'az' => ['sentence' => 'o mənim qardaş', 'correct' => ['o', 'mənim', 'qardaş'], 'extra' => ['bacı']],
+                            'ar' => ['sentence' => 'هو أخ', 'correct' => ['هو', 'أخ'], 'extra' => ['أخت']],
+                            'ru' => ['sentence' => 'он мой брат', 'correct' => ['он', 'мой', 'брат'], 'extra' => ['сестра']],
                             'es' => [
                                 'sentence' => 'Él es mi hermano',
                                 'correct' => [
@@ -351,6 +366,7 @@ class JaUnitBeginner03Seeder extends Seeder
                                     '자매',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'o benim erkek kardeşim', 'correct' => ['o', 'benim', 'erkek', 'kardeşim'], 'extra' => ['kız kardeş']],
                         ],
                     ],
                     'b' => [
@@ -373,6 +389,9 @@ class JaUnitBeginner03Seeder extends Seeder
                                     'brother',
                                 ],
                             ],
+                            'az' => ['sentence' => 'o qadın mənim bacı', 'correct' => ['o qadın', 'mənim', 'bacı'], 'extra' => ['qardaş']],
+                            'ar' => ['sentence' => 'هي أخت', 'correct' => ['هي', 'أخت'], 'extra' => ['أخ']],
+                            'ru' => ['sentence' => 'она мой сестра', 'correct' => ['она', 'мой', 'сестра'], 'extra' => ['брат']],
                             'es' => [
                                 'sentence' => 'Ella es mi hermana',
                                 'correct' => [
@@ -420,6 +439,7 @@ class JaUnitBeginner03Seeder extends Seeder
                                     '형제',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'o benim kız kardeşim', 'correct' => ['o', 'benim', 'kız', 'kardeşim'], 'extra' => ['erkek kardeş']],
                         ],
                     ],
                     'c' => [
@@ -443,6 +463,9 @@ class JaUnitBeginner03Seeder extends Seeder
                                     'he is',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim qardaş və mənim bacı', 'correct' => ['mənim', 'qardaş', 'və', 'mənim', 'bacı'], 'extra' => ['o']],
+                            'ar' => ['sentence' => 'أخ و أخت', 'correct' => ['أخ', 'و', 'أخت'], 'extra' => ['هو']],
+                            'ru' => ['sentence' => 'мой брат и мой сестра', 'correct' => ['мой', 'брат', 'и', 'мой', 'сестра'], 'extra' => ['он']],
                             'es' => [
                                 'sentence' => 'Mi hermano y mi hermana',
                                 'correct' => [
@@ -492,6 +515,7 @@ class JaUnitBeginner03Seeder extends Seeder
                                     '그는',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'erkek kardeşim ve kız kardeşim', 'correct' => ['erkek', 'kardeşim', 've', 'kız', 'kardeşim'], 'extra' => ['o']],
                         ],
                     ],
                 ],
@@ -538,6 +562,9 @@ class JaUnitBeginner03Seeder extends Seeder
                                     'doctor',
                                 ],
                             ],
+                            'az' => ['sentence' => 'kim müəllim', 'correct' => ['kim', 'müəllim'], 'extra' => ['həkim']],
+                            'ar' => ['sentence' => 'مَن معلم', 'correct' => ['مَن', 'معلم'], 'extra' => ['طبيب']],
+                            'ru' => ['sentence' => 'кто учитель', 'correct' => ['кто', 'учитель'], 'extra' => ['врач']],
                             'es' => [
                                 'sentence' => 'Quién es el profesor',
                                 'correct' => [
@@ -584,6 +611,7 @@ class JaUnitBeginner03Seeder extends Seeder
                                     '의사',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'öğretmen kim', 'correct' => ['öğretmen', 'kim'], 'extra' => ['doktor']],
                         ],
                     ],
                     'b' => [
@@ -608,6 +636,9 @@ class JaUnitBeginner03Seeder extends Seeder
                                     'teacher',
                                 ],
                             ],
+                            'az' => ['sentence' => 'həkim burada', 'correct' => ['həkim', 'burada'], 'extra' => ['müəllim']],
+                            'ar' => ['sentence' => 'طبيب هنا', 'correct' => ['طبيب', 'هنا'], 'extra' => ['معلم']],
+                            'ru' => ['sentence' => 'врач здесь', 'correct' => ['врач', 'здесь'], 'extra' => ['учитель']],
                             'es' => [
                                 'sentence' => 'El médico está aquí',
                                 'correct' => [
@@ -655,6 +686,7 @@ class JaUnitBeginner03Seeder extends Seeder
                                     '선생님',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'doktor burada', 'correct' => ['doktor', 'burada'], 'extra' => ['öğretmen']],
                         ],
                     ],
                     'c' => [
@@ -678,6 +710,9 @@ class JaUnitBeginner03Seeder extends Seeder
                                     'who',
                                 ],
                             ],
+                            'az' => ['sentence' => 'müəllim və həkim', 'correct' => ['müəllim', 'və', 'həkim'], 'extra' => ['kim']],
+                            'ar' => ['sentence' => 'معلم و طبيب', 'correct' => ['معلم', 'و', 'طبيب'], 'extra' => ['مَن']],
+                            'ru' => ['sentence' => 'учитель и врач', 'correct' => ['учитель', 'и', 'врач'], 'extra' => ['кто']],
                             'es' => [
                                 'sentence' => 'El profesor y el médico',
                                 'correct' => [
@@ -727,6 +762,7 @@ class JaUnitBeginner03Seeder extends Seeder
                                     '누구',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'öğretmen ve doktor', 'correct' => ['öğretmen', 've', 'doktor'], 'extra' => ['kim']],
                         ],
                     ],
                 ],
@@ -773,6 +809,9 @@ class JaUnitBeginner03Seeder extends Seeder
                                     'neighbour',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim dost yaxşı', 'correct' => ['mənim', 'dost', 'yaxşı'], 'extra' => ['qonşu']],
+                            'ar' => ['sentence' => 'صديق جيد', 'correct' => ['صديق', 'جيد'], 'extra' => ['جار']],
+                            'ru' => ['sentence' => 'мой друг хороший', 'correct' => ['мой', 'друг', 'хороший'], 'extra' => ['сосед']],
                             'es' => [
                                 'sentence' => 'Mi amigo es bueno',
                                 'correct' => [
@@ -823,6 +862,7 @@ class JaUnitBeginner03Seeder extends Seeder
                                     '이웃',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'arkadaşım iyi', 'correct' => ['arkadaşım', 'iyi'], 'extra' => ['komşu']],
                         ],
                     ],
                     'b' => [
@@ -844,6 +884,9 @@ class JaUnitBeginner03Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim qonşu həmçinin', 'correct' => ['mənim', 'qonşu', 'həmçinin'], 'extra' => ['dost']],
+                            'ar' => ['sentence' => 'جار أيضا', 'correct' => ['جار', 'أيضا'], 'extra' => ['صديق']],
+                            'ru' => ['sentence' => 'мой сосед тоже', 'correct' => ['мой', 'сосед', 'тоже'], 'extra' => ['друг']],
                             'es' => [
                                 'sentence' => 'Mi vecino también',
                                 'correct' => [
@@ -890,6 +933,7 @@ class JaUnitBeginner03Seeder extends Seeder
                                     '친구',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'komşum da', 'correct' => ['komşum', 'da'], 'extra' => ['arkadaş']],
                         ],
                     ],
                     'c' => [
@@ -913,6 +957,9 @@ class JaUnitBeginner03Seeder extends Seeder
                                     'also',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim dost və mənim qonşu', 'correct' => ['mənim', 'dost', 'və', 'mənim', 'qonşu'], 'extra' => ['həmçinin']],
+                            'ar' => ['sentence' => 'صديق و جار', 'correct' => ['صديق', 'و', 'جار'], 'extra' => ['أيضا']],
+                            'ru' => ['sentence' => 'мой друг и мой сосед', 'correct' => ['мой', 'друг', 'и', 'мой', 'сосед'], 'extra' => ['тоже']],
                             'es' => [
                                 'sentence' => 'Mi amigo y mi vecino',
                                 'correct' => [
@@ -962,6 +1009,7 @@ class JaUnitBeginner03Seeder extends Seeder
                                     '또한',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'arkadaşım ve komşum', 'correct' => ['arkadaşım', 've', 'komşum'], 'extra' => ['de']],
                         ],
                     ],
                 ],
@@ -1008,6 +1056,9 @@ class JaUnitBeginner03Seeder extends Seeder
                                     'mother',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən çox yaxşıyam', 'correct' => ['mən', 'çox', 'yaxşıyam'], 'extra' => ['ana']],
+                            'ar' => ['sentence' => 'أنا جدا بخير', 'correct' => ['أنا', 'جدا', 'بخير'], 'extra' => ['أم']],
+                            'ru' => ['sentence' => 'я очень хорошо', 'correct' => ['я', 'очень', 'хорошо'], 'extra' => ['мама']],
                             'es' => [
                                 'sentence' => 'Estoy muy bien',
                                 'correct' => [
@@ -1057,6 +1108,7 @@ class JaUnitBeginner03Seeder extends Seeder
                                     '어머니',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'çok iyiyim', 'correct' => ['çok', 'iyiyim'], 'extra' => ['anne']],
                         ],
                     ],
                     'b' => [
@@ -1081,6 +1133,9 @@ class JaUnitBeginner03Seeder extends Seeder
                                     'very',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim dost yaxşıyam', 'correct' => ['mənim', 'dost', 'yaxşıyam'], 'extra' => ['çox']],
+                            'ar' => ['sentence' => 'صديق بخير', 'correct' => ['صديق', 'بخير'], 'extra' => ['جدا']],
+                            'ru' => ['sentence' => 'мой друг хорошо', 'correct' => ['мой', 'друг', 'хорошо'], 'extra' => ['очень']],
                             'es' => [
                                 'sentence' => 'Mi amigo está bien',
                                 'correct' => [
@@ -1130,6 +1185,7 @@ class JaUnitBeginner03Seeder extends Seeder
                                     '매우',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'arkadaşım iyi', 'correct' => ['arkadaşım', 'iyi'], 'extra' => ['çok']],
                         ],
                     ],
                     'c' => [
@@ -1156,6 +1212,9 @@ class JaUnitBeginner03Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim ana çox yaxşıyam', 'correct' => ['mənim', 'ana', 'çox', 'yaxşıyam'], 'extra' => ['dost']],
+                            'ar' => ['sentence' => 'أم جدا بخير', 'correct' => ['أم', 'جدا', 'بخير'], 'extra' => ['صديق']],
+                            'ru' => ['sentence' => 'мой мама очень хорошо', 'correct' => ['мой', 'мама', 'очень', 'хорошо'], 'extra' => ['друг']],
                             'es' => [
                                 'sentence' => 'Mi madre está muy bien',
                                 'correct' => [
@@ -1208,6 +1267,7 @@ class JaUnitBeginner03Seeder extends Seeder
                                     '친구',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'annem çok iyi', 'correct' => ['annem', 'çok', 'iyi'], 'extra' => ['arkadaş']],
                         ],
                     ],
                 ],

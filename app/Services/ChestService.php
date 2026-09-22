@@ -9,6 +9,7 @@ use App\Models\Unit;
 use App\Models\User;
 use App\Models\UserGameState;
 use App\Models\UserLessonCompletion;
+use App\Support\GemLedger;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
@@ -84,7 +85,7 @@ class ChestService
                 'claimed_at' => Carbon::now(),
             ]);
 
-            $state->gems += $gems;
+            GemLedger::apply($state, $gems, 'chest.reward');
             $state->daily_chest_claimed_at = Carbon::now();
             $state->save();
 
@@ -116,7 +117,7 @@ class ChestService
                 'claimed_at' => Carbon::now(),
             ]);
 
-            $state->gems += $milestone['gems'];
+            GemLedger::apply($state, $milestone['gems'], 'chest.streak_milestone');
             $state->save();
 
             return ['gems' => $milestone['gems'], 'xp' => 0, 'hearts' => 0, 'milestoneDays' => $milestone['days']];
@@ -173,7 +174,7 @@ class ChestService
                 'claimed_at' => Carbon::now(),
             ]);
 
-            $state->gems += $gems;
+            GemLedger::apply($state, $gems, 'chest.reward');
             $state->total_xp += $xp;
             $state->today_xp += $xp;
             $maxHearts = $this->progress->effectiveMaxHearts($user);

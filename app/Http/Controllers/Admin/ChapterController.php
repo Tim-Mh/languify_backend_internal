@@ -6,6 +6,7 @@ use App\Enums\ChapterKey;
 use App\Http\Controllers\Controller;
 use App\Models\Chapter;
 use App\Models\Language;
+use App\Support\PerPage;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -13,10 +14,10 @@ use Illuminate\View\View;
 
 class ChapterController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
         return view('admin.chapters.index', [
-            'chapters' => Chapter::with('language')->orderBy('language_id')->orderBy('order_number')->paginate(25),
+            'chapters' => Chapter::with('language')->orderBy('language_id')->orderBy('order_number')->paginate(PerPage::resolve($request))->withQueryString(),
         ]);
     }
 

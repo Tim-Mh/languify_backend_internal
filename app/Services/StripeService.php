@@ -12,6 +12,7 @@ use App\Models\UserSubscription;
 use App\Notifications\FamilyPlanCanceledNotification;
 use App\Notifications\SubscriptionCanceledNotification;
 use App\Notifications\SubscriptionConfirmedNotification;
+use App\Support\GemLedger;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -143,7 +144,7 @@ class StripeService
             UserGameState::firstOrCreate(['user_id' => $purchase->user_id]);
             $state = UserGameState::where('user_id', $purchase->user_id)->lockForUpdate()->firstOrFail();
 
-            $state->gems += $purchase->gems_credited;
+            GemLedger::apply($state, $purchase->gems_credited, 'purchase.stripe');
             $state->save();
 
             return $state->gems;
@@ -270,6 +271,10 @@ class StripeService
                     $session->currency,
                     $plan->interval ?? null,
                     $periodEnd->toDateTimeString(),
+                    // The email describes the plan's perks, and the heart cap
+                    // is not the same on all three, so it needs the key rather
+                    // than just the display title.
+                    (string) $planKey,
                 ));
             }
 

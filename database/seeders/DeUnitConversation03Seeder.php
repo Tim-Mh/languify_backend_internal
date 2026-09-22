@@ -83,6 +83,9 @@ class DeUnitConversation03Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gedək park', 'correct' => ['gedək', 'park'], 'extra' => ['birlikdə', 'dost']],
+                            'ar' => ['sentence' => 'هيا بنا إلى حديقة', 'correct' => ['هيا بنا', 'إلى', 'حديقة'], 'extra' => ['معا', 'صديق']],
+                            'ru' => ['sentence' => 'пойдём в парк', 'correct' => ['пойдём', 'в', 'парк'], 'extra' => ['вместе', 'друг']],
                             'es' => [
                                 'sentence' => 'Vamos al parque',
                                 'correct' => [
@@ -130,6 +133,7 @@ class DeUnitConversation03Seeder extends Seeder
                                     '함께',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'parka gidelim', 'correct' => ['parka', 'gidelim'], 'extra' => ['birlikte', 'arkadaş']],
                         ],
                     ],
                     'b' => [
@@ -151,6 +155,9 @@ class DeUnitConversation03Seeder extends Seeder
                                     'let\'s go',
                                 ],
                             ],
+                            'az' => ['sentence' => 'birlikdə mənim dost', 'correct' => ['birlikdə', 'mənim', 'dost'], 'extra' => ['gedək']],
+                            'ar' => ['sentence' => 'معا صديق', 'correct' => ['معا', 'صديق'], 'extra' => ['هيا بنا']],
+                            'ru' => ['sentence' => 'вместе мой друг', 'correct' => ['вместе', 'мой', 'друг'], 'extra' => ['пойдём']],
                             'es' => [
                                 'sentence' => 'Juntos, mi amigo',
                                 'correct' => [
@@ -195,6 +202,7 @@ class DeUnitConversation03Seeder extends Seeder
                                     '갑시다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'birlikte arkadaşım', 'correct' => ['birlikte', 'arkadaşım'], 'extra' => ['gidelim']],
                         ],
                     ],
                     'c' => [
@@ -216,6 +224,9 @@ class DeUnitConversation03Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gedək birlikdə', 'correct' => ['gedək', 'birlikdə'], 'extra' => ['dost']],
+                            'ar' => ['sentence' => 'هيا بنا معا', 'correct' => ['هيا بنا', 'معا'], 'extra' => ['صديق']],
+                            'ru' => ['sentence' => 'пойдём вместе', 'correct' => ['пойдём', 'вместе'], 'extra' => ['друг']],
                             'es' => [
                                 'sentence' => 'Vamos juntos',
                                 'correct' => [
@@ -257,6 +268,7 @@ class DeUnitConversation03Seeder extends Seeder
                                     '친구',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'birlikte gidelim', 'correct' => ['birlikte', 'gidelim'], 'extra' => ['arkadaş']],
                         ],
                     ],
                 ],
@@ -301,6 +313,9 @@ class DeUnitConversation03Seeder extends Seeder
                                     'shop',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gedək tezliklə', 'correct' => ['gedək', 'tezliklə'], 'extra' => ['bu axşam', 'mağaza']],
+                            'ar' => ['sentence' => 'هيا بنا قريبا', 'correct' => ['هيا بنا', 'قريبا'], 'extra' => ['الليلة', 'متجر']],
+                            'ru' => ['sentence' => 'пойдём скоро', 'correct' => ['пойдём', 'скоро'], 'extra' => ['сегодня вечером', 'магазин']],
                             'es' => [
                                 'sentence' => 'Vamos pronto',
                                 'correct' => [
@@ -343,6 +358,7 @@ class DeUnitConversation03Seeder extends Seeder
                                     '오늘 밤',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yakında gidelim', 'correct' => ['yakında', 'gidelim'], 'extra' => ['bu akşam', 'dükkan']],
                         ],
                     ],
                     'b' => [
@@ -366,6 +382,9 @@ class DeUnitConversation03Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mağaza bu axşam', 'correct' => ['mağaza', 'bu axşam'], 'extra' => ['tezliklə', 'ev']],
+                            'ar' => ['sentence' => 'متجر الليلة', 'correct' => ['متجر', 'الليلة'], 'extra' => ['قريبا', 'بيت']],
+                            'ru' => ['sentence' => 'магазин сегодня вечером', 'correct' => ['магазин', 'сегодня вечером'], 'extra' => ['скоро', 'дом']],
                             'es' => [
                                 'sentence' => 'La tienda esta noche',
                                 'correct' => [
@@ -412,6 +431,7 @@ class DeUnitConversation03Seeder extends Seeder
                                     '곧',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bu akşam dükkan', 'correct' => ['bu', 'akşam', 'dükkan'], 'extra' => ['yakında', 'ev']],
                         ],
                     ],
                     'c' => [
@@ -439,6 +459,9 @@ class DeUnitConversation03Seeder extends Seeder
                                     'soon',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gedək ev bu axşam', 'correct' => ['gedək', 'ev', 'bu axşam'], 'extra' => ['tezliklə']],
+                            'ar' => ['sentence' => 'هيا بنا إلى بيت الليلة', 'correct' => ['هيا بنا', 'إلى', 'بيت', 'الليلة'], 'extra' => ['قريبا']],
+                            'ru' => ['sentence' => 'пойдём в дом сегодня вечером', 'correct' => ['пойдём', 'в', 'дом', 'сегодня вечером'], 'extra' => ['скоро']],
                             'es' => [
                                 'sentence' => 'Vamos a la casa esta noche',
                                 'correct' => [
@@ -489,6 +512,7 @@ class DeUnitConversation03Seeder extends Seeder
                                     '곧',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bu akşam eve gidelim', 'correct' => ['bu', 'akşam', 'eve', 'gidelim'], 'extra' => ['yakında']],
                         ],
                     ],
                 ],
@@ -533,6 +557,9 @@ class DeUnitConversation03Seeder extends Seeder
                                     'park',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yaxşı məktəb', 'correct' => ['yaxşı', 'məktəb'], 'extra' => ['sonra', 'park']],
+                            'ar' => ['sentence' => 'حسنا مدرسة', 'correct' => ['حسنا', 'مدرسة'], 'extra' => ['ثم', 'حديقة']],
+                            'ru' => ['sentence' => 'хорошо школа', 'correct' => ['хорошо', 'школа'], 'extra' => ['потом', 'парк']],
                             'es' => [
                                 'sentence' => 'Vale, la escuela',
                                 'correct' => [
@@ -576,6 +603,7 @@ class DeUnitConversation03Seeder extends Seeder
                                     '그러면',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tamam okul', 'correct' => ['tamam', 'okul'], 'extra' => ['sonra', 'park']],
                         ],
                     ],
                     'b' => [
@@ -598,6 +626,9 @@ class DeUnitConversation03Seeder extends Seeder
                                     'school',
                                 ],
                             ],
+                            'az' => ['sentence' => 'sonra park', 'correct' => ['sonra', 'park'], 'extra' => ['yaxşı', 'məktəb']],
+                            'ar' => ['sentence' => 'ثم حديقة', 'correct' => ['ثم', 'حديقة'], 'extra' => ['حسنا', 'مدرسة']],
+                            'ru' => ['sentence' => 'потом парк', 'correct' => ['потом', 'парк'], 'extra' => ['хорошо', 'школа']],
                             'es' => [
                                 'sentence' => 'Entonces el parque',
                                 'correct' => [
@@ -642,6 +673,7 @@ class DeUnitConversation03Seeder extends Seeder
                                     '좋아요',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sonra park', 'correct' => ['sonra', 'park'], 'extra' => ['tamam', 'okul']],
                         ],
                     ],
                     'c' => [
@@ -665,6 +697,9 @@ class DeUnitConversation03Seeder extends Seeder
                                     'school',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yaxşı sonra gedək', 'correct' => ['yaxşı', 'sonra', 'gedək'], 'extra' => ['məktəb']],
+                            'ar' => ['sentence' => 'حسنا ثم هيا بنا', 'correct' => ['حسنا', 'ثم', 'هيا بنا'], 'extra' => ['مدرسة']],
+                            'ru' => ['sentence' => 'хорошо потом пойдём', 'correct' => ['хорошо', 'потом', 'пойдём'], 'extra' => ['школа']],
                             'es' => [
                                 'sentence' => 'Vale, entonces vamos',
                                 'correct' => [
@@ -709,6 +744,7 @@ class DeUnitConversation03Seeder extends Seeder
                                     '학교',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tamam o zaman gidelim', 'correct' => ['tamam', 'o', 'zaman', 'gidelim'], 'extra' => ['okul']],
                         ],
                     ],
                 ],
@@ -752,6 +788,9 @@ class DeUnitConversation03Seeder extends Seeder
                                     'really',
                                 ],
                             ],
+                            'az' => ['sentence' => 'sonradan mənim dost', 'correct' => ['sonradan', 'mənim', 'dost'], 'extra' => ['həqiqətən']],
+                            'ar' => ['sentence' => 'لاحقا صديق', 'correct' => ['لاحقا', 'صديق'], 'extra' => ['حقا']],
+                            'ru' => ['sentence' => 'позже мой друг', 'correct' => ['позже', 'мой', 'друг'], 'extra' => ['действительно']],
                             'es' => [
                                 'sentence' => 'Más tarde, mi amigo',
                                 'correct' => [
@@ -796,6 +835,7 @@ class DeUnitConversation03Seeder extends Seeder
                                     '정말',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sonra arkadaşım', 'correct' => ['sonra', 'arkadaşım'], 'extra' => ['gerçekten']],
                         ],
                     ],
                     'b' => [
@@ -818,6 +858,9 @@ class DeUnitConversation03Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'həqiqətən ev', 'correct' => ['həqiqətən', 'ev'], 'extra' => ['sonradan', 'dost']],
+                            'ar' => ['sentence' => 'حقا بيت', 'correct' => ['حقا', 'بيت'], 'extra' => ['لاحقا', 'صديق']],
+                            'ru' => ['sentence' => 'действительно дом', 'correct' => ['действительно', 'дом'], 'extra' => ['позже', 'друг']],
                             'es' => [
                                 'sentence' => 'De verdad, la casa',
                                 'correct' => [
@@ -863,6 +906,7 @@ class DeUnitConversation03Seeder extends Seeder
                                     '나중에',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'gerçekten ev', 'correct' => ['gerçekten', 'ev'], 'extra' => ['sonra', 'arkadaş']],
                         ],
                     ],
                     'c' => [
@@ -882,6 +926,9 @@ class DeUnitConversation03Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'həqiqətən sonradan', 'correct' => ['həqiqətən', 'sonradan'], 'extra' => ['ev']],
+                            'ar' => ['sentence' => 'حقا لاحقا', 'correct' => ['حقا', 'لاحقا'], 'extra' => ['بيت']],
+                            'ru' => ['sentence' => 'действительно позже', 'correct' => ['действительно', 'позже'], 'extra' => ['дом']],
                             'es' => [
                                 'sentence' => 'De verdad, más tarde',
                                 'correct' => [
@@ -923,6 +970,7 @@ class DeUnitConversation03Seeder extends Seeder
                                     '집',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'gerçekten sonra', 'correct' => ['gerçekten', 'sonra'], 'extra' => ['ev']],
                         ],
                     ],
                 ],
@@ -967,6 +1015,9 @@ class DeUnitConversation03Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'izlə bir film', 'correct' => ['izlə', 'bir', 'film'], 'extra' => ['dost', 'ev']],
+                            'ar' => ['sentence' => 'شاهد فيلم', 'correct' => ['شاهد', 'فيلم'], 'extra' => ['صديق', 'بيت']],
+                            'ru' => ['sentence' => 'смотри фильм', 'correct' => ['смотри', 'фильм'], 'extra' => ['друг', 'дом']],
                             'es' => [
                                 'sentence' => 'Ver una película',
                                 'correct' => [
@@ -1012,6 +1063,7 @@ class DeUnitConversation03Seeder extends Seeder
                                     '친구',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'film izle', 'correct' => ['film', 'izle'], 'extra' => ['arkadaş', 'ev']],
                         ],
                     ],
                     'b' => [
@@ -1038,6 +1090,9 @@ class DeUnitConversation03Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'izlə bir film içində ev', 'correct' => ['izlə', 'bir', 'film', 'içində', 'ev'], 'extra' => ['dost']],
+                            'ar' => ['sentence' => 'شاهد فيلم في بيت', 'correct' => ['شاهد', 'فيلم', 'في', 'بيت'], 'extra' => ['صديق']],
+                            'ru' => ['sentence' => 'смотри фильм в дом', 'correct' => ['смотри', 'фильм', 'в', 'дом'], 'extra' => ['друг']],
                             'es' => [
                                 'sentence' => 'Ver una película en la casa',
                                 'correct' => [
@@ -1090,6 +1145,7 @@ class DeUnitConversation03Seeder extends Seeder
                                     '친구',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'evde film izle', 'correct' => ['evde', 'film', 'izle'], 'extra' => ['arkadaş']],
                         ],
                     ],
                     'c' => [
@@ -1117,6 +1173,9 @@ class DeUnitConversation03Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'izlə bir film ilə mənim dost', 'correct' => ['izlə', 'bir', 'film', 'ilə', 'mənim', 'dost'], 'extra' => ['ev']],
+                            'ar' => ['sentence' => 'شاهد فيلم مع صديق', 'correct' => ['شاهد', 'فيلم', 'مع', 'صديق'], 'extra' => ['بيت']],
+                            'ru' => ['sentence' => 'смотри фильм с мой друг', 'correct' => ['смотри', 'фильм', 'с', 'мой', 'друг'], 'extra' => ['дом']],
                             'es' => [
                                 'sentence' => 'Ver una película con mi amigo',
                                 'correct' => [
@@ -1171,6 +1230,7 @@ class DeUnitConversation03Seeder extends Seeder
                                     '집',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'arkadaşımla film izle', 'correct' => ['arkadaşımla', 'film', 'izle'], 'extra' => ['ev']],
                         ],
                     ],
                 ],

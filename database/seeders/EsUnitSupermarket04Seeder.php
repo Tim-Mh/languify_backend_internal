@@ -87,6 +87,9 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     'milk',
                                 ],
                             ],
+                            'az' => ['sentence' => 'pendir bir təzə məhsul', 'correct' => ['pendir', 'bir', 'təzə', 'məhsul'], 'extra' => ['süd']],
+                            'ar' => ['sentence' => 'جبن طازج منتج', 'correct' => ['جبن', 'طازج', 'منتج'], 'extra' => ['حليب']],
+                            'ru' => ['sentence' => 'сыр свежий продукт', 'correct' => ['сыр', 'свежий', 'продукт'], 'extra' => ['молоко']],
                             'de' => [
                                 'sentence' => 'Der Käse ist ein frisches Produkt',
                                 'correct' => [
@@ -139,6 +142,7 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     '우유',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'peynir taze bir ürün', 'correct' => ['peynir', 'taze', 'bir', 'ürün'], 'extra' => ['süt']],
                         ],
                     ],
                     'b' => [
@@ -162,6 +166,9 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     'cheese',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir az təzə süd', 'correct' => ['bir az', 'təzə', 'süd'], 'extra' => ['məhsul', 'pendir']],
+                            'ar' => ['sentence' => 'بعض طازج حليب', 'correct' => ['بعض', 'طازج', 'حليب'], 'extra' => ['منتج', 'جبن']],
+                            'ru' => ['sentence' => 'немного свежий молоко', 'correct' => ['немного', 'свежий', 'молоко'], 'extra' => ['продукт', 'сыр']],
                             'de' => [
                                 'sentence' => 'Etwas frische Milch',
                                 'correct' => [
@@ -205,6 +212,7 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     '상품',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'biraz taze süt', 'correct' => ['biraz', 'taze', 'süt'], 'extra' => ['ürün', 'peynir']],
                         ],
                     ],
                     'c' => [
@@ -229,6 +237,9 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     'cheese',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir məhsul ilə süd', 'correct' => ['bir', 'məhsul', 'ilə', 'süd'], 'extra' => ['təzə', 'pendir']],
+                            'ar' => ['sentence' => 'منتج مع حليب', 'correct' => ['منتج', 'مع', 'حليب'], 'extra' => ['طازج', 'جبن']],
+                            'ru' => ['sentence' => 'продукт с молоко', 'correct' => ['продукт', 'с', 'молоко'], 'extra' => ['свежий', 'сыр']],
                             'de' => [
                                 'sentence' => 'Ein Produkt mit Milch',
                                 'correct' => [
@@ -277,6 +288,7 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     '신선한',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sütlü bir ürün', 'correct' => ['sütlü', 'bir', 'ürün'], 'extra' => ['taze', 'peynir']],
                         ],
                     ],
                 ],
@@ -319,6 +331,9 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     'bread',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir az yumurtalar', 'correct' => ['bir az', 'yumurtalar'], 'extra' => ['kərə yağı', 'çörək']],
+                            'ar' => ['sentence' => 'بعض بيض', 'correct' => ['بعض', 'بيض'], 'extra' => ['زبدة', 'خبز']],
+                            'ru' => ['sentence' => 'немного яйца', 'correct' => ['немного', 'яйца'], 'extra' => ['масло', 'хлеб']],
                             'de' => [
                                 'sentence' => 'Ein paar Eier',
                                 'correct' => [
@@ -361,6 +376,7 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     '버터',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'biraz yumurta', 'correct' => ['biraz', 'yumurta'], 'extra' => ['tereyağı', 'ekmek']],
                         ],
                     ],
                     'b' => [
@@ -385,6 +401,9 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     'eggs',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir az çörək ilə kərə yağı', 'correct' => ['bir az', 'çörək', 'ilə', 'kərə yağı'], 'extra' => ['yumurtalar']],
+                            'ar' => ['sentence' => 'بعض خبز مع زبدة', 'correct' => ['بعض', 'خبز', 'مع', 'زبدة'], 'extra' => ['بيض']],
+                            'ru' => ['sentence' => 'немного хлеб с масло', 'correct' => ['немного', 'хлеб', 'с', 'масло'], 'extra' => ['яйца']],
                             'de' => [
                                 'sentence' => 'Etwas Brot mit Butter',
                                 'correct' => [
@@ -432,6 +451,7 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     '계란',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tereyağlı biraz ekmek', 'correct' => ['tereyağlı', 'biraz', 'ekmek'], 'extra' => ['yumurta']],
                         ],
                     ],
                     'c' => [
@@ -458,6 +478,9 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     'butter',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir az çörək və bir az yumurtalar', 'correct' => ['bir az', 'çörək', 'və', 'bir az', 'yumurtalar'], 'extra' => ['kərə yağı']],
+                            'ar' => ['sentence' => 'بعض خبز و بعض بيض', 'correct' => ['بعض', 'خبز', 'و', 'بعض', 'بيض'], 'extra' => ['زبدة']],
+                            'ru' => ['sentence' => 'немного хлеб и немного яйца', 'correct' => ['немного', 'хлеб', 'и', 'немного', 'яйца'], 'extra' => ['масло']],
                             'de' => [
                                 'sentence' => 'Etwas Brot und ein paar Eier',
                                 'correct' => [
@@ -505,6 +528,7 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     '버터',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'biraz ekmek ve biraz yumurta', 'correct' => ['biraz', 'ekmek', 've', 'biraz', 'yumurta'], 'extra' => ['tereyağı']],
                         ],
                     ],
                 ],
@@ -553,6 +577,9 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     'cake',
                                 ],
                             ],
+                            'az' => ['sentence' => 'çörək dan çörəkxana', 'correct' => ['çörək', 'dan', 'çörəkxana'], 'extra' => ['isti', 'tort']],
+                            'ar' => ['sentence' => 'خبز من مخبز', 'correct' => ['خبز', 'من', 'مخبز'], 'extra' => ['ساخن', 'كعكة']],
+                            'ru' => ['sentence' => 'хлеб из пекарня', 'correct' => ['хлеб', 'из', 'пекарня'], 'extra' => ['горячий', 'торт']],
                             'de' => [
                                 'sentence' => 'Das Brot aus der Bäckerei',
                                 'correct' => [
@@ -602,6 +629,7 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     '뜨거운',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'fırından ekmek', 'correct' => ['fırından', 'ekmek'], 'extra' => ['sıcak', 'pasta']],
                         ],
                     ],
                     'b' => [
@@ -624,6 +652,9 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     'bread',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir isti tort', 'correct' => ['bir', 'isti', 'tort'], 'extra' => ['çörəkxana', 'çörək']],
+                            'ar' => ['sentence' => 'ساخن كعكة', 'correct' => ['ساخن', 'كعكة'], 'extra' => ['مخبز', 'خبز']],
+                            'ru' => ['sentence' => 'горячий торт', 'correct' => ['горячий', 'торт'], 'extra' => ['пекарня', 'хлеб']],
                             'de' => [
                                 'sentence' => 'Ein heißer Kuchen',
                                 'correct' => [
@@ -667,6 +698,7 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     '빵집',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sıcak bir pasta', 'correct' => ['sıcak', 'bir', 'pasta'], 'extra' => ['fırın', 'ekmek']],
                         ],
                     ],
                     'c' => [
@@ -694,6 +726,9 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     'bread',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir isti tort dan çörəkxana', 'correct' => ['bir', 'isti', 'tort', 'dan', 'çörəkxana'], 'extra' => ['çörək']],
+                            'ar' => ['sentence' => 'ساخن كعكة من مخبز', 'correct' => ['ساخن', 'كعكة', 'من', 'مخبز'], 'extra' => ['خبز']],
+                            'ru' => ['sentence' => 'горячий торт из пекарня', 'correct' => ['горячий', 'торт', 'из', 'пекарня'], 'extra' => ['хлеб']],
                             'de' => [
                                 'sentence' => 'Ein heißer Kuchen aus der Bäckerei',
                                 'correct' => [
@@ -745,6 +780,7 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     '빵',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'fırından sıcak bir pasta', 'correct' => ['fırından', 'sıcak', 'bir', 'pasta'], 'extra' => ['ekmek']],
                         ],
                     ],
                 ],
@@ -791,6 +827,9 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     'closed',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir şüşə süd', 'correct' => ['bir', 'şüşə', 'süd'], 'extra' => ['açıq', 'bağlı']],
+                            'ar' => ['sentence' => 'زجاجة حليب', 'correct' => ['زجاجة', 'حليب'], 'extra' => ['مفتوح', 'مغلق']],
+                            'ru' => ['sentence' => 'бутылка молоко', 'correct' => ['бутылка', 'молоко'], 'extra' => ['открыто', 'закрыто']],
                             'de' => [
                                 'sentence' => 'Eine Flasche Milch',
                                 'correct' => [
@@ -838,6 +877,7 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     '열린',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir şişe süt', 'correct' => ['bir', 'şişe', 'süt'], 'extra' => ['açık', 'kapalı']],
                         ],
                     ],
                     'b' => [
@@ -862,6 +902,9 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     'bottle',
                                 ],
                             ],
+                            'az' => ['sentence' => 'supermarket açıq', 'correct' => ['supermarket', 'açıq'], 'extra' => ['bağlı', 'şüşə']],
+                            'ar' => ['sentence' => 'سوبرماركت مفتوح', 'correct' => ['سوبرماركت', 'مفتوح'], 'extra' => ['مغلق', 'زجاجة']],
+                            'ru' => ['sentence' => 'супермаркет открыто', 'correct' => ['супермаркет', 'открыто'], 'extra' => ['закрыто', 'бутылка']],
                             'de' => [
                                 'sentence' => 'Der Supermarkt ist offen',
                                 'correct' => [
@@ -909,6 +952,7 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     '닫힌',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'market açık', 'correct' => ['market', 'açık'], 'extra' => ['kapalı', 'şişe']],
                         ],
                     ],
                     'c' => [
@@ -933,6 +977,9 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     'milk',
                                 ],
                             ],
+                            'az' => ['sentence' => 'çörəkxana bağlı', 'correct' => ['çörəkxana', 'bağlı'], 'extra' => ['açıq', 'süd']],
+                            'ar' => ['sentence' => 'مخبز مغلق', 'correct' => ['مخبز', 'مغلق'], 'extra' => ['مفتوح', 'حليب']],
+                            'ru' => ['sentence' => 'пекарня закрыто', 'correct' => ['пекарня', 'закрыто'], 'extra' => ['открыто', 'молоко']],
                             'de' => [
                                 'sentence' => 'Die Bäckerei ist geschlossen',
                                 'correct' => [
@@ -979,6 +1026,7 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     '열린',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'fırın kapalı', 'correct' => ['fırın', 'kapalı'], 'extra' => ['açık', 'süt']],
                         ],
                     ],
                 ],
@@ -1025,6 +1073,9 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     'eggs',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir kilo pendir', 'correct' => ['bir', 'kilo', 'pendir'], 'extra' => ['neçə', 'yumurtalar']],
+                            'ar' => ['sentence' => 'كيلو جبن', 'correct' => ['كيلو', 'جبن'], 'extra' => ['كم', 'بيض']],
+                            'ru' => ['sentence' => 'кило сыр', 'correct' => ['кило', 'сыр'], 'extra' => ['сколько', 'яйца']],
                             'de' => [
                                 'sentence' => 'Ein Kilo Käse',
                                 'correct' => [
@@ -1072,6 +1123,7 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     '몇 개',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kilo peynir', 'correct' => ['bir', 'kilo', 'peynir'], 'extra' => ['kaç', 'yumurta']],
                         ],
                     ],
                     'b' => [
@@ -1092,6 +1144,9 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     'cheese',
                                 ],
                             ],
+                            'az' => ['sentence' => 'neçə yumurtalar', 'correct' => ['neçə', 'yumurtalar'], 'extra' => ['kilo', 'pendir']],
+                            'ar' => ['sentence' => 'كم بيض', 'correct' => ['كم', 'بيض'], 'extra' => ['كيلو', 'جبن']],
+                            'ru' => ['sentence' => 'сколько яйца', 'correct' => ['сколько', 'яйца'], 'extra' => ['кило', 'сыр']],
                             'de' => [
                                 'sentence' => 'Wie viele Eier',
                                 'correct' => [
@@ -1135,6 +1190,7 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     '킬로',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kaç yumurta', 'correct' => ['kaç', 'yumurta'], 'extra' => ['kilo', 'peynir']],
                         ],
                     ],
                     'c' => [
@@ -1161,6 +1217,9 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     'how many',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir az yumurtalar və bir az pendir', 'correct' => ['bir az', 'yumurtalar', 'və', 'bir az', 'pendir'], 'extra' => ['neçə']],
+                            'ar' => ['sentence' => 'بعض بيض و بعض جبن', 'correct' => ['بعض', 'بيض', 'و', 'بعض', 'جبن'], 'extra' => ['كم']],
+                            'ru' => ['sentence' => 'немного яйца и немного сыр', 'correct' => ['немного', 'яйца', 'и', 'немного', 'сыр'], 'extra' => ['сколько']],
                             'de' => [
                                 'sentence' => 'Ein paar Eier und etwas Käse',
                                 'correct' => [
@@ -1208,6 +1267,7 @@ class EsUnitSupermarket04Seeder extends Seeder
                                     '몇 개',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'biraz yumurta ve biraz peynir', 'correct' => ['biraz', 'yumurta', 've', 'biraz', 'peynir'], 'extra' => ['kaç']],
                         ],
                     ],
                 ],

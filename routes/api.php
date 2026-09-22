@@ -68,7 +68,7 @@ Route::post('/apple/webhook', [AppleIapController::class, 'webhook']);
 // <audio> element both fetch it directly and neither carries the session
 // cookie cleanly across subdomains; what it returns is catalogue content spoken
 // aloud, never user data.
-Route::get('/speech', [SpeechController::class, 'show']);
+Route::get('/speech', [SpeechController::class, 'show'])->middleware('throttle:120,1');
 
 // Public content pages (Terms, Privacy, Contact) — visible to logged-out visitors too.
 Route::get('/pages/{slug}', [PageController::class, 'show']);
@@ -86,7 +86,8 @@ Route::middleware(['auth.cookie', 'auth:sanctum'])->group(function () {
     // comfortably covers real travel and still closes that off.
     Route::patch('/profile/timezone', [ProfileController::class, 'updateTimezone'])->middleware('throttle:5,1440');
     Route::get('/shop/catalog', [ShopController::class, 'catalog']);
-    Route::post('/shop/subscription/checkout', [ShopController::class, 'checkoutSubscription']);
+    // SEC-07: each of these calls Stripe, so each costs money per request.
+    Route::post('/shop/subscription/checkout', [ShopController::class, 'checkoutSubscription'])->middleware('throttle:10,1');
     Route::get('/subscription/verify', [ShopController::class, 'verifySubscriptionCheckout']);
     Route::get('/subscription/status', [SubscriptionController::class, 'status']);
     // Each of these reaches out to Stripe, so cap the rate: a learner has no
@@ -177,9 +178,9 @@ Route::middleware(['auth.cookie', 'auth:sanctum'])->group(function () {
     // a StoreKit purchase (or a restore) and the server credits it.
     Route::post('/shop/apple/verify', [AppleIapController::class, 'verify'])->middleware('throttle:30,1');
 
-    Route::post('/shop/gems/checkout', [ShopController::class, 'checkoutGems']);
+    Route::post('/shop/gems/checkout', [ShopController::class, 'checkoutGems'])->middleware('throttle:10,1');
     Route::get('/shop/gems/verify', [ShopController::class, 'verifyGemsCheckout']);
-    Route::post('/shop/hearts/refill', [ShopController::class, 'refillHearts']);
+    Route::post('/shop/hearts/refill', [ShopController::class, 'refillHearts'])->middleware('throttle:20,1');
 
     // Throttled: sends an email to an arbitrary address, so cap the rate
     // to prevent invite→revoke→re-invite email spamming.

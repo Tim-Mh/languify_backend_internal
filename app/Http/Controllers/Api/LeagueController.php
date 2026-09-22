@@ -53,8 +53,28 @@ class LeagueController extends Controller
         // One-shot: read whatever the last rollover left, then immediately
         // clear it so this notice only ever surfaces on the very next visit.
         $tierChangeNotice = $league->pending_tier_change;
-        if ($tierChangeNotice) {
-            $league->forceFill(['pending_tier_change' => null])->save();
+
+        // The week that just ended, if the learner has not seen it yet.
+        // Rank is the marker for "there is a result": a member who was not
+        // ranked (no XP, so dropped) has nothing to be told.
+        $weeklyResult = $league->pending_result_rank === null ? null : [
+            'rank' => (int) $league->pending_result_rank,
+            'size' => (int) $league->pending_result_size,
+            'points' => (int) $league->pending_result_points,
+            'xp' => (int) $league->pending_result_xp,
+            'gems' => (int) $league->pending_result_gems,
+            'direction' => $tierChangeNotice,
+        ];
+
+        if ($tierChangeNotice || $weeklyResult) {
+            $league->forceFill([
+                'pending_tier_change' => null,
+                'pending_result_rank' => null,
+                'pending_result_size' => null,
+                'pending_result_points' => null,
+                'pending_result_xp' => null,
+                'pending_result_gems' => null,
+            ])->save();
         }
 
         $tiers = LeagueTier::orderBy('order_number')->get();
@@ -106,6 +126,9 @@ class LeagueController extends Controller
                 'leaguePoints' => $league->league_points,
                 'pointsToNextTier' => $isHighestTier ? null : LeagueService::PROMOTION_THRESHOLD - $league->league_points,
                 'tierChangeNotice' => $tierChangeNotice,
+                // Null unless a rollover has happened since this learner
+                // last opened the board. Present exactly once.
+                'weeklyResult' => $weeklyResult,
                 'weekStartDate' => $league->week_start_date->toDateString(),
                 'secondsUntilRollover' => max(0, (int) now()->diffInSeconds($nextRollover)),
                 'cohortSize' => $cohortSize,

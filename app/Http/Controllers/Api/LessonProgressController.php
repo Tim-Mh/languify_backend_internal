@@ -98,9 +98,13 @@ class LessonProgressController extends Controller
 
         $result = $this->progress->completeLesson($user, $lesson, $data['mistakes']);
 
-        // Finishing a lesson always earns XP, and earning XP is the ONLY way
-        // into the weekly league — enrol the user now (no-op if already in).
-        $this->leagues->ensureEnrolled($user);
+        // Earning XP is the ONLY way into the weekly league, so enrol on the
+        // plays that actually pay (no-op if already in). Replaying a finished
+        // lesson awards nothing, and must not quietly enter someone into a
+        // competition they have scored no points in.
+        if ($result['xpAwarded'] > 0) {
+            $this->leagues->ensureEnrolled($user);
+        }
 
         return response()->json([
             'xpAwarded' => $result['xpAwarded'],
@@ -120,6 +124,10 @@ class LessonProgressController extends Controller
             'gems' => $result['gems'],
             'hearts' => $result['hearts'],
             'alreadyCompletedBefore' => $result['alreadyCompletedBefore'],
+            // True when the lesson was already finished before this play, which
+            // is why every reward above reads zero. The client shows a practice
+            // result instead of a rewards result.
+            'alreadyMastered' => $result['alreadyMastered'],
             // Session progress toward mastery (fills the lesson's ring and, at
             // target, unlocks the next lesson).
             'completionsCount' => $result['completionsCount'],

@@ -85,6 +85,9 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     'chair',
                                 ],
                             ],
+                            'az' => ['sentence' => 'istəyirəm kitab bir masa', 'correct' => ['istəyirəm', 'kitab', 'bir', 'masa'], 'extra' => ['rezervasiya', 'stul']],
+                            'ar' => ['sentence' => 'أريد إلى كتاب طاولة', 'correct' => ['أريد', 'إلى', 'كتاب', 'طاولة'], 'extra' => ['حجز', 'كرسي']],
+                            'ru' => ['sentence' => 'я хочу в книга стол', 'correct' => ['я', 'хочу', 'в', 'книга', 'стол'], 'extra' => ['бронь', 'стул']],
                             'es' => [
                                 'sentence' => 'Quisiera reservar una mesa',
                                 'correct' => [
@@ -134,6 +137,7 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     '예약',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir masa ayırtmak istiyorum', 'correct' => ['bir', 'masa', 'ayırtmak', 'istiyorum'], 'extra' => ['rezervasyon', 'sandalye']],
                         ],
                     ],
                     'b' => [
@@ -159,6 +163,9 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     'table',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir rezervasiya üçün bu axşam', 'correct' => ['bir', 'rezervasiya', 'üçün', 'bu axşam'], 'extra' => ['kitab', 'masa']],
+                            'ar' => ['sentence' => 'حجز لأجل الليلة', 'correct' => ['حجز', 'لأجل', 'الليلة'], 'extra' => ['إلى', 'كتاب', 'طاولة']],
+                            'ru' => ['sentence' => 'бронь для сегодня вечером', 'correct' => ['бронь', 'для', 'сегодня вечером'], 'extra' => ['в', 'книга', 'стол']],
                             'es' => [
                                 'sentence' => 'Una reserva para esta noche',
                                 'correct' => [
@@ -206,6 +213,7 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     '테이블',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bu akşam için bir rezervasyon', 'correct' => ['bu', 'akşam', 'için', 'bir', 'rezervasyon'], 'extra' => ['ayırtmak', 'masa']],
                         ],
                     ],
                     'c' => [
@@ -231,6 +239,9 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     'booking',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir masa və bir stul', 'correct' => ['bir', 'masa', 'və', 'bir', 'stul'], 'extra' => ['rezervasiya']],
+                            'ar' => ['sentence' => 'طاولة و كرسي', 'correct' => ['طاولة', 'و', 'كرسي'], 'extra' => ['حجز']],
+                            'ru' => ['sentence' => 'стол и стул', 'correct' => ['стол', 'и', 'стул'], 'extra' => ['бронь']],
                             'es' => [
                                 'sentence' => 'Una mesa y una silla',
                                 'correct' => [
@@ -278,6 +289,7 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     '예약',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir masa ve bir sandalye', 'correct' => ['bir', 'masa', 've', 'bir', 'sandalye'], 'extra' => ['rezervasyon']],
                         ],
                     ],
                 ],
@@ -321,6 +333,9 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     'noon',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yanında səkkiz saat', 'correct' => ['yanında', 'səkkiz', 'saat'], 'extra' => ['günorta']],
+                            'ar' => ['sentence' => 'على ثمانية الساعة', 'correct' => ['على', 'ثمانية', 'الساعة'], 'extra' => ['ظهرا']],
+                            'ru' => ['sentence' => 'на восемь часов', 'correct' => ['на', 'восемь', 'часов'], 'extra' => ['полдень']],
                             'es' => [
                                 'sentence' => 'A las ocho en punto',
                                 'correct' => [
@@ -366,6 +381,7 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     '정오',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'saat sekizde', 'correct' => ['saat', 'sekizde'], 'extra' => ['öğlen']],
                         ],
                     ],
                     'b' => [
@@ -388,6 +404,9 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     'calendar',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yanında günorta zəhmət olmasa', 'correct' => ['yanında', 'günorta', 'zəhmət olmasa'], 'extra' => ['saat', 'təqvim']],
+                            'ar' => ['sentence' => 'على ظهرا من فضلك', 'correct' => ['على', 'ظهرا', 'من فضلك'], 'extra' => ['ساعة', 'تقويم']],
+                            'ru' => ['sentence' => 'на полдень пожалуйста', 'correct' => ['на', 'полдень', 'пожалуйста'], 'extra' => ['часы', 'календарь']],
                             'es' => [
                                 'sentence' => 'A mediodía, por favor',
                                 'correct' => [
@@ -432,6 +451,7 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     '시',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'öğlen lütfen', 'correct' => ['öğlen', 'lütfen'], 'extra' => ['saat', 'takvim']],
                         ],
                     ],
                     'c' => [
@@ -457,6 +477,9 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     'noon',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir saat və bir təqvim', 'correct' => ['bir', 'saat', 'və', 'bir', 'təqvim'], 'extra' => ['günorta']],
+                            'ar' => ['sentence' => 'ساعة و تقويم', 'correct' => ['ساعة', 'و', 'تقويم'], 'extra' => ['ظهرا']],
+                            'ru' => ['sentence' => 'часы и календарь', 'correct' => ['часы', 'и', 'календарь'], 'extra' => ['полдень']],
                             'es' => [
                                 'sentence' => 'Un reloj y un calendario',
                                 'correct' => [
@@ -504,6 +527,7 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     '정오',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir saat ve bir takvim', 'correct' => ['bir', 'saat', 've', 'bir', 'takvim'], 'extra' => ['öğlen']],
                         ],
                     ],
                 ],
@@ -551,6 +575,9 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     'seat',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir masa üçün iki insanlar', 'correct' => ['bir', 'masa', 'üçün', 'iki', 'insanlar'], 'extra' => ['yer']],
+                            'ar' => ['sentence' => 'طاولة لأجل اثنان ناس', 'correct' => ['طاولة', 'لأجل', 'اثنان', 'ناس'], 'extra' => ['مقعد']],
+                            'ru' => ['sentence' => 'стол для два люди', 'correct' => ['стол', 'для', 'два', 'люди'], 'extra' => ['место']],
                             'es' => [
                                 'sentence' => 'Una mesa para dos personas',
                                 'correct' => [
@@ -599,6 +626,7 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     '자리',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'iki kişi için bir masa', 'correct' => ['iki', 'kişi', 'için', 'bir', 'masa'], 'extra' => ['koltuk']],
                         ],
                     ],
                     'b' => [
@@ -623,6 +651,9 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     'table',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir yer üçün mənə', 'correct' => ['bir', 'yer', 'üçün', 'mənə'], 'extra' => ['insanlar', 'masa']],
+                            'ar' => ['sentence' => 'مقعد لأجل لي', 'correct' => ['مقعد', 'لأجل', 'لي'], 'extra' => ['ناس', 'طاولة']],
+                            'ru' => ['sentence' => 'место для меня', 'correct' => ['место', 'для', 'меня'], 'extra' => ['люди', 'стол']],
                             'es' => [
                                 'sentence' => 'Un sitio para mí',
                                 'correct' => [
@@ -671,6 +702,7 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     '명',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'benim için bir koltuk', 'correct' => ['benim', 'için', 'bir', 'koltuk'], 'extra' => ['kişi', 'masa']],
                         ],
                     ],
                     'c' => [
@@ -696,6 +728,9 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     'people',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir stul və bir yer', 'correct' => ['bir', 'stul', 'və', 'bir', 'yer'], 'extra' => ['insanlar']],
+                            'ar' => ['sentence' => 'كرسي و مقعد', 'correct' => ['كرسي', 'و', 'مقعد'], 'extra' => ['ناس']],
+                            'ru' => ['sentence' => 'стул и место', 'correct' => ['стул', 'и', 'место'], 'extra' => ['люди']],
                             'es' => [
                                 'sentence' => 'Una silla y un sitio',
                                 'correct' => [
@@ -743,6 +778,7 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     '명',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir sandalye ve bir koltuk', 'correct' => ['bir', 'sandalye', 've', 'bir', 'koltuk'], 'extra' => ['kişi']],
                         ],
                     ],
                 ],
@@ -789,6 +825,9 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     'to cancel',
                                 ],
                             ],
+                            'az' => ['sentence' => 'istəyirəm təsdiqləmək rezervasiya', 'correct' => ['istəyirəm', 'təsdiqləmək', 'rezervasiya'], 'extra' => ['ləğv etmək']],
+                            'ar' => ['sentence' => 'أريد التأكيد حجز', 'correct' => ['أريد', 'التأكيد', 'حجز'], 'extra' => ['الإلغاء']],
+                            'ru' => ['sentence' => 'я хочу подтвердить бронь', 'correct' => ['я', 'хочу', 'подтвердить', 'бронь'], 'extra' => ['отменить']],
                             'es' => [
                                 'sentence' => 'Quisiera confirmar la reserva',
                                 'correct' => [
@@ -836,6 +875,7 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     '취소하다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'rezervasyonu onaylamak istiyorum', 'correct' => ['rezervasyonu', 'onaylamak', 'istiyorum'], 'extra' => ['iptal etmek']],
                         ],
                     ],
                     'b' => [
@@ -858,6 +898,9 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     'clock',
                                 ],
                             ],
+                            'az' => ['sentence' => 'ləğv etmək masa', 'correct' => ['ləğv etmək', 'masa'], 'extra' => ['təsdiqləmək', 'saat']],
+                            'ar' => ['sentence' => 'الإلغاء طاولة', 'correct' => ['الإلغاء', 'طاولة'], 'extra' => ['التأكيد', 'ساعة']],
+                            'ru' => ['sentence' => 'отменить стол', 'correct' => ['отменить', 'стол'], 'extra' => ['подтвердить', 'часы']],
                             'es' => [
                                 'sentence' => 'Cancelar la mesa',
                                 'correct' => [
@@ -902,6 +945,7 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     '확인하다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'masayı iptal etmek', 'correct' => ['masayı', 'iptal', 'etmek'], 'extra' => ['onaylamak', 'saat']],
                         ],
                     ],
                     'c' => [
@@ -927,6 +971,9 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     'to cancel',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir təqvim və bir saat', 'correct' => ['bir', 'təqvim', 'və', 'bir', 'saat'], 'extra' => ['ləğv etmək']],
+                            'ar' => ['sentence' => 'تقويم و ساعة', 'correct' => ['تقويم', 'و', 'ساعة'], 'extra' => ['الإلغاء']],
+                            'ru' => ['sentence' => 'календарь и часы', 'correct' => ['календарь', 'и', 'часы'], 'extra' => ['отменить']],
                             'es' => [
                                 'sentence' => 'Un calendario y un reloj',
                                 'correct' => [
@@ -974,6 +1021,7 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     '확인하다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir takvim ve bir saat', 'correct' => ['bir', 'takvim', 've', 'bir', 'saat'], 'extra' => ['iptal etmek']],
                         ],
                     ],
                 ],
@@ -1021,6 +1069,9 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     'kitchen',
                                 ],
                             ],
+                            'az' => ['sentence' => 'restoran pulsuz sabah', 'correct' => ['restoran', 'pulsuz', 'sabah'], 'extra' => ['mətbəx']],
+                            'ar' => ['sentence' => 'مطعم مجاني غدا', 'correct' => ['مطعم', 'مجاني', 'غدا'], 'extra' => ['مطبخ']],
+                            'ru' => ['sentence' => 'ресторан бесплатно завтра', 'correct' => ['ресторан', 'бесплатно', 'завтра'], 'extra' => ['кухня']],
                             'es' => [
                                 'sentence' => 'El restaurante está libre mañana',
                                 'correct' => [
@@ -1071,6 +1122,7 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     '주방',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'restoran yarın müsait', 'correct' => ['restoran', 'yarın', 'müsait'], 'extra' => ['mutfak']],
                         ],
                     ],
                     'b' => [
@@ -1096,6 +1148,9 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     'restaurant',
                                 ],
                             ],
+                            'az' => ['sentence' => 'menyu dan mətbəx', 'correct' => ['menyu', 'dan', 'mətbəx'], 'extra' => ['restoran']],
+                            'ar' => ['sentence' => 'قائمة الطعام من مطبخ', 'correct' => ['قائمة الطعام', 'من', 'مطبخ'], 'extra' => ['مطعم']],
+                            'ru' => ['sentence' => 'меню из кухня', 'correct' => ['меню', 'из', 'кухня'], 'extra' => ['ресторан']],
                             'es' => [
                                 'sentence' => 'El menú de la cocina',
                                 'correct' => [
@@ -1143,6 +1198,7 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     '식당',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'mutfaktan menü', 'correct' => ['mutfaktan', 'menü'], 'extra' => ['restoran']],
                         ],
                     ],
                     'c' => [
@@ -1168,6 +1224,9 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     'kitchen',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir boşqab dan restoran', 'correct' => ['bir', 'boşqab', 'dan', 'restoran'], 'extra' => ['mətbəx']],
+                            'ar' => ['sentence' => 'صحن من مطعم', 'correct' => ['صحن', 'من', 'مطعم'], 'extra' => ['مطبخ']],
+                            'ru' => ['sentence' => 'тарелка из ресторан', 'correct' => ['тарелка', 'из', 'ресторан'], 'extra' => ['кухня']],
                             'es' => [
                                 'sentence' => 'Un plato del restaurante',
                                 'correct' => [
@@ -1215,6 +1274,7 @@ class DeUnitRestaurant04Seeder extends Seeder
                                     '주방',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'restorandan bir tabak', 'correct' => ['restorandan', 'bir', 'tabak'], 'extra' => ['mutfak']],
                         ],
                     ],
                 ],

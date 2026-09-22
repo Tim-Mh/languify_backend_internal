@@ -7,12 +7,14 @@ use App\Models\GemPurchase;
 use App\Models\SubscriptionPlan;
 use App\Models\UserGameState;
 use App\Models\UserSubscription;
+use App\Support\GemLedger;
 use AppStoreServerLibrary\Models\Environment;
 use AppStoreServerLibrary\Models\JWSTransactionDecodedPayload;
 use AppStoreServerLibrary\Models\NotificationTypeV2;
 use AppStoreServerLibrary\Models\ResponseBodyV2DecodedPayload;
 use AppStoreServerLibrary\SignedDataVerifier;
 use AppStoreServerLibrary\SignedDataVerifier\VerificationException;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -40,6 +42,7 @@ use Illuminate\Support\Facades\Log;
 class AppleIapService
 {
     private const SUB_PREFIX = 'us.languify.app.sub.';
+
     private const GEMS_PREFIX = 'us.languify.app.gems.';
 
     /** @var array<string, SignedDataVerifier> */
@@ -139,7 +142,7 @@ class AppleIapService
 
             UserGameState::firstOrCreate(['user_id' => $userId]);
             $state = UserGameState::where('user_id', $userId)->lockForUpdate()->firstOrFail();
-            $state->gems += $pack->gems;
+            GemLedger::apply($state, $pack->gems, 'purchase.apple');
             $state->save();
 
             return ['kind' => 'gems', 'status' => 'completed', 'gems' => $state->gems];
@@ -278,7 +281,7 @@ class AppleIapService
             $state = UserGameState::where('user_id', $purchase->user_id)->lockForUpdate()->first();
 
             if ($state) {
-                $state->gems = max(0, $state->gems - $purchase->gems_credited);
+                GemLedger::apply($state, -$purchase->gems_credited, 'purchase.apple_refund');
                 $state->save();
             }
         });
@@ -317,10 +320,10 @@ class AppleIapService
         )));
     }
 
-    private static function toDateTime(?int $milliseconds): ?\Illuminate\Support\Carbon
+    private static function toDateTime(?int $milliseconds): ?Carbon
     {
         return $milliseconds === null
             ? null
-            : \Illuminate\Support\Carbon::createFromTimestampMs($milliseconds);
+            : Carbon::createFromTimestampMs($milliseconds);
     }
 }

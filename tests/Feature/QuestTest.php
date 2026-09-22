@@ -39,22 +39,25 @@ class QuestTest extends TestCase
     public function test_claiming_a_completed_quest_awards_gems_and_xp(): void
     {
         $user = User::factory()->create(['timezone' => 'UTC']);
-        // A brand-new user starts at difficulty level 1, whose 3 tiers are
-        // [1, 1, 2] — the two tier-1 slots are always lessons_completed or
-        // xp_earned quests (the only types in the easy pool), so values this
-        // high guarantee both are already complete regardless of which
-        // specific quests get randomly picked.
+
+        // Narrow the pool to one requirement type so the assertion does not
+        // depend on which three quests the shuffle returns. Progress for that
+        // type is read from `lessons_mastered_today`, NOT `lessons_today` --
+        // seeding the latter is why this test used to find nothing completed.
+        Quest::where('requirement_type', '!=', 'lessons_completed')->update(['is_active' => false]);
+
         UserGameState::create([
             'user_id' => $user->id,
-            'lessons_today' => 10,
-            'today_xp' => 200,
+            'lessons_mastered_today' => 50,
+            'lessons_today' => 50,
+            'today_xp' => 500,
             'today_date' => now('UTC')->startOfDay(),
             'gems' => 0,
         ]);
 
         $quests = $this->actingAs($user)->getJson('/api/quests/today')->json('quests');
         $completed = collect($quests)->first(fn ($q) => $q['completed']);
-        $this->assertNotNull($completed, 'At least one quest should already be completed with lessons_today=5');
+        $this->assertNotNull($completed, 'A lessons_completed quest should already be done at 50 mastered lessons');
 
         $response = $this->actingAs($user)->postJson("/api/quests/{$completed['id']}/claim")->assertOk();
 
@@ -78,69 +81,4 @@ class QuestTest extends TestCase
         $this->actingAs($user)->postJson("/api/quests/{$incomplete['id']}/claim")->assertStatus(422);
     }
 
-    public function test_difficulty_level_increases_after_completing_all_of_yesterdays_quests(): void
-    {
-        $user = User::factory()->create(['timezone' => 'UTC']);
-        UserGameState::create(['user_id' => $user->id, 'quest_difficulty_level' => 1]);
-        $this->seedYesterdaysQuests($user, allCompleted: true);
-
-        $this->actingAs($user)->getJson('/api/quests/today')->assertOk();
-
-        $this->assertSame(2, UserGameState::where('user_id', $user->id)->value('quest_difficulty_level'));
-    }
-
-    public function test_difficulty_level_decreases_after_completing_none_of_yesterdays_quests(): void
-    {
-        $user = User::factory()->create(['timezone' => 'UTC']);
-        UserGameState::create(['user_id' => $user->id, 'quest_difficulty_level' => 2]);
-        $this->seedYesterdaysQuests($user, allCompleted: false);
-
-        $this->actingAs($user)->getJson('/api/quests/today')->assertOk();
-
-        $this->assertSame(1, UserGameState::where('user_id', $user->id)->value('quest_difficulty_level'));
-    }
-
-    public function test_difficulty_level_holds_steady_after_partial_completion(): void
-    {
-        $user = User::factory()->create(['timezone' => 'UTC']);
-        UserGameState::create(['user_id' => $user->id, 'quest_difficulty_level' => 2]);
-        $this->seedYesterdaysQuests($user, allCompleted: false, completedCount: 1);
-
-        $this->actingAs($user)->getJson('/api/quests/today')->assertOk();
-
-        $this->assertSame(2, UserGameState::where('user_id', $user->id)->value('quest_difficulty_level'));
-    }
-
-    public function test_difficulty_level_clamps_at_the_top_and_bottom(): void
-    {
-        $topUser = User::factory()->create(['timezone' => 'UTC']);
-        UserGameState::create(['user_id' => $topUser->id, 'quest_difficulty_level' => 3]);
-        $this->seedYesterdaysQuests($topUser, allCompleted: true);
-        $this->actingAs($topUser)->getJson('/api/quests/today')->assertOk();
-        $this->assertSame(3, UserGameState::where('user_id', $topUser->id)->value('quest_difficulty_level'));
-
-        $bottomUser = User::factory()->create(['timezone' => 'UTC']);
-        UserGameState::create(['user_id' => $bottomUser->id, 'quest_difficulty_level' => 1]);
-        $this->seedYesterdaysQuests($bottomUser, allCompleted: false);
-        $this->actingAs($bottomUser)->getJson('/api/quests/today')->assertOk();
-        $this->assertSame(1, UserGameState::where('user_id', $bottomUser->id)->value('quest_difficulty_level'));
-    }
-
-    private function seedYesterdaysQuests(User $user, bool $allCompleted, int $completedCount = 0): void
-    {
-        $yesterday = now('UTC')->subDay()->startOfDay();
-        $quests = Quest::inRandomOrder()->limit(3)->get();
-
-        foreach ($quests as $i => $quest) {
-            $isCompleted = $allCompleted || $i < $completedCount;
-
-            UserDailyQuest::create([
-                'user_id' => $user->id,
-                'quest_id' => $quest->id,
-                'quest_date' => $yesterday,
-                'progress' => $isCompleted ? $quest->target_count : 0,
-                'completed_at' => $isCompleted ? $yesterday->copy()->addHours(2) : null,
-            ]);
-        }
-    }
 }

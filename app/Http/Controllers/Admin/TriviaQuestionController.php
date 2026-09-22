@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\TriviaQuestion;
 use App\Models\TriviaTopic;
+use App\Support\PerPage;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -20,7 +21,7 @@ class TriviaQuestionController extends Controller
         }
 
         return view('admin.trivia-questions.index', [
-            'questions' => $query->paginate(25)->withQueryString(),
+            'questions' => $query->paginate(PerPage::resolve($request))->withQueryString(),
             'topics' => TriviaTopic::orderBy('order_number')->get(),
             'selectedTopicId' => $topicId,
         ]);

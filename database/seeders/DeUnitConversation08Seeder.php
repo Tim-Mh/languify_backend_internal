@@ -80,6 +80,9 @@ class DeUnitConversation08Seeder extends Seeder
                                     'mother',
                                 ],
                             ],
+                            'az' => ['sentence' => 'salam mənim dost', 'correct' => ['salam', 'mənim', 'dost'], 'extra' => ['telefon', 'ana']],
+                            'ar' => ['sentence' => 'مرحبا صديق', 'correct' => ['مرحبا', 'صديق'], 'extra' => ['هاتف', 'أم']],
+                            'ru' => ['sentence' => 'привет мой друг', 'correct' => ['привет', 'мой', 'друг'], 'extra' => ['телефон', 'мама']],
                             'es' => [
                                 'sentence' => 'Hola, mi amigo',
                                 'correct' => [
@@ -126,6 +129,7 @@ class DeUnitConversation08Seeder extends Seeder
                                     '전화',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'merhaba arkadaşım', 'correct' => ['merhaba', 'arkadaşım'], 'extra' => ['telefon', 'anne']],
                         ],
                     ],
                     'b' => [
@@ -146,6 +150,9 @@ class DeUnitConversation08Seeder extends Seeder
                                     'mother',
                                 ],
                             ],
+                            'az' => ['sentence' => 'telefon', 'correct' => ['telefon'], 'extra' => ['salam', 'ana']],
+                            'ar' => ['sentence' => 'هاتف', 'correct' => ['هاتف'], 'extra' => ['مرحبا', 'أم']],
+                            'ru' => ['sentence' => 'телефон', 'correct' => ['телефон'], 'extra' => ['привет', 'мама']],
                             'es' => [
                                 'sentence' => 'El teléfono',
                                 'correct' => [
@@ -188,6 +195,7 @@ class DeUnitConversation08Seeder extends Seeder
                                     '안녕하세요',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'telefon', 'correct' => ['telefon'], 'extra' => ['merhaba', 'anne']],
                         ],
                     ],
                     'c' => [
@@ -212,6 +220,9 @@ class DeUnitConversation08Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'salam ana üzərində telefon', 'correct' => ['salam', 'ana', 'üzərində', 'telefon'], 'extra' => ['dost']],
+                            'ar' => ['sentence' => 'مرحبا أم على هاتف', 'correct' => ['مرحبا', 'أم', 'على', 'هاتف'], 'extra' => ['صديق']],
+                            'ru' => ['sentence' => 'привет мама на телефон', 'correct' => ['привет', 'мама', 'на', 'телефон'], 'extra' => ['друг']],
                             'es' => [
                                 'sentence' => 'Hola, madre, al teléfono',
                                 'correct' => [
@@ -261,6 +272,7 @@ class DeUnitConversation08Seeder extends Seeder
                                     '친구',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'merhaba anne telefonda', 'correct' => ['merhaba', 'anne', 'telefonda'], 'extra' => ['arkadaş']],
                         ],
                     ],
                 ],
@@ -306,6 +318,9 @@ class DeUnitConversation08Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'zəng et həkim', 'correct' => ['zəng et', 'həkim'], 'extra' => ['gözlə', 'dost']],
+                            'ar' => ['sentence' => 'اتصل طبيب', 'correct' => ['اتصل', 'طبيب'], 'extra' => ['انتظر', 'صديق']],
+                            'ru' => ['sentence' => 'позвони врач', 'correct' => ['позвони', 'врач'], 'extra' => ['подожди', 'друг']],
                             'es' => [
                                 'sentence' => 'Llama al médico',
                                 'correct' => [
@@ -351,6 +366,7 @@ class DeUnitConversation08Seeder extends Seeder
                                     '기다리다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'doktoru ara', 'correct' => ['doktoru', 'ara'], 'extra' => ['bekle', 'arkadaş']],
                         ],
                     ],
                     'b' => [
@@ -372,6 +388,9 @@ class DeUnitConversation08Seeder extends Seeder
                                     'doctor',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gözlə az', 'correct' => ['gözlə', 'az'], 'extra' => ['zəng et', 'həkim']],
+                            'ar' => ['sentence' => 'انتظر قليل', 'correct' => ['انتظر', 'قليل'], 'extra' => ['اتصل', 'طبيب']],
+                            'ru' => ['sentence' => 'подожди немного', 'correct' => ['подожди', 'немного'], 'extra' => ['позвони', 'врач']],
                             'es' => [
                                 'sentence' => 'Espera un poco',
                                 'correct' => [
@@ -414,6 +433,7 @@ class DeUnitConversation08Seeder extends Seeder
                                     '전화하다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'biraz bekle', 'correct' => ['biraz', 'bekle'], 'extra' => ['ara', 'doktor']],
                         ],
                     ],
                     'c' => [
@@ -440,6 +460,9 @@ class DeUnitConversation08Seeder extends Seeder
                                     'doctor',
                                 ],
                             ],
+                            'az' => ['sentence' => 'zəng et mənim dost və gözlə', 'correct' => ['zəng et', 'mənim', 'dost', 'və', 'gözlə'], 'extra' => ['həkim']],
+                            'ar' => ['sentence' => 'اتصل صديق و انتظر', 'correct' => ['اتصل', 'صديق', 'و', 'انتظر'], 'extra' => ['طبيب']],
+                            'ru' => ['sentence' => 'позвони мой друг и подожди', 'correct' => ['позвони', 'мой', 'друг', 'и', 'подожди'], 'extra' => ['врач']],
                             'es' => [
                                 'sentence' => 'Llama a mi amigo y espera',
                                 'correct' => [
@@ -490,6 +513,7 @@ class DeUnitConversation08Seeder extends Seeder
                                     '의사',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'arkadaşımı ara ve bekle', 'correct' => ['arkadaşımı', 'ara', 've', 'bekle'], 'extra' => ['doktor']],
                         ],
                     ],
                 ],
@@ -537,6 +561,9 @@ class DeUnitConversation08Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir mesaj üçün müəllim', 'correct' => ['bir', 'mesaj', 'üçün', 'müəllim'], 'extra' => ['dost']],
+                            'ar' => ['sentence' => 'رسالة لأجل معلم', 'correct' => ['رسالة', 'لأجل', 'معلم'], 'extra' => ['صديق']],
+                            'ru' => ['sentence' => 'сообщение для учитель', 'correct' => ['сообщение', 'для', 'учитель'], 'extra' => ['друг']],
                             'es' => [
                                 'sentence' => 'Un mensaje para el profesor',
                                 'correct' => [
@@ -585,6 +612,7 @@ class DeUnitConversation08Seeder extends Seeder
                                     '친구',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'öğretmen için bir mesaj', 'correct' => ['öğretmen', 'için', 'bir', 'mesaj'], 'extra' => ['arkadaş']],
                         ],
                     ],
                     'b' => [
@@ -605,6 +633,9 @@ class DeUnitConversation08Seeder extends Seeder
                                     'message',
                                 ],
                             ],
+                            'az' => ['sentence' => 'geri zəng et sonradan', 'correct' => ['geri zəng et', 'sonradan'], 'extra' => ['mesaj']],
+                            'ar' => ['sentence' => 'عاود الاتصال لاحقا', 'correct' => ['عاود الاتصال', 'لاحقا'], 'extra' => ['رسالة']],
+                            'ru' => ['sentence' => 'перезвони позже', 'correct' => ['перезвони', 'позже'], 'extra' => ['сообщение']],
                             'es' => [
                                 'sentence' => 'Devuelve la llamada más tarde',
                                 'correct' => [
@@ -646,6 +677,7 @@ class DeUnitConversation08Seeder extends Seeder
                                     '메시지',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sonra tekrar ara', 'correct' => ['sonra', 'tekrar', 'ara'], 'extra' => ['mesaj']],
                         ],
                     ],
                     'c' => [
@@ -671,6 +703,9 @@ class DeUnitConversation08Seeder extends Seeder
                                     'teacher',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir mesaj üçün mənim dost', 'correct' => ['bir', 'mesaj', 'üçün', 'mənim', 'dost'], 'extra' => ['müəllim']],
+                            'ar' => ['sentence' => 'رسالة لأجل صديق', 'correct' => ['رسالة', 'لأجل', 'صديق'], 'extra' => ['معلم']],
+                            'ru' => ['sentence' => 'сообщение для мой друг', 'correct' => ['сообщение', 'для', 'мой', 'друг'], 'extra' => ['учитель']],
                             'es' => [
                                 'sentence' => 'Un mensaje para mi amigo',
                                 'correct' => [
@@ -719,6 +754,7 @@ class DeUnitConversation08Seeder extends Seeder
                                     '선생님',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'arkadaşım için bir mesaj', 'correct' => ['arkadaşım', 'için', 'bir', 'mesaj'], 'extra' => ['öğretmen']],
                         ],
                     ],
                 ],
@@ -765,6 +801,9 @@ class DeUnitConversation08Seeder extends Seeder
                                     'doctor',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim bacı məşğul', 'correct' => ['mənim', 'bacı', 'məşğul'], 'extra' => ['bağışlayın', 'həkim']],
+                            'ar' => ['sentence' => 'أخت مشغول', 'correct' => ['أخت', 'مشغول'], 'extra' => ['آسف', 'طبيب']],
+                            'ru' => ['sentence' => 'мой сестра занят', 'correct' => ['мой', 'сестра', 'занят'], 'extra' => ['извините', 'врач']],
                             'es' => [
                                 'sentence' => 'Mi hermana está ocupada',
                                 'correct' => [
@@ -815,6 +854,7 @@ class DeUnitConversation08Seeder extends Seeder
                                     '죄송합니다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kız kardeşim meşgul', 'correct' => ['kız', 'kardeşim', 'meşgul'], 'extra' => ['üzgünüm', 'doktor']],
                         ],
                     ],
                     'b' => [
@@ -837,6 +877,9 @@ class DeUnitConversation08Seeder extends Seeder
                                     'busy',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bağışlayın geri zəng et sonradan', 'correct' => ['bağışlayın', 'geri zəng et', 'sonradan'], 'extra' => ['məşğul']],
+                            'ar' => ['sentence' => 'آسف عاود الاتصال لاحقا', 'correct' => ['آسف', 'عاود الاتصال', 'لاحقا'], 'extra' => ['مشغول']],
+                            'ru' => ['sentence' => 'извините перезвони позже', 'correct' => ['извините', 'перезвони', 'позже'], 'extra' => ['занят']],
                             'es' => [
                                 'sentence' => 'Lo siento, devuelve la llamada más tarde',
                                 'correct' => [
@@ -882,6 +925,7 @@ class DeUnitConversation08Seeder extends Seeder
                                     '바쁜',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'üzgünüm sonra tekrar ara', 'correct' => ['üzgünüm', 'sonra', 'tekrar', 'ara'], 'extra' => ['meşgul']],
                         ],
                     ],
                     'c' => [
@@ -905,6 +949,9 @@ class DeUnitConversation08Seeder extends Seeder
                                     'sorry',
                                 ],
                             ],
+                            'az' => ['sentence' => 'həkim məşğul', 'correct' => ['həkim', 'məşğul'], 'extra' => ['bağışlayın']],
+                            'ar' => ['sentence' => 'طبيب مشغول', 'correct' => ['طبيب', 'مشغول'], 'extra' => ['آسف']],
+                            'ru' => ['sentence' => 'врач занят', 'correct' => ['врач', 'занят'], 'extra' => ['извините']],
                             'es' => [
                                 'sentence' => 'El médico está ocupado',
                                 'correct' => [
@@ -951,6 +998,7 @@ class DeUnitConversation08Seeder extends Seeder
                                     '죄송합니다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'doktor meşgul', 'correct' => ['doktor', 'meşgul'], 'extra' => ['üzgünüm']],
                         ],
                     ],
                 ],
@@ -995,6 +1043,9 @@ class DeUnitConversation08Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'zəng et mənə sabah', 'correct' => ['zəng et', 'mənə', 'sabah'], 'extra' => ['dost']],
+                            'ar' => ['sentence' => 'اتصل لي غدا', 'correct' => ['اتصل', 'لي', 'غدا'], 'extra' => ['صديق']],
+                            'ru' => ['sentence' => 'позвони меня завтра', 'correct' => ['позвони', 'меня', 'завтра'], 'extra' => ['друг']],
                             'es' => [
                                 'sentence' => 'Llámame mañana',
                                 'correct' => [
@@ -1038,6 +1089,7 @@ class DeUnitConversation08Seeder extends Seeder
                                     '친구',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yarın beni ara', 'correct' => ['yarın', 'beni', 'ara'], 'extra' => ['arkadaş']],
                         ],
                     ],
                     'b' => [
@@ -1061,6 +1113,9 @@ class DeUnitConversation08Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'zəng et mənim ana', 'correct' => ['zəng et', 'mənim', 'ana'], 'extra' => ['sabah', 'dost']],
+                            'ar' => ['sentence' => 'اتصل أم', 'correct' => ['اتصل', 'أم'], 'extra' => ['غدا', 'صديق']],
+                            'ru' => ['sentence' => 'позвони мой мама', 'correct' => ['позвони', 'мой', 'мама'], 'extra' => ['завтра', 'друг']],
                             'es' => [
                                 'sentence' => 'Llama a mi madre',
                                 'correct' => [
@@ -1106,6 +1161,7 @@ class DeUnitConversation08Seeder extends Seeder
                                     '내일',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'annemi ara', 'correct' => ['annemi', 'ara'], 'extra' => ['yarın', 'arkadaş']],
                         ],
                     ],
                     'c' => [
@@ -1130,6 +1186,9 @@ class DeUnitConversation08Seeder extends Seeder
                                     'mother',
                                 ],
                             ],
+                            'az' => ['sentence' => 'zəng et mənim dost sabah', 'correct' => ['zəng et', 'mənim', 'dost', 'sabah'], 'extra' => ['ana']],
+                            'ar' => ['sentence' => 'اتصل صديق غدا', 'correct' => ['اتصل', 'صديق', 'غدا'], 'extra' => ['أم']],
+                            'ru' => ['sentence' => 'позвони мой друг завтра', 'correct' => ['позвони', 'мой', 'друг', 'завтра'], 'extra' => ['мама']],
                             'es' => [
                                 'sentence' => 'Llama a mi amigo mañana',
                                 'correct' => [
@@ -1177,6 +1236,7 @@ class DeUnitConversation08Seeder extends Seeder
                                     '어머니',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yarın arkadaşımı ara', 'correct' => ['yarın', 'arkadaşımı', 'ara'], 'extra' => ['anne']],
                         ],
                     ],
                 ],

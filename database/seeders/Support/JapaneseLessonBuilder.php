@@ -34,7 +34,7 @@ use Illuminate\Support\Str;
 class JapaneseLessonBuilder
 {
     /** Native languages a learner can take a Japanese course in. */
-    public const LANGS = ['en', 'es', 'de', 'fr', 'ko'];
+    public const LANGS = ['en', 'es', 'de', 'fr', 'ko', 'tr', 'ru', 'ar', 'az'];
 
     /**
      * @param  array<string, string>  $picturePool  Japanese label => image slug,
@@ -126,8 +126,16 @@ class JapaneseLessonBuilder
             $this->rejectPlaceholder($word['ja'] ?? '');
         }
 
+        // One session per lesson, to match
+        // LessonProgressService::LESSON_TARGET_COMPLETIONS.
+        //
+        // A lesson used to be built as five progressive sessions, but only
+        // the first is ever served now, so building the other four just
+        // wrote rows nothing reads. Put this back to 5 to restore them:
+        // SESSION_PLAN and WORD_ROTATION still describe all five
+        // variations, so no content has to be rewritten to go back.
         $sessions = [];
-        for ($session = 0; $session < 5; $session++) {
+        for ($session = 0; $session < 1; $session++) {
             $sessions[] = $this->session($session, $pictures, $plain, $phrases);
         }
 
@@ -331,11 +339,16 @@ class JapaneseLessonBuilder
     private function listenAndPick(array $words, array $word): array
     {
         $options = [[$word['ja'], JapaneseVocabulary::hint($word['ja'])]];
+        $seen = [$word['ja'] => true];
 
         foreach ($words as $other) {
-            if ($other['ja'] === $word['ja']) {
+            // Guard on the surface form rather than on the entry: a unit can
+            // introduce the same word twice, and adding it again would show the
+            // learner two identical tiles to choose between.
+            if (isset($seen[$other['ja']])) {
                 continue;
             }
+            $seen[$other['ja']] = true;
             $options[] = [$other['ja'], JapaneseVocabulary::hint($other['ja'])];
             if (count($options) >= 4) {
                 break;

@@ -5,16 +5,17 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Chapter;
 use App\Models\Unit;
+use App\Support\PerPage;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class UnitController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
         return view('admin.units.index', [
-            'units' => Unit::with('chapter.language')->orderBy('chapter_id')->orderBy('order_number')->paginate(25),
+            'units' => Unit::with('chapter.language')->orderBy('chapter_id')->orderBy('order_number')->paginate(PerPage::resolve($request))->withQueryString(),
         ]);
     }
 

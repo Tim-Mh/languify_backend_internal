@@ -78,6 +78,9 @@ class EsUnitBeginner08Seeder extends Seeder
                                     'school',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qəsəbə', 'correct' => ['qəsəbə'], 'extra' => ['kənd', 'məktəb']],
+                            'ar' => ['sentence' => 'بلدة', 'correct' => ['بلدة'], 'extra' => ['قرية', 'مدرسة']],
+                            'ru' => ['sentence' => 'город', 'correct' => ['город'], 'extra' => ['деревня', 'школа']],
                             'de' => [
                                 'sentence' => 'Die Stadt',
                                 'correct' => [
@@ -118,6 +121,7 @@ class EsUnitBeginner08Seeder extends Seeder
                                     '마을',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'şehir', 'correct' => ['şehir'], 'extra' => ['köy', 'okul']],
                         ],
                     ],
                     'b' => [
@@ -138,6 +142,9 @@ class EsUnitBeginner08Seeder extends Seeder
                                     'shop',
                                 ],
                             ],
+                            'az' => ['sentence' => 'kənd', 'correct' => ['kənd'], 'extra' => ['qəsəbə', 'mağaza']],
+                            'ar' => ['sentence' => 'قرية', 'correct' => ['قرية'], 'extra' => ['بلدة', 'متجر']],
+                            'ru' => ['sentence' => 'деревня', 'correct' => ['деревня'], 'extra' => ['город', 'магазин']],
                             'de' => [
                                 'sentence' => 'Das Dorf',
                                 'correct' => [
@@ -178,6 +185,7 @@ class EsUnitBeginner08Seeder extends Seeder
                                     '도시',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'köy', 'correct' => ['köy'], 'extra' => ['şehir', 'dükkan']],
                         ],
                     ],
                     'c' => [
@@ -203,6 +211,9 @@ class EsUnitBeginner08Seeder extends Seeder
                                     'town',
                                 ],
                             ],
+                            'az' => ['sentence' => 'məktəb və mağaza', 'correct' => ['məktəb', 'və', 'mağaza'], 'extra' => ['qəsəbə']],
+                            'ar' => ['sentence' => 'مدرسة و متجر', 'correct' => ['مدرسة', 'و', 'متجر'], 'extra' => ['بلدة']],
+                            'ru' => ['sentence' => 'школа и магазин', 'correct' => ['школа', 'и', 'магазин'], 'extra' => ['город']],
                             'de' => [
                                 'sentence' => 'Die Schule und das Geschäft',
                                 'correct' => [
@@ -249,6 +260,7 @@ class EsUnitBeginner08Seeder extends Seeder
                                     '도시',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'okul ve dükkan', 'correct' => ['okul', 've', 'dükkan'], 'extra' => ['şehir']],
                         ],
                     ],
                 ],
@@ -295,6 +307,9 @@ class EsUnitBeginner08Seeder extends Seeder
                                     'station',
                                 ],
                             ],
+                            'az' => ['sentence' => 'məktəb yaxın', 'correct' => ['məktəb', 'yaxın'], 'extra' => ['uzaq', 'stansiya']],
+                            'ar' => ['sentence' => 'مدرسة قريب', 'correct' => ['مدرسة', 'قريب'], 'extra' => ['بعيد', 'محطة']],
+                            'ru' => ['sentence' => 'школа близко', 'correct' => ['школа', 'близко'], 'extra' => ['далеко', 'станция']],
                             'de' => [
                                 'sentence' => 'Die Schule ist nah',
                                 'correct' => [
@@ -342,6 +357,7 @@ class EsUnitBeginner08Seeder extends Seeder
                                     '멀리',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'okul yakın', 'correct' => ['okul', 'yakın'], 'extra' => ['uzak', 'istasyon']],
                         ],
                     ],
                     'b' => [
@@ -366,6 +382,9 @@ class EsUnitBeginner08Seeder extends Seeder
                                     'school',
                                 ],
                             ],
+                            'az' => ['sentence' => 'stansiya uzaq', 'correct' => ['stansiya', 'uzaq'], 'extra' => ['yaxın', 'məktəb']],
+                            'ar' => ['sentence' => 'محطة بعيد', 'correct' => ['محطة', 'بعيد'], 'extra' => ['قريب', 'مدرسة']],
+                            'ru' => ['sentence' => 'станция далеко', 'correct' => ['станция', 'далеко'], 'extra' => ['близко', 'школа']],
                             'de' => [
                                 'sentence' => 'Der Bahnhof ist weit',
                                 'correct' => [
@@ -414,6 +433,7 @@ class EsUnitBeginner08Seeder extends Seeder
                                     '가까이',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'istasyon uzak', 'correct' => ['istasyon', 'uzak'], 'extra' => ['yakın', 'okul']],
                         ],
                     ],
                     'c' => [
@@ -435,6 +455,9 @@ class EsUnitBeginner08Seeder extends Seeder
                                     'school',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yaxın və ya uzaq', 'correct' => ['yaxın', 'və ya', 'uzaq'], 'extra' => ['məktəb']],
+                            'ar' => ['sentence' => 'قريب أو بعيد', 'correct' => ['قريب', 'أو', 'بعيد'], 'extra' => ['مدرسة']],
+                            'ru' => ['sentence' => 'близко или далеко', 'correct' => ['близко', 'или', 'далеко'], 'extra' => ['школа']],
                             'de' => [
                                 'sentence' => 'Nah oder weit',
                                 'correct' => [
@@ -478,6 +501,7 @@ class EsUnitBeginner08Seeder extends Seeder
                                     '학교',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'yakın veya uzak', 'correct' => ['yakın', 'veya', 'uzak'], 'extra' => ['okul']],
                         ],
                     ],
                 ],
@@ -523,6 +547,9 @@ class EsUnitBeginner08Seeder extends Seeder
                                     'shop',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gedirəm park', 'correct' => ['gedirəm', 'park'], 'extra' => ['gəl', 'mağaza']],
+                            'ar' => ['sentence' => 'أذهب إلى حديقة', 'correct' => ['أذهب', 'إلى', 'حديقة'], 'extra' => ['تعال', 'متجر']],
+                            'ru' => ['sentence' => 'иду в парк', 'correct' => ['иду', 'в', 'парк'], 'extra' => ['приходи', 'магазин']],
                             'de' => [
                                 'sentence' => 'Zum Park gehen',
                                 'correct' => [
@@ -570,6 +597,7 @@ class EsUnitBeginner08Seeder extends Seeder
                                     '오다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'parka git', 'correct' => ['parka', 'git'], 'extra' => ['gel', 'dükkan']],
                         ],
                     ],
                     'b' => [
@@ -594,6 +622,9 @@ class EsUnitBeginner08Seeder extends Seeder
                                     'park',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gəl mağaza', 'correct' => ['gəl', 'mağaza'], 'extra' => ['gedirəm', 'park']],
+                            'ar' => ['sentence' => 'تعال إلى متجر', 'correct' => ['تعال', 'إلى', 'متجر'], 'extra' => ['أذهب', 'حديقة']],
+                            'ru' => ['sentence' => 'приходи в магазин', 'correct' => ['приходи', 'в', 'магазин'], 'extra' => ['иду', 'парк']],
                             'de' => [
                                 'sentence' => 'Zum Geschäft kommen',
                                 'correct' => [
@@ -641,6 +672,7 @@ class EsUnitBeginner08Seeder extends Seeder
                                     '가다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'dükkana gel', 'correct' => ['dükkana', 'gel'], 'extra' => ['git', 'park']],
                         ],
                     ],
                     'c' => [
@@ -662,6 +694,9 @@ class EsUnitBeginner08Seeder extends Seeder
                                     'park',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gedirəm və gəl', 'correct' => ['gedirəm', 'və', 'gəl'], 'extra' => ['park']],
+                            'ar' => ['sentence' => 'أذهب و تعال', 'correct' => ['أذهب', 'و', 'تعال'], 'extra' => ['حديقة']],
+                            'ru' => ['sentence' => 'иду и приходи', 'correct' => ['иду', 'и', 'приходи'], 'extra' => ['парк']],
                             'de' => [
                                 'sentence' => 'Gehen und kommen',
                                 'correct' => [
@@ -704,6 +739,7 @@ class EsUnitBeginner08Seeder extends Seeder
                                     '공원',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'git ve gel', 'correct' => ['git', 've', 'gel'], 'extra' => ['park']],
                         ],
                     ],
                 ],
@@ -751,6 +787,9 @@ class EsUnitBeginner08Seeder extends Seeder
                                     'right',
                                 ],
                             ],
+                            'az' => ['sentence' => 'küçə üzərində sol', 'correct' => ['küçə', 'üzərində', 'sol'], 'extra' => ['sağ']],
+                            'ar' => ['sentence' => 'شارع على يسار', 'correct' => ['شارع', 'على', 'يسار'], 'extra' => ['يمين']],
+                            'ru' => ['sentence' => 'улица на левый', 'correct' => ['улица', 'на', 'левый'], 'extra' => ['правый']],
                             'de' => [
                                 'sentence' => 'Die Straße links',
                                 'correct' => [
@@ -798,6 +837,7 @@ class EsUnitBeginner08Seeder extends Seeder
                                     '오른쪽',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'solda cadde', 'correct' => ['solda', 'cadde'], 'extra' => ['sağ']],
                         ],
                     ],
                     'b' => [
@@ -823,6 +863,9 @@ class EsUnitBeginner08Seeder extends Seeder
                                     'left',
                                 ],
                             ],
+                            'az' => ['sentence' => 'stansiya üzərində sağ', 'correct' => ['stansiya', 'üzərində', 'sağ'], 'extra' => ['sol']],
+                            'ar' => ['sentence' => 'محطة على يمين', 'correct' => ['محطة', 'على', 'يمين'], 'extra' => ['يسار']],
+                            'ru' => ['sentence' => 'станция на правый', 'correct' => ['станция', 'на', 'правый'], 'extra' => ['левый']],
                             'de' => [
                                 'sentence' => 'Der Bahnhof rechts',
                                 'correct' => [
@@ -870,6 +913,7 @@ class EsUnitBeginner08Seeder extends Seeder
                                     '왼쪽',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sağda istasyon', 'correct' => ['sağda', 'istasyon'], 'extra' => ['sol']],
                         ],
                     ],
                     'c' => [
@@ -891,6 +935,9 @@ class EsUnitBeginner08Seeder extends Seeder
                                     'street',
                                 ],
                             ],
+                            'az' => ['sentence' => 'sol və ya sağ', 'correct' => ['sol', 'və ya', 'sağ'], 'extra' => ['küçə']],
+                            'ar' => ['sentence' => 'يسار أو يمين', 'correct' => ['يسار', 'أو', 'يمين'], 'extra' => ['شارع']],
+                            'ru' => ['sentence' => 'левый или правый', 'correct' => ['левый', 'или', 'правый'], 'extra' => ['улица']],
                             'de' => [
                                 'sentence' => 'Links oder rechts',
                                 'correct' => [
@@ -935,6 +982,7 @@ class EsUnitBeginner08Seeder extends Seeder
                                     '거리',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sol veya sağ', 'correct' => ['sol', 'veya', 'sağ'], 'extra' => ['cadde']],
                         ],
                     ],
                 ],
@@ -981,6 +1029,9 @@ class EsUnitBeginner08Seeder extends Seeder
                                     'school',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mağaza açıq', 'correct' => ['mağaza', 'açıq'], 'extra' => ['bağlı', 'məktəb']],
+                            'ar' => ['sentence' => 'متجر مفتوح', 'correct' => ['متجر', 'مفتوح'], 'extra' => ['مغلق', 'مدرسة']],
+                            'ru' => ['sentence' => 'магазин открыто', 'correct' => ['магазин', 'открыто'], 'extra' => ['закрыто', 'школа']],
                             'de' => [
                                 'sentence' => 'Das Geschäft ist offen',
                                 'correct' => [
@@ -1029,6 +1080,7 @@ class EsUnitBeginner08Seeder extends Seeder
                                     '닫힌',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'dükkan açık', 'correct' => ['dükkan', 'açık'], 'extra' => ['kapalı', 'okul']],
                         ],
                     ],
                     'b' => [
@@ -1053,6 +1105,9 @@ class EsUnitBeginner08Seeder extends Seeder
                                     'shop',
                                 ],
                             ],
+                            'az' => ['sentence' => 'məktəb bağlı', 'correct' => ['məktəb', 'bağlı'], 'extra' => ['açıq', 'mağaza']],
+                            'ar' => ['sentence' => 'مدرسة مغلق', 'correct' => ['مدرسة', 'مغلق'], 'extra' => ['مفتوح', 'متجر']],
+                            'ru' => ['sentence' => 'школа закрыто', 'correct' => ['школа', 'закрыто'], 'extra' => ['открыто', 'магазин']],
                             'de' => [
                                 'sentence' => 'Die Schule ist geschlossen',
                                 'correct' => [
@@ -1099,6 +1154,7 @@ class EsUnitBeginner08Seeder extends Seeder
                                     '열린',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'okul kapalı', 'correct' => ['okul', 'kapalı'], 'extra' => ['açık', 'dükkan']],
                         ],
                     ],
                     'c' => [
@@ -1120,6 +1176,9 @@ class EsUnitBeginner08Seeder extends Seeder
                                     'shop',
                                 ],
                             ],
+                            'az' => ['sentence' => 'açıq və ya bağlı', 'correct' => ['açıq', 'və ya', 'bağlı'], 'extra' => ['mağaza']],
+                            'ar' => ['sentence' => 'مفتوح أو مغلق', 'correct' => ['مفتوح', 'أو', 'مغلق'], 'extra' => ['متجر']],
+                            'ru' => ['sentence' => 'открыто или закрыто', 'correct' => ['открыто', 'или', 'закрыто'], 'extra' => ['магазин']],
                             'de' => [
                                 'sentence' => 'Offen oder geschlossen',
                                 'correct' => [
@@ -1165,6 +1224,7 @@ class EsUnitBeginner08Seeder extends Seeder
                                     '가게',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'açık veya kapalı', 'correct' => ['açık', 'veya', 'kapalı'], 'extra' => ['dükkan']],
                         ],
                     ],
                 ],

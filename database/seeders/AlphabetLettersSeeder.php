@@ -154,11 +154,26 @@ class AlphabetLettersSeeder extends Seeder
         return $letters;
     }
 
+    /**
+     * Hangul, as ONE list.
+     *
+     * script_group is deliberately left unset. It exists to separate genuinely
+     * different writing systems, which is what Japanese uses it for: hiragana
+     * and katakana are two alphabets for the same sounds, so a learner has to
+     * see which is which. Korean has one alphabet. Consonants and vowels are
+     * two kinds of letter inside it, not two scripts, and splitting the screen
+     * on that made Hangul look like twice as much to learn as it is.
+     *
+     * Both clients already render a letter with no script_group as a single
+     * flat run, which is how English, Spanish, German, French and Turkish are
+     * shown, so nothing on either front end had to change.
+     */
     private function koreanLetters(): array
     {
         // Same jamo as before, reordered alphabetically by romanization
         // (b/p, ch, d/t, g/k, h, ...) instead of the traditional Hangul
-        // chart order (ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎ).
+        // chart order (ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎ). Consonants are still listed
+        // before vowels, which is the order the chart is learned in.
         $consonants = [
             ['ㅂ', 'b/p'], ['ㅊ', 'ch'], ['ㄷ', 'd/t'], ['ㄱ', 'g/k'], ['ㅎ', 'h'],
             ['ㅈ', 'j'], ['ㅋ', 'k'], ['ㅁ', 'm'], ['ㄴ', 'n'], ['ㅇ', 'ng/-'],
@@ -172,12 +187,21 @@ class AlphabetLettersSeeder extends Seeder
 
         $letters = [];
 
-        foreach ($consonants as [$character, $romanization]) {
-            $letters[] = ['character' => $character, 'romanization' => $romanization, 'script_group' => 'consonant'];
-        }
+        // Sorted across BOTH kinds, not consonants-then-vowels. As two sections
+        // each ran A-Z on its own; as one section that ordering reads as a
+        // broken sort, running b, ch, d ... t and then jumping back to a. The
+        // screen groups non-Latin scripts under the first letter of the
+        // romanization, so a single section has to be in a single order for
+        // those headings to make sense.
+        $merged = [...$consonants, ...$vowels];
 
-        foreach ($vowels as [$character, $romanization]) {
-            $letters[] = ['character' => $character, 'romanization' => $romanization, 'script_group' => 'vowel'];
+        usort($merged, fn (array $a, array $b) => strcmp(
+            explode('/', $a[1])[0],
+            explode('/', $b[1])[0],
+        ));
+
+        foreach ($merged as [$character, $romanization]) {
+            $letters[] = ['character' => $character, 'romanization' => $romanization];
         }
 
         return $letters;

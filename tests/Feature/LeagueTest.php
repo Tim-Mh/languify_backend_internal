@@ -48,26 +48,26 @@ class LeagueTest extends TestCase
         $this->actingAs($user)->getJson('/api/league')->assertStatus(422);
     }
 
-    public function test_league_is_lazily_created_at_the_lowest_tier(): void
+    public function test_viewing_the_board_does_not_enrol_you(): void
     {
         $language = $this->makeLanguage();
         $user = $this->makeUserWithCourse($language);
 
         $response = $this->actingAs($user)->getJson('/api/league')->assertOk();
 
+        // You join by earning XP, not by looking. A viewer who has earned
+        // nothing this week is shown the lowest tier as a destination and told
+        // to do a lesson; no membership row is created for them.
         $lowestTier = LeagueTier::orderBy('order_number')->first();
 
-        $response->assertJsonPath('league.tierName', $lowestTier->name)
-            ->assertJsonPath('league.isLowestTier', true)
-            ->assertJsonPath('league.leaguePoints', 0)
-            ->assertJsonPath('league.pointsToNextTier', LeagueService::PROMOTION_THRESHOLD)
-            ->assertJsonPath('league.cohortSize', 1)
-            ->assertJsonPath('league.currentUserRank', 1);
+        $response->assertJsonPath('league.enrolled', false)
+            ->assertJsonPath('league.tierName', $lowestTier->name)
+            ->assertJsonPath('league.members', []);
 
-        $this->assertDatabaseHas('user_leagues', ['user_id' => $user->id, 'league_tier_id' => $lowestTier->id, 'league_points' => 0]);
+        $this->assertDatabaseMissing('user_leagues', ['user_id' => $user->id]);
     }
 
-    public function test_league_works_for_a_brand_new_user_with_no_game_state_row_yet(): void
+    public function test_the_board_loads_for_a_brand_new_user_with_no_game_state_row_yet(): void
     {
         // Deliberately does NOT use makeUserWithCourse() — that helper
         // pre-creates a UserGameState row, which would mask a real bug
@@ -81,9 +81,12 @@ class LeagueTest extends TestCase
 
         $this->assertDatabaseMissing('user_game_states', ['user_id' => $user->id]);
 
-        $response = $this->actingAs($user)->getJson('/api/league')->assertOk();
-
-        $response->assertJsonPath('league.cohortSize', 1)->assertJsonPath('league.currentUserRank', 1);
+        // The point of the test is that this does not blow up for a user with
+        // no game-state row. It answers with the not-enrolled state rather
+        // than a 500 from the INNER JOIN described above.
+        $this->actingAs($user)->getJson('/api/league')
+            ->assertOk()
+            ->assertJsonPath('league.enrolled', false);
     }
 
     public function test_points_delta_formula_is_linear_and_symmetric_around_the_cohort_midpoint(): void

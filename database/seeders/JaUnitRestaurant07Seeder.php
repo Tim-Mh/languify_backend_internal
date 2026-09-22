@@ -82,6 +82,9 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     'bottle',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir stəkan şərab', 'correct' => ['bir', 'stəkan', 'şərab'], 'extra' => ['şüşə']],
+                            'ar' => ['sentence' => 'كوب نبيذ', 'correct' => ['كوب', 'نبيذ'], 'extra' => ['زجاجة']],
+                            'ru' => ['sentence' => 'стакан вино', 'correct' => ['стакан', 'вино'], 'extra' => ['бутылка']],
                             'es' => [
                                 'sentence' => 'Un vaso de vino',
                                 'correct' => [
@@ -132,6 +135,7 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     '병',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir bardak şarap', 'correct' => ['bir', 'bardak', 'şarap'], 'extra' => ['şişe']],
                         ],
                     ],
                     'b' => [
@@ -156,6 +160,9 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     'glass',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir şüşə qırmızı şərab', 'correct' => ['bir', 'şüşə', 'qırmızı', 'şərab'], 'extra' => ['stəkan']],
+                            'ar' => ['sentence' => 'زجاجة أحمر نبيذ', 'correct' => ['زجاجة', 'أحمر', 'نبيذ'], 'extra' => ['كوب']],
+                            'ru' => ['sentence' => 'бутылка красный вино', 'correct' => ['бутылка', 'красный', 'вино'], 'extra' => ['стакан']],
                             'es' => [
                                 'sentence' => 'Una botella de vino tinto',
                                 'correct' => [
@@ -207,6 +214,7 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     '유리잔',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir şişe kırmızı şarap', 'correct' => ['bir', 'şişe', 'kırmızı', 'şarap'], 'extra' => ['bardak']],
                         ],
                     ],
                     'c' => [
@@ -232,6 +240,9 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     'wine',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qırmızı stəkan və bir şüşə', 'correct' => ['bir', 'qırmızı', 'stəkan', 'və', 'bir', 'şüşə'], 'extra' => ['şərab']],
+                            'ar' => ['sentence' => 'أحمر كوب و زجاجة', 'correct' => ['أحمر', 'كوب', 'و', 'زجاجة'], 'extra' => ['نبيذ']],
+                            'ru' => ['sentence' => 'красный стакан и бутылка', 'correct' => ['красный', 'стакан', 'и', 'бутылка'], 'extra' => ['вино']],
                             'es' => [
                                 'sentence' => 'Un vaso rojo y una botella',
                                 'correct' => [
@@ -285,6 +296,7 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     '와인',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kırmızı bir bardak ve bir şişe', 'correct' => ['kırmızı', 'bir', 'bardak', 've', 'bir', 'şişe'], 'extra' => ['şarap']],
                         ],
                     ],
                 ],
@@ -327,6 +339,9 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     'thirsty',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir təzə şirə', 'correct' => ['bir', 'təzə', 'şirə'], 'extra' => ['susuz']],
+                            'ar' => ['sentence' => 'طازج عصير', 'correct' => ['طازج', 'عصير'], 'extra' => ['عطشان']],
+                            'ru' => ['sentence' => 'свежий сок', 'correct' => ['свежий', 'сок'], 'extra' => ['хочу пить']],
                             'es' => [
                                 'sentence' => 'Un zumo fresco',
                                 'correct' => [
@@ -373,6 +388,7 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     '목마른',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'taze bir meyve suyu', 'correct' => ['taze', 'bir', 'meyve', 'suyu'], 'extra' => ['susamış']],
                         ],
                     ],
                     'b' => [
@@ -393,6 +409,9 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     'fresh',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən susuz', 'correct' => ['mən', 'susuz'], 'extra' => ['təzə']],
+                            'ar' => ['sentence' => 'أنا عطشان', 'correct' => ['أنا', 'عطشان'], 'extra' => ['طازج']],
+                            'ru' => ['sentence' => 'я хочу пить', 'correct' => ['я', 'хочу пить'], 'extra' => ['свежий']],
                             'es' => [
                                 'sentence' => 'Tengo sed',
                                 'correct' => [
@@ -435,6 +454,7 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     '신선한',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'susadım', 'correct' => ['susadım'], 'extra' => ['taze']],
                         ],
                     ],
                     'c' => [
@@ -458,6 +478,9 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     'fresh',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir şirə və bir su', 'correct' => ['bir', 'şirə', 'və', 'bir', 'su'], 'extra' => ['təzə']],
+                            'ar' => ['sentence' => 'عصير و ماء', 'correct' => ['عصير', 'و', 'ماء'], 'extra' => ['طازج']],
+                            'ru' => ['sentence' => 'сок и вода', 'correct' => ['сок', 'и', 'вода'], 'extra' => ['свежий']],
                             'es' => [
                                 'sentence' => 'Un zumo y un agua',
                                 'correct' => [
@@ -507,6 +530,7 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     '신선한',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir meyve suyu ve bir su', 'correct' => ['bir', 'meyve', 'suyu', 've', 'bir', 'su'], 'extra' => ['taze']],
                         ],
                     ],
                 ],
@@ -553,6 +577,9 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     'tea',
                                 ],
                             ],
+                            'az' => ['sentence' => 'istəyirəm içki bir pivə', 'correct' => ['istəyirəm', 'içki', 'bir', 'pivə'], 'extra' => ['çay']],
+                            'ar' => ['sentence' => 'أريد إلى مشروب بيرة', 'correct' => ['أريد', 'إلى', 'مشروب', 'بيرة'], 'extra' => ['شاي']],
+                            'ru' => ['sentence' => 'я хочу в напиток пиво', 'correct' => ['я', 'хочу', 'в', 'напиток', 'пиво'], 'extra' => ['чай']],
                             'es' => [
                                 'sentence' => 'Quisiera beber una cerveza',
                                 'correct' => [
@@ -603,6 +630,7 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     '차',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir bira içmek istiyorum', 'correct' => ['bir', 'bira', 'içmek', 'istiyorum'], 'extra' => ['çay']],
                         ],
                     ],
                     'b' => [
@@ -626,6 +654,9 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     'beer',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qəhvə və ya bir çay', 'correct' => ['bir', 'qəhvə', 'və ya', 'bir', 'çay'], 'extra' => ['pivə']],
+                            'ar' => ['sentence' => 'قهوة أو شاي', 'correct' => ['قهوة', 'أو', 'شاي'], 'extra' => ['بيرة']],
+                            'ru' => ['sentence' => 'кофе или чай', 'correct' => ['кофе', 'или', 'чай'], 'extra' => ['пиво']],
                             'es' => [
                                 'sentence' => 'Un café o un té',
                                 'correct' => [
@@ -678,6 +709,7 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     '맥주',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kahve veya bir çay', 'correct' => ['bir', 'kahve', 'veya', 'bir', 'çay'], 'extra' => ['bira']],
                         ],
                     ],
                     'c' => [
@@ -701,6 +733,9 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     'beer',
                                 ],
                             ],
+                            'az' => ['sentence' => 'içki bir isti qəhvə', 'correct' => ['içki', 'bir', 'isti', 'qəhvə'], 'extra' => ['pivə']],
+                            'ar' => ['sentence' => 'مشروب ساخن قهوة', 'correct' => ['مشروب', 'ساخن', 'قهوة'], 'extra' => ['بيرة']],
+                            'ru' => ['sentence' => 'напиток горячий кофе', 'correct' => ['напиток', 'горячий', 'кофе'], 'extra' => ['пиво']],
                             'es' => [
                                 'sentence' => 'Beber un café caliente',
                                 'correct' => [
@@ -750,6 +785,7 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     '맥주',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sıcak bir kahve iç', 'correct' => ['sıcak', 'bir', 'kahve', 'iç'], 'extra' => ['bira']],
                         ],
                     ],
                 ],
@@ -795,6 +831,9 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     'sweet',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir qəhvə ilə buz', 'correct' => ['bir', 'qəhvə', 'ilə', 'buz'], 'extra' => ['şirin']],
+                            'ar' => ['sentence' => 'قهوة مع الثلج', 'correct' => ['قهوة', 'مع', 'الثلج'], 'extra' => ['حلو']],
+                            'ru' => ['sentence' => 'кофе с лёд', 'correct' => ['кофе', 'с', 'лёд'], 'extra' => ['сладкий']],
                             'es' => [
                                 'sentence' => 'Un café con hielo',
                                 'correct' => [
@@ -844,6 +883,7 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     '단',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'buzlu bir kahve', 'correct' => ['buzlu', 'bir', 'kahve'], 'extra' => ['tatlı']],
                         ],
                     ],
                     'b' => [
@@ -867,6 +907,9 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     'ice',
                                 ],
                             ],
+                            'az' => ['sentence' => 'süd şirin', 'correct' => ['süd', 'şirin'], 'extra' => ['buz']],
+                            'ar' => ['sentence' => 'حليب حلو', 'correct' => ['حليب', 'حلو'], 'extra' => ['الثلج']],
+                            'ru' => ['sentence' => 'молоко сладкий', 'correct' => ['молоко', 'сладкий'], 'extra' => ['лёд']],
                             'es' => [
                                 'sentence' => 'La leche es dulce',
                                 'correct' => [
@@ -915,6 +958,7 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     '얼음',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'süt tatlı', 'correct' => ['süt', 'tatlı'], 'extra' => ['buz']],
                         ],
                     ],
                     'c' => [
@@ -938,6 +982,9 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     'sweet',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir az şəkər və bir az buz', 'correct' => ['bir az', 'şəkər', 'və', 'bir az', 'buz'], 'extra' => ['şirin']],
+                            'ar' => ['sentence' => 'بعض سكر و بعض الثلج', 'correct' => ['بعض', 'سكر', 'و', 'بعض', 'الثلج'], 'extra' => ['حلو']],
+                            'ru' => ['sentence' => 'немного сахар и немного лёд', 'correct' => ['немного', 'сахар', 'и', 'немного', 'лёд'], 'extra' => ['сладкий']],
                             'es' => [
                                 'sentence' => 'Algo de azúcar y algo de hielo',
                                 'correct' => [
@@ -988,6 +1035,7 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     '단',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'biraz şeker ve biraz buz', 'correct' => ['biraz', 'şeker', 've', 'biraz', 'buz'], 'extra' => ['tatlı']],
                         ],
                     ],
                 ],
@@ -1031,6 +1079,9 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     'water',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gətirmək başqa şərab', 'correct' => ['gətirmək', 'başqa', 'şərab'], 'extra' => ['su']],
+                            'ar' => ['sentence' => 'الإحضار آخر نبيذ', 'correct' => ['الإحضار', 'آخر', 'نبيذ'], 'extra' => ['ماء']],
+                            'ru' => ['sentence' => 'принести другой вино', 'correct' => ['принести', 'другой', 'вино'], 'extra' => ['вода']],
                             'es' => [
                                 'sentence' => 'Traer otro vino',
                                 'correct' => [
@@ -1076,6 +1127,7 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     '물',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir şarap daha getirmek', 'correct' => ['bir', 'şarap', 'daha', 'getirmek'], 'extra' => ['su']],
                         ],
                     ],
                     'b' => [
@@ -1097,6 +1149,9 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     'another',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gətirmək bir su', 'correct' => ['gətirmək', 'bir', 'su'], 'extra' => ['başqa']],
+                            'ar' => ['sentence' => 'الإحضار ماء', 'correct' => ['الإحضار', 'ماء'], 'extra' => ['آخر']],
+                            'ru' => ['sentence' => 'принести вода', 'correct' => ['принести', 'вода'], 'extra' => ['другой']],
                             'es' => [
                                 'sentence' => 'Traer un agua',
                                 'correct' => [
@@ -1142,6 +1197,7 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     '하나 더',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir su getirmek', 'correct' => ['bir', 'su', 'getirmek'], 'extra' => ['başka']],
                         ],
                     ],
                     'c' => [
@@ -1166,6 +1222,9 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     'water',
                                 ],
                             ],
+                            'az' => ['sentence' => 'başqa stəkan şərab', 'correct' => ['başqa', 'stəkan', 'şərab'], 'extra' => ['su']],
+                            'ar' => ['sentence' => 'آخر كوب نبيذ', 'correct' => ['آخر', 'كوب', 'نبيذ'], 'extra' => ['ماء']],
+                            'ru' => ['sentence' => 'другой стакан вино', 'correct' => ['другой', 'стакан', 'вино'], 'extra' => ['вода']],
                             'es' => [
                                 'sentence' => 'Otro vaso de vino',
                                 'correct' => [
@@ -1214,6 +1273,7 @@ class JaUnitRestaurant07Seeder extends Seeder
                                     '물',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir bardak şarap daha', 'correct' => ['bir', 'bardak', 'şarap', 'daha'], 'extra' => ['su']],
                         ],
                     ],
                 ],

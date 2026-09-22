@@ -86,6 +86,9 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     'queue',
                                 ],
                             ],
+                            'az' => ['sentence' => 'kassir yanında kassa', 'correct' => ['kassir', 'yanında', 'kassa'], 'extra' => ['növbə']],
+                            'ar' => ['sentence' => 'أمين الصندوق على صندوق الدفع', 'correct' => ['أمين الصندوق', 'على', 'صندوق الدفع'], 'extra' => ['طابور']],
+                            'ru' => ['sentence' => 'кассир на касса', 'correct' => ['кассир', 'на', 'касса'], 'extra' => ['очередь']],
                             'es' => [
                                 'sentence' => 'El cajero está en la caja',
                                 'correct' => [
@@ -139,6 +142,7 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     '줄',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kasiyer kasada', 'correct' => ['kasiyer', 'kasada'], 'extra' => ['sıra']],
                         ],
                     ],
                     'b' => [
@@ -162,6 +166,9 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     'cashier',
                                 ],
                             ],
+                            'az' => ['sentence' => 'növbə burada', 'correct' => ['növbə', 'burada'], 'extra' => ['kassir']],
+                            'ar' => ['sentence' => 'طابور هنا', 'correct' => ['طابور', 'هنا'], 'extra' => ['أمين الصندوق']],
+                            'ru' => ['sentence' => 'очередь здесь', 'correct' => ['очередь', 'здесь'], 'extra' => ['кассир']],
                             'es' => [
                                 'sentence' => 'La cola está aquí',
                                 'correct' => [
@@ -211,6 +218,7 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     '계산원',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sıra burada', 'correct' => ['sıra', 'burada'], 'extra' => ['kasiyer']],
                         ],
                     ],
                     'c' => [
@@ -235,6 +243,9 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     'queue',
                                 ],
                             ],
+                            'az' => ['sentence' => 'kassir və mənim pul', 'correct' => ['kassir', 'və', 'mənim', 'pul'], 'extra' => ['növbə']],
+                            'ar' => ['sentence' => 'أمين الصندوق و نقود', 'correct' => ['أمين الصندوق', 'و', 'نقود'], 'extra' => ['طابور']],
+                            'ru' => ['sentence' => 'кассир и мой деньги', 'correct' => ['кассир', 'и', 'мой', 'деньги'], 'extra' => ['очередь']],
                             'es' => [
                                 'sentence' => 'El cajero y mi dinero',
                                 'correct' => [
@@ -285,6 +296,7 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     '줄',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kasiyer ve param', 'correct' => ['kasiyer', 've', 'param'], 'extra' => ['sıra']],
                         ],
                     ],
                 ],
@@ -329,6 +341,9 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     'before',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gözlə yanında kassa', 'correct' => ['gözlə', 'yanında', 'kassa'], 'extra' => ['əvvəl']],
+                            'ar' => ['sentence' => 'انتظر على صندوق الدفع', 'correct' => ['انتظر', 'على', 'صندوق الدفع'], 'extra' => ['قبل']],
+                            'ru' => ['sentence' => 'подожди на касса', 'correct' => ['подожди', 'на', 'касса'], 'extra' => ['до']],
                             'es' => [
                                 'sentence' => 'Esperar en la caja',
                                 'correct' => [
@@ -378,6 +393,7 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     '앞에',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kasada bekle', 'correct' => ['kasada', 'bekle'], 'extra' => ['önce']],
                         ],
                     ],
                     'b' => [
@@ -401,6 +417,9 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     'wait',
                                 ],
                             ],
+                            'az' => ['sentence' => 'araba qarşıda', 'correct' => ['araba', 'qarşıda'], 'extra' => ['gözlə']],
+                            'ar' => ['sentence' => 'عربة أمام', 'correct' => ['عربة', 'أمام'], 'extra' => ['انتظر']],
+                            'ru' => ['sentence' => 'тележка впереди', 'correct' => ['тележка', 'впереди'], 'extra' => ['подожди']],
                             'es' => [
                                 'sentence' => 'El carrito está delante',
                                 'correct' => [
@@ -450,6 +469,7 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     '기다리다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'araba önde', 'correct' => ['araba', 'önde'], 'extra' => ['bekle']],
                         ],
                     ],
                     'c' => [
@@ -475,6 +495,9 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     'trolley',
                                 ],
                             ],
+                            'az' => ['sentence' => 'gözlə qarşıda kassa', 'correct' => ['gözlə', 'qarşıda', 'kassa'], 'extra' => ['araba']],
+                            'ar' => ['sentence' => 'انتظر أمام صندوق الدفع', 'correct' => ['انتظر', 'أمام', 'صندوق الدفع'], 'extra' => ['عربة']],
+                            'ru' => ['sentence' => 'подожди впереди касса', 'correct' => ['подожди', 'впереди', 'касса'], 'extra' => ['тележка']],
                             'es' => [
                                 'sentence' => 'Esperar delante de la caja',
                                 'correct' => [
@@ -525,6 +548,7 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     '카트',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kasanın önünde bekle', 'correct' => ['kasanın', 'önünde', 'bekle'], 'extra' => ['araba']],
                         ],
                     ],
                 ],
@@ -570,6 +594,9 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     'card',
                                 ],
                             ],
+                            'az' => ['sentence' => 'ödəyirəm ilə pul', 'correct' => ['ödəyirəm', 'ilə', 'pul'], 'extra' => ['kart']],
+                            'ar' => ['sentence' => 'أدفع مع نقود', 'correct' => ['أدفع', 'مع', 'نقود'], 'extra' => ['بطاقة']],
+                            'ru' => ['sentence' => 'я плачу с деньги', 'correct' => ['я плачу', 'с', 'деньги'], 'extra' => ['карта']],
                             'es' => [
                                 'sentence' => 'Pago con dinero',
                                 'correct' => [
@@ -616,6 +643,7 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     '카드',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'parayla ödüyorum', 'correct' => ['parayla', 'ödüyorum'], 'extra' => ['kart']],
                         ],
                     ],
                     'b' => [
@@ -638,6 +666,9 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     'cash',
                                 ],
                             ],
+                            'az' => ['sentence' => 'ödəmək ilə kart', 'correct' => ['ödəmək', 'ilə', 'kart'], 'extra' => ['nağd']],
+                            'ar' => ['sentence' => 'الدفع مع بطاقة', 'correct' => ['الدفع', 'مع', 'بطاقة'], 'extra' => ['كاش']],
+                            'ru' => ['sentence' => 'платить с карта', 'correct' => ['платить', 'с', 'карта'], 'extra' => ['наличные']],
                             'es' => [
                                 'sentence' => 'Pagar con la tarjeta',
                                 'correct' => [
@@ -686,6 +717,7 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     '현금으로',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kartla ödemek', 'correct' => ['kartla', 'ödemek'], 'extra' => ['nakit']],
                         ],
                     ],
                     'c' => [
@@ -710,6 +742,9 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     'card',
                                 ],
                             ],
+                            'az' => ['sentence' => 'ödəmək səbət içində nağd', 'correct' => ['ödəmək', 'səbət', 'içində', 'nağd'], 'extra' => ['kart']],
+                            'ar' => ['sentence' => 'الدفع سلة في كاش', 'correct' => ['الدفع', 'سلة', 'في', 'كاش'], 'extra' => ['بطاقة']],
+                            'ru' => ['sentence' => 'платить корзина в наличные', 'correct' => ['платить', 'корзина', 'в', 'наличные'], 'extra' => ['карта']],
                             'es' => [
                                 'sentence' => 'Pagar la cesta en efectivo',
                                 'correct' => [
@@ -760,6 +795,7 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     '카드',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sepeti nakit ödemek', 'correct' => ['sepeti', 'nakit', 'ödemek'], 'extra' => ['kart']],
                         ],
                     ],
                 ],
@@ -803,6 +839,9 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     'change',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qəbz zəhmət olmasa', 'correct' => ['qəbz', 'zəhmət olmasa'], 'extra' => ['qalıq']],
+                            'ar' => ['sentence' => 'إيصال من فضلك', 'correct' => ['إيصال', 'من فضلك'], 'extra' => ['الباقي']],
+                            'ru' => ['sentence' => 'чек пожалуйста', 'correct' => ['чек', 'пожалуйста'], 'extra' => ['сдача']],
                             'es' => [
                                 'sentence' => 'El recibo, por favor',
                                 'correct' => [
@@ -849,6 +888,7 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     '거스름돈',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'fiş lütfen', 'correct' => ['fiş', 'lütfen'], 'extra' => ['para üstü']],
                         ],
                     ],
                     'b' => [
@@ -872,6 +912,9 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     'list',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qalıq və qəbz', 'correct' => ['qalıq', 'və', 'qəbz'], 'extra' => ['siyahı']],
+                            'ar' => ['sentence' => 'الباقي و إيصال', 'correct' => ['الباقي', 'و', 'إيصال'], 'extra' => ['قائمة']],
+                            'ru' => ['sentence' => 'сдача и чек', 'correct' => ['сдача', 'и', 'чек'], 'extra' => ['список']],
                             'es' => [
                                 'sentence' => 'El cambio y el recibo',
                                 'correct' => [
@@ -921,6 +964,7 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     '목록',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'para üstü ve fiş', 'correct' => ['para', 'üstü', 've', 'fiş'], 'extra' => ['liste']],
                         ],
                     ],
                     'c' => [
@@ -946,6 +990,9 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     'receipt',
                                 ],
                             ],
+                            'az' => ['sentence' => 'siyahı içində qutu', 'correct' => ['siyahı', 'içində', 'qutu'], 'extra' => ['qəbz']],
+                            'ar' => ['sentence' => 'قائمة في علبة', 'correct' => ['قائمة', 'في', 'علبة'], 'extra' => ['إيصال']],
+                            'ru' => ['sentence' => 'список в коробка', 'correct' => ['список', 'в', 'коробка'], 'extra' => ['чек']],
                             'es' => [
                                 'sentence' => 'La lista en la caja',
                                 'correct' => [
@@ -996,6 +1043,7 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     '영수증',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kutudaki liste', 'correct' => ['kutudaki', 'liste'], 'extra' => ['fiş']],
                         ],
                     ],
                 ],
@@ -1044,6 +1092,9 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     'egg',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qoymaq çörək içində torba', 'correct' => ['qoymaq', 'çörək', 'içində', 'torba'], 'extra' => ['yumurta']],
+                            'ar' => ['sentence' => 'وضع خبز في كيس', 'correct' => ['وضع', 'خبز', 'في', 'كيس'], 'extra' => ['بيضة']],
+                            'ru' => ['sentence' => 'положить хлеб в пакет', 'correct' => ['положить', 'хлеб', 'в', 'пакет'], 'extra' => ['яйцо']],
                             'es' => [
                                 'sentence' => 'Poner el pan en la bolsa',
                                 'correct' => [
@@ -1097,6 +1148,7 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     '계란',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ekmeği poşete koymak', 'correct' => ['ekmeği', 'poşete', 'koymak'], 'extra' => ['yumurta']],
                         ],
                     ],
                     'b' => [
@@ -1122,6 +1174,9 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     'to put',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir yumurta içində bir torba', 'correct' => ['bir', 'yumurta', 'içində', 'bir', 'torba'], 'extra' => ['qoymaq']],
+                            'ar' => ['sentence' => 'بيضة في كيس', 'correct' => ['بيضة', 'في', 'كيس'], 'extra' => ['وضع']],
+                            'ru' => ['sentence' => 'яйцо в пакет', 'correct' => ['яйцо', 'в', 'пакет'], 'extra' => ['положить']],
                             'es' => [
                                 'sentence' => 'Un huevo en una bolsa',
                                 'correct' => [
@@ -1174,6 +1229,7 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     '넣다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'poşette bir yumurta', 'correct' => ['poşette', 'bir', 'yumurta'], 'extra' => ['koymak']],
                         ],
                     ],
                     'c' => [
@@ -1199,6 +1255,9 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     'egg',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qoymaq çörək içində torba', 'correct' => ['qoymaq', 'çörək', 'içində', 'torba'], 'extra' => ['yumurta']],
+                            'ar' => ['sentence' => 'وضع خبز في كيس', 'correct' => ['وضع', 'خبز', 'في', 'كيس'], 'extra' => ['بيضة']],
+                            'ru' => ['sentence' => 'положить хлеб в пакет', 'correct' => ['положить', 'хлеб', 'в', 'пакет'], 'extra' => ['яйцо']],
                             'es' => [
                                 'sentence' => 'Poner pan en la bolsa',
                                 'correct' => [
@@ -1249,6 +1308,7 @@ class JaUnitSupermarket08Seeder extends Seeder
                                     '계란',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'poşete ekmek koymak', 'correct' => ['poşete', 'ekmek', 'koymak'], 'extra' => ['yumurta']],
                         ],
                     ],
                 ],

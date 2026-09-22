@@ -5,16 +5,17 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Lesson;
 use App\Models\Unit;
+use App\Support\PerPage;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class LessonController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
         return view('admin.lessons.index', [
-            'lessons' => Lesson::with('unit.chapter.language')->orderBy('unit_id')->orderBy('order_number')->paginate(25),
+            'lessons' => Lesson::with('unit.chapter.language')->orderBy('unit_id')->orderBy('order_number')->paginate(PerPage::resolve($request))->withQueryString(),
         ]);
     }
 

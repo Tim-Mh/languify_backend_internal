@@ -80,6 +80,9 @@ class EsUnitConversation01Seeder extends Seeder
                                     'I am',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim ad', 'correct' => ['mənim', 'ad'], 'extra' => ['dost', 'mən']],
+                            'ar' => ['sentence' => 'اسم', 'correct' => ['اسم'], 'extra' => ['صديق', 'أنا']],
+                            'ru' => ['sentence' => 'мой имя', 'correct' => ['мой', 'имя'], 'extra' => ['друг', 'я']],
                             'de' => [
                                 'sentence' => 'Mein Name',
                                 'correct' => [
@@ -122,6 +125,7 @@ class EsUnitConversation01Seeder extends Seeder
                                     '친구',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'benim adım', 'correct' => ['benim', 'adım'], 'extra' => ['arkadaş', 'ben']],
                         ],
                     ],
                     'b' => [
@@ -142,6 +146,9 @@ class EsUnitConversation01Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən bir müəllim', 'correct' => ['mən', 'bir', 'müəllim'], 'extra' => ['dost']],
+                            'ar' => ['sentence' => 'أنا معلم', 'correct' => ['أنا', 'معلم'], 'extra' => ['صديق']],
+                            'ru' => ['sentence' => 'я учитель', 'correct' => ['я', 'учитель'], 'extra' => ['друг']],
                             'de' => [
                                 'sentence' => 'Ich bin Lehrer',
                                 'correct' => [
@@ -184,6 +191,7 @@ class EsUnitConversation01Seeder extends Seeder
                                     '친구',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ben bir öğretmenim', 'correct' => ['ben', 'bir', 'öğretmenim'], 'extra' => ['arkadaş']],
                         ],
                     ],
                     'c' => [
@@ -208,6 +216,9 @@ class EsUnitConversation01Seeder extends Seeder
                                     'name',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim dost bir müəllim', 'correct' => ['mənim', 'dost', 'bir', 'müəllim'], 'extra' => ['ad']],
+                            'ar' => ['sentence' => 'صديق معلم', 'correct' => ['صديق', 'معلم'], 'extra' => ['اسم']],
+                            'ru' => ['sentence' => 'мой друг учитель', 'correct' => ['мой', 'друг', 'учитель'], 'extra' => ['имя']],
                             'de' => [
                                 'sentence' => 'Mein Freund ist Lehrer',
                                 'correct' => [
@@ -256,6 +267,7 @@ class EsUnitConversation01Seeder extends Seeder
                                     '이름',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'arkadaşım bir öğretmen', 'correct' => ['arkadaşım', 'bir', 'öğretmen'], 'extra' => ['ad']],
                         ],
                     ],
                 ],
@@ -298,6 +310,9 @@ class EsUnitConversation01Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yaşayıram burada', 'correct' => ['yaşayıram', 'burada'], 'extra' => ['qəsəbə', 'ev']],
+                            'ar' => ['sentence' => 'أسكن هنا', 'correct' => ['أسكن', 'هنا'], 'extra' => ['بلدة', 'بيت']],
+                            'ru' => ['sentence' => 'я живу здесь', 'correct' => ['я живу', 'здесь'], 'extra' => ['город', 'дом']],
                             'de' => [
                                 'sentence' => 'Ich wohne hier',
                                 'correct' => [
@@ -345,6 +360,7 @@ class EsUnitConversation01Seeder extends Seeder
                                     '도시',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'burada yaşıyorum', 'correct' => ['burada', 'yaşıyorum'], 'extra' => ['şehir', 'ev']],
                         ],
                     ],
                     'b' => [
@@ -368,6 +384,9 @@ class EsUnitConversation01Seeder extends Seeder
                                     'school',
                                 ],
                             ],
+                            'az' => ['sentence' => 'yaşayıram içində bir şəhər', 'correct' => ['yaşayıram', 'içində', 'bir', 'şəhər'], 'extra' => ['məktəb']],
+                            'ar' => ['sentence' => 'أسكن في مدينة', 'correct' => ['أسكن', 'في', 'مدينة'], 'extra' => ['مدرسة']],
+                            'ru' => ['sentence' => 'я живу в город', 'correct' => ['я живу', 'в', 'город'], 'extra' => ['школа']],
                             'de' => [
                                 'sentence' => 'Ich wohne in einer Stadt',
                                 'correct' => [
@@ -417,6 +436,7 @@ class EsUnitConversation01Seeder extends Seeder
                                     '학교',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir şehirde yaşıyorum', 'correct' => ['bir', 'şehirde', 'yaşıyorum'], 'extra' => ['okul']],
                         ],
                     ],
                     'c' => [
@@ -442,6 +462,9 @@ class EsUnitConversation01Seeder extends Seeder
                                     'town',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir ev və bir məktəb', 'correct' => ['bir', 'ev', 'və', 'bir', 'məktəb'], 'extra' => ['qəsəbə']],
+                            'ar' => ['sentence' => 'بيت و مدرسة', 'correct' => ['بيت', 'و', 'مدرسة'], 'extra' => ['بلدة']],
+                            'ru' => ['sentence' => 'дом и школа', 'correct' => ['дом', 'и', 'школа'], 'extra' => ['город']],
                             'de' => [
                                 'sentence' => 'Ein Haus und eine Schule',
                                 'correct' => [
@@ -489,6 +512,7 @@ class EsUnitConversation01Seeder extends Seeder
                                     '도시',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir ev ve bir okul', 'correct' => ['bir', 'ev', 've', 'bir', 'okul'], 'extra' => ['şehir']],
                         ],
                     ],
                 ],
@@ -531,6 +555,9 @@ class EsUnitConversation01Seeder extends Seeder
                                     'mother',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim yaş', 'correct' => ['mənim', 'yaş'], 'extra' => ['yaşında', 'köhnə', 'ana']],
+                            'ar' => ['sentence' => 'عمر', 'correct' => ['عمر'], 'extra' => ['سنوات', 'قديم', 'أم']],
+                            'ru' => ['sentence' => 'мой возраст', 'correct' => ['мой', 'возраст'], 'extra' => ['лет', 'старый', 'мама']],
                             'de' => [
                                 'sentence' => 'Mein Alter',
                                 'correct' => [
@@ -575,6 +602,7 @@ class EsUnitConversation01Seeder extends Seeder
                                     '어머니',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'benim yaşım', 'correct' => ['benim', 'yaşım'], 'extra' => ['yaşında', 'anne']],
                         ],
                     ],
                     'b' => [
@@ -595,6 +623,9 @@ class EsUnitConversation01Seeder extends Seeder
                                     'father',
                                 ],
                             ],
+                            'az' => ['sentence' => 'on yaşında köhnə', 'correct' => ['on', 'yaşında', 'köhnə'], 'extra' => ['yaş', 'ata']],
+                            'ar' => ['sentence' => 'عشرة سنوات قديم', 'correct' => ['عشرة', 'سنوات', 'قديم'], 'extra' => ['عمر', 'أب']],
+                            'ru' => ['sentence' => 'десять лет старый', 'correct' => ['десять', 'лет', 'старый'], 'extra' => ['возраст', 'папа']],
                             'de' => [
                                 'sentence' => 'Zehn Jahre alt',
                                 'correct' => [
@@ -638,6 +669,7 @@ class EsUnitConversation01Seeder extends Seeder
                                     '아버지',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'on yaşında', 'correct' => ['on', 'yaşında'], 'extra' => ['yaş', 'baba']],
                         ],
                     ],
                     'c' => [
@@ -663,6 +695,9 @@ class EsUnitConversation01Seeder extends Seeder
                                     'age',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim ana və mənim ata', 'correct' => ['mənim', 'ana', 'və', 'mənim', 'ata'], 'extra' => ['yaş']],
+                            'ar' => ['sentence' => 'أم و أب', 'correct' => ['أم', 'و', 'أب'], 'extra' => ['عمر']],
+                            'ru' => ['sentence' => 'мой мама и мой папа', 'correct' => ['мой', 'мама', 'и', 'мой', 'папа'], 'extra' => ['возраст']],
                             'de' => [
                                 'sentence' => 'Meine Mutter und mein Vater',
                                 'correct' => [
@@ -710,6 +745,7 @@ class EsUnitConversation01Seeder extends Seeder
                                     '나이',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'annem ve babam', 'correct' => ['annem', 've', 'babam'], 'extra' => ['yaş']],
                         ],
                     ],
                 ],
@@ -753,6 +789,9 @@ class EsUnitConversation01Seeder extends Seeder
                                     'sister',
                                 ],
                             ],
+                            'az' => ['sentence' => 'sən mənim qardaş', 'correct' => ['sən', 'mənim', 'qardaş'], 'extra' => ['bacı']],
+                            'ar' => ['sentence' => 'أنت أخ', 'correct' => ['أنت', 'أخ'], 'extra' => ['أخت']],
+                            'ru' => ['sentence' => 'ты мой брат', 'correct' => ['ты', 'мой', 'брат'], 'extra' => ['сестра']],
                             'de' => [
                                 'sentence' => 'Du bist mein Bruder',
                                 'correct' => [
@@ -799,6 +838,7 @@ class EsUnitConversation01Seeder extends Seeder
                                     '자매',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sen benim erkek kardeşimsin', 'correct' => ['sen', 'benim', 'erkek', 'kardeşimsin'], 'extra' => ['kız kardeş']],
                         ],
                     ],
                     'b' => [
@@ -819,6 +859,9 @@ class EsUnitConversation01Seeder extends Seeder
                                     'age',
                                 ],
                             ],
+                            'az' => ['sentence' => 'sənin ad', 'correct' => ['sənin', 'ad'], 'extra' => ['mənim', 'yaş']],
+                            'ar' => ['sentence' => 'اسم', 'correct' => ['اسم'], 'extra' => ['عمر']],
+                            'ru' => ['sentence' => 'твой имя', 'correct' => ['твой', 'имя'], 'extra' => ['мой', 'возраст']],
                             'de' => [
                                 'sentence' => 'Dein Name',
                                 'correct' => [
@@ -861,6 +904,7 @@ class EsUnitConversation01Seeder extends Seeder
                                     '나의',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'senin adın', 'correct' => ['senin', 'adın'], 'extra' => ['benim', 'yaş']],
                         ],
                     ],
                     'c' => [
@@ -886,6 +930,9 @@ class EsUnitConversation01Seeder extends Seeder
                                     'name',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim bacı və sənin qardaş', 'correct' => ['mənim', 'bacı', 'və', 'sənin', 'qardaş'], 'extra' => ['ad']],
+                            'ar' => ['sentence' => 'أخت و أخ', 'correct' => ['أخت', 'و', 'أخ'], 'extra' => ['اسم']],
+                            'ru' => ['sentence' => 'мой сестра и твой брат', 'correct' => ['мой', 'сестра', 'и', 'твой', 'брат'], 'extra' => ['имя']],
                             'de' => [
                                 'sentence' => 'Meine Schwester und dein Bruder',
                                 'correct' => [
@@ -937,6 +984,7 @@ class EsUnitConversation01Seeder extends Seeder
                                     '이름',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kız kardeşim ve senin erkek kardeşin', 'correct' => ['kız', 'kardeşim', 've', 'senin', 'erkek', 'kardeşin'], 'extra' => ['ad']],
                         ],
                     ],
                 ],
@@ -980,6 +1028,9 @@ class EsUnitConversation01Seeder extends Seeder
                                     'welcome',
                                 ],
                             ],
+                            'az' => ['sentence' => 'tanış olmağa şadam mənim dost', 'correct' => ['tanış olmağa şadam', 'mənim', 'dost'], 'extra' => ['xoş gəlmisiniz']],
+                            'ar' => ['sentence' => 'تشرفنا صديق', 'correct' => ['تشرفنا', 'صديق'], 'extra' => ['أهلا وسهلا']],
+                            'ru' => ['sentence' => 'приятно познакомиться мой друг', 'correct' => ['приятно познакомиться', 'мой', 'друг'], 'extra' => ['добро пожаловать']],
                             'de' => [
                                 'sentence' => 'Freut mich, mein Freund',
                                 'correct' => [
@@ -1024,6 +1075,7 @@ class EsUnitConversation01Seeder extends Seeder
                                     '환영합니다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'memnun oldum arkadaşım', 'correct' => ['memnun', 'oldum', 'arkadaşım'], 'extra' => ['hoş geldin']],
                         ],
                     ],
                     'b' => [
@@ -1047,6 +1099,9 @@ class EsUnitConversation01Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'xoş gəlmisiniz mənim ev', 'correct' => ['xoş gəlmisiniz', 'mənim', 'ev'], 'extra' => ['dost']],
+                            'ar' => ['sentence' => 'أهلا وسهلا إلى بيت', 'correct' => ['أهلا وسهلا', 'إلى', 'بيت'], 'extra' => ['صديق']],
+                            'ru' => ['sentence' => 'добро пожаловать в мой дом', 'correct' => ['добро пожаловать', 'в', 'мой', 'дом'], 'extra' => ['друг']],
                             'de' => [
                                 'sentence' => 'Willkommen in meinem Haus',
                                 'correct' => [
@@ -1094,6 +1149,7 @@ class EsUnitConversation01Seeder extends Seeder
                                     '친구',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'hoş geldin evim', 'correct' => ['hoş', 'geldin', 'evim'], 'extra' => ['arkadaş']],
                         ],
                     ],
                     'c' => [
@@ -1117,6 +1173,9 @@ class EsUnitConversation01Seeder extends Seeder
                                     'welcome',
                                 ],
                             ],
+                            'az' => ['sentence' => 'tanış olmağa şadam mən sənin dost', 'correct' => ['tanış olmağa şadam', 'mən', 'sənin', 'dost'], 'extra' => ['xoş gəlmisiniz']],
+                            'ar' => ['sentence' => 'تشرفنا أنا صديق', 'correct' => ['تشرفنا', 'أنا', 'صديق'], 'extra' => ['أهلا وسهلا']],
+                            'ru' => ['sentence' => 'приятно познакомиться я твой друг', 'correct' => ['приятно познакомиться', 'я', 'твой', 'друг'], 'extra' => ['добро пожаловать']],
                             'de' => [
                                 'sentence' => 'Freut mich, ich bin dein Freund',
                                 'correct' => [
@@ -1167,6 +1226,7 @@ class EsUnitConversation01Seeder extends Seeder
                                     '환영합니다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'memnun oldum ben senin arkadaşınım', 'correct' => ['memnun', 'oldum', 'ben', 'senin', 'arkadaşınım'], 'extra' => ['hoş geldin']],
                         ],
                     ],
                 ],

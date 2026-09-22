@@ -77,6 +77,9 @@ class EsUnitBeginner04Seeder extends Seeder
                                     'chair',
                                 ],
                             ],
+                            'az' => ['sentence' => 'masa', 'correct' => ['masa'], 'extra' => ['stul']],
+                            'ar' => ['sentence' => 'طاولة', 'correct' => ['طاولة'], 'extra' => ['كرسي']],
+                            'ru' => ['sentence' => 'стол', 'correct' => ['стол'], 'extra' => ['стул']],
                             'de' => [
                                 'sentence' => 'Der Tisch',
                                 'correct' => [
@@ -117,6 +120,7 @@ class EsUnitBeginner04Seeder extends Seeder
                                     '의자',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'masa', 'correct' => ['masa'], 'extra' => ['sandalye']],
                         ],
                     ],
                     'b' => [
@@ -136,6 +140,9 @@ class EsUnitBeginner04Seeder extends Seeder
                                     'table',
                                 ],
                             ],
+                            'az' => ['sentence' => 'stul', 'correct' => ['stul'], 'extra' => ['masa']],
+                            'ar' => ['sentence' => 'كرسي', 'correct' => ['كرسي'], 'extra' => ['طاولة']],
+                            'ru' => ['sentence' => 'стул', 'correct' => ['стул'], 'extra' => ['стол']],
                             'de' => [
                                 'sentence' => 'Der Stuhl',
                                 'correct' => [
@@ -176,6 +183,7 @@ class EsUnitBeginner04Seeder extends Seeder
                                     '탁자',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sandalye', 'correct' => ['sandalye'], 'extra' => ['masa']],
                         ],
                     ],
                     'c' => [
@@ -201,6 +209,9 @@ class EsUnitBeginner04Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'masa və stul', 'correct' => ['masa', 'və', 'stul'], 'extra' => ['ev']],
+                            'ar' => ['sentence' => 'طاولة و كرسي', 'correct' => ['طاولة', 'و', 'كرسي'], 'extra' => ['بيت']],
+                            'ru' => ['sentence' => 'стол и стул', 'correct' => ['стол', 'и', 'стул'], 'extra' => ['дом']],
                             'de' => [
                                 'sentence' => 'Der Tisch und der Stuhl',
                                 'correct' => [
@@ -248,6 +259,7 @@ class EsUnitBeginner04Seeder extends Seeder
                                     '집',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'masa ve sandalye', 'correct' => ['masa', 've', 'sandalye'], 'extra' => ['ev']],
                         ],
                     ],
                 ],
@@ -295,6 +307,9 @@ class EsUnitBeginner04Seeder extends Seeder
                                     'in',
                                 ],
                             ],
+                            'az' => ['sentence' => 'pişik üzərində masa', 'correct' => ['pişik', 'üzərində', 'masa'], 'extra' => ['içində']],
+                            'ar' => ['sentence' => 'قط على طاولة', 'correct' => ['قط', 'على', 'طاولة'], 'extra' => ['في']],
+                            'ru' => ['sentence' => 'кот на стол', 'correct' => ['кот', 'на', 'стол'], 'extra' => ['в']],
                             'de' => [
                                 'sentence' => 'Die Katze auf dem Tisch',
                                 'correct' => [
@@ -345,6 +360,7 @@ class EsUnitBeginner04Seeder extends Seeder
                                     '안에',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'masadaki kedi', 'correct' => ['masadaki', 'kedi'], 'extra' => ['içinde']],
                         ],
                     ],
                     'b' => [
@@ -370,6 +386,9 @@ class EsUnitBeginner04Seeder extends Seeder
                                     'on',
                                 ],
                             ],
+                            'az' => ['sentence' => 'pişik içində ev', 'correct' => ['pişik', 'içində', 'ev'], 'extra' => ['üzərində']],
+                            'ar' => ['sentence' => 'قط في بيت', 'correct' => ['قط', 'في', 'بيت'], 'extra' => ['على']],
+                            'ru' => ['sentence' => 'кот в дом', 'correct' => ['кот', 'в', 'дом'], 'extra' => ['на']],
                             'de' => [
                                 'sentence' => 'Die Katze im Haus',
                                 'correct' => [
@@ -420,6 +439,7 @@ class EsUnitBeginner04Seeder extends Seeder
                                     '위에',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'evdeki kedi', 'correct' => ['evdeki', 'kedi'], 'extra' => ['üzerinde']],
                         ],
                     ],
                     'c' => [
@@ -449,6 +469,9 @@ class EsUnitBeginner04Seeder extends Seeder
                                     'cat',
                                 ],
                             ],
+                            'az' => ['sentence' => 'üzərində masa və ya içində ev', 'correct' => ['üzərində', 'masa', 'və ya', 'içində', 'ev'], 'extra' => ['pişik']],
+                            'ar' => ['sentence' => 'على طاولة أو في بيت', 'correct' => ['على', 'طاولة', 'أو', 'في', 'بيت'], 'extra' => ['قط']],
+                            'ru' => ['sentence' => 'на стол или в дом', 'correct' => ['на', 'стол', 'или', 'в', 'дом'], 'extra' => ['кот']],
                             'de' => [
                                 'sentence' => 'Auf dem Tisch oder im Haus',
                                 'correct' => [
@@ -507,6 +530,7 @@ class EsUnitBeginner04Seeder extends Seeder
                                     '고양이',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'masada veya evde', 'correct' => ['masada', 'veya', 'evde'], 'extra' => ['kedi']],
                         ],
                     ],
                 ],
@@ -550,6 +574,9 @@ class EsUnitBeginner04Seeder extends Seeder
                                     'cat',
                                 ],
                             ],
+                            'az' => ['sentence' => 'məndə var bir it', 'correct' => ['məndə var', 'bir', 'it'], 'extra' => ['pişik']],
+                            'ar' => ['sentence' => 'عندي كلب', 'correct' => ['عندي', 'كلب'], 'extra' => ['قط']],
+                            'ru' => ['sentence' => 'у меня собака', 'correct' => ['у', 'меня', 'собака'], 'extra' => ['кот']],
                             'de' => [
                                 'sentence' => 'Ich habe einen Hund',
                                 'correct' => [
@@ -596,6 +623,7 @@ class EsUnitBeginner04Seeder extends Seeder
                                     '고양이',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir köpeğim var', 'correct' => ['bir', 'köpeğim', 'var'], 'extra' => ['kedi']],
                         ],
                     ],
                     'b' => [
@@ -617,6 +645,9 @@ class EsUnitBeginner04Seeder extends Seeder
                                     'dog',
                                 ],
                             ],
+                            'az' => ['sentence' => 'məndə var bir pişik', 'correct' => ['məndə var', 'bir', 'pişik'], 'extra' => ['it']],
+                            'ar' => ['sentence' => 'عندي قط', 'correct' => ['عندي', 'قط'], 'extra' => ['كلب']],
+                            'ru' => ['sentence' => 'у меня кот', 'correct' => ['у', 'меня', 'кот'], 'extra' => ['собака']],
                             'de' => [
                                 'sentence' => 'Ich habe eine Katze',
                                 'correct' => [
@@ -663,6 +694,7 @@ class EsUnitBeginner04Seeder extends Seeder
                                     '개',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kedim var', 'correct' => ['bir', 'kedim', 'var'], 'extra' => ['köpek']],
                         ],
                     ],
                     'c' => [
@@ -690,6 +722,9 @@ class EsUnitBeginner04Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'məndə var bir pişik və bir it', 'correct' => ['məndə var', 'bir', 'pişik', 'və', 'bir', 'it'], 'extra' => ['ev']],
+                            'ar' => ['sentence' => 'عندي قط و كلب', 'correct' => ['عندي', 'قط', 'و', 'كلب'], 'extra' => ['بيت']],
+                            'ru' => ['sentence' => 'у меня кот и собака', 'correct' => ['у', 'меня', 'кот', 'и', 'собака'], 'extra' => ['дом']],
                             'de' => [
                                 'sentence' => 'Ich habe eine Katze und einen Hund',
                                 'correct' => [
@@ -745,6 +780,7 @@ class EsUnitBeginner04Seeder extends Seeder
                                     '집',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kedim ve bir köpeğim var', 'correct' => ['bir', 'kedim', 've', 'bir', 'köpeğim', 'var'], 'extra' => ['ev']],
                         ],
                     ],
                 ],
@@ -790,6 +826,9 @@ class EsUnitBeginner04Seeder extends Seeder
                                     'under',
                                 ],
                             ],
+                            'az' => ['sentence' => 'harada it', 'correct' => ['harada', 'it'], 'extra' => ['ev', 'altında']],
+                            'ar' => ['sentence' => 'أين كلب', 'correct' => ['أين', 'كلب'], 'extra' => ['بيت', 'تحت']],
+                            'ru' => ['sentence' => 'где собака', 'correct' => ['где', 'собака'], 'extra' => ['дом', 'под']],
                             'de' => [
                                 'sentence' => 'Wo ist der Hund',
                                 'correct' => [
@@ -835,6 +874,7 @@ class EsUnitBeginner04Seeder extends Seeder
                                     '집',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'köpek nerede', 'correct' => ['köpek', 'nerede'], 'extra' => ['ev', 'altında']],
                         ],
                     ],
                     'b' => [
@@ -861,6 +901,9 @@ class EsUnitBeginner04Seeder extends Seeder
                                     'where is',
                                 ],
                             ],
+                            'az' => ['sentence' => 'it altında masa', 'correct' => ['it', 'altında', 'masa'], 'extra' => ['harada']],
+                            'ar' => ['sentence' => 'كلب تحت طاولة', 'correct' => ['كلب', 'تحت', 'طاولة'], 'extra' => ['أين']],
+                            'ru' => ['sentence' => 'собака под стол', 'correct' => ['собака', 'под', 'стол'], 'extra' => ['где']],
                             'de' => [
                                 'sentence' => 'Der Hund unter dem Tisch',
                                 'correct' => [
@@ -911,6 +954,7 @@ class EsUnitBeginner04Seeder extends Seeder
                                     '어디입니까',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'masanın altındaki köpek', 'correct' => ['masanın', 'altındaki', 'köpek'], 'extra' => ['nerede']],
                         ],
                     ],
                     'c' => [
@@ -934,6 +978,9 @@ class EsUnitBeginner04Seeder extends Seeder
                                     'under',
                                 ],
                             ],
+                            'az' => ['sentence' => 'harada ev', 'correct' => ['harada', 'ev'], 'extra' => ['it', 'altında']],
+                            'ar' => ['sentence' => 'أين بيت', 'correct' => ['أين', 'بيت'], 'extra' => ['كلب', 'تحت']],
+                            'ru' => ['sentence' => 'где дом', 'correct' => ['где', 'дом'], 'extra' => ['собака', 'под']],
                             'de' => [
                                 'sentence' => 'Wo ist das Haus',
                                 'correct' => [
@@ -979,6 +1026,7 @@ class EsUnitBeginner04Seeder extends Seeder
                                     '개',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ev nerede', 'correct' => ['ev', 'nerede'], 'extra' => ['köpek', 'altında']],
                         ],
                     ],
                 ],
@@ -1023,6 +1071,9 @@ class EsUnitBeginner04Seeder extends Seeder
                                     'chair',
                                 ],
                             ],
+                            'az' => ['sentence' => 'burada mənim ev', 'correct' => ['burada', 'mənim', 'ev'], 'extra' => ['stul']],
+                            'ar' => ['sentence' => 'هنا بيت', 'correct' => ['هنا', 'بيت'], 'extra' => ['كرسي']],
+                            'ru' => ['sentence' => 'здесь мой дом', 'correct' => ['здесь', 'мой', 'дом'], 'extra' => ['стул']],
                             'de' => [
                                 'sentence' => 'Hier ist mein Haus',
                                 'correct' => [
@@ -1068,6 +1119,7 @@ class EsUnitBeginner04Seeder extends Seeder
                                     '의자',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'işte evim', 'correct' => ['işte', 'evim'], 'extra' => ['sandalye']],
                         ],
                     ],
                     'b' => [
@@ -1090,6 +1142,9 @@ class EsUnitBeginner04Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'burada mənim stul', 'correct' => ['burada', 'mənim', 'stul'], 'extra' => ['ev']],
+                            'ar' => ['sentence' => 'هنا كرسي', 'correct' => ['هنا', 'كرسي'], 'extra' => ['بيت']],
+                            'ru' => ['sentence' => 'здесь мой стул', 'correct' => ['здесь', 'мой', 'стул'], 'extra' => ['дом']],
                             'de' => [
                                 'sentence' => 'Hier ist mein Stuhl',
                                 'correct' => [
@@ -1135,6 +1190,7 @@ class EsUnitBeginner04Seeder extends Seeder
                                     '집',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'işte sandalyem', 'correct' => ['işte', 'sandalyem'], 'extra' => ['ev']],
                         ],
                     ],
                     'c' => [
@@ -1160,6 +1216,9 @@ class EsUnitBeginner04Seeder extends Seeder
                                     'here is',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim ev və mənim stul', 'correct' => ['mənim', 'ev', 'və', 'mənim', 'stul'], 'extra' => ['burada']],
+                            'ar' => ['sentence' => 'بيت و كرسي', 'correct' => ['بيت', 'و', 'كرسي'], 'extra' => ['هنا']],
+                            'ru' => ['sentence' => 'мой дом и мой стул', 'correct' => ['мой', 'дом', 'и', 'мой', 'стул'], 'extra' => ['здесь']],
                             'de' => [
                                 'sentence' => 'Mein Haus und mein Stuhl',
                                 'correct' => [
@@ -1211,6 +1270,7 @@ class EsUnitBeginner04Seeder extends Seeder
                                     '여기',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'evim ve sandalyem', 'correct' => ['evim', 've', 'sandalyem'], 'extra' => ['işte']],
                         ],
                     ],
                 ],

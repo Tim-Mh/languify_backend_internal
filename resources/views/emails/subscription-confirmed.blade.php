@@ -17,7 +17,7 @@
       @if ($amountFormatted)
         You were charged <strong>{{ $amountFormatted }}</strong> for one {{ $interval ?? 'billing' }}, and
       @endif
-      unlimited hearts, bonus gems, and every other {{ $planTitle }} perk are live on your account right now.
+      {{ $heartsPerk }}, bonus gems, and every other {{ $planTitle }} perk are live on your account right now.
     </p>
     @if ($expiresFormatted)
       <p style="margin:12px 0 0; font-size:14px; line-height:1.6; color:#7850a8;">

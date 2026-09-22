@@ -9,17 +9,16 @@ use App\Models\Language;
 use Illuminate\Database\Seeder;
 
 /**
- * Turkish, added as an interface language first.
+ * Turkish, an interface language that is now also a course.
  *
- * `is_learnable = false` on purpose: the UI is fully translated (521 strings in
- * the web app's i18n catalog), but the 5-chapter / 201-lesson course does not
- * exist yet. Without that flag the only way to let a Turkish speaker read the
- * app in Turkish would be to also offer them an empty Turkish course, because a
- * single `is_active` list feeds both the native and the learning picker.
+ * `is_learnable` was false while this was interface-only: the UI was fully
+ * translated but the course did not exist, and a single `is_active` list feeds
+ * both the native and the learning picker, so without the flag the only way to
+ * let a Turkish speaker read the app in Turkish was to also offer them an empty
+ * Turkish course.
  *
- * The 5 chapters are created now so unit content seeders have something to
- * attach to as it is written. Flip `is_learnable` to true once the course is
- * populated.
+ * It is true now. The course is complete and matches the other six: 41 units,
+ * 201 lessons, 2001 exercises across the five chapters, plus the final test.
  *
  * Idempotent — safe to re-run. `is_active` is deliberately absent from the
  * updateOrCreate payload: re-running this seeder must not undo an admin's
@@ -80,7 +79,7 @@ class TurkishLanguageSeeder extends Seeder
                 'name' => 'Turkish',
                 'native_name' => 'Türkçe',
                 'flag_emoji' => '🇹🇷',
-                'is_learnable' => false,
+                'is_learnable' => true,
             ],
         );
 

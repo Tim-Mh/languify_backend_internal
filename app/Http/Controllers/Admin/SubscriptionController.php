@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\SubscriptionPlan;
 use App\Models\UserSubscription;
+use App\Support\PerPage;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -19,7 +20,7 @@ class SubscriptionController extends Controller
         }
 
         return view('admin.subscriptions.index', [
-            'subscriptions' => $query->paginate(25)->withQueryString(),
+            'subscriptions' => $query->paginate(PerPage::resolve($request))->withQueryString(),
             'selectedStatus' => $status,
             'activeCount' => UserSubscription::whereIn('status', ['active', 'trialing'])->count(),
             'planPrices' => SubscriptionPlan::all()->keyBy('key'),

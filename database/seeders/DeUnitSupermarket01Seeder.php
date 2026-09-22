@@ -83,6 +83,9 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     'trolley',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim siyahı üçün supermarket', 'correct' => ['mənim', 'siyahı', 'üçün', 'supermarket'], 'extra' => ['araba']],
+                            'ar' => ['sentence' => 'قائمة لأجل سوبرماركت', 'correct' => ['قائمة', 'لأجل', 'سوبرماركت'], 'extra' => ['عربة']],
+                            'ru' => ['sentence' => 'мой список для супермаркет', 'correct' => ['мой', 'список', 'для', 'супермаркет'], 'extra' => ['тележка']],
                             'es' => [
                                 'sentence' => 'Mi lista para el supermercado',
                                 'correct' => [
@@ -135,6 +138,7 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     '카트',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'market için listem', 'correct' => ['market', 'için', 'listem'], 'extra' => ['araba']],
                         ],
                     ],
                     'b' => [
@@ -156,6 +160,9 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     'list',
                                 ],
                             ],
+                            'az' => ['sentence' => 'axtarmaq bir araba', 'correct' => ['axtarmaq', 'bir', 'araba'], 'extra' => ['siyahı']],
+                            'ar' => ['sentence' => 'البحث عربة', 'correct' => ['البحث', 'عربة'], 'extra' => ['قائمة']],
+                            'ru' => ['sentence' => 'искать тележка', 'correct' => ['искать', 'тележка'], 'extra' => ['список']],
                             'es' => [
                                 'sentence' => 'Buscar un carrito',
                                 'correct' => [
@@ -200,6 +207,7 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     '목록',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir araba aramak', 'correct' => ['bir', 'araba', 'aramak'], 'extra' => ['liste']],
                         ],
                     ],
                     'c' => [
@@ -225,6 +233,9 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     'supermarket',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir araba və bir siyahı', 'correct' => ['bir', 'araba', 'və', 'bir', 'siyahı'], 'extra' => ['supermarket']],
+                            'ar' => ['sentence' => 'عربة و قائمة', 'correct' => ['عربة', 'و', 'قائمة'], 'extra' => ['سوبرماركت']],
+                            'ru' => ['sentence' => 'тележка и список', 'correct' => ['тележка', 'и', 'список'], 'extra' => ['супермаркет']],
                             'es' => [
                                 'sentence' => 'Un carrito y una lista',
                                 'correct' => [
@@ -272,6 +283,7 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     '슈퍼마켓',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir araba ve bir liste', 'correct' => ['bir', 'araba', 've', 'bir', 'liste'], 'extra' => ['market']],
                         ],
                     ],
                 ],
@@ -318,6 +330,9 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     'basket',
                                 ],
                             ],
+                            'az' => ['sentence' => 'harada şöbə', 'correct' => ['harada', 'şöbə'], 'extra' => ['tapmaq', 'səbət']],
+                            'ar' => ['sentence' => 'أين قسم', 'correct' => ['أين', 'قسم'], 'extra' => ['العثور', 'سلة']],
+                            'ru' => ['sentence' => 'где отдел', 'correct' => ['где', 'отдел'], 'extra' => ['найти', 'корзина']],
                             'es' => [
                                 'sentence' => 'Dónde está el pasillo',
                                 'correct' => [
@@ -365,6 +380,7 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     '발견하다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'reyon nerede', 'correct' => ['reyon', 'nerede'], 'extra' => ['bulmak', 'sepet']],
                         ],
                     ],
                     'b' => [
@@ -387,6 +403,9 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     'aisle',
                                 ],
                             ],
+                            'az' => ['sentence' => 'tapmaq bir səbət', 'correct' => ['tapmaq', 'bir', 'səbət'], 'extra' => ['harada', 'şöbə']],
+                            'ar' => ['sentence' => 'العثور سلة', 'correct' => ['العثور', 'سلة'], 'extra' => ['أين', 'قسم']],
+                            'ru' => ['sentence' => 'найти корзина', 'correct' => ['найти', 'корзина'], 'extra' => ['где', 'отдел']],
                             'es' => [
                                 'sentence' => 'Encontrar una cesta',
                                 'correct' => [
@@ -431,6 +450,7 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     '진열대',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir sepet bulmak', 'correct' => ['bir', 'sepet', 'bulmak'], 'extra' => ['nerede', 'reyon']],
                         ],
                     ],
                     'c' => [
@@ -453,6 +473,9 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     'basket',
                                 ],
                             ],
+                            'az' => ['sentence' => 'tapmaq şöbə', 'correct' => ['tapmaq', 'şöbə'], 'extra' => ['harada', 'səbət']],
+                            'ar' => ['sentence' => 'العثور قسم', 'correct' => ['العثور', 'قسم'], 'extra' => ['أين', 'سلة']],
+                            'ru' => ['sentence' => 'найти отдел', 'correct' => ['найти', 'отдел'], 'extra' => ['где', 'корзина']],
                             'es' => [
                                 'sentence' => 'Encontrar el pasillo',
                                 'correct' => [
@@ -497,6 +520,7 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     '바구니',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'reyonu bulmak', 'correct' => ['reyonu', 'bulmak'], 'extra' => ['nerede', 'sepet']],
                         ],
                     ],
                 ],
@@ -539,6 +563,9 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     'trolley',
                                 ],
                             ],
+                            'az' => ['sentence' => 'al burada', 'correct' => ['al', 'burada'], 'extra' => ['kassa', 'araba']],
+                            'ar' => ['sentence' => 'اشتر هنا', 'correct' => ['اشتر', 'هنا'], 'extra' => ['صندوق الدفع', 'عربة']],
+                            'ru' => ['sentence' => 'купи здесь', 'correct' => ['купи', 'здесь'], 'extra' => ['касса', 'тележка']],
                             'es' => [
                                 'sentence' => 'Comprar aquí',
                                 'correct' => [
@@ -582,6 +609,7 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     '계산대',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'burada al', 'correct' => ['burada', 'al'], 'extra' => ['kasa', 'araba']],
                         ],
                     ],
                     'b' => [
@@ -606,6 +634,9 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     'trolley',
                                 ],
                             ],
+                            'az' => ['sentence' => 'kassa burada', 'correct' => ['kassa', 'burada'], 'extra' => ['almaq', 'araba']],
+                            'ar' => ['sentence' => 'صندوق الدفع هنا', 'correct' => ['صندوق الدفع', 'هنا'], 'extra' => ['الشراء', 'عربة']],
+                            'ru' => ['sentence' => 'касса здесь', 'correct' => ['касса', 'здесь'], 'extra' => ['купить', 'тележка']],
                             'es' => [
                                 'sentence' => 'La caja está aquí',
                                 'correct' => [
@@ -653,6 +684,7 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     '사다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kasa burada', 'correct' => ['kasa', 'burada'], 'extra' => ['almak', 'araba']],
                         ],
                     ],
                     'c' => [
@@ -677,6 +709,9 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     'checkout',
                                 ],
                             ],
+                            'az' => ['sentence' => 'al ilə bir araba', 'correct' => ['al', 'ilə', 'bir', 'araba'], 'extra' => ['burada', 'kassa']],
+                            'ar' => ['sentence' => 'اشتر مع عربة', 'correct' => ['اشتر', 'مع', 'عربة'], 'extra' => ['هنا', 'صندوق الدفع']],
+                            'ru' => ['sentence' => 'купи с тележка', 'correct' => ['купи', 'с', 'тележка'], 'extra' => ['здесь', 'касса']],
                             'es' => [
                                 'sentence' => 'Comprar con un carrito',
                                 'correct' => [
@@ -723,6 +758,7 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     '여기',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'arabayla al', 'correct' => ['arabayla', 'al'], 'extra' => ['burada', 'kasa']],
                         ],
                     ],
                 ],
@@ -766,6 +802,9 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     'basket',
                                 ],
                             ],
+                            'az' => ['sentence' => 'lazımdır çörək', 'correct' => ['lazımdır', 'çörək'], 'extra' => ['boş', 'səbət']],
+                            'ar' => ['sentence' => 'أحتاج خبز', 'correct' => ['أحتاج', 'خبز'], 'extra' => ['فارغ', 'سلة']],
+                            'ru' => ['sentence' => 'мне нужно хлеб', 'correct' => ['мне нужно', 'хлеб'], 'extra' => ['пустой', 'корзина']],
                             'es' => [
                                 'sentence' => 'Necesito pan',
                                 'correct' => [
@@ -809,6 +848,7 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     '빈',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ekmeğe ihtiyacım var', 'correct' => ['ekmeğe', 'ihtiyacım', 'var'], 'extra' => ['boş', 'sepet']],
                         ],
                     ],
                     'b' => [
@@ -833,6 +873,9 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     'list',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim səbət boş', 'correct' => ['mənim', 'səbət', 'boş'], 'extra' => ['lazımdır', 'siyahı']],
+                            'ar' => ['sentence' => 'سلة فارغ', 'correct' => ['سلة', 'فارغ'], 'extra' => ['أحتاج', 'قائمة']],
+                            'ru' => ['sentence' => 'мой корзина пустой', 'correct' => ['мой', 'корзина', 'пустой'], 'extra' => ['мне нужно', 'список']],
                             'es' => [
                                 'sentence' => 'Mi cesta está vacía',
                                 'correct' => [
@@ -882,6 +925,7 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     '목록',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sepetim boş', 'correct' => ['sepetim', 'boş'], 'extra' => ['ihtiyacım var', 'liste']],
                         ],
                     ],
                     'c' => [
@@ -905,6 +949,9 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     'basket',
                                 ],
                             ],
+                            'az' => ['sentence' => 'lazımdır mənim siyahı', 'correct' => ['lazımdır', 'mənim', 'siyahı'], 'extra' => ['boş', 'səbət']],
+                            'ar' => ['sentence' => 'أحتاج قائمة', 'correct' => ['أحتاج', 'قائمة'], 'extra' => ['فارغ', 'سلة']],
+                            'ru' => ['sentence' => 'мне нужно мой список', 'correct' => ['мне нужно', 'мой', 'список'], 'extra' => ['пустой', 'корзина']],
                             'es' => [
                                 'sentence' => 'Necesito mi lista',
                                 'correct' => [
@@ -951,6 +998,7 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     '빈',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'listeme ihtiyacım var', 'correct' => ['listeme', 'ihtiyacım', 'var'], 'extra' => ['boş', 'sepet']],
                         ],
                     ],
                 ],
@@ -997,6 +1045,9 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     'basket',
                                 ],
                             ],
+                            'az' => ['sentence' => 'araba dolu', 'correct' => ['araba', 'dolu'], 'extra' => ['çətin', 'səbət']],
+                            'ar' => ['sentence' => 'عربة ممتلئ', 'correct' => ['عربة', 'ممتلئ'], 'extra' => ['صعب', 'سلة']],
+                            'ru' => ['sentence' => 'тележка полный', 'correct' => ['тележка', 'полный'], 'extra' => ['трудно', 'корзина']],
                             'es' => [
                                 'sentence' => 'El carrito está lleno',
                                 'correct' => [
@@ -1045,6 +1096,7 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     '무거운',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'araba dolu', 'correct' => ['araba', 'dolu'], 'extra' => ['zor', 'sepet']],
                         ],
                     ],
                     'b' => [
@@ -1069,6 +1121,9 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     'trolley',
                                 ],
                             ],
+                            'az' => ['sentence' => 'səbət ağır', 'correct' => ['səbət', 'ağır'], 'extra' => ['dolu', 'araba']],
+                            'ar' => ['sentence' => 'سلة ثقيل', 'correct' => ['سلة', 'ثقيل'], 'extra' => ['ممتلئ', 'عربة']],
+                            'ru' => ['sentence' => 'корзина тяжёлый', 'correct' => ['корзина', 'тяжёлый'], 'extra' => ['полный', 'тележка']],
                             'es' => [
                                 'sentence' => 'La cesta está pesada',
                                 'correct' => [
@@ -1116,6 +1171,7 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     '가득한',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sepet ağır', 'correct' => ['sepet', 'ağır'], 'extra' => ['dolu', 'araba']],
                         ],
                     ],
                     'c' => [
@@ -1145,6 +1201,9 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     'is',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir dolu araba və bir ağır səbət', 'correct' => ['bir', 'dolu', 'araba', 'və', 'bir', 'ağır', 'səbət'], 'extra' => []],
+                            'ar' => ['sentence' => 'ممتلئ عربة و ثقيل سلة', 'correct' => ['ممتلئ', 'عربة', 'و', 'ثقيل', 'سلة'], 'extra' => []],
+                            'ru' => ['sentence' => 'полный тележка и тяжёлый корзина', 'correct' => ['полный', 'тележка', 'и', 'тяжёлый', 'корзина'], 'extra' => []],
                             'es' => [
                                 'sentence' => 'Un carrito lleno y una cesta pesada',
                                 'correct' => [
@@ -1201,6 +1260,7 @@ class DeUnitSupermarket01Seeder extends Seeder
                                     '입니다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'dolu bir araba ve ağır bir sepet', 'correct' => ['dolu', 'bir', 'araba', 've', 'ağır', 'bir', 'sepet'], 'extra' => ['dır']],
                         ],
                     ],
                 ],

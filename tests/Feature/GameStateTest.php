@@ -21,7 +21,9 @@ class GameStateTest extends TestCase
                     'totalXp' => 0,
                     'streak' => 0,
                     'gems' => 0,
-                    'hearts' => 5,
+                    // 100, not 5: a factory user is a Monthly subscriber, and
+                    // the plan's monthly allowance is granted on first read.
+                    'hearts' => 100,
                     'earnedBadgeIds' => [],
                 ],
             ]);

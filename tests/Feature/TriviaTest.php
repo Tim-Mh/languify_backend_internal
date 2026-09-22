@@ -47,16 +47,18 @@ class TriviaTest extends TestCase
     }
 
     /**
-     * Completes the Conversation chapter (chapter 2) for the given language,
-     * which is what unlocks Trivia access.
+     * Trivia unlocks on the FIRST chapter, not the second: see
+     * TriviaController::triviaUnlockedFor, which looks for ChapterKey::Beginner.
+     * This used to complete Conversation, which left every playing test
+     * locked out with a 403 once the gate moved.
      */
-    private function completeConversationChapter(User $user, Language $language): void
+    private function completeBeginnerChapter(User $user, Language $language): void
     {
         $chapter = Chapter::create([
             'language_id' => $language->id,
-            'chapter_key' => ChapterKey::Conversation->value,
-            'title' => 'Conversation',
-            'order_number' => 2,
+            'chapter_key' => ChapterKey::Beginner->value,
+            'title' => 'Beginner',
+            'order_number' => 1,
         ]);
 
         $unit = Unit::create(['chapter_id' => $chapter->id, 'title' => 'Unit 1', 'order_number' => 1]);
@@ -65,6 +67,11 @@ class TriviaTest extends TestCase
         UserLessonCompletion::create([
             'user_id' => $user->id,
             'lesson_id' => $lesson->id,
+            // Completion is scoped per native language (see the
+            // scope_completions_by_native_language migration), and
+            // completeParentIds filters on it. Omitting it left the row
+            // invisible, so the chapter never counted as finished.
+            'native_language_id' => $user->native_language_id,
             'mistakes' => 0,
             'is_perfect' => true,
             'xp_awarded' => 30,
@@ -76,12 +83,12 @@ class TriviaTest extends TestCase
     {
         $user = User::factory()->create();
         [, $learning] = $this->enrollUserInCourse($user);
-        $this->completeConversationChapter($user, $learning);
+        $this->completeBeginnerChapter($user, $learning);
 
         return [$user, $learning];
     }
 
-    public function test_topics_are_browsable_but_playing_is_locked_until_conversation_chapter_is_complete(): void
+    public function test_topics_are_browsable_but_playing_is_locked_until_the_first_chapter_is_complete(): void
     {
         $user = User::factory()->create();
         [, $learning] = $this->enrollUserInCourse($user);
@@ -128,7 +135,7 @@ class TriviaTest extends TestCase
         $this->assertSame(['id', 'question', 'options'], array_keys($response->json('questions.0')));
     }
 
-    public function test_check_endpoint_grades_correctly_and_is_one_shot_per_question(): void
+    public function test_check_endpoint_grades_correctly_and_may_be_called_again(): void
     {
         [$user, $learning] = $this->makeUnlockedUser();
         $topic = $this->makeTopicWithQuestions($learning);
@@ -139,12 +146,17 @@ class TriviaTest extends TestCase
             ->assertOk()
             ->assertJson(['correct' => true]);
 
+        // Checking again is allowed and simply answers again. The per-question
+        // one-shot guard was removed deliberately: `check` is live feedback
+        // while the learner plays, `submit` re-grades authoritatively, and a
+        // topic can only be completed once, so there is nothing to farm.
         $this->actingAs($user)
             ->postJson("/api/trivia/topics/{$topic->key}/questions/{$question->id}/check", ['selectedIndex' => 1])
-            ->assertStatus(409);
+            ->assertOk()
+            ->assertJson(['correct' => false]);
     }
 
-    public function test_100_percent_awards_perfect_bonus_and_grants_infinite_hearts_even_on_repeat(): void
+    public function test_100_percent_awards_perfect_bonus_and_the_topic_cannot_be_retaken(): void
     {
         [$user, $learning] = $this->makeUnlockedUser();
         $topic = $this->makeTopicWithQuestions($learning);
@@ -168,14 +180,11 @@ class TriviaTest extends TestCase
         ]);
         $this->assertGreaterThan(0, $first->json('infiniteHeartsSecondsRemaining'));
 
-        $second = $this->actingAs($user)->postJson("/api/trivia/topics/{$topic->key}/submit", ['answers' => $answers]);
-        $second->assertOk()->assertJson([
-            'correctCount' => 2,
-            'gemsAwarded' => 0,
-            'xpAwarded' => 0,
-            'alreadyCompletedBefore' => true,
-            'infiniteHeartsGranted' => true,
-        ]);
+        // A topic is one-shot. Retaking it used to be allowed and simply pay
+        // nothing; it is now refused outright, so the reward cannot be farmed
+        // by replaying a topic whose answers you already know.
+        $this->actingAs($user)->postJson("/api/trivia/topics/{$topic->key}/submit", ['answers' => $answers])
+            ->assertStatus(403);
 
         $this->actingAs($user)->getJson('/api/trivia/topics')->assertOk()->assertJsonPath('topics.0.completed', true);
     }

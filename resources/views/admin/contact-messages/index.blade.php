@@ -5,6 +5,8 @@
 @section('content')
     <p class="mb-4 text-sm text-gray-500">Messages submitted through the public Contact Us form.</p>
 
+    <x-per-page :paginator="$messages" noun="messages" />
+
     <div class="bg-white rounded-lg shadow overflow-hidden">
         <table class="w-full text-left">
             <thead class="bg-gray-50 text-sm text-gray-500">

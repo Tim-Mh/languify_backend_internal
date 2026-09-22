@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\GemPurchase;
+use App\Support\PerPage;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -17,7 +18,7 @@ class GemPurchaseController extends Controller
             $query->where('status', $status);
         }
 
-        $purchases = (clone $query)->paginate(25)->withQueryString();
+        $purchases = (clone $query)->paginate(PerPage::resolve($request))->withQueryString();
 
         return view('admin.gem-purchases.index', [
             'purchases' => $purchases,

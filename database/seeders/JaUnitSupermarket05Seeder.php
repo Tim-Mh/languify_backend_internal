@@ -83,6 +83,9 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     'cheap',
                                 ],
                             ],
+                            'az' => ['sentence' => 'toyuq bahalı', 'correct' => ['toyuq', 'bahalı'], 'extra' => ['ucuz']],
+                            'ar' => ['sentence' => 'دجاج غالي', 'correct' => ['دجاج', 'غالي'], 'extra' => ['رخيص']],
+                            'ru' => ['sentence' => 'курица дорогой', 'correct' => ['курица', 'дорогой'], 'extra' => ['дешёвый']],
                             'es' => [
                                 'sentence' => 'El pollo es caro',
                                 'correct' => [
@@ -132,6 +135,7 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     '싼',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tavuk pahalı', 'correct' => ['tavuk', 'pahalı'], 'extra' => ['ucuz']],
                         ],
                     ],
                     'b' => [
@@ -152,6 +156,9 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     'expensive',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir ucuz toyuq', 'correct' => ['bir', 'ucuz', 'toyuq'], 'extra' => ['bahalı']],
+                            'ar' => ['sentence' => 'رخيص دجاج', 'correct' => ['رخيص', 'دجاج'], 'extra' => ['غالي']],
+                            'ru' => ['sentence' => 'дешёвый курица', 'correct' => ['дешёвый', 'курица'], 'extra' => ['дорогой']],
                             'es' => [
                                 'sentence' => 'Un pollo barato',
                                 'correct' => [
@@ -197,6 +204,7 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     '비싼',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ucuz bir tavuk', 'correct' => ['ucuz', 'bir', 'tavuk'], 'extra' => ['pahalı']],
                         ],
                     ],
                     'c' => [
@@ -220,6 +228,9 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     'expensive',
                                 ],
                             ],
+                            'az' => ['sentence' => 'ət ucuz', 'correct' => ['ət', 'ucuz'], 'extra' => ['bahalı']],
+                            'ar' => ['sentence' => 'لحم رخيص', 'correct' => ['لحم', 'رخيص'], 'extra' => ['غالي']],
+                            'ru' => ['sentence' => 'мясо дешёвый', 'correct' => ['мясо', 'дешёвый'], 'extra' => ['дорогой']],
                             'es' => [
                                 'sentence' => 'La carne es barata',
                                 'correct' => [
@@ -268,6 +279,7 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     '비싼',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'et ucuz', 'correct' => ['et', 'ucuz'], 'extra' => ['pahalı']],
                         ],
                     ],
                 ],
@@ -310,6 +322,9 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     'more',
                                 ],
                             ],
+                            'az' => ['sentence' => 'daha az ət', 'correct' => ['daha az', 'ət'], 'extra' => ['daha']],
+                            'ar' => ['sentence' => 'أقل لحم', 'correct' => ['أقل', 'لحم'], 'extra' => ['أكثر']],
+                            'ru' => ['sentence' => 'меньше мясо', 'correct' => ['меньше', 'мясо'], 'extra' => ['больше']],
                             'es' => [
                                 'sentence' => 'Menos carne',
                                 'correct' => [
@@ -353,6 +368,7 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     '더',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'daha az et', 'correct' => ['daha', 'az', 'et'], 'extra' => ['daha çok']],
                         ],
                     ],
                     'b' => [
@@ -373,6 +389,9 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     'less',
                                 ],
                             ],
+                            'az' => ['sentence' => 'daha balıq', 'correct' => ['daha', 'balıq'], 'extra' => ['daha az']],
+                            'ar' => ['sentence' => 'أكثر سمك', 'correct' => ['أكثر', 'سمك'], 'extra' => ['أقل']],
+                            'ru' => ['sentence' => 'больше рыба', 'correct' => ['больше', 'рыба'], 'extra' => ['меньше']],
                             'es' => [
                                 'sentence' => 'Más pescado',
                                 'correct' => [
@@ -415,6 +434,7 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     '덜',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'daha çok balık', 'correct' => ['daha', 'çok', 'balık'], 'extra' => ['daha az']],
                         ],
                     ],
                     'c' => [
@@ -441,6 +461,9 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     'chicken',
                                 ],
                             ],
+                            'az' => ['sentence' => 'daha az ət və daha balıq', 'correct' => ['daha az', 'ət', 'və', 'daha', 'balıq'], 'extra' => ['toyuq']],
+                            'ar' => ['sentence' => 'أقل لحم و أكثر سمك', 'correct' => ['أقل', 'لحم', 'و', 'أكثر', 'سمك'], 'extra' => ['دجاج']],
+                            'ru' => ['sentence' => 'меньше мясо и больше рыба', 'correct' => ['меньше', 'мясо', 'и', 'больше', 'рыба'], 'extra' => ['курица']],
                             'es' => [
                                 'sentence' => 'Menos carne y más pescado',
                                 'correct' => [
@@ -492,6 +515,7 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     '닭고기',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'daha az et ve daha çok balık', 'correct' => ['daha', 'az', 'et', 've', 'daha', 'çok', 'balık'], 'extra' => ['tavuk']],
                         ],
                     ],
                 ],
@@ -537,6 +561,9 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     'how many',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qiymət balıq', 'correct' => ['qiymət', 'balıq'], 'extra' => ['neçə']],
+                            'ar' => ['sentence' => 'سعر سمك', 'correct' => ['سعر', 'سمك'], 'extra' => ['كم']],
+                            'ru' => ['sentence' => 'цена рыба', 'correct' => ['цена', 'рыба'], 'extra' => ['сколько']],
                             'es' => [
                                 'sentence' => 'El precio del pescado',
                                 'correct' => [
@@ -586,6 +613,7 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     '몇 개',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'balığın fiyatı', 'correct' => ['balığın', 'fiyatı'], 'extra' => ['kaç']],
                         ],
                     ],
                     'b' => [
@@ -610,6 +638,9 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     'price',
                                 ],
                             ],
+                            'az' => ['sentence' => 'neçə üçün toyuq', 'correct' => ['neçə', 'üçün', 'toyuq'], 'extra' => ['qiymət']],
+                            'ar' => ['sentence' => 'كم لأجل دجاج', 'correct' => ['كم', 'لأجل', 'دجاج'], 'extra' => ['سعر']],
+                            'ru' => ['sentence' => 'сколько для курица', 'correct' => ['сколько', 'для', 'курица'], 'extra' => ['цена']],
                             'es' => [
                                 'sentence' => 'Cuánto por el pollo',
                                 'correct' => [
@@ -657,6 +688,7 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     '가격',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tavuk kaç lira', 'correct' => ['tavuk', 'kaç', 'lira'], 'extra' => ['fiyat']],
                         ],
                     ],
                     'c' => [
@@ -680,6 +712,9 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     'how many',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qiymət toyuq', 'correct' => ['qiymət', 'toyuq'], 'extra' => ['neçə']],
+                            'ar' => ['sentence' => 'سعر دجاج', 'correct' => ['سعر', 'دجاج'], 'extra' => ['كم']],
+                            'ru' => ['sentence' => 'цена курица', 'correct' => ['цена', 'курица'], 'extra' => ['сколько']],
                             'es' => [
                                 'sentence' => 'El precio del pollo',
                                 'correct' => [
@@ -729,6 +764,7 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     '몇 개',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tavuğun fiyatı', 'correct' => ['tavuğun', 'fiyatı'], 'extra' => ['kaç']],
                         ],
                     ],
                 ],
@@ -772,6 +808,9 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     'bag',
                                 ],
                             ],
+                            'az' => ['sentence' => 'daşımaq səbət', 'correct' => ['daşımaq', 'səbət'], 'extra' => ['torba']],
+                            'ar' => ['sentence' => 'الحمل سلة', 'correct' => ['الحمل', 'سلة'], 'extra' => ['كيس']],
+                            'ru' => ['sentence' => 'нести корзина', 'correct' => ['нести', 'корзина'], 'extra' => ['пакет']],
                             'es' => [
                                 'sentence' => 'Llevar la cesta',
                                 'correct' => [
@@ -818,6 +857,7 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     '봉투',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'sepeti taşımak', 'correct' => ['sepeti', 'taşımak'], 'extra' => ['poşet']],
                         ],
                     ],
                     'b' => [
@@ -843,6 +883,9 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     'to carry',
                                 ],
                             ],
+                            'az' => ['sentence' => 'ət içində bir torba', 'correct' => ['ət', 'içində', 'bir', 'torba'], 'extra' => ['daşımaq']],
+                            'ar' => ['sentence' => 'لحم في كيس', 'correct' => ['لحم', 'في', 'كيس'], 'extra' => ['الحمل']],
+                            'ru' => ['sentence' => 'мясо в пакет', 'correct' => ['мясо', 'в', 'пакет'], 'extra' => ['нести']],
                             'es' => [
                                 'sentence' => 'La carne en una bolsa',
                                 'correct' => [
@@ -893,6 +936,7 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     '나르다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'poşette et', 'correct' => ['poşette', 'et'], 'extra' => ['taşımak']],
                         ],
                     ],
                     'c' => [
@@ -916,6 +960,9 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     'basket',
                                 ],
                             ],
+                            'az' => ['sentence' => 'daşımaq bir ağır torba', 'correct' => ['daşımaq', 'bir', 'ağır', 'torba'], 'extra' => ['səbət']],
+                            'ar' => ['sentence' => 'الحمل ثقيل كيس', 'correct' => ['الحمل', 'ثقيل', 'كيس'], 'extra' => ['سلة']],
+                            'ru' => ['sentence' => 'нести тяжёлый пакет', 'correct' => ['нести', 'тяжёлый', 'пакет'], 'extra' => ['корзина']],
                             'es' => [
                                 'sentence' => 'Llevar una bolsa pesada',
                                 'correct' => [
@@ -963,6 +1010,7 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     '바구니',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ağır bir poşet taşımak', 'correct' => ['ağır', 'bir', 'poşet', 'taşımak'], 'extra' => ['sepet']],
                         ],
                     ],
                 ],
@@ -1011,6 +1059,9 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     'also',
                                 ],
                             ],
+                            'az' => ['sentence' => 'toyuq və düyü birlikdə', 'correct' => ['toyuq', 'və', 'düyü', 'birlikdə'], 'extra' => ['həmçinin']],
+                            'ar' => ['sentence' => 'دجاج و أرز معا', 'correct' => ['دجاج', 'و', 'أرز', 'معا'], 'extra' => ['أيضا']],
+                            'ru' => ['sentence' => 'курица и рис вместе', 'correct' => ['курица', 'и', 'рис', 'вместе'], 'extra' => ['тоже']],
                             'es' => [
                                 'sentence' => 'El pollo y el arroz juntos',
                                 'correct' => [
@@ -1064,6 +1115,7 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     '또한',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'tavuk ve pirinç birlikte', 'correct' => ['tavuk', 've', 'pirinç', 'birlikte'], 'extra' => ['de']],
                         ],
                     ],
                     'b' => [
@@ -1084,6 +1136,9 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     'together',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir az düyü həmçinin', 'correct' => ['bir az', 'düyü', 'həmçinin'], 'extra' => ['birlikdə']],
+                            'ar' => ['sentence' => 'بعض أرز أيضا', 'correct' => ['بعض', 'أرز', 'أيضا'], 'extra' => ['معا']],
+                            'ru' => ['sentence' => 'немного рис тоже', 'correct' => ['немного', 'рис', 'тоже'], 'extra' => ['вместе']],
                             'es' => [
                                 'sentence' => 'Arroz también',
                                 'correct' => [
@@ -1128,6 +1183,7 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     '함께',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'biraz pirinç de', 'correct' => ['biraz', 'pirinç', 'de'], 'extra' => ['birlikte']],
                         ],
                     ],
                     'c' => [
@@ -1151,6 +1207,9 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     'together',
                                 ],
                             ],
+                            'az' => ['sentence' => 'toyuq ilə düyü', 'correct' => ['toyuq', 'ilə', 'düyü'], 'extra' => ['birlikdə']],
+                            'ar' => ['sentence' => 'دجاج مع أرز', 'correct' => ['دجاج', 'مع', 'أرز'], 'extra' => ['معا']],
+                            'ru' => ['sentence' => 'курица с рис', 'correct' => ['курица', 'с', 'рис'], 'extra' => ['вместе']],
                             'es' => [
                                 'sentence' => 'El pollo con el arroz',
                                 'correct' => [
@@ -1201,6 +1260,7 @@ class JaUnitSupermarket05Seeder extends Seeder
                                     '함께',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'pirinçli tavuk', 'correct' => ['pirinçli', 'tavuk'], 'extra' => ['birlikte']],
                         ],
                     ],
                 ],

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Language;
 use App\Models\TriviaTopic;
+use App\Support\PerPage;
 use App\Support\Sluggable;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -25,11 +26,11 @@ class TriviaTopicController extends Controller
         'landmark' => '🏛️ History',
     ];
 
-    public function index(): View
+    public function index(Request $request): View
     {
         return view('admin.trivia-topics.index', [
             'topics' => TriviaTopic::with('language')->withCount('questions')
-                ->orderBy('language_id')->orderBy('order_number')->paginate(25),
+                ->orderBy('language_id')->orderBy('order_number')->paginate(PerPage::resolve($request))->withQueryString(),
         ]);
     }
 

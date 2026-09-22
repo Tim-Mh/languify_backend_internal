@@ -78,6 +78,9 @@ class EsUnitConversation10Seeder extends Seeder
                                     'tea',
                                 ],
                             ],
+                            'az' => ['sentence' => 'daha qəhvə', 'correct' => ['daha', 'qəhvə'], 'extra' => ['daha az', 'çay']],
+                            'ar' => ['sentence' => 'أكثر قهوة', 'correct' => ['أكثر', 'قهوة'], 'extra' => ['أقل', 'شاي']],
+                            'ru' => ['sentence' => 'больше кофе', 'correct' => ['больше', 'кофе'], 'extra' => ['меньше', 'чай']],
                             'de' => [
                                 'sentence' => 'Mehr Kaffee',
                                 'correct' => [
@@ -120,6 +123,7 @@ class EsUnitConversation10Seeder extends Seeder
                                     '덜',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'daha çok kahve', 'correct' => ['daha', 'çok', 'kahve'], 'extra' => ['daha az', 'çay']],
                         ],
                     ],
                     'b' => [
@@ -140,6 +144,9 @@ class EsUnitConversation10Seeder extends Seeder
                                     'coffee',
                                 ],
                             ],
+                            'az' => ['sentence' => 'daha az çay', 'correct' => ['daha az', 'çay'], 'extra' => ['daha', 'qəhvə']],
+                            'ar' => ['sentence' => 'أقل شاي', 'correct' => ['أقل', 'شاي'], 'extra' => ['أكثر', 'قهوة']],
+                            'ru' => ['sentence' => 'меньше чай', 'correct' => ['меньше', 'чай'], 'extra' => ['больше', 'кофе']],
                             'de' => [
                                 'sentence' => 'Weniger Tee',
                                 'correct' => [
@@ -183,6 +190,7 @@ class EsUnitConversation10Seeder extends Seeder
                                     '더',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'daha az çay', 'correct' => ['daha', 'az', 'çay'], 'extra' => ['daha çok', 'kahve']],
                         ],
                     ],
                     'c' => [
@@ -208,6 +216,9 @@ class EsUnitConversation10Seeder extends Seeder
                                     'same',
                                 ],
                             ],
+                            'az' => ['sentence' => 'daha qəhvə və daha az çay', 'correct' => ['daha', 'qəhvə', 'və', 'daha az', 'çay'], 'extra' => ['eyni']],
+                            'ar' => ['sentence' => 'أكثر قهوة و أقل شاي', 'correct' => ['أكثر', 'قهوة', 'و', 'أقل', 'شاي'], 'extra' => ['نفسه']],
+                            'ru' => ['sentence' => 'больше кофе и меньше чай', 'correct' => ['больше', 'кофе', 'и', 'меньше', 'чай'], 'extra' => ['такой же']],
                             'de' => [
                                 'sentence' => 'Mehr Kaffee und weniger Tee',
                                 'correct' => [
@@ -261,6 +272,7 @@ class EsUnitConversation10Seeder extends Seeder
                                     '같은',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'daha çok kahve ve daha az çay', 'correct' => ['daha', 'çok', 'kahve', 've', 'daha', 'az', 'çay'], 'extra' => ['aynı']],
                         ],
                     ],
                 ],
@@ -308,6 +320,9 @@ class EsUnitConversation10Seeder extends Seeder
                                     'same',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir pişik xoşuma gəlir bir it', 'correct' => ['bir', 'pişik', 'xoşuma gəlir', 'bir', 'it'], 'extra' => ['eyni']],
+                            'ar' => ['sentence' => 'قط يعجبني كلب', 'correct' => ['قط', 'يعجبني', 'كلب'], 'extra' => ['نفسه']],
+                            'ru' => ['sentence' => 'кот нравится собака', 'correct' => ['кот', 'нравится', 'собака'], 'extra' => ['такой же']],
                             'de' => [
                                 'sentence' => 'Eine Katze wie ein Hund',
                                 'correct' => [
@@ -357,6 +372,7 @@ class EsUnitConversation10Seeder extends Seeder
                                     '같은',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir köpek gibi bir kedi', 'correct' => ['bir', 'köpek', 'gibi', 'bir', 'kedi'], 'extra' => ['aynı']],
                         ],
                     ],
                     'b' => [
@@ -379,6 +395,9 @@ class EsUnitConversation10Seeder extends Seeder
                                     'dog',
                                 ],
                             ],
+                            'az' => ['sentence' => 'eyni pişik', 'correct' => ['eyni', 'pişik'], 'extra' => ['xoşuma gəlir', 'it']],
+                            'ar' => ['sentence' => 'نفسه قط', 'correct' => ['نفسه', 'قط'], 'extra' => ['يعجبني', 'كلب']],
+                            'ru' => ['sentence' => 'такой же кот', 'correct' => ['такой же', 'кот'], 'extra' => ['нравится', 'собака']],
                             'de' => [
                                 'sentence' => 'Die gleiche Katze',
                                 'correct' => [
@@ -423,6 +442,7 @@ class EsUnitConversation10Seeder extends Seeder
                                     '처럼',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'aynı kedi', 'correct' => ['aynı', 'kedi'], 'extra' => ['gibi', 'köpek']],
                         ],
                     ],
                     'c' => [
@@ -445,6 +465,9 @@ class EsUnitConversation10Seeder extends Seeder
                                     'cat',
                                 ],
                             ],
+                            'az' => ['sentence' => 'eyni it', 'correct' => ['eyni', 'it'], 'extra' => ['xoşuma gəlir', 'pişik']],
+                            'ar' => ['sentence' => 'نفسه كلب', 'correct' => ['نفسه', 'كلب'], 'extra' => ['يعجبني', 'قط']],
+                            'ru' => ['sentence' => 'такой же собака', 'correct' => ['такой же', 'собака'], 'extra' => ['нравится', 'кот']],
                             'de' => [
                                 'sentence' => 'Der gleiche Hund',
                                 'correct' => [
@@ -489,6 +512,7 @@ class EsUnitConversation10Seeder extends Seeder
                                     '처럼',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'aynı köpek', 'correct' => ['aynı', 'köpek'], 'extra' => ['gibi', 'kedi']],
                         ],
                     ],
                 ],
@@ -535,6 +559,9 @@ class EsUnitConversation10Seeder extends Seeder
                                     'house',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bu kitab daha yaxşı', 'correct' => ['bu', 'kitab', 'daha yaxşı'], 'extra' => ['daha pis', 'ev']],
+                            'ar' => ['sentence' => 'هذا كتاب أحسن', 'correct' => ['هذا', 'كتاب', 'أحسن'], 'extra' => ['أسوأ', 'بيت']],
+                            'ru' => ['sentence' => 'это книга лучше', 'correct' => ['это', 'книга', 'лучше'], 'extra' => ['хуже', 'дом']],
                             'de' => [
                                 'sentence' => 'Dieses Buch ist besser',
                                 'correct' => [
@@ -587,6 +614,7 @@ class EsUnitConversation10Seeder extends Seeder
                                     '더 나쁜',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bu kitap daha iyi', 'correct' => ['bu', 'kitap', 'daha', 'iyi'], 'extra' => ['daha kötü', 'ev']],
                         ],
                     ],
                     'b' => [
@@ -611,6 +639,9 @@ class EsUnitConversation10Seeder extends Seeder
                                     'book',
                                 ],
                             ],
+                            'az' => ['sentence' => 'o ev daha pis', 'correct' => ['o', 'ev', 'daha pis'], 'extra' => ['daha yaxşı', 'kitab']],
+                            'ar' => ['sentence' => 'ذلك بيت أسوأ', 'correct' => ['ذلك', 'بيت', 'أسوأ'], 'extra' => ['أحسن', 'كتاب']],
+                            'ru' => ['sentence' => 'тот дом хуже', 'correct' => ['тот', 'дом', 'хуже'], 'extra' => ['лучше', 'книга']],
                             'de' => [
                                 'sentence' => 'Jenes Haus ist schlechter',
                                 'correct' => [
@@ -663,6 +694,7 @@ class EsUnitConversation10Seeder extends Seeder
                                     '더 좋은',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'o ev daha kötü', 'correct' => ['o', 'ev', 'daha', 'kötü'], 'extra' => ['daha iyi', 'kitap']],
                         ],
                     ],
                     'c' => [
@@ -684,6 +716,9 @@ class EsUnitConversation10Seeder extends Seeder
                                     'book',
                                 ],
                             ],
+                            'az' => ['sentence' => 'daha yaxşı və ya daha pis', 'correct' => ['daha yaxşı', 'və ya', 'daha pis'], 'extra' => ['kitab']],
+                            'ar' => ['sentence' => 'أحسن أو أسوأ', 'correct' => ['أحسن', 'أو', 'أسوأ'], 'extra' => ['كتاب']],
+                            'ru' => ['sentence' => 'лучше или хуже', 'correct' => ['лучше', 'или', 'хуже'], 'extra' => ['книга']],
                             'de' => [
                                 'sentence' => 'Besser oder schlechter',
                                 'correct' => [
@@ -729,6 +764,7 @@ class EsUnitConversation10Seeder extends Seeder
                                     '책',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'daha iyi veya daha kötü', 'correct' => ['daha', 'iyi', 'veya', 'daha', 'kötü'], 'extra' => ['kitap']],
                         ],
                     ],
                 ],
@@ -771,6 +807,9 @@ class EsUnitConversation10Seeder extends Seeder
                                     'book',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qədər qəhvə', 'correct' => ['qədər', 'qəhvə'], 'extra' => ['xüsusilə', 'kitab']],
+                            'ar' => ['sentence' => 'بقدر قهوة', 'correct' => ['بقدر', 'قهوة'], 'extra' => ['خاصة', 'كتاب']],
+                            'ru' => ['sentence' => 'столько же кофе', 'correct' => ['столько же', 'кофе'], 'extra' => ['особенно', 'книга']],
                             'de' => [
                                 'sentence' => 'Genauso viel Kaffee',
                                 'correct' => [
@@ -814,6 +853,7 @@ class EsUnitConversation10Seeder extends Seeder
                                     '특히',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bu kadar kahve', 'correct' => ['bu', 'kadar', 'kahve'], 'extra' => ['özellikle', 'kitap']],
                         ],
                     ],
                     'b' => [
@@ -837,6 +877,9 @@ class EsUnitConversation10Seeder extends Seeder
                                     'coffee',
                                 ],
                             ],
+                            'az' => ['sentence' => 'xüsusilə kitab', 'correct' => ['xüsusilə', 'kitab'], 'extra' => ['qədər', 'qəhvə']],
+                            'ar' => ['sentence' => 'خاصة كتاب', 'correct' => ['خاصة', 'كتاب'], 'extra' => ['بقدر', 'قهوة']],
+                            'ru' => ['sentence' => 'особенно книга', 'correct' => ['особенно', 'книга'], 'extra' => ['столько же', 'кофе']],
                             'de' => [
                                 'sentence' => 'Besonders das Buch',
                                 'correct' => [
@@ -883,6 +926,7 @@ class EsUnitConversation10Seeder extends Seeder
                                     '그만큼',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'özellikle kitap', 'correct' => ['özellikle', 'kitap'], 'extra' => ['bu kadar', 'kahve']],
                         ],
                     ],
                     'c' => [
@@ -906,6 +950,9 @@ class EsUnitConversation10Seeder extends Seeder
                                     'especially',
                                 ],
                             ],
+                            'az' => ['sentence' => 'qədər kimi qəhvə', 'correct' => ['qədər', 'kimi', 'qəhvə'], 'extra' => ['xüsusilə']],
+                            'ar' => ['sentence' => 'بقدر كما قهوة', 'correct' => ['بقدر', 'كما', 'قهوة'], 'extra' => ['خاصة']],
+                            'ru' => ['sentence' => 'столько же как кофе', 'correct' => ['столько же', 'как', 'кофе'], 'extra' => ['особенно']],
                             'de' => [
                                 'sentence' => 'Genauso viel wie der Kaffee',
                                 'correct' => [
@@ -950,6 +997,7 @@ class EsUnitConversation10Seeder extends Seeder
                                     '특히',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kahve kadar', 'correct' => ['kahve', 'kadar'], 'extra' => ['özellikle']],
                         ],
                     ],
                 ],
@@ -996,6 +1044,9 @@ class EsUnitConversation10Seeder extends Seeder
                                     'I prefer',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir pişik daha yaxşı', 'correct' => ['bir', 'pişik', 'daha yaxşı'], 'extra' => ['it', 'üstünlük verirəm']],
+                            'ar' => ['sentence' => 'قط أحسن', 'correct' => ['قط', 'أحسن'], 'extra' => ['كلب', 'أفضل']],
+                            'ru' => ['sentence' => 'кот лучше', 'correct' => ['кот', 'лучше'], 'extra' => ['собака', 'я', 'предпочитаю']],
                             'de' => [
                                 'sentence' => 'Eine Katze ist besser',
                                 'correct' => [
@@ -1046,6 +1097,7 @@ class EsUnitConversation10Seeder extends Seeder
                                     '개',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kedi daha iyi', 'correct' => ['bir', 'kedi', 'daha', 'iyi'], 'extra' => ['köpek', 'tercih ederim']],
                         ],
                     ],
                     'b' => [
@@ -1068,6 +1120,9 @@ class EsUnitConversation10Seeder extends Seeder
                                     'cat',
                                 ],
                             ],
+                            'az' => ['sentence' => 'üstünlük verirəm it', 'correct' => ['üstünlük verirəm', 'it'], 'extra' => ['daha yaxşı', 'pişik']],
+                            'ar' => ['sentence' => 'أفضل كلب', 'correct' => ['أفضل', 'كلب'], 'extra' => ['أحسن', 'قط']],
+                            'ru' => ['sentence' => 'я предпочитаю собака', 'correct' => ['я', 'предпочитаю', 'собака'], 'extra' => ['лучше', 'кот']],
                             'de' => [
                                 'sentence' => 'Ich bevorzuge den Hund',
                                 'correct' => [
@@ -1116,6 +1171,7 @@ class EsUnitConversation10Seeder extends Seeder
                                     '더 좋은',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'köpeği tercih ederim', 'correct' => ['köpeği', 'tercih', 'ederim'], 'extra' => ['daha iyi', 'kedi']],
                         ],
                     ],
                     'c' => [
@@ -1145,6 +1201,9 @@ class EsUnitConversation10Seeder extends Seeder
                                     'I prefer',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir pişik daha yaxşı dan bir it', 'correct' => ['bir', 'pişik', 'daha yaxşı', 'dan', 'bir', 'it'], 'extra' => ['üstünlük verirəm']],
+                            'ar' => ['sentence' => 'قط أحسن من كلب', 'correct' => ['قط', 'أحسن', 'من', 'كلب'], 'extra' => ['أفضل']],
+                            'ru' => ['sentence' => 'кот лучше чем собака', 'correct' => ['кот', 'лучше', 'чем', 'собака'], 'extra' => ['я', 'предпочитаю']],
                             'de' => [
                                 'sentence' => 'Eine Katze ist besser als ein Hund',
                                 'correct' => [
@@ -1200,6 +1259,7 @@ class EsUnitConversation10Seeder extends Seeder
                                     '나는 선호한다',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir kedi bir köpekten daha iyi', 'correct' => ['bir', 'kedi', 'bir', 'köpekten', 'daha', 'iyi'], 'extra' => ['tercih ederim']],
                         ],
                     ],
                 ],

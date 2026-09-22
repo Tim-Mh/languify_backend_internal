@@ -19,6 +19,8 @@
         </div>
     </form>
 
+    <x-per-page :paginator="$purchases" noun="purchases" />
+
     <div class="bg-white rounded-lg shadow overflow-hidden">
         <table class="w-full text-left">
             <thead class="bg-gray-50 text-sm text-gray-500">

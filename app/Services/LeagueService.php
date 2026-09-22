@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\UserGameState;
 use App\Models\UserLeague;
 use App\Notifications\LeagueResultNotification;
+use App\Support\GemLedger;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
@@ -42,6 +43,19 @@ class LeagueService
     public const POINTS_PER_RANK_STEP = 2;
 
     public const PROMOTION_THRESHOLD = 100;
+
+    /**
+     * Paid to anyone who finishes a week having GAINED league points,
+     * which is the top half of the cohort.
+     *
+     * Deliberately flat rather than scaled by rank: the point is to pay
+     * for turning up and competing, and a sliding scale would hand the
+     * same learner a different answer each week for the same effort.
+     * Losing points pays nothing -- not a penalty, just no reward.
+     *
+     * Separate from, and on top of, the per-tier promotion reward.
+     */
+    public const WEEKLY_REWARD_GEMS = 10;
 
     public function currentWeekStart(): Carbon
     {
@@ -106,18 +120,55 @@ class LeagueService
 
         $lowestTierId = LeagueTier::orderBy('order_number')->value('id');
         $weekStart = $this->currentWeekStart();
-
-        $cohortNumber = (int) (UserLeague::where('league_tier_id', $lowestTierId)
-            ->where('week_start_date', $weekStart)
-            ->max('cohort_group_number') ?? 1);
+        $totalXp = (int) (UserGameState::where('user_id', $user->id)->value('total_xp') ?? 0);
 
         return UserLeague::create([
             'user_id' => $user->id,
             'league_tier_id' => $lowestTierId,
             'league_points' => 0,
-            'cohort_group_number' => $cohortNumber,
+            'cohort_group_number' => $this->cohortForJoiner($lowestTierId, $weekStart, $totalXp),
             'week_start_date' => $weekStart,
         ]);
+    }
+
+    /**
+     * Which cohort a mid-week joiner belongs in.
+     *
+     * Two rules, in order. Cohorts already holding COHORT_SIZE people are
+     * skipped, so a board never shows more than 30 names — previously every
+     * joiner was appended to the highest-numbered cohort regardless of how
+     * full it was, so a launch week could put hundreds of people on one
+     * board. Among the cohorts with room, the one whose members sit closest
+     * in total XP wins, which is the same similar-against-similar grouping
+     * rebucketTier() applies to everybody every Monday.
+     *
+     * Two people enrolling in the same instant can both pick the same
+     * near-full cohort and take it one over; that is harmless and the
+     * Monday re-bucket squares it up.
+     */
+    private function cohortForJoiner(int $tierId, Carbon $weekStart, int $totalXp): int
+    {
+        $cohorts = UserLeague::where('league_tier_id', $tierId)
+            ->where('week_start_date', $weekStart)
+            ->join('user_game_states', 'user_game_states.user_id', '=', 'user_leagues.user_id')
+            ->groupBy('user_leagues.cohort_group_number')
+            ->selectRaw('user_leagues.cohort_group_number as number')
+            ->selectRaw('count(*) as members')
+            ->selectRaw('avg(user_game_states.total_xp) as avg_xp')
+            ->get();
+
+        $withRoom = $cohorts->filter(fn ($c) => (int) $c->members < self::COHORT_SIZE);
+
+        // Everything is full (or this is the first member of the tier): open
+        // the next board rather than overfilling one that is already at 30.
+        if ($withRoom->isEmpty()) {
+            return ((int) $cohorts->max('number')) + 1;
+        }
+
+        return (int) $withRoom
+            ->sortBy(fn ($c) => abs((float) $c->avg_xp - $totalXp))
+            ->first()
+            ->number;
     }
 
     /**
@@ -196,6 +247,9 @@ class LeagueService
         $tierMoves = [];
         $pointsUpdates = [];
         $tierChangeNotices = [];
+        // Per-member record of how the week actually went, handed to the
+        // client once so it can show a result popup. Keyed by user id.
+        $weeklyResults = [];
         $removeUserIds = [];   // members who earned 0 XP this week -> dropped
         $summary = [];
 
@@ -239,6 +293,20 @@ class LeagueService
                     $delta = $this->pointsDeltaForRank($rank, $size);
                     $newBalance = $member->league_points + $delta;
 
+                    // A week is worth paying for when it gained points, i.e.
+                    // the learner finished in the top half. A negative or flat
+                    // week earns nothing rather than costing anything.
+                    $weeklyResults[$member->user_id] = [
+                        'rank' => $rank,
+                        // Recorded now, because Phase C re-buckets every tier
+                        // into fresh cohorts and the live size then belongs to
+                        // a different week and different people.
+                        'size' => $size,
+                        'points' => $delta,
+                        'xp' => (int) $member->weekly_league_xp,
+                        'gems' => $delta > 0 ? self::WEEKLY_REWARD_GEMS : 0,
+                    ];
+
                     if ($newBalance >= self::PROMOTION_THRESHOLD) {
                         $tierMoves[$member->user_id] = $nextTier?->id ?? $tier->id;
                         $pointsUpdates[$member->user_id] = $nextTier ? 0 : min($newBalance, self::PROMOTION_THRESHOLD - 1);
@@ -276,9 +344,9 @@ class LeagueService
         $tierRewards = $tiers->keyBy('id')->map(fn ($t) => ['gems' => (int) $t->promotion_gems, 'xp' => (int) $t->promotion_xp]);
 
         // Phase B: apply moves + points + reset weekly XP, one locked row at a time.
-        UserLeague::query()->orderBy('id')->chunkById(200, function ($chunk) use ($tierMoves, $pointsUpdates, $tierChangeNotices, $newWeekStart, $tierRewards) {
+        UserLeague::query()->orderBy('id')->chunkById(200, function ($chunk) use ($tierMoves, $pointsUpdates, $tierChangeNotices, $newWeekStart, $tierRewards, $weeklyResults) {
             foreach ($chunk as $row) {
-                DB::transaction(function () use ($row, $tierMoves, $pointsUpdates, $tierChangeNotices, $newWeekStart, $tierRewards) {
+                DB::transaction(function () use ($row, $tierMoves, $pointsUpdates, $tierChangeNotices, $newWeekStart, $tierRewards, $weeklyResults) {
                     $league = UserLeague::whereKey($row->id)->lockForUpdate()->first();
                     $league->league_tier_id = $tierMoves[$league->user_id] ?? $league->league_tier_id;
                     $league->league_points = $pointsUpdates[$league->user_id] ?? $league->league_points;
@@ -286,6 +354,16 @@ class LeagueService
                     // user skips checking the leaderboard across two consecutive
                     // rollovers, they see only the latest change, not a queue.
                     $league->pending_tier_change = $tierChangeNotices[$league->user_id] ?? null;
+
+                    // Same one-shot contract as the tier notice above: written
+                    // here, read and cleared by the leaderboard screen.
+                    $result = $weeklyResults[$league->user_id] ?? null;
+                    $league->pending_result_rank = $result['rank'] ?? null;
+                    $league->pending_result_size = $result['size'] ?? null;
+                    $league->pending_result_points = $result['points'] ?? null;
+                    $league->pending_result_xp = $result['xp'] ?? null;
+                    $league->pending_result_gems = $result['gems'] ?? null;
+
                     $league->week_start_date = $newWeekStart;
                     $league->save();
 
@@ -297,10 +375,16 @@ class LeagueService
                         if (($tierChangeNotices[$league->user_id] ?? null) === 'promoted') {
                             $reward = $tierRewards[$league->league_tier_id] ?? null;
                             if ($reward) {
-                                $state->gems += $reward['gems'];
+                                GemLedger::apply($state, $reward['gems'], 'league.promotion');
                                 $state->total_xp += $reward['xp'];
                             }
                         }
+
+                        // Paid for a positive week, on top of any promotion
+                        // reward above. Credited from the same figure the popup
+                        // reports, so what the learner is told and what lands in
+                        // their balance cannot drift apart.
+                        GemLedger::apply($state, (int) ($weeklyResults[$league->user_id]['gems'] ?? 0), 'league.weekly');
 
                         $state->save();
                     }

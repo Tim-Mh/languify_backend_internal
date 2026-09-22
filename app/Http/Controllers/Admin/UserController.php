@@ -7,6 +7,8 @@ use App\Models\Badge;
 use App\Models\GemPurchase;
 use App\Models\User;
 use App\Models\UserGameState;
+use App\Support\GemLedger;
+use App\Support\PerPage;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,7 +21,13 @@ class UserController extends Controller
 
     public function index(Request $request): View
     {
-        $query = User::query()->with(['nativeLanguage', 'learningLanguage']);
+        // Learners only. Admin accounts are staff rather than customers, and
+        // counting them here makes "how many users do we have" wrong by the
+        // size of the team. role is a non-nullable enum, so this is exact.
+        //
+        // No eager-loads: the list shows name, email, verification, timezone
+        // and join date, none of which touch a relation.
+        $query = User::where('role', '!=', 'admin');
 
         if ($search = trim((string) $request->query('search', ''))) {
             $query->where(function ($q) use ($search) {
@@ -28,16 +36,11 @@ class UserController extends Controller
             });
         }
 
-        if ($role = $request->query('role')) {
-            $query->where('role', $role);
-        }
-
-        $users = $query->orderByDesc('created_at')->paginate(25)->withQueryString();
+        $users = $query->orderByDesc('created_at')->paginate(PerPage::resolve($request))->withQueryString();
 
         return view('admin.users.index', [
             'users' => $users,
             'search' => $search ?? '',
-            'role' => $role,
         ]);
     }
 
@@ -153,7 +156,7 @@ class UserController extends Controller
             UserGameState::firstOrCreate(['user_id' => $user->id]);
             $state = UserGameState::where('user_id', $user->id)->lockForUpdate()->firstOrFail();
 
-            $state->gems = max(0, $state->gems + (int) ($data['gems_delta'] ?? 0));
+            GemLedger::apply($state, (int) ($data['gems_delta'] ?? 0), 'admin.adjustment');
             $state->hearts = max(0, min(self::MAX_HEARTS, $state->hearts + (int) ($data['hearts_delta'] ?? 0)));
             $state->total_xp = max(0, $state->total_xp + (int) ($data['xp_delta'] ?? 0));
             $state->save();

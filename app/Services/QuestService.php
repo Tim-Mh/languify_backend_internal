@@ -8,6 +8,7 @@ use App\Models\UserDailyQuest;
 use App\Models\UserGameState;
 use App\Models\UserLessonCompletion;
 use App\Models\UserUnitCompletion;
+use App\Support\GemLedger;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
@@ -211,7 +212,7 @@ class QuestService
 
             $gemsAwarded = $this->progress->applyGemsBonus($user, $gemsReward);
 
-            $state->gems += $gemsAwarded;
+            GemLedger::apply($state, $gemsAwarded, 'quest.claim');
             $state->total_xp += $xpReward;
             $state->today_xp += $xpReward;
             // Quest XP counts toward the weekly league standings, like every

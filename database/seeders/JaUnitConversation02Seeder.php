@@ -79,6 +79,9 @@ class JaUnitConversation02Seeder extends Seeder
                                     'mother',
                                 ],
                             ],
+                            'az' => ['sentence' => 'necəsən dost', 'correct' => ['necəsən', 'dost'], 'extra' => ['ana']],
+                            'ar' => ['sentence' => 'كيف حالك صديق', 'correct' => ['كيف حالك', 'صديق'], 'extra' => ['أم']],
+                            'ru' => ['sentence' => 'как дела друг', 'correct' => ['как дела', 'друг'], 'extra' => ['мама']],
                             'es' => [
                                 'sentence' => 'Cómo estás, amigo',
                                 'correct' => [
@@ -123,6 +126,7 @@ class JaUnitConversation02Seeder extends Seeder
                                     '어머니',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'nasılsın arkadaşım', 'correct' => ['nasılsın', 'arkadaşım'], 'extra' => ['anne']],
                         ],
                     ],
                     'b' => [
@@ -144,6 +148,9 @@ class JaUnitConversation02Seeder extends Seeder
                                     'how are you',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mən yaxşıyam', 'correct' => ['mən', 'yaxşıyam'], 'extra' => ['necəsən']],
+                            'ar' => ['sentence' => 'أنا بخير', 'correct' => ['أنا', 'بخير'], 'extra' => ['كيف حالك']],
+                            'ru' => ['sentence' => 'я хорошо', 'correct' => ['я', 'хорошо'], 'extra' => ['как дела']],
                             'es' => [
                                 'sentence' => 'Estoy bien',
                                 'correct' => [
@@ -186,6 +193,7 @@ class JaUnitConversation02Seeder extends Seeder
                                     '어떻게 지내세요',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'ben iyiyim', 'correct' => ['ben', 'iyiyim'], 'extra' => ['nasılsın']],
                         ],
                     ],
                     'c' => [
@@ -210,6 +218,9 @@ class JaUnitConversation02Seeder extends Seeder
                                     'friend',
                                 ],
                             ],
+                            'az' => ['sentence' => 'mənim ana yaxşıyam', 'correct' => ['mənim', 'ana', 'yaxşıyam'], 'extra' => ['dost']],
+                            'ar' => ['sentence' => 'أم بخير', 'correct' => ['أم', 'بخير'], 'extra' => ['صديق']],
+                            'ru' => ['sentence' => 'мой мама хорошо', 'correct' => ['мой', 'мама', 'хорошо'], 'extra' => ['друг']],
                             'es' => [
                                 'sentence' => 'Mi madre está bien',
                                 'correct' => [
@@ -258,6 +269,7 @@ class JaUnitConversation02Seeder extends Seeder
                                     '친구',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'annem iyi', 'correct' => ['annem', 'iyi'], 'extra' => ['arkadaş']],
                         ],
                     ],
                 ],
@@ -302,6 +314,9 @@ class JaUnitConversation02Seeder extends Seeder
                                     'which',
                                 ],
                             ],
+                            'az' => ['sentence' => 'harada mağaza', 'correct' => ['harada', 'mağaza'], 'extra' => ['hansı']],
+                            'ar' => ['sentence' => 'أين متجر', 'correct' => ['أين', 'متجر'], 'extra' => ['أي']],
+                            'ru' => ['sentence' => 'где магазин', 'correct' => ['где', 'магазин'], 'extra' => ['какой']],
                             'es' => [
                                 'sentence' => 'Dónde está la tienda',
                                 'correct' => [
@@ -351,6 +366,7 @@ class JaUnitConversation02Seeder extends Seeder
                                     '어느',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'dükkan nerede', 'correct' => ['dükkan', 'nerede'], 'extra' => ['hangi']],
                         ],
                     ],
                     'b' => [
@@ -370,6 +386,9 @@ class JaUnitConversation02Seeder extends Seeder
                                     'where',
                                 ],
                             ],
+                            'az' => ['sentence' => 'hansı park', 'correct' => ['hansı', 'park'], 'extra' => ['harada']],
+                            'ar' => ['sentence' => 'أي حديقة', 'correct' => ['أي', 'حديقة'], 'extra' => ['أين']],
+                            'ru' => ['sentence' => 'какой парк', 'correct' => ['какой', 'парк'], 'extra' => ['где']],
                             'es' => [
                                 'sentence' => 'Qué parque',
                                 'correct' => [
@@ -413,6 +432,7 @@ class JaUnitConversation02Seeder extends Seeder
                                     '어디',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'hangi park', 'correct' => ['hangi', 'park'], 'extra' => ['nerede']],
                         ],
                     ],
                     'c' => [
@@ -435,6 +455,9 @@ class JaUnitConversation02Seeder extends Seeder
                                     'which',
                                 ],
                             ],
+                            'az' => ['sentence' => 'harada park', 'correct' => ['harada', 'park'], 'extra' => ['hansı']],
+                            'ar' => ['sentence' => 'أين حديقة', 'correct' => ['أين', 'حديقة'], 'extra' => ['أي']],
+                            'ru' => ['sentence' => 'где парк', 'correct' => ['где', 'парк'], 'extra' => ['какой']],
                             'es' => [
                                 'sentence' => 'Dónde está el parque',
                                 'correct' => [
@@ -481,6 +504,7 @@ class JaUnitConversation02Seeder extends Seeder
                                     '어느',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'park nerede', 'correct' => ['park', 'nerede'], 'extra' => ['hangi']],
                         ],
                     ],
                 ],
@@ -524,6 +548,9 @@ class JaUnitConversation02Seeder extends Seeder
                                     'more',
                                 ],
                             ],
+                            'az' => ['sentence' => 'neçə kitablar', 'correct' => ['neçə', 'kitablar'], 'extra' => ['daha']],
+                            'ar' => ['sentence' => 'كم كتب', 'correct' => ['كم', 'كتب'], 'extra' => ['أكثر']],
+                            'ru' => ['sentence' => 'сколько книги', 'correct' => ['сколько', 'книги'], 'extra' => ['больше']],
                             'es' => [
                                 'sentence' => 'Cuántos libros',
                                 'correct' => [
@@ -568,6 +595,7 @@ class JaUnitConversation02Seeder extends Seeder
                                     '더',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'kaç kitap', 'correct' => ['kaç', 'kitap'], 'extra' => ['daha çok']],
                         ],
                     ],
                     'b' => [
@@ -591,6 +619,9 @@ class JaUnitConversation02Seeder extends Seeder
                                     'how many',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bir alma və bir kitab', 'correct' => ['bir', 'alma', 'və', 'bir', 'kitab'], 'extra' => ['neçə']],
+                            'ar' => ['sentence' => 'تفاحة و كتاب', 'correct' => ['تفاحة', 'و', 'كتاب'], 'extra' => ['كم']],
+                            'ru' => ['sentence' => 'яблоко и книга', 'correct' => ['яблоко', 'и', 'книга'], 'extra' => ['сколько']],
                             'es' => [
                                 'sentence' => 'Una manzana y un libro',
                                 'correct' => [
@@ -640,6 +671,7 @@ class JaUnitConversation02Seeder extends Seeder
                                     '몇 개',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'bir elma ve bir kitap', 'correct' => ['bir', 'elma', 've', 'bir', 'kitap'], 'extra' => ['kaç']],
                         ],
                     ],
                     'c' => [
@@ -659,6 +691,9 @@ class JaUnitConversation02Seeder extends Seeder
                                     'how many',
                                 ],
                             ],
+                            'az' => ['sentence' => 'daha kitablar', 'correct' => ['daha', 'kitablar'], 'extra' => ['neçə']],
+                            'ar' => ['sentence' => 'أكثر كتب', 'correct' => ['أكثر', 'كتب'], 'extra' => ['كم']],
+                            'ru' => ['sentence' => 'больше книги', 'correct' => ['больше', 'книги'], 'extra' => ['сколько']],
                             'es' => [
                                 'sentence' => 'Más libros',
                                 'correct' => [
@@ -703,6 +738,7 @@ class JaUnitConversation02Seeder extends Seeder
                                     '몇 개',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'daha çok kitap', 'correct' => ['daha', 'çok', 'kitap'], 'extra' => ['kaç']],
                         ],
                     ],
                 ],
@@ -750,6 +786,9 @@ class JaUnitConversation02Seeder extends Seeder
                                     'why',
                                 ],
                             ],
+                            'az' => ['sentence' => 'nə vaxt məktəb açıq', 'correct' => ['nə vaxt', 'məktəb', 'açıq'], 'extra' => ['niyə']],
+                            'ar' => ['sentence' => 'متى مدرسة مفتوح', 'correct' => ['متى', 'مدرسة', 'مفتوح'], 'extra' => ['لماذا']],
+                            'ru' => ['sentence' => 'когда школа открыто', 'correct' => ['когда', 'школа', 'открыто'], 'extra' => ['почему']],
                             'es' => [
                                 'sentence' => 'Cuándo está abierta la escuela',
                                 'correct' => [
@@ -800,6 +839,7 @@ class JaUnitConversation02Seeder extends Seeder
                                     '왜',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'okul ne zaman açık', 'correct' => ['okul', 'ne', 'zaman', 'açık'], 'extra' => ['neden']],
                         ],
                     ],
                     'b' => [
@@ -820,6 +860,9 @@ class JaUnitConversation02Seeder extends Seeder
                                     'when',
                                 ],
                             ],
+                            'az' => ['sentence' => 'niyə burada', 'correct' => ['niyə', 'burada'], 'extra' => ['nə vaxt']],
+                            'ar' => ['sentence' => 'لماذا هنا', 'correct' => ['لماذا', 'هنا'], 'extra' => ['متى']],
+                            'ru' => ['sentence' => 'почему здесь', 'correct' => ['почему', 'здесь'], 'extra' => ['когда']],
                             'es' => [
                                 'sentence' => 'Por qué aquí',
                                 'correct' => [
@@ -863,6 +906,7 @@ class JaUnitConversation02Seeder extends Seeder
                                     '언제',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'neden burada', 'correct' => ['neden', 'burada'], 'extra' => ['ne zaman']],
                         ],
                     ],
                     'c' => [
@@ -886,6 +930,9 @@ class JaUnitConversation02Seeder extends Seeder
                                     'why',
                                 ],
                             ],
+                            'az' => ['sentence' => 'məktəb və ev', 'correct' => ['məktəb', 'və', 'ev'], 'extra' => ['niyə']],
+                            'ar' => ['sentence' => 'مدرسة و بيت', 'correct' => ['مدرسة', 'و', 'بيت'], 'extra' => ['لماذا']],
+                            'ru' => ['sentence' => 'школа и дом', 'correct' => ['школа', 'и', 'дом'], 'extra' => ['почему']],
                             'es' => [
                                 'sentence' => 'La escuela y la casa',
                                 'correct' => [
@@ -934,6 +981,7 @@ class JaUnitConversation02Seeder extends Seeder
                                     '왜',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'okul ve ev', 'correct' => ['okul', 've', 'ev'], 'extra' => ['neden']],
                         ],
                     ],
                 ],
@@ -975,6 +1023,9 @@ class JaUnitConversation02Seeder extends Seeder
                                     'of course',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bəlkə sabah', 'correct' => ['bəlkə', 'sabah'], 'extra' => ['əlbəttə']],
+                            'ar' => ['sentence' => 'ربما غدا', 'correct' => ['ربما', 'غدا'], 'extra' => ['بالطبع']],
+                            'ru' => ['sentence' => 'может быть завтра', 'correct' => ['может быть', 'завтра'], 'extra' => ['конечно']],
                             'es' => [
                                 'sentence' => 'Quizás mañana',
                                 'correct' => [
@@ -1018,6 +1069,7 @@ class JaUnitConversation02Seeder extends Seeder
                                     '물론',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'belki yarın', 'correct' => ['belki', 'yarın'], 'extra' => ['elbette']],
                         ],
                     ],
                     'b' => [
@@ -1039,6 +1091,9 @@ class JaUnitConversation02Seeder extends Seeder
                                     'maybe',
                                 ],
                             ],
+                            'az' => ['sentence' => 'əlbəttə mənim dost', 'correct' => ['əlbəttə', 'mənim', 'dost'], 'extra' => ['bəlkə']],
+                            'ar' => ['sentence' => 'بالطبع صديق', 'correct' => ['بالطبع', 'صديق'], 'extra' => ['ربما']],
+                            'ru' => ['sentence' => 'конечно мой друг', 'correct' => ['конечно', 'мой', 'друг'], 'extra' => ['может быть']],
                             'es' => [
                                 'sentence' => 'Por supuesto, mi amigo',
                                 'correct' => [
@@ -1083,6 +1138,7 @@ class JaUnitConversation02Seeder extends Seeder
                                     '아마도',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'elbette arkadaşım', 'correct' => ['elbette', 'arkadaşım'], 'extra' => ['belki']],
                         ],
                     ],
                     'c' => [
@@ -1103,6 +1159,9 @@ class JaUnitConversation02Seeder extends Seeder
                                     'of course',
                                 ],
                             ],
+                            'az' => ['sentence' => 'bəlkə park', 'correct' => ['bəlkə', 'park'], 'extra' => ['əlbəttə']],
+                            'ar' => ['sentence' => 'ربما حديقة', 'correct' => ['ربما', 'حديقة'], 'extra' => ['بالطبع']],
+                            'ru' => ['sentence' => 'может быть парк', 'correct' => ['может быть', 'парк'], 'extra' => ['конечно']],
                             'es' => [
                                 'sentence' => 'Quizás el parque',
                                 'correct' => [
@@ -1146,6 +1205,7 @@ class JaUnitConversation02Seeder extends Seeder
                                     '물론',
                                 ],
                             ],
+                            'tr' => ['sentence' => 'belki park', 'correct' => ['belki', 'park'], 'extra' => ['elbette']],
                         ],
                     ],
                 ],
