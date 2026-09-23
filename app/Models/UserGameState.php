@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
     'daily_chest_claimed_at', 'gems', 'hearts', 'hearts_updated_at', 'subscriber_hearts_granted_at',
     'infinite_hearts_until', 'last_streak_freeze_month', 'streak_freeze_count', 'weekly_league_xp',
     'streak_broken_notified_date', 'last_lesson_reminder_date', 'last_inactivity_stage_notified',
-    'last_motivation_notified_week', 'setup_nudge_sent_at', 'last_badge_nudge_date',
+    'last_motivation_notified_week', 'setup_nudge_sent_at', 'welcome_push_sent_at', 'last_badge_nudge_date',
     'hearts_depleted_at', 'last_league_nudge_date',
     'quest_difficulty_level',
 ])]
@@ -56,6 +56,7 @@ class UserGameState extends Model
             'last_lesson_reminder_date' => 'date',
             'last_motivation_notified_week' => 'date',
             'setup_nudge_sent_at' => 'datetime',
+            'welcome_push_sent_at' => 'datetime',
             'last_badge_nudge_date' => 'date',
             'hearts_depleted_at' => 'datetime',
             'last_league_nudge_date' => 'date',

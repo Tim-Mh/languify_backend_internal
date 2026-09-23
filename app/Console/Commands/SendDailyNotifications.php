@@ -15,6 +15,7 @@ use App\Notifications\ReEngagementNotification;
 use App\Notifications\SetupIncompleteNotification;
 use App\Notifications\SubscriptionRenewalReminderNotification;
 use App\Notifications\UnclaimedBadgeNotification;
+use App\Notifications\WelcomePushNotification;
 use App\Services\LeagueService;
 use App\Services\LessonProgressService;
 use Carbon\Carbon;
@@ -92,7 +93,7 @@ class SendDailyNotifications extends Command
     public function handle(LessonProgressService $progress, LeagueService $leagues): int
     {
         $sent = [
-            'reminder' => 0, 'motivation' => 0, 'reEngagement' => 0, 'setup' => 0,
+            'welcome' => 0, 'reminder' => 0, 'motivation' => 0, 'reEngagement' => 0, 'setup' => 0,
             'badge' => 0, 'league' => 0, 'chest' => 0, 'hearts' => 0, 'renewal' => 0,
         ];
 
@@ -140,8 +141,9 @@ class SendDailyNotifications extends Command
             });
 
         $this->info(sprintf(
-            'Daily sweep: %d reminders, %d motivation, %d re-engagement, %d setup, %d badge, '
-            .'%d league, %d chest, %d hearts, %d renewal sent.',
+            'Daily sweep: %d welcome, %d reminders, %d motivation, %d re-engagement, %d setup, '
+            .'%d badge, %d league, %d chest, %d hearts, %d renewal sent.',
+            $sent['welcome'],
             $sent['reminder'],
             $sent['motivation'],
             $sent['reEngagement'],
@@ -170,6 +172,21 @@ class SendDailyNotifications extends Command
         // Also fires StreakBrokenNotification as a side effect when
         // it detects a lapsed streak — see breakStreakIfMissed().
         $state = $progress->hydrate($user);
+
+        // The first push this learner can actually receive. Gated on a device
+        // being registered, because the welcome email already went out during
+        // signup, while the app still had no token - this is the first moment
+        // there is anywhere to send it.
+        //
+        // Its own column rather than an inferred condition: the sweep runs
+        // every five minutes and would otherwise resend on every pass, and
+        // signing out deletes the token row, which must not make signing back
+        // in look like a new arrival.
+        if ($state->welcome_push_sent_at === null && $user->deviceTokens()->exists()) {
+            $user->notify(new WelcomePushNotification);
+            $state->welcome_push_sent_at = Carbon::now();
+            $sent['welcome']++;
+        }
 
         // A signed-up account that never picked a language, nudged exactly
         // once, at whatever hour the threshold passes — the sooner it lands

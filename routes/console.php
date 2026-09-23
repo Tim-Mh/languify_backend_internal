@@ -19,7 +19,13 @@ Schedule::command('league:rollover')->weeklyOn(1, '00:00')->timezone('UTC');
 // (SMTP hiccups, a large user base) can plausibly take over an hour — without
 // this, two overlapping runs would both read the same "not sent yet" flags
 // and could double-send.
-Schedule::command('notifications:daily-sweep')->hourly()->withoutOverlapping();
+// Every five minutes rather than hourly. Almost everything inside is
+// gated to a specific LOCAL hour AND a once-per-day marker, so running
+// more often cannot double-send those. What it buys is the checks that
+// are not hour-gated, above all the welcome push, which should land
+// while the learner still has the app open rather than up to an hour
+// later.
+Schedule::command('notifications:daily-sweep')->everyFiveMinutes()->withoutOverlapping();
 
 // Auto-renew safety net. Renewals normally arrive as an invoice.paid webhook,
 // but a missed delivery (or an unset signing secret) would leave a learner
