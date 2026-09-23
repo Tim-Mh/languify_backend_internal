@@ -100,19 +100,30 @@ class SendDailyNotifications extends Command
         $badges = Badge::where('is_active', true)->get();
         $plans = SubscriptionPlan::get()->keyBy('key');
 
-        // Eager-load the whole access-resolution relation chain per chunk, so
-        // hasActiveAppAccess()/effectivePlanKey() below don't lazy-load
-        // subscription + family relations one user at a time — that's ~2
-        // queries per user, every hour, across the entire user base, just to
-        // decide whether to skip them.
+        // Eager-load the subscription per chunk. The renewal reminder reads it
+        // for every user, and without this that is one extra query per user,
+        // every hour, across the entire user base.
+        //
+        // The family-plan chain that used to be loaded alongside it went with
+        // the access gate that needed it: nothing in this sweep resolves an
+        // effective plan any more, so loading it was work for no reader.
         User::query()
-            ->with(['activeSubscription', 'familyMembership.familyGroup.owner.activeSubscription'])
+            ->with('activeSubscription')
             ->chunkById(200, function ($users) use ($progress, $leagues, $badges, $plans, &$sent) {
                 foreach ($users as $user) {
-                    if (! $user->hasActiveAppAccess()) {
-                        continue;
-                    }
-
+                    // No subscription gate here, deliberately. Everything below
+                    // is a retention nudge - a streak reminder, a re-engagement
+                    // message, an unclaimed badge - and the learners most likely
+                    // to lapse are exactly the ones who have not paid. Gating the
+                    // whole sweep on an active plan skipped every free account
+                    // before a single notification was considered, which on a
+                    // user base with no subscribers meant push had never fired
+                    // in production at all: healthy device tokens, valid
+                    // credentials, cron on time, and nine zeroes in the summary.
+                    //
+                    // The one subscriber-only message, the renewal reminder,
+                    // gates itself further down on $user->activeSubscription, so
+                    // it still cannot reach anyone without a plan.
                     try {
                         $this->processUser($user, $progress, $leagues, $badges, $plans, $sent);
                     } catch (\Throwable $e) {
