@@ -6,13 +6,17 @@ use App\Http\Controllers\Controller;
 use App\Models\Exercise;
 use App\Models\ExerciseInstruction;
 use App\Models\Lesson;
+use App\Services\ExerciseContentService;
 use App\Services\WordStrengthService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class PracticeController extends Controller
 {
-    public function __construct(private WordStrengthService $words) {}
+    public function __construct(
+        private WordStrengthService $words,
+        private ExerciseContentService $content,
+    ) {}
 
     /**
      * Record one answer so the app learns which words the user knows. Called on
@@ -48,6 +52,12 @@ class PracticeController extends Controller
             ->get()
             ->keyBy(fn (ExerciseInstruction $instruction) => $instruction->exercise_type->value);
 
+        // Same content handling as the normal exercises endpoint: word banks and
+        // hints are stored as per-language maps and must be resolved to the
+        // learner's native language, or the player receives objects where it
+        // expects arrays and crashes.
+        $nativeCode = $user->nativeLanguage?->code ?? 'en';
+
         return response()->json([
             'lesson' => [
                 'id' => $lesson->id,
@@ -58,7 +68,10 @@ class PracticeController extends Controller
                 'id' => $exercise->id,
                 'type' => $exercise->type->value,
                 'instruction' => $exercise->resolveInstruction($instructionsByType->get($exercise->type->value)),
-                'data' => $exercise->data,
+                'data' => $this->content->shuffleChoices(
+                    $this->content->localize($exercise->data, $nativeCode),
+                    $exercise->type->value,
+                ),
                 'orderNumber' => $exercise->order_number,
             ]),
         ]);
