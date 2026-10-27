@@ -3,10 +3,13 @@
 namespace App\Providers;
 
 use App\Notifications\Channels\ExpoChannel;
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Http\Request;
 use Illuminate\Mail\MailManager;
 use Illuminate\Notifications\ChannelManager;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use SocialiteProviders\Apple\AppleExtendSocialite;
 use SocialiteProviders\Manager\SocialiteWasCalled;
@@ -29,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $this->registerRateLimiters();
         $this->registerRelaxedSmtpDriver();
         $this->registerExpoPushChannel();
 
@@ -131,5 +135,23 @@ class AppServiceProvider extends ServiceProvider
                 return $transport;
             });
         });
+    }
+
+    /**
+     * Named limiters, each with its own counter.
+     *
+     * A plain `throttle:N,M` keys its counter on the user alone, so every
+     * route using one shares a single counter per user, and the window is set
+     * by whichever route created it. The timezone route's 24-hour window used
+     * to stretch that shared counter across a whole day, after which ad views
+     * and clicks were refused until the next day. These keep their own.
+     */
+    private function registerRateLimiters(): void
+    {
+        RateLimiter::for('ad-events', fn (Request $request) => Limit::perMinute(60)
+            ->by('ad-events:'.($request->user()?->id ?? $request->ip())));
+
+        RateLimiter::for('timezone', fn (Request $request) => Limit::perDay(5)
+            ->by('timezone:'.($request->user()?->id ?? $request->ip())));
     }
 }

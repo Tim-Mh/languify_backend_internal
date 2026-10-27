@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  * One row per page per language. See the migration for why the translations
  * live here rather than in the app.
  */
-#[Fillable(['slug', 'locale', 'title', 'content', 'source_hash'])]
+#[Fillable(['slug', 'locale', 'title', 'summary', 'content', 'source_hash'])]
 class LegalPage extends Model
 {
     /**

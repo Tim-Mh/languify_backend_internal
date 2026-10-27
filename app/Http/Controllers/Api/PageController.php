@@ -26,6 +26,8 @@ class PageController extends Controller
                 new OA\Property(property: 'slug', type: 'string', example: 'terms'),
                 new OA\Property(property: 'locale', type: 'string', example: 'fr', description: 'The locale actually served, which is `en` when the requested one has no translation yet.'),
                 new OA\Property(property: 'title', type: 'string', example: 'Terms and Conditions'),
+                new OA\Property(property: 'summary', type: 'array', items: new OA\Items(type: 'string'), description: 'Plain-language "In short" points (WCAG 3.1.5). Empty when none is written.'),
+                new OA\Property(property: 'summaryLocale', type: 'string', nullable: true, example: 'fr', description: 'Language of the summary, which can differ from `locale` when it falls back to English.'),
                 new OA\Property(property: 'content', type: 'string', description: 'HTML'),
                 new OA\Property(property: 'updatedAt', type: 'string', format: 'date-time'),
             ])),
@@ -55,12 +57,24 @@ class PageController extends Controller
             return response()->json(['message' => 'Page not found.'], 404);
         }
 
+        // The summary falls back separately: a translated page without its own
+        // summary still gets the English one, labelled with its language so the
+        // client can mark it up correctly (3.1.2 Language of Parts).
+        $summaryPage = trim((string) $page->summary) !== ''
+            ? $page
+            : LegalPage::where('slug', $slug)->where('locale', LegalPage::SOURCE_LOCALE)->first();
+        $summary = $summaryPage
+            ? array_values(array_filter(array_map('trim', preg_split('/\R/', (string) $summaryPage->summary))))
+            : [];
+
         return response()->json([
             'slug' => $page->slug,
             // The locale served, not the one asked for, so the client can tell
             // it fell back.
             'locale' => $page->locale,
             'title' => $page->title,
+            'summary' => $summary,
+            'summaryLocale' => $summary ? $summaryPage->locale : null,
             'content' => $page->content,
             'updatedAt' => $page->updated_at,
         ]);

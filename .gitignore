@@ -21,6 +21,12 @@
 /storage/*.key
 /storage/pail
 /vendor
+
+# The Firebase service-account key. A real private key, so it never belongs in
+# the repo: put it outside the web tree on the server and point
+# FIREBASE_CREDENTIALS at it (see DEPLOY.md). config/services.php falls back to
+# this path only for local development.
+firebase-credentials.json
 _ide_helper.php
 Homestead.json
 Homestead.yaml

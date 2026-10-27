@@ -3,17 +3,17 @@
 namespace App\Enums;
 
 /**
- * Where an ad creative is shown. Each placement is an independent pool, which
- * is what guarantees the two home-page slots can never display the same
- * creative at the same moment: they simply draw from different pools.
+ * Where an ad is shown. Each placement has its own list of ads.
  */
 enum AdPlacement: string
 {
-    /** Home sidebar, upper slot. */
-    case HomePrimary = 'home_primary';
-
-    /** Home sidebar, lower slot. */
-    case HomeSecondary = 'home_secondary';
+    /**
+     * The two cards in the home sidebar. One list feeds both: the website
+     * shows neighbouring ads of the play order in the top and bottom card,
+     * and neighbours are always different products, so the two cards never
+     * show the same ad at once.
+     */
+    case HomeSidebar = 'home_sidebar';
 
     /** Full-screen interstitial shown after a lesson session is completed. */
     case LessonComplete = 'lesson_complete';
@@ -31,8 +31,7 @@ enum AdPlacement: string
     public function label(): string
     {
         return match ($this) {
-            self::HomePrimary => 'Home sidebar, top slot',
-            self::HomeSecondary => 'Home sidebar, bottom slot',
+            self::HomeSidebar => 'Home sidebar (top and bottom cards)',
             self::LessonComplete => 'After a lesson is completed',
             self::MobileLessonComplete => 'After a lesson is completed (mobile app)',
         };
@@ -51,9 +50,28 @@ enum AdPlacement: string
     public function guidance(): string
     {
         return match ($this) {
-            self::HomePrimary, self::HomeSecondary => 'Landscape, around 580×400.',
-            self::LessonComplete => 'Landscape, around 580×400. Shown as a card mid-page.',
-            self::MobileLessonComplete => 'Portrait, around 1080×1920. Fills the whole phone screen.',
+            self::HomeSidebar => 'Landscape, 900×620.',
+            self::LessonComplete => 'Landscape, 1680×1080. Shown as a large popup after the lesson.',
+            self::MobileLessonComplete => 'Portrait, 1080×1920. Fills the whole phone screen.',
+        };
+    }
+
+    /**
+     * The box an uploaded image is shrunk to fit, as [width, height]. About
+     * three times the size the placement is drawn at, so ads stay sharp on
+     * high-resolution screens without anything larger being stored or
+     * downloaded: the sidebar card is 300x207, the lesson popup at most
+     * 1280x823, the phone screen 1080x1920. Used both by the admin page's in-browser compression and by
+     * the server-side optimizer.
+     *
+     * @return array{0: int, 1: int}
+     */
+    public function box(): array
+    {
+        return match ($this) {
+            self::HomeSidebar => [900, 620],
+            self::LessonComplete => [1680, 1080],
+            self::MobileLessonComplete => [1080, 1920],
         };
     }
 
@@ -61,8 +79,7 @@ enum AdPlacement: string
     public function apiKey(): string
     {
         return match ($this) {
-            self::HomePrimary => 'homePrimary',
-            self::HomeSecondary => 'homeSecondary',
+            self::HomeSidebar => 'homeSidebar',
             self::LessonComplete => 'lessonComplete',
             self::MobileLessonComplete => 'mobileLessonComplete',
         };

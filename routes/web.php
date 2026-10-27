@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Admin\AdImageController;
+use App\Http\Controllers\Admin\AdCampaignController;
 use App\Http\Controllers\Admin\AdSettingController;
+use App\Http\Controllers\Admin\AdStatsController;
 use App\Http\Controllers\Admin\AlphabetLetterController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\AvatarOptionController;
@@ -83,7 +84,17 @@ Route::prefix('admin')->group(function () {
         Route::get('/gem-purchases', [GemPurchaseController::class, 'index'])->name('gem-purchases.index');
         Route::get('/subscriptions', [SubscriptionController::class, 'index'])->name('subscriptions.index');
         Route::get('/family-groups', [FamilyGroupController::class, 'index'])->name('family-groups.index');
-        Route::resource('ad-images', AdImageController::class)->except('show');
+        Route::get('/ads', [AdCampaignController::class, 'index'])->name('ads.index');
+        Route::get('/ads/create', [AdCampaignController::class, 'create'])->name('ads.create');
+        Route::get('/ads/stats', AdStatsController::class)->name('ads.stats');
+        Route::post('/ad-campaigns', [AdCampaignController::class, 'store'])->name('ad-campaigns.store');
+        Route::get('/ad-campaigns/{adCampaign}/edit', [AdCampaignController::class, 'edit'])->name('ad-campaigns.edit');
+        // POST, not PUT: the edit page sends multipart images, which PHP only parses on POST.
+        Route::post('/ad-campaigns/{adCampaign}', [AdCampaignController::class, 'update'])->name('ad-campaigns.update');
+        Route::delete('/ad-campaigns/{adCampaign}', [AdCampaignController::class, 'destroy'])->name('ad-campaigns.destroy');
+        Route::patch('/ad-campaigns/{adCampaign}/toggle', [AdCampaignController::class, 'toggle'])->name('ad-campaigns.toggle');
+        Route::patch('/ads/{ad}/toggle', [AdCampaignController::class, 'toggleImage'])->name('ads.toggle');
+        Route::delete('/ads/{ad}', [AdCampaignController::class, 'destroyImage'])->name('ads.destroy');
         Route::put('ad-settings', [AdSettingController::class, 'update'])->name('ad-settings.update');
 
         Route::resource('legal-pages', LegalPageController::class)->only(['index', 'edit', 'update']);

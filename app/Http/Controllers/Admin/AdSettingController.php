@@ -13,10 +13,11 @@ class AdSettingController extends Controller
     {
         $data = $request->validate([
             'interstitial_seconds' => ['required', 'integer', 'min:1', 'max:60'],
+            'sidebar_seconds' => ['required', 'integer', 'min:2', 'max:120'],
         ]);
 
         AdSetting::current()->update($data);
 
-        return redirect()->route('admin.ad-images.index')->with('status', 'Ad settings updated.');
+        return redirect()->route('admin.ads.index')->with('status', 'Ad settings updated.');
     }
 }

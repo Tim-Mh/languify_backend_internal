@@ -38,8 +38,11 @@ return Application::configure(basePath: dirname(__DIR__))
         );
     })
     ->withExceptions(function (Exceptions $exceptions): void {
+        // The admin ad pages upload with fetch (images are compressed in the
+        // browser first), so their validation errors must come back as JSON too.
         $exceptions->shouldRenderJsonWhen(
-            fn (Request $request) => $request->is('api/*'),
+            fn (Request $request) => $request->is('api/*')
+                || ($request->is('admin/ad-campaigns*') && $request->expectsJson()),
         );
 
         $exceptions->render(function (AuthenticationException $e, Request $request) {

@@ -69,6 +69,17 @@
                     @error('title') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
                 </div>
 
+                <div class="mb-4">
+                    <label for="summary" class="block text-sm font-medium mb-1">In short <span class="text-gray-400">({{ $localeName }})</span></label>
+                    <textarea id="summary" name="summary" rows="6" class="w-full border rounded px-3 py-2 text-sm" maxlength="2000">{{ old('summary', $page->summary ?? '') }}</textarea>
+                    <p class="text-xs text-gray-500 mt-1">
+                        A plain-language version shown above the full text, for readers who find legal wording hard.
+                        Write <strong>one short point per line</strong>, in simple everyday words, as if explaining to a
+                        12-year-old. Leave empty to show the English summary instead.
+                    </p>
+                    @error('summary') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+                </div>
+
                 <div class="mb-2">
                     <label class="block text-sm font-medium mb-1">Content <span class="text-gray-400">({{ $localeName }})</span></label>
 

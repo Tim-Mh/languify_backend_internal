@@ -58,7 +58,7 @@
                 <a href="{{ route('admin.gem-purchases.index') }}" class="block px-4 py-2 rounded hover:bg-gray-800 {{ request()->routeIs('admin.gem-purchases.*') ? 'bg-gray-800 text-white' : '' }}">Gem Purchases</a>
                 <a href="{{ route('admin.subscriptions.index') }}" class="block px-4 py-2 rounded hover:bg-gray-800 {{ request()->routeIs('admin.subscriptions.*') ? 'bg-gray-800 text-white' : '' }}">Subscriptions</a>
                 <a href="{{ route('admin.family-groups.index') }}" class="block px-4 py-2 rounded hover:bg-gray-800 {{ request()->routeIs('admin.family-groups.*') ? 'bg-gray-800 text-white' : '' }}">Family Plans</a>
-                <a href="{{ route('admin.ad-images.index') }}" class="block px-4 py-2 rounded hover:bg-gray-800 {{ request()->routeIs('admin.ad-images.*') ? 'bg-gray-800 text-white' : '' }}">Ad Images</a>
+                <a href="{{ route('admin.ads.index') }}" class="block px-4 py-2 rounded hover:bg-gray-800 {{ request()->routeIs('admin.ads.*', 'admin.ad-campaigns.*') ? 'bg-gray-800 text-white' : '' }}">Ads</a>
 
                 <p class="px-4 pt-4 pb-1 text-xs font-semibold uppercase tracking-wide text-gray-500">Site Content</p>
                 <a href="{{ route('admin.legal-pages.index') }}" class="block px-4 py-2 rounded hover:bg-gray-800 {{ request()->routeIs('admin.legal-pages.*') ? 'bg-gray-800 text-white' : '' }}">Terms / Privacy / Contact</a>
@@ -90,6 +90,55 @@
             </main>
         </div>
     </div>
+    {{-- Confirmation popup for any form marked data-confirm="message"
+         (optional data-confirm-title), used instead of the browser's alert. --}}
+    <div id="confirm-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+        <div class="w-full max-w-sm rounded-xl bg-white p-6 shadow-xl">
+            <h2 id="confirm-title" class="text-lg font-semibold text-gray-900">Are you sure?</h2>
+            <p id="confirm-message" class="mt-2 text-sm text-gray-600"></p>
+            <div class="mt-6 flex justify-end gap-3">
+                <button type="button" id="confirm-cancel" class="rounded border border-gray-300 px-4 py-2 text-sm hover:bg-gray-50">Cancel</button>
+                <button type="button" id="confirm-ok" class="rounded bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700">Delete</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        (() => {
+            const modal = document.getElementById('confirm-modal')
+            const ok = document.getElementById('confirm-ok')
+            let pending = null
+
+            const close = () => {
+                modal.classList.add('hidden')
+                modal.classList.remove('flex')
+                pending = null
+            }
+
+            document.addEventListener('submit', (event) => {
+                const form = event.target
+                if (!form.matches('form[data-confirm]') || form.dataset.confirmed) return
+                event.preventDefault()
+                pending = form
+                document.getElementById('confirm-title').textContent = form.dataset.confirmTitle || 'Are you sure?'
+                document.getElementById('confirm-message').textContent = form.dataset.confirm
+                modal.classList.remove('hidden')
+                modal.classList.add('flex')
+                ok.focus()
+            })
+
+            ok.addEventListener('click', () => {
+                if (!pending) return
+                const form = pending
+                form.dataset.confirmed = '1'
+                ok.disabled = true
+                ok.textContent = 'Deleting…'
+                form.submit()
+            })
+            document.getElementById('confirm-cancel').addEventListener('click', close)
+            modal.addEventListener('click', (event) => { if (event.target === modal) close() })
+            document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && pending) close() })
+        })()
+    </script>
     @stack('scripts')
 </body>
 </html>

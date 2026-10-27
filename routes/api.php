@@ -84,7 +84,7 @@ Route::middleware(['auth.cookie', 'auth:sanctum'])->group(function () {
     // value — an unthrottled endpoint lets a client jump into a new "day" on
     // demand and farm streak/quest/daily-counter resets in seconds. 5/day
     // comfortably covers real travel and still closes that off.
-    Route::patch('/profile/timezone', [ProfileController::class, 'updateTimezone'])->middleware('throttle:5,1440');
+    Route::patch('/profile/timezone', [ProfileController::class, 'updateTimezone'])->middleware('throttle:timezone');
     Route::get('/shop/catalog', [ShopController::class, 'catalog']);
     // SEC-07: each of these calls Stripe, so each costs money per request.
     Route::post('/shop/subscription/checkout', [ShopController::class, 'checkoutSubscription'])->middleware('throttle:10,1');
@@ -171,6 +171,8 @@ Route::middleware(['auth.cookie', 'auth:sanctum'])->group(function () {
     Route::get('/league', [LeagueController::class, 'show']);
 
     Route::get('/ads', [AdController::class, 'index']);
+    Route::post('/ads/{ad}/view', [AdController::class, 'view'])->middleware('throttle:ad-events');
+    Route::post('/ads/{ad}/click', [AdController::class, 'click'])->middleware('throttle:ad-events');
 
     Route::post('/badges/{badgeKey}/claim', [BadgeController::class, 'claim']);
 
