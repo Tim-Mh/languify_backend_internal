@@ -1,11 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Add Subscription Plan')
+@section('title', 'Add subscription plan')
 
 @section('content')
-    <div class="bg-white rounded-lg shadow p-6 max-w-2xl">
-        <form action="{{ route('admin.subscription-plans.store') }}" method="POST">
-            @include('admin.subscription-plans._form')
-        </form>
-    </div>
+    <x-admin.form-shell :action="route('admin.subscription-plans.store')" :back="route('admin.subscription-plans.index')" :return="$return" back-label="Back to plans" submit="Add plan">
+        @include('admin.subscription-plans._form')
+    </x-admin.form-shell>
 @endsection

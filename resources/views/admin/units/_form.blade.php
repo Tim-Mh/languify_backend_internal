@@ -1,36 +1,33 @@
-@csrf
-@if (isset($unit))
-    @method('PUT')
-@endif
+@php
+    $unit ??= null;
+    $defaults ??= [];
+    $selected = (int) old('chapter_id', $unit?->chapter_id ?? $defaults['chapter_id'] ?? 0);
+@endphp
 
-<div class="grid grid-cols-2 gap-4">
-    <div class="col-span-2">
-        <label class="block text-sm font-medium mb-1">Chapter</label>
-        <select name="chapter_id" class="w-full border rounded px-3 py-2">
-            <option value="">-- Select --</option>
-            @foreach ($chapters as $chapter)
-                <option value="{{ $chapter->id }}" {{ (int) old('chapter_id', $unit->chapter_id ?? '') === $chapter->id ? 'selected' : '' }}>
-                    {{ $chapter->language->flag_emoji }} {{ $chapter->language->name }} - {{ ucfirst($chapter->chapter_key->value) }}
-                </option>
+<div class="grid gap-5 sm:grid-cols-2">
+    <div class="sm:col-span-2">
+        <label for="chapter_id" class="field-label">Chapter</label>
+        <select id="chapter_id" name="chapter_id" required class="field-input">
+            <option value="">Choose a chapter</option>
+            @foreach ($chapters as $language => $group)
+                <optgroup label="{{ $language }}">
+                    @foreach ($group as $chapter)
+                        <option value="{{ $chapter->id }}" @selected($selected === $chapter->id)>{{ $chapter->title }}</option>
+                    @endforeach
+                </optgroup>
             @endforeach
         </select>
-        @error('chapter_id') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+        @error('chapter_id') <p class="field-error">{{ $message }}</p> @enderror
     </div>
-
     <div>
-        <label class="block text-sm font-medium mb-1">Title</label>
-        <input type="text" name="title" value="{{ old('title', $unit->title ?? '') }}" class="w-full border rounded px-3 py-2">
-        @error('title') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+        <label for="title" class="field-label">Title</label>
+        <input type="text" id="title" name="title" value="{{ old('title', $unit?->title) }}" required class="field-input" placeholder="Greetings">
+        @error('title') <p class="field-error">{{ $message }}</p> @enderror
     </div>
-
     <div>
-        <label class="block text-sm font-medium mb-1">Order Number</label>
-        <input type="number" name="order_number" value="{{ old('order_number', $unit->order_number ?? 0) }}" class="w-full border rounded px-3 py-2">
-        @error('order_number') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+        <label for="order_number" class="field-label">Position</label>
+        <input type="number" id="order_number" name="order_number" min="0" value="{{ old('order_number', $unit?->order_number ?? $defaults['order_number'] ?? 1) }}" required class="field-input">
+        <p class="field-hint">Lower numbers come first in the chapter.</p>
+        @error('order_number') <p class="field-error">{{ $message }}</p> @enderror
     </div>
-</div>
-
-<div class="mt-6">
-    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save</button>
-    <a href="{{ route('admin.units.index') }}" class="ml-2 text-gray-600 hover:underline">Cancel</a>
 </div>

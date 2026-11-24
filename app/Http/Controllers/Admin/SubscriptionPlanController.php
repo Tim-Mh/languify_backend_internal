@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Admin\Concerns\ReturnsToPreviousPage;
 use App\Http\Controllers\Controller;
 use App\Models\SubscriptionPlan;
+use App\Models\UserSubscription;
 use App\Support\PerPage;
 use App\Support\Sluggable;
 use Illuminate\Http\RedirectResponse;
@@ -13,16 +15,25 @@ use Illuminate\View\View;
 
 class SubscriptionPlanController extends Controller
 {
+    use ReturnsToPreviousPage;
+
     public function index(Request $request): View
     {
         return view('admin.subscription-plans.index', [
             'subscriptionPlans' => SubscriptionPlan::orderBy('order_number')->paginate(PerPage::resolve($request))->withQueryString(),
+            // Same "live" rule as the Subscriptions page: active or on trial
+            // and not past the end of the paid period.
+            'subscribers' => UserSubscription::whereIn('status', ['active', 'trialing'])
+                ->where(fn ($q) => $q->whereNull('current_period_end')->orWhere('current_period_end', '>', now()))
+                ->selectRaw('plan_key, count(*) as total')
+                ->groupBy('plan_key')
+                ->pluck('total', 'plan_key'),
         ]);
     }
 
-    public function create(): View
+    public function create(Request $request): View
     {
-        return view('admin.subscription-plans.create');
+        return view('admin.subscription-plans.create', ['return' => $this->returnUrl($request)]);
     }
 
     public function store(Request $request): RedirectResponse
@@ -30,28 +41,28 @@ class SubscriptionPlanController extends Controller
         $data = $this->validateData($request);
         $data['key'] = Sluggable::unique('subscription_plans', 'key', $data['title']);
 
-        SubscriptionPlan::create($data);
+        $plan = SubscriptionPlan::create($data);
 
-        return redirect()->route('admin.subscription-plans.index')->with('status', 'Subscription plan created.');
+        return $this->backTo($request, 'admin.subscription-plans.index', "Plan \"{$plan->title}\" added.");
     }
 
-    public function edit(SubscriptionPlan $subscription_plan): View
+    public function edit(Request $request, SubscriptionPlan $subscription_plan): View
     {
-        return view('admin.subscription-plans.edit', ['subscription_plan' => $subscription_plan]);
+        return view('admin.subscription-plans.edit', ['subscription_plan' => $subscription_plan, 'return' => $this->returnUrl($request)]);
     }
 
     public function update(Request $request, SubscriptionPlan $subscription_plan): RedirectResponse
     {
         $subscription_plan->update($this->validateData($request, $subscription_plan));
 
-        return redirect()->route('admin.subscription-plans.index')->with('status', 'Subscription plan updated.');
+        return $this->backTo($request, 'admin.subscription-plans.index', "Plan \"{$subscription_plan->title}\" saved.");
     }
 
-    public function destroy(SubscriptionPlan $subscription_plan): RedirectResponse
+    public function destroy(Request $request, SubscriptionPlan $subscription_plan): RedirectResponse
     {
         $subscription_plan->delete();
 
-        return redirect()->route('admin.subscription-plans.index')->with('status', 'Subscription plan deleted.');
+        return $this->backTo($request, 'admin.subscription-plans.index', "Plan \"{$subscription_plan->title}\" deleted.");
     }
 
     private function validateData(Request $request, ?SubscriptionPlan $plan = null): array

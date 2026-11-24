@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Enums\ChestType;
+use App\Http\Controllers\Admin\Concerns\ReturnsToPreviousPage;
 use App\Http\Controllers\Controller;
+use App\Models\Badge;
 use App\Models\ChestRewardConfig;
 use App\Support\PerPage;
 use Illuminate\Http\RedirectResponse;
@@ -12,42 +15,74 @@ use Illuminate\View\View;
 
 class ChestRewardConfigController extends Controller
 {
+    use ReturnsToPreviousPage;
+
     public function index(Request $request): View
     {
+        $type = ChestType::tryFrom((string) $request->query('chest_type'));
+
+        $all = ChestRewardConfig::all();
+
         return view('admin.chest-reward-configs.index', [
-            'chestRewardConfigs' => ChestRewardConfig::orderBy('chest_type')->orderBy('order_number')->paginate(PerPage::resolve($request))->withQueryString(),
+            'chestRewardConfigs' => ChestRewardConfig::query()
+                ->when($type, fn ($q) => $q->where('chest_type', $type))
+                // Daily, then unit bonus, then the streak milestones.
+                ->orderByRaw("CASE chest_type WHEN 'daily' THEN 1 WHEN 'unit_bonus' THEN 2 ELSE 3 END")
+                ->orderBy('order_number')
+                ->paginate(PerPage::resolve($request))->withQueryString(),
+            'type' => $type,
+            'typeCounts' => $all->countBy(fn ($config) => $config->chest_type->value),
+            'allCount' => $all->count(),
+            // ChestService opens the daily and unit chests from the row with no
+            // reference; without one, claiming that chest fails.
+            'missing' => collect([ChestType::Daily, ChestType::UnitBonus])
+                ->reject(fn ($t) => $all->contains(fn ($c) => $c->chest_type === $t && $c->reference === null))
+                ->values(),
         ]);
     }
 
-    public function create(): View
+    public function create(Request $request): View
     {
-        return view('admin.chest-reward-configs.create');
+        $type = ChestType::tryFrom((string) $request->query('chest_type'));
+
+        return view('admin.chest-reward-configs.create', [
+            'defaults' => [
+                'chest_type' => $type?->value,
+                'order_number' => (int) ChestRewardConfig::max('order_number') + 1,
+            ],
+            'badges' => Badge::orderBy('category')->orderBy('order_number')->get(['key', 'title']),
+            'return' => $this->returnUrl($request),
+        ]);
     }
 
     public function store(Request $request): RedirectResponse
     {
-        ChestRewardConfig::create($this->validateData($request));
+        $config = ChestRewardConfig::create($this->validateData($request));
 
-        return redirect()->route('admin.chest-reward-configs.index')->with('status', 'Chest reward config created.');
+        return $this->backTo($request, 'admin.chest-reward-configs.index', "Chest reward \"{$config->label}\" added.");
     }
 
-    public function edit(ChestRewardConfig $chest_reward_config): View
+    public function edit(Request $request, ChestRewardConfig $chest_reward_config): View
     {
-        return view('admin.chest-reward-configs.edit', ['chest_reward_config' => $chest_reward_config]);
+        return view('admin.chest-reward-configs.edit', [
+            'chest_reward_config' => $chest_reward_config,
+            'badges' => Badge::orderBy('category')->orderBy('order_number')->get(['key', 'title']),
+            'return' => $this->returnUrl($request),
+        ]);
     }
 
     public function update(Request $request, ChestRewardConfig $chest_reward_config): RedirectResponse
     {
         $chest_reward_config->update($this->validateData($request, $chest_reward_config));
 
-        return redirect()->route('admin.chest-reward-configs.index')->with('status', 'Chest reward config updated.');
+        return $this->backTo($request, 'admin.chest-reward-configs.index', "Chest reward \"{$chest_reward_config->label}\" saved.");
     }
 
-    public function destroy(ChestRewardConfig $chest_reward_config): RedirectResponse
+    public function destroy(Request $request, ChestRewardConfig $chest_reward_config): RedirectResponse
     {
         $chest_reward_config->delete();
 
-        return redirect()->route('admin.chest-reward-configs.index')->with('status', 'Chest reward config deleted.');
+        return $this->backTo($request, 'admin.chest-reward-configs.index', "Chest reward \"{$chest_reward_config->label}\" deleted.");
     }
 
     private function validateData(Request $request, ?ChestRewardConfig $config = null): array

@@ -1,11 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Add Alphabet Letter')
+@section('title', 'Add letter')
 
 @section('content')
-    <div class="bg-white rounded-lg shadow p-6 max-w-2xl">
-        <form action="{{ route('admin.alphabet-letters.store') }}" method="POST">
-            @include('admin.alphabet-letters._form')
-        </form>
-    </div>
+    <x-admin.form-shell :action="route('admin.alphabet-letters.store')" :back="route('admin.alphabet-letters.index', ['language_id' => $selectedLanguageId])" back-label="Back to alphabet" submit="Add letter">
+        @include('admin.alphabet-letters._form')
+    </x-admin.form-shell>
 @endsection

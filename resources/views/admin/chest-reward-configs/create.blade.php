@@ -1,11 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Add Chest Reward Config')
+@section('title', 'Add chest reward')
 
 @section('content')
-    <div class="bg-white rounded-lg shadow p-6 max-w-2xl">
-        <form action="{{ route('admin.chest-reward-configs.store') }}" method="POST">
-            @include('admin.chest-reward-configs._form')
-        </form>
-    </div>
+    <x-admin.form-shell :action="route('admin.chest-reward-configs.store')" :back="route('admin.chest-reward-configs.index')" :return="$return" back-label="Back to chest rewards" submit="Add chest reward">
+        @include('admin.chest-reward-configs._form')
+    </x-admin.form-shell>
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Enums\ChapterKey;
+use App\Http\Controllers\Admin\Concerns\ReturnsToPreviousPage;
 use App\Http\Controllers\Controller;
 use App\Models\Chapter;
 use App\Models\Language;
@@ -14,53 +15,68 @@ use Illuminate\View\View;
 
 class ChapterController extends Controller
 {
+    use ReturnsToPreviousPage;
+
     public function index(Request $request): View
     {
+        $languageId = (int) $request->query('language_id') ?: null;
+
+        $chapters = Chapter::with('language')->withCount('units')
+            ->when($languageId, fn ($q) => $q->where('language_id', $languageId))
+            ->orderBy('language_id')->orderBy('order_number')
+            ->paginate(PerPage::resolve($request))->withQueryString();
+
         return view('admin.chapters.index', [
-            'chapters' => Chapter::with('language')->orderBy('language_id')->orderBy('order_number')->paginate(PerPage::resolve($request))->withQueryString(),
+            'chapters' => $chapters,
+            'languages' => Language::orderBy('name')->get(),
+            'languageId' => $languageId,
         ]);
     }
 
-    public function create(): View
+    public function create(Request $request): View
     {
+        $languageId = (int) $request->query('language_id') ?: null;
+
         return view('admin.chapters.create', [
             'languages' => Language::orderBy('name')->get(),
             'chapterKeys' => ChapterKey::cases(),
+            'defaults' => [
+                'language_id' => $languageId,
+                'order_number' => $languageId ? (int) Chapter::where('language_id', $languageId)->max('order_number') + 1 : 1,
+            ],
+            'return' => $this->returnUrl($request),
         ]);
     }
 
     public function store(Request $request): RedirectResponse
     {
-        $data = $this->validateData($request);
+        $chapter = Chapter::create($this->validateData($request));
 
-        Chapter::create($data);
-
-        return redirect()->route('admin.chapters.index')->with('status', 'Chapter created.');
+        return $this->backTo($request, 'admin.chapters.index', "Chapter \"{$chapter->title}\" added.");
     }
 
-    public function edit(Chapter $chapter): View
+    public function edit(Request $request, Chapter $chapter): View
     {
         return view('admin.chapters.edit', [
             'chapter' => $chapter,
             'languages' => Language::orderBy('name')->get(),
             'chapterKeys' => ChapterKey::cases(),
+            'return' => $this->returnUrl($request),
         ]);
     }
 
     public function update(Request $request, Chapter $chapter): RedirectResponse
     {
-        $data = $this->validateData($request, $chapter);
+        $chapter->update($this->validateData($request, $chapter));
 
-        $chapter->update($data);
-
-        return redirect()->route('admin.chapters.index')->with('status', 'Chapter updated.');
+        return $this->backTo($request, 'admin.chapters.index', "Chapter \"{$chapter->title}\" saved.");
     }
 
-    public function destroy(Chapter $chapter): RedirectResponse
+    public function destroy(Request $request, Chapter $chapter): RedirectResponse
     {
         $chapter->delete();
 
-        return redirect()->route('admin.chapters.index')->with('status', 'Chapter deleted.');
+        return $this->backTo($request, 'admin.chapters.index', "Chapter \"{$chapter->title}\" deleted.");
     }
 
     private function validateData(Request $request, ?Chapter $chapter = null): array
@@ -76,6 +92,8 @@ class ChapterController extends Controller
             ],
             'title' => ['required', 'string', 'max:255'],
             'order_number' => ['required', 'integer', 'min:0'],
+        ], [
+            'chapter_key.unique' => 'This language already has a chapter of that kind.',
         ]);
     }
 }

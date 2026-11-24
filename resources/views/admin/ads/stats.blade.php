@@ -1,88 +1,118 @@
 @extends('layouts.admin')
 
-@section('title', 'Ad Stats')
+@section('title', 'Ad views and clicks')
+
+@php
+    $rate = fn (int $views, int $clicks) => $views ? round($clicks / $views * 100, 1) : 0;
+@endphp
 
 @section('content')
-    <a href="{{ route('admin.ads.index') }}" class="text-sm text-blue-600 hover:underline">&larr; Back to ads</a>
+    <div class="mx-auto max-w-7xl space-y-5">
 
-    <form id="filters" method="GET" action="{{ route('admin.ads.stats') }}" class="bg-white rounded-lg shadow p-4 mt-4 flex flex-wrap items-end gap-4">
-        <input type="hidden" name="tz" id="tz" value="{{ request('tz') }}">
-
-        <div>
-            <label for="period" class="block text-xs text-gray-500 mb-1">Period</label>
-            <select id="period" name="period" class="border rounded px-3 py-2">
-                @foreach ($periods as $value => $label)
-                    <option value="{{ $value }}" @selected($period === (string) $value)>{{ $label }}</option>
-                @endforeach
-            </select>
-        </div>
-
-        <div id="month-pickers" class="flex gap-2 {{ $period === 'month' ? '' : 'hidden' }}">
-            <div>
-                <label for="month" class="block text-xs text-gray-500 mb-1">Month</label>
-                <select id="month" name="month" class="border rounded px-3 py-2">
-                    @foreach (range(1, 12) as $m)
-                        <option value="{{ $m }}" @selected($month === $m)>{{ \Carbon\Carbon::create(null, $m, 1)->format('F') }}</option>
+        <form id="filters" method="GET" action="{{ route('admin.ads.stats') }}" class="card space-y-4 p-5">
+            <fieldset>
+                <input type="hidden" name="tz" id="tz" value="{{ request('tz') }}">
+                <legend class="mb-2 text-xs font-bold text-gray-500">Period</legend>
+                <div class="flex flex-wrap gap-2">
+                    @foreach ($periods as $value => $label)
+                        <label class="cursor-pointer">
+                            <input type="radio" name="period" value="{{ $value }}" class="peer sr-only" @checked($period === (string) $value)>
+                            <span class="{{ $period === (string) $value ? 'chip-active' : 'chip' }} peer-focus-visible:ring-2 peer-focus-visible:ring-brand-500 peer-focus-visible:ring-offset-2">{{ $label }}</span>
+                        </label>
                     @endforeach
-                </select>
+                </div>
+            </fieldset>
+
+            <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                <div id="month-pickers" class="grid grid-cols-2 gap-3 sm:col-span-2 {{ $period === 'month' ? '' : 'hidden' }}">
+                    <div>
+                        <label for="month" class="mb-1 block text-xs font-bold text-gray-500">Month</label>
+                        <select id="month" name="month" class="field-input">
+                            @foreach (range(1, 12) as $m)
+                                <option value="{{ $m }}" @selected($month === $m)>{{ \Carbon\Carbon::create(null, $m, 1)->format('F') }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div>
+                        <label for="year" class="mb-1 block text-xs font-bold text-gray-500">Year</label>
+                        <select id="year" name="year" class="field-input">
+                            @foreach ($years as $y)
+                                <option value="{{ $y }}" @selected($year === $y)>{{ $y }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="placement" class="mb-1 block text-xs font-bold text-gray-500">Placement</label>
+                    <select id="placement" name="placement" class="field-input">
+                        <option value="">All placements</option>
+                        @foreach ($placements as $option)
+                            <option value="{{ $option->value }}" @selected($placement === $option)>{{ $option->label() }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div>
+                    <label for="product" class="mb-1 block text-xs font-bold text-gray-500">Product</label>
+                    <select id="product" name="product" class="field-input">
+                        <option value="">All products</option>
+                        @foreach ($products as $name)
+                            <option value="{{ $name }}" @selected($product === $name)>{{ $name }}</option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
-            <div>
-                <label for="year" class="block text-xs text-gray-500 mb-1">Year</label>
-                <select id="year" name="year" class="border rounded px-3 py-2">
-                    @foreach ($years as $y)
-                        <option value="{{ $y }}" @selected($year === $y)>{{ $y }}</option>
-                    @endforeach
-                </select>
+
+            <p class="text-xs text-gray-500">{{ $rangeLabel }} &middot; {{ $hourly ? 'per hour' : 'per day' }} &middot; times in {{ $timezone }}</p>
+        </form>
+
+        <dl class="grid grid-cols-3 gap-3">
+            @foreach ([
+                ['Views', number_format($totals['views']), 'text-sky-600', 'Times an ad was shown'],
+                ['Clicks', number_format($totals['clicks']), 'text-brand-600', 'Times an ad was tapped'],
+                ['Click rate', $rate($totals['views'], $totals['clicks']).'%', 'text-violet-600', 'Clicks out of every 100 views'],
+            ] as [$label, $value, $tone, $hint])
+                <div class="card min-w-0 p-3 sm:p-4">
+                    <dt class="text-xs font-bold text-gray-500">{{ $label }}</dt>
+                    <dd class="mt-1 truncate font-display text-xl font-bold sm:text-2xl {{ $tone }}">{{ $value }}</dd>
+                    <dd class="hidden text-xs text-gray-500 sm:block">{{ $hint }}</dd>
+                </div>
+            @endforeach
+        </dl>
+
+        <section class="card p-5" aria-labelledby="chart-heading">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <h2 id="chart-heading" class="font-display text-lg font-bold text-ink-900">{{ $hourly ? 'Views and clicks per hour' : 'Views and clicks per day' }}</h2>
+                <button type="button" id="table-toggle" class="text-sm font-bold text-brand-600 hover:underline">Show as table</button>
+            </div>
+            <div class="relative mt-4 h-72 sm:h-80"><canvas id="chart" aria-label="Views and clicks over time" role="img"></canvas></div>
+        </section>
+
+        <div id="stats-table" class="card hidden overflow-hidden">
+            <div class="relative overflow-x-auto">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="th">{{ $hourly ? 'Hour' : 'Day' }}</th>
+                            <th class="th text-right">Views</th>
+                            <th class="th text-right">Clicks</th>
+                            <th class="th text-right">Click rate</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        @foreach ($series as $point)
+                            <tr class="hover:bg-gray-50">
+                                <td class="td whitespace-nowrap font-semibold text-ink-900">{{ $point['key'] }}</td>
+                                <td class="td text-right tabular-nums">{{ number_format($point['views']) }}</td>
+                                <td class="td text-right tabular-nums">{{ number_format($point['clicks']) }}</td>
+                                <td class="td text-right tabular-nums text-gray-500">{{ $point['views'] ? $rate($point['views'], $point['clicks']).'%' : '' }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
-
-        <div>
-            <label for="placement" class="block text-xs text-gray-500 mb-1">Placement</label>
-            <select id="placement" name="placement" class="border rounded px-3 py-2">
-                <option value="">All placements</option>
-                @foreach ($placements as $option)
-                    <option value="{{ $option->value }}" @selected($placement === $option)>{{ $option->label() }}</option>
-                @endforeach
-            </select>
-        </div>
-
-        <div>
-            <label for="product" class="block text-xs text-gray-500 mb-1">Ad</label>
-            <select id="product" name="product" class="border rounded px-3 py-2">
-                <option value="">All ads</option>
-                @foreach ($products as $name)
-                    <option value="{{ $name }}" @selected($product === $name)>{{ $name }}</option>
-                @endforeach
-            </select>
-        </div>
-    </form>
-
-    <p class="text-sm text-gray-500 mt-4">{{ $rangeLabel }} &middot; {{ $hourly ? 'per hour' : 'per day' }} &middot; times in {{ $timezone }}</p>
-
-    <div class="grid grid-cols-2 gap-4 mt-3 max-w-md">
-        <div class="bg-white rounded-lg shadow p-4">
-            <p class="text-sm text-gray-500">Views</p>
-            <p class="text-2xl font-semibold" style="color:#3987e5">{{ number_format($totals['views']) }}</p>
-        </div>
-        <div class="bg-white rounded-lg shadow p-4">
-            <p class="text-sm text-gray-500">Clicks</p>
-            <p class="text-2xl font-semibold" style="color:#d95926">{{ number_format($totals['clicks']) }}</p>
-        </div>
-    </div>
-
-    <div class="bg-white rounded-lg shadow p-4 mt-4">
-        <div class="h-80"><canvas id="chart" aria-label="Views and clicks over time" role="img"></canvas></div>
-        <button type="button" id="table-toggle" class="mt-3 text-sm text-blue-600 hover:underline">Show as table</button>
-        <table id="stats-table" class="hidden w-full text-left text-sm mt-3">
-            <thead class="bg-gray-50 text-gray-500">
-                <tr><th class="px-3 py-2">{{ $hourly ? 'Hour' : 'Day' }}</th><th class="px-3 py-2">Views</th><th class="px-3 py-2">Clicks</th></tr>
-            </thead>
-            <tbody class="divide-y">
-                @foreach ($series as $point)
-                    <tr><td class="px-3 py-1.5">{{ $point['key'] }}</td><td class="px-3 py-1.5">{{ $point['views'] }}</td><td class="px-3 py-1.5">{{ $point['clicks'] }}</td></tr>
-                @endforeach
-            </tbody>
-        </table>
     </div>
 @endsection
 
@@ -100,7 +130,7 @@
         return
     }
 
-    form.querySelectorAll('select').forEach((select) => select.addEventListener('change', () => {
+    form.querySelectorAll('select, input[name=period]').forEach((field) => field.addEventListener('change', () => {
         document.getElementById('month-pickers').classList.toggle('hidden', form.period.value !== 'month')
         form.submit()
     }))
@@ -114,20 +144,29 @@
     const series = @json($series);
     const hourly = @json($hourly);
 
+    Chart.defaults.font.family = 'Nunito, system-ui, sans-serif'
+    Chart.defaults.color = '#6b7280'
+
     new Chart(document.getElementById('chart'), {
         type: 'line',
         data: {
             labels: series.map((point) => hourly ? point.key.slice(11) : point.key.slice(5)),
             datasets: [
-                { label: 'Views', data: series.map((point) => point.views), borderColor: '#3987e5', backgroundColor: '#3987e5', pointRadius: 2 },
-                { label: 'Clicks', data: series.map((point) => point.clicks), borderColor: '#d95926', backgroundColor: '#d95926', borderDash: [6, 4], pointRadius: 2 },
+                { label: 'Views', data: series.map((point) => point.views), borderColor: '#0284c7', backgroundColor: '#0284c722', fill: true, tension: 0, borderWidth: 2, pointRadius: 2 },
+                { label: 'Clicks', data: series.map((point) => point.clicks), borderColor: '#9e1a69', backgroundColor: '#9e1a69', borderDash: [6, 4], tension: 0, borderWidth: 2, pointRadius: 2 },
             ],
         },
         options: {
             maintainAspectRatio: false,
             interaction: { mode: 'index', intersect: false },
-            scales: { y: { beginAtZero: true, ticks: { precision: 0 } } },
-            plugins: { tooltip: { callbacks: { title: (items) => series[items[0].dataIndex].key } } },
+            scales: {
+                x: { grid: { display: false }, ticks: { maxTicksLimit: 12 } },
+                y: { beginAtZero: true, ticks: { precision: 0 }, grid: { color: '#f3f4f6' } },
+            },
+            plugins: {
+                legend: { position: 'bottom', labels: { boxWidth: 10, usePointStyle: true } },
+                tooltip: { callbacks: { title: (items) => series[items[0].dataIndex].key } },
+            },
         },
     })
 })()

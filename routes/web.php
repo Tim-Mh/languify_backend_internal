@@ -9,7 +9,6 @@ use App\Http\Controllers\Admin\AvatarOptionController;
 use App\Http\Controllers\Admin\BadgeController;
 use App\Http\Controllers\Admin\BadgeTierController;
 use App\Http\Controllers\Admin\ChapterController;
-use App\Http\Controllers\Admin\ChestClaimController;
 use App\Http\Controllers\Admin\ChestRewardConfigController;
 use App\Http\Controllers\Admin\ContactMessageController;
 use App\Http\Controllers\Admin\ContentTreeController;
@@ -34,9 +33,9 @@ use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// The API has no public home page: the root goes to the admin panel, which
+// sends a signed-out visitor on to its login.
+Route::redirect('/', '/admin');
 
 Route::prefix('admin')->group(function () {
     Route::middleware('guest')->group(function () {
@@ -50,6 +49,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/content-tree', [ContentTreeController::class, 'index'])->name('content-tree');
 
         Route::resource('users', UserController::class)->except(['create', 'store']);
+        Route::patch('/users/{user}/tester', [UserController::class, 'updateTester'])->name('users.tester');
         Route::post('/users/{user}/adjust-game-state', [UserController::class, 'adjustGameState'])->name('users.adjust-game-state');
 
         Route::resource('languages', LanguageController::class)->except('show');
@@ -66,17 +66,18 @@ Route::prefix('admin')->group(function () {
         Route::resource('exercises', ExerciseController::class)->except('show');
         Route::resource('exercise-instructions', ExerciseInstructionController::class)->except('show');
         Route::resource('alphabet-letters', AlphabetLetterController::class)->except('show');
-        Route::resource('avatar-options', AvatarOptionController::class)->except('show');
+        Route::put('avatar-options/prices', [AvatarOptionController::class, 'updatePrices'])->name('avatar-options.prices');
+        Route::resource('avatar-options', AvatarOptionController::class)->only(['index', 'edit', 'update']);
 
         Route::resource('trivia-topics', TriviaTopicController::class)->except('show');
         Route::resource('trivia-questions', TriviaQuestionController::class)->except('show');
 
         Route::resource('badges', BadgeController::class)->except('show');
-        Route::resource('badge-tiers', BadgeTierController::class)->except('show');
+        Route::post('badge-tiers', [BadgeTierController::class, 'store'])->name('badge-tiers.store');
+        Route::delete('badge-tiers/{badgeTier}', [BadgeTierController::class, 'destroy'])->name('badge-tiers.destroy');
         Route::resource('league-tiers', LeagueTierController::class)->except('show');
         Route::resource('quests', QuestController::class)->except('show');
         Route::resource('chest-reward-configs', ChestRewardConfigController::class)->except('show');
-        Route::get('/chest-claims', [ChestClaimController::class, 'index'])->name('chest-claims.index');
 
         Route::resource('gem-packs', GemPackController::class)->except('show');
         Route::resource('heart-refill-tiers', HeartRefillTierController::class)->except('show');

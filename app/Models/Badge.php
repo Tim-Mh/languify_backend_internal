@@ -4,9 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 #[Fillable([
-    'key', 'category', 'title', 'description', 'tier',
+    'key', 'category', 'title', 'description', 'tier', 'gems_reward', 'xp_reward', 'hearts_reward', 'image_path',
     'requirement_type', 'requirement_value', 'is_active', 'order_number',
 ])]
 class Badge extends Model
@@ -30,14 +31,27 @@ class Badge extends Model
     ];
 
     /**
+     * What the learner gets on claiming this badge.
+     *
      * @return array{gems: int, xp: int, hearts: int}
      */
-    public static function tierReward(string $tier): array
+    public function reward(): array
     {
-        $badgeTier = BadgeTier::where('name', $tier)->first();
+        return ['gems' => (int) $this->gems_reward, 'xp' => (int) $this->xp_reward, 'hearts' => (int) $this->hearts_reward];
+    }
 
-        return $badgeTier
-            ? ['gems' => $badgeTier->gems_reward, 'xp' => $badgeTier->xp_reward, 'hearts' => $badgeTier->hearts_reward]
-            : ['gems' => 0, 'xp' => 0, 'hearts' => 0];
+    /**
+     * The image an admin uploaded for this badge, else the same artwork the
+     * web app uses (one image per category and tier), else null.
+     */
+    public function imageUrl(): ?string
+    {
+        if ($this->image_path) {
+            return Storage::disk('public')->url($this->image_path);
+        }
+
+        $path = 'images/badges/'.$this->category.'-'.strtolower((string) $this->tier).'.webp';
+
+        return is_file(public_path($path)) ? asset($path) : null;
     }
 }

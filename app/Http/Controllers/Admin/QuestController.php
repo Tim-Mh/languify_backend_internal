@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Admin\Concerns\ReturnsToPreviousPage;
 use App\Http\Controllers\Controller;
 use App\Models\Quest;
+use App\Models\UserDailyQuest;
 use App\Support\PerPage;
 use App\Support\Sluggable;
 use Illuminate\Http\RedirectResponse;
@@ -13,16 +15,38 @@ use Illuminate\View\View;
 
 class QuestController extends Controller
 {
+    use ReturnsToPreviousPage;
+
     public function index(Request $request): View
     {
+        $status = in_array($request->query('status'), ['active', 'off'], true) ? $request->query('status') : 'all';
+
+        $quests = Quest::query()
+            ->when($status !== 'all', fn ($q) => $q->where('is_active', $status === 'active'))
+            ->orderByDesc('is_active')->orderBy('order_number')
+            ->paginate(PerPage::resolve($request))->withQueryString();
+
         return view('admin.quests.index', [
-            'quests' => Quest::orderBy('order_number')->paginate(PerPage::resolve($request))->withQueryString(),
+            'quests' => $quests,
+            'status' => $status,
+            'counts' => [
+                'all' => Quest::count(),
+                'active' => Quest::where('is_active', true)->count(),
+                'off' => Quest::where('is_active', false)->count(),
+            ],
+            // How many learner-days each quest has been handed out on.
+            'assigned' => UserDailyQuest::selectRaw('quest_id, count(*) as total')
+                ->whereIn('quest_id', $quests->pluck('id'))
+                ->groupBy('quest_id')->pluck('total', 'quest_id'),
         ]);
     }
 
-    public function create(): View
+    public function create(Request $request): View
     {
-        return view('admin.quests.create');
+        return view('admin.quests.create', [
+            'nextOrder' => (int) Quest::max('order_number') + 1,
+            'return' => $this->returnUrl($request),
+        ]);
     }
 
     public function store(Request $request): RedirectResponse
@@ -30,28 +54,28 @@ class QuestController extends Controller
         $data = $this->validateData($request);
         $data['key'] = Sluggable::unique('quests', 'key', $data['title']);
 
-        Quest::create($data);
+        $quest = Quest::create($data);
 
-        return redirect()->route('admin.quests.index')->with('status', 'Quest created.');
+        return $this->backTo($request, 'admin.quests.index', "Quest \"{$quest->title}\" added.");
     }
 
-    public function edit(Quest $quest): View
+    public function edit(Request $request, Quest $quest): View
     {
-        return view('admin.quests.edit', ['quest' => $quest]);
+        return view('admin.quests.edit', ['quest' => $quest, 'return' => $this->returnUrl($request)]);
     }
 
     public function update(Request $request, Quest $quest): RedirectResponse
     {
         $quest->update($this->validateData($request, $quest));
 
-        return redirect()->route('admin.quests.index')->with('status', 'Quest updated.');
+        return $this->backTo($request, 'admin.quests.index', "Quest \"{$quest->title}\" saved.");
     }
 
-    public function destroy(Quest $quest): RedirectResponse
+    public function destroy(Request $request, Quest $quest): RedirectResponse
     {
         $quest->delete();
 
-        return redirect()->route('admin.quests.index')->with('status', 'Quest deleted.');
+        return $this->backTo($request, 'admin.quests.index', "Quest \"{$quest->title}\" deleted.");
     }
 
     private function validateData(Request $request, ?Quest $quest = null): array

@@ -1,51 +1,33 @@
-@csrf
-@if (isset($instruction))
-    @method('PUT')
-@endif
+@php
+    $instruction ??= null;
+    $defaults ??= [];
+@endphp
 
-<div class="grid grid-cols-2 gap-4">
+<div class="grid gap-5 sm:grid-cols-2">
     <div>
-        <label class="block text-sm font-medium mb-1">Language</label>
-        <select name="language_id" class="w-full border rounded px-3 py-2">
-            <option value="">-- Select --</option>
+        <label for="language_id" class="field-label">Learner's language</label>
+        <select id="language_id" name="language_id" required class="field-input">
+            <option value="">Choose a language</option>
             @foreach ($languages as $language)
-                <option value="{{ $language->id }}" {{ (int) old('language_id', $instruction->language_id ?? '') === $language->id ? 'selected' : '' }}>
-                    {{ $language->flag_emoji }} {{ $language->name }}
-                </option>
+                <option value="{{ $language->id }}" @selected((int) old('language_id', $instruction?->language_id ?? $defaults['language_id'] ?? 0) === $language->id)>{{ $language->flag_emoji }} {{ $language->name }}</option>
             @endforeach
         </select>
-        @error('language_id') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+        @error('language_id') <p class="field-error">{{ $message }}</p> @enderror
     </div>
-
     <div>
-        <label class="block text-sm font-medium mb-1">Exercise Type</label>
-        <select name="exercise_type" class="w-full border rounded px-3 py-2">
-            <option value="">-- Select --</option>
+        <label for="exercise_type" class="field-label">Exercise type</label>
+        <select id="exercise_type" name="exercise_type" required class="field-input">
+            <option value="">Choose a type</option>
             @foreach ($types as $type)
-                <option value="{{ $type->value }}" {{ old('exercise_type', $instruction->exercise_type->value ?? '') === $type->value ? 'selected' : '' }}>
-                    {{ $type->value }}
-                </option>
+                <option value="{{ $type->value }}" @selected(old('exercise_type', $instruction?->exercise_type->value ?? $defaults['exercise_type'] ?? null) === $type->value)>{{ $type->label() }}</option>
             @endforeach
         </select>
-        @error('exercise_type') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+        @error('exercise_type') <p class="field-error">{{ $message }}</p> @enderror
     </div>
-
-    <div class="col-span-2">
-        <label class="block text-sm font-medium mb-1">Template</label>
-        <input type="text" name="template" value="{{ old('template', $instruction->template ?? '') }}" class="w-full border rounded px-3 py-2">
-        @error('template') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
-        <p class="text-xs text-gray-500 mt-1">Use {word}, {sentence}, {target_sentence}, {question} placeholders — filled in from the exercise's own data.</p>
+    <div class="sm:col-span-2">
+        <label for="template" class="field-label">Instruction</label>
+        <input type="text" id="template" name="template" dir="auto" value="{{ old('template', $instruction?->template) }}" required maxlength="1000" class="field-input" placeholder="Pick the right word for {word}">
+        <p class="field-hint">Write it in the learner's language. These spots are filled in from each exercise: <code>{word}</code> <code>{sentence}</code> <code>{target_sentence}</code> <code>{question}</code></p>
+        @error('template') <p class="field-error">{{ $message }}</p> @enderror
     </div>
-
-    <div class="col-span-2">
-        <label class="block text-sm font-medium mb-1">Fallback Template (optional)</label>
-        <input type="text" name="fallback_template" value="{{ old('fallback_template', $instruction->fallback_template ?? '') }}" class="w-full border rounded px-3 py-2">
-        @error('fallback_template') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
-        <p class="text-xs text-gray-500 mt-1">Used instead of Template when an exercise's data is missing a placeholder the Template needs (e.g. a grammar-only multiple_choice exercise with no "word" field). Usually a fixed generic phrase with no placeholders.</p>
-    </div>
-</div>
-
-<div class="mt-6">
-    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save</button>
-    <a href="{{ route('admin.exercise-instructions.index') }}" class="ml-2 text-gray-600 hover:underline">Cancel</a>
 </div>

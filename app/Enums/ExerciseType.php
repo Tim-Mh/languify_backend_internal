@@ -14,4 +14,18 @@ enum ExerciseType: string
     // hoverable for its meaning) and build the native-language translation by
     // tapping word-bank tiles.
     case Translate = 'translate';
+
+    /** Plain name for the admin panel. */
+    public function label(): string
+    {
+        return match ($this) {
+            self::MatchPairs => 'Match pairs',
+            self::FillBlank => 'Fill the blank',
+            self::TapWord => 'Tap the words',
+            self::ListenSelect => 'Listen and pick',
+            self::MultipleChoice => 'Multiple choice',
+            self::ParagraphTranslation => 'Paragraph translation',
+            self::Translate => 'Translate',
+        };
+    }
 }

@@ -1,11 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Add Exercise Instruction')
+@section('title', 'Write an instruction')
 
 @section('content')
-    <div class="bg-white rounded-lg shadow p-6 max-w-2xl">
-        <form action="{{ route('admin.exercise-instructions.store') }}" method="POST">
-            @include('admin.exercise-instructions._form')
-        </form>
-    </div>
+    <x-admin.form-shell :action="route('admin.exercise-instructions.store')" :back="route('admin.exercise-instructions.index', ['language_id' => $defaults['language_id']])" :return="$return" back-label="Back to instructions" submit="Save instruction">
+        @include('admin.exercise-instructions._form')
+    </x-admin.form-shell>
 @endsection

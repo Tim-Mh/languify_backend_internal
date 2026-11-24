@@ -53,6 +53,7 @@ class LessonProgressController extends Controller
                                 new OA\Property(property: 'xp', type: 'integer', example: 10),
                                 new OA\Property(property: 'hearts', type: 'integer', example: 1),
                             ], type: 'object'),
+                            new OA\Property(property: 'imageUrl', type: 'string', nullable: true, example: 'https://api.example.com/storage/badges/abc.png'),
                         ], type: 'object'),
                     ),
                     new OA\Property(
@@ -116,7 +117,8 @@ class LessonProgressController extends Controller
                 'title' => $badge['title'],
                 'description' => $badge['description'],
                 'tier' => $badge['tier'],
-                'reward' => Badge::tierReward($badge['tier']),
+                'reward' => $badge['reward'],
+                'imageUrl' => $badge['imageUrl'] ?? null,
             ], $result['newBadges']),
             'streakMilestoneHit' => $result['streakMilestoneHit'],
             'streak' => $result['streak'],

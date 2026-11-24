@@ -42,6 +42,7 @@ class LeagueController extends Controller
                 'league' => [
                     'enrolled' => false,
                     'tierName' => $lowestTier?->name,
+                    'imageUrl' => $lowestTier?->imageUrl(),
                     'secondsUntilRollover' => max(0, (int) now()->diffInSeconds($nextRollover)),
                     'members' => [],
                 ],
@@ -120,6 +121,7 @@ class LeagueController extends Controller
             'league' => [
                 'enrolled' => true,
                 'tierName' => $tier->name,
+                'imageUrl' => $tier->imageUrl(),
                 'tierOrderNumber' => $tier->order_number,
                 'isLowestTier' => $tier->order_number === $tiers->min('order_number'),
                 'isHighestTier' => $isHighestTier,

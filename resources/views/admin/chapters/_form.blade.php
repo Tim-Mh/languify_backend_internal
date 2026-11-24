@@ -1,49 +1,39 @@
-@csrf
-@if (isset($chapter))
-    @method('PUT')
-@endif
+@php
+    $chapter ??= null;
+    $defaults ??= [];
+@endphp
 
-<div class="grid grid-cols-2 gap-4">
+<div class="grid gap-5 sm:grid-cols-2">
     <div>
-        <label class="block text-sm font-medium mb-1">Language</label>
-        <select name="language_id" class="w-full border rounded px-3 py-2">
-            <option value="">-- Select --</option>
+        <label for="language_id" class="field-label">Language</label>
+        <select id="language_id" name="language_id" required class="field-input">
+            <option value="">Choose a language</option>
             @foreach ($languages as $language)
-                <option value="{{ $language->id }}" {{ (int) old('language_id', $chapter->language_id ?? '') === $language->id ? 'selected' : '' }}>
-                    {{ $language->flag_emoji }} {{ $language->name }}
-                </option>
+                <option value="{{ $language->id }}" @selected((int) old('language_id', $chapter?->language_id ?? $defaults['language_id'] ?? 0) === $language->id)>{{ $language->flag_emoji }} {{ $language->name }}</option>
             @endforeach
         </select>
-        @error('language_id') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+        @error('language_id') <p class="field-error">{{ $message }}</p> @enderror
     </div>
-
     <div>
-        <label class="block text-sm font-medium mb-1">Chapter Key</label>
-        <select name="chapter_key" class="w-full border rounded px-3 py-2">
-            <option value="">-- Select --</option>
+        <label for="chapter_key" class="field-label">Kind of chapter</label>
+        <select id="chapter_key" name="chapter_key" required class="field-input">
+            <option value="">Choose one</option>
             @foreach ($chapterKeys as $key)
-                <option value="{{ $key->value }}" {{ old('chapter_key', $chapter->chapter_key->value ?? '') === $key->value ? 'selected' : '' }}>
-                    {{ ucfirst($key->value) }}
-                </option>
+                <option value="{{ $key->value }}" @selected(old('chapter_key', $chapter?->chapter_key->value) === $key->value)>{{ ucfirst(str_replace('_', ' ', $key->value)) }}</option>
             @endforeach
         </select>
-        @error('chapter_key') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+        <p class="field-hint">Each language has one chapter of each kind. The app uses it for the chapter's look.</p>
+        @error('chapter_key') <p class="field-error">{{ $message }}</p> @enderror
     </div>
-
+    <div class="sm:col-span-2">
+        <label for="title" class="field-label">Title</label>
+        <input type="text" id="title" name="title" value="{{ old('title', $chapter?->title) }}" required class="field-input" placeholder="Beginner">
+        @error('title') <p class="field-error">{{ $message }}</p> @enderror
+    </div>
     <div>
-        <label class="block text-sm font-medium mb-1">Title</label>
-        <input type="text" name="title" value="{{ old('title', $chapter->title ?? '') }}" class="w-full border rounded px-3 py-2">
-        @error('title') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+        <label for="order_number" class="field-label">Position</label>
+        <input type="number" id="order_number" name="order_number" min="0" value="{{ old('order_number', $chapter?->order_number ?? $defaults['order_number'] ?? 1) }}" required class="field-input">
+        <p class="field-hint">Lower numbers come first in the course.</p>
+        @error('order_number') <p class="field-error">{{ $message }}</p> @enderror
     </div>
-
-    <div>
-        <label class="block text-sm font-medium mb-1">Order Number</label>
-        <input type="number" name="order_number" value="{{ old('order_number', $chapter->order_number ?? 0) }}" class="w-full border rounded px-3 py-2">
-        @error('order_number') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
-    </div>
-</div>
-
-<div class="mt-6">
-    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save</button>
-    <a href="{{ route('admin.chapters.index') }}" class="ml-2 text-gray-600 hover:underline">Cancel</a>
 </div>

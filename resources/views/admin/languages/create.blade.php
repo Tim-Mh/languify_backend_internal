@@ -1,11 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Add Language')
+@section('title', 'Add language')
 
 @section('content')
-    <div class="bg-white rounded-lg shadow p-6 max-w-2xl">
-        <form action="{{ route('admin.languages.store') }}" method="POST">
-            @include('admin.languages._form')
-        </form>
-    </div>
+    <x-admin.form-shell :action="route('admin.languages.store')" :back="route('admin.languages.index')" back-label="Back to languages" submit="Add language">
+        @include('admin.languages._form')
+    </x-admin.form-shell>
 @endsection

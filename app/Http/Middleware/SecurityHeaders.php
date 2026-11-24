@@ -50,8 +50,12 @@ class SecurityHeaders
         $response = $next($request);
 
         $response->headers->set('X-Content-Type-Options', 'nosniff');
-        $response->headers->set('X-Frame-Options', 'DENY');
-        $response->headers->set('Content-Security-Policy', "frame-ancestors 'none'");
+        // The admin panel opens its edit forms in a popup frame on its own
+        // pages, so admin pages may be framed by this same site only. Every
+        // other site, and everything outside /admin, still may not frame them.
+        $sameSite = $request->is('admin', 'admin/*');
+        $response->headers->set('X-Frame-Options', $sameSite ? 'SAMEORIGIN' : 'DENY');
+        $response->headers->set('Content-Security-Policy', $sameSite ? "frame-ancestors 'self'" : "frame-ancestors 'none'");
         $response->headers->set('Referrer-Policy', 'strict-origin-when-cross-origin');
         $response->headers->set('Permissions-Policy', self::PERMISSIONS);
 

@@ -1,11 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Add Gem Pack')
+@section('title', 'Add gem pack')
 
 @section('content')
-    <div class="bg-white rounded-lg shadow p-6 max-w-2xl">
-        <form action="{{ route('admin.gem-packs.store') }}" method="POST">
-            @include('admin.gem-packs._form')
-        </form>
-    </div>
+    <x-admin.form-shell :action="route('admin.gem-packs.store')" :back="route('admin.gem-packs.index')" :return="$return" back-label="Back to gem packs" submit="Add gem pack">
+        @include('admin.gem-packs._form')
+    </x-admin.form-shell>
 @endsection

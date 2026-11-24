@@ -81,7 +81,6 @@ class LegalPageController extends Controller
         $data = $request->validate([
             'locale' => ['required', 'string', Rule::in(LegalPage::LOCALES)],
             'title' => ['required', 'string', 'max:255'],
-            'summary' => ['nullable', 'string', 'max:2000'],
             'content' => ['required', 'string'],
         ]);
 
@@ -96,18 +95,18 @@ class LegalPageController extends Controller
             // them would be guessing — but they are now measured against new
             // text, so any whose hash no longer matches will show as out of
             // date on the next load. That is the point of the hash.
-            $source->update(['title' => $data['title'], 'summary' => $data['summary'] ?? null, 'content' => $data['content']]);
+            // The "In short" text is no longer edited here, so it is left as it is.
+            $source->update(['title' => $data['title'], 'content' => $data['content']]);
 
             return redirect()
                 ->route('admin.legal-pages.edit', ['legal_page' => $slug, 'locale' => $locale])
-                ->with('status', 'English updated. Any translations made from the previous text are now marked out of date.');
+                ->with('status', 'English updated.');
         }
 
         LegalPage::updateOrCreate(
             ['slug' => $slug, 'locale' => $locale],
             [
                 'title' => $data['title'],
-                'summary' => $data['summary'] ?? null,
                 'content' => $data['content'],
                 // Stamped with the English text this was written against, which
                 // is what lets it be called out of date later.

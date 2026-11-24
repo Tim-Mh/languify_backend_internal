@@ -36,7 +36,7 @@ class QuestService
 {
     // Total lessons ever completed per growth step: every this-many lessons, a
     // template's target rises by its target_increment (up to its max_target).
-    private const LESSONS_PER_STEP = 10;
+    public const LESSONS_PER_STEP = 5;
 
     // How many quests a learner gets each day.
     private const QUESTS_PER_DAY = 3;

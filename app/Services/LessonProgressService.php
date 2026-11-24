@@ -9,6 +9,7 @@ use App\Models\Chapter;
 use App\Models\ChestClaim;
 use App\Models\ChestRewardConfig;
 use App\Models\Lesson;
+use App\Models\LessonPlay;
 use App\Models\StreakFreezeUse;
 use App\Models\User;
 use App\Models\UserActivityDay;
@@ -578,6 +579,10 @@ class LessonProgressService
                 'activity_date' => $this->userToday($user)->format('Y-m-d'),
             ]);
 
+            // Every play, replays included, so the admin dashboard can count
+            // lessons played per day.
+            LessonPlay::create(['user_id' => $user->id, 'lesson_id' => $lesson->id, 'played_at' => now()]);
+
             $streakIncreased = $this->applyStreak($state, $user);
 
             // Only a play that actually finished something counts toward the
@@ -634,6 +639,8 @@ class LessonProgressService
                             'title' => $badgesByKey[$key]->title,
                             'description' => $badgesByKey[$key]->description,
                             'tier' => $badgesByKey[$key]->tier,
+                            'reward' => $badgesByKey[$key]->reward(),
+                            'imageUrl' => $badgesByKey[$key]->imageUrl(),
                         ] : null,
                         $newBadges,
                     )));
@@ -948,7 +955,7 @@ class LessonProgressService
 
     /**
      * Claim an earned-but-unclaimed badge: records it and pays out the tier
-     * reward (gems + XP + hearts). Race-safe via a game-state row lock.
+     * reward set on the badge (gems + XP + hearts). Race-safe via a game-state row lock.
      *
      * @return array{gems: int, xp: int, hearts: int}
      */
@@ -971,7 +978,7 @@ class LessonProgressService
 
             UserBadge::create(['user_id' => $user->id, 'badge_key' => $badge->key, 'earned_at' => Carbon::now()]);
 
-            $reward = Badge::tierReward($badge->tier);
+            $reward = $badge->reward();
             $gems = $this->applyGemsBonus($user, $reward['gems']);
             $maxHearts = $this->effectiveMaxHearts($user);
 
@@ -1019,7 +1026,7 @@ class LessonProgressService
 
             UserBadge::create(['user_id' => $user->id, 'badge_key' => $badge->key, 'earned_at' => Carbon::now()]);
 
-            $reward = Badge::tierReward($badge->tier);
+            $reward = $badge->reward();
             GemLedger::apply($state, $this->applyGemsBonus($user, $reward['gems']), 'badge.claim');
             $maxHearts = $this->effectiveMaxHearts($user);
             $state->hearts = $maxHearts === null ? $state->hearts + $reward['hearts'] : min($maxHearts, $state->hearts + $reward['hearts']);

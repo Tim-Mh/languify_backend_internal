@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Admin\Concerns\ReturnsToPreviousPage;
 use App\Http\Controllers\Controller;
 use App\Models\HeartRefillTier;
 use App\Support\PerPage;
@@ -12,6 +13,8 @@ use Illuminate\View\View;
 
 class HeartRefillTierController extends Controller
 {
+    use ReturnsToPreviousPage;
+
     public function index(Request $request): View
     {
         return view('admin.heart-refill-tiers.index', [
@@ -19,35 +22,35 @@ class HeartRefillTierController extends Controller
         ]);
     }
 
-    public function create(): View
+    public function create(Request $request): View
     {
-        return view('admin.heart-refill-tiers.create');
+        return view('admin.heart-refill-tiers.create', ['return' => $this->returnUrl($request)]);
     }
 
     public function store(Request $request): RedirectResponse
     {
-        HeartRefillTier::create($this->validateData($request));
+        $tier = HeartRefillTier::create($this->validateData($request));
 
-        return redirect()->route('admin.heart-refill-tiers.index')->with('status', 'Heart refill tier created.');
+        return $this->backTo($request, 'admin.heart-refill-tiers.index', "Heart refill \"{$tier->title}\" added.");
     }
 
-    public function edit(HeartRefillTier $heart_refill_tier): View
+    public function edit(Request $request, HeartRefillTier $heart_refill_tier): View
     {
-        return view('admin.heart-refill-tiers.edit', ['heart_refill_tier' => $heart_refill_tier]);
+        return view('admin.heart-refill-tiers.edit', ['heart_refill_tier' => $heart_refill_tier, 'return' => $this->returnUrl($request)]);
     }
 
     public function update(Request $request, HeartRefillTier $heart_refill_tier): RedirectResponse
     {
         $heart_refill_tier->update($this->validateData($request, $heart_refill_tier));
 
-        return redirect()->route('admin.heart-refill-tiers.index')->with('status', 'Heart refill tier updated.');
+        return $this->backTo($request, 'admin.heart-refill-tiers.index', "Heart refill \"{$heart_refill_tier->title}\" saved.");
     }
 
-    public function destroy(HeartRefillTier $heart_refill_tier): RedirectResponse
+    public function destroy(Request $request, HeartRefillTier $heart_refill_tier): RedirectResponse
     {
         $heart_refill_tier->delete();
 
-        return redirect()->route('admin.heart-refill-tiers.index')->with('status', 'Heart refill tier deleted.');
+        return $this->backTo($request, 'admin.heart-refill-tiers.index', "Heart refill \"{$heart_refill_tier->title}\" deleted.");
     }
 
     private function validateData(Request $request, ?HeartRefillTier $tier = null): array

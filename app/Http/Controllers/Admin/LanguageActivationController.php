@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Language;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\View\View;
 
 /**
  * The one screen that decides which languages the web app and the mobile app
@@ -27,15 +27,10 @@ use Illuminate\View\View;
  */
 class LanguageActivationController extends Controller
 {
-    public function index(): View
+    /** The switches live on the Languages list now; old links land there. */
+    public function index(): RedirectResponse
     {
-        return view('admin.language-activation.index', [
-            // Every language, active and inactive together, unpaginated. The
-            // point of the screen is seeing the whole roster at a glance and
-            // spotting what is still switched off — a second page would hide
-            // exactly the rows an admin came here to find.
-            'languages' => Language::orderBy('name')->get(),
-        ]);
+        return redirect()->route('admin.languages.index');
     }
 
     /**

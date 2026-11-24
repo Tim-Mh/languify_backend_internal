@@ -1,11 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Edit Badge')
+@section('title', 'Edit '.$badge->title)
 
 @section('content')
-    <div class="bg-white rounded-lg shadow p-6 max-w-2xl">
-        <form action="{{ route('admin.badges.update', $badge) }}" method="POST">
-            @include('admin.badges._form')
-        </form>
-    </div>
+    <x-admin.form-shell enctype="multipart/form-data" :action="route('admin.badges.update', $badge)" method="PUT" :back="route('admin.badges.index')" :return="$return" back-label="Back to badges" submit="Save changes">
+        @include('admin.badges._form')
+    </x-admin.form-shell>
 @endsection

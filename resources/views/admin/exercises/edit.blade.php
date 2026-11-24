@@ -1,11 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Edit Exercise')
+@section('title', 'Edit exercise')
 
 @section('content')
-    <div class="bg-white rounded-lg shadow p-6 max-w-3xl">
-        <form action="{{ route('admin.exercises.update', $exercise) }}" method="POST">
-            @include('admin.exercises._form')
-        </form>
-    </div>
+    <x-admin.form-shell :action="route('admin.exercises.update', $exercise)" method="PUT" :back="route('admin.exercises.index', ['lesson_id' => $exercise->lesson_id])" :return="$return" back-label="Back" submit="Save changes">
+        @include('admin.exercises._form')
+    </x-admin.form-shell>
 @endsection

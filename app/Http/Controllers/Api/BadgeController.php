@@ -15,7 +15,7 @@ class BadgeController extends Controller
 
     #[OA\Post(
         path: '/api/badges/{badgeKey}/claim',
-        summary: 'Claim an earned badge and receive its tier reward',
+        summary: 'Claim an earned badge and receive its reward',
         description: 'Fails (422) if the badge is already claimed or the requirement is not yet met. Returns the gems/XP/hearts awarded.',
         tags: ['Badges'],
         security: [['cookieAuth' => []]],

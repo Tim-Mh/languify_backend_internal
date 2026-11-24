@@ -1,11 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Add Unit')
+@section('title', 'Add unit')
 
 @section('content')
-    <div class="bg-white rounded-lg shadow p-6 max-w-2xl">
-        <form action="{{ route('admin.units.store') }}" method="POST">
-            @include('admin.units._form')
-        </form>
-    </div>
+    <x-admin.form-shell :action="route('admin.units.store')" :back="route('admin.units.index')" :return="$return" back-label="Back" submit="Add unit">
+        @include('admin.units._form')
+    </x-admin.form-shell>
 @endsection

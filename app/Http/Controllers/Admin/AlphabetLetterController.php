@@ -13,7 +13,7 @@ class AlphabetLetterController extends Controller
 {
     public function index(Request $request): View
     {
-        $languages = Language::orderBy('name')->get();
+        $languages = Language::withCount('alphabetLetters')->orderBy('name')->get();
         $selectedLanguage = $languages->firstWhere('id', (int) $request->query('language_id')) ?? $languages->first();
 
         $letters = $selectedLanguage
@@ -47,7 +47,7 @@ class AlphabetLetterController extends Controller
         AlphabetLetter::create($data);
 
         return redirect()->route('admin.alphabet-letters.index', ['language_id' => $data['language_id']])
-            ->with('status', 'Letter created.');
+            ->with('status', "Letter {$data['character']} added.");
     }
 
     public function edit(AlphabetLetter $alphabet_letter): View
@@ -64,7 +64,7 @@ class AlphabetLetterController extends Controller
         $alphabet_letter->update($data);
 
         return redirect()->route('admin.alphabet-letters.index', ['language_id' => $data['language_id']])
-            ->with('status', 'Letter updated.');
+            ->with('status', "Letter {$data['character']} saved.");
     }
 
     public function destroy(AlphabetLetter $alphabet_letter): RedirectResponse

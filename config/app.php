@@ -98,6 +98,10 @@ return [
 
     'timezone' => 'UTC',
 
+    // The day the admin panel counts in (dashboard "today", per-day charts).
+    // Only the panel's reporting uses it; everything is still stored in UTC.
+    'admin_timezone' => env('ADMIN_TIMEZONE', 'Asia/Karachi'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration

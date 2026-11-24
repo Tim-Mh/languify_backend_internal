@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Enums\ExerciseType;
 use App\Http\Controllers\Controller;
 use App\Models\Language;
-use App\Support\PerPage;
+use App\Models\Lesson;
+use App\Models\UserCourse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -12,10 +14,27 @@ use Illuminate\View\View;
 
 class LanguageController extends Controller
 {
-    public function index(Request $request): View
+    /**
+     * Every language on one page with its live switch and how much course
+     * there is behind it. Unpaginated: the point is seeing the whole roster
+     * at a glance, and there are only a handful of languages.
+     */
+    public function index(): View
     {
+        $lessons = Lesson::query()
+            ->join('units', 'units.id', '=', 'lessons.unit_id')
+            ->join('chapters', 'chapters.id', '=', 'units.chapter_id')
+            ->selectRaw('chapters.language_id as language_id, count(*) as total')
+            ->groupBy('chapters.language_id')
+            ->pluck('total', 'language_id');
+
+        $learners = UserCourse::selectRaw('language_id, count(*) as total')->groupBy('language_id')->pluck('total', 'language_id');
+
         return view('admin.languages.index', [
-            'languages' => Language::orderBy('name')->paginate(PerPage::resolve($request))->withQueryString(),
+            'languages' => Language::withCount(['chapters', 'alphabetLetters', 'exerciseInstructions'])->orderBy('name')->get(),
+            'lessons' => $lessons,
+            'learners' => $learners,
+            'typeCount' => count(ExerciseType::cases()),
         ]);
     }
 
@@ -30,7 +49,7 @@ class LanguageController extends Controller
 
         Language::create($data);
 
-        return redirect()->route('admin.languages.index')->with('status', 'Language created.');
+        return redirect()->route('admin.languages.index')->with('status', "{$data['name']} added.");
     }
 
     public function edit(Language $language): View
@@ -44,14 +63,14 @@ class LanguageController extends Controller
 
         $language->update($data);
 
-        return redirect()->route('admin.languages.index')->with('status', 'Language updated.');
+        return redirect()->route('admin.languages.index')->with('status', "{$language->name} saved.");
     }
 
     public function destroy(Language $language): RedirectResponse
     {
         $language->delete();
 
-        return redirect()->route('admin.languages.index')->with('status', 'Language deleted.');
+        return redirect()->route('admin.languages.index')->with('status', "{$language->name} deleted.");
     }
 
     private function validateData(Request $request, ?Language $language = null): array
@@ -61,10 +80,15 @@ class LanguageController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'native_name' => ['required', 'string', 'max:255'],
             'flag_emoji' => ['nullable', 'string', 'max:10'],
-            'is_active' => ['sometimes', 'boolean'],
         ]);
 
-        $data['is_active'] = $request->boolean('is_active');
+        // Live or hidden, switched on the language card, is the only control:
+        // live languages can be picked both as a course and as the learner's
+        // own language. A new one starts hidden so it can be set up first.
+        if (! $language) {
+            $data['is_active'] = false;
+            $data['is_learnable'] = true;
+        }
 
         return $data;
     }

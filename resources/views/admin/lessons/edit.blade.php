@@ -1,11 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Edit Lesson')
+@section('title', 'Edit lesson')
 
 @section('content')
-    <div class="bg-white rounded-lg shadow p-6 max-w-2xl">
-        <form action="{{ route('admin.lessons.update', $lesson) }}" method="POST">
-            @include('admin.lessons._form')
-        </form>
-    </div>
+    <x-admin.form-shell :action="route('admin.lessons.update', $lesson)" method="PUT" :back="route('admin.lessons.index')" :return="$return" back-label="Back" submit="Save changes">
+        @include('admin.lessons._form')
+    </x-admin.form-shell>
 @endsection
