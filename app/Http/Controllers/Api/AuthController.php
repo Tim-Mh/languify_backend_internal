@@ -15,10 +15,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Str;
 use OpenApi\Attributes as OA;
 
 class AuthController extends Controller
 {
+    private const MAX_WRONG_CODES = 5;
+
+    private const TOO_MANY_WRONG_CODES = 'Too many wrong codes. Request a new code.';
+
     #[OA\Post(
         path: '/api/auth/register',
         summary: 'Register a new account',
@@ -89,8 +95,14 @@ class AuthController extends Controller
         $user = User::where('email', $data['email'])->first();
 
         if (! $user || ! $this->otpIsValid($user->otp_code, $user->otp_expires_at, $data['otp'])) {
+            if ($user && $this->tooManyWrongCodes($user, 'verify', ['otp_code', 'otp_expires_at'])) {
+                return response()->json(['message' => self::TOO_MANY_WRONG_CODES], 422);
+            }
+
             return response()->json(['message' => 'Invalid or expired verification code.'], 422);
         }
+
+        RateLimiter::clear($this->wrongCodeKey('verify', $user));
 
         $user->forceFill([
             'email_verified_at' => now(),
@@ -217,6 +229,7 @@ class AuthController extends Controller
                 'password_reset_code' => $otp,
                 'password_reset_expires_at' => now()->addMinutes(10),
             ])->save();
+            RateLimiter::clear($this->wrongCodeKey('reset', $user));
             $user->notify(new PasswordResetNotification($otp));
         }
 
@@ -251,8 +264,14 @@ class AuthController extends Controller
         $user = User::where('email', $data['email'])->first();
 
         if (! $user || ! $this->otpIsValid($user->password_reset_code, $user->password_reset_expires_at, $data['otp'])) {
+            if ($user && $this->tooManyWrongCodes($user, 'reset', ['password_reset_code', 'password_reset_expires_at'])) {
+                return response()->json(['message' => self::TOO_MANY_WRONG_CODES], 422);
+            }
+
             return response()->json(['message' => 'Invalid or expired reset code.'], 422);
         }
+
+        RateLimiter::clear($this->wrongCodeKey('reset', $user));
 
         $user->forceFill([
             'password' => $data['password'],
@@ -310,8 +329,41 @@ class AuthController extends Controller
             'otp_code' => $otp,
             'otp_expires_at' => now()->addMinutes(10),
         ])->save();
+        RateLimiter::clear($this->wrongCodeKey('verify', $user));
 
         $user->notify(new OtpNotification($otp));
+    }
+
+    /**
+     * Counts a wrong code for this account and purpose. On the fifth wrong
+     * one the code itself is wiped, so the rest of its 10 minutes can't be
+     * spent guessing; the learner has to ask for a new one. No migration
+     * needed: the count lives in the cache, and is cleared whenever a new
+     * code is issued or the right one is entered.
+     *
+     * @param  array{0: string, 1: string}  $columns  the code and expiry columns
+     */
+    private function tooManyWrongCodes(User $user, string $purpose, array $columns): bool
+    {
+        $key = $this->wrongCodeKey($purpose, $user);
+
+        // Kept a little longer than a code lives, so the count can't run out
+        // while the code it is guarding is still valid.
+        RateLimiter::hit($key, 15 * 60);
+
+        if (RateLimiter::attempts($key) < self::MAX_WRONG_CODES) {
+            return false;
+        }
+
+        $user->forceFill([$columns[0] => null, $columns[1] => null])->save();
+        RateLimiter::clear($key);
+
+        return true;
+    }
+
+    private function wrongCodeKey(string $purpose, User $user): string
+    {
+        return 'wrong-code:'.$purpose.':'.Str::lower($user->email);
     }
 
     private function generateOtp(): string

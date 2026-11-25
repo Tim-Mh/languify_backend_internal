@@ -29,22 +29,25 @@ use App\Http\Controllers\Api\TriviaController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('auth')->group(function () {
-    Route::post('/register', [AuthController::class, 'register'])->middleware('throttle:6,1');
-    Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:6,1');
-    Route::post('/verify-otp', [AuthController::class, 'verifyOtp'])->middleware('throttle:6,1');
-    Route::post('/resend-otp', [AuthController::class, 'resendOtp'])->middleware('throttle:6,1');
-    Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->middleware('throttle:6,1');
-    Route::post('/reset-password', [AuthController::class, 'resetPassword'])->middleware('throttle:6,1');
+    // Named limiters (see AppServiceProvider::registerRateLimiters), one per
+    // action. These used to share a single throttle:6,1 counter per IP.
+    Route::post('/register', [AuthController::class, 'register'])->middleware('throttle:auth-register');
+    Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:auth-login');
+    Route::post('/verify-otp', [AuthController::class, 'verifyOtp'])->middleware('throttle:auth-verify-otp');
+    Route::post('/resend-otp', [AuthController::class, 'resendOtp'])->middleware('throttle:auth-resend-otp');
+    Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->middleware('throttle:auth-forgot-password');
+    Route::post('/reset-password', [AuthController::class, 'resetPassword'])->middleware('throttle:auth-reset-password');
 
-    Route::get('/google/redirect', [SocialAuthController::class, 'redirectToGoogle'])->middleware('throttle:6,1');
-    Route::get('/google/callback', [SocialAuthController::class, 'handleGoogleCallback'])->middleware('throttle:6,1');
+    Route::get('/google/redirect', [SocialAuthController::class, 'redirectToGoogle'])->middleware('throttle:auth-social');
+    Route::get('/google/callback', [SocialAuthController::class, 'handleGoogleCallback'])->middleware('throttle:auth-social');
 
-    Route::get('/apple/redirect', [SocialAuthController::class, 'redirectToApple'])->middleware('throttle:6,1');
-    Route::post('/apple/callback', [SocialAuthController::class, 'handleAppleCallback'])->middleware('throttle:6,1');
+    Route::get('/apple/redirect', [SocialAuthController::class, 'redirectToApple'])->middleware('throttle:auth-social');
+    Route::post('/apple/callback', [SocialAuthController::class, 'handleAppleCallback'])->middleware('throttle:auth-social');
 
     // The mobile app's native Google/Apple SDKs post the identity token they
     // were handed and get a Sanctum token back, instead of running the browser
-    // redirect above. Same rate limit: it is the same thing being guessed at.
+    // redirect above. Still on throttle:6,1: it is the same thing being guessed
+    // at.
     Route::post('/{provider}/native', [NativeSocialAuthController::class, 'store'])
         ->whereIn('provider', ['google', 'apple'])
         ->middleware('throttle:6,1');

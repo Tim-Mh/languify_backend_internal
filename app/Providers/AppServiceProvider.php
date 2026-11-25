@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 use SocialiteProviders\Apple\AppleExtendSocialite;
 use SocialiteProviders\Manager\SocialiteWasCalled;
 use Symfony\Component\Mailer\Transport\Dsn;
@@ -153,5 +154,27 @@ class AppServiceProvider extends ServiceProvider
 
         RateLimiter::for('timezone', fn (Request $request) => Limit::perDay(5)
             ->by('timezone:'.($request->user()?->id ?? $request->ip())));
+
+        // Guest auth routes. Each action has its own counters, so a few failed
+        // logins no longer block the same phone from verifying its code or
+        // resetting its password. Two limits per action: a tight one per
+        // email from one address, and a wider one per address so one IP can't
+        // walk through many emails.
+        $perEmailAndIp = fn (string $name, int $perEmail, int $perIp) => fn (Request $request) => [
+            Limit::perMinute($perEmail)->by($name.':'.Str::lower(trim((string) $request->input('email'))).'|'.$request->ip()),
+            Limit::perMinute($perIp)->by($name.':'.$request->ip()),
+        ];
+
+        RateLimiter::for('auth-login', $perEmailAndIp('auth-login', 5, 30));
+        RateLimiter::for('auth-register', $perEmailAndIp('auth-register', 5, 30));
+        RateLimiter::for('auth-verify-otp', $perEmailAndIp('auth-verify-otp', 5, 30));
+        RateLimiter::for('auth-resend-otp', $perEmailAndIp('auth-resend-otp', 5, 30));
+        RateLimiter::for('auth-forgot-password', $perEmailAndIp('auth-forgot-password', 5, 30));
+        RateLimiter::for('auth-reset-password', $perEmailAndIp('auth-reset-password', 5, 30));
+
+        // Google/Apple browser sign-in. No email in the request, and a single
+        // sign-in already makes a redirect and a callback, so per IP and roomy.
+        RateLimiter::for('auth-social', fn (Request $request) => Limit::perMinute(20)
+            ->by('auth-social:'.$request->ip()));
     }
 }

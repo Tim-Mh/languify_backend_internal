@@ -86,14 +86,25 @@ class FamilyService
         return $this->ownerHasFamilyPlan($user) || $group->members()->exists();
     }
 
-    public function seatsUsed(FamilyGroup $group): int
+    /**
+     * Members plus invites that can still be accepted. $exceptInviteId leaves
+     * one invite out, so the invite being accepted is not counted against
+     * its own seat.
+     */
+    public function seatsUsed(FamilyGroup $group, ?int $exceptInviteId = null): int
     {
-        return $group->members()->count() + $group->pendingInvites()->count();
+        $invites = $group->seatHoldingInvites();
+
+        if ($exceptInviteId !== null) {
+            $invites->whereKeyNot($exceptInviteId);
+        }
+
+        return $group->members()->count() + $invites->count();
     }
 
-    public function seatsAvailable(FamilyGroup $group): int
+    public function seatsAvailable(FamilyGroup $group, ?int $exceptInviteId = null): int
     {
-        return max(0, self::MAX_MEMBERS - $this->seatsUsed($group));
+        return max(0, self::MAX_MEMBERS - $this->seatsUsed($group, $exceptInviteId));
     }
 
     public function invite(User $owner, string $email): FamilyInvite
@@ -113,6 +124,12 @@ class FamilyService
             // "seats available" snapshot and both proceeding.
             $group = FamilyGroup::whereKey($group->id)->lockForUpdate()->firstOrFail();
 
+            // Replace any still-pending invite to the same email in this group
+            // rather than piling up duplicates. Done before the seat check so
+            // "Resend" on a full plan reuses that invite's seat instead of
+            // being refused. A later throw rolls this back with the rest.
+            $group->pendingInvites()->where('email', $email)->update(['status' => 'revoked']);
+
             if ($this->seatsAvailable($group) <= 0) {
                 throw ValidationException::withMessages(['email' => 'Your family plan is full.']);
             }
@@ -126,10 +143,6 @@ class FamilyService
                     ]);
                 }
             }
-
-            // Replace any still-pending invite to the same email in this group
-            // rather than piling up duplicates.
-            $group->pendingInvites()->where('email', $email)->update(['status' => 'revoked']);
 
             $invite = FamilyInvite::create([
                 'family_group_id' => $group->id,
@@ -222,6 +235,15 @@ class FamilyService
 
     public function acceptInvite(string $token, User $user): FamilyMember
     {
+        // Outside the transaction below on purpose: a throw inside it rolls
+        // back every write, so marking the invite expired there never stuck.
+        $stale = FamilyInvite::where('token', $token)->where('status', 'pending')->first();
+
+        if ($stale && $stale->expires_at->isPast()) {
+            $stale->update(['status' => 'expired']);
+            throw ValidationException::withMessages(['invite' => 'This invite has expired.']);
+        }
+
         return DB::transaction(function () use ($token, $user) {
             $invite = FamilyInvite::with('familyGroup.owner')
                 ->where('token', $token)
@@ -232,8 +254,8 @@ class FamilyService
                 throw ValidationException::withMessages(['invite' => 'This invite is no longer valid.']);
             }
 
+            // Only reachable if it expired in the moment since the check above.
             if ($invite->expires_at->isPast()) {
-                $invite->update(['status' => 'expired']);
                 throw ValidationException::withMessages(['invite' => 'This invite has expired.']);
             }
 
@@ -262,7 +284,9 @@ class FamilyService
                 ]);
             }
 
-            if ($this->seatsAvailable($group) <= 0) {
+            // This invite already holds one of the seats, so it is left out
+            // of the count rather than counted against itself.
+            if ($this->seatsAvailable($group, $invite->id) <= 0) {
                 throw ValidationException::withMessages(['invite' => 'This family plan is full.']);
             }
 

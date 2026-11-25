@@ -278,6 +278,18 @@ class ShopController extends Controller
 
         $user = $request->user();
 
+        // A plan billed through the App Store can only be changed or renewed
+        // there. A Stripe checkout on top of it would bill the learner twice
+        // and leave two plans fighting over the same account. Gem packs are a
+        // separate one-off purchase and stay allowed.
+        $current = $user->activeSubscription;
+
+        if ($current && $current->provider === 'apple' && ! $current->stripe_subscription_id) {
+            return response()->json([
+                'message' => 'Your plan is billed by Apple. Manage it in the App Store on your iPhone.',
+            ], 422);
+        }
+
         // Note: buying the plan you already have is intentionally ALLOWED here
         // — in the manual-renewal model that's exactly how you renew, and
         // activateSubscriptionFromSession() stacks the new period onto whatever

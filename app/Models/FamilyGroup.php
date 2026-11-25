@@ -32,4 +32,16 @@ class FamilyGroup extends Model
     {
         return $this->invites()->where('status', 'pending');
     }
+
+    /**
+     * Pending invites that can still be accepted, so they hold a seat. An
+     * invite past its expires_at keeps status 'pending' until someone tries
+     * it, but it can never be used, so it must not count against the plan.
+     * pendingInvites() stays as it is so the owner's list still shows the
+     * stale ones, which they can resend or revoke.
+     */
+    public function seatHoldingInvites(): HasMany
+    {
+        return $this->pendingInvites()->where('expires_at', '>', now());
+    }
 }

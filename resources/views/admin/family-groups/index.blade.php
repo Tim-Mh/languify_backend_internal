@@ -135,7 +135,7 @@
                 @php
                     $ownerPlan = $group->owner?->activeSubscription;
                     $live = $ownerPlan && $ownerPlan->plan_key === 'family';
-                    $used = 1 + $group->members->count() + $group->pendingInvites->count();
+                    $used = 1 + $group->members->count() + $group->pendingInvites->filter->isPending()->count();
                 @endphp
                 <details class="group/family rounded-2xl bg-white shadow-sm ring-1 ring-gray-100 open:ring-violet-200" data-family-card>
                     <summary class="flex cursor-pointer list-none items-start justify-between gap-3 rounded-2xl p-5 hover:bg-gray-50/70 group-open/family:rounded-b-none group-open/family:border-b group-open/family:border-gray-100 [&::-webkit-details-marker]:hidden">

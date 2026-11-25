@@ -28,12 +28,19 @@ class FamilyController extends Controller
         $user = $request->user();
 
         if ($user->familyGroupOwned || $this->family->ownerHasFamilyPlan($user)) {
-            $group = $this->family->getOrCreateGroup($user);
+            $planActive = $this->family->ownerHasFamilyPlan($user);
+
+            // A lapsed owner keeps the group they already have, so they can
+            // still remove members and revoke invites. getOrCreateGroup() is
+            // only for a paying owner; it refuses a lapsed one with a 422.
+            $group = $planActive ? $this->family->getOrCreateGroup($user) : $user->familyGroupOwned;
             $group->load(['members.user', 'pendingInvites']);
 
             return response()->json([
                 'role' => 'owner',
-                'seatsUsed' => $group->members->count() + $group->pendingInvites->count() + 1,
+                'planActive' => $planActive,
+                // Expired invites are still listed below but no longer hold a seat.
+                'seatsUsed' => $this->family->seatsUsed($group) + 1,
                 'seatsTotal' => FamilyService::MAX_MEMBERS + 1,
                 'members' => $group->members->map(fn (FamilyMember $member) => [
                     'id' => $member->id,
